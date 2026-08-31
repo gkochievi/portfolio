@@ -1,0 +1,738 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    /* Core brand colors - warm, earthy, mystical */
+    --background: 40 30% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 95%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 30% 97%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Primary - Deep forest green */
+    --primary: 150 30% 25%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Secondary - Warm sand */
+    --secondary: 35 35% 85%;
+    --secondary-foreground: 30 10% 15%;
+
+    /* Muted - Soft beige */
+    --muted: 35 25% 90%;
+    --muted-foreground: 30 15% 45%;
+
+    /* Accent - Olive green */
+    --accent: 80 25% 35%;
+    --accent-foreground: 40 30% 97%;
+
+    /* Gold accent for premium feel */
+    --gold: 43 74% 49%;
+    --gold-foreground: 30 10% 15%;
+    --gold-light: 43 60% 70%;
+    --gold-dark: 38 70% 35%;
+
+    /* Stone colors */
+    --stone-warm: 30 20% 75%;
+    --stone-cool: 200 15% 70%;
+    --stone-earth: 25 30% 55%;
+
+    /* Purpose colors */
+    --luck: 140 40% 40%;
+    --protection: 260 30% 40%;
+    --love: 350 50% 55%;
+    --safety: 200 40% 45%;
+    --energy: 35 80% 55%;
+    --balance: 180 25% 45%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 30% 97%;
+
+    --border: 35 25% 85%;
+    --input: 35 25% 88%;
+    --ring: 150 30% 25%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 40 25% 95%;
+    --sidebar-foreground: 30 10% 15%;
+    --sidebar-primary: 150 30% 25%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 35 35% 85%;
+    --sidebar-accent-foreground: 30 10% 15%;
+    --sidebar-border: 35 25% 85%;
+    --sidebar-ring: 150 30% 25%;
+  }
+
+  .dark {
+    color-scheme: dark;
+    /* Warmer, easier on the eyes dark background */
+    --background: 30 12% 8%;
+    --foreground: 40 15% 90%;
+
+    /* Cards slightly elevated from background */
+    --card: 30 12% 12%;
+    --card-foreground: 40 15% 90%;
+
+    --popover: 30 12% 11%;
+    --popover-foreground: 40 15% 90%;
+
+    /* Primary - deep forest green for dark mode (lighter for visibility) */
+    --primary: 150 35% 32%;
+    --primary-foreground: 40 15% 95%;
+
+    /* Secondary - subtle elevation */
+    --secondary: 30 10% 16%;
+    --secondary-foreground: 40 15% 88%;
+
+    /* Muted - better readable text */
+    --muted: 30 10% 18%;
+    --muted-foreground: 35 12% 65%;
+
+    /* Accent */
+    --accent: 80 25% 35%;
+    --accent-foreground: 40 15% 90%;
+
+    /* Gold - more vibrant in dark mode */
+    --gold: 43 80% 58%;
+    --gold-foreground: 30 20% 8%;
+    --gold-light: 43 70% 68%;
+    --gold-dark: 38 75% 45%;
+
+    /* Stone colors - warmer tones for dark */
+    --stone-warm: 30 15% 40%;
+    --stone-cool: 200 12% 40%;
+    --stone-earth: 25 20% 38%;
+
+    /* Purpose colors - vibrant for dark mode visibility */
+    --luck: 140 50% 50%;
+    --protection: 260 45% 60%;
+    --love: 350 60% 65%;
+    --safety: 200 50% 58%;
+    --energy: 35 90% 62%;
+    --balance: 180 35% 55%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 15% 95%;
+
+    /* Borders - more visible in dark mode */
+    --border: 30 10% 22%;
+    --input: 30 10% 20%;
+    --ring: 43 80% 58%;
+
+    /* Sidebar */
+    --sidebar-background: 30 12% 10%;
+    --sidebar-foreground: 40 15% 90%;
+    --sidebar-primary: 150 35% 32%;
+    --sidebar-primary-foreground: 40 15% 95%;
+    --sidebar-accent: 30 10% 16%;
+    --sidebar-accent-foreground: 40 15% 88%;
+    --sidebar-border: 30 10% 22%;
+    --sidebar-ring: 43 80% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  [lang="ka"] body {
+    font-family: "Noto Sans Georgian", "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  [lang="ka"] h1,
+  [lang="ka"] h2,
+  [lang="ka"] h3,
+  [lang="ka"] h4,
+  [lang="ka"] h5,
+  [lang="ka"] h6 {
+    font-family: "Noto Serif Georgian", "Playfair Display", ui-serif, serif;
+  }
+}
+
+@layer components {
+  /* Premium button styles - responsive and touch-friendly */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 
+           transition-all duration-300 rounded-full px-6 py-2.5 md:px-8 md:py-3 
+           font-medium tracking-wide shadow-lg hover:shadow-xl
+           hover:-translate-y-0.5 text-sm md:text-base
+           min-h-[44px] md:min-h-0;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 
+           transition-all duration-300 rounded-full px-6 py-2.5 md:px-8 md:py-3 
+           font-medium tracking-wide border border-border text-sm md:text-base
+           min-h-[44px] md:min-h-0;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light 
+           text-gold-foreground hover:opacity-90 
+           transition-all duration-300 rounded-full px-6 py-2.5 md:px-8 md:py-3 
+           font-semibold tracking-wide shadow-lg hover:shadow-xl text-sm md:text-base
+           min-h-[44px] md:min-h-0;
+  }
+
+  .dark .btn-gold {
+    @apply shadow-[0_4px_20px_-4px_hsl(var(--gold)/0.4)] 
+           hover:shadow-[0_6px_30px_-4px_hsl(var(--gold)/0.5)];
+  }
+
+  .dark .btn-primary {
+    @apply shadow-md hover:shadow-lg;
+  }
+
+  .dark .btn-secondary {
+    @apply border-border/70 hover:bg-secondary/60 hover:border-gold/30;
+  }
+
+  /* Card styles */
+  .card-product {
+    @apply bg-card rounded-2xl overflow-hidden shadow-sm 
+           hover:shadow-xl transition-all duration-500 
+           hover:-translate-y-1 border border-border/50;
+  }
+
+  .dark .card-product {
+    @apply shadow-none border-border/70 
+           hover:shadow-[0_0_30px_-5px_hsl(var(--gold)/0.15)] 
+           hover:border-gold/30;
+  }
+
+  .card-zodiac {
+    @apply bg-gradient-to-br from-card to-secondary/50 
+           rounded-2xl p-6 border border-border/30 
+           hover:border-gold/50 transition-all duration-500 
+           hover:shadow-xl hover:-translate-y-1 cursor-pointer;
+  }
+
+  .dark .card-zodiac {
+    @apply border-border/50 
+           hover:shadow-[0_0_25px_-5px_hsl(var(--gold)/0.2)];
+  }
+
+  /* Zodiac cards in the primary section (Shop by Zodiac) - Light mode */
+  .bg-primary .card-zodiac {
+    background: linear-gradient(
+      145deg,
+      hsl(var(--primary-foreground) / 0.08) 0%,
+      hsl(var(--primary-foreground) / 0.04) 100%
+    );
+    border: 1px solid hsl(var(--primary-foreground) / 0.12);
+    backdrop-filter: blur(8px);
+    box-shadow: 
+      0 4px 15px -3px hsl(0 0% 0% / 0.1),
+      inset 0 1px 0 0 hsl(var(--primary-foreground) / 0.08);
+  }
+
+  .bg-primary .card-zodiac:hover {
+    background: linear-gradient(
+      145deg,
+      hsl(var(--primary-foreground) / 0.12) 0%,
+      hsl(var(--primary-foreground) / 0.06) 100%
+    );
+    border-color: hsl(var(--gold) / 0.5);
+    box-shadow: 
+      0 8px 25px -5px hsl(0 0% 0% / 0.15),
+      0 0 20px -5px hsl(var(--gold) / 0.2),
+      inset 0 1px 0 0 hsl(var(--primary-foreground) / 0.12);
+    transform: translateY(-4px);
+  }
+
+  /* Zodiac symbol styling in light mode */
+  .bg-primary .card-zodiac .zodiac-symbol {
+    filter: drop-shadow(0 2px 4px hsl(0 0% 0% / 0.15));
+  }
+
+  .bg-primary .card-zodiac:hover .zodiac-symbol {
+    filter: drop-shadow(0 0 8px hsl(var(--gold) / 0.5));
+  }
+
+  /* Zodiac cards specifically in the primary section (Shop by Zodiac) - Dark mode */
+  .dark .bg-primary .card-zodiac {
+    background: linear-gradient(
+      145deg,
+      hsl(40 15% 92% / 0.12) 0%,
+      hsl(40 15% 92% / 0.06) 100%
+    );
+    border-color: hsl(40 15% 92% / 0.15);
+    backdrop-filter: blur(8px);
+  }
+
+  .dark .bg-primary .card-zodiac:hover {
+    background: linear-gradient(
+      145deg,
+      hsl(40 15% 92% / 0.18) 0%,
+      hsl(40 15% 92% / 0.10) 100%
+    );
+    border-color: hsl(var(--gold) / 0.4);
+    box-shadow: 
+      0 0 30px -5px hsl(var(--gold) / 0.25),
+      inset 0 1px 0 0 hsl(40 15% 92% / 0.1);
+  }
+
+  /* Zodiac symbol styling in dark mode */
+  .dark .bg-primary .card-zodiac .zodiac-symbol {
+    filter: drop-shadow(0 0 8px hsl(var(--gold) / 0.3));
+  }
+
+  .dark .bg-primary .card-zodiac:hover .zodiac-symbol {
+    filter: drop-shadow(0 0 12px hsl(var(--gold) / 0.5));
+  }
+
+  /* Purpose badges */
+  .badge-luck {
+    @apply bg-luck/10 text-luck border border-luck/20;
+  }
+  .badge-protection {
+    @apply bg-protection/10 text-protection border border-protection/20;
+  }
+  .badge-love {
+    @apply bg-love/10 text-love border border-love/20;
+  }
+  .badge-safety {
+    @apply bg-safety/10 text-safety border border-safety/20;
+  }
+  .badge-energy {
+    @apply bg-energy/10 text-energy border border-energy/20;
+  }
+  .badge-balance {
+    @apply bg-balance/10 text-balance border border-balance/20;
+  }
+
+  /* Dark mode: more visible purpose badges */
+  .dark .badge-luck {
+    background-color: hsl(var(--luck) / 0.15);
+    border-color: hsl(var(--luck) / 0.30);
+  }
+  .dark .badge-protection {
+    background-color: hsl(var(--protection) / 0.15);
+    border-color: hsl(var(--protection) / 0.30);
+  }
+  .dark .badge-love {
+    background-color: hsl(var(--love) / 0.15);
+    border-color: hsl(var(--love) / 0.30);
+  }
+  .dark .badge-safety {
+    background-color: hsl(var(--safety) / 0.15);
+    border-color: hsl(var(--safety) / 0.30);
+  }
+  .dark .badge-energy {
+    background-color: hsl(var(--energy) / 0.15);
+    border-color: hsl(var(--energy) / 0.30);
+  }
+  .dark .badge-balance {
+    background-color: hsl(var(--balance) / 0.15);
+    border-color: hsl(var(--balance) / 0.30);
+  }
+
+  /* Gold accents */
+  .gold-text {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light 
+           bg-clip-text text-transparent;
+  }
+
+  .gold-border {
+    @apply border-gold/50 hover:border-gold transition-colors duration-300;
+  }
+
+  /* Mystical glow effect */
+  .mystical-glow {
+    @apply relative;
+  }
+
+  .mystical-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-full blur-xl opacity-30 
+           bg-gradient-to-r from-gold/40 via-primary/30 to-gold/40 
+           -z-10 scale-110;
+  }
+
+  .dark .mystical-glow::before {
+    @apply opacity-40;
+  }
+
+  /* Section styling - responsive padding */
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8;
+  }
+
+  .container-main {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Typography - responsive sizing */
+  .heading-hero {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium 
+           leading-[1.15] tracking-tight pb-1;
+  }
+
+  .heading-section {
+    @apply text-2xl sm:text-3xl md:text-4xl font-serif font-medium 
+           leading-tight tracking-tight;
+  }
+
+  .heading-card {
+    @apply text-lg md:text-xl font-serif font-medium leading-snug;
+  }
+
+  .text-body {
+    @apply text-sm md:text-base text-muted-foreground leading-relaxed;
+  }
+
+  .text-small {
+    @apply text-xs md:text-sm text-muted-foreground leading-relaxed;
+  }
+
+  /* Trust indicators */
+  .trust-badge {
+    @apply flex items-center gap-2 text-sm text-muted-foreground 
+           bg-secondary/50 px-4 py-2 rounded-full;
+  }
+
+  .dark .trust-badge {
+    @apply bg-secondary/80 text-foreground/80 border border-border/50;
+  }
+
+  /* Navigation link */
+  .nav-link {
+    @apply relative text-foreground/80 hover:text-foreground 
+           transition-colors duration-300 font-medium;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gold 
+           transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .dark .nav-link::after {
+    @apply shadow-[0_0_8px_hsl(var(--gold)/0.5)];
+  }
+}
+
+/* ═══ Magical Theme Transition ═══ */
+
+/* View Transitions API — circular reveal from toggle button */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.65s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: theme-circle-out;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  animation-name: theme-circle-in;
+  z-index: 2;
+}
+
+@keyframes theme-circle-out {
+  0% {
+    clip-path: circle(150% at var(--theme-x, 50%) var(--theme-y, 0%));
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(0% at var(--theme-x, 50%) var(--theme-y, 0%));
+    opacity: 0;
+  }
+}
+
+@keyframes theme-circle-in {
+  0% {
+    clip-path: circle(0% at var(--theme-x, 50%) var(--theme-y, 0%));
+    filter: brightness(0.8) saturate(1.3);
+  }
+  60% {
+    filter: brightness(1.08) saturate(1.1);
+  }
+  100% {
+    clip-path: circle(150% at var(--theme-x, 50%) var(--theme-y, 0%));
+    filter: brightness(1) saturate(1);
+  }
+}
+
+/* Fallback overlay — circular expand from center with golden ring */
+.theme-transition-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition:
+    width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease-out;
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.theme-transition-overlay.active {
+  width: 250vmax;
+  height: 250vmax;
+  box-shadow:
+    0 0 80px 30px hsl(var(--gold) / 0.3),
+    0 0 0 2px hsl(var(--gold) / 0.2);
+}
+
+.theme-transition-overlay.complete {
+  opacity: 0;
+  transition: opacity 0.35s ease-out;
+}
+
+.theme-transition-light {
+  background: radial-gradient(
+    circle at center,
+    hsl(43 60% 95%) 0%,
+    hsl(40 30% 97%) 40%,
+    hsl(35 35% 92%) 100%
+  );
+}
+
+.theme-transition-dark {
+  background: radial-gradient(
+    circle at center,
+    hsl(30 15% 12%) 0%,
+    hsl(30 12% 8%) 50%,
+    hsl(30 10% 5%) 100%
+  );
+}
+
+/* Golden spinning ring on the expanding circle */
+.theme-transition-overlay::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    hsl(var(--gold) / 0.35) 90deg,
+    hsl(var(--gold) / 0.55) 180deg,
+    hsl(var(--gold) / 0.35) 270deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.theme-transition-overlay.active::before {
+  opacity: 1;
+  animation: theme-ring-spin 0.7s ease-out forwards;
+}
+
+@keyframes theme-ring-spin {
+  0% {
+    transform: scale(0.2) rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.3) rotate(200deg);
+    opacity: 0;
+  }
+}
+
+/* Sparkle particles spawned by JS */
+.theme-sparkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100000;
+  background: hsl(var(--gold));
+  box-shadow: 0 0 6px 2px hsl(var(--gold) / 0.6);
+  animation: theme-sparkle-fly 0.7s ease-out forwards;
+}
+
+@keyframes theme-sparkle-fly {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--sx), var(--sy)) scale(0);
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation: fadeIn 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-3 {
+    animation: fadeIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Hover scale */
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .dark .hover-lift {
+    @apply hover:shadow-[0_10px_30px_-10px_hsl(var(--gold)/0.15)];
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text gradients */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light 
+           bg-clip-text text-transparent;
+  }
+
+  .text-gradient-earth {
+    @apply bg-gradient-to-r from-primary via-accent to-primary 
+           bg-clip-text text-transparent;
+  }
+
+  /* Background patterns */
+  .bg-pattern-dots {
+    background-image: radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--secondary)) 50%,
+      hsl(var(--muted)) 100%
+    );
+  }
+
+  .dark .bg-gradient-hero {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background)) 0%,
+      hsl(30 12% 11%) 40%,
+      hsl(var(--secondary)) 100%
+    );
+  }
+
+  .bg-gradient-section {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--secondary) / 0.3) 100%
+    );
+  }
+
+  .dark .bg-gradient-section {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--secondary) / 0.5) 100%
+    );
+  }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="bpt">
+  <title id="bpt">Barber portrait not available</title>
+  <rect width="400" height="400" fill="#f1ead9"/>
+  <circle cx="200" cy="200" r="156" fill="#e6dec9" stroke="#d6cdb4" stroke-width="2"/>
+
+  <g stroke="#20180f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M176 212 L172 298 L228 298 L224 212 Z" fill="#fbf6ec"/>
+    <path d="M48 400 C50 346 88 312 136 300 C154 295 168 293 178 291 C184 307 216 307 222 291 C232 293 246 295 264 300 C312 312 350 346 352 400 Z" fill="#fbf6ec"/>
+    <ellipse cx="134" cy="170" rx="10" ry="16" fill="#fbf6ec"/>
+    <ellipse cx="266" cy="170" rx="10" ry="16" fill="#fbf6ec"/>
+    <path d="M136 158 C136 106 162 82 200 82 C238 82 264 106 264 158 C264 204 240 250 200 250 C160 250 136 204 136 158 Z" fill="#fbf6ec"/>
+    <path d="M136 156 C136 100 162 72 200 72 C238 72 264 100 264 156 C257 128 235 114 200 114 C165 114 143 128 136 156 Z" fill="#d6cdb4"/>
+  </g>
+
+  <path d="M178 291 C184 307 216 307 222 291" fill="none" stroke="#8f5d33" stroke-width="10" stroke-linecap="round"/>
+  <path d="M178 291 C184 307 216 307 222 291" fill="none" stroke="#20180f" stroke-width="2" stroke-linecap="round"/>
+
+  <g stroke="#d6cdb4" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M172 174 L188 174"/>
+    <path d="M212 174 L228 174"/>
+    <path d="M182 216 L218 216"/>
+  </g>
+</svg>

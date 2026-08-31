@@ -1,0 +1,1059 @@
+{
+  "nav": {
+    "shop": "Shop",
+    "zodiac": "Zodiac",
+    "collections": "Collections",
+    "quiz": "Quiz",
+    "about": "About"
+  },
+  "brand": {
+    "stone": "Gish",
+    "soul": "eri"
+  },
+  "seo": {
+    "siteName": "Gisheri",
+    "title": "Gisheri | Handcrafted Natural Stone Jewelry",
+    "description": "Discover handcrafted natural stone bracelets and jewelry for your spiritual journey. Each piece is made with intention and love.",
+    "pages": {
+      "home": {
+        "title": "Gisheri | Handcrafted Natural Stone Jewelry",
+        "description": "Discover handcrafted natural stone bracelets and jewelry for your spiritual journey. Each piece is made with intention and love."
+      },
+      "shop": {
+        "title": "Shop Natural Stone Bracelets | Gisheri",
+        "description": "Browse our full collection of handcrafted natural stone bracelets, curated by energy, intention, and zodiac."
+      },
+      "collections": {
+        "title": "Collections | Gisheri",
+        "description": "Explore curated collections based on protection, love, luck, chakra, and more."
+      },
+      "collection": {
+        "title": "{{name}} Collection | Gisheri"
+      },
+      "product": {
+        "title": "{{product}} | Gisheri",
+        "description": "{{description}}"
+      },
+      "zodiac": {
+        "title": "Shop by Zodiac Sign | Gisheri",
+        "description": "Find bracelets aligned with your zodiac energy and celestial sign."
+      },
+      "zodiacSign": {
+        "title": "{{sign}} Zodiac Bracelets | Gisheri",
+        "description": "Explore bracelets and stones aligned with {{sign}} energy."
+      },
+      "quiz": {
+        "title": "Find Your Stone Quiz | Gisheri",
+        "description": "Take a quick quiz to discover the perfect crystals based on your zodiac sign and intentions."
+      },
+      "about": {
+        "title": "About Gisheri",
+        "description": "Learn about our story, values, and the intention behind every handcrafted bracelet."
+      },
+      "cart": {
+        "title": "Your Cart | Gisheri",
+        "description": "Review your selected items and proceed to checkout."
+      },
+      "notFound": {
+        "title": "Page Not Found | Gisheri",
+        "description": "The page you are looking for does not exist."
+      },
+      "login": {
+        "title": "Sign in | Gisheri",
+        "description": "Sign in to your Gisheri account."
+      },
+      "register": {
+        "title": "Create account | Gisheri",
+        "description": "Create your Gisheri account."
+      },
+      "forgot": {
+        "title": "Forgot password | Gisheri"
+      },
+      "reset": {
+        "title": "Reset password | Gisheri"
+      },
+      "account": {
+        "title": "My account | Gisheri"
+      }
+    }
+  },
+  "actions": {
+    "openSearch": "Open search"
+  },
+  "buttons": {
+    "backToShop": "Back to Shop",
+    "addToCart": "Add to Cart",
+    "clear": "Clear",
+    "clearAll": "Clear all"
+  },
+  "language": {
+    "label": "Language",
+    "en": "EN",
+    "ka": "KA"
+  },
+  "search": {
+    "placeholder": "Search products, stones, zodiac, collections…",
+    "groupSearch": "Search",
+    "viewAllResultsFor": "View all results for “{{query}}”",
+    "noResults": "No results found.",
+    "tryDifferent": "Try a different search term",
+    "hint": "Search for products, collections, or zodiac signs",
+    "toClose": "to close",
+    "groups": {
+      "products": "Products",
+      "collections": "Collections",
+      "zodiac": "Zodiac",
+      "pages": "Pages",
+      "results": "Results"
+    }
+  },
+  "footer": {
+    "tagline": "Handcrafted natural stone jewelry for your spiritual journey. Each piece is made with intention and love.",
+    "sections": {
+      "shop": "Shop",
+      "about": "About",
+      "help": "Help"
+    },
+    "links": {
+      "allProducts": "All Products",
+      "byZodiac": "By Zodiac",
+      "protection": "Protection",
+      "love": "Love",
+      "luck": "Luck",
+      "ourStory": "Our Story",
+      "stoneEncyclopedia": "Stone Encyclopedia",
+      "findYourStone": "Find Your Stone",
+      "giftSets": "Gift Sets",
+      "contactUs": "Contact Us",
+      "faq": "FAQ",
+      "shippingReturns": "Shipping & Returns",
+      "jewelryCare": "Jewelry Care"
+    },
+    "copyright": "© {{year}} Gisheri. All rights reserved.",
+    "madeWith": {
+      "before": "Made with",
+      "after": "for spiritual souls"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "Handcrafted with intention",
+      "titleLine1": "Natural Stone Bracelets",
+      "titleLine2": "Crafted for Your Energy",
+      "subline": "Zodiac • Protection • Luck • Love • Balance",
+      "description": "Discover handmade jewelry infused with the healing power of natural stones. Each bracelet is thoughtfully designed to align with your zodiac sign and life intentions.",
+      "ctaZodiac": "Shop by Zodiac",
+      "ctaQuiz": "Find Your Stone",
+      "trustBadges": {
+        "handmade": "✋ Handmade",
+        "naturalStones": "🌿 Natural Stones",
+        "ethical": "💚 Ethical Sourcing"
+      },
+      "imageAlt": "Natural stone bracelets collection",
+      "floating": {
+        "newArrivals": "✨ New Arrivals",
+        "chakraCollection": "7 Chakra Collection",
+        "freeShipping": "Free Shipping",
+        "ordersOver": "Orders over {{amount}}"
+      }
+    },
+    "whyStones": {
+      "title": "Why Natural Stones?",
+      "description": "For thousands of years, humans have been drawn to the healing power of crystals. Each stone carries its own unique frequency that can influence our energy and well-being.",
+      "features": {
+        "genuine": {
+          "title": "Genuine Natural Stones",
+          "description": "Every crystal is carefully selected for its authentic healing properties and visual beauty."
+        },
+        "ethical": {
+          "title": "Ethically Sourced",
+          "description": "We partner with responsible suppliers who share our commitment to sustainability."
+        },
+        "love": {
+          "title": "Handcrafted with Love",
+          "description": "Each piece is made by artisan craftspeople who infuse positive energy into their work."
+        },
+        "cleansed": {
+          "title": "Energetically Cleansed",
+          "description": "All jewelry is cleansed and charged before shipping to ensure pure, positive vibrations."
+        }
+      }
+    },
+    "collections": {
+      "title": "Shop by Energy",
+      "description": "Explore our curated collections, each designed to align with your intentions and enhance your spiritual journey."
+    },
+    "bestsellers": {
+      "title": "Bestsellers",
+      "description": "Our most loved pieces, chosen by thousands of spiritual souls around the world.",
+      "viewAll": "View All Products"
+    },
+    "zodiac": {
+      "title": "Shop by Zodiac",
+      "description": "Find the perfect stones aligned with your celestial sign. Each zodiac has its own set of crystals that resonate with its unique energy.",
+      "exploreAll": "Explore All Zodiac Signs"
+    },
+    "quizCta": {
+      "badge": "Personalized Experience",
+      "title": "Not Sure Which Stone is Right for You?",
+      "description": "Take our quick 2-minute quiz to discover the perfect crystals based on your zodiac sign, intentions, and energy needs. Get personalized recommendations just for you.",
+      "cta": "Find Your Stone"
+    }
+  },
+  "productCard": {
+    "bestseller": "Bestseller",
+    "new": "New",
+    "sale": "Sale"
+  },
+  "productPage": {
+    "notFoundTitle": "Product Not Found",
+    "bestseller": "Bestseller",
+    "new": "New",
+    "save": "Save {{amount}}",
+    "zodiacCompatibility": "Zodiac Compatibility",
+    "stonesUsed": "Stones Used: {{stones}}",
+    "selectSize": "Select Size",
+    "selectSizeHint": "Please choose a size before adding to cart.",
+    "sizeLabel": "Size",
+    "trust": {
+      "handmade": "✋ Handmade",
+      "naturalStones": "🌿 Natural Stones",
+      "freeShipping": "📦 Free Shipping 50+"
+    },
+    "relatedTitle": "You Might Also Like"
+  },
+  "shopPage": {
+    "title": "Shop All Bracelets",
+    "subtitle": "Discover our complete collection of handcrafted natural stone jewelry.",
+    "products": "products",
+    "filters": "Filters",
+    "purpose": "Purpose",
+    "zodiacSign": "Zodiac Sign",
+    "gender": "Gender",
+    "priceRange": "Price Range",
+    "activeFilters": "Active filters:",
+    "searchChip": "Search: “{{query}}”",
+    "showResults": "Show {{count}} results",
+    "noMatchTitle": "No products found",
+    "noMatch": "Try adjusting your filters or search to find what you're looking for.",
+    "genders": {
+      "men": "Men",
+      "women": "Women",
+      "unisex": "Unisex"
+    }
+  },
+  "collectionsPage": {
+    "allCollections": "All Collections",
+    "title": "Our Collections",
+    "description": "Explore our curated collections, each designed to align with your intentions and enhance your spiritual journey.",
+    "featuredPieces": "Featured Pieces",
+    "braceletsForCollection": "{{name}} Bracelets",
+    "empty": "No products found in this collection yet. Check back soon!"
+  },
+  "zodiacPage": {
+    "allZodiacSigns": "All Zodiac Signs",
+    "elementSign": "{{element}} Sign",
+    "recommendedStones": "Recommended Stones:",
+    "title": "Shop by Zodiac Sign",
+    "description": "Find the perfect crystals aligned with your celestial energy. Each zodiac sign has its own set of stones that resonate with its unique characteristics.",
+    "braceletsFor": "Bracelets for {{name}}",
+    "featured": "Featured Zodiac Pieces",
+    "empty": "No products found for this zodiac sign yet. Check back soon!"
+  },
+  "quizPage": {
+    "badge": "Find Your Stone",
+    "title": "Discover Your Perfect Crystal",
+    "subtitle": "Answer a few questions to find stones that resonate with your energy.",
+    "stepLabel": "Step {{current}} of {{total}}",
+    "stepLabels": {
+      "zodiac": "Zodiac",
+      "occasion": "Occasion",
+      "intention": "Intention",
+      "mood": "Mood",
+      "budget": "Budget"
+    },
+    "stepZodiac": "What's your zodiac sign?",
+    "stepOccasion": "Who is this for?",
+    "stepOccasionHint": "Tell us who will be wearing this special piece.",
+    "stepIntention": "What's your main intention?",
+    "stepIntentionHint": "Choose the area of life you'd like to focus on.",
+    "stepMood": "How do you want to feel?",
+    "stepMoodHint": "Select the energy you'd like your crystal to bring.",
+    "stepBudget": "What's your budget?",
+    "stepBudgetHint": "Choose a price range that works for you.",
+    "back": "Back",
+    "next": "Next",
+    "seeResults": "See Results",
+    "resultsTitle": "Your Crystal Match",
+    "resultsDescription": "Based on your {{zodiac}} energy and desire to feel {{mood}}, we've selected these crystals just for you.",
+    "resultsDescriptionFull": "Based on your {{zodiac}} energy, desire to feel {{mood}}, and focus on {{intention}}, we've selected these crystals just for you.",
+    "noExactMatch": "We couldn't find an exact match, but explore our full collection — your perfect crystal is waiting.",
+    "zodiacCard": {
+      "header": "{{element}} Sign • {{dates}}",
+      "luckyStones": "Your lucky stones:"
+    },
+    "recommended": "Recommended For You",
+    "retake": "Retake Quiz",
+    "browseAll": "Browse All Products",
+    "occasions": {
+      "myself": "For Myself",
+      "gift": "As a Gift",
+      "couple": "For a Couple"
+    },
+    "occasionHints": {
+      "myself": "Personal energy & healing",
+      "gift": "A meaningful present",
+      "couple": "Shared energy & connection"
+    },
+    "intentions": {
+      "stress": "Stress Relief",
+      "confidence": "Confidence",
+      "relationships": "Relationships",
+      "career": "Career & Success",
+      "health": "Health & Wellness",
+      "spiritual": "Spiritual Growth"
+    },
+    "intentionHints": {
+      "stress": "Calm your mind",
+      "confidence": "Boost self-esteem",
+      "relationships": "Deepen connections",
+      "career": "Attract success",
+      "health": "Promote vitality",
+      "spiritual": "Expand awareness"
+    },
+    "moods": {
+      "peaceful": "Peaceful & Calm",
+      "energized": "Energized & Motivated",
+      "loved": "Loved & Connected",
+      "protected": "Safe & Protected",
+      "lucky": "Lucky & Abundant",
+      "balanced": "Balanced & Centered"
+    },
+    "budgets": {
+      "any": "Any Budget",
+      "under40": "Under ₾40",
+      "40to50": "₾40 – ₾50",
+      "over50": "Over ₾50"
+    }
+  },
+  "cartPage": {
+    "title": "Your Cart",
+    "addedTitle": "Added to cart",
+    "emptyTitle": "Your cart is empty",
+    "emptyDescription": "Discover our beautiful crystal bracelets and find the perfect piece for you.",
+    "continueShopping": "Continue Shopping",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "calculatedAtCheckout": "Calculated at checkout",
+    "total": "Total",
+    "remove": "Remove",
+    "proceed": "Proceed to Checkout",
+    "checkoutTitle": "Proceed to Checkout",
+    "fullName": "Full name",
+    "email": "Email",
+    "phone": "Phone number",
+    "city": "City",
+    "address": "Address",
+    "notes": "Order notes",
+    "fullNamePlaceholder": "John Doe",
+    "cityPlaceholder": "Tbilisi",
+    "addressPlaceholder": "Street, Building, Apt",
+    "notesPlaceholder": "Any special requests or delivery instructions...",
+    "checkoutSubmitted": "Order placed",
+    "checkoutSubmittedHint": "We will contact you soon to confirm your order.",
+    "discount": "Discount",
+    "discountCode": "Discount code",
+    "apply": "Apply",
+    "applying": "Checking…",
+    "placing": "Placing order…",
+    "checkoutFailed": "Could not place order",
+    "signInRequired": "You'll be asked to sign in to place this order.",
+    "orderNumber": "Order #{{id}}"
+  },
+  "notFound": {
+    "title": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "aboutPage": {
+    "heroTitle": "Our Story",
+    "heroDescription": "Gisheri was born from a deep passion for the healing power of natural crystals and a desire to share their transformative energy with the world.",
+    "missionTitle": "Our Mission",
+    "missionP1": "We believe that everyone deserves access to the ancient wisdom of crystal healing. Our mission is to create beautiful, high-quality crystal bracelets that not only look stunning but also carry the powerful energies of natural gemstones.",
+    "missionP2": "Each piece is carefully crafted with intention, using only ethically sourced crystals that have been cleansed and charged to maximize their healing properties.",
+    "valuesTitle": "Our Values",
+    "values": {
+      "ethical": {
+        "title": "Ethical Sourcing",
+        "description": "We partner with responsible suppliers who share our commitment to ethical mining practices."
+      },
+      "quality": {
+        "title": "Quality Crystals",
+        "description": "Every crystal is hand-selected for its beauty, clarity, and energetic properties."
+      },
+      "intention": {
+        "title": "Intention Setting",
+        "description": "Each bracelet is cleansed and charged with positive intentions before shipping."
+      }
+    }
+  },
+  "catalog": {
+    "purposes": {
+      "luck": {
+        "name": "Luck & Prosperity",
+        "description": "Attract abundance, success, and good fortune into your life."
+      },
+      "protection": {
+        "name": "Protection",
+        "description": "Shield yourself from negative energies and harmful influences."
+      },
+      "love": {
+        "name": "Love & Relationships",
+        "description": "Open your heart to love, heal emotional wounds, and attract meaningful connections."
+      },
+      "safety": {
+        "name": "Safety & Grounding",
+        "description": "Feel secure, grounded, and protected in your daily life."
+      },
+      "energy": {
+        "name": "Energy & Vitality",
+        "description": "Boost your energy, enhance focus, and increase your life force."
+      },
+      "balance": {
+        "name": "Balance & Harmony",
+        "description": "Restore equilibrium, find inner peace, and harmonize your energies."
+      }
+    },
+    "stones": {
+      "amethyst": "Amethyst",
+      "roseQuartz": "Rose Quartz",
+      "tigersEye": "Tiger's Eye",
+      "blackObsidian": "Black Obsidian",
+      "jade": "Jade",
+      "lapisLazuli": "Lapis Lazuli",
+      "carnelian": "Carnelian",
+      "bloodstone": "Bloodstone",
+      "diamond": "Diamond",
+      "amazonite": "Amazonite",
+      "sapphire": "Sapphire",
+      "emerald": "Emerald",
+      "aquamarine": "Aquamarine",
+      "labradorite": "Labradorite",
+      "citrine": "Citrine",
+      "agate": "Agate",
+      "moonstone": "Moonstone",
+      "pearl": "Pearl",
+      "sunstone": "Sunstone",
+      "peridot": "Peridot",
+      "opal": "Opal",
+      "malachite": "Malachite",
+      "topaz": "Topaz",
+      "turquoise": "Turquoise",
+      "garnet": "Garnet"
+    },
+    "collections": {
+      "balance": {
+        "name": "Balance & Harmony",
+        "description": "Restore equilibrium and find inner peace"
+      },
+      "energy": {
+        "name": "Energy & Vitality",
+        "description": "Wake up your life force"
+      },
+      "love": {
+        "name": "Love & Heart",
+        "description": "Open your heart chakra"
+      },
+      "luck": {
+        "name": "Luck & Prosperity",
+        "description": "Attract abundance"
+      },
+      "protection": {
+        "name": "Protection",
+        "description": "Shield your energy"
+      },
+      "safety": {
+        "name": "Safety & Grounding",
+        "description": "Stay steady, stay held"
+      }
+    },
+    "zodiac": {
+      "aries": {
+        "name": "Aries",
+        "dates": "Mar 21 - Apr 19",
+        "element": "Fire",
+        "description": "Bold, ambitious, and always ready to take on challenges. Aries energy is fierce and pioneering."
+      },
+      "taurus": {
+        "name": "Taurus",
+        "dates": "Apr 20 - May 20",
+        "element": "Earth",
+        "description": "Grounded, sensual, and appreciative of life's pleasures. Taurus seeks stability and beauty."
+      },
+      "gemini": {
+        "name": "Gemini",
+        "dates": "May 21 - Jun 20",
+        "element": "Air",
+        "description": "Curious, adaptable, and intellectually vibrant. Gemini energy is communicative and playful."
+      },
+      "cancer": {
+        "name": "Cancer",
+        "dates": "Jun 21 - Jul 22",
+        "element": "Water",
+        "description": "Nurturing, intuitive, and deeply emotional. Cancer energy is protective and caring."
+      },
+      "leo": {
+        "name": "Leo",
+        "dates": "Jul 23 - Aug 22",
+        "element": "Fire",
+        "description": "Confident, creative, and magnetically charismatic. Leo energy is warm and generous."
+      },
+      "virgo": {
+        "name": "Virgo",
+        "dates": "Aug 23 - Sep 22",
+        "element": "Earth",
+        "description": "Analytical, practical, and detail-oriented. Virgo energy is helpful and perfection-seeking."
+      },
+      "libra": {
+        "name": "Libra",
+        "dates": "Sep 23 - Oct 22",
+        "element": "Air",
+        "description": "Harmonious, diplomatic, and beauty-loving. Libra seeks balance and partnership."
+      },
+      "scorpio": {
+        "name": "Scorpio",
+        "dates": "Oct 23 - Nov 21",
+        "element": "Water",
+        "description": "Intense, passionate, and deeply transformative. Scorpio energy is powerful and mysterious."
+      },
+      "sagittarius": {
+        "name": "Sagittarius",
+        "dates": "Nov 22 - Dec 21",
+        "element": "Fire",
+        "description": "Adventurous, optimistic, and freedom-loving. Sagittarius energy is expansive and philosophical."
+      },
+      "capricorn": {
+        "name": "Capricorn",
+        "dates": "Dec 22 - Jan 19",
+        "element": "Earth",
+        "description": "Ambitious, disciplined, and achievement-oriented. Capricorn energy is steadfast and determined."
+      },
+      "aquarius": {
+        "name": "Aquarius",
+        "dates": "Jan 20 - Feb 18",
+        "element": "Air",
+        "description": "Innovative, humanitarian, and uniquely original. Aquarius energy is visionary and progressive."
+      },
+      "pisces": {
+        "name": "Pisces",
+        "dates": "Feb 19 - Mar 20",
+        "element": "Water",
+        "description": "Intuitive, compassionate, and deeply spiritual. Pisces energy is dreamy and empathetic."
+      }
+    }
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signInTitle": "Sign in",
+    "signInSubtitle": "Welcome back to Gisheri.",
+    "signingIn": "Signing in…",
+    "createAccount": "Create account",
+    "registerTitle": "Create account",
+    "registerSubtitle": "Join Gisheri to track orders and save favourites.",
+    "creating": "Creating…",
+    "email": "Email",
+    "password": "Password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "forgotPassword": "Forgot your password?",
+    "forgotTitle": "Reset your password",
+    "forgotSubtitle": "Enter your email and we'll send you a link to reset your password.",
+    "forgotSent": "If an account with that email exists, a reset link has been sent.",
+    "sendReset": "Send reset link",
+    "sending": "Sending…",
+    "resetTitle": "Choose a new password",
+    "resetSubtitle": "Enter a new password for your account.",
+    "resetPassword": "Reset password",
+    "resetting": "Resetting…",
+    "resetMissingToken": "Reset link is missing the token.",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "register": "Create one",
+    "backToSignIn": "Back to sign in",
+    "invalidEmail": "Invalid email",
+    "passwordRequired": "Password is required",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "passwordMismatch": "Passwords do not match",
+    "unknownError": "Something went wrong"
+  },
+  "account": {
+    "title": "My account",
+    "signOut": "Sign out",
+    "admin": "Admin",
+    "profile": "Profile",
+    "saveProfile": "Save profile",
+    "saving": "Saving…",
+    "profileSaved": "Profile updated",
+    "password": "Password",
+    "currentPassword": "Current password",
+    "changePassword": "Change password",
+    "changing": "Changing…",
+    "passwordChanged": "Password changed",
+    "recentOrders": "Recent orders",
+    "noOrders": "You haven't placed any orders yet."
+  },
+  "orderPage": {
+    "thanks": "Thank you!",
+    "confirmation": "Order #{{id}} placed. We'll be in touch shortly."
+  },
+  "admin": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "products": "Products",
+      "orders": "Orders",
+      "discounts": "Discounts",
+      "settings": "Site settings",
+      "pageSeo": "Page SEO",
+      "users": "Users",
+      "collections": "Collections",
+      "zodiac": "Zodiac",
+      "quiz": "Quiz"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Snapshot of products, orders, customers, and revenue.",
+      "revenue": "Revenue",
+      "placeholderTitle": "Admin shell ready",
+      "placeholder": "JWT auth and role gating are wired. Next, build the CRUD pages: products, users, orders. Endpoints can use staff_auth or admin_auth in backend/accounts/auth.py.",
+      "products": "Products",
+      "orders": "Orders",
+      "users": "Customers",
+      "activeDiscounts": "Active discounts",
+      "revenueHint": "Sum of paid + shipped + delivered orders.",
+      "ordersByStatus": "Orders by status",
+      "recentOrders": "Recent orders",
+      "noRecentOrders": "No orders yet — when customers place orders they'll show here.",
+      "viewAllOrders": "View all orders"
+    },
+    "common": {
+      "save": "Save",
+      "saveChanges": "Save changes",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "deleting": "Deleting…",
+      "saving": "Saving…",
+      "loading": "Loading…",
+      "edit": "Edit",
+      "back": "Back",
+      "search": "Search",
+      "previous": "Previous",
+      "next": "Next",
+      "noResults": "No results.",
+      "ofTotal": "{{start}}–{{end}} of {{total}}",
+      "all": "All",
+      "selectAll": "Select all",
+      "selectRow": "Select row",
+      "clearSelection": "Clear selection",
+      "confirm": "Confirm"
+    },
+    "dateFilter": {
+      "all": "All time",
+      "today": "Today",
+      "last7": "Last 7 days",
+      "last30": "Last 30 days",
+      "thisMonth": "This month",
+      "custom": "Custom range…",
+      "from": "From",
+      "to": "to"
+    },
+    "activity": {
+      "title": "Activity",
+      "empty": "No activity yet.",
+      "system": "system",
+      "verb": {
+        "create": "Order created",
+        "status_change": "Status changed",
+        "notes_update": "Internal notes updated",
+        "item_add": "Item added",
+        "item_update": "Item updated",
+        "item_remove": "Item removed",
+        "role_change": "Role changed",
+        "activation_change": "Account activation changed"
+      }
+    },
+    "products": {
+      "title": "Products",
+      "count": "{{count}} products in catalog",
+      "newProduct": "New product",
+      "searchPlaceholder": "Search by name…",
+      "allGenders": "All genders",
+      "menGender": "Men",
+      "womenGender": "Women",
+      "unisexGender": "Unisex",
+      "emptyMessage": "No products yet. Click 'New product' to add one.",
+      "name": "Name",
+      "price": "Price",
+      "gender": "Gender",
+      "flags": "Flags",
+      "bestsellerFlag": "Best",
+      "newFlag": "New",
+      "newTitle": "New product",
+      "editTitle": "Edit product",
+      "backToProducts": "Back to products",
+      "deleteTitle": "Delete this product?",
+      "deleteDescription": "This permanently removes the product and its admin record. The image file remains on disk.",
+      "basics": "Basics",
+      "stones": "Stones",
+      "tags": "Tags",
+      "image": "Image",
+      "visibility": "Visibility",
+      "nameEn": "Name (English)",
+      "nameKa": "Name (Georgian)",
+      "descriptionEn": "Description (English)",
+      "descriptionKa": "Description (Georgian)",
+      "priceLabel": "Price (₾)",
+      "originalPrice": "Original price (₾, optional)",
+      "stonesLabel": "Stones (comma-separated)",
+      "stonesPlaceholder": "Amethyst, Rose Quartz",
+      "stonesMeaningEn": "Stones meaning (English)",
+      "stonesMeaningKa": "Stones meaning (Georgian)",
+      "purposes": "Purposes",
+      "zodiacSigns": "Zodiac signs",
+      "bestseller": "Bestseller",
+      "newArrival": "New arrival",
+      "createProduct": "Create product",
+      "selectedCount": "{{count}} selected",
+      "bulkMarkBestseller": "Mark bestseller",
+      "bulkUnmarkBestseller": "Unmark bestseller",
+      "bulkMarkNew": "Mark new",
+      "bulkUnmarkNew": "Unmark new",
+      "bulkUpdated": "Updated {{count}} products",
+      "bulkDeleted": "Deleted {{count}} products",
+      "bulkFailed": "Bulk action failed",
+      "bulkDeleteTitle": "Delete {{count}} products?",
+      "bulkDeleteDescription": "This permanently removes the selected products from the catalog. Image files remain on disk.",
+      "loadFailed": "Failed to load products"
+    },
+    "orders": {
+      "title": "Orders",
+      "count": "{{count}} orders",
+      "searchPlaceholder": "Search by email…",
+      "allStatuses": "All statuses",
+      "emptyMessage": "No orders yet.",
+      "order": "Order",
+      "customer": "Customer",
+      "items": "Items",
+      "totalCol": "Total",
+      "status": "Status",
+      "placed": "Placed",
+      "statusPending": "Pending",
+      "statusPaid": "Paid",
+      "statusShipped": "Shipped",
+      "statusDelivered": "Delivered",
+      "statusCancelled": "Cancelled",
+      "selectedCount": "{{count}} selected",
+      "markAs": "Mark as",
+      "bulkUpdated": "Updated {{count}} orders",
+      "bulkFailed": "Failed to update orders",
+      "loadFailed": "Failed to load orders",
+      "orderNumber": "Order #{{id}}",
+      "placedAt": "Placed {{when}}",
+      "backToOrders": "Back to orders",
+      "itemsHeading": "Items",
+      "subtotal": "Subtotal",
+      "totalLabel": "Total",
+      "customerNotes": "Customer notes",
+      "shipping": "Shipping",
+      "recipient": "Recipient",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "statusChanged": "Status changed to {{status}}",
+      "updateStatusFailed": "Failed to update status",
+      "timeline": "Timeline",
+      "advanceTo": "Mark as {{status}}",
+      "cancelOrder": "Cancel order",
+      "cancelledNotice": "This order was cancelled. Move it back to a previous status only if the cancellation was a mistake.",
+      "confirmStatusTitle": "Mark as {{status}}?",
+      "confirmStatusDescription": "The customer sees this status in their account. Make sure the work is actually done.",
+      "confirmCancelTitle": "Cancel this order?",
+      "confirmCancelDescription": "The customer won't be charged or shipped to. You can revert this from the timeline if needed.",
+      "updatedAt": "Updated {{when}}",
+      "discountLine": "Discount ({{code}})",
+      "adminNotes": "Internal notes",
+      "adminNotesPlaceholder": "Visible to staff only — fulfillment notes, call logs, etc.",
+      "saveNotes": "Save notes",
+      "notesSaved": "Notes saved",
+      "notesSaveFailed": "Failed to save notes",
+      "unsaved": "Unsaved changes",
+      "copyAddress": "Copy",
+      "copied": "Copied",
+      "copyFailed": "Couldn't copy",
+      "firstOrder": "First-time customer",
+      "viewAllOrders": "View all {{count}} orders",
+      "filterByCustomer": "Showing orders from {{email}}",
+      "clearCustomerFilter": "Clear customer filter",
+      "eachSuffix": "each",
+      "qtyAbbr": "Qty {{count}}",
+      "decreaseQty": "Decrease quantity",
+      "increaseQty": "Increase quantity",
+      "removeItem": "Remove item",
+      "addItem": "Add item",
+      "addItemTitle": "Add an item",
+      "addItemDescription": "Pick a product, set size and quantity. The line is priced from the current catalog.",
+      "changeProduct": "Change",
+      "sizeLabel": "Size (optional)",
+      "quantityLabel": "Quantity",
+      "productSearchPlaceholder": "Search products by name…",
+      "noProductsFound": "No products match.",
+      "addToOrder": "Add to order",
+      "itemAdded": "Item added",
+      "itemAddFailed": "Couldn't add item",
+      "itemUpdateFailed": "Couldn't update item",
+      "itemRemoved": "Item removed",
+      "itemRemoveFailed": "Couldn't remove item",
+      "removeItemTitle": "Remove {{name}}?",
+      "removeItemDescription": "Subtotal and total will be recomputed. The discount on this order is preserved.",
+      "dateAll": "All time",
+      "dateToday": "Today",
+      "dateLast7": "Last 7 days",
+      "dateLast30": "Last 30 days",
+      "dateThisMonth": "This month",
+      "dateCustom": "Custom range…",
+      "dateFromLabel": "From",
+      "dateToLabel": "to",
+      "newOrder": "New order",
+      "newOrderTitle": "New order",
+      "newOrderDescription": "Manually create an order — phone orders, in-person sales. The customer is matched by email; a stub account is created if none exists.",
+      "customerSection": "Customer",
+      "customerHint": "Type to search existing customers, or enter a new email.",
+      "fullName": "Full name",
+      "cityLabel": "City",
+      "discountSection": "Discount (optional)",
+      "discountCodeLabel": "Discount code",
+      "discountHint": "Validated and applied at submit. Leave blank for no discount.",
+      "noItemsYet": "No items yet. Click \"Add item\" to pick from the catalog.",
+      "needAtLeastOneItem": "Add at least one item.",
+      "createOrder": "Create order",
+      "orderCreated": "Order created",
+      "orderCreateFailed": "Couldn't create order"
+    },
+    "users": {
+      "title": "Users",
+      "count": "{{count}} users",
+      "searchPlaceholder": "Search email or name…",
+      "allRoles": "All roles",
+      "allStatuses": "All statuses",
+      "roleCustomer": "Customer",
+      "roleStaff": "Staff",
+      "roleAdmin": "Admin",
+      "emptyMessage": "No users match these filters.",
+      "email": "Email",
+      "name": "Name",
+      "role": "Role",
+      "statusCol": "Status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "joined": "Joined",
+      "joinedAt": "Joined {{when}}",
+      "backToUsers": "Back to users",
+      "profile": "Profile",
+      "access": "Access",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "selfRoleHint": "You can't change your own role — ask another admin.",
+      "selfActiveHint": "You can't deactivate yourself.",
+      "userSaved": "User saved",
+      "saveFailed": "Failed to save",
+      "loadFailed": "Failed to load users",
+      "activityTitle": "Customer activity",
+      "viewOrders": "View orders",
+      "noOrders": "No orders yet.",
+      "lifetimeOrders": "Lifetime orders",
+      "totalSpent": "Total spent",
+      "lastOrder": "Last order",
+      "selectedCount": "{{count}} selected",
+      "bulkActivate": "Activate",
+      "bulkDeactivate": "Deactivate",
+      "bulkActivated": "Activated {{count}} users",
+      "bulkDeactivated": "Deactivated {{count}} users",
+      "bulkFailed": "Bulk action failed",
+      "bulkSkippedSelf": "Your own account was skipped — change it from your profile."
+    },
+    "discounts": {
+      "title": "Discounts",
+      "count": "{{count}} discount codes",
+      "newCode": "New code",
+      "searchPlaceholder": "Search by code…",
+      "active": "Active",
+      "inactive": "Inactive",
+      "emptyMessage": "No discounts yet.",
+      "code": "Code",
+      "kind": "Kind",
+      "usage": "Usage",
+      "expires": "Expires",
+      "percentOff": "{{value}}% off",
+      "fixedOff": "−₾{{value}}",
+      "newTitle": "New discount code",
+      "editTitle": "Edit discount",
+      "backToDiscounts": "Back to discounts",
+      "deleteTitle": "Delete this discount?",
+      "deleteDescription": "Existing orders that already used this code keep their snapshot — only the code itself is removed.",
+      "codeSection": "Code",
+      "discountSection": "Discount",
+      "limitsSection": "Limits",
+      "codeLabel": "Code (case-insensitive)",
+      "kindLabel": "Kind",
+      "kindPercent": "Percent off (%)",
+      "kindFixed": "Fixed amount off (₾)",
+      "valuePercent": "Percent",
+      "valueFixed": "Amount (₾)",
+      "minOrder": "Minimum order total (₾)",
+      "maxUses": "Max uses (blank = unlimited)",
+      "expiresAt": "Expires (blank = never)",
+      "isActive": "Active",
+      "createDiscount": "Create discount",
+      "discountCreated": "Discount created",
+      "discountSaved": "Discount saved",
+      "discountDeleted": "Discount deleted",
+      "status": "Status",
+      "allStatuses": "All statuses",
+      "allKinds": "All kinds",
+      "selectedCount": "{{count}} selected",
+      "bulkActivate": "Activate",
+      "bulkDeactivate": "Deactivate",
+      "bulkActivated": "Activated {{count}} codes",
+      "bulkDeactivated": "Deactivated {{count}} codes",
+      "bulkDeleted": "Deleted {{count}} codes",
+      "bulkFailed": "Bulk action failed",
+      "bulkDeleteTitle": "Delete {{count}} codes?",
+      "bulkDeleteDescription": "This permanently removes the selected codes. Past orders that used them keep their snapshots."
+    },
+    "settings": {
+      "title": "Site settings",
+      "description": "Hero, banner, and homepage layout. Empty fields fall back to default copy.",
+      "hero": "Hero",
+      "titleEn": "Title (English)",
+      "titleKa": "Title (Georgian)",
+      "subtitleEn": "Subtitle (English)",
+      "subtitleKa": "Subtitle (Georgian)",
+      "ctaLabelEn": "CTA label (EN)",
+      "ctaLabelKa": "CTA label (KA)",
+      "ctaLink": "CTA link",
+      "topBanner": "Top banner",
+      "bannerActive": "Active",
+      "textEn": "Text (English)",
+      "textKa": "Text (Georgian)",
+      "linkOptional": "Link (optional)",
+      "featuredCollections": "Featured collections",
+      "featuredCollectionsHint": "Pick the collections to highlight on the homepage. Order matters.",
+      "heroImage": "Hero image",
+      "saveSettings": "Save settings",
+      "settingsSaved": "Settings saved",
+      "loadFailed": "Failed to load settings",
+      "seoDefaults": "SEO defaults",
+      "seoDefaultsHint": "Used as fallbacks when a page or override doesn't specify its own value. Per-page overrides live at /admin/page-seo.",
+      "siteName": "Site name",
+      "defaultOgImage": "Default OG image (URL)",
+      "twitterHandle": "Twitter handle (no @)",
+      "defaultRobots": "Default robots"
+    },
+    "pageSeo": {
+      "title": "Page SEO overrides",
+      "description": "{{count}} routes overridden. Path is exact-match (e.g. /shop, /zodiac/aries).",
+      "newOverride": "New override",
+      "searchPlaceholder": "Search path or title…",
+      "emptyMessage": "No overrides yet. Create one to customize a page's title / description / OG image.",
+      "path": "Path",
+      "robots": "Robots",
+      "default": "default",
+      "newTitle": "New SEO override",
+      "editTitle": "Edit SEO override",
+      "backToOverrides": "Back to overrides",
+      "deleteTitle": "Remove this override?",
+      "deleteDescription": "The page will fall back to its in-code title/description and the global SEO defaults.",
+      "route": "Route",
+      "pathLabel": "Path (exact match)",
+      "titleSection": "Title",
+      "descriptionSection": "Description",
+      "otherSection": "Other",
+      "ogImage": "OG image (URL)",
+      "robotsLabel": "Robots (blank = use site default)",
+      "createOverride": "Create override",
+      "overrideCreated": "Override created",
+      "overrideSaved": "Override saved",
+      "overrideDeleted": "Override deleted"
+    },
+    "image": {
+      "remove": "Remove",
+      "orPasteUrl": "Or paste URL",
+      "use": "Use",
+      "drag": "Drag image here or click to browse",
+      "dragHint": "JPG, PNG, WEBP, GIF · max 8MB",
+      "uploading": "Uploading…",
+      "uploadFailed": "Upload failed"
+    },
+    "collections": {
+      "title": "Collections",
+      "count": "{{count}} collections",
+      "newCollection": "New collection",
+      "emptyMessage": "No collections yet.",
+      "slug": "Slug",
+      "slugHint": "URL fragment, e.g. love → /collections/love",
+      "newTitle": "New collection",
+      "editTitle": "Edit collection",
+      "backTo": "Back to collections",
+      "deleteTitle": "Delete this collection?",
+      "deleteDescription": "Removes the collection. Products are not deleted.",
+      "createCollection": "Create collection",
+      "loadFailed": "Failed to load collections"
+    },
+    "zodiac": {
+      "title": "Zodiac signs",
+      "subtitle": "Edit-only — the 12 signs are fixed. Bilingual fields control what shoppers see on /zodiac/:sign.",
+      "backTo": "Back to zodiac",
+      "editTitle": "Edit zodiac",
+      "stonesHint": "Stones are not editable here — they're a global enum used by quiz/recommendation logic.",
+      "loadFailed": "Failed to load zodiac signs",
+      "tableSign": "Sign",
+      "tableName": "Name",
+      "tableDates": "Dates"
+    },
+    "quiz": {
+      "title": "Quiz config",
+      "subtitle": "Edit the labels, icons, and recommendation mappings the customer-facing /quiz uses.",
+      "moods": "Moods",
+      "occasions": "Occasions",
+      "intentions": "Intentions",
+      "budgets": "Budgets",
+      "addItem": "Add item",
+      "icon": "Icon",
+      "idLabel": "ID",
+      "idHint": "Stable slug; never shown to shoppers.",
+      "labelEn": "Label (EN)",
+      "labelKa": "Label (KA)",
+      "hintEn": "Hint (EN)",
+      "hintKa": "Hint (KA)",
+      "purposes": "Recommends purposes",
+      "minPrice": "Min ₾",
+      "maxPrice": "Max ₾ (blank = no upper)",
+      "remove": "Remove",
+      "saveAll": "Save quiz config",
+      "saved": "Quiz saved",
+      "loadFailed": "Failed to load quiz config"
+    }
+  },
+  "demo": {
+    "badge": "Live demo",
+    "body": "The real front end with its Django backend replaced by an in-browser mock. Everything works; nothing is saved.",
+    "signInAs": "Sign in as",
+    "roleCustomer": "Customer",
+    "roleAdmin": "Administrator",
+    "reset": "Reset",
+    "portfolio": "Portfolio",
+    "dismiss": "Hide this banner",
+    "signInFailed": "Could not sign in."
+  }
+}

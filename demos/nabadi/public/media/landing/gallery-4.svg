@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="g4">
+<title id="g4">The waiting corner: a bench, coats on hooks and a stack of magazines</title>
+<rect x="0" y="0" width="600" height="600" fill="#fbf6ec"/>
+<rect x="0" y="460" width="600" height="140" fill="#f1ead9"/>
+<rect x="0" y="438" width="600" height="22" fill="#e6dec9"/>
+<line x1="0" y1="438" x2="600" y2="438" stroke="#d6cdb4" stroke-width="2.2"/>
+<line x1="0" y1="460" x2="600" y2="460" stroke="#20180f" stroke-width="2.6"/>
+<g stroke="#e6dec9" stroke-width="1.8">
+  <line x1="0" y1="500" x2="600" y2="500"/><line x1="0" y1="546" x2="600" y2="546"/>
+  <line x1="120" y1="460" x2="98" y2="600"/><line x1="300" y1="460" x2="300" y2="600"/><line x1="480" y1="460" x2="502" y2="600"/>
+</g>
+<line x1="0" y1="70" x2="600" y2="70" stroke="#e6dec9" stroke-width="2.2"/>
+
+<rect x="80" y="118" width="440" height="16" rx="6" fill="#fbf6ec" stroke="#20180f" stroke-width="3.4"/>
+<g fill="none" stroke="#8f5d33" stroke-width="4.5" stroke-linecap="round">
+  <path d="M150 134 L150 152 q0 10 11 10"/><path d="M255 134 L255 150 q0 10 11 10"/>
+  <path d="M360 134 L360 152 q0 10 11 10"/><path d="M455 134 L455 150 q0 10 11 10"/>
+</g>
+
+<path d="M152 154 L112 184 L104 324 L196 324 L188 184 Z" fill="#e6dec9" stroke="#20180f" stroke-width="3.2"/>
+<path d="M152 154 L136 174 L152 186 L168 174 Z" fill="#fbf6ec" stroke="#20180f" stroke-width="2.6"/>
+<line x1="152" y1="188" x2="150" y2="322" stroke="#d6cdb4" stroke-width="2.4"/>
+<path d="M114 194 L110 268" fill="none" stroke="#d6cdb4" stroke-width="2.2"/>
+<path d="M188 194 L192 268" fill="none" stroke="#d6cdb4" stroke-width="2.2"/>
+
+<path d="M362 154 L322 188 L314 354 L410 354 L402 188 Z" fill="#d6cdb4" stroke="#20180f" stroke-width="3.2"/>
+<path d="M362 154 L344 176 L362 188 L380 176 Z" fill="#fbf6ec" stroke="#20180f" stroke-width="2.6"/>
+<line x1="362" y1="190" x2="362" y2="352" stroke="#70675e" stroke-width="2.2"/>
+<g fill="#8f5d33"><circle cx="374" cy="218" r="4.5"/><circle cx="374" cy="254" r="4.5"/><circle cx="374" cy="290" r="4.5"/></g>
+<path d="M324 196 L318 286" fill="none" stroke="#70675e" stroke-width="2.2"/>
+
+<path d="M232 154 Q256 126 282 154 L286 162 Q256 172 228 162 Z" fill="#e9c9a8" stroke="#20180f" stroke-width="3"/>
+<path d="M282 154 L300 158 L298 166 L286 164" fill="#e9c9a8" stroke="#20180f" stroke-width="2.6"/>
+<line x1="232" y1="156" x2="282" y2="156" stroke="#d6cdb4" stroke-width="2.2"/>
+
+<rect x="372" y="378" width="140" height="15" rx="4" fill="#ffffff" stroke="#20180f" stroke-width="2.6"/>
+<rect x="378" y="364" width="132" height="15" rx="4" fill="#e9c9a8" stroke="#20180f" stroke-width="2.6"/>
+<rect x="374" y="350" width="138" height="15" rx="4" fill="#fbf6ec" stroke="#20180f" stroke-width="2.6"/>
+<rect x="380" y="336" width="128" height="15" rx="4" fill="#ffffff" stroke="#20180f" stroke-width="2.6"/>
+<g stroke="#d6cdb4" stroke-width="1.8">
+  <line x1="378" y1="386" x2="506" y2="386"/><line x1="384" y1="372" x2="504" y2="372"/>
+  <line x1="380" y1="358" x2="506" y2="358"/><line x1="386" y1="344" x2="502" y2="344"/>
+</g>
+
+<rect x="60" y="392" width="480" height="28" rx="10" fill="#fbf6ec" stroke="#20180f" stroke-width="4"/>
+<line x1="78" y1="406" x2="522" y2="406" stroke="#d6cdb4" stroke-width="2.2"/>
+<rect x="74" y="420" width="452" height="13" fill="#f1ead9" stroke="#20180f" stroke-width="2.6"/>
+<rect x="92" y="433" width="23" height="96" fill="#f1ead9" stroke="#20180f" stroke-width="3.4"/>
+<rect x="485" y="433" width="23" height="96" fill="#f1ead9" stroke="#20180f" stroke-width="3.4"/>
+<rect x="108" y="486" width="384" height="11" fill="#f1ead9" stroke="#20180f" stroke-width="2.8"/>
+
+<path d="M46 380 Q26 320 40 276" fill="none" stroke="#20180f" stroke-width="2.8"/>
+<path d="M40 276 Q14 292 22 330 Q46 330 40 276 Z" fill="#497155" stroke="#20180f" stroke-width="2.8"/>
+<path d="M52 300 Q86 300 92 264 Q58 258 52 300 Z" fill="#497155" stroke="#20180f" stroke-width="2.8"/>
+<path d="M48 348 Q84 356 96 322 Q60 310 48 348 Z" fill="#497155" stroke="#20180f" stroke-width="2.8"/>
+<path d="M50 380 Q84 300 92 272" fill="none" stroke="#20180f" stroke-width="2.8"/>
+<rect x="14" y="392" width="92" height="18" rx="6" fill="#d6cdb4" stroke="#20180f" stroke-width="3.2"/>
+<path d="M22 410 L32 512 L88 512 L98 410 Z" fill="#e6dec9" stroke="#20180f" stroke-width="3.4"/>
+<line x1="30" y1="432" x2="90" y2="432" stroke="#8f5d33" stroke-width="4"/>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="g5">
+<title id="g5">The tools laid out on a cloth: razor, strop, clippers and scissors</title>
+<rect x="0" y="0" width="600" height="600" fill="#f1ead9"/>
+<rect x="46" y="110" width="508" height="392" rx="16" fill="#fbf6ec" stroke="#d6cdb4" stroke-width="2.6"/>
+<rect x="64" y="128" width="472" height="356" rx="10" fill="none" stroke="#e6dec9" stroke-width="2" stroke-dasharray="7 8"/>
+
+<path d="M290 165 L500 151 Q512 151 511 161 L506 178 Q400 190 296 188 Z" fill="#ffffff" stroke="#20180f" stroke-width="3"/>
+<path d="M296 170 L502 157" fill="none" stroke="#d6cdb4" stroke-width="2.4"/>
+<rect x="84" y="162" width="200" height="28" rx="13" fill="#8f5d33" stroke="#20180f" stroke-width="3.2"/>
+<line x1="98" y1="176" x2="268" y2="176" stroke="#e9c9a8" stroke-width="2.6"/>
+<circle cx="290" cy="177" r="7" fill="#e9c9a8" stroke="#20180f" stroke-width="2.4"/>
+
+<rect x="84" y="232" width="382" height="38" rx="8" fill="#8f5d33" stroke="#20180f" stroke-width="3.2"/>
+<line x1="98" y1="242" x2="452" y2="242" stroke="#e9c9a8" stroke-width="2.4"/>
+<line x1="98" y1="260" x2="452" y2="260" stroke="#e9c9a8" stroke-width="2.4"/>
+<rect x="466" y="228" width="28" height="46" rx="8" fill="#d6cdb4" stroke="#20180f" stroke-width="3"/>
+<circle cx="516" cy="251" r="16" fill="none" stroke="#20180f" stroke-width="4"/>
+<line x1="494" y1="251" x2="500" y2="251" stroke="#20180f" stroke-width="4"/>
+
+<path d="M120 336 Q74 340 64 382 Q54 428 96 444" fill="none" stroke="#20180f" stroke-width="4.5" stroke-linecap="round"/>
+<rect x="94" y="431" width="34" height="26" rx="8" fill="#f1ead9" stroke="#20180f" stroke-width="3" transform="rotate(18 111 444)"/>
+<g stroke="#20180f" stroke-width="3" stroke-linecap="round" transform="rotate(18 111 444)">
+  <line x1="128" y1="438" x2="140" y2="438"/><line x1="128" y1="450" x2="140" y2="450"/>
+</g>
+<path d="M150 300 L150 286 L198 286 L198 300" fill="#fbf6ec" stroke="#20180f" stroke-width="2.8"/>
+<rect x="120" y="300" width="240" height="68" rx="16" fill="#fbf6ec" stroke="#20180f" stroke-width="3.4"/>
+<rect x="144" y="312" width="176" height="11" rx="5" fill="#8f5d33"/>
+<g stroke="#d6cdb4" stroke-width="2.4">
+  <line x1="152" y1="344" x2="152" y2="356"/><line x1="168" y1="344" x2="168" y2="356"/><line x1="184" y1="344" x2="184" y2="356"/><line x1="200" y1="344" x2="200" y2="356"/>
+</g>
+<path d="M358 312 L436 320 L436 354 L358 362 Z" fill="#d6cdb4" stroke="#20180f" stroke-width="3"/>
+<g stroke="#20180f" stroke-width="2.4">
+  <line x1="436" y1="326" x2="448" y2="327"/><line x1="436" y1="334" x2="448" y2="335"/><line x1="436" y1="342" x2="448" y2="343"/><line x1="436" y1="350" x2="448" y2="351"/>
+</g>
+<line x1="368" y1="322" x2="368" y2="352" stroke="#20180f" stroke-width="2.2"/>
+
+<path d="M318 438 L492 404 Q505 402 506 411 Q507 420 495 422 L322 453 Z" fill="#ffffff" stroke="#20180f" stroke-width="3"/>
+<path d="M318 438 L492 472 Q505 474 504 483 Q502 492 490 490 L322 423 Z" fill="#ffffff" stroke="#20180f" stroke-width="3"/>
+<path d="M318 438 L192 470" fill="none" stroke="#20180f" stroke-width="11" stroke-linecap="round"/>
+<path d="M318 438 L192 408" fill="none" stroke="#20180f" stroke-width="11" stroke-linecap="round"/>
+<path d="M318 438 L192 470" fill="none" stroke="#fbf6ec" stroke-width="5" stroke-linecap="round"/>
+<path d="M318 438 L192 408" fill="none" stroke="#fbf6ec" stroke-width="5" stroke-linecap="round"/>
+<circle cx="160" cy="484" r="27" fill="none" stroke="#20180f" stroke-width="7"/>
+<circle cx="160" cy="392" r="27" fill="none" stroke="#20180f" stroke-width="7"/>
+<circle cx="160" cy="484" r="27" fill="none" stroke="#fbf6ec" stroke-width="2"/>
+<circle cx="160" cy="392" r="27" fill="none" stroke="#fbf6ec" stroke-width="2"/>
+<circle cx="318" cy="438" r="8" fill="#e9c9a8" stroke="#20180f" stroke-width="2.6"/>
+</svg>

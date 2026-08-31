@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EEF2F7"/><stop offset="1" stop-color="#DCE3EC"/>
+  </linearGradient>
+  <pattern id="chev" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+    <rect width="46" height="46" fill="none"/>
+    <rect width="23" height="46" fill="#F97316" opacity="0.11000000000000001"/>
+  </pattern>
+</defs>
+<rect width="900" height="675" fill="url(#sky)"/>
+<rect width="900" height="675" fill="url(#chev)" opacity="0.5"/>
+<rect x="0" y="585" width="900" height="90" fill="#C7D0DB"/><rect x="0" y="585" width="900" height="4" fill="#AAB4C2"/>
+<rect x="150" y="515" width="620" height="44" rx="8" fill="#0F172A"/>
+<rect x="480" y="445" width="150" height="74" rx="8" fill="#475569"/>
+<rect x="500" y="457" width="70" height="44" rx="5" fill="#93C5FD" opacity="0.75"/>
+<path d="M470 467 L268 155 L316 137 L512 445 Z" fill="#F97316"/>
+<path d="M292 146 L292 285" stroke="#0F172A" stroke-width="7"/>
+<path d="M258 285 h68 l-10 44 h-48 Z" fill="#64748B"/>
+<rect x="640" y="489" width="130" height="26" fill="#F97316" opacity="0.8"/>
+<circle cx="222" cy="559" r="42" fill="#0F172A"/><circle cx="222" cy="559" r="18" fill="#94A3B8"/><circle cx="320" cy="559" r="42" fill="#0F172A"/><circle cx="320" cy="559" r="18" fill="#94A3B8"/><circle cx="610" cy="559" r="42" fill="#0F172A"/><circle cx="610" cy="559" r="18" fill="#94A3B8"/><circle cx="706" cy="559" r="42" fill="#0F172A"/><circle cx="706" cy="559" r="18" fill="#94A3B8"/><text x="34" y="641" font-family="ui-monospace,Menlo,monospace" font-size="26" font-weight="700" fill="#0F172A" opacity="0.72">LG-260-PR</text><text x="34" y="617" font-family="system-ui,sans-serif" font-size="19" fill="#334155" opacity="0.55">Liebherr LTM 1050</text>
+</svg>

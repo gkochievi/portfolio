@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Nabadi Barbershop">
+  <title>Nabadi Barbershop</title>
+  <!--
+    The primary mark in one ink, for grounds where the cream is not available.
+    The colour version separates the collar, the clasp and the two drape folds by
+    hue; here they are cut out of the silhouette as real holes (fill-rule evenodd)
+    rather than restated in a second tone, so the mark survives on any ground.
+    Same geometry, same letterforms, same rule — only the palette collapses.
+  -->
+  <defs>
+    <path id="gN" d="M10,0 V100 M56,0 V100 M10,5 L56,95"/>
+    <path id="gA" d="M10.5,100 L32.8,10 H37.2 L59.5,100 M17.4,72 H52.6"/>
+    <path id="gB" d="M10,0 V100 M10,10 H31 C44,10 51,20 51,30 C51,40 44,50 31,50 H10 M10,50 H34 C48,50 55,60 55,70 C55,80 48,90 34,90 H10"/>
+    <path id="gD" d="M10,0 V100 M10,10 H30 C50,10 58,25 58,50 C58,75 50,90 30,90 H10"/>
+    <path id="gI" d="M10,0 V100"/>
+    <path id="gR" d="M10,0 V100 M10,10 H32 C46,10 53,20 53,29 C53,38 46,48 32,48 H10 M31,48 L56.5,95.5"/>
+    <path id="gE" d="M10,0 V100 M0,10 H56 M0,50 H46 M0,90 H56"/>
+    <path id="gS" d="M48.1,21.6 A20,20 0 1 0 30,50 A20,20 0 1 1 11.9,78.5"/>
+    <path id="gH" d="M10,0 V100 M56,0 V100 M10,50 H56"/>
+    <path id="gO" d="M33,10 A23,40 0 0 1 33,90 A23,40 0 0 1 33,10 Z"/>
+    <path id="gP" d="M10,0 V100 M10,10 H32 C46,10 53,21 53,31 C53,41 46,52 32,52 H10"/>
+  </defs>
+
+  <!-- Cloak, with collar, clasp and the two folds knocked out of the ink. -->
+  <path fill="#20180f" fill-rule="evenodd" d="M68,50 L104,32 C114,45 142,45 152,32 L188,50 L180,124 C179.5,128 176,131 171,131 L85,131 C80,131 76.5,128 76,124 Z M110,40 C117,50.5 139,50.5 146,40 L146,44.5 C139,55 117,55 110,44.5 Z M133.5,61 A5.5,5.5 0 1 1 122.5,61 A5.5,5.5 0 1 1 133.5,61 Z M112.5,58 C107.5,82 103.5,106 101.5,127 L104.5,127 C106.5,106 110.5,82 115.5,58 Z M140.5,58 C145.5,82 149.5,106 151.5,127 L154.5,127 C152.5,106 148.5,82 143.5,58 Z"/>
+
+  <!-- NABADI -->
+  <g fill="none" stroke="#20180f" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round">
+    <use href="#gN" transform="translate(22,150) scale(0.4)"/>
+    <use href="#gA" transform="translate(62.08,150) scale(0.4)"/>
+    <use href="#gB" transform="translate(103.76,150) scale(0.4)"/>
+    <use href="#gA" transform="translate(143.44,150) scale(0.4)"/>
+    <use href="#gD" transform="translate(185.12,150) scale(0.4)"/>
+    <use href="#gI" transform="translate(226,150) scale(0.4)"/>
+  </g>
+
+  <!-- 1px rule -->
+  <path d="M34,202 H222" fill="none" stroke="#20180f" stroke-width="2"/>
+
+  <!-- BARBERSHOP -->
+  <g fill="none" stroke="#20180f" stroke-width="20" stroke-linecap="butt" stroke-linejoin="round">
+    <use href="#gB" transform="translate(24,214) scale(0.21)"/>
+    <use href="#gA" transform="translate(45.76,214) scale(0.21)"/>
+    <use href="#gR" transform="translate(68.57,214) scale(0.21)"/>
+    <use href="#gB" transform="translate(90.54,214) scale(0.21)"/>
+    <use href="#gE" transform="translate(112.3,214) scale(0.21)"/>
+    <use href="#gR" transform="translate(132.17,214) scale(0.21)"/>
+    <use href="#gS" transform="translate(154.14,214) scale(0.21)"/>
+    <use href="#gH" transform="translate(174.85,214) scale(0.21)"/>
+    <use href="#gO" transform="translate(196.82,214) scale(0.21)"/>
+    <use href="#gP" transform="translate(218.79,214) scale(0.21)"/>
+  </g>
+</svg>

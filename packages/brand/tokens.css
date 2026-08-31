@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Portfolio brand tokens — "Control Room"
+   The single source of truth for colour, type, radii, elevation and motion
+   across every surface: the portfolio site and each live product demo.
+   Consumed as `@import '@portfolio/brand/tokens.css';` after Tailwind's own
+   import, so `@theme` values reach every app's utility classes.
+   ========================================================================== */
+
+@theme {
+  /* ---- Canvas & surfaces ------------------------------------------------ */
+  --color-void: #06090f;
+  --color-canvas: #0a0e17;
+  --color-surface: #10151f;
+  --color-surface-2: #151b28;
+  --color-surface-3: #1d2534;
+  --color-hairline: rgba(255, 255, 255, 0.07);
+  --color-hairline-strong: rgba(255, 255, 255, 0.14);
+
+  /* ---- Ink -------------------------------------------------------------- */
+  --color-ink: #e9edf6;
+  --color-ink-muted: #98a2b8;
+  --color-ink-faint: #667089;
+
+  /* ---- Brand ------------------------------------------------------------ */
+  /* Supplied palette. --color-gold keeps its name so nothing downstream had
+     to change; the value is the brand apricot. */
+  --color-gold: #f8be62;
+  --color-gold-bright: #ffd48a;
+  --color-gold-dim: #c2913f;
+
+  /* ---- Status ------------------------------------------------------------
+     Validated with the dataviz palette checker against surface #10151F.
+     The critical triad — apricot / coral / teal — scores ΔE 17.6 at normal
+     vision and 8.1 under deuteranopia across all pairs, clearing the ≥8
+     target rather than merely the floor. Every colour also clears WCAG AA
+     (4.5:1) as text on the panel surface.
+
+     Notes on the supplied palette:
+       · #8a88b0 and #6a858e measured ΔE 7.1 against each other — too close
+         to both carry meaning. #6a858e became the neutral/offline colour,
+         where its very low chroma (0.034) is an asset rather than a fault,
+         and #8a88b0 was demoted from a status colour to low-stakes labels
+         ("Upcoming", "Read") that always ship with text.
+       · none of the four reads as "healthy", so #62cfc4 was added for the
+         online/success state. It is a saturated sibling of #6a858e, so it
+         belongs to the same family.
+     Every status also ships an icon and a text label, never colour alone. */
+  --color-online: #62cfc4;
+  --color-offline: #6a858e;
+  --color-warn: #f8be62;
+  --color-danger: #f37f8b;
+  --color-info: #8a88b0;
+
+  /* ---- Type ------------------------------------------------------------- */
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* ---- Radii ------------------------------------------------------------ */
+  --radius-panel: 16px;
+  --radius-control: 10px;
+
+  /* ---- Elevation -------------------------------------------------------- */
+  --shadow-panel: 0 1px 0 0 rgba(255, 255, 255, 0.04) inset, 0 12px 32px -18px rgba(0, 0, 0, 0.9);
+  --shadow-raised: 0 1px 0 0 rgba(255, 255, 255, 0.06) inset, 0 24px 60px -24px rgba(0, 0, 0, 0.95);
+  --shadow-gold: 0 0 0 1px rgba(248, 190, 98, 0.34), 0 8px 28px -10px rgba(248, 190, 98, 0.38);
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-sheen: sheen 2.2s ease-in-out infinite;
+  --animate-rise: rise 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade: fade 0.22s ease-out both;
+  --animate-slide-in: slide-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-scan: scan 3.5s linear infinite;
+
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 rgba(98, 207, 196, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 7px rgba(98, 207, 196, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(98, 207, 196, 0);
+    }
+  }
+
+  @keyframes sheen {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(18px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes scan {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(1000%);
+    }
+  }
+}

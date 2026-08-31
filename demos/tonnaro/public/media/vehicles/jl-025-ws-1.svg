@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EEF2F7"/><stop offset="1" stop-color="#DCE3EC"/>
+  </linearGradient>
+  <pattern id="chev" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+    <rect width="46" height="46" fill="none"/>
+    <rect width="23" height="46" fill="#F97316" opacity="0.09000000000000001"/>
+  </pattern>
+</defs>
+<rect width="900" height="675" fill="url(#sky)"/>
+<rect width="900" height="675" fill="url(#chev)" opacity="0.5"/>
+<rect x="0" y="585" width="900" height="90" fill="#C7D0DB"/><rect x="0" y="585" width="900" height="4" fill="#AAB4C2"/>
+<rect x="250" y="493" width="330" height="58" rx="8" fill="#0F172A"/>
+<rect x="300" y="445" width="120" height="52" rx="6" fill="#475569"/>
+<path d="M420 467 L640 213 L692 249 L470 489 Z" fill="#F97316"/>
+<rect x="618" y="155" width="130" height="62" rx="6" fill="#64748B"/>
+<rect x="618" y="155" width="130" height="10" fill="#F97316"/>
+<circle cx="306" cy="557" r="40" fill="#0F172A"/><circle cx="306" cy="557" r="17" fill="#94A3B8"/><circle cx="400" cy="557" r="40" fill="#0F172A"/><circle cx="400" cy="557" r="17" fill="#94A3B8"/><circle cx="500" cy="557" r="40" fill="#0F172A"/><circle cx="500" cy="557" r="17" fill="#94A3B8"/><circle cx="552" cy="557" r="40" fill="#0F172A"/><circle cx="552" cy="557" r="17" fill="#94A3B8"/><text x="34" y="641" font-family="ui-monospace,Menlo,monospace" font-size="26" font-weight="700" fill="#0F172A" opacity="0.72">JL-025-WS</text><text x="34" y="617" font-family="system-ui,sans-serif" font-size="19" fill="#334155" opacity="0.55">JLG 600S</text>
+</svg>

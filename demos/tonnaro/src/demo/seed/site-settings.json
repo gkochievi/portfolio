@@ -1,0 +1,21 @@
+{
+  "id": 1,
+  "site_name": "Tonnaro",
+  "site_title": "Tonnaro — tow trucks, cranes and heavy transport in Georgia",
+  "site_logo": "site/logo/tonnaro-wordmark-light.svg",
+  "site_logo_dark": "site/logo/tonnaro-wordmark-dark.svg",
+  "favicon": "site/favicon/tonnaro-64.svg",
+  "header_display": "logo_only",
+  "color_theme": "orange",
+  "contact_phone": "+995 322 55 07 40",
+  "whatsapp_number": "995322550740",
+  "contact_email": "hello@tonnaro.ge",
+  "default_search_scope": "georgia",
+  "default_search_countries": [],
+  "footer_text": {
+    "en": "Tonnaro — specialised transport across Georgia, since 2014",
+    "ka": "Tonnaro — სპეციალიზებული ტრანსპორტი საქართველოში, 2014 წლიდან",
+    "ru": "Tonnaro — специализированный транспорт по всей Грузии, с 2014 года"
+  },
+  "updated_at": "2026-08-24T16:42:00+04:00"
+}

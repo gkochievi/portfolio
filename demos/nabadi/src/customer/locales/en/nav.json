@@ -1,0 +1,19 @@
+{
+  "home": "Home",
+  "services": "Services",
+  "barbers": "Our barbers",
+  "about": "About",
+  "contact": "Contact",
+  "book": "Book",
+  "profile": "Profile",
+  "login": "Sign in",
+  "register": "Create account",
+  "menu": "Menu",
+  "menu_title": "Navigation menu",
+  "skip_to_content": "Skip to main content",
+  "not_found_title": "Page not found",
+  "not_found_body": "The page you're looking for doesn't exist or has moved.",
+  "error_title": "Something went wrong",
+  "error_body": "An unexpected error occurred on our side. Try reloading the page — if it keeps happening, we're already on it.",
+  "error_reload": "Reload page"
+}

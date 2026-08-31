@@ -1,0 +1,240 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/noto-sans-georgian/400.css';
+@import '@fontsource/noto-sans-georgian/500.css';
+@import '@fontsource/noto-sans-georgian/700.css';
+
+@theme {
+  /* Warm contemporary palette — caramel / oat / charcoal */
+  --color-bg: #f1ead9;
+  --color-surface: #fbf6ec;
+  --color-surface-2: #ffffff;
+  --color-ink: #20180f;
+  --color-ink-muted: #70675e;
+  --color-line: #e6dec9;
+  --color-line-strong: #d6cdb4;
+
+  /* Single warm accent (caramel) — replaces the old "wood".
+     AA-corrected: 4.63:1 on the cream bg. */
+  --color-accent: #8f5d33;
+  --color-accent-soft: #e9c9a8;
+  /* Aliases — keep legacy `wood` class names compiling. Same values as `accent`. */
+  --color-wood: #8f5d33;
+
+  --color-success: #497155;
+  --color-danger: #b04545;
+  /* Warning/partial state — dark ochre, harmonious with the caramel accent.
+     AA-safe as text: 4.61:1 on --color-bg, 5.13:1 on --color-surface. */
+  --color-warn: #8a6116;
+
+  /* Type stack — Bricolage Grotesque (display) + Inter (UI) */
+  --font-sans: 'Inter', 'Noto Sans Georgian', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display:
+    'Bricolage Grotesque Variable', 'Noto Sans Georgian', ui-sans-serif, system-ui, sans-serif;
+  /* Kept for backwards compat — points at display now (no more Playfair). */
+  --font-serif:
+    'Bricolage Grotesque Variable', 'Noto Sans Georgian', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Single subtle elevation token. Use sparingly. */
+  --shadow-soft: 0 1px 2px rgba(32, 24, 15, 0.04), 0 8px 24px -10px rgba(32, 24, 15, 0.1);
+  --shadow-pop: 0 2px 6px rgba(32, 24, 15, 0.06), 0 16px 40px -16px rgba(32, 24, 15, 0.18);
+}
+
+html[lang='ka'] {
+  --font-sans: 'Noto Sans Georgian', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    'Noto Sans Georgian', 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif:
+    'Noto Sans Georgian', 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Slightly desaturate hero/lifestyle imagery for cohesion. Add the
+   class .photo-warm to img elements you want toned. */
+.photo-warm {
+  filter: saturate(0.92) brightness(0.97) contrast(1.02);
+}
+
+/* Seamless auto-scrolling marquee. The track renders [...items, ...items]
+   so translateX(-50%) loops without a visible seam. */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Respect the user's reduced-motion preference: kill the marquee loop,
+   hover zooms, and other transitions. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ======================================================================== */
+/* react-day-picker v9 overrides — caramel/oat brand                        */
+/* Selectors match the v9 class names (rdp-root / rdp-month_grid /          */
+/* rdp-month_caption / rdp-button_previous|next / rdp-weekday /             */
+/* rdp-day > rdp-day_button, modifiers on the <td>). Verified against       */
+/* node_modules/react-day-picker/src/style.css (9.14.0).                    */
+/* ======================================================================== */
+.rdp-wrap {
+  width: 100%;
+}
+.rdp-wrap .rdp-root {
+  /* v9 theming variables → brand tokens (kills the default blue). */
+  --rdp-accent-color: var(--color-accent);
+  --rdp-accent-background-color: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --rdp-today-color: var(--color-accent);
+  --rdp-disabled-opacity: 0.45;
+  --rdp-outside-opacity: 0.4;
+  --rdp-day-height: 2.375rem;
+  --rdp-day-width: 2.5rem;
+  --rdp-nav_button-width: 2rem;
+  --rdp-nav_button-height: 2rem;
+  --rdp-nav-height: 2.5rem;
+  margin: 0;
+  font-family: var(--font-sans);
+  width: 100%;
+}
+.rdp-wrap .rdp-months,
+.rdp-wrap .rdp-month {
+  width: 100%;
+  max-width: 100%;
+}
+.rdp-wrap .rdp-month_grid {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+.rdp-wrap .rdp-month_caption {
+  padding: 0 0.25rem 0.5rem;
+}
+.rdp-wrap .rdp-caption_label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+.rdp-wrap .rdp-button_previous,
+.rdp-wrap .rdp-button_next {
+  color: var(--color-ink-muted);
+  border-radius: var(--radius-pill);
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+.rdp-wrap .rdp-button_previous:hover,
+.rdp-wrap .rdp-button_next:hover {
+  background: color-mix(in srgb, var(--color-line) 50%, transparent);
+  color: var(--color-ink);
+}
+.rdp-wrap .rdp-chevron {
+  fill: currentColor;
+}
+.rdp-wrap .rdp-weekday {
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+.rdp-wrap .rdp-day {
+  padding: 1px;
+}
+.rdp-wrap .rdp-day_button {
+  width: 100%;
+  max-width: 2.5rem;
+  height: 2.25rem;
+  margin: 0 auto;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--color-ink);
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+.rdp-wrap .rdp-day_button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
+  outline-offset: 1px;
+}
+.rdp-wrap .rdp-day:not(.rdp-disabled):not(.rdp-selected):hover .rdp-day_button {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+.rdp-wrap .rdp-selected {
+  /* v9 default bumps selected to bold/large — keep the grid steady. */
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.rdp-wrap .rdp-selected .rdp-day_button {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border: none;
+}
+.rdp-wrap .rdp-today:not(.rdp-selected) .rdp-day_button {
+  box-shadow: inset 0 0 0 1.5px var(--color-accent);
+  color: var(--color-accent);
+}
+/* Unavailable days: solid faint danger tint + a 1px danger inset ring so the
+   "blocked" state reads clearly without a gradient stripe (brand: no gradients). */
+.rdp-wrap .rdp-unavailable:not(.rdp-selected) .rdp-day_button {
+  background: color-mix(in srgb, var(--color-danger) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-danger) 35%, transparent);
+  color: var(--color-danger);
+  text-decoration: line-through;
+}
+/* Partial days: barber is free but not long enough for this service. */
+.rdp-wrap .rdp-partial:not(.rdp-selected) .rdp-day_button {
+  background: color-mix(in srgb, var(--color-warn) 14%, transparent);
+  color: var(--color-ink);
+  position: relative;
+}
+.rdp-wrap .rdp-partial:not(.rdp-selected) .rdp-day_button::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--color-warn);
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Services",
+  "subtitle": "Choose a service to start your booking.",
+  "duration": "{{minutes}} min",
+  "price": "{{price}} GEL",
+  "book_now": "Book this service",
+  "no_services": "No services available right now.",
+  "loading": "Loading services…",
+  "service_count_one": "{{count}} service",
+  "service_count_other": "{{count}} services"
+}

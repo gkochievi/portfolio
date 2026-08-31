@@ -1,0 +1,13 @@
+{
+  "title": "Our barbers",
+  "subtitle": "Skilled hands, classic craft.",
+  "view_profile": "View profile",
+  "book_with": "Book with {{name}}",
+  "specialties": "Specialties",
+  "no_barbers": "No barbers available right now.",
+  "loading": "Loading barbers…",
+  "back_to_all": "All barbers",
+  "services_heading": "Services & prices",
+  "no_services_for_barber": "No services listed yet.",
+  "not_found": "This barber could not be found."
+}

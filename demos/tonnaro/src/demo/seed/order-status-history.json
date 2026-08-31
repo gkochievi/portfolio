@@ -1,0 +1,1792 @@
+[
+  {
+    "id": 2100,
+    "order_id": 1000,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-03-06T08:12:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2101,
+    "order_id": 1000,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-03-07T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2102,
+    "order_id": 1000,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-03-08T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2103,
+    "order_id": 1000,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 2,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-03-10T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2104,
+    "order_id": 1000,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-03-12T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2105,
+    "order_id": 1000,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-03-14T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2106,
+    "order_id": 1001,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-03-28T09:40:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2107,
+    "order_id": 1001,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-03-29T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2108,
+    "order_id": 1001,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-03-30T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2109,
+    "order_id": 1001,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 2,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-04-01T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2110,
+    "order_id": 1001,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-04-03T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2111,
+    "order_id": 1001,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-04-05T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2112,
+    "order_id": 1002,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-04-14T11:05:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2113,
+    "order_id": 1002,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-04-15T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2114,
+    "order_id": 1002,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-04-16T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2115,
+    "order_id": 1002,
+    "old_status": "offer_sent",
+    "new_status": "cancelled",
+    "changed_by": 2,
+    "comment": "Offer rejected by customer: Building permit was delayed by two weeks, we will re-book once it is signed.",
+    "created_at": "2026-04-18T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2116,
+    "order_id": 1003,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-05-02T06:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2117,
+    "order_id": 1003,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-05-03T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2118,
+    "order_id": 1003,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-05-04T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2119,
+    "order_id": 1003,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 2,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-05-06T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2120,
+    "order_id": 1003,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-05-08T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2121,
+    "order_id": 1003,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-05-10T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2122,
+    "order_id": 1004,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-05-21T14:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2123,
+    "order_id": 1004,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-05-22T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2124,
+    "order_id": 1004,
+    "old_status": "under_review",
+    "new_status": "rejected",
+    "changed_by": 1,
+    "comment": "Route not permitted at this axle load.",
+    "created_at": "2026-05-23T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2125,
+    "order_id": 1005,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-08-05T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2126,
+    "order_id": 1005,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-05T22:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2127,
+    "order_id": 1005,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-08-07T03:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2128,
+    "order_id": 1005,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 2,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-08T21:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2129,
+    "order_id": 1005,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-10T20:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2130,
+    "order_id": 1005,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-08-13T05:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2131,
+    "order_id": 1006,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-07-24T10:15:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2132,
+    "order_id": 1006,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-07-25T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2133,
+    "order_id": 1007,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-07-30T13:10:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2134,
+    "order_id": 1007,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-07-31T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2135,
+    "order_id": 1007,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Two tipper loads, quoted as a single day rate. Price holds for seven days.",
+    "created_at": "2026-08-01T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2136,
+    "order_id": 1008,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-08-05T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2137,
+    "order_id": 1008,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-08-06T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2138,
+    "order_id": 1008,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Winter tyres and chains on the recovery truck; the pass is the slow part of this job.",
+    "created_at": "2026-08-07T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2139,
+    "order_id": 1008,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 2,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-09T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2140,
+    "order_id": 1009,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-08-12T08:05:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2141,
+    "order_id": 1009,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-13T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2142,
+    "order_id": 1009,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Recovery plus delivery to the Rustavi workshop, quoted together.",
+    "created_at": "2026-08-14T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2143,
+    "order_id": 1009,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 2,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-16T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2144,
+    "order_id": 1009,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-18T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2145,
+    "order_id": 1010,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-08-17T09:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2146,
+    "order_id": 1010,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-08-18T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2147,
+    "order_id": 1010,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Two drums back to back so the pour is continuous. Chute reach is 4 m from the kerb.",
+    "created_at": "2026-08-19T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2148,
+    "order_id": 1010,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 2,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-21T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2149,
+    "order_id": 1011,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-08-20T16:35:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2150,
+    "order_id": 1011,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-08-21T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2151,
+    "order_id": 1012,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-08-23T18:05:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2152,
+    "order_id": 1013,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-08-25T11:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2153,
+    "order_id": 1013,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-26T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2154,
+    "order_id": 1013,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Manipulator with a 12 m reach, one shift. The street closure permit is yours to arrange.",
+    "created_at": "2026-08-27T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2155,
+    "order_id": 1014,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 2,
+    "comment": "Order created",
+    "created_at": "2026-08-27T07:45:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2156,
+    "order_id": 1100,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 5,
+    "comment": "Order created",
+    "created_at": "2026-02-18T07:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2157,
+    "order_id": 1100,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-02-19T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2158,
+    "order_id": 1100,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-02-20T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2159,
+    "order_id": 1100,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 5,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-02-22T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2160,
+    "order_id": 1100,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-02-24T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2161,
+    "order_id": 1100,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-02-26T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2162,
+    "order_id": 1101,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 5,
+    "comment": "Order created",
+    "created_at": "2026-03-11T06:45:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2163,
+    "order_id": 1101,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-03-12T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2164,
+    "order_id": 1101,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-03-13T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2165,
+    "order_id": 1101,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 5,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-03-15T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2166,
+    "order_id": 1101,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-03-17T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2167,
+    "order_id": 1101,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-03-19T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2168,
+    "order_id": 1102,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 5,
+    "comment": "Order created",
+    "created_at": "2026-08-10T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2169,
+    "order_id": 1102,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-11T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2170,
+    "order_id": 1102,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Three drums over the morning, first on site at 07:00.",
+    "created_at": "2026-08-12T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2171,
+    "order_id": 1102,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 5,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-14T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2172,
+    "order_id": 1102,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-16T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2173,
+    "order_id": 1103,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 5,
+    "comment": "Order created",
+    "created_at": "2026-08-19T09:15:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2174,
+    "order_id": 1103,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-08-20T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2175,
+    "order_id": 1104,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 5,
+    "comment": "Order created",
+    "created_at": "2026-08-14T07:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2176,
+    "order_id": 1104,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-08-15T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2177,
+    "order_id": 1104,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Continuous pour, two drums shuttling. Pump is being hired separately.",
+    "created_at": "2026-08-16T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2178,
+    "order_id": 1104,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 5,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-18T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2179,
+    "order_id": 1104,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-20T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2180,
+    "order_id": 1105,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 5,
+    "comment": "Order created",
+    "created_at": "2026-08-26T14:10:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2181,
+    "order_id": 1106,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 10,
+    "comment": "Order created",
+    "created_at": "2026-02-26T06:15:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2182,
+    "order_id": 1106,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-02-27T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2183,
+    "order_id": 1106,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-02-28T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2184,
+    "order_id": 1106,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 10,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-03-02T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2185,
+    "order_id": 1106,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-03-04T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2186,
+    "order_id": 1106,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-03-06T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2187,
+    "order_id": 1107,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 10,
+    "comment": "Order created",
+    "created_at": "2026-04-06T06:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2188,
+    "order_id": 1107,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-04-07T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2189,
+    "order_id": 1107,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-04-08T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2190,
+    "order_id": 1107,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 10,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-04-10T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2191,
+    "order_id": 1107,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-04-12T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2192,
+    "order_id": 1107,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-04-14T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2193,
+    "order_id": 1108,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 10,
+    "comment": "Order created",
+    "created_at": "2026-08-11T08:40:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2194,
+    "order_id": 1108,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-08-12T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2195,
+    "order_id": 1108,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Five on one deck, quoted as a single run. Customs release has to be in hand the day before.",
+    "created_at": "2026-08-13T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2196,
+    "order_id": 1109,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 10,
+    "comment": "Order created",
+    "created_at": "2026-08-21T10:05:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2197,
+    "order_id": 1109,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-08-22T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2198,
+    "order_id": 1110,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 10,
+    "comment": "Order created",
+    "created_at": "2026-08-24T09:25:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2199,
+    "order_id": 1110,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-25T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2200,
+    "order_id": 1110,
+    "old_status": "under_review",
+    "new_status": "cancelled",
+    "changed_by": 10,
+    "comment": "Cancelled by customer: The consignment is going by rail after all, apologies for the short notice.",
+    "created_at": "2026-08-26T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2201,
+    "order_id": 1111,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 7,
+    "comment": "Order created",
+    "created_at": "2026-03-19T07:05:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2202,
+    "order_id": 1111,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-03-20T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2203,
+    "order_id": 1111,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-03-21T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2204,
+    "order_id": 1111,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 7,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-03-23T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2205,
+    "order_id": 1111,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-03-25T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2206,
+    "order_id": 1111,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-03-27T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2207,
+    "order_id": 1112,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 7,
+    "comment": "Order created",
+    "created_at": "2026-08-14T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2208,
+    "order_id": 1112,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-08-15T12:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2209,
+    "order_id": 1112,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-08-16T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2210,
+    "order_id": 1112,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 7,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-18T11:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2211,
+    "order_id": 1112,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-20T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2212,
+    "order_id": 1112,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-08-22T19:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2213,
+    "order_id": 1113,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 7,
+    "comment": "Order created",
+    "created_at": "2026-08-18T11:45:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2214,
+    "order_id": 1113,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-08-19T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2215,
+    "order_id": 1113,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Heavy-duty recovery unit; the yard gate is 3.2 m so the approach is from the north side.",
+    "created_at": "2026-08-20T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2216,
+    "order_id": 1113,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 7,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-22T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2217,
+    "order_id": 1114,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 12,
+    "comment": "Order created",
+    "created_at": "2026-03-02T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2218,
+    "order_id": 1114,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-03-03T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2219,
+    "order_id": 1114,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-03-04T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2220,
+    "order_id": 1114,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 12,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-03-06T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2221,
+    "order_id": 1114,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-03-08T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2222,
+    "order_id": 1114,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-03-10T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2223,
+    "order_id": 1115,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 12,
+    "comment": "Order created",
+    "created_at": "2026-05-15T09:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2224,
+    "order_id": 1115,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-05-16T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2225,
+    "order_id": 1115,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-05-17T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2226,
+    "order_id": 1115,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 12,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-05-19T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2227,
+    "order_id": 1115,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-05-21T08:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2228,
+    "order_id": 1115,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-05-23T17:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2229,
+    "order_id": 1116,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 12,
+    "comment": "Order created",
+    "created_at": "2026-08-20T08:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2230,
+    "order_id": 1116,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-08-21T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2231,
+    "order_id": 1117,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 3,
+    "comment": "Order created",
+    "created_at": "2026-07-28T13:15:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2232,
+    "order_id": 1117,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-07-29T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2233,
+    "order_id": 1117,
+    "old_status": "under_review",
+    "new_status": "rejected",
+    "changed_by": 1,
+    "comment": "No unit available on the requested date.",
+    "created_at": "2026-07-30T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2234,
+    "order_id": 1118,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 3,
+    "comment": "Order created",
+    "created_at": "2026-08-13T17:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2235,
+    "order_id": 1118,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-14T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2236,
+    "order_id": 1118,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Long-distance recovery, quoted one way with an empty return leg.",
+    "created_at": "2026-08-15T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2237,
+    "order_id": 1119,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 4,
+    "comment": "Order created",
+    "created_at": "2026-08-22T10:40:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2238,
+    "order_id": 1119,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-08-23T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2239,
+    "order_id": 1119,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Boom pump for half a day, includes setup and washout. Concrete is billed separately.",
+    "created_at": "2026-08-24T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2240,
+    "order_id": 1120,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 4,
+    "comment": "Order created",
+    "created_at": "2026-08-08T15:05:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2241,
+    "order_id": 1120,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-08-09T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2242,
+    "order_id": 1120,
+    "old_status": "under_review",
+    "new_status": "rejected",
+    "changed_by": 1,
+    "comment": "Site access insufficient for a cherry picker.",
+    "created_at": "2026-08-10T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2243,
+    "order_id": 1121,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 17,
+    "comment": "Order created",
+    "created_at": "2026-08-18T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2244,
+    "order_id": 1121,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-08-19T12:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2245,
+    "order_id": 1121,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-08-20T17:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2246,
+    "order_id": 1121,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 17,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-22T11:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2247,
+    "order_id": 1121,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-24T10:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2248,
+    "order_id": 1121,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-08-26T19:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2249,
+    "order_id": 1122,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 17,
+    "comment": "Order created",
+    "created_at": "2026-08-15T06:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2250,
+    "order_id": 1122,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-16T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2251,
+    "order_id": 1123,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 9,
+    "comment": "Order created",
+    "created_at": "2026-08-09T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2252,
+    "order_id": 1123,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-08-09T21:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2253,
+    "order_id": 1123,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-08-11T02:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2254,
+    "order_id": 1123,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 9,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-12T20:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2255,
+    "order_id": 1123,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-14T19:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2256,
+    "order_id": 1123,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-08-17T04:20:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2257,
+    "order_id": 1124,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 9,
+    "comment": "Order created",
+    "created_at": "2026-08-26T20:55:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2258,
+    "order_id": 1125,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 19,
+    "comment": "Order created",
+    "created_at": "2026-08-01T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2259,
+    "order_id": 1125,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Taken for review — checking unit availability for the requested date.",
+    "created_at": "2026-08-02T09:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2260,
+    "order_id": 1125,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-08-03T14:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2261,
+    "order_id": 1125,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 19,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-05T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2262,
+    "order_id": 1125,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-07T07:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2263,
+    "order_id": 1125,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-08-09T16:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2264,
+    "order_id": 1126,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 19,
+    "comment": "Order created",
+    "created_at": "2026-08-23T09:50:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2265,
+    "order_id": 1126,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-24T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2266,
+    "order_id": 1126,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "50 t crane for one shift, including travel to site and outrigger mats.",
+    "created_at": "2026-08-25T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2267,
+    "order_id": 1127,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 21,
+    "comment": "Order created",
+    "created_at": "2026-08-19T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2268,
+    "order_id": 1127,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "On the board. Confirming which unit is free that morning.",
+    "created_at": "2026-08-20T11:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2269,
+    "order_id": 1127,
+    "old_status": "under_review",
+    "new_status": "offer_sent",
+    "changed_by": 1,
+    "comment": "Price offer sent — valid for seven days.",
+    "created_at": "2026-08-21T16:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2270,
+    "order_id": 1127,
+    "old_status": "offer_sent",
+    "new_status": "approved",
+    "changed_by": 21,
+    "comment": "Customer accepted the price offer",
+    "created_at": "2026-08-23T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2271,
+    "order_id": 1127,
+    "old_status": "approved",
+    "new_status": "in_progress",
+    "changed_by": 1,
+    "comment": "Unit dispatched, driver on the way to the pickup.",
+    "created_at": "2026-08-25T09:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2272,
+    "order_id": 1127,
+    "old_status": "in_progress",
+    "new_status": "completed",
+    "changed_by": 1,
+    "comment": "Job completed and signed off on site.",
+    "created_at": "2026-08-27T18:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2273,
+    "order_id": 1128,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 11,
+    "comment": "Order created",
+    "created_at": "2026-08-05T12:15:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2274,
+    "order_id": 1128,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing — the requested window is tight, looking at the schedule.",
+    "created_at": "2026-08-06T10:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2275,
+    "order_id": 1128,
+    "old_status": "under_review",
+    "new_status": "cancelled",
+    "changed_by": 11,
+    "comment": "Cancelled by customer: Neighbour objected to the pour on a Saturday, we have to move the whole job.",
+    "created_at": "2026-08-07T15:00:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2276,
+    "order_id": 1129,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 18,
+    "comment": "Order created",
+    "created_at": "2026-08-28T08:30:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2277,
+    "order_id": 1130,
+    "old_status": "",
+    "new_status": "new",
+    "changed_by": 23,
+    "comment": "Order created",
+    "created_at": "2026-08-16T11:35:00+04:00",
+    "is_auto_promotion": false
+  },
+  {
+    "id": 2278,
+    "order_id": 1130,
+    "old_status": "new",
+    "new_status": "under_review",
+    "changed_by": 1,
+    "comment": "Reviewing the route and the access at both ends.",
+    "created_at": "2026-08-17T10:00:00+04:00",
+    "is_auto_promotion": false
+  }
+]

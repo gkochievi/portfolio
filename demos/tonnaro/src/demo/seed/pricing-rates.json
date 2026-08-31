@@ -1,0 +1,109 @@
+[
+  {
+    "id": 2750, "type": "hiab", "zone": "tbilisi",
+    "min_fix": "220.0000", "per_kg": "0.020000", "max_kg": 12000, "min_kg": 0,
+    "per_km": "2.2000", "fixed_price": "0.0000", "fixed_radius": 30,
+    "fee_pct": "0.2000", "km_fix": "6.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:20:00+04:00"
+  },
+  {
+    "id": 2751, "type": "hiab", "zone": "tbilisi-out",
+    "min_fix": "320.0000", "per_kg": "0.018000", "max_kg": 14000, "min_kg": 0,
+    "per_km": "1.9000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.2000", "km_fix": "4.5000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:20:00+04:00"
+  },
+  {
+    "id": 2752, "type": "hiab", "zone": "up-to-30-km",
+    "min_fix": "240.0000", "per_kg": "0.019000", "max_kg": 12000, "min_kg": 0,
+    "per_km": "2.0000", "fixed_price": "0.0000", "fixed_radius": 30,
+    "fee_pct": "0.2000", "km_fix": "5.5000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:20:00+04:00"
+  },
+  {
+    "id": 2753, "type": "hiab", "zone": "up-to-100-km",
+    "min_fix": "300.0000", "per_kg": "0.017000", "max_kg": 14000, "min_kg": 0,
+    "per_km": "1.9000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.2200", "km_fix": "3.5000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:20:00+04:00"
+  },
+  {
+    "id": 2754, "type": "hiab", "zone": "regional",
+    "min_fix": "400.0000", "per_kg": "0.016000", "max_kg": 16000, "min_kg": 0,
+    "per_km": "1.8000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.2500", "km_fix": "2.5000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:20:00+04:00"
+  },
+
+  {
+    "id": 2755, "type": "trailer", "zone": "tbilisi",
+    "min_fix": "280.0000", "per_kg": "0.015000", "max_kg": 24000, "min_kg": 3000,
+    "per_km": "2.6000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.1800", "km_fix": "7.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:22:00+04:00"
+  },
+  {
+    "id": 2756, "type": "trailer", "zone": "tbilisi-out",
+    "min_fix": "380.0000", "per_kg": "0.014000", "max_kg": 30000, "min_kg": 0,
+    "per_km": "2.2000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.1800", "km_fix": "5.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:22:00+04:00"
+  },
+  {
+    "id": 2757, "type": "trailer", "zone": "up-to-30-km",
+    "min_fix": "300.0000", "per_kg": "0.013000", "max_kg": 26000, "min_kg": 4000,
+    "per_km": "2.3000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.1800", "km_fix": "6.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:22:00+04:00"
+  },
+  {
+    "id": 2758, "type": "trailer", "zone": "up-to-100-km",
+    "min_fix": "360.0000", "per_kg": "0.012500", "max_kg": 32000, "min_kg": 0,
+    "per_km": "2.1000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.2000", "km_fix": "4.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:22:00+04:00"
+  },
+  {
+    "id": 2759, "type": "trailer", "zone": "regional",
+    "min_fix": "400.0000", "per_kg": "0.011000", "max_kg": 50000, "min_kg": 0,
+    "per_km": "1.9500", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.2200", "km_fix": "2.8000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:22:00+04:00"
+  },
+
+  {
+    "id": 2760, "type": "cart", "zone": "tbilisi",
+    "min_fix": "200.0000", "per_kg": "0.012000", "max_kg": 20000, "min_kg": 0,
+    "per_km": "2.0000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.1500", "km_fix": "5.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:24:00+04:00"
+  },
+  {
+    "id": 2761, "type": "cart", "zone": "tbilisi-out",
+    "min_fix": "260.0000", "per_kg": "0.011000", "max_kg": 22000, "min_kg": 0,
+    "per_km": "1.8000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.1600", "km_fix": "4.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:24:00+04:00"
+  },
+  {
+    "id": 2762, "type": "cart", "zone": "up-to-30-km",
+    "min_fix": "220.0000", "per_kg": "0.010000", "max_kg": 20000, "min_kg": 0,
+    "per_km": "1.7500", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.1500", "km_fix": "4.5000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:24:00+04:00"
+  },
+  {
+    "id": 2763, "type": "cart", "zone": "up-to-100-km",
+    "min_fix": "250.0000", "per_kg": "0.010500", "max_kg": 24000, "min_kg": 0,
+    "per_km": "1.7500", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.1600", "km_fix": "3.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:24:00+04:00"
+  },
+  {
+    "id": 2764, "type": "cart", "zone": "regional",
+    "min_fix": "320.0000", "per_kg": "0.010000", "max_kg": 26000, "min_kg": 0,
+    "per_km": "1.7000", "fixed_price": "0.0000", "fixed_radius": 0,
+    "fee_pct": "0.1800", "km_fix": "2.0000", "fuel_per_km": "1.2600",
+    "updated_at": "2026-07-01T10:24:00+04:00"
+  }
+]

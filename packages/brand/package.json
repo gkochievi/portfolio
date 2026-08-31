@@ -1,0 +1,11 @@
+{
+  "name": "@portfolio/brand",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared design tokens and logo assets for every portfolio surface",
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./assets/*": "./assets/*"
+  },
+  "files": ["tokens.css", "assets"]
+}

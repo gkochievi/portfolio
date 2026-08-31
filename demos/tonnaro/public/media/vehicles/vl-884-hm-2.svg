@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EEF2F7"/><stop offset="1" stop-color="#DCE3EC"/>
+  </linearGradient>
+  <pattern id="chev" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+    <rect width="46" height="46" fill="none"/>
+    <rect width="23" height="46" fill="#F97316" opacity="0.11000000000000001"/>
+  </pattern>
+</defs>
+<rect width="900" height="675" fill="url(#sky)"/>
+<rect width="900" height="675" fill="url(#chev)" opacity="0.5"/>
+<rect x="0" y="585" width="900" height="90" fill="#C7D0DB"/><rect x="0" y="585" width="900" height="4" fill="#AAB4C2"/>
+<path d="M330 551 L860 551 L860 527 L470 527 L440 489 L330 489 Z" fill="#0F172A"/>
+<rect x="470" y="399" width="330" height="128" rx="8" fill="#64748B"/>
+<rect x="500" y="425" width="120" height="76" rx="6" fill="#F97316" opacity="0.85"/>
+<path d="M120 551 L330 551 L330 485 L268 485 L244 413 L136 413 L120 489 Z" fill="#0F172A"/>
+<rect x="150" y="423" width="84" height="52" rx="6" fill="#93C5FD" opacity="0.75"/>
+<circle cx="186" cy="561" r="38" fill="#0F172A"/><circle cx="186" cy="561" r="16" fill="#94A3B8"/><circle cx="300" cy="561" r="38" fill="#0F172A"/><circle cx="300" cy="561" r="16" fill="#94A3B8"/><circle cx="520" cy="561" r="38" fill="#0F172A"/><circle cx="520" cy="561" r="16" fill="#94A3B8"/><circle cx="592" cy="561" r="38" fill="#0F172A"/><circle cx="592" cy="561" r="16" fill="#94A3B8"/><circle cx="760" cy="561" r="38" fill="#0F172A"/><circle cx="760" cy="561" r="16" fill="#94A3B8"/><circle cx="826" cy="561" r="38" fill="#0F172A"/><circle cx="826" cy="561" r="16" fill="#94A3B8"/><text x="34" y="641" font-family="ui-monospace,Menlo,monospace" font-size="26" font-weight="700" fill="#0F172A" opacity="0.72">VL-884-HM</text><text x="34" y="617" font-family="system-ui,sans-serif" font-size="19" fill="#334155" opacity="0.55">Volvo FH16 · Trail King</text>
+</svg>

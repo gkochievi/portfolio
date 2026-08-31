@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EEF2F7"/><stop offset="1" stop-color="#DCE3EC"/>
+  </linearGradient>
+  <pattern id="chev" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+    <rect width="46" height="46" fill="none"/>
+    <rect width="23" height="46" fill="#F97316" opacity="0.07"/>
+  </pattern>
+</defs>
+<rect width="900" height="675" fill="url(#sky)"/>
+<rect width="900" height="675" fill="url(#chev)" opacity="0.5"/>
+<rect x="0" y="585" width="900" height="90" fill="#C7D0DB"/><rect x="0" y="585" width="900" height="4" fill="#AAB4C2"/>
+<path d="M470 545 L840 545 L840 515 L470 515 Z" fill="#0F172A"/>
+<path d="M470 515 L560 435 L700 435 L700 515 Z" fill="#475569"/>
+<path d="M840 545 L900 515 L900 545 Z" fill="#F97316"/>
+<path d="M180 545 L470 545 L470 495 L360 495 L330 420 L200 420 L180 490 Z" fill="#0F172A"/>
+<rect x="212" y="430" width="100" height="56" rx="6" fill="#93C5FD" opacity="0.75"/>
+<circle cx="250" cy="555" r="46" fill="#0F172A"/><circle cx="250" cy="555" r="19" fill="#94A3B8"/><circle cx="430" cy="555" r="46" fill="#0F172A"/><circle cx="430" cy="555" r="19" fill="#94A3B8"/><circle cx="640" cy="555" r="46" fill="#0F172A"/><circle cx="640" cy="555" r="19" fill="#94A3B8"/><circle cx="790" cy="555" r="46" fill="#0F172A"/><circle cx="790" cy="555" r="19" fill="#94A3B8"/><text x="34" y="641" font-family="ui-monospace,Menlo,monospace" font-size="26" font-weight="700" fill="#0F172A" opacity="0.72">AB-472-CT</text><text x="34" y="617" font-family="system-ui,sans-serif" font-size="19" fill="#334155" opacity="0.55">Mercedes-Benz Actros 2545</text>
+</svg>

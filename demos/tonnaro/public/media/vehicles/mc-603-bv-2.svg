@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EEF2F7"/><stop offset="1" stop-color="#DCE3EC"/>
+  </linearGradient>
+  <pattern id="chev" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+    <rect width="46" height="46" fill="none"/>
+    <rect width="23" height="46" fill="#F97316" opacity="0.11000000000000001"/>
+  </pattern>
+</defs>
+<rect width="900" height="675" fill="url(#sky)"/>
+<rect width="900" height="675" fill="url(#chev)" opacity="0.5"/>
+<rect x="0" y="585" width="900" height="90" fill="#C7D0DB"/><rect x="0" y="585" width="900" height="4" fill="#AAB4C2"/>
+<path d="M180 545 L830 545 L830 513 L180 513 Z" fill="#0F172A"/>
+<path d="M460 495 q40 -150 190 -150 q150 0 168 96 q12 66 -70 84 Z" fill="#F97316"/>
+<path d="M492 477 q34 -112 154 -112" stroke="#C2410C" stroke-width="12" fill="none"/>
+<path d="M180 545 L440 545 L440 489 L352 489 L326 413 L198 413 L180 487 Z" fill="#0F172A"/>
+<rect x="214" y="423" width="96" height="56" rx="6" fill="#93C5FD" opacity="0.75"/>
+<circle cx="254" cy="555" r="46" fill="#0F172A"/><circle cx="254" cy="555" r="19" fill="#94A3B8"/><circle cx="456" cy="555" r="46" fill="#0F172A"/><circle cx="456" cy="555" r="19" fill="#94A3B8"/><circle cx="640" cy="555" r="46" fill="#0F172A"/><circle cx="640" cy="555" r="19" fill="#94A3B8"/><circle cx="774" cy="555" r="46" fill="#0F172A"/><circle cx="774" cy="555" r="19" fill="#94A3B8"/><text x="34" y="641" font-family="ui-monospace,Menlo,monospace" font-size="26" font-weight="700" fill="#0F172A" opacity="0.72">MC-603-BV</text><text x="34" y="617" font-family="system-ui,sans-serif" font-size="19" fill="#334155" opacity="0.55">MAN TGS 32.400 mixer</text>
+</svg>

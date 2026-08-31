@@ -1,0 +1,471 @@
+[
+  {
+    "slug": "tonnaro",
+    "name": "Tonnaro",
+    "tagline": "A specialised-transport marketplace for Georgia — order a crane, tow truck or concrete pump, get a routed, elevation-aware price, and watch it through to delivery.",
+    "summary": "Tonnaro moves the things ordinary hauliers will not: cranes, lowboy trailers, concrete pumps, oversized loads. I built the platform end to end — a Django/DRF backend with a configurable pricing engine, and three React surfaces on top of it: a public marketing site, a phone-style ordering app for customers, and an operations console for dispatchers. All of it in Georgian, English and Russian.",
+    "role": "Full-stack. I designed the data model, the pricing engine and the assignment logic, and built the whole front end.",
+    "period": "2026",
+    "status": "shipped",
+    "stack": [
+      "Django 4.2",
+      "Django REST Framework",
+      "SimpleJWT",
+      "PostgreSQL 16",
+      "React 18",
+      "Ant Design 5",
+      "Leaflet",
+      "OpenRouteService",
+      "Recharts",
+      "Docker",
+      "nginx",
+      "DigitalOcean"
+    ],
+    "highlights": [
+      "Pricing is a configurable engine, not a rate card: zones, per-type rates, weight and distance bands, an elevation surcharge, equipment add-ons and VAT all compose, and the admin can change any of them and watch the live quote calculator move.",
+      "Routes are truck-aware. Every order is costed against an HGV route with a real elevation profile, because a 40-tonne load climbing 2,000 m out of the Mtkvari valley does not cost what the same distance costs on the flat.",
+      "Describing the job in free text suggests the right service — 'my car broke down on the highway' proposes the tow truck — from a keyword engine the admin edits per service.",
+      "Vehicle and driver assignment is checked, not trusted: licence categories must cover the vehicle, and overlapping bookings are refused rather than double-sold.",
+      "The whole product is trilingual down to the content model — every service, category and landing section stores {en, ka, ru}, so an admin edits all three in one form.",
+      "The public site is admin-editable: hero, services, stats, SEO tags and the accent colour of the entire application are data, not deploys.",
+      "Orders carry their own audit trail — every status transition and every per-field admin edit is recorded and rendered back to both sides."
+    ],
+    "metrics": [
+      {
+        "label": "REST endpoints",
+        "value": "120"
+      },
+      {
+        "label": "Django models",
+        "value": "22"
+      },
+      {
+        "label": "Front-end lines",
+        "value": "33k"
+      },
+      {
+        "label": "Languages",
+        "value": "3"
+      }
+    ],
+    "problem": "Ordering specialised transport in Georgia ran on phone calls. A customer with a stranded excavator or a third-floor concrete pour would ring around operators, describe the job several times, and get quotes that were guesses — because the real cost depends on the vehicle class, the distance, the load, and, in a country that is mostly mountain, how far the truck has to climb.\n\nThe operator's side was no better. Which crane is free on Thursday, which driver is licensed for it, and whether the job was already promised to someone else were facts held in a dispatcher's head. Nothing was written down until it had already gone wrong.",
+    "approach": "The platform is built around one idea: a quote should be computed, not remembered.\n\nAn order captures the job — service, cargo, pickup and destination pinned on a map — and the backend routes it as a heavy goods vehicle, reads the elevation profile off that route, and runs it through a pricing engine the admin configures rather than one I hardcoded. The dispatcher sees a proposed price, a shortlist of vehicles whose drivers actually hold the licence, and a conflict check against everything already booked.\n\nFrom there it is a state machine with an offer in the middle: the admin prices and sends, the customer accepts, and only then is the resource committed. Every move is recorded, so the question 'who changed this and when' has an answer.",
+    "architecture": [
+      {
+        "layer": "Customer app",
+        "detail": "A phone-shaped React flow — not a responsive desktop form. A multi-step wizard that suggests a service from the free-text description, reshapes its own fields per service, takes pickup and destination as map pins with multi-stop support, and shows the route, the climb and the estimated price before anything is submitted."
+      },
+      {
+        "layer": "Operations console",
+        "detail": "The dispatcher's surface: saved-view tabs with live counts, a polled notification bell that only sounds for the other side's actions, per-order assignment with eligibility and conflict checks, and CSV export that escapes formula-leading cells rather than handing a spreadsheet an injection."
+      },
+      {
+        "layer": "Pricing engine",
+        "detail": "Zones, rates per transport type, weight and distance components, elevation buckets, equipment add-ons, company fee and VAT — each an editable table. The same engine serves the customer's live estimate, the admin's quote calculator and the recalculation that fires when a route resolves, so no two screens can disagree about a number."
+      },
+      {
+        "layer": "Routing",
+        "detail": "A server-side OpenRouteService proxy for driving-hgv directions with elevation and steepness, keyed and cached so the API key never reaches the browser and a re-render never costs a request. The client draws the polyline coloured by gradient and a smoothed elevation chart beneath it."
+      },
+      {
+        "layer": "Content and identity",
+        "detail": "Landing page, site settings, terms and SEO are three singletons with multilingual JSON fields. The colour theme, site name, favicon and contact details are served to the front end at boot, so re-skinning the product is an admin action."
+      },
+      {
+        "layer": "Backend",
+        "detail": "Eleven Django apps, 22 models, DRF generics throughout with explicit per-view permissions, JWT with refresh rotation and blacklisting, UUID-renamed uploads with signal-driven cleanup, and scoped rate limits on every sensitive endpoint."
+      }
+    ],
+    "results": [
+      "Quoting moved from a phone call to a computed number a customer sees before they commit.",
+      "Dispatchers stopped double-booking: the conflict check refuses an overlap instead of surfacing it later.",
+      "Adding a service, a zone or a rate became an admin action rather than a deploy.",
+      "One platform serves three audiences — public visitors, customers and dispatchers — in three languages, from one content model."
+    ],
+    "demoUrl": "/demos/tonnaro/",
+    "demoNote": "The real front end with its Django backend replaced by an in-browser mock: seed data compiled into the bundle, served from memory. Every write works and survives until you reload. Sign in from the banner as a customer or as a dispatcher. Map tiles are the one thing still fetched from the network; routing, geocoding and pricing all run in the tab.",
+    "sourceUrl": null,
+    "cover": "/thumbnails/tonnaro.webp",
+    "screenshots": [
+      {
+        "title": "Dispatch dashboard",
+        "caption": "What is new, what is waiting on a price, what is running today — with counts that move as orders change rather than as someone refreshes.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Order queue",
+        "caption": "Saved views over the whole order book: filter, sort, page and export. The bell only sounds for the other side's actions, so a dispatcher never hears their own edits.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Fleet and drivers",
+        "caption": "Vehicles by category and status, each with an owner and a gallery; drivers with the licence categories that decide which of those vehicles they are allowed to move.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Order detail",
+        "caption": "The routed job: pickup and destination on the map, the gradient-coloured polyline, the elevation profile, and the price broken down into the components that produced it.",
+        "schematic": "gallery",
+        "src": null
+      }
+    ]
+  },
+  {
+    "slug": "nabadi",
+    "name": "Nabadi Barbershop",
+    "tagline": "A booking platform for a Tbilisi barbershop — pick a barber, a service and a real free slot, and the shop runs its whole day from the console behind it.",
+    "summary": "A barbershop's entire operation, in Georgian and English. Customers book a specific barber for a specific service and only ever see slots that barber can actually work. Behind it, a staff console runs the shop: the day's chairs, walk-ins, the service catalogue, each barber's hours and time off, promotions, review moderation, analytics, and a permission matrix that decides which of four roles sees what. I built it end to end — Django 5 + DRF on Postgres, and two React 19 front ends on top.",
+    "role": "Full-stack. The data model, the availability engine and the booking constraints, the permission system, and both front ends.",
+    "period": "2026",
+    "status": "shipped",
+    "stack": [
+      "Django 5",
+      "Django REST Framework",
+      "SimpleJWT",
+      "PostgreSQL 16",
+      "Celery",
+      "Redis",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "TanStack Query",
+      "Zustand",
+      "Docker"
+    ],
+    "highlights": [
+      "Double-booking is refused by the database, not by the application: a Postgres exclusion constraint over (barber, time range) means two requests racing for the same chair cannot both win, however the API is called.",
+      "Availability is computed, not stored. A barber's own hours fall back to the shop's, breaks and time off are subtracted, the chosen service's duration decides how wide a slot has to be, and lead time trims the front of today — so the calendar only ever offers a slot the shop can honour.",
+      "Four roles and one permission table. Every feature flag is enforced three times over — a DRF permission class on the endpoint, a React gate on the route, and the sidebar that decides the screen is worth showing — and a checker keeps the three from drifting.",
+      "Every staff mutation writes an audit row with a full before/after diff, including a pre-delete snapshot, so 'who changed this and when' has an answer after the row is gone.",
+      "Bilingual to the content model: services, categories and every landing section store Georgian and English side by side, and an admin edits both in one form.",
+      "The public site is admin-editable — hero, gallery, opening hours, address, social links and the featured reviews band are data, not a deploy.",
+      "566 backend tests and 36 front-end suites, with the booking constraints and the slot algorithm carrying the heaviest coverage."
+    ],
+    "metrics": [
+      {
+        "label": "Django models",
+        "value": "18"
+      },
+      {
+        "label": "Backend tests",
+        "value": "566"
+      },
+      {
+        "label": "Front-end lines",
+        "value": "22k"
+      },
+      {
+        "label": "Languages",
+        "value": "2"
+      }
+    ],
+    "problem": "A barbershop's diary is a paper book behind the counter, and it only works while somebody is standing next to it. A customer who wants a particular barber for a beard sculpt at six on Thursday has to call, wait while the page is found, and take the receptionist's word for it. The shop, meanwhile, has no idea what next week looks like until it arrives.\n\nThe failure modes are all the same failure: the diary is a single copy in a single place. Two people are promised the same chair. A barber's day off is remembered by one member of staff and not another. A regular's history — what they had last time, which barber, whether they showed up — exists only in somebody's memory.",
+    "approach": "The booking rules belong in the system that holds the bookings, so that is where I put them.\n\nA slot is offered only if the barber works then, is not on time off, is not already booked, and the service fits before closing. That single question is answered by one availability engine, and the customer's calendar, the reception desk's walk-in screen and the admin's day view all ask it — so no two screens can disagree about whether a chair is free. Underneath, a Postgres exclusion constraint makes the overlap physically impossible rather than merely unlikely.\n\nAround that sits the rest of a shop: a service catalogue with per-barber price and duration overrides, working hours that fall back to the shop's, time off that can be one barber's or everyone's, promo codes with use limits, reviews a customer can only leave for an appointment they actually attended, and an audit trail over all of it.",
+    "architecture": [
+      {
+        "layer": "Customer site",
+        "detail": "A four-step booking wizard — service, barber, day, time — that keeps its state in Zustand so a refresh or a back button does not lose the booking half-made. The landing page, gallery, opening hours and contact details are served from the CMS, so the shop edits its own front page."
+      },
+      {
+        "layer": "Staff console",
+        "detail": "The shop's working surface: a day calendar with a lane per barber, the booking list with its filters and its XLSX export, walk-in entry at the desk, customer histories with private staff notes, review moderation, analytics, and the permission matrix itself."
+      },
+      {
+        "layer": "Availability engine",
+        "detail": "One module answers 'when can this barber do this service'. Per-barber working hours with a shop-hours fallback, breaks, barber-specific and shop-wide time off, service duration and per-barber overrides, minimum lead time and maximum booking horizon — all resolved in Asia/Tbilisi, which is the only timezone the shop has ever cared about."
+      },
+      {
+        "layer": "Permissions",
+        "detail": "Four roles — admin, administrator, barber, customer — over a seeded feature-flag table. The backend enforces it with a DRF permission class, the console gates the route and hides the nav entry, and a parity checker asserts the three agree, because a permission that is enforced in two places out of three is a bug waiting for a deep link."
+      },
+      {
+        "layer": "Backend",
+        "detail": "Eleven Django apps, 18 models, DRF with explicit per-view permissions, JWT in HttpOnly cookies with rotation and blacklisting, a single error envelope every endpoint speaks, and Celery for the reminder SMS and the sweep that closes yesterday's unfinished appointments."
+      },
+      {
+        "layer": "Content and identity",
+        "detail": "Landing content and site settings are singletons with paired Georgian/English columns; booking policy — slot granularity, lead time, how far ahead you may book, the cancellation window — is configuration the admin edits, not constants I compiled in."
+      }
+    ],
+    "results": [
+      "The chair a customer is offered is one the shop can actually honour — the constraint that prevents a double booking lives in the database, so no code path can get around it.",
+      "The shop's diary stopped being a single copy in a single place: the desk, the barber and the customer all read the same day.",
+      "Opening hours, prices, services, promotions and the whole front page became admin actions rather than deploys.",
+      "Every staff change to a booking, a customer or a price is recoverable from an audit row, including the ones that deleted something."
+    ],
+    "demoUrl": "/demos/nabadi/",
+    "demoNote": "Both front ends, with the Django backend replaced by an in-browser mock: seed data compiled into the bundle, served from memory. The two apps ship as one bundle over one store, so a booking you make on the site is waiting in the console when you switch — the banner in the corner signs you in as a customer or as staff. Nothing is persisted: a reload restores the pristine shop.",
+    "sourceUrl": null,
+    "cover": "/thumbnails/nabadi.webp",
+    "screenshots": [
+      {
+        "title": "Booking wizard",
+        "caption": "Service, barber, day, time. The calendar only shows days that barber works, and the times are the ones the availability engine says are genuinely free.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "The day",
+        "caption": "A lane per barber, walk-ins alongside booked appointments, and the desk's view of who is due next.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Barbers and hours",
+        "caption": "Each barber's working week, the services they offer with their own prices and durations, and the time off that takes them off the calendar.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Permissions",
+        "caption": "The feature matrix four roles are resolved against — the same table the API enforces and the sidebar reads.",
+        "schematic": "gallery",
+        "src": null
+      }
+    ]
+  },
+  {
+    "slug": "printomato",
+    "name": "Printomato",
+    "tagline": "A fleet console for photo-printing kiosks — live device presence, paper levels, campaigns and card payments on one screen.",
+    "summary": "Printomato runs photo-printing kiosks in malls, festivals and hotel lobbies. I built the operator side of it: a session-authenticated REST API next to the existing device API, and a React console that shows the whole fleet in real time — who is online, who is out of paper, what printed today, and which payments settled.",
+    "role": "Full-stack, on a two-developer project. I owned the payment stack, the admin API, the React console and the containerised deploy.",
+    "period": "2024 — 2026",
+    "status": "shipped",
+    "stack": [
+      "Django 5",
+      "Django REST Framework",
+      "Channels + Redis",
+      "PostgreSQL",
+      "React 18",
+      "TypeScript",
+      "Vite 6",
+      "TanStack Query",
+      "Tailwind CSS v4",
+      "Docker",
+      "nginx"
+    ],
+    "highlights": [
+      "Kiosks hold a WebSocket open — connecting flips a device online and broadcasts presence to every console watching, so the fleet grid never needs a refresh button.",
+      "Twenty-seven session-authenticated routes were added alongside the device API rather than on top of it: the kiosks and the original server-rendered pages kept working untouched throughout.",
+      "Paper percentage, prints today, campaign progress and open-alert state are computed once in the serializer, so no two screens can disagree about the same number.",
+      "KEEPZ card payments: a shared-secret endpoint mints a per-device token, triggers the flow on the kiosk over its socket, and logs every session as it settles.",
+      "96 Django tests, 73 of them pinning the admin API's contract — filters, pagination edges, validation messages, permissions.",
+      "One `docker compose up` brings the whole stack — Postgres, Redis, Daphne, nginx — to a seeded, sign-in-able console."
+    ],
+    "metrics": [
+      {
+        "label": "Django tests",
+        "value": "96"
+      },
+      {
+        "label": "Admin API routes",
+        "value": "27"
+      },
+      {
+        "label": "Production console, gzipped",
+        "value": "113 KB"
+      },
+      {
+        "label": "Live WebSocket channels",
+        "value": "3"
+      }
+    ],
+    "problem": "Printomato runs photo-printing kiosks — mall atriums, festival stands, hotel lobbies. Each kiosk prints branded photos for whichever campaign is live at that venue, and each one eventually runs out of paper, loses sight of its camera, or drops off the network at the worst possible moment.\n\nOperations ran on server-rendered Django pages: one for campaigns, one for devices, one for photos. They worked, but they only ever showed what was true the last time somebody pressed refresh. Answering *which kiosks are down right now* meant reloading four tabs and trusting the oldest one. Then the kiosks started taking card payments, which added a second live thing to watch and nowhere good to watch it from.",
+    "approach": "The rewrite was scoped to the operator, not to the fleet. The kiosks were left completely alone — they still POST to the same photo endpoint, still open the same WebSocket, still call the payment endpoints with the same shared secret. A second, session-authenticated API went in beside the first at `/api/admin/`, and a React single-page console mounted at `/app/` to consume it. The old server-rendered pages stayed live on their original URLs the whole time, so there was never a cutover weekend to survive.\n\nAnything an operator has to trust is computed server-side from a single annotated queryset — paper percentage, prints today, campaign progress, whether a device has open alerts — never reassembled in the browser. On the client, every endpoint gets exactly one TanStack Query hook, and that hook file is also where cache keys and invalidation live. Editing a device refreshes the fleet grid *and* the dashboard because that rule is written down once instead of repeated across eight components.",
+    "architecture": [
+      {
+        "layer": "Kiosk",
+        "detail": "Each device holds a WebSocket open on its own channel. Connecting marks it online and broadcasts presence to the fleet group; dropping the socket clears it. Commands — reprint, reboot, start a payment — travel back down the same connection."
+      },
+      {
+        "layer": "Django 5 + Channels",
+        "detail": "One ASGI application serves the REST surface and three channel routes: the per-device socket, a fleet channel the console subscribes to, and a notifications channel that drives alert toasts. Redis is the channel layer; Daphne serves both HTTP and WebSockets."
+      },
+      {
+        "layer": "Domain",
+        "detail": "Five models — Campaign, Device, Photo, Notification, PaymentSession. Custom managers annotate online-device counts, print totals and campaign state, so a list view stays a single query no matter how many kiosks are attached."
+      },
+      {
+        "layer": "Admin API",
+        "detail": "Twenty-seven session-authenticated routes under `/api/admin/`: five viewsets plus auth, dashboard and options endpoints, with query filtering, a page-size-capped pagination envelope and an OpenAPI schema generated by drf-spectacular."
+      },
+      {
+        "layer": "Console",
+        "detail": "React 18 in strict TypeScript, Vite 6, Tailwind v4 with a CSS-first theme block and no config file, TanStack Query v5 for server state, React Router v6 under a `/app` basename. Eight routes, code-split past the dashboard, about 113 KB gzipped on first load."
+      },
+      {
+        "layer": "Payments",
+        "detail": "The public payment service authenticates with a shared-secret header to store a per-device token, trigger the flow on a kiosk and upsert the resulting session record. The console reads that ledger back with a summary computed over whatever filters are applied — revenue, success rate, rejections."
+      },
+      {
+        "layer": "Media",
+        "detail": "Pillow generates a thumbnail on save. Files land on local disk in development and in an S3-compatible bucket in production, behind the same storage interface. Bulk-selected photos stream back as a single ZIP."
+      },
+      {
+        "layer": "Deploy",
+        "detail": "A dedicated compose file builds the console in a Node stage, collects static in the Python stage and puts nginx in front, then migrates, seeds and serves — one command from clone to a console you can sign in to."
+      }
+    ],
+    "results": [
+      "Fleet state is live. A kiosk losing its connection greys out on every open console immediately, and comes back the same way, with nobody pressing refresh.",
+      "One place to look. Paper, prints, campaigns, alerts and payment sessions share a dashboard instead of four browser tabs of varying age.",
+      "Nothing on the floor had to change. The device API and the original server-rendered pages both kept working through the entire rewrite — the new console was additive, not a migration.",
+      "The API's behaviour is pinned by 73 tests of its own: filter semantics, the pagination envelope, the exact validation messages the forms render inline, and who is allowed to call what.",
+      "The status palette was validated with a colour checker rather than chosen by eye — it clears WCAG AA on the panel surface and holds a wide separation under deuteranopia, and every status ships an icon and a text label so colour is never the only signal.",
+      "The whole stack starts from a single command, which is the reason a clickable demo of it exists at all."
+    ],
+    "demoUrl": "/demos/printomato/",
+    "demoNote": "The demo runs the real console front-end: the same React components, the same TanStack Query cache, the same stylesheet that ships against Django. What it does not run is Django. Underneath, the fetch layer is swapped for an in-browser mock that serves seeded data and applies your writes to an in-memory store — no server, no database, no backend of any kind. There is no third-party request at all — the fonts ship in the bundle with everything else. Every screen is interactive and every edit sticks for the session; reload and you get a pristine dataset back. Fleet telemetry is simulated on a timer instead of arriving over a socket, so devices really do drop offline and prints really do land while you watch.",
+    "sourceUrl": null,
+    "cover": "/thumbnails/printomato.webp",
+    "screenshots": [
+      {
+        "title": "Dashboard",
+        "caption": "Analytics tiles, a fourteen-day print-volume chart, the devices currently attached to a campaign and the newest open alerts — one request, one shape, no client-side assembly.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Fleet",
+        "caption": "Every kiosk as a card: presence dot, paper meter, paid or free mode, prints today. Online devices sort first, then naturally — PM-2 before PM-10, not after it.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Photos",
+        "caption": "Sixty per page, filtered by device, campaign, date range or code, with bulk select, a lightbox, and a ZIP download of either the selection or the entire filtered set.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "Payments",
+        "caption": "The card-session ledger: sortable and filterable, with a summary strip — revenue, success rate, rejections — computed over exactly the filters on screen.",
+        "schematic": "ledger",
+        "src": null
+      }
+    ]
+  },
+  {
+    "slug": "gisheri",
+    "name": "Gisheri",
+    "tagline": "A natural-stone jewellery shop in Tbilisi — browse by zodiac sign, take the quiz, check out with a discount code, and run the whole catalogue and order book from the console behind it.",
+    "summary": "Gisheri sells handmade stone bracelets and pendants, and the whole product is bilingual down to the content model: every product, collection and zodiac sign stores its Georgian text beside its English, and Georgian is the default. I built it end to end — a Django 5 + Ninja API with JWT auth, an audit trail and a role-gated admin surface, and a React 19 storefront and console on top of it.",
+    "role": "Full-stack. I designed the data model, the discount and order pipeline and the two-layer catalogue i18n, and built the whole front end.",
+    "period": "2026",
+    "status": "shipped",
+    "stack": [
+      "Django 5",
+      "Django Ninja",
+      "django-ninja-jwt",
+      "PostgreSQL 16",
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query",
+      "i18next",
+      "Docker"
+    ],
+    "highlights": [
+      "Georgian is the default language, and the catalogue resolves it in two layers: a database column per translated field for anything an admin writes, and an i18n key for the content that shipped with the app, with canonical English as the floor.",
+      "The admin console is a full second surface inside the same SPA — eighteen pages, role-gated at the route and again at the API, sharing one sortable table, one date-range hook and one activity feed.",
+      "Discounts are re-validated atomically at order creation, not just at the cart: a code that passed the check can still be refused a second later, and the order create path is the only thing that moves the usage counter.",
+      "Order lines are snapshots — name, image and unit price are frozen at the moment of sale, so a later price edit never rewrites history, and the admin item editor recomputes the totals without re-evaluating the discount.",
+      "Every admin mutation that matters writes an audit row, and both the order and the customer pages render their own feed from it — who changed what, when, and from what to what.",
+      "The quiz scores the live catalogue against a zodiac sign, a mood and an intention; all four question banks are admin-editable, and saving one invalidates the storefront cache in the same session.",
+      "SEO is data: a settings singleton supplies the defaults and a per-path override table beats them, both edited from the console rather than deployed."
+    ],
+    "metrics": [
+      {
+        "label": "API endpoints",
+        "value": "68"
+      },
+      {
+        "label": "Django models",
+        "value": "12"
+      },
+      {
+        "label": "Front-end lines",
+        "value": "21k"
+      },
+      {
+        "label": "Languages",
+        "value": "2"
+      }
+    ],
+    "problem": "A jewellery workshop making stone bracelets by hand had a catalogue that lived in a spreadsheet and an order book that lived in a phone. New designs were announced on Instagram, prices were typed back at customers from memory, and how many of a piece were left was whatever the person answering the phone remembered. Nothing recorded what a returning customer had bought before, so the shop met every regular as a stranger.\n\nThe shop's customers do not shop by product name either. They arrive asking what suits a Scorpio, or for something to calm a friend who is anxious, or for a gift that carries a meaning — questions a list of names and prices cannot answer. They also arrive reading Georgian, and every piece therefore has to be described twice, in both languages, by the person who made it, before it can be sold to either kind of visitor.",
+    "approach": "The catalogue is the product, so the catalogue is what the admin owns outright. A piece carries its stones, its purposes, its zodiac signs and its price, and every screen that sells it — the shop's facets, the collection pages, the twelve zodiac pages, the quiz — is a query over those fields rather than a list somebody curated by hand. Adding a stone to a sign, or a bracelet to a collection, is a form in the console, and the storefront's cache is invalidated in the same session, so the change is visible without a deploy.\n\nEvery translated field is a column pair, not a translation file. A product stores its Georgian name beside its English one, because a translation the shop has to write is data and belongs where the data is; only the fixed UI chrome stays in i18next. The resolver is one documented order — the Georgian column, then the i18n key for seeded content, then canonical English as the floor — so a piece nobody has finished translating degrades into something readable rather than a blank.\n\nThe order pipeline is deliberately small: no shipping calculator, no tax engine, one discount code. What it does do carefully is the part that costs money when it is wrong. The code is re-validated at order creation under a row lock instead of being trusted from the cart, so a code that was live a second ago can still be refused and the usage cap cannot be raced; every line snapshots the name, image and price it sold at; and every admin hand that touches an order or a customer leaves an audit row behind it.",
+    "architecture": [
+      {
+        "layer": "Storefront",
+        "detail": "React 19 with TanStack Query over the four catalogue reads and plain component state everywhere the state is genuinely local. The shop's filters — purpose, sign, gender, price, sort, page — live in the URL, so a filtered view is a link, and every facet count is computed against the live set so a dead filter is visibly dead."
+      },
+      {
+        "layer": "Admin console",
+        "detail": "Eighteen lazy-loaded pages behind one role gate, sharing a single sortable, paginated table, one date-range hook and one activity feed. It is a second surface inside the same bundle as the shop, so an order placed at checkout is in the order book on the next read."
+      },
+      {
+        "layer": "Catalogue i18n",
+        "detail": "Two layers and a documented resolution order: the translated database column, the i18n key, then canonical English. The active language is read off the i18next instance rather than threaded through props, so a component rendering a product name needs to know nothing about any of it."
+      },
+      {
+        "layer": "Orders and discounts",
+        "detail": "One create path serves customer checkout and staff phone orders. It re-validates the code under `SELECT FOR UPDATE` and enforces the usage cap there rather than at the cart, snapshots every line at the price it sold for, and lets the admin item editor recompute the totals without re-evaluating the discount — so an amended order keeps the deal it was given."
+      },
+      {
+        "layer": "Content and SEO",
+        "detail": "A settings singleton holds the hero copy, the banner, the featured collections and the SEO defaults, and a per-path override table beats it. Both are edited from the console, so the front page and the meta tags are data rather than a deploy."
+      },
+      {
+        "layer": "Backend",
+        "detail": "Seven Django apps and 12 models on Postgres, with django-ninja routers mounted twice — a public router and an admin router per app — JWT from django-ninja-jwt, camelCase on the wire, and money serialised as decimal strings so no price ever passes through a float."
+      },
+      {
+        "layer": "Deploy",
+        "detail": "Docker Compose: Postgres, Django, Vite, with the migrations committed. One command from a clone to a seeded shop you can sign in to."
+      }
+    ],
+    "results": [
+      "The catalogue moved out of a spreadsheet: adding a product, a collection or a zodiac description became an admin action rather than a deploy.",
+      "Georgian stopped being an afterthought — the shop reads natively in its own market and falls back to English only where nobody has written the Georgian yet.",
+      "Phone orders and web orders became the same object, with the same discount rules, the same snapshots and the same audit trail.",
+      "A discount code cannot be over-redeemed by two people checking out at once, because the cap is enforced where the order is written rather than where the code is offered.",
+      "Staff can see, for any customer, what they have spent and when they last ordered, without leaving the order in front of them."
+    ],
+    "demoUrl": "/demos/gisheri/",
+    "demoNote": "The real front end with its Django backend replaced by an in-browser mock: seed data compiled into the bundle, served out of memory behind the same latency and the same error bodies the API would have returned. Every write works — place an order as a customer and it is waiting in the console, audit trail and all — and nothing is persisted, so a reload restores the pristine shop. The banner in the corner signs you in as a customer or as an administrator, through the real login form rather than around it. Unlike the shop it is ported from, the demo opens in English; the switch in the header puts the whole thing, console included, back into Georgian. There is no network request of any kind — no API, no fonts, no analytics — so it runs offline and in an iframe.",
+    "sourceUrl": null,
+    "cover": "/thumbnails/gisheri.webp",
+    "screenshots": [
+      {
+        "title": "Console dashboard",
+        "caption": "Revenue, order and catalogue counts with the five status buckets beside them, computed from the same queryset the lists read so no two screens can disagree after a write.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Order book",
+        "caption": "The whole order book behind an email search, a status filter and a date range, with bulk status changes that write one audit row per order they touch.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Order detail",
+        "caption": "The pipeline stepper advances one stage at a time, the line editor is gated to pending orders, and the activity feed beside it re-reads itself every time the order is touched.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Shop by stone",
+        "caption": "The catalogue behind six purpose facets, twelve zodiac facets, three genders and a price slider — every count computed against the live set, so a filter that would return nothing says so before it is clicked.",
+        "schematic": "gallery",
+        "src": null
+      }
+    ]
+  }
+]

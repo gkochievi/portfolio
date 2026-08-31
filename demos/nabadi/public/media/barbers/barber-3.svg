@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="b3t">
+  <title id="b3t">Zurab Nadiradze, straight-razor shaves</title>
+  <rect width="400" height="400" fill="#f1ead9"/>
+  <circle cx="200" cy="200" r="156" fill="#e6dec9" stroke="#d6cdb4" stroke-width="2"/>
+
+  <g stroke="#20180f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M174 212 L170 298 L230 298 L226 212 Z" fill="#fbf6ec"/>
+    <path d="M46 400 C48 346 86 312 134 300 C154 295 166 293 176 291 C182 306 218 306 224 291 C234 293 246 295 266 300 C314 312 352 346 354 400 Z" fill="#fbf6ec"/>
+    <path d="M176 291 L200 318 L224 291" fill="none"/>
+    <ellipse cx="134" cy="170" rx="10" ry="16" fill="#fbf6ec"/>
+    <ellipse cx="266" cy="170" rx="10" ry="16" fill="#fbf6ec"/>
+    <path d="M138 156 C138 106 162 80 200 80 C238 80 262 106 262 156 C262 200 240 250 200 250 C160 250 138 200 138 156 Z" fill="#fbf6ec"/>
+  </g>
+
+  <!-- caramel bow tie -->
+  <g stroke="#20180f" stroke-width="2.5" stroke-linejoin="round" fill="#8f5d33">
+    <path d="M197 300 L167 285 L167 315 Z"/>
+    <path d="M203 300 L233 285 L233 315 Z"/>
+    <rect x="192" y="291" width="16" height="18" rx="5"/>
+  </g>
+
+  <!--
+    Low, flat hairline with a hard left part and sideburns dropped to the
+    cheekbone. Deliberately not barber-1's tall swept crown: the mass sits
+    lower on the skull, the temples are covered rather than exposed, and the
+    part is cut as a real notch in the silhouette instead of a drawn line.
+  -->
+  <path d="M137 150 C132 96 158 66 202 66 C246 66 268 96 263 150 L258 158 C254 128 244 113 226 106 L190 105 C186 96 185 84 187 70 L178 68 C176 84 177 97 182 106 C165 111 153 121 147 135 L142 158 Z" fill="#20180f"/>
+  <g stroke="#70675e" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M198 92 C220 86 240 94 253 112"/>
+    <path d="M203 102 C223 97 241 105 256 124"/>
+  </g>
+
+  <!-- heavy moustache -->
+  <path d="M163 202 C172 191 190 193 200 202 C210 193 228 191 237 202 C243 215 232 228 214 221 C206 218 194 218 186 221 C168 228 157 215 163 202 Z" fill="#20180f"/>
+
+  <g fill="#20180f">
+    <ellipse cx="176" cy="172" rx="6.5" ry="5"/>
+    <ellipse cx="224" cy="172" rx="6.5" ry="5"/>
+  </g>
+  <g stroke="#20180f" fill="none" stroke-linecap="round">
+    <path d="M200 178 L196 196 C195 201 205 202 209 197" stroke-width="3.5"/>
+    <path d="M186 230 C194 234 206 234 214 230" stroke-width="2.5"/>
+  </g>
+
+  <!-- glasses -->
+  <g stroke="#20180f" stroke-width="4" fill="none" stroke-linecap="round">
+    <circle cx="176" cy="172" r="23"/>
+    <circle cx="224" cy="172" r="23"/>
+    <path d="M199 169 C200 165 200 165 201 169"/>
+    <path d="M153 166 L139 162"/>
+    <path d="M247 166 L261 162"/>
+  </g>
+</svg>

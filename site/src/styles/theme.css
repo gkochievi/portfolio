@@ -1,0 +1,329 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   Boulder — portal styles
+
+   The portal is Boulder's own surface, so it wears Boulder's brand. The demos
+   below it do not: each is a different client's product with its own identity,
+   and dressing them in Boulder's palette would misrepresent what was actually
+   built. That is why the brand is defined here rather than imported from
+   `@portfolio/brand/tokens.css` — that package belongs to the Printomato demo,
+   and flipping it would recolour a product that shipped in other colours.
+
+   Every token below is lifted from `boulder-website/src/index.css`, which took
+   them from the brand PDF and the Figma variable collection. Nothing is
+   re-derived here; if the brand moves, it moves there first.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Tailwind v4 bridge — every entry points into the :root block below rather
+   than repeating a literal, so `bg-surface`, `font-display` and `text-h1`
+   resolve to the same custom properties the hand-written rules use.
+   -------------------------------------------------------------------------- */
+@theme {
+  --color-boulder-dark: var(--color-dark);
+  --color-accent: var(--brand-accent);
+  --color-accent-text: var(--accent-text);
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-2: var(--brand-accent-2);
+  --color-bright: var(--brand-bright);
+  --color-ink: var(--ink);
+  --color-surface: var(--surface);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+
+  --font-display: var(--font-display-stack);
+  --font-body: var(--font-body-stack);
+
+  --text-display: var(--fs-display);
+  --text-h1: var(--fs-h1);
+  --text-h2: var(--fs-h2);
+  --text-body-lg: var(--fs-body-lg);
+  --text-body: var(--fs-body);
+  --text-small: var(--fs-small);
+
+  --ease-flow: var(--flow-easing);
+  --ease-bounce: var(--hover-easing-bouncy);
+}
+
+/* --------------------------------------------------------------------------
+   Brand tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --color-dark: #111224; /* Main dark */
+  --brand-accent: #ff3366; /* Accent — coral */
+  --brand-accent-2: #5c4de8; /* Accent 2 — indigo */
+  --brand-bright: #e0dff7; /* Main Bright — pale lavender */
+
+  /* Theme-aware ink: anything sitting directly on the page background.
+     Inverts under dark so it never goes dark-on-dark. */
+  --ink: var(--color-dark);
+
+  /* Page and card are separate planes: in light mode the card is the white
+     one and the page is tinted; under dark that reverses. */
+  --page: #f4f3fb;
+  --surface: #ffffff;
+  --hairline: rgba(17, 18, 36, 0.1);
+  --hairline-strong: rgba(17, 18, 36, 0.2);
+  --shadow-card: 0 1px 2px rgba(17, 18, 36, 0.04), 0 12px 32px -12px rgba(17, 18, 36, 0.16);
+  --shadow-lift: 0 2px 4px rgba(17, 18, 36, 0.05), 0 24px 48px -16px rgba(17, 18, 36, 0.26);
+
+  /* drop-shadow() twins of the two shadows above, for notched surfaces: a
+     clip-path clips the element's own box-shadow (and outline) away, so the
+     shadow has to live on an unclipped parent as a filter, which follows the
+     clipped silhouette instead of the border box. */
+  --drop-card: drop-shadow(0 1px 2px rgba(17, 18, 36, 0.04))
+    drop-shadow(0 10px 22px rgba(17, 18, 36, 0.12));
+  --drop-lift: drop-shadow(0 2px 4px rgba(17, 18, 36, 0.05))
+    drop-shadow(0 18px 34px rgba(17, 18, 36, 0.2));
+
+  /* The coral fails AA at body/small sizes on the light surfaces (3.5:1), so
+     text and filled controls use this deeper cut of it; display-size accents
+     keep the true brand coral, where 3:1 is the bar and it passes. */
+  --accent-text: #d61e50;
+  --accent-solid: #d61e50;
+
+  --font-display-stack: 'Montserrat Alternates', -apple-system, Roboto, Helvetica, sans-serif;
+  --font-body-stack: 'Montserrat', -apple-system, Roboto, Helvetica, sans-serif;
+
+  --canvas-max-width: 1440px;
+
+  /* Fluid type — clamp(floor, viewport-driven, cap), named by role rather than
+     size, so a component says what the text is, not how big it happens to be. */
+  --fs-display: clamp(2.5rem, 1.7rem + 3.5vw, 4.75rem);
+  --fs-h1: clamp(2rem, 1.5rem + 2.2vw, 3.25rem);
+  --fs-h2: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --fs-body-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --fs-body: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --fs-small: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
+
+  /* Motion, straight from the Figma prototype panel: 300ms, bounce. */
+  --hover-duration-bouncy: 300ms;
+  --hover-easing-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --flow-easing: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* The angular corner cut the brand uses on every card and panel. */
+  --card-notch: 18px;
+}
+
+:root[data-theme='dark'] {
+  --ink: var(--brand-bright);
+  --page: #0b0c17;
+  --surface: #17182c;
+  --hairline: rgba(224, 223, 247, 0.12);
+  --hairline-strong: rgba(224, 223, 247, 0.24);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -12px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.45), 0 24px 48px -16px rgba(0, 0, 0, 0.85);
+  --drop-card: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55));
+  --drop-lift: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45)) drop-shadow(0 18px 34px rgba(0, 0, 0, 0.7));
+  /* On the dark planes the true coral clears 4.5:1 as text; a filled control
+     keeps the deeper coral so white text on it clears 4.5:1 in both themes. */
+  --accent-text: var(--brand-accent);
+  color-scheme: dark;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font-body-stack);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* Nothing here may push the page sideways. `clip` rather than `hidden` so
+       the viewport never becomes a scroll container and the sticky header
+       keeps sticking. */
+    overflow-x: clip;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand-accent);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Composites
+   ========================================================================== */
+
+/* The content canvas: capped at the design's own width with fluid padding
+   below it, so layouts reflow rather than shrink. */
+.shell {
+  width: 100%;
+  max-width: var(--canvas-max-width);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 0.6rem + 3vw, 4rem);
+}
+
+/* The brand's angular cut. Two variants, alternated across the grid so a row
+   does not read as one repeated stamp. */
+.notch {
+  clip-path: polygon(
+    var(--card-notch) 0%,
+    100% 0%,
+    100% calc(100% - var(--card-notch)),
+    calc(100% - var(--card-notch)) 100%,
+    0% 100%,
+    0% var(--card-notch)
+  );
+}
+
+.notch--alt {
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--card-notch)) 0%,
+    100% var(--card-notch),
+    100% 100%,
+    var(--card-notch) 100%,
+    0% calc(100% - var(--card-notch))
+  );
+}
+
+.label-caps {
+  font-family: var(--font-body-stack);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  /* 0.65 is the floor for AA on the light planes; 0.55 measured ~4.1:1. */
+  opacity: 0.65;
+}
+
+/* --------------------------------------------------------------------------
+   Project card — the whole card is one anchor; see ProjectCard.tsx. The notch
+   clip lives on the inner frame, never on the anchor itself: clip-path would
+   clip the anchor's own shadow and, worse, its keyboard focus outline. The
+   anchor carries the shadow as drop-shadow() filters, which hug the notched
+   silhouette.
+   -------------------------------------------------------------------------- */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  filter: var(--drop-card);
+  transition:
+    transform var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+    filter var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-6px) scale(1.012);
+  filter: var(--drop-lift);
+}
+
+.project-card__frame {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(--surface);
+}
+
+.project-card__art {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(140deg, var(--brand-accent-2) 0%, var(--brand-accent) 100%);
+  transition: filter var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+.project-card:hover .project-card__art {
+  filter: saturate(1.12) brightness(1.05);
+}
+
+/* The capture fills the tile. It sits above the gradient rather than replacing
+   it, so the card still looks deliberate for the moment before the image
+   decodes — and for any project that has no capture at all. */
+.project-card__shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  transition: transform 420ms var(--flow-easing);
+}
+
+.project-card:hover .project-card__shot {
+  transform: scale(1.03);
+}
+
+/* The one affordance that says "this opens something", since the card has no
+   other button. */
+.project-card__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display-stack);
+  font-weight: 700;
+  font-size: var(--fs-body);
+  color: var(--accent-text);
+}
+
+.project-card__go svg {
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+.project-card:hover .project-card__go svg {
+  transform: translateX(4px);
+}
+
+/* A reveal that settles rather than performs: opacity plus a short rise on the
+   brand's flow curve, staggered by card index. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 520ms var(--flow-easing),
+    transform 520ms var(--flow-easing);
+}
+
+.reveal--in {
+  opacity: 1;
+  transform: none;
+}

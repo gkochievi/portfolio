@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "username": "demo",
+  "password": "printomato-demo",
+  "email": "demo@printomato.ge",
+  "first_name": "Gela",
+  "last_name": "Kochievi",
+  "is_staff": true,
+  "is_superuser": true,
+  "last_login": "2026-08-20T06:15:00.000Z"
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 400,
+    "category_id": 302,
+    "location_keyword": "Tbilisi",
+    "start_time": "08:00:00",
+    "end_time": "10:00:00",
+    "description": "Cranes may not set up on central Tbilisi streets during the morning rush.",
+    "is_active": true,
+    "created_at": "2026-06-11T10:05:00+04:00",
+    "updated_at": "2026-07-29T12:18:00+04:00"
+  },
+  {
+    "id": 401,
+    "category_id": 302,
+    "location_keyword": "Tbilisi",
+    "start_time": "17:00:00",
+    "end_time": "19:00:00",
+    "description": "",
+    "is_active": true,
+    "created_at": "2026-06-11T10:07:00+04:00",
+    "updated_at": "2026-06-11T10:07:00+04:00"
+  },
+  {
+    "id": 402,
+    "category_id": 305,
+    "location_keyword": "თბილისი",
+    "start_time": "22:00:00",
+    "end_time": "06:00:00",
+    "description": "ღამის ხმაურის შეზღუდვა: ბეტონის მიწოდება თბილისის საზღვრებში აკრძალულია.",
+    "is_active": true,
+    "created_at": "2026-06-18T09:40:00+04:00",
+    "updated_at": "2026-08-05T15:02:00+04:00"
+  },
+  {
+    "id": 403,
+    "category_id": 307,
+    "location_keyword": "Batumi",
+    "start_time": "09:00:00",
+    "end_time": "11:00:00",
+    "description": "The Batumi seafront is closed to tipper traffic during the morning school run.",
+    "is_active": true,
+    "created_at": "2026-07-02T11:25:00+04:00",
+    "updated_at": "2026-07-02T11:25:00+04:00"
+  },
+  {
+    "id": 404,
+    "category_id": 307,
+    "location_keyword": "Rustavi",
+    "start_time": "07:00:00",
+    "end_time": "09:00:00",
+    "description": "Superseded by the city-wide permit scheme — kept for reference.",
+    "is_active": false,
+    "created_at": "2026-05-14T08:15:00+04:00",
+    "updated_at": "2026-08-12T17:44:00+04:00"
+  }
+]

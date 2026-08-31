@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F97316" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>Tonnaro — specialised transport, live demo</title>
+    <meta
+      name="description"
+      content="A live, fully interactive demo of Tonnaro: order a tow truck, crane or lowboy, watch an admin price it, assign a vehicle and driver, and track it to completion. Runs entirely in your browser."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tonnaro" />
+    <meta property="og:title" content="Tonnaro — specialised transport, live demo" />
+    <meta
+      property="og:description"
+      content="Click through a real specialised-transport ordering platform: a public site, a phone-style customer app and an admin console — in Georgian, English and Russian, served entirely from your browser."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ka_GE" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+
+    <!-- Root-absolute so Vite rebases them onto the deploy base; a relative
+         "./" href resolves against the current URL and 404s on deep links
+         served through the SPA fallback. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!--
+      Upstream this page also carries an inline script that fetches Django's
+      admin-managed /api/seo/ and patches the tags above before the bundle
+      loads. It runs before any JavaScript the mock could answer from, so the
+      demo ships the static tags that script falls back to and nothing else.
+      The admin screen that edits those values is still here and still works —
+      see /admin/settings.
+    -->
+
+    <style>
+      html, body { margin: 0; padding: 0; background: #ffffff; }
+      #root { min-height: 100vh; }
+      .boot-splash {
+        position: fixed; inset: 0; display: grid; place-items: center;
+        background: #ffffff; z-index: 9999;
+      }
+      .boot-splash__mark {
+        width: 42px; height: 42px; border-radius: 999px;
+        border: 3px solid rgba(15, 23, 42, 0.08);
+        border-top-color: #F97316;
+        animation: boot-spin 0.75s linear infinite;
+      }
+      @keyframes boot-spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-splash__mark { animation-duration: 2.4s; }
+      }
+      @media (prefers-color-scheme: dark) {
+        html, body, .boot-splash { background: #0f172a; }
+        .boot-splash__mark { border-color: rgba(255, 255, 255, 0.1); border-top-color: #FB923C; }
+      }
+    </style>
+
+    <script type="module" src="/src/index.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash"><div class="boot-splash__mark"></div></div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+  </body>
+</html>

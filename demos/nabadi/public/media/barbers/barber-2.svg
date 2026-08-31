@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="b2t">
+  <title id="b2t">Sandro Chkheidze, fades and modern textures</title>
+  <defs>
+    <clipPath id="b2crown">
+      <path d="M141 150 C141 92 164 58 200 58 C236 58 259 92 259 150 L259 210 L141 210 Z"/>
+    </clipPath>
+  </defs>
+  <rect width="400" height="400" fill="#f1ead9"/>
+  <circle cx="200" cy="200" r="156" fill="#e6dec9" stroke="#d6cdb4" stroke-width="2"/>
+
+  <g stroke="#20180f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M176 214 L172 298 L228 298 L224 214 Z" fill="#fbf6ec"/>
+    <path d="M52 400 C54 348 90 314 138 302 C156 297 168 295 178 293 C184 309 216 309 222 293 C232 295 244 297 262 302 C310 314 346 348 348 400 Z" fill="#d6cdb4"/>
+    <ellipse cx="136" cy="170" rx="9" ry="15" fill="#fbf6ec"/>
+    <ellipse cx="264" cy="170" rx="9" ry="15" fill="#fbf6ec"/>
+    <path d="M141 150 C141 100 164 76 200 76 C236 76 259 100 259 150 C259 186 253 216 240 232 C229 246 214 252 200 252 C186 252 171 246 160 232 C147 216 141 186 141 150 Z" fill="#fbf6ec"/>
+  </g>
+
+  <path d="M178 293 C184 309 216 309 222 293" fill="none" stroke="#8f5d33" stroke-width="10" stroke-linecap="round"/>
+  <path d="M178 293 C184 309 216 309 222 293" fill="none" stroke="#20180f" stroke-width="2" stroke-linecap="round"/>
+
+  <g clip-path="url(#b2crown)">
+    <path d="M124 40 L276 40 L276 158 L247 158 L247 116 L153 116 L153 158 L124 158 Z" fill="#20180f"/>
+    <path d="M124 158 L153 158 L152 172 C148 180 138 185 124 187 Z" fill="#70675e"/>
+    <path d="M276 158 L247 158 L248 172 C252 180 262 185 276 187 Z" fill="#70675e"/>
+  </g>
+  <path d="M141 150 C141 92 164 58 200 58 C236 58 259 92 259 150" fill="none" stroke="#20180f" stroke-width="3" stroke-linejoin="round"/>
+
+  <circle cx="133" cy="186" r="5" fill="#8f5d33" stroke="#20180f" stroke-width="2"/>
+
+  <g fill="#20180f">
+    <ellipse cx="178" cy="172" rx="6.5" ry="5"/>
+    <ellipse cx="222" cy="172" rx="6.5" ry="5"/>
+  </g>
+  <g stroke="#20180f" fill="none" stroke-linecap="round">
+    <path d="M166 154 C173 148 186 148 193 153" stroke-width="4.5"/>
+    <path d="M234 154 C227 148 214 148 207 153" stroke-width="4.5"/>
+    <path d="M200 176 L196 198 C195 204 205 205 210 199" stroke-width="3.5"/>
+    <path d="M183 220 C191 229 209 229 217 220" stroke-width="3.5"/>
+  </g>
+</svg>

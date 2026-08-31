@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tonnaro">
+  <rect width="64" height="64" rx="14" fill="#F97316"/>
+  <!-- Flatbed deck -->
+  <rect x="10" y="36" width="44" height="5" rx="2.5" fill="#fff"/>
+  <!-- Cab -->
+  <path d="M10 36V24a2 2 0 0 1 2-2h9l6 8v6z" fill="#fff"/>
+  <!-- Load: a lifted block on the bed, the thing being hauled -->
+  <rect x="31" y="21" width="21" height="12" rx="2" fill="#fff" opacity="0.72"/>
+  <!-- Wheels -->
+  <circle cx="20" cy="47" r="6" fill="#fff"/>
+  <circle cx="20" cy="47" r="2.4" fill="#F97316"/>
+  <circle cx="45" cy="47" r="6" fill="#fff"/>
+  <circle cx="45" cy="47" r="2.4" fill="#F97316"/>
+</svg>

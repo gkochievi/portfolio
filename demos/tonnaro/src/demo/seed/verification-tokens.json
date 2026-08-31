@@ -1,0 +1,26 @@
+[
+  {
+    "id": 201,
+    "user_id": 14,
+    "purpose": "verify_email",
+    "code": "123456",
+    "token": "b7f4c2a9e1d84f36ab05c7e28d19f430",
+    "expires_at": "2026-08-28T18:34:00+04:00",
+    "used_at": null,
+    "attempts": 0,
+    "created_at": "2026-08-28T18:24:00+04:00",
+    "last_sent_at": "2026-08-28T18:24:00+04:00"
+  },
+  {
+    "id": 202,
+    "user_id": 2,
+    "purpose": "password_reset",
+    "code": "654321",
+    "token": "3a9e5d10c4b7482fbe61d80a7c25f9e6",
+    "expires_at": "2026-08-28T19:05:00+04:00",
+    "used_at": null,
+    "attempts": 0,
+    "created_at": "2026-08-28T18:35:00+04:00",
+    "last_sent_at": "2026-08-28T18:35:00+04:00"
+  }
+]

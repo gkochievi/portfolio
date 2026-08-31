@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="g6">
+<title id="g6">The Nabadi shopfront from the street at dusk, its sign lit</title>
+<defs><clipPath id="pole"><rect x="466" y="340" width="28" height="118" rx="14"/></clipPath></defs>
+<rect x="0" y="0" width="600" height="500" fill="#d6cdb4"/>
+<rect x="0" y="0" width="600" height="110" fill="#70675e"/>
+<circle cx="502" cy="56" r="24" fill="#f1ead9"/>
+<g stroke="#f1ead9" stroke-width="2.4" stroke-linecap="round">
+  <path d="M92 44 L92 60 M84 52 L100 52"/><path d="M188 26 L188 38 M182 32 L194 32"/>
+  <path d="M330 62 L330 74 M324 68 L336 68"/><path d="M424 30 L424 42 M418 36 L430 36"/>
+</g>
+
+<g fill="#70675e" stroke="#20180f" stroke-width="2.4">
+  <path d="M0 168 L0 132 L58 132 L58 168 Z"/>
+  <path d="M66 168 L66 142 L96 120 L126 142 L126 168 Z"/>
+  <path d="M186 168 L186 128 L246 128 L246 168 Z"/>
+  <path d="M296 168 L296 136 L338 118 L380 136 L380 168 Z"/>
+  <path d="M436 168 L436 130 L482 130 L482 168 Z"/>
+  <path d="M540 168 L540 124 L600 124 L600 168 Z"/>
+</g>
+<g fill="#e9c9a8">
+  <rect x="14" y="144" width="14" height="16"/><rect x="36" y="144" width="14" height="16"/>
+  <rect x="82" y="148" width="14" height="16"/><rect x="200" y="140" width="14" height="18"/>
+  <rect x="224" y="140" width="14" height="18"/><rect x="318" y="146" width="16" height="16"/>
+  <rect x="448" y="142" width="14" height="18"/><rect x="556" y="138" width="16" height="18"/><rect x="578" y="138" width="16" height="18"/>
+</g>
+
+<rect x="40" y="164" width="520" height="22" rx="6" fill="#f1ead9" stroke="#20180f" stroke-width="3.4"/>
+<rect x="50" y="186" width="500" height="314" fill="#fbf6ec" stroke="#20180f" stroke-width="4"/>
+
+<g fill="#e9c9a8" stroke="#20180f" stroke-width="2.2">
+  <circle cx="118" cy="206" r="7"/><circle cx="165" cy="206" r="7"/><circle cx="212" cy="206" r="7"/><circle cx="259" cy="206" r="7"/>
+  <circle cx="306" cy="206" r="7"/><circle cx="353" cy="206" r="7"/><circle cx="400" cy="206" r="7"/><circle cx="447" cy="206" r="7"/><circle cx="494" cy="206" r="7"/>
+</g>
+<g stroke="#e9c9a8" stroke-width="2.4" stroke-linecap="round">
+  <path d="M118 192 L118 184 M106 198 L99 194 M130 198 L137 194"/>
+  <path d="M306 192 L306 184 M294 198 L287 194 M318 198 L325 194"/>
+  <path d="M494 192 L494 184 M482 198 L475 194 M506 198 L513 194"/>
+</g>
+<rect x="86" y="216" width="428" height="76" rx="10" fill="#20180f"/>
+<rect x="94" y="224" width="412" height="60" rx="6" fill="none" stroke="#8f5d33" stroke-width="2.4"/>
+<text x="300" y="270" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="42" letter-spacing="9" fill="#f1ead9">NABADI</text>
+<text x="300" y="318" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="15" letter-spacing="7" fill="#70675e">BARBERSHOP</text>
+
+<rect x="86" y="332" width="206" height="148" rx="8" fill="#e9c9a8" stroke="#20180f" stroke-width="3.6"/>
+<line x1="189" y1="334" x2="189" y2="478" stroke="#20180f" stroke-width="2.6"/>
+<line x1="88" y1="404" x2="290" y2="404" stroke="#20180f" stroke-width="2.6"/>
+<g fill="#20180f">
+  <rect x="122" y="356" width="26" height="42" rx="8"/><rect x="114" y="398" width="42" height="11" rx="4"/>
+  <rect x="129" y="409" width="12" height="24"/><rect x="118" y="433" width="34" height="8" rx="3"/>
+  <rect x="226" y="360" width="24" height="38" rx="8"/><rect x="218" y="398" width="40" height="11" rx="4"/>
+  <rect x="232" y="409" width="12" height="24"/><rect x="222" y="433" width="32" height="8" rx="3"/>
+</g>
+<line x1="100" y1="372" x2="278" y2="372" stroke="#20180f" stroke-width="2.6"/>
+<g fill="#20180f"><rect x="166" y="352" width="10" height="20" rx="3"/><rect x="182" y="358" width="9" height="14" rx="3"/><rect x="262" y="354" width="10" height="18" rx="3"/></g>
+
+<rect x="320" y="326" width="120" height="174" rx="8" fill="#fbf6ec" stroke="#20180f" stroke-width="3.6"/>
+<rect x="334" y="342" width="92" height="82" rx="4" fill="#e9c9a8" stroke="#20180f" stroke-width="2.6"/>
+<line x1="380" y1="342" x2="380" y2="424" stroke="#20180f" stroke-width="2.2"/>
+<rect x="334" y="440" width="92" height="46" rx="4" fill="#f1ead9" stroke="#20180f" stroke-width="2.4"/>
+<rect x="408" y="392" width="7" height="28" rx="3.5" fill="#8f5d33"/>
+
+<rect x="466" y="340" width="28" height="118" rx="14" fill="#ffffff" stroke="#20180f" stroke-width="3"/>
+<g clip-path="url(#pole)" fill="#8f5d33">
+  <path d="M466 352 L494 330 L494 344 L466 366 Z"/>
+  <path d="M466 384 L494 362 L494 376 L466 398 Z"/>
+  <path d="M466 416 L494 394 L494 408 L466 430 Z"/>
+  <path d="M466 448 L494 426 L494 440 L466 462 Z"/>
+</g>
+<rect x="466" y="340" width="28" height="118" rx="14" fill="none" stroke="#20180f" stroke-width="3"/>
+<rect x="458" y="326" width="44" height="17" rx="6" fill="#d6cdb4" stroke="#20180f" stroke-width="2.8"/>
+<rect x="458" y="455" width="44" height="17" rx="6" fill="#d6cdb4" stroke="#20180f" stroke-width="2.8"/>
+
+<line x1="50" y1="266" x2="30" y2="266" stroke="#20180f" stroke-width="4"/>
+<line x1="32" y1="266" x2="32" y2="278" stroke="#20180f" stroke-width="3"/>
+<rect x="4" y="278" width="58" height="46" rx="8" fill="#fbf6ec" stroke="#20180f" stroke-width="3"/>
+<g stroke="#8f5d33" stroke-width="2.8" fill="none">
+  <path d="M20 292 L46 312 M46 292 L20 312"/><circle cx="17" cy="316" r="5"/><circle cx="49" cy="316" r="5"/>
+</g>
+
+<rect x="0" y="500" width="600" height="100" fill="#f1ead9"/>
+<line x1="0" y1="500" x2="600" y2="500" stroke="#20180f" stroke-width="3"/>
+<rect x="50" y="486" width="500" height="14" fill="#e6dec9"/>
+<rect x="306" y="500" width="148" height="15" rx="4" fill="#e6dec9" stroke="#20180f" stroke-width="2.6"/>
+<line x1="0" y1="556" x2="600" y2="556" stroke="#d6cdb4" stroke-width="2.4"/>
+<g fill="none" stroke="#e6dec9" stroke-width="2.2">
+  <path d="M30 530 q22 -12 44 0"/><path d="M110 530 q22 -12 44 0"/><path d="M190 530 q22 -12 44 0"/>
+  <path d="M470 530 q22 -12 44 0"/><path d="M550 530 q22 -12 44 0"/>
+  <path d="M20 582 q26 -14 52 0"/><path d="M120 582 q26 -14 52 0"/><path d="M220 582 q26 -14 52 0"/>
+  <path d="M320 582 q26 -14 52 0"/><path d="M420 582 q26 -14 52 0"/><path d="M520 582 q26 -14 52 0"/>
+</g>
+</svg>

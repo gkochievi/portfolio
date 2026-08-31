@@ -1,0 +1,21 @@
+# Netlify / Cloudflare Pages SPA fallback — REFERENCE ONLY.
+# build-all.mjs GENERATES dist/_redirects from the discovered demo list (one
+# explicit line per demo, because Cloudflare does not expand :placeholders in a
+# rewrite destination); this file documents the shape it writes.
+#
+# Rules are evaluated top to bottom, and a rewrite (status 200) only fires when
+# no real file matches — so hashed assets and media still serve themselves.
+# The demo rules must come first: without them /demos/printomato/devices would
+# fall through to the portfolio shell instead of booting the console.
+
+/demos/gisheri/*      /demos/gisheri/index.html      200
+/demos/nabadi/*       /demos/nabadi/index.html       200
+/demos/printomato/*   /demos/printomato/index.html   200
+/demos/tonnaro/*      /demos/tonnaro/index.html      200
+/*                    /index.html                    200
+
+# The splat covers a demo's own sub-app too: Nabadi mounts its staff console at
+# /demos/nabadi/admin/, and /demos/nabadi/admin/bookings falls back to the same
+# single index.html the customer site boots from — one bundle, two surfaces.
+# Gisheri does the same with its shop and its console: a hard reload on
+# /demos/gisheri/admin/orders falls back to that same index.html, no extra rule.

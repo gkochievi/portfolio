@@ -1,0 +1,6 @@
+[
+  { "id": 2850, "max_gradient": "5.0000",  "multiplier": "1.0000", "order": 0 },
+  { "id": 2851, "max_gradient": "15.0000", "multiplier": "1.1000", "order": 1 },
+  { "id": 2852, "max_gradient": "30.0000", "multiplier": "1.2500", "order": 2 },
+  { "id": 2853, "max_gradient": null,      "multiplier": "1.5000", "order": 3 }
+]

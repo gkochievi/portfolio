@@ -1,0 +1,535 @@
+/* ─── Light theme (default) ─── */
+:root,
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-tertiary: #eef1f6;
+  --bg-elevated: #ffffff;
+  --card-bg: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --text-placeholder: #d1d5db;
+  --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+  --accent: #F97316;
+  --accent-light: #FB923C;
+  --accent-dark: #EA580C;
+  --accent-bg: rgba(249,115,22,0.06);
+  --accent-bg-strong: rgba(249,115,22,0.12);
+  --stats-bg: #f9fafb;
+  --header-gradient: linear-gradient(135deg, #F97316 0%, #EA580C 50%, #C2410C 100%);
+  --header-gradient-soft: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  --overlay-bg: rgba(0,0,0,0.02);
+  --tab-bar-bg: rgba(255,255,255,0.85);
+  --tab-bar-border: rgba(0,0,0,0.06);
+  --tab-bar-shadow: 0 -1px 12px rgba(0,0,0,0.04);
+  --icon-bg-alpha: 10;
+  --input-bg: #f9fafb;
+  --input-border: #e5e7eb;
+  --input-focus: #F97316;
+  --badge-muted-bg: #f3f4f6;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --info-color: #3b82f6;
+  --glass-bg: rgba(255,255,255,0.72);
+  --glass-border: rgba(255,255,255,0.6);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  --card-hover-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  --card-active-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  --fab-shadow: 0 8px 24px rgba(249,115,22,0.35);
+  --fab-gradient: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  --skeleton-base: #e5e7eb;
+  --skeleton-shine: #f3f4f6;
+  --nav-active-bg: rgba(249,115,22,0.08);
+  --ring-color: rgba(249,115,22,0.2);
+  --surface-hover: rgba(0,0,0,0.02);
+  /* Background behind uploaded category/service/about-us images. Stays
+     LIGHT in dark mode on purpose: most product/category uploads are
+     PNGs/JPGs with white backgrounds, so a dark wrapper made them look
+     like harsh white panels. A soft light tile in both themes lets the
+     image blend cleanly. */
+  --image-tile-bg: #f5f7fa;
+}
+
+/* ─── Dark theme ─── */
+[data-theme="dark"] {
+  --bg-primary: #15171f;
+  --bg-secondary: #1a1d26;
+  --bg-tertiary: #20232d;
+  --bg-elevated: #272a35;
+  --card-bg: #272a35;
+  --text-primary: #f3f4f6;
+  --text-secondary: #a8afbd;
+  --text-tertiary: #77808f;
+  --text-placeholder: #565d6b;
+  --border-color: #363a48;
+  --border-light: #2c303c;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.25);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.35);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.35);
+  --accent: #FB923C;
+  --accent-light: #FDBA74;
+  --accent-dark: #F97316;
+  --accent-bg: rgba(251,146,60,0.1);
+  --accent-bg-strong: rgba(251,146,60,0.18);
+  --stats-bg: #20232d;
+  --header-gradient: linear-gradient(135deg, #EA580C 0%, #F97316 50%, #C2410C 100%);
+  --header-gradient-soft: linear-gradient(135deg, #EA580C 0%, #F97316 100%);
+  --overlay-bg: rgba(255,255,255,0.025);
+  --tab-bar-bg: rgba(26,29,38,0.88);
+  --tab-bar-border: rgba(255,255,255,0.07);
+  --tab-bar-shadow: 0 -1px 12px rgba(0,0,0,0.2);
+  --icon-bg-alpha: 15;
+  --input-bg: #1d2028;
+  --input-border: #363a48;
+  --input-focus: #FB923C;
+  --badge-muted-bg: #20232d;
+  --danger-bg: rgba(239,68,68,0.08);
+  --danger-border: rgba(239,68,68,0.2);
+  --success-color: #34d399;
+  --warning-color: #fbbf24;
+  --info-color: #60a5fa;
+  --glass-bg: rgba(39,42,53,0.82);
+  --glass-border: rgba(255,255,255,0.07);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  --card-hover-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  --card-active-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  --fab-shadow: 0 8px 24px rgba(249,115,22,0.3);
+  --fab-gradient: linear-gradient(135deg, #FB923C 0%, #EA580C 100%);
+  --skeleton-base: #2c303c;
+  --skeleton-shine: #20232d;
+  --nav-active-bg: rgba(251,146,60,0.1);
+  --ring-color: rgba(251,146,60,0.25);
+  --surface-hover: rgba(255,255,255,0.04);
+  /* Intentionally light in dark mode — see comment in the light-theme
+     block above. */
+  --image-tile-bg: #f5f7fa;
+}
+
+/* ─── Global styles ─── */
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background 0.25s ease, color 0.25s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Smooth scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-placeholder);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #363a48;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #454a5a;
+}
+
+/* ─── Utility animations ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249,115,22,0.15); }
+  50% { box-shadow: 0 0 0 8px rgba(249,115,22,0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Glassmorphism helper ─── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+/* ─── Card interaction ─── */
+.card-interactive {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-hover-shadow);
+}
+.card-interactive:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: var(--card-active-shadow);
+}
+
+/* ─── App background helpers ─── */
+.app-bg {
+  background: var(--bg-secondary);
+}
+.app-bg-alt {
+  background: var(--bg-tertiary);
+}
+
+/* ─── Focus ring ─── */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ─── Override Ant Design for consistency ─── */
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-select-selector,
+.ant-picker {
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.ant-input:focus,
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--input-focus) !important;
+  box-shadow: 0 0 0 3px var(--ring-color) !important;
+}
+
+[data-theme="dark"] .ant-input:focus,
+[data-theme="dark"] .ant-input-affix-wrapper:focus,
+[data-theme="dark"] .ant-input-affix-wrapper-focused {
+  box-shadow: 0 0 0 3px var(--ring-color) !important;
+}
+
+/* ─── Auth form input fix — prevent text clipping ─── */
+.ant-input-affix-wrapper.ant-input-affix-wrapper-lg {
+  padding: 14px 16px !important;
+  line-height: 1.5 !important;
+}
+.ant-input-affix-wrapper.ant-input-affix-wrapper-lg > input.ant-input {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  padding: 0 !important;
+}
+
+/* ─── Ant Design card refinements ─── */
+.ant-card {
+  border-color: var(--border-color) !important;
+}
+
+/* ─── Admin tables ─── */
+.ant-table {
+  font-size: 13.5px;
+}
+
+/* Header */
+.ant-table-thead > tr > th,
+.ant-table-thead > tr > td {
+  background: var(--bg-secondary) !important;
+  border-bottom: 1.5px solid var(--border-color) !important;
+  color: var(--text-tertiary) !important;
+  font-weight: 600 !important;
+  font-size: 11.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 12px 16px !important;
+}
+
+/* Cells */
+.ant-table-tbody > tr > td {
+  padding: 14px 16px !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+/* Row hover */
+.ant-table-tbody > tr {
+  transition: background 0.15s ease;
+}
+.ant-table-tbody > tr:hover > td {
+  background: var(--surface-hover) !important;
+}
+.ant-table-tbody > tr[style*="cursor: pointer"]:hover > td,
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background: var(--accent-bg) !important;
+}
+
+/* Last row — no bottom border */
+.ant-table-tbody > tr:last-child > td {
+  border-bottom: none !important;
+}
+
+/* Striped rows */
+.ant-table-tbody > tr:nth-child(even) > td {
+  background: var(--overlay-bg);
+}
+.ant-table-tbody > tr:nth-child(even):hover > td {
+  background: var(--accent-bg) !important;
+}
+
+/* Pagination refinement */
+.ant-table-pagination.ant-pagination {
+  margin: 14px 16px !important;
+}
+.ant-pagination .ant-pagination-item {
+  border-radius: 8px !important;
+  border-color: var(--border-color) !important;
+  font-weight: 500;
+}
+.ant-pagination .ant-pagination-item-active {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+.ant-pagination .ant-pagination-item-active a {
+  color: #fff !important;
+}
+.ant-pagination .ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination .ant-pagination-next .ant-pagination-item-link {
+  border-radius: 8px !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Empty state inside table */
+.ant-table-placeholder td {
+  border-bottom: none !important;
+}
+.ant-empty-description {
+  color: var(--text-tertiary) !important;
+}
+
+/* Loading spinner tint */
+.ant-spin .ant-spin-dot-item {
+  background: var(--accent) !important;
+}
+
+/* Action buttons in table cells */
+.ant-table-tbody .ant-btn-text {
+  border-radius: 8px !important;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ant-table-tbody .ant-btn-text:hover {
+  background: var(--accent-bg) !important;
+}
+.ant-table-tbody .ant-btn-text.ant-btn-dangerous:hover {
+  background: var(--danger-bg) !important;
+}
+
+/* Tag refinement in tables */
+.ant-table-tbody .ant-tag {
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* ─── Better modal backdrop ─── */
+.ant-modal-mask {
+  backdrop-filter: blur(4px);
+}
+
+/* ─── Better tag styles ─── */
+.ant-tag {
+  border: none !important;
+  font-weight: 500;
+}
+
+/* ─── Stat card pattern ─── */
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── Section headers ─── */
+.section-header {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* ─── Smooth page transition ─── */
+.page-enter {
+  animation: fadeInUp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hide scrollbar on horizontally-scrolled mobile tab bars (admin nav with
+   9 items in KA/RU). Container itself stays scrollable via touch/wheel. */
+.admin-mobile-tabbar::-webkit-scrollbar { display: none; }
+
+/* ─── Georgian / Russian text overflow guards ────────────────────────────
+ * Georgian translations are 2–3× longer than the English equivalents for
+ * many UI strings (e.g. "Verified" → "დადასტურებული", "Inactive" →
+ * "არააქტიური"). Without these rules, Ant Design Tags inside narrow table
+ * columns wrap onto two lines and break row alignment.
+ *
+ * The fix: force Tag contents to a single line everywhere by default.
+ * Columns that genuinely benefit from multi-line tag stacks can opt out
+ * by setting `whiteSpace: 'normal'` inline.
+ */
+.ant-tag {
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Bottom tab labels (customer app + admin mobile nav) — Georgian "შეკვეთები"
+ * still fits but "მთავარი გვერდი" doesn't; force single line and shrink the
+ * font slightly under 360px so 3–4 tabs always fit side-by-side. */
+.ant-tabs-tab,
+.ant-menu-item {
+  white-space: nowrap !important;
+}
+
+/* Customer/admin bottom tab bar items shouldn't wrap labels onto two
+ * lines under any language. */
+.app-bottom-tab-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  font-size: 11px;
+}
+
+/* Table cells: when a Tag is the only child, allow its container to
+ * grow if needed (Antd defaults to ellipsis). Combined with the Tag
+ * nowrap above, this keeps rows aligned even with long KA strings. */
+.ant-table-cell .ant-tag {
+  vertical-align: middle;
+}
+
+/* ─── Georgian-specific layout adjustments ────────────────────────────
+ * Georgian has no uppercase form — `text-transform: uppercase` is a no-op
+ * for KA characters but the accompanying letter-spacing (used to "spread"
+ * uppercase labels in English) makes the already-long Georgian words even
+ * wider, which pushes section labels past their containers on mobile.
+ * Drop letter-spacing for any element marked uppercase when the document
+ * language is Georgian. */
+html:lang(ka) [style*="text-transform: uppercase"],
+html:lang(ka) [style*="text-transform:uppercase"] {
+  letter-spacing: 0 !important;
+}
+
+/* Stat-card / mobile bottom-label patterns: small (11-12px) Georgian
+ * labels sitting in narrow flex columns frequently wrap. Tighten the
+ * letter-spacing globally for KA so a "შესრულებული" (10 chars) actually
+ * fits in 1/3 of a 360px viewport. */
+html:lang(ka) {
+  letter-spacing: -0.01em;
+}
+
+/* Bottom tab labels in customer + admin mobile shell — additional safety
+ * net so Georgian / Russian translations stay on a single line even on
+ * sub-360px viewports. */
+.app-bottom-tab-label,
+.ant-tabs-tab-btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* ─── react-quill (.snow) dark-mode fixes ────────────────────────────────
+ * The Quill vendor CSS hardcodes light colors for toolbar and editor
+ * surfaces. Override them using the project's existing CSS variables so
+ * the editor doesn't render as a white stripe in dark mode.
+ *
+ * Variables used (all confirmed present in [data-theme="dark"] above):
+ *   --border-color, --input-bg, --text-primary, --text-secondary,
+ *   --text-placeholder, --card-bg
+ */
+[data-theme="dark"] .ql-toolbar.ql-snow,
+[data-theme="dark"] .ql-container.ql-snow {
+  border-color: var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+[data-theme="dark"] .ql-snow .ql-stroke { stroke: var(--text-secondary); }
+[data-theme="dark"] .ql-snow .ql-fill { fill: var(--text-secondary); }
+[data-theme="dark"] .ql-snow .ql-picker { color: var(--text-primary); }
+[data-theme="dark"] .ql-snow .ql-picker-options {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+[data-theme="dark"] .ql-editor.ql-blank::before { color: var(--text-placeholder); }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="rosequartzmoonstoneduot">
+  <title id="rosequartzmoonstoneduot">Rose Quartz and Moonstone Duo</title>
+  <desc>An open cuff seen at three-quarters with a rose quartz and a moonstone set flush in gold bezels.</desc>
+  <rect width="800" height="800" fill="#f7f2ea"/>
+  <path d="M 660.56 365.3 A 262 198 0 0 1 485.3 573.21 A 262 198 0 0 1 177.81 490.92 A 262 198 0 0 1 214.74 245.99 A 262 198 0 0 1 538.84 218.09 L 503.86 270.67 A 196 136 0 0 0 261.41 289.83 A 196 136 0 0 0 233.78 458.07 A 196 136 0 0 0 463.81 514.59 A 196 136 0 0 0 594.93 371.78 Z" fill="#e3d9c6" transform="translate(11 13)"/>
+  <path d="M 660.56 395.3 A 262 198 0 0 1 485.3 603.21 A 262 198 0 0 1 177.81 520.92 A 262 198 0 0 1 214.74 275.99 A 262 198 0 0 1 538.84 248.09 L 503.86 300.67 A 196 136 0 0 0 261.41 319.83 A 196 136 0 0 0 233.78 488.07 A 196 136 0 0 0 463.81 544.59 A 196 136 0 0 0 594.93 401.78 Z" fill="#6b6156" stroke="#20180f" stroke-width="1.5"/>
+  <path d="M 660.56 365.3 A 262 198 0 0 1 485.3 573.21 A 262 198 0 0 1 177.81 490.92 A 262 198 0 0 1 214.74 245.99 A 262 198 0 0 1 538.84 218.09 L 503.86 270.67 A 196 136 0 0 0 261.41 289.83 A 196 136 0 0 0 233.78 458.07 A 196 136 0 0 0 463.81 514.59 A 196 136 0 0 0 594.93 371.78 Z" fill="#8a7f70" stroke="#20180f" stroke-width="1.5"/>
+  <path d="M 191.15 370.53 A 210 148 0 0 1 392.67 238.09" fill="none" stroke="#a49a8d" stroke-width="9" stroke-linecap="round"/>
+  <g transform="translate(292.49 533.45) rotate(-158.81)"><ellipse rx="52" ry="34" fill="none" stroke="#c8922a" stroke-width="4"/><ellipse rx="46" ry="29" fill="#e0b4b8" stroke="#20180f" stroke-width="1.4"/><ellipse cx="-14" cy="-9" rx="14" ry="8" fill="#f0d4d7"/><path d="M -30 6 L 0 14 L 30 4" fill="none" stroke="#c08e94" stroke-width="3"/></g>
+  <g transform="translate(507.51 533.45) rotate(158.81)"><ellipse rx="52" ry="34" fill="none" stroke="#c8922a" stroke-width="4"/><ellipse rx="46" ry="29" fill="#e7e2d8" stroke="#20180f" stroke-width="1.4"/><ellipse cx="-14" cy="-9" rx="14" ry="8" fill="#f6f3ec"/><path d="M -30 6 L 0 14 L 30 4" fill="none" stroke="#cbc5b8" stroke-width="3"/></g>
+</svg>

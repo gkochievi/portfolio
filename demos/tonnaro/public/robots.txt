@@ -1,0 +1,4 @@
+# A portfolio demo, not a product. Nothing here should be indexed — the real
+# site it is modelled on lives elsewhere and deserves the search traffic.
+User-agent: *
+Disallow: /

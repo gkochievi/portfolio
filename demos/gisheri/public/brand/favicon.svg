@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="gf">
+  <title id="gf">Gisheri</title>
+  <desc>A single strung jet bead with one gold facet.</desc>
+  <rect width="64" height="64" rx="14" fill="#f7f2ea"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="#e3d9c6"/>
+  <path d="M 3 32.5 L 61 32.5" fill="none" stroke="#20180f" stroke-width="3.15" stroke-linecap="round"/><ellipse cx="32" cy="32.5" rx="21" ry="18.27" fill="#1c1511"/><path d="M 16.46 28.3 L 27.8 18.64 L 31.58 24.94 L 21.5 33.34 Z" fill="#c8922a"/><path d="M 47.98 37.02 A 16.8 14.62 0 0 1 30.24 47.04" fill="none" stroke="#3d332b" stroke-width="2.31" stroke-linecap="round"/><ellipse cx="32" cy="32.5" rx="3.99" ry="5.12" fill="#f7f2ea"/>
+</svg>

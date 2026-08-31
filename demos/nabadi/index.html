@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f1ead9" />
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+
+    <title>Nabadi Barbershop — live demo</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="A live, fully interactive demo of a barbershop booking platform: the customer site and booking wizard, and the staff console behind it — served entirely from your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nabadi Barbershop" />
+    <meta property="og:title" content="Nabadi Barbershop — live demo" />
+    <meta
+      property="og:description"
+      content="Book a barber, then switch to the staff console and watch the booking land. Bilingual Georgian/English, no backend — the whole product runs in the tab."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ka_GE" />
+
+    <style>
+      /* The palette's page background, painted before the bundle parses, so the
+         first frame is the shop's cream rather than a white flash. */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #f1ead9;
+        color: #20180f;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      .boot-splash {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: #f1ead9;
+        z-index: 9999;
+      }
+      .boot-splash__mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 2px solid #e6dec9;
+        border-top-color: #8f5d33;
+        animation: boot-spin 0.75s linear infinite;
+      }
+      @keyframes boot-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-splash__mark {
+          animation-duration: 2.4s;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash"><div class="boot-splash__mark"></div></div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

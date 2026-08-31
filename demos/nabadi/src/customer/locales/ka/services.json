@@ -1,0 +1,11 @@
+{
+  "title": "სერვისები",
+  "subtitle": "აირჩიეთ სერვისი ჯავშნის დასაწყებად.",
+  "duration": "{{minutes}} წთ",
+  "price": "{{price}} ₾",
+  "book_now": "დაჯავშნე ეს სერვისი",
+  "no_services": "სერვისები ამჟამად მიუწვდომელია.",
+  "loading": "სერვისები იტვირთება…",
+  "service_count_one": "{{count}} სერვისი",
+  "service_count_other": "{{count}} სერვისი"
+}

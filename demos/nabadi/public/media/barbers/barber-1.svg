@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="b1t">
+  <title id="b1t">Nika Tsereteli, master barber</title>
+  <rect width="400" height="400" fill="#f1ead9"/>
+  <circle cx="200" cy="200" r="156" fill="#e6dec9" stroke="#d6cdb4" stroke-width="2"/>
+
+  <g stroke="#20180f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M172 210 L166 296 L234 296 L228 210 Z" fill="#fbf6ec"/>
+    <path d="M32 400 C34 344 74 310 126 298 C148 293 162 291 174 289 C180 303 220 303 226 289 C238 291 252 293 274 298 C326 310 366 344 368 400 Z" fill="#d6cdb4"/>
+    <ellipse cx="126" cy="176" rx="10" ry="16" fill="#fbf6ec"/>
+    <ellipse cx="274" cy="176" rx="10" ry="16" fill="#fbf6ec"/>
+    <path d="M132 158 C132 104 158 76 200 76 C242 76 268 104 268 158 C268 204 242 252 200 252 C158 252 132 204 132 158 Z" fill="#fbf6ec"/>
+  </g>
+
+  <g stroke="#20180f" stroke-width="3" stroke-linejoin="round">
+    <path d="M174 292 L202 348 L168 354 L140 310 Z" fill="#8f5d33"/>
+    <path d="M226 292 L202 348 L236 354 L264 310 Z" fill="#8f5d33"/>
+  </g>
+
+  <path d="M132 148 C120 216 148 288 200 300 C252 288 280 216 268 148 C264 186 254 210 240 220 C236 223 234 225 231 227 C223 233 177 233 169 227 C166 225 164 223 160 220 C146 210 136 186 132 148 Z" fill="#70675e" stroke="#20180f" stroke-width="3" stroke-linejoin="round"/>
+
+  <path d="M128 160 C122 100 156 60 206 60 C254 60 278 96 272 152 C264 120 246 104 214 98 C182 92 154 106 142 126 C134 138 130 148 128 160 Z" fill="#20180f"/>
+  <g stroke="#70675e" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <path d="M158 104 C180 86 214 80 240 92"/>
+    <path d="M151 122 C174 100 208 92 248 106"/>
+  </g>
+
+  <g fill="#20180f">
+    <ellipse cx="175" cy="170" rx="7" ry="5.5"/>
+    <ellipse cx="225" cy="170" rx="7" ry="5.5"/>
+    <path d="M167 200 C176 193 190 195 200 202 C210 195 224 193 233 200 C237 211 226 221 210 217 C204 215 196 215 190 217 C174 221 163 211 167 200 Z"/>
+  </g>
+  <g stroke="#20180f" fill="none" stroke-linecap="round">
+    <path d="M158 149 C169 140 186 140 195 147" stroke-width="6"/>
+    <path d="M242 149 C231 140 214 140 205 147" stroke-width="6"/>
+    <path d="M199 174 L195 192 C194 198 204 200 209 194" stroke-width="3.5"/>
+    <path d="M186 222 C194 226 206 226 214 222" stroke-width="2.5"/>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+{
+  "brand": "Nabadi Barbershop",
+  "tagline": "Tbilisi · Georgia",
+  "loading": "Loading…",
+  "load_failed": "Couldn't load this content.",
+  "retry": "Try again",
+  "save": "Save",
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "edit": "Edit",
+  "delete": "Delete",
+  "confirm": "Confirm",
+  "back": "Back",
+  "next": "Next",
+  "logout": "Log out",
+  "close": "Close",
+  "language_toggle": "Toggle language",
+  "language_switch": "EN/KA",
+  "demo": {
+    "badge": "Demo",
+    "body": "The real front end with its Django backend replaced by an in-browser mock. Everything works; nothing is saved.",
+    "sign_in_as": "Sign in as",
+    "role": {
+      "customer": "Customer",
+      "admin": "Administrator"
+    },
+    "reset": "Reset",
+    "portfolio": "Portfolio",
+    "dismiss": "Hide this banner"
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 2700,
+    "slug": "tbilisi",
+    "name": { "en": "Inside Tbilisi", "ka": "თბილისის შიგნით", "ru": "В пределах Тбилиси" },
+    "kind": "keyword",
+    "keywords": "tbilisi, თბილისი, тбилиси, saburtalo, vake, didube, gldani, isani, samgori, varketili, digomi, ortachala, lilo, ვაკე, საბურთალო, დიდუბე, გლდანი, ისანი, სამგორი",
+    "keyword_scope": "within",
+    "max_distance_km": null,
+    "order": 0,
+    "is_active": true,
+    "updated_at": "2026-07-01T10:05:00+04:00"
+  },
+  {
+    "id": 2701,
+    "slug": "tbilisi-out",
+    "name": { "en": "Leaving Tbilisi", "ka": "თბილისიდან გასვლა", "ru": "Выезд из Тбилиси" },
+    "kind": "keyword",
+    "keywords": "tbilisi, თბილისი, тбилиси, saburtalo, vake, didube, gldani, isani, samgori, varketili, digomi, ortachala, lilo",
+    "keyword_scope": "crossing",
+    "max_distance_km": null,
+    "order": 1,
+    "is_active": true,
+    "updated_at": "2026-07-01T10:05:00+04:00"
+  },
+  {
+    "id": 2702,
+    "slug": "up-to-30-km",
+    "name": { "en": "Up to 30 km", "ka": "30 კმ-მდე", "ru": "До 30 км" },
+    "kind": "distance",
+    "keywords": "",
+    "keyword_scope": "within",
+    "max_distance_km": 30,
+    "order": 2,
+    "is_active": true,
+    "updated_at": "2026-07-01T10:05:00+04:00"
+  },
+  {
+    "id": 2703,
+    "slug": "up-to-100-km",
+    "name": { "en": "Up to 100 km", "ka": "100 კმ-მდე", "ru": "До 100 км" },
+    "kind": "distance",
+    "keywords": "",
+    "keyword_scope": "within",
+    "max_distance_km": 100,
+    "order": 3,
+    "is_active": true,
+    "updated_at": "2026-07-01T10:05:00+04:00"
+  },
+  {
+    "id": 2704,
+    "slug": "regional",
+    "name": { "en": "Regional", "ka": "რეგიონები", "ru": "Регионы" },
+    "kind": "distance",
+    "keywords": "",
+    "keyword_scope": "within",
+    "max_distance_km": null,
+    "order": 4,
+    "is_active": true,
+    "updated_at": "2026-07-01T10:05:00+04:00"
+  },
+  {
+    "id": 2705,
+    "slug": "suburban-legacy",
+    "name": { "en": "Tbilisi flat rate (2024)", "ka": "თბილისის ფიქსირებული ტარიფი (2024)", "ru": "Тбилиси, фиксированный тариф (2024)" },
+    "kind": "keyword",
+    "keywords": "tbilisi, თბილისი, тбилиси",
+    "keyword_scope": "within",
+    "max_distance_km": null,
+    "order": 5,
+    "is_active": false,
+    "updated_at": "2026-02-09T12:30:00+04:00"
+  }
+]

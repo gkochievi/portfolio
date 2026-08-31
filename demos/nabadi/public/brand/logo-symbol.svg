@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Nabadi Barbershop">
+  <title>Nabadi Barbershop</title>
+  <!--
+    The symbol alone, for the sizes the full lockup cannot survive (roughly
+    40-56px tall). At 40px the lockup's "BARBERSHOP" line is a 3.3px cap on a
+    0.66px stroke and collapses into a smear; below that minimum the wordmark
+    is dropped rather than shrunk.
+
+    Same reasoning as favicon.svg, one step up in size: the cloak outline plus
+    one caramel clasp, and nothing else. The drape folds and the collar line of
+    the primary mark are still under a pixel here and only muddy the shape, so
+    they stay out. No tile background or keyline either, so the mark sits on
+    the cream page, a dark sidebar, or any surface.
+  -->
+  <path fill="#20180f" d="M10,18.8 L22,14.8 C26,30.8 38,30.8 42,14.8 L54,18.8 L50,46.8 C49.72,48.6 48.2,50 46.2,50 L17.8,50 C15.8,50 14.28,48.6 14,46.8 Z"/>
+  <circle cx="32" cy="37.2" r="4.4" fill="#8f5d33"/>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Business portfolio site and the live product demos it links to",
+  "workspaces": [
+    "packages/*",
+    "site",
+    "demos/*"
+  ],
+  "scripts": {
+    "dev:site": "npm --workspace site run dev",
+    "dev:printomato": "npm --workspace @demos/printomato run dev",
+    "dev:tonnaro": "npm --workspace @demos/tonnaro run dev",
+    "dev:nabadi": "npm --workspace @demos/nabadi run dev",
+    "dev:gisheri": "npm --workspace @demos/gisheri run dev",
+    "build": "node scripts/build-all.mjs",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "preview": "node scripts/preview.mjs",
+    "clean": "node scripts/clean.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

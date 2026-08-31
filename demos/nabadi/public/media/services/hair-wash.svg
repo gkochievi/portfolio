@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="hair-wash-t">
+  <title id="hair-wash-t">Hair wash and style</title>
+  <desc>A shampoo basin with its padded neck rest and a towel over the rim, fed by a caramel spout.</desc>
+  <rect width="800" height="500" fill="#f1ead9"/>
+<path d="M 0 446 L 800 446" stroke="#d6cdb4" stroke-width="2" fill="none"/>
+<path d="M 574 268 L 574 176 C 574 152 552 140 528 140 L 508 140" fill="none" stroke="#8f5d33" stroke-width="15" stroke-linecap="round"/>
+<g fill="none" stroke="#20180f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M 470 126 L 512 126 C 518 126 520 130 520 136 L 520 148 C 520 154 518 158 512 158 L 470 158 C 464 158 462 154 462 148 L 462 136 C 462 130 464 126 470 126 Z" fill="#8f5d33"/></g>
+<g fill="none" stroke="#70675e" stroke-width="2.8" stroke-linecap="round"><path d="M 478 166 C 474 196 472 218 474 244"/><path d="M 492 166 C 490 198 490 222 494 248"/><path d="M 506 166 C 506 194 508 216 510 240"/></g>
+<g fill="none" stroke="#20180f" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M 214 270 L 586 270 C 592 270 594 276 593 284 C 582 358 504 396 400 396 C 296 396 218 358 207 284 C 206 276 208 270 214 270 Z" fill="#ffffff"/></g>
+<g fill="none" stroke="#20180f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M 400 235 C 296 235 208 251 208 270 C 208 289 258 302 322 305 C 336 305 344 296 352 288 C 362 278 438 278 448 288 C 456 296 464 305 478 305 C 542 302 592 289 592 270 C 592 251 504 235 400 235 Z" fill="#fbf6ec"/></g>
+<g fill="none" stroke="#20180f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="400" cy="268" rx="148" ry="20" fill="#ffffff"/></g>
+<ellipse cx="402" cy="272" rx="112" ry="12" fill="#e9c9a8"/>
+<g fill="none" stroke="#70675e" stroke-width="2.4" stroke-linecap="round"><path d="M 330 270 C 348 264 362 276 380 270"/><path d="M 424 278 C 442 272 456 282 474 276"/></g>
+<g fill="none" stroke="#20180f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M 240 250 C 222 296 216 356 222 410 C 232 400 244 400 254 410 C 264 420 278 420 288 410 C 296 402 306 402 314 410 C 308 352 302 296 294 246 C 278 254 256 254 240 250 Z" fill="#fbf6ec"/></g>
+<g fill="none" stroke="#d6cdb4" stroke-width="2.5"><path d="M 234 288 C 252 296 278 296 296 290"/><path d="M 224 378 C 246 386 282 384 310 376"/></g>
+<path d="M 248 318 C 246 340 246 356 248 368 M 272 316 C 272 340 272 356 274 368" fill="none" stroke="#e6dec9" stroke-width="3" stroke-linecap="round"/>
+<g fill="none" stroke="#d6cdb4" stroke-width="2.6"><circle cx="212" cy="196" r="17"/><circle cx="256" cy="154" r="11"/><circle cx="182" cy="146" r="8"/></g>
+</svg>

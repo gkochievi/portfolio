@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" width="900" height="675" role="img">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EEF2F7"/><stop offset="1" stop-color="#DCE3EC"/>
+  </linearGradient>
+  <pattern id="chev" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+    <rect width="46" height="46" fill="none"/>
+    <rect width="23" height="46" fill="#F97316" opacity="0.09000000000000001"/>
+  </pattern>
+</defs>
+<rect width="900" height="675" fill="url(#sky)"/>
+<rect width="900" height="675" fill="url(#chev)" opacity="0.5"/>
+<rect x="0" y="585" width="900" height="90" fill="#C7D0DB"/><rect x="0" y="585" width="900" height="4" fill="#AAB4C2"/>
+<rect x="430" y="507" width="430" height="40" fill="#0F172A"/>
+<path d="M180 547 L430 547 L430 493 L340 493 L312 417 L196 417 L180 489 Z" fill="#0F172A"/>
+<rect x="208" y="427" width="92" height="54" rx="6" fill="#93C5FD" opacity="0.75"/>
+<rect x="452" y="335" width="26" height="175" fill="#F97316"/>
+<path d="M465 335 L700 285 L716 317 L470 367 Z" fill="#F97316"/>
+<line x1="708" y1="301" x2="708" y2="465" stroke="#0F172A" stroke-width="6"/>
+<rect x="676" y="465" width="66" height="46" rx="4" fill="#64748B"/>
+<circle cx="252" cy="557" r="44" fill="#0F172A"/><circle cx="252" cy="557" r="18" fill="#94A3B8"/><circle cx="470" cy="557" r="44" fill="#0F172A"/><circle cx="470" cy="557" r="18" fill="#94A3B8"/><circle cx="660" cy="557" r="44" fill="#0F172A"/><circle cx="660" cy="557" r="18" fill="#94A3B8"/><circle cx="800" cy="557" r="44" fill="#0F172A"/><circle cx="800" cy="557" r="18" fill="#94A3B8"/><text x="34" y="641" font-family="ui-monospace,Menlo,monospace" font-size="26" font-weight="700" fill="#0F172A" opacity="0.72">RN-905-KD</text><text x="34" y="617" font-family="system-ui,sans-serif" font-size="19" fill="#334155" opacity="0.55">MAN TGS 26.400 · HIAB 190</text>
+</svg>

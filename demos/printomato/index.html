@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0A0E17" />
+    <title>Printomato Console — live demo</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="A live, fully interactive demo of the Printomato fleet console: device management, campaigns, photo gallery, alerts and payments."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Printomato Console — live demo" />
+    <meta
+      property="og:description"
+      content="Click through a real fleet console for photo-printing kiosks: device presence, paper levels, campaigns, photo gallery, alerts and card payments — served entirely from your browser."
+    />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <style>
+      html, body { margin: 0; padding: 0; background: #0A0E17; color: #E8ECF5; }
+      #root { min-height: 100vh; }
+      .boot-splash {
+        position: fixed; inset: 0; display: grid; place-items: center;
+        background: #0A0E17; z-index: 9999;
+      }
+      .boot-splash__mark {
+        width: 46px; height: 46px; border-radius: 999px;
+        border: 2px solid rgba(232, 236, 245, 0.12);
+        border-top-color: #F8BE62;
+        animation: boot-spin 0.75s linear infinite;
+      }
+      @keyframes boot-spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-splash__mark { animation-duration: 2.4s; }
+      }
+    </style>
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash"><div class="boot-splash__mark"></div></div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+  </body>
+</html>

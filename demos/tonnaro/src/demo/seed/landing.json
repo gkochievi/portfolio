@@ -1,0 +1,219 @@
+{
+  "id": 1,
+  "hero_title": {
+    "en": "The right truck for the job, priced in minutes",
+    "ka": "შესაფერისი ტექნიკა სამუშაოსთვის — ფასი რამდენიმე წუთში",
+    "ru": "Нужная техника для работы — цена за считанные минуты"
+  },
+  "hero_description": {
+    "en": "Tow trucks, cranes, lowboys, concrete pumps and excavators, anywhere in Georgia. Tell us what needs moving and where it has to go — we quote a fixed price, assign a licensed operator, and you follow the job to the last kilometre.",
+    "ka": "ევაკუატორები, ამწეები, ტრალები, ბეტონტუმბოები და ექსკავატორები საქართველოს ნებისმიერ წერტილში. მოგვწერეთ, რა და საიდან სად უნდა გადავიტანოთ — ჩვენ დაგითვლით ფიქსირებულ ფასს, გამოგიყოფთ ლიცენზირებულ ოპერატორს, თქვენ კი ბოლო კილომეტრამდე გააკონტროლებთ სამუშაოს.",
+    "ru": "Эвакуаторы, краны, тралы, бетононасосы и экскаваторы в любой точке Грузии. Напишите, что и куда нужно перевезти, — мы назовём фиксированную цену, назначим оператора с допуском, а вы проследите за работой до последнего километра."
+  },
+  "stats": [
+    {
+      "number": "2,800+",
+      "label": {
+        "en": "Jobs completed",
+        "ka": "შესრულებული შეკვეთა",
+        "ru": "Выполнено заказов"
+      }
+    },
+    {
+      "number": "64",
+      "label": {
+        "en": "Units in the fleet",
+        "ka": "ერთეული ავტოპარკში",
+        "ru": "Единиц техники"
+      }
+    },
+    {
+      "number": "40 t",
+      "label": {
+        "en": "Heaviest lift",
+        "ka": "მაქსიმალური აწევა",
+        "ru": "Максимальный подъём"
+      }
+    },
+    {
+      "number": "90 min",
+      "label": {
+        "en": "Average time on site",
+        "ka": "საშუალოდ ადგილზე",
+        "ru": "В среднем до места"
+      }
+    }
+  ],
+  "about_eyebrow": {
+    "en": "About Tonnaro",
+    "ka": "ჩვენ შესახებ",
+    "ru": "О компании"
+  },
+  "about_title": {
+    "en": "Built around the loads nobody else will take",
+    "ka": "ჩვენ ვიღებთ იმ ტვირთს, რომელსაც სხვები არ კიდებენ",
+    "ru": "Мы беремся за грузы, за которые не берутся другие"
+  },
+  "about_description": {
+    "en": "Tonnaro started in a Tbilisi yard with two tow trucks and a phone that rang at three in the morning. The work that came in was never the easy kind: a transformer that had to clear a bridge with 200 mm to spare, a mixer on a site road that turned to mud by noon, a combine harvester that had to reach Kakheti before the rain did.\n\nToday we run more than sixty units — cranes, lowboys, concrete pumps, excavators and recovery trucks — with operators licensed for every one of them. The dispatch desk is still in Tbilisi, still answers at three in the morning, and still agrees the price before the truck leaves the yard.",
+    "ka": "Tonnaro თბილისურ ავტოსადგომზე დაიწყო — ორი ევაკუატორითა და ტელეფონით, რომელიც ღამის სამ საათზეც რეკავდა. სამუშაო, რომელიც შემოდიოდა, არასოდეს ყოფილა მარტივი: ტრანსფორმატორი, რომელსაც ხიდის ქვეშ ოცი სანტიმეტრი რჩებოდა; ბეტონმზიდი გზაზე, რომელიც შუადღისთვის ტალახად იქცეოდა; კომბაინი, რომელიც წვიმაზე ადრე უნდა მისულიყო კახეთში.\n\nდღეს სამოცზე მეტ ერთეულს ვმართავთ — ამწეები, ტრალები, ბეტონტუმბოები, ექსკავატორები და ევაკუატორები — და თითოეულზე ლიცენზირებული ოპერატორი გვყავს. სადისპეტჩერო კვლავ თბილისშია, კვლავ პასუხობს ღამის სამზე და ფასს კვლავ მანქანის გასვლამდე გითანხმებთ.",
+    "ru": "Tonnaro начиналась на тбилисской стоянке с двух эвакуаторов и телефона, который звонил и в три часа ночи. Работа приходила непростая: трансформатор, которому под мостом оставалось двадцать сантиметров; бетоносмеситель на дороге, к полудню превращавшейся в грязь; комбайн, который нужно было увезти в Кахетию раньше дождя.\n\nСегодня у нас больше шестидесяти единиц техники — краны, тралы, бетононасосы, экскаваторы и эвакуаторы — и на каждую есть оператор с допуском. Диспетчерская по-прежнему в Тбилиси, по-прежнему отвечает в три часа ночи и по-прежнему согласует цену до того, как машина выедет со стоянки."
+  },
+  "about_image": "landing/about/tonnaro-yard-4x3.svg",
+  "about_image_webp": null,
+  "steps_title": {
+    "en": "How it works",
+    "ka": "როგორ მუშაობს",
+    "ru": "Как это работает"
+  },
+  "steps": [
+    {
+      "icon": "file-text",
+      "title": {
+        "en": "Describe the load",
+        "ka": "აღწერეთ ტვირთი",
+        "ru": "Опишите груз"
+      },
+      "description": {
+        "en": "Pickup, drop-off, weight and dimensions. Two minutes on a phone is enough, and a photo helps more than a paragraph.",
+        "ka": "ასაღები და ჩასაბარებელი მისამართი, წონა და გაბარიტები. ორი წუთი ტელეფონიდან საკმარისია, ფოტო კი აბზაცზე მეტს გვეუბნება.",
+        "ru": "Адреса подачи и выгрузки, вес и габариты. Двух минут с телефона достаточно, а фото скажет больше, чем абзац текста."
+      }
+    },
+    {
+      "icon": "solution",
+      "title": {
+        "en": "Get a fixed price",
+        "ka": "მიიღეთ ფიქსირებული ფასი",
+        "ru": "Получите фиксированную цену"
+      },
+      "description": {
+        "en": "A dispatcher checks the route, the axle load and any permits, then sends one price. Nothing is added to it afterwards.",
+        "ka": "დისპეტჩერი შეამოწმებს მარშრუტს, ღერძულ დატვირთვასა და ნებართვებს და გამოგიგზავნით ერთ ფასს. შემდეგ მას აღარაფერი ემატება.",
+        "ru": "Диспетчер проверит маршрут, осевую нагрузку и разрешения и пришлёт одну цену. Потом к ней ничего не добавляется."
+      }
+    },
+    {
+      "icon": "car",
+      "title": {
+        "en": "Track it to the yard",
+        "ka": "თვალი ადევნეთ დასრულებამდე",
+        "ru": "Следите до самой выгрузки"
+      },
+      "description": {
+        "en": "The moment the job is assigned you see the vehicle, the driver and their number — and every status change after that.",
+        "ka": "შეკვეთის გამოყოფისთანავე ხედავთ ტექნიკას, მძღოლს და მის ნომერს — შემდეგ კი სტატუსის ყოველ ცვლილებას.",
+        "ru": "Как только заказ назначен, вы видите технику, водителя и его номер — а дальше каждое изменение статуса."
+      }
+    }
+  ],
+  "benefits_title": {
+    "en": "Why Tonnaro",
+    "ka": "რატომ Tonnaro",
+    "ru": "Почему Tonnaro"
+  },
+  "benefits": [
+    {
+      "icon": "safety-certificate",
+      "title": {
+        "en": "Licensed for every class",
+        "ka": "ლიცენზია ყველა კატეგორიაზე",
+        "ru": "Допуск на каждый класс"
+      },
+      "description": {
+        "en": "Operators hold the CE, DE and machinery categories the job actually needs, checked before dispatch rather than after.",
+        "ka": "ოპერატორებს აქვთ ზუსტად ის CE, DE და სპეცტექნიკის კატეგორიები, რასაც სამუშაო ითხოვს — შემოწმებული გასვლამდე და არა შემდეგ.",
+        "ru": "У операторов есть именно те категории CE, DE и спецтехники, которых требует работа, — проверяем до выезда, а не после."
+      },
+      "color": "#F97316"
+    },
+    {
+      "icon": "dollar",
+      "title": {
+        "en": "One price, agreed up front",
+        "ka": "ერთი ფასი, წინასწარ შეთანხმებული",
+        "ru": "Одна цена, согласованная заранее"
+      },
+      "description": {
+        "en": "Distance, weight, elevation and permits are all priced before you accept. Nothing appears on the bill once the job is done.",
+        "ka": "მანძილი, წონა, აღმართი და ნებართვები ფასდება თქვენს დათანხმებამდე. სამუშაოს დასრულების შემდეგ ანგარიშს არაფერი ემატება.",
+        "ru": "Расстояние, вес, перепад высот и разрешения считаются до вашего согласия. После выполнения в счёте не появляется ничего нового."
+      },
+      "color": "#0EA5E9"
+    },
+    {
+      "icon": "clock-circle",
+      "title": {
+        "en": "Dispatch around the clock",
+        "ka": "დისპეტჩერი 24 საათი",
+        "ru": "Диспетчерская круглосуточно"
+      },
+      "description": {
+        "en": "The desk is staffed every night and every holiday. Recovery jobs on the Tbilisi–Batumi corridor leave within the hour.",
+        "ka": "სადისპეტჩერო მუშაობს ყოველ ღამესა და ყოველ დღესასწაულს. ევაკუაცია თბილისი–ბათუმის მონაკვეთზე ერთ საათში გადის.",
+        "ru": "Смена работает каждую ночь и каждый праздник. На эвакуацию по трассе Тбилиси — Батуми выезжаем в течение часа."
+      },
+      "color": "#10B981"
+    },
+    {
+      "icon": "aim",
+      "title": {
+        "en": "Routes planned for the load",
+        "ka": "მარშრუტი აგებულია ტვირთზე",
+        "ru": "Маршрут строится под груз"
+      },
+      "description": {
+        "en": "Bridge heights, weight limits and city restrictions go into the route before the truck moves, not into an excuse afterwards.",
+        "ka": "ხიდების სიმაღლე, წონის ლიმიტები და საქალაქო შეზღუდვები ჯერ მარშრუტში იდება და მერე გადის მანქანა — და არა პირიქით.",
+        "ru": "Высота мостов, весовые ограничения и городские запреты закладываются в маршрут до выезда, а не превращаются потом в оправдание."
+      },
+      "color": "#8B5CF6"
+    }
+  ],
+  "cta_title": {
+    "en": "Have something that needs moving?",
+    "ka": "გაქვთ რაიმე გადასატანი?",
+    "ru": "Есть что перевезти?"
+  },
+  "cta_description": {
+    "en": "Create an account and place your first order in under two minutes. You will see the price before you commit to anything.",
+    "ka": "შექმენით ანგარიში და განათავსეთ პირველი შეკვეთა ორ წუთზე ნაკლებ დროში. ფასს დაინახავთ მანამ, სანამ რაიმეს დაეთანხმებით.",
+    "ru": "Создайте аккаунт и оформите первый заказ меньше чем за две минуты. Цену вы увидите до того, как на что-то согласитесь."
+  },
+  "cta_button_text": {
+    "en": "Create a free account",
+    "ka": "შექმენით უფასო ანგარიში",
+    "ru": "Создать бесплатный аккаунт"
+  },
+  "section_order": [
+    {
+      "key": "hero",
+      "enabled": true
+    },
+    {
+      "key": "services",
+      "enabled": true
+    },
+    {
+      "key": "vehicle_types",
+      "enabled": true
+    },
+    {
+      "key": "benefits",
+      "enabled": true
+    },
+    {
+      "key": "about",
+      "enabled": true
+    },
+    {
+      "key": "steps",
+      "enabled": false
+    },
+    {
+      "key": "cta",
+      "enabled": true
+    }
+  ],
+  "updated_at": "2026-08-26T11:20:00+04:00"
+}

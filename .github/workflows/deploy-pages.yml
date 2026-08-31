@@ -1,0 +1,78 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+# Building only reads the repo; publishing needs Pages write plus the OIDC token
+# actions/deploy-pages exchanges for its upload credentials.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time, and never cancel one in flight: a half-uploaded artifact
+# is a broken site.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # Inert until Pages is switched on (Settings -> Pages -> Source: GitHub
+    # Actions). Without the guard, configure-pages would fail every push on a
+    # repo that never asked to publish.
+    if: github.event.repository.has_pages && github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Resolve base path
+        id: base
+        # A project site is served from /<repo>/; only a <owner>.github.io repo
+        # gets the domain root. The trailing slash is required — Vite
+        # concatenates `base` with asset paths verbatim.
+        # (steps.pages.outputs.base_path says the same thing, but its shape has
+        # changed across versions and a wrong base breaks every asset URL.)
+        run: |
+          owner="${GITHUB_REPOSITORY%%/*}"
+          repo="${GITHUB_REPOSITORY#*/}"
+          if [ "${repo,,}" = "${owner,,}.github.io" ]; then
+            echo "path=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "path=/$repo/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - run: npm ci
+
+      - name: Build
+        env:
+          VITE_BASE: ${{ steps.base.outputs.path }}
+        # Writes dist/: site at the root, demos under dist/demos/<name>/, a
+        # redirector 404.html at the root (Pages serves only that one error
+        # document, so it bounces deep links to the owning bundle, which
+        # restores the path) and .nojekyll.
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

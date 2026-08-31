@@ -1,0 +1,1417 @@
+{
+  "collections": [
+    {
+      "id": 3001,
+      "slug": "balance",
+      "name": "Balance & Harmony",
+      "name_ka": "ბალანსი და ჰარმონია",
+      "description": "Restore equilibrium and find inner peace",
+      "description_ka": "აღიდგინე წონასწორობა და იპოვე შინაგანი სიმშვიდე",
+      "image": "collections/balance.jpg"
+    },
+    {
+      "id": 3002,
+      "slug": "energy",
+      "name": "Energy & Vitality",
+      "name_ka": "ენერგია და სიცოცხლისუნარიანობა",
+      "description": "Wake up your life force",
+      "description_ka": "გააღვიძე შენი სასიცოცხლო ძალა",
+      "image": "collections/energy.jpg"
+    },
+    {
+      "id": 3003,
+      "slug": "love",
+      "name": "Love & Heart",
+      "name_ka": "სიყვარული და გული",
+      "description": "Open your heart chakra",
+      "description_ka": "გახსენი გულის ჩაკრა",
+      "image": "collections/love.jpg"
+    },
+    {
+      "id": 3004,
+      "slug": "luck",
+      "name": "Luck & Prosperity",
+      "name_ka": "იღბალი და კეთილდღეობა",
+      "description": "Attract abundance",
+      "description_ka": "მოიზიდე სიუხვე",
+      "image": "collections/luck.jpg"
+    },
+    {
+      "id": 3005,
+      "slug": "protection",
+      "name": "Protection",
+      "name_ka": "დაცვა",
+      "description": "Shield your energy",
+      "description_ka": "დაიცავი შენი ენერგია",
+      "image": "collections/protection.jpg"
+    },
+    {
+      "id": 3006,
+      "slug": "safety",
+      "name": "Safety & Grounding",
+      "name_ka": "უსაფრთხოება და დამიწება",
+      "description": "Stay steady, stay held",
+      "description_ka": "იყავი მყარად, იყავი დაცული",
+      "image": "collections/safety.svg"
+    }
+  ],
+  "products": [
+    {
+      "id": 4001,
+      "name": "Amethyst Serenity Bracelet",
+      "name_ka": "ამეთვისტოს სიმშვიდის სამაჯური",
+      "price": "42.00",
+      "original_price": "52.00",
+      "image": "products/amethyst-serenity.jpg",
+      "purposes": [
+        "protection",
+        "balance",
+        "energy"
+      ],
+      "zodiac_signs": [
+        "pisces",
+        "virgo",
+        "aquarius"
+      ],
+      "stones": [
+        "Amethyst"
+      ],
+      "stones_meaning": "Amethyst is known as the stone of peace and spirituality. It calms the mind, enhances intuition, and provides protection from negative energies.",
+      "stones_meaning_ka": "ამეთვისტო ცნობილია როგორც მშვიდობისა და სულიერების ქვა. ამშვიდებს გონებას, აძლიერებს ინტუიციას და იცავს ნეგატიური ენერგიებისგან.",
+      "description": "Handcrafted with genuine amethyst stones, this bracelet promotes inner peace and spiritual growth. Perfect for meditation and daily protection.",
+      "description_ka": "ნამდვილი ამეთვისტოს ქვებით ხელით დამზადებული სამაჯური, რომელიც ხელს უწყობს შინაგან სიმშვიდეს და სულიერ ზრდას. იდეალურია მედიტაციისთვის და ყოველდღიური დაცვისთვის.",
+      "gender": "unisex",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4002,
+      "name": "Rose Quartz Love Bracelet",
+      "name_ka": "ვარდის კვარცის სიყვარულის სამაჯური",
+      "price": "38.00",
+      "original_price": null,
+      "image": "products/rose-quartz-love.jpg",
+      "purposes": [
+        "love",
+        "balance"
+      ],
+      "zodiac_signs": [
+        "taurus",
+        "libra",
+        "cancer"
+      ],
+      "stones": [
+        "Rose Quartz"
+      ],
+      "stones_meaning": "Rose Quartz is the stone of unconditional love. It opens the heart chakra, promotes self-love, and attracts romantic relationships.",
+      "stones_meaning_ka": "ვარდის კვარცი არის უპირობო სიყვარულის ქვა. ხსნის გულის ჩაკრას, ხელს უწყობს საკუთარი თავის სიყვარულს და იზიდავს რომანტიკულ ურთიერთობებს.",
+      "description": "This delicate rose quartz bracelet embodies pure love energy. Wear it to attract love, heal emotional wounds, and nurture self-compassion.",
+      "description_ka": "ნაზი ვარდის კვარცის სამაჯური სუფთა სიყვარულის ენერგიით. ატარე სიყვარულის მოსაზიდად, ემოციური ჭრილობების სამკურნალოდ და თვითთანაგრძნობის გასაძლიერებლად.",
+      "gender": "women",
+      "is_bestseller": false,
+      "is_new": true
+    },
+    {
+      "id": 4003,
+      "name": "Tiger's Eye Power Bracelet",
+      "name_ka": "ვეფხვის თვალის ძალის სამაჯური",
+      "price": "45.00",
+      "original_price": null,
+      "image": "products/tigers-eye-power.jpg",
+      "purposes": [
+        "luck",
+        "protection",
+        "energy"
+      ],
+      "zodiac_signs": [
+        "leo",
+        "capricorn",
+        "gemini"
+      ],
+      "stones": [
+        "Tiger's Eye"
+      ],
+      "stones_meaning": "Tiger's Eye is a stone of courage and confidence. It brings good luck, protects against negative energies, and helps manifest goals.",
+      "stones_meaning_ka": "ვეფხვის თვალი არის გამბედაობისა და თავდაჯერებულობის ქვა. მოაქვს იღბალი, იცავს ნეგატიური ენერგიებისგან და ეხმარება მიზნების რეალიზებაში.",
+      "description": "Channel the fierce energy of the tiger with this stunning Tiger's Eye bracelet. Perfect for those seeking courage, prosperity, and protection.",
+      "description_ka": "გააქტიურე ვეფხვის ენერგია ამ შთამბეჭდავი სამაჯურით. იდეალურია მათთვის, ვინც ეძებს გამბედაობას, კეთილდღეობას და დაცვას.",
+      "gender": "men",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4004,
+      "name": "Black Obsidian Shield Bracelet",
+      "name_ka": "შავი ობსიდიანის ფარის სამაჯური",
+      "price": "40.00",
+      "original_price": null,
+      "image": "products/black-obsidian-shield.jpg",
+      "purposes": [
+        "protection",
+        "safety"
+      ],
+      "zodiac_signs": [
+        "scorpio",
+        "sagittarius",
+        "capricorn"
+      ],
+      "stones": [
+        "Black Obsidian"
+      ],
+      "stones_meaning": "Black Obsidian is a powerful protection stone that shields against negativity, psychic attacks, and emotional harm.",
+      "stones_meaning_ka": "შავი ობსიდიანი ძლიერი დამცავი ქვაა, რომელიც იცავს ნეგატივისგან, ფსიქიკური შეტევებისგან და ემოციური ზიანისგან.",
+      "description": "The ultimate protection bracelet. Black Obsidian creates an energetic shield around you, blocking negative influences and grounding your energy.",
+      "description_ka": "საბოლოო დაცვის სამაჯური. შავი ობსიდიანი ქმნის ენერგეტიკულ ფარს, ბლოკავს ნეგატიურ გავლენებს და ამყარებს ენერგიას.",
+      "gender": "unisex",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4005,
+      "name": "Jade Prosperity Bracelet",
+      "name_ka": "ჯეიდის კეთილდღეობის სამაჯური",
+      "price": "48.00",
+      "original_price": "58.00",
+      "image": "products/jade-prosperity.jpg",
+      "purposes": [
+        "luck",
+        "balance",
+        "safety"
+      ],
+      "zodiac_signs": [
+        "taurus",
+        "libra",
+        "aries"
+      ],
+      "stones": [
+        "Jade"
+      ],
+      "stones_meaning": "Jade is the stone of abundance and harmony. It attracts prosperity, promotes wisdom, and brings balance to all aspects of life.",
+      "stones_meaning_ka": "ჯეიდი არის სიმდიდრისა და ჰარმონიის ქვა. იზიდავს კეთილდღეობას, ხელს უწყობს სიბრძნეს და მოაქვს ბალანსი ცხოვრების ყველა სფეროში.",
+      "description": "Embrace the ancient wisdom of Jade with this beautiful bracelet. Known for centuries as a symbol of prosperity and good fortune.",
+      "description_ka": "მიიღე ჯეიდის უძველესი სიბრძნე ამ ლამაზი სამაჯურით. საუკუნეების განმავლობაში იგი კეთილდღეობისა და კარგი ბედის სიმბოლოდ ითვლებოდა.",
+      "gender": "unisex",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4006,
+      "name": "Lapis Lazuli Wisdom Bracelet",
+      "name_ka": "ლაპის ლაზულის სიბრძნის სამაჯური",
+      "price": "52.00",
+      "original_price": null,
+      "image": "products/lapis-lazuli-wisdom.jpg",
+      "purposes": [
+        "energy",
+        "protection",
+        "balance"
+      ],
+      "zodiac_signs": [
+        "sagittarius",
+        "libra",
+        "virgo"
+      ],
+      "stones": [
+        "Lapis Lazuli"
+      ],
+      "stones_meaning": "Lapis Lazuli is the stone of wisdom and truth. It enhances intellectual ability, stimulates creativity, and promotes inner peace.",
+      "stones_meaning_ka": "ლაპის ლაზული არის სიბრძნისა და ჭეშმარიტების ქვა. აძლიერებს ინტელექტს, ასტიმულირებს შემოქმედებითობას და ხელს უწყობს შინაგან სიმშვიდეს.",
+      "description": "Unlock your inner wisdom with this stunning Lapis Lazuli bracelet. The royal blue stones with golden flecks have been treasured since ancient times.",
+      "description_ka": "გახსენი შენი შინაგანი სიბრძნე ამ თვალწარმტაცი ლაპის ლაზულის სამაჯურით. მეფური ლურჯი ქვები ოქროსფერი ჩართვებით უძველესი დროიდან ფასდებოდა.",
+      "gender": "unisex",
+      "is_bestseller": false,
+      "is_new": true
+    },
+    {
+      "id": 4007,
+      "name": "Carnelian Courage Bracelet",
+      "name_ka": "კარნელიანის გამბედაობის სამაჯური",
+      "price": "34.00",
+      "original_price": null,
+      "image": "products/carnelian-courage.svg",
+      "purposes": [
+        "energy",
+        "luck"
+      ],
+      "zodiac_signs": [
+        "aries",
+        "leo",
+        "virgo"
+      ],
+      "stones": [
+        "Carnelian"
+      ],
+      "stones_meaning": "Carnelian is the stone of courage and motivation. It warms the will, steadies the nerves before a hard conversation, and keeps creative energy moving.",
+      "stones_meaning_ka": "კარნელიანი გამბედაობისა და მოტივაციის ქვაა. ათბობს ნებას, ამშვიდებს ნერვებს რთულ საუბრამდე და მოძრაობაში ინარჩუნებს შემოქმედებით ენერგიას.",
+      "description": "Warm carnelian beads carry the heat of action rather than the heat of anger. Wear this bracelet on the days you need to begin something instead of thinking about it a while longer.",
+      "description_ka": "თბილი კარნელიანის მძივები მოქმედების და არა რისხვის სითბოს ატარებს. ატარე ეს სამაჯური იმ დღეებში, როცა რაღაცის დაწყება გჭირდება და არა კიდევ ცოტა ხნით დაფიქრება.",
+      "gender": "men",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4008,
+      "name": "Bloodstone Grounding Bracelet",
+      "name_ka": "სისხლქვის დამიწების სამაჯური",
+      "price": "36.00",
+      "original_price": null,
+      "image": "products/bloodstone-grounding.svg",
+      "purposes": [
+        "safety",
+        "protection"
+      ],
+      "zodiac_signs": [
+        "aries",
+        "pisces",
+        "scorpio"
+      ],
+      "stones": [
+        "Bloodstone",
+        "Black Obsidian"
+      ],
+      "stones_meaning": "Bloodstone is the stone of endurance and grounding; black obsidian is a shield. One keeps you standing, the other keeps what is not yours from reaching you.",
+      "stones_meaning_ka": "სისხლქვა გამძლეობისა და დამიწების ქვაა, შავი ობსიდიანი კი — ფარი. ერთი ფეხზე გამაგრებს, მეორე კი უცხოს არ გიშვებს.",
+      "description": "Deep green bloodstone flecked with red, strung against plain black obsidian. Together the two pull scattered attention back into the body and hold it there through a long day.",
+      "description_ka": "მუქი მწვანე სისხლქვა წითელი ჩანართებით, უბრალო შავ ობსიდიანთან ერთად ასხმული. ერთად ისინი გაფანტულ ყურადღებას სხეულში აბრუნებენ და გრძელი დღის განმავლობაში იქ ინარჩუნებენ.",
+      "gender": "men",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4009,
+      "name": "Amazonite Calm Bracelet",
+      "name_ka": "ამაზონიტის სიწყნარის სამაჯური",
+      "price": "32.00",
+      "original_price": null,
+      "image": "products/amazonite-calm.svg",
+      "purposes": [
+        "balance",
+        "love"
+      ],
+      "zodiac_signs": [
+        "virgo",
+        "aquarius",
+        "gemini"
+      ],
+      "stones": [
+        "Amazonite"
+      ],
+      "stones_meaning": "Amazonite is the stone of calm speech. It soothes an overworked mind and helps you say the true thing without the sharp edge.",
+      "stones_meaning_ka": "ამაზონიტი მშვიდი სიტყვის ქვაა. ის ამშვიდებს გადაღლილ გონებას და გეხმარება, სიმართლე მკვეთრი კიდის გარეშე თქვა.",
+      "description": "Pale sea-green amazonite, polished smooth and cool to the touch. This is the bracelet for the end of a loud week, when the point is to say less and breathe more.",
+      "description_ka": "ღია ზღვისფერი ამაზონიტი, გლუვად გაპრიალებული და შეხებით გრილი. ეს სამაჯური ხმაურიანი კვირის დასასრულისთვისაა, როცა მთავარია ნაკლები თქვა და მეტი ისუნთქო.",
+      "gender": "women",
+      "is_bestseller": false,
+      "is_new": true
+    },
+    {
+      "id": 4010,
+      "name": "Moonstone Intuition Bracelet",
+      "name_ka": "მთვარის ქვის ინტუიციის სამაჯური",
+      "price": "46.00",
+      "original_price": "56.00",
+      "image": "products/moonstone-intuition.svg",
+      "purposes": [
+        "balance",
+        "love",
+        "protection"
+      ],
+      "zodiac_signs": [
+        "cancer",
+        "pisces",
+        "libra"
+      ],
+      "stones": [
+        "Moonstone",
+        "Pearl"
+      ],
+      "stones_meaning": "Moonstone is the stone of intuition and new beginnings; pearl adds patience. Together they quiet the endless second-guessing without dulling the instinct underneath it.",
+      "stones_meaning_ka": "მთვარის ქვა ინტუიციისა და ახალი დასაწყისის ქვაა, მარგალიტი კი მოთმინებას ამატებს. ერთად ისინი აჩუმებენ დაუსრულებელ ეჭვს ინსტინქტის დაბინდვის გარეშე.",
+      "description": "Moonstone with a blue sheen that shifts as your wrist does, spaced with small freshwater pearls. Made for people who already know the answer and are waiting for permission to trust it.",
+      "description_ka": "მთვარის ქვა ლურჯი ელვარებით, რომელიც მაჯის ყოველ მოძრაობაზე იცვლება, პატარა მტკნარი წყლის მარგალიტებით გამოყოფილი. შექმნილია მათთვის, ვინც პასუხს უკვე იცნობს და მხოლოდ ნებართვას ელოდება, რომ ენდოს.",
+      "gender": "women",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4011,
+      "name": "Citrine Abundance Bracelet",
+      "name_ka": "ციტრინის სიუხვის სამაჯური",
+      "price": "44.00",
+      "original_price": null,
+      "image": "products/citrine-abundance.svg",
+      "purposes": [
+        "luck",
+        "energy"
+      ],
+      "zodiac_signs": [
+        "gemini",
+        "leo",
+        "sagittarius"
+      ],
+      "stones": [
+        "Citrine"
+      ],
+      "stones_meaning": "Citrine is the stone of abundance and good humour. It is said to attract opportunity and, more usefully, to leave you cheerful enough to notice it.",
+      "stones_meaning_ka": "ციტრინი სიუხვისა და კარგი განწყობის ქვაა. ამბობენ, რომ შესაძლებლობებს იზიდავს და, რაც უფრო სასარგებლოა, იმდენად კარგ ხასიათს გიტოვებს, რომ ისინი შეამჩნიო.",
+      "description": "Honey-coloured citrine, the stone merchants once kept in the till for luck. It is the brightest thing in this catalogue and it is meant to be worn where people can see it.",
+      "description_ka": "თაფლისფერი ციტრინი — ქვა, რომელსაც ვაჭრები ოდესღაც იღბლისთვის სალაროში ინახავდნენ. ეს კატალოგის ყველაზე კაშკაშა ნივთია და შექმნილია იმისთვის, რომ დაინახონ.",
+      "gender": "unisex",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4012,
+      "name": "Labradorite Aura Bracelet",
+      "name_ka": "ლაბრადორიტის აურის სამაჯური",
+      "price": "54.00",
+      "original_price": null,
+      "image": "products/labradorite-aura.svg",
+      "purposes": [
+        "protection",
+        "energy",
+        "balance"
+      ],
+      "zodiac_signs": [
+        "aquarius",
+        "scorpio",
+        "leo"
+      ],
+      "stones": [
+        "Labradorite"
+      ],
+      "stones_meaning": "Labradorite is the stone of transformation and the traditional guard of the aura. It seals your own energy in when you are among a great many people.",
+      "stones_meaning_ka": "ლაბრადორიტი გარდაქმნისა და აურის ტრადიციული მცველის ქვაა. ის ინახავს შენს ენერგიას მაშინ, როცა ბევრ ადამიანს შორის ხარ.",
+      "description": "Grey until the light catches it, then blue and gold at once. Labradorite is the stone people pick up twice, and it sits as well against a suit as against a jumper.",
+      "description_ka": "ნაცრისფერია, სანამ სინათლე არ მოხვდება — შემდეგ კი ერთდროულად ლურჯი და ოქროსფერი. ლაბრადორიტი ის ქვაა, რომელსაც ორჯერ იღებ ხელში, და ისევე კარგად ჯდება კოსტიუმთან, როგორც სვიტერთან.",
+      "gender": "unisex",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4013,
+      "name": "Turquoise Traveller Bracelet",
+      "name_ka": "თურქიზის მოგზაურის სამაჯური",
+      "price": "49.00",
+      "original_price": "59.00",
+      "image": "products/turquoise-traveller.svg",
+      "purposes": [
+        "safety",
+        "luck"
+      ],
+      "zodiac_signs": [
+        "sagittarius",
+        "aquarius",
+        "taurus"
+      ],
+      "stones": [
+        "Turquoise"
+      ],
+      "stones_meaning": "Turquoise is the stone of safe passage. Tradition holds that it darkens to warn the wearer, which is a poetic way of saying: pay attention on the road.",
+      "stones_meaning_ka": "თურქიზი უსაფრთხო გზის ქვაა. ტრადიციის თანახმად, ის მუქდება, რათა მატარებელი გააფრთხილოს — ეს კი პოეტური ფორმაა იმისა, რომ გზაზე ყურადღებით იყო.",
+      "description": "Turquoise has been the traveller's stone for four thousand years, from the Sinai mines to the Silk Road. This one is strung on a cord that survives being packed badly.",
+      "description_ka": "თურქიზი ოთხი ათასი წელია მოგზაურის ქვაა — სინას მაღაროებიდან აბრეშუმის გზამდე. ეს ეგზემპლარი ისეთ ძაფზეა ასხმული, რომელიც ცუდად ჩალაგებულ ჩანთასაც გაუძლებს.",
+      "gender": "men",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4014,
+      "name": "Garnet Devotion Bracelet",
+      "name_ka": "გარნეტის ერთგულების სამაჯური",
+      "price": "58.00",
+      "original_price": null,
+      "image": "products/garnet-devotion.svg",
+      "purposes": [
+        "love",
+        "energy"
+      ],
+      "zodiac_signs": [
+        "capricorn",
+        "aquarius",
+        "scorpio"
+      ],
+      "stones": [
+        "Garnet"
+      ],
+      "stones_meaning": "Garnet is the stone of devotion and of returning. It was given to travellers by the people who wanted them home, and it still means constancy rather than passion.",
+      "stones_meaning_ka": "გარნეტი ერთგულებისა და დაბრუნების ქვაა. მას მოგზაურებს ისინი აძლევდნენ, ვისაც სახლში მათი დაბრუნება სურდა, და დღემდე ვნებაზე მეტად სიმტკიცეს ნიშნავს.",
+      "description": "Deep wine-red garnet, cut small so the colour stays saturated. A quieter piece than it sounds: garnet reads as burgundy in daylight and almost black indoors.",
+      "description_ka": "ღრმა ღვინისფერი გარნეტი, წვრილად დამუშავებული, რომ ფერი გაჯერებული დარჩეს. ეს ნივთი უფრო წყნარია, ვიდრე ჟღერს: გარნეტი დღის სინათლეზე ბორდოსფერია, ოთახში კი თითქმის შავი.",
+      "gender": "women",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4015,
+      "name": "Malachite Heart Bracelet",
+      "name_ka": "მალაქიტის გულის სამაჯური",
+      "price": "43.00",
+      "original_price": null,
+      "image": "products/malachite-heart.svg",
+      "purposes": [
+        "love",
+        "protection"
+      ],
+      "zodiac_signs": [
+        "taurus",
+        "capricorn",
+        "cancer"
+      ],
+      "stones": [
+        "Malachite"
+      ],
+      "stones_meaning": "Malachite is the stone of the guarded heart. It protects first and loves second: it clears out what hurt you before it asks you to open again.",
+      "stones_meaning_ka": "მალაქიტი დაცული გულის ქვაა. ის ჯერ იცავს და მერე უყვარს: ჯერ ასუფთავებს იმას, რამაც გატკინა, და მხოლოდ შემდეგ გთხოვს, ისევ გაიხსნა.",
+      "description": "Banded malachite, every bead a different set of green rings. No two bracelets in this line look alike, which is the honest consequence of using the stone unbleached.",
+      "description_ka": "ზოლიანი მალაქიტი — ყოველი მძივი მწვანე რგოლების საკუთარი ნახატით. ამ სერიაში ორი ერთნაირი სამაჯური არ არსებობს, რაც ქვის დაუმუშავებლად გამოყენების პატიოსანი შედეგია.",
+      "gender": "women",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4016,
+      "name": "Aquamarine Clarity Bracelet",
+      "name_ka": "აქვამარინის სიცხადის სამაჯური",
+      "price": "62.00",
+      "original_price": "74.00",
+      "image": "products/aquamarine-clarity.svg",
+      "purposes": [
+        "balance",
+        "safety"
+      ],
+      "zodiac_signs": [
+        "pisces",
+        "aquarius",
+        "gemini"
+      ],
+      "stones": [
+        "Aquamarine"
+      ],
+      "stones_meaning": "Aquamarine is the sailor's stone and the stone of clear speech. It settles the nerves and makes a complicated thing easier to say plainly.",
+      "stones_meaning_ka": "აქვამარინი მეზღვაურის ქვაა და მკაფიო სიტყვის ქვა. ის ამშვიდებს ნერვებს და რთულ საქმეს მარტივად სათქმელად აქცევს.",
+      "description": "Pale blue aquamarine, faceted rather than tumbled so it holds the light at the edges. The clearest-looking piece we make, and the one most often bought before an exam or a move.",
+      "description_ka": "ღია ცისფერი აქვამარინი, დაფასეტებული და არა შემოხეხილი, რომ სინათლე კიდეებზე შეიკავოს. ჩვენს ნაწარმში ყველაზე გამჭვირვალე ნივთია და ყველაზე ხშირად გამოცდის ან საცხოვრებლის შეცვლის წინ ყიდულობენ.",
+      "gender": "unisex",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4017,
+      "name": "Sunstone Vitality Bracelet",
+      "name_ka": "მზის ქვის სიცოცხლისუნარიანობის სამაჯური",
+      "price": "39.00",
+      "original_price": null,
+      "image": "products/sunstone-vitality.svg",
+      "purposes": [
+        "energy",
+        "luck"
+      ],
+      "zodiac_signs": [
+        "leo",
+        "aries",
+        "sagittarius"
+      ],
+      "stones": [
+        "Sunstone",
+        "Carnelian"
+      ],
+      "stones_meaning": "Sunstone carries warmth and initiative; carnelian carries nerve. Worn together they are for the morning you would rather not have had.",
+      "stones_meaning_ka": "მზის ქვა სითბოსა და ინიციატივას ატარებს, კარნელიანი კი — გაბედულებას. ერთად ისინი იმ დილისთვისაა, რომელიც არ გინდოდა.",
+      "description": "Sunstone with copper flecks that spark as they turn, broken up by darker carnelian. Built for the middle of winter, when the light needs help.",
+      "description_ka": "მზის ქვა სპილენძის ჩანართებით, რომლებიც შემობრუნებისას ბრჭყვიალებს, უფრო მუქი კარნელიანით გამოყოფილი. შექმნილია ზამთრის შუაგულისთვის, როცა სინათლეს დახმარება სჭირდება.",
+      "gender": "unisex",
+      "is_bestseller": false,
+      "is_new": true
+    },
+    {
+      "id": 4018,
+      "name": "Peridot Renewal Bracelet",
+      "name_ka": "პერიდოტის განახლების სამაჯური",
+      "price": "37.00",
+      "original_price": null,
+      "image": "products/peridot-renewal.svg",
+      "purposes": [
+        "balance",
+        "energy"
+      ],
+      "zodiac_signs": [
+        "leo",
+        "virgo",
+        "taurus"
+      ],
+      "stones": [
+        "Peridot"
+      ],
+      "stones_meaning": "Peridot is the stone of renewal. It is associated with letting go of an old resentment, which is usually the first thing standing in the way of a fresh start.",
+      "stones_meaning_ka": "პერიდოტი განახლების ქვაა. მას ძველი წყენის გაშვებას უკავშირებენ — ეს კი, როგორც წესი, პირველია, რაც ახალ დასაწყისს ეღობება.",
+      "description": "Peridot is a proper olive green, not a mint one — the colour of an August vineyard. Light enough to forget you have it on, which is the whole point of a stone you mean to wear every day.",
+      "description_ka": "პერიდოტი ნამდვილი ზეთისხილისფერი მწვანეა და არა პიტნისფერი — აგვისტოს ვენახის ფერი. იმდენად მსუბუქია, რომ გავიწყდება, რომ გიკეთია — და სწორედ ეს არის ყოველდღიური ქვის აზრი.",
+      "gender": "women",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4019,
+      "name": "Agate Steadiness Bracelet",
+      "name_ka": "აქატის სიმტკიცის სამაჯური",
+      "price": "29.00",
+      "original_price": null,
+      "image": "products/agate-steadiness.svg",
+      "purposes": [
+        "safety",
+        "balance"
+      ],
+      "zodiac_signs": [
+        "gemini",
+        "taurus",
+        "capricorn"
+      ],
+      "stones": [
+        "Agate"
+      ],
+      "stones_meaning": "Agate is the stone of steadiness. It does nothing dramatic; it simply makes the ordinary day slightly less able to knock you sideways.",
+      "stones_meaning_ka": "აქატი სიმტკიცის ქვაა. ის დრამატულს არაფერს აკეთებს — უბრალოდ, ჩვეულებრივ დღეს ცოტათი უფრო უჭირს შენი წონასწორობიდან გამოყვანა.",
+      "description": "Banded grey agate, the plainest bracelet in the shop and deliberately so. It is the one we hand to people who have never worn a stone and are not yet sure they will.",
+      "description_ka": "ზოლიანი ნაცრისფერი აქატი — მაღაზიის ყველაზე მარტივი სამაჯური და ეს განზრახაა. სწორედ მას ვთავაზობთ მათ, ვისაც ქვა არასდროს უტარებია და ჯერ დარწმუნებული არ არის, რომ ატარებს.",
+      "gender": "men",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4020,
+      "name": "Opal Dreamer Bracelet",
+      "name_ka": "ოპალის მეოცნების სამაჯური",
+      "price": "66.00",
+      "original_price": null,
+      "image": "products/opal-dreamer.svg",
+      "purposes": [
+        "love",
+        "balance"
+      ],
+      "zodiac_signs": [
+        "libra",
+        "scorpio",
+        "cancer"
+      ],
+      "stones": [
+        "Opal",
+        "Moonstone"
+      ],
+      "stones_meaning": "Opal is the stone of imagination and moonstone the stone of intuition. Together they are for the people whose best ideas arrive late at night.",
+      "stones_meaning_ka": "ოპალი წარმოსახვის ქვაა, მთვარის ქვა კი — ინტუიციისა. ერთად ისინი მათთვისაა, ვისაც საუკეთესო იდეები გვიან ღამით მოსდის.",
+      "description": "Opal throws green, pink and blue out of the same bead depending on where you stand, cooled by plain moonstone in between. The most decorative piece in the collection.",
+      "description_ka": "ოპალი ერთი და იმავე მძივიდან მწვანეს, ვარდისფერსა და ცისფერს ისვრის — იმისდა მიხედვით, საიდან უყურებ; შორის მოთავსებული უბრალო მთვარის ქვა კი ამ ბრწყინვას აწყნარებს. კოლექციის ყველაზე დეკორატიული ნივთი.",
+      "gender": "women",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4021,
+      "name": "Topaz Confidence Bracelet",
+      "name_ka": "ტოპაზის თავდაჯერებულობის სამაჯური",
+      "price": "57.00",
+      "original_price": null,
+      "image": "products/topaz-confidence.svg",
+      "purposes": [
+        "energy",
+        "luck"
+      ],
+      "zodiac_signs": [
+        "sagittarius",
+        "leo",
+        "aries"
+      ],
+      "stones": [
+        "Topaz",
+        "Citrine"
+      ],
+      "stones_meaning": "Topaz is the stone of confidence and clear intent; citrine keeps it good-humoured. Neither is subtle, and neither pretends to be.",
+      "stones_meaning_ka": "ტოპაზი თავდაჯერებულობისა და მკაფიო განზრახვის ქვაა, ციტრინი კი მას მხიარულებას უნარჩუნებს. არცერთი მათგანი შეუმჩნეველი არ არის და არც თავს აჩვენებს ასეთად.",
+      "description": "Golden topaz with every third bead citrine, so the strand reads warm without turning brassy. A formal-looking bracelet that still belongs on a working wrist.",
+      "description_ka": "ოქროსფერი ტოპაზი, სადაც ყოველი მესამე მძივი ციტრინია — ასხმა თბილად იკითხება და სპილენძისფერში არ გადადის. ოფიციალური იერის სამაჯური, რომელიც სამუშაო მაჯასაც უხდება.",
+      "gender": "men",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4022,
+      "name": "Emerald Fortune Pendant",
+      "name_ka": "ზურმუხტის იღბლის მედალიონი",
+      "price": "88.00",
+      "original_price": "104.00",
+      "image": "products/emerald-fortune.svg",
+      "purposes": [
+        "luck",
+        "love"
+      ],
+      "zodiac_signs": [
+        "taurus",
+        "cancer",
+        "libra"
+      ],
+      "stones": [
+        "Emerald",
+        "Jade"
+      ],
+      "stones_meaning": "Emerald is the stone of fortune and faithful love; jade steadies it into something practical. The pair is traditionally given rather than bought for oneself.",
+      "stones_meaning_ka": "ზურმუხტი იღბლისა და ერთგული სიყვარულის ქვაა, ჯეიდი კი მას პრაქტიკულ საფუძველს უმაგრებს. ეს წყვილი ტრადიციულად ჩუქდება და არა თავისთვის იყიდება.",
+      "description": "A step-cut emerald on a knotted cord, with a jade bead either side of the knot. Emerald is the expensive stone in this shop and the pendant is cut to show you why.",
+      "description_ka": "საფეხურებრივად დაფასეტებული ზურმუხტი კვანძიან ძაფზე, კვანძის ორივე მხარეს თითო ჯეიდის მძივით. ზურმუხტი ამ მაღაზიაში ყველაზე ძვირფასი ქვაა და მედალიონი სწორედ იმისთვისაა ასე გამოკვეთილი, რომ ეს დაინახო.",
+      "gender": "women",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4023,
+      "name": "Sapphire Focus Pendant",
+      "name_ka": "საფირონის კონცენტრაციის მედალიონი",
+      "price": "92.00",
+      "original_price": null,
+      "image": "products/sapphire-focus.svg",
+      "purposes": [
+        "protection",
+        "balance"
+      ],
+      "zodiac_signs": [
+        "virgo",
+        "capricorn",
+        "sagittarius"
+      ],
+      "stones": [
+        "Sapphire",
+        "Lapis Lazuli"
+      ],
+      "stones_meaning": "Sapphire is the stone of discipline and clear judgement; lapis lazuli is the stone of truth. Worn together they are about deciding, not dreaming.",
+      "stones_meaning_ka": "საფირონი დისციპლინისა და ნათელი განსჯის ქვაა, ლაპის ლაზული კი — ჭეშმარიტების. ერთად ისინი გადაწყვეტილებაზეა და არა ოცნებაზე.",
+      "description": "A dark blue sapphire above two lapis beads, hung short so that it sits at the collarbone. The most restrained thing we make, and the most expensive after the diamond.",
+      "description_ka": "მუქი ლურჯი საფირონი ორ ლაპის ლაზულის მძივზე, მოკლედ ჩამოკიდებული, რომ ლავიწთან იჯდეს. ჩვენს ნაწარმში ყველაზე თავშეკავებული ნივთი და ბრილიანტის შემდეგ ყველაზე ძვირი.",
+      "gender": "men",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4024,
+      "name": "Diamond Clarity Pendant",
+      "name_ka": "ბრილიანტის სიცხადის მედალიონი",
+      "price": "96.00",
+      "original_price": null,
+      "image": "products/diamond-clarity.svg",
+      "purposes": [
+        "energy",
+        "safety"
+      ],
+      "zodiac_signs": [
+        "aries",
+        "leo",
+        "aquarius"
+      ],
+      "stones": [
+        "Diamond"
+      ],
+      "stones_meaning": "Diamond is the stone of clarity and unbreakable intent. It amplifies whatever is worn beside it, which is exactly why here it is worn beside nothing.",
+      "stones_meaning_ka": "ბრილიანტი სიცხადისა და შეურყეველი განზრახვის ქვაა. ის აძლიერებს ყველაფერს, რასთან ერთადაც ატარებ — სწორედ ამიტომ აქ მარტო ტარდება.",
+      "description": "A single brilliant-cut stone on a fine cord, and nothing else at all. This is the top of the range and the only piece we make with one stone and no beads.",
+      "description_ka": "ერთადერთი ბრილიანტურად დაფასეტებული ქვა თხელ ძაფზე და მეტი აღარაფერი. ეს ჩვენი ხაზის მწვერვალია და ერთადერთი ნივთი, რომელსაც ერთი ქვა აქვს და მძივები საერთოდ არა.",
+      "gender": "unisex",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4025,
+      "name": "Pearl Grace Bracelet",
+      "name_ka": "მარგალიტის სინატიფის სამაჯური",
+      "price": "51.00",
+      "original_price": null,
+      "image": "products/pearl-grace.svg",
+      "purposes": [
+        "love",
+        "safety"
+      ],
+      "zodiac_signs": [
+        "cancer",
+        "pisces",
+        "taurus"
+      ],
+      "stones": [
+        "Pearl"
+      ],
+      "stones_meaning": "Pearl is the stone of grace and patience — the only gem made slowly, by an animal, around an irritation. It is worn for composure rather than for luck.",
+      "stones_meaning_ka": "მარგალიტი სინატიფისა და მოთმინების ქვაა — ერთადერთი თვალი, რომელიც ნელა იქმნება, ცოცხალი არსების მიერ, გამაღიზიანებლის გარშემო. მას სიმშვიდისთვის ატარებენ და არა იღბლისთვის.",
+      "description": "Small freshwater pearls, uneven on purpose, on a knotted silk thread. Pearl is the one material here that came from something alive, and it behaves accordingly — keep it away from perfume.",
+      "description_ka": "პატარა მტკნარი წყლის მარგალიტები, განზრახ არათანაბარი, კვანძიან აბრეშუმის ძაფზე. მარგალიტი აქ ერთადერთი მასალაა, რომელიც ცოცხალმა არსებამ შექმნა, და შესაბამისადაც იქცევა — სუნამოს მოარიდე.",
+      "gender": "women",
+      "is_bestseller": false,
+      "is_new": true
+    },
+    {
+      "id": 4026,
+      "name": "Obsidian & Jade Balance Bracelet",
+      "name_ka": "ობსიდიანისა და ჯეიდის ბალანსის სამაჯური",
+      "price": "55.00",
+      "original_price": "64.00",
+      "image": "products/obsidian-jade-balance.svg",
+      "purposes": [
+        "balance",
+        "protection",
+        "safety"
+      ],
+      "zodiac_signs": [
+        "scorpio",
+        "virgo",
+        "capricorn"
+      ],
+      "stones": [
+        "Black Obsidian",
+        "Jade"
+      ],
+      "stones_meaning": "Black obsidian is a shield and jade is a stabiliser. Paired, they make the most balanced piece in the shop and the one we recommend when somebody cannot choose.",
+      "stones_meaning_ka": "შავი ობსიდიანი ფარია, ჯეიდი კი — სიმყარის ქვა. წყვილში ისინი მაღაზიის ყველაზე დაბალანსებულ ნივთს ქმნიან და სწორედ მას ვურჩევთ იმას, ვისაც არჩევანი უჭირს.",
+      "description": "Two strands, one black and one green, worn as a single piece. Obsidian keeps things out and jade keeps things steady, which between them describe most weeks.",
+      "description_ka": "ორი ასხმა — შავი და მწვანე — ერთ ნივთად სატარებელი. ობსიდიანი ზედმეტს გარეთ იკავებს, ჯეიდი კი სიმყარეს ინარჩუნებს; ეს ორი ერთად კი უმეტეს კვირას აღწერს.",
+      "gender": "unisex",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4027,
+      "name": "Amethyst Night Pendant",
+      "name_ka": "ამეთვისტოს ღამის მედალიონი",
+      "price": "68.00",
+      "original_price": null,
+      "image": "products/amethyst-night.svg",
+      "purposes": [
+        "protection",
+        "balance"
+      ],
+      "zodiac_signs": [
+        "pisces",
+        "aquarius",
+        "scorpio"
+      ],
+      "stones": [
+        "Amethyst",
+        "Labradorite"
+      ],
+      "stones_meaning": "Amethyst quiets the mind and labradorite guards its edges. The pair is traditionally worn for sleep rather than for work.",
+      "stones_meaning_ka": "ამეთვისტო გონებას აწყნარებს, ლაბრადორიტი კი მის კიდეებს იცავს. ეს წყვილი ტრადიციულად ძილისთვის ტარდება და არა სამუშაოდ.",
+      "description": "Deep amethyst, nearly black in low light, with a labradorite bead on either side of the bail. Named for the hour it looks best in.",
+      "description_ka": "ღრმა ამეთვისტო, სუსტ სინათლეზე თითქმის შავი, საკიდის ორივე მხარეს ლაბრადორიტის თითო მძივით. სახელი იმ საათმა შეარქვა, როცა ის საუკეთესოდ გამოიყურება.",
+      "gender": "unisex",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4028,
+      "name": "Tiger's Eye & Bloodstone Cuff",
+      "name_ka": "ვეფხვის თვალისა და სისხლქვის მანჟეტი",
+      "price": "63.00",
+      "original_price": null,
+      "image": "products/tigers-eye-bloodstone-cuff.svg",
+      "purposes": [
+        "protection",
+        "energy",
+        "safety"
+      ],
+      "zodiac_signs": [
+        "leo",
+        "aries",
+        "capricorn"
+      ],
+      "stones": [
+        "Tiger's Eye",
+        "Bloodstone"
+      ],
+      "stones_meaning": "Tiger's eye gives nerve and bloodstone gives endurance. Between them they cover the two ways a difficult day usually goes wrong.",
+      "stones_meaning_ka": "ვეფხვის თვალი გაბედულებას აძლევს, სისხლქვა კი — გამძლეობას. ორივე ერთად ფარავს იმ ორ გზას, რომლითაც რთული დღე ჩვეულებრივ ცუდად მიდის.",
+      "description": "An open flat cuff rather than a strand, with one tiger's eye and one bloodstone set flush in gold bezels. It is the heaviest thing in the catalogue and the only one that does not stretch.",
+      "description_ka": "ღია ბრტყელი მანჟეტი და არა ასხმა, ოქროს ბუდეებში ჩასმული თითო ვეფხვის თვალითა და სისხლქვით. ეს კატალოგის ყველაზე მძიმე ნივთია და ერთადერთი, რომელიც არ იჭიმება.",
+      "gender": "men",
+      "is_bestseller": true,
+      "is_new": false
+    },
+    {
+      "id": 4029,
+      "name": "Rose Quartz & Moonstone Duo",
+      "name_ka": "ვარდის კვარცისა და მთვარის ქვის დუეტი",
+      "price": "59.00",
+      "original_price": null,
+      "image": "products/rose-quartz-moonstone-duo.svg",
+      "purposes": [
+        "love",
+        "balance"
+      ],
+      "zodiac_signs": [
+        "libra",
+        "cancer",
+        "taurus"
+      ],
+      "stones": [
+        "Rose Quartz",
+        "Moonstone"
+      ],
+      "stones_meaning": "Rose quartz opens the heart and moonstone tells you when to. The combination is the most-gifted pair in the shop, and rarely to oneself.",
+      "stones_meaning_ka": "ვარდის კვარცი გულს ხსნის, მთვარის ქვა კი გეუბნება, როდის. ეს კომბინაცია მაღაზიაში ყველაზე ხშირად საჩუქრად აღებული წყვილია და იშვიათად — თავისთვის.",
+      "description": "A flat cuff in two stones: warm rose quartz beside cool moonstone, set so close that the difference in temperature is the whole design. Sold as one piece and usually bought as two.",
+      "description_ka": "ბრტყელი მანჟეტი ორი ქვით: თბილი ვარდის კვარცი გრილი მთვარის ქვის გვერდით, იმდენად ახლოს ჩასმული, რომ სწორედ ეს ტემპერატურული სხვაობაა მთელი დიზაინი. იყიდება როგორც ერთი ნივთი და ჩვეულებრივ ორს იღებენ.",
+      "gender": "women",
+      "is_bestseller": false,
+      "is_new": false
+    },
+    {
+      "id": 4030,
+      "name": "Turquoise & Carnelian Safe Journey Bracelet",
+      "name_ka": "თურქიზისა და კარნელიანის უსაფრთხო მოგზაურობის სამაჯური",
+      "price": "47.00",
+      "original_price": null,
+      "image": "products/turquoise-carnelian-journey.svg",
+      "purposes": [
+        "safety",
+        "luck",
+        "energy"
+      ],
+      "zodiac_signs": [
+        "sagittarius",
+        "gemini",
+        "aries"
+      ],
+      "stones": [
+        "Turquoise",
+        "Carnelian"
+      ],
+      "stones_meaning": "Turquoise is the stone of safe passage and carnelian the stone of courage. One gets you there and the other gets you started.",
+      "stones_meaning_ka": "თურქიზი უსაფრთხო გზის ქვაა, კარნელიანი კი — გამბედაობის. ერთი ადგილზე მიგიყვანს, მეორე კი დაგაძრავს.",
+      "description": "Turquoise for the road and carnelian for the nerve to take it, on a double strand that sits flat under a sleeve. Made after too many customers asked for one bracelet to travel in.",
+      "description_ka": "თურქიზი გზისთვის და კარნელიანი იმ გაბედულებისთვის, რომ გზას გაუდგე — ორმაგ ასხმაზე, რომელიც სახელოს ქვეშ ბრტყლად ჯდება. შეიქმნა მას შემდეგ, რაც ძალიან ბევრმა მომხმარებელმა ერთი სამოგზაურო სამაჯური მოითხოვა.",
+      "gender": "unisex",
+      "is_bestseller": false,
+      "is_new": true
+    }
+  ],
+  "zodiac_info": [
+    {
+      "id": 5000,
+      "sign": "aries",
+      "name": "Aries",
+      "name_ka": "ვერძი",
+      "symbol": "♈",
+      "dates": "Mar 21 - Apr 19",
+      "dates_ka": "21 მარ - 19 აპრ",
+      "element": "Fire",
+      "element_ka": "ცეცხლის",
+      "stones": [
+        "Carnelian",
+        "Bloodstone",
+        "Diamond"
+      ],
+      "description": "Bold, ambitious, and always ready to take on challenges. Aries energy is fierce and pioneering.",
+      "description_ka": "გამბედავი, ამბიციური და ყოველთვის მზადაა გამოწვევებისთვის. ვერძის ენერგია ძლიერი და პიონერულია."
+    },
+    {
+      "id": 5001,
+      "sign": "taurus",
+      "name": "Taurus",
+      "name_ka": "კურო",
+      "symbol": "♉",
+      "dates": "Apr 20 - May 20",
+      "dates_ka": "20 აპრ - 20 მაი",
+      "element": "Earth",
+      "element_ka": "მიწის",
+      "stones": [
+        "Rose Quartz",
+        "Jade",
+        "Emerald"
+      ],
+      "description": "Grounded, sensual, and appreciative of life's pleasures. Taurus seeks stability and beauty.",
+      "description_ka": "მდგრადი, სენსუალური და ცხოვრების სიამოვნებების დამფასებელი. კურო ეძებს სტაბილურობასა და სილამაზეს."
+    },
+    {
+      "id": 5002,
+      "sign": "gemini",
+      "name": "Gemini",
+      "name_ka": "ტყუპები",
+      "symbol": "♊",
+      "dates": "May 21 - Jun 20",
+      "dates_ka": "21 მაი - 20 ივნ",
+      "element": "Air",
+      "element_ka": "ჰაერის",
+      "stones": [
+        "Tiger's Eye",
+        "Agate",
+        "Citrine"
+      ],
+      "description": "Curious, adaptable, and intellectually vibrant. Gemini energy is communicative and playful.",
+      "description_ka": "ცნობისმოყვარე, ადაპტირებადი და ინტელექტუალურად აქტიური. ტყუპების ენერგია კომუნიკაბელური და თამაშობანია."
+    },
+    {
+      "id": 5003,
+      "sign": "cancer",
+      "name": "Cancer",
+      "name_ka": "კირჩხიბი",
+      "symbol": "♋",
+      "dates": "Jun 21 - Jul 22",
+      "dates_ka": "21 ივნ - 22 ივლ",
+      "element": "Water",
+      "element_ka": "წყლის",
+      "stones": [
+        "Moonstone",
+        "Pearl",
+        "Rose Quartz"
+      ],
+      "description": "Nurturing, intuitive, and deeply emotional. Cancer energy is protective and caring.",
+      "description_ka": "მზრუნველი, ინტუიციური და ღრმად ემოციური. კირჩხიბის ენერგია დამცავი და მზრუნველია."
+    },
+    {
+      "id": 5004,
+      "sign": "leo",
+      "name": "Leo",
+      "name_ka": "ლომი",
+      "symbol": "♌",
+      "dates": "Jul 23 - Aug 22",
+      "dates_ka": "23 ივლ - 22 აგვ",
+      "element": "Fire",
+      "element_ka": "ცეცხლის",
+      "stones": [
+        "Tiger's Eye",
+        "Sunstone",
+        "Peridot"
+      ],
+      "description": "Confident, creative, and magnetically charismatic. Leo energy is warm and generous.",
+      "description_ka": "თავდაჯერებული, შემოქმედებითი და ქარიზმატული. ლომის ენერგია თბილი და გულუხვია."
+    },
+    {
+      "id": 5005,
+      "sign": "virgo",
+      "name": "Virgo",
+      "name_ka": "ქალწული",
+      "symbol": "♍",
+      "dates": "Aug 23 - Sep 22",
+      "dates_ka": "23 აგვ - 22 სექ",
+      "element": "Earth",
+      "element_ka": "მიწის",
+      "stones": [
+        "Amethyst",
+        "Amazonite",
+        "Sapphire"
+      ],
+      "description": "Analytical, practical, and detail-oriented. Virgo energy is helpful and perfection-seeking.",
+      "description_ka": "ანალიტიკური, პრაქტიკული და დეტალებზე ორიენტირებული. ქალწულის ენერგია დამხმარე და სრულყოფისკენ მიდრეკილია."
+    },
+    {
+      "id": 5006,
+      "sign": "libra",
+      "name": "Libra",
+      "name_ka": "სასწორი",
+      "symbol": "♎",
+      "dates": "Sep 23 - Oct 22",
+      "dates_ka": "23 სექ - 22 ოქტ",
+      "element": "Air",
+      "element_ka": "ჰაერის",
+      "stones": [
+        "Rose Quartz",
+        "Lapis Lazuli",
+        "Opal"
+      ],
+      "description": "Harmonious, diplomatic, and beauty-loving. Libra seeks balance and partnership.",
+      "description_ka": "ჰარმონიული, დიპლომატიური და სილამაზის მოყვარული. სასწორი ეძებს ბალანსსა და პარტნიორობას."
+    },
+    {
+      "id": 5007,
+      "sign": "scorpio",
+      "name": "Scorpio",
+      "name_ka": "მორიელი",
+      "symbol": "♏",
+      "dates": "Oct 23 - Nov 21",
+      "dates_ka": "23 ოქტ - 21 ნოე",
+      "element": "Water",
+      "element_ka": "წყლის",
+      "stones": [
+        "Black Obsidian",
+        "Malachite",
+        "Topaz"
+      ],
+      "description": "Intense, passionate, and deeply transformative. Scorpio energy is powerful and mysterious.",
+      "description_ka": "ინტენსიური, ვნებიანი და ღრმად გარდამქმნელი. მორიელის ენერგია ძლიერი და იდუმალია."
+    },
+    {
+      "id": 5008,
+      "sign": "sagittarius",
+      "name": "Sagittarius",
+      "name_ka": "მშვილდოსანი",
+      "symbol": "♐",
+      "dates": "Nov 22 - Dec 21",
+      "dates_ka": "22 ნოე - 21 დეკ",
+      "element": "Fire",
+      "element_ka": "ცეცხლის",
+      "stones": [
+        "Lapis Lazuli",
+        "Turquoise",
+        "Amethyst"
+      ],
+      "description": "Adventurous, optimistic, and freedom-loving. Sagittarius energy is expansive and philosophical.",
+      "description_ka": "მოგზაური, ოპტიმისტი და თავისუფლებისმოყვარე. მშვილდოსნის ენერგია ფართო და ფილოსოფიურია."
+    },
+    {
+      "id": 5009,
+      "sign": "capricorn",
+      "name": "Capricorn",
+      "name_ka": "თხის რქა",
+      "symbol": "♑",
+      "dates": "Dec 22 - Jan 19",
+      "dates_ka": "22 დეკ - 19 იან",
+      "element": "Earth",
+      "element_ka": "მიწის",
+      "stones": [
+        "Garnet",
+        "Black Obsidian",
+        "Tiger's Eye"
+      ],
+      "description": "Disciplined, ambitious, and quietly powerful. Capricorn energy is patient and enduring.",
+      "description_ka": "ამბიციური, დისციპლინირებული და მიღწევებზე ორიენტირებული. თხის რქის ენერგია გამძლე და მიზანდასახულია."
+    },
+    {
+      "id": 5010,
+      "sign": "aquarius",
+      "name": "Aquarius",
+      "name_ka": "მერწყული",
+      "symbol": "♒",
+      "dates": "Jan 20 - Feb 18",
+      "dates_ka": "20 იან - 18 თებ",
+      "element": "Air",
+      "element_ka": "ჰაერის",
+      "stones": [
+        "Amethyst",
+        "Aquamarine",
+        "Labradorite"
+      ],
+      "description": "Visionary, independent, and humanitarian. Aquarius energy is innovative and future-focused.",
+      "description_ka": "ინოვაციური, ჰუმანიტარული და უნიკალური. მერწყულის ენერგია ხედვითი და პროგრესულია."
+    },
+    {
+      "id": 5011,
+      "sign": "pisces",
+      "name": "Pisces",
+      "name_ka": "თევზები",
+      "symbol": "♓",
+      "dates": "Feb 19 - Mar 20",
+      "dates_ka": "19 თებ - 20 მარ",
+      "element": "Water",
+      "element_ka": "წყლის",
+      "stones": [
+        "Amethyst",
+        "Aquamarine",
+        "Moonstone"
+      ],
+      "description": "Intuitive, compassionate, and deeply spiritual. Pisces energy is dreamy and empathetic.",
+      "description_ka": "ინტუიციური, თანაგრძნობით სავსე და სულიერი. თევზების ენერგია მეოცნებე და ემპათიურია."
+    }
+  ],
+  "page_seo": [
+    {
+      "id": 11001,
+      "path": "/",
+      "title_en": "Gisheri — Handcrafted Natural Stone Jewelry",
+      "title_ka": "Gisheri — ხელით დამზადებული ბუნებრივი ქვის სამკაულები",
+      "description_en": "Bracelets and pendants cut from real stone in a Tbilisi workshop, matched to your purpose or your zodiac sign.",
+      "description_ka": "ნამდვილი ქვისგან თბილისურ სახელოსნოში დამზადებული სამაჯურები და მედალიონები, შერჩეული შენი განზრახვის ან ზოდიაქოს ნიშნის მიხედვით.",
+      "og_image": "brand/og-cover.svg",
+      "robots": "",
+      "created_at": "2025-11-04T09:12:00.000Z",
+      "updated_at": "2026-08-12T10:05:00.000Z"
+    },
+    {
+      "id": 11002,
+      "path": "/shop",
+      "title_en": "Shop every stone",
+      "title_ka": "ყველა ქვა",
+      "description_en": "The full Gisheri catalogue — thirty pieces in twenty-five stones, filtered by purpose, sign, gender and price.",
+      "description_ka": "გიშერის სრული კატალოგი — ოცდაათი ნივთი ოცდახუთი ქვისგან, გაფილტრული განზრახვის, ნიშნის, სქესისა და ფასის მიხედვით.",
+      "og_image": "brand/og-cover.svg",
+      "robots": "",
+      "created_at": "2025-11-04T09:14:00.000Z",
+      "updated_at": "2026-07-21T16:40:00.000Z"
+    },
+    {
+      "id": 11003,
+      "path": "/zodiac",
+      "title_en": "Shop by zodiac sign",
+      "title_ka": "ზოდიაქოს ნიშნით",
+      "description_en": "Twelve signs, three stones each, and the bracelets cut from them.",
+      "description_ka": "თორმეტი ნიშანი, სამ-სამი ქვა და მათგან დამზადებული სამაჯურები.",
+      "og_image": "",
+      "robots": "",
+      "created_at": "2025-11-04T09:15:00.000Z",
+      "updated_at": "2026-06-02T11:20:00.000Z"
+    },
+    {
+      "id": 11004,
+      "path": "/collections",
+      "title_en": "Collections",
+      "title_ka": "კოლექციები",
+      "description_en": "Six collections, one for each thing a stone is worn for: luck, protection, love, safety, energy and balance.",
+      "description_ka": "ექვსი კოლექცია — თითო თითოეული განზრახვისთვის, რისთვისაც ქვას ატარებენ: იღბალი, დაცვა, სიყვარული, უსაფრთხოება, ენერგია და ბალანსი.",
+      "og_image": "brand/og-cover.svg",
+      "robots": "",
+      "created_at": "2026-01-19T14:02:00.000Z",
+      "updated_at": "2026-08-19T08:47:00.000Z"
+    },
+    {
+      "id": 11005,
+      "path": "/quiz",
+      "title_en": "Find your stone",
+      "title_ka": "იპოვე შენი ქვა",
+      "description_en": "Four questions about your mood, the occasion, your intention and your budget, and a stone that matches all four.",
+      "description_ka": "ოთხი კითხვა შენს განწყობაზე, შემთხვევაზე, განზრახვასა და ბიუჯეტზე — და ქვა, რომელიც ოთხივეს ერგება.",
+      "og_image": "",
+      "robots": "",
+      "created_at": "2026-03-07T10:30:00.000Z",
+      "updated_at": "2026-08-06T13:15:00.000Z"
+    },
+    {
+      "id": 11006,
+      "path": "/about",
+      "title_en": "About Gisheri",
+      "title_ka": "",
+      "description_en": "Gisheri is named for the Georgian word for jet, the stone strung as a charm against the evil eye. We string it on Betlemi St in old Tbilisi.",
+      "description_ka": "გიშერს სახელი ქართული სიტყვიდან ეწოდა — ეს ის შავი ქვაა, რომელსაც ავი თვალისგან დასაცავად ასხამდნენ. ჩვენ მას ძველ თბილისში, ბეთლემის ქუჩაზე ვასხამთ.",
+      "og_image": "",
+      "robots": "noindex,follow",
+      "created_at": "2026-04-22T15:55:00.000Z",
+      "updated_at": "2026-04-22T15:55:00.000Z"
+    },
+    {
+      "id": 11007,
+      "path": "/zodiac/scorpio",
+      "title_en": "Scorpio bracelets",
+      "title_ka": "მორიელის სამაჯურები",
+      "description_en": "Black obsidian, malachite and topaz — the three stones traditionally cut for Scorpio, and the pieces made from them.",
+      "description_ka": "შავი ობსიდიანი, მალაქიტი და ტოპაზი — მორიელისთვის ტრადიციულად შერჩეული სამი ქვა და მათგან დამზადებული ნივთები.",
+      "og_image": "",
+      "robots": "noindex,follow",
+      "created_at": "2026-08-24T12:10:00.000Z",
+      "updated_at": "2026-08-27T09:35:00.000Z"
+    }
+  ],
+  "site_settings": {
+    "id": 1,
+    "hero_title_en": "",
+    "hero_title_ka": "",
+    "hero_subtitle_en": "",
+    "hero_subtitle_ka": "",
+    "hero_image": "",
+    "hero_cta_label_en": "Shop your sign",
+    "hero_cta_label_ka": "შეიძინე შენი ნიშნით",
+    "hero_cta_link": "/zodiac",
+    "banner_text_en": "Free delivery in Tbilisi on orders over ₾80",
+    "banner_text_ka": "უფასო მიწოდება თბილისში ₾80-ზე მეტ შეკვეთაზე",
+    "banner_link": "/shop",
+    "banner_active": true,
+    "featured_collection_slugs": [
+      "protection",
+      "love",
+      "luck",
+      "balance"
+    ],
+    "site_name": "Gisheri",
+    "default_og_image": "brand/og-cover.svg",
+    "twitter_handle": "gisheri",
+    "default_robots": "noindex,nofollow",
+    "updated_at": "2026-08-24T13:40:00.000Z"
+  },
+  "quiz_config": {
+    "id": 1,
+    "moods": [
+      {
+        "id": "peaceful",
+        "icon": "🧘",
+        "labelEn": "Peaceful",
+        "labelKa": "მშვიდი",
+        "purposes": [
+          "balance"
+        ]
+      },
+      {
+        "id": "energized",
+        "icon": "⚡",
+        "labelEn": "Energized",
+        "labelKa": "ენერგიული",
+        "purposes": [
+          "energy"
+        ]
+      },
+      {
+        "id": "loved",
+        "icon": "💕",
+        "labelEn": "Loved",
+        "labelKa": "სიყვარულით სავსე",
+        "purposes": [
+          "love"
+        ]
+      },
+      {
+        "id": "protected",
+        "icon": "🛡️",
+        "labelEn": "Protected",
+        "labelKa": "დაცული",
+        "purposes": [
+          "protection",
+          "safety"
+        ]
+      },
+      {
+        "id": "lucky",
+        "icon": "🍀",
+        "labelEn": "Lucky",
+        "labelKa": "იღბლიანი",
+        "purposes": [
+          "luck"
+        ]
+      },
+      {
+        "id": "balanced",
+        "icon": "☯️",
+        "labelEn": "Balanced",
+        "labelKa": "დაბალანსებული",
+        "purposes": [
+          "balance",
+          "energy"
+        ]
+      }
+    ],
+    "occasions": [
+      {
+        "id": "myself",
+        "icon": "🙋",
+        "labelEn": "For myself",
+        "labelKa": "საკუთარი თავისთვის",
+        "hintEn": "A treat that's just for you.",
+        "hintKa": "საჩუქარი საკუთარი თავისთვის."
+      },
+      {
+        "id": "gift",
+        "icon": "🎁",
+        "labelEn": "A gift",
+        "labelKa": "საჩუქარი",
+        "hintEn": "Something meaningful for someone else.",
+        "hintKa": "მნიშვნელოვანი ნივთი სხვისთვის."
+      },
+      {
+        "id": "couple",
+        "icon": "💑",
+        "labelEn": "For us",
+        "labelKa": "ჩვენთვის",
+        "hintEn": "Matching pieces for the two of you.",
+        "hintKa": "შესაბამისი ნივთები წყვილისთვის."
+      }
+    ],
+    "intentions": [
+      {
+        "id": "stress",
+        "icon": "🧠",
+        "labelEn": "Less stress",
+        "labelKa": "ნაკლები სტრესი",
+        "hintEn": "Calm the mind, find balance.",
+        "hintKa": "გონების დამშვიდება, ბალანსი.",
+        "purposes": [
+          "balance",
+          "protection"
+        ]
+      },
+      {
+        "id": "confidence",
+        "icon": "💪",
+        "labelEn": "More confidence",
+        "labelKa": "მეტი თავდაჯერებულობა",
+        "hintEn": "Step into your power.",
+        "hintKa": "შეიძინე ძალა.",
+        "purposes": [
+          "energy",
+          "luck"
+        ]
+      },
+      {
+        "id": "relationships",
+        "icon": "💗",
+        "labelEn": "Better relationships",
+        "labelKa": "უკეთესი ურთიერთობები",
+        "hintEn": "Open the heart.",
+        "hintKa": "გახსენი გული.",
+        "purposes": [
+          "love",
+          "balance"
+        ]
+      },
+      {
+        "id": "career",
+        "icon": "🚀",
+        "labelEn": "Career & success",
+        "labelKa": "კარიერა და წარმატება",
+        "hintEn": "Manifest goals.",
+        "hintKa": "მიზნების მიღწევა.",
+        "purposes": [
+          "luck",
+          "energy"
+        ]
+      },
+      {
+        "id": "health",
+        "icon": "🌿",
+        "labelEn": "Health & vitality",
+        "labelKa": "ჯანმრთელობა და სიცოცხლისუნარიანობა",
+        "hintEn": "Body and mind.",
+        "hintKa": "სხეული და გონება.",
+        "purposes": [
+          "safety",
+          "balance"
+        ]
+      },
+      {
+        "id": "spiritual",
+        "icon": "✨",
+        "labelEn": "Spiritual growth",
+        "labelKa": "სულიერი ზრდა",
+        "hintEn": "Connect with something bigger.",
+        "hintKa": "უფრო დიდთან კავშირი.",
+        "purposes": [
+          "protection",
+          "energy"
+        ]
+      }
+    ],
+    "budgets": [
+      {
+        "id": "any",
+        "icon": "💫",
+        "labelEn": "Any",
+        "labelKa": "ნებისმიერი",
+        "min": "0",
+        "max": null
+      },
+      {
+        "id": "under40",
+        "icon": "💰",
+        "labelEn": "Under ₾40",
+        "labelKa": "₾40-მდე",
+        "min": "0",
+        "max": "40"
+      },
+      {
+        "id": "40to50",
+        "icon": "💎",
+        "labelEn": "₾40 – ₾50",
+        "labelKa": "₾40 – ₾50",
+        "min": "40",
+        "max": "50"
+      },
+      {
+        "id": "over50",
+        "icon": "👑",
+        "labelEn": "Over ₾50",
+        "labelKa": "₾50-ზე მეტი",
+        "min": "50",
+        "max": null
+      }
+    ],
+    "updated_at": "2026-07-28T11:05:00.000Z"
+  }
+}

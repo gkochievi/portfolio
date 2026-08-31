@@ -1,0 +1,28 @@
+{
+  "brand": "Nabadi Barbershop",
+  "loading": "Loading…",
+  "save": "Save",
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "logout": "Log out",
+  "language_switch": "EN/KA",
+  "toggle_language": "Toggle language",
+  "not_found": "Page not found.",
+  "return_home": "Return home",
+  "load_failed": "Failed to load data.",
+  "retry": "Try again",
+  "dismiss": "Dismiss",
+  "notifications": "Notifications",
+  "demo": {
+    "badge": "Demo",
+    "body": "The real front end with its Django backend replaced by an in-browser mock. Everything works; nothing is saved.",
+    "sign_in_as": "Sign in as",
+    "role": {
+      "customer": "Customer",
+      "admin": "Administrator"
+    },
+    "reset": "Reset",
+    "portfolio": "Portfolio",
+    "dismiss": "Hide this banner"
+  }
+}

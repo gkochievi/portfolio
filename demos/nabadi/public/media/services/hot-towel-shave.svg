@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="hot-towel-shave-t">
+  <title id="hot-towel-shave-t">Hot-towel shave</title>
+  <desc>A steaming bowl, a rolled towel and a lather brush, with a caramel-handled straight razor in front.</desc>
+  <rect width="800" height="500" fill="#f1ead9"/>
+<path d="M 0 424 L 800 424" stroke="#d6cdb4" stroke-width="2.5" fill="none"/>
+<g fill="none" stroke="#70675e" stroke-width="3.4" stroke-linecap="round"><path d="M 356 296 C 332 260 372 236 350 202 C 334 178 358 156 348 134"/><path d="M 408 292 C 384 250 428 222 404 184 C 386 156 414 132 402 108"/><path d="M 458 298 C 438 264 474 242 456 210 C 442 186 464 166 456 144"/></g>
+<g fill="none" stroke="#20180f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M 292 318 L 512 318 C 516 318 518 322 517 328 C 508 384 466 414 402 414 C 338 414 296 384 287 328 C 286 322 288 318 292 318 Z" fill="#ffffff"/><ellipse cx="402" cy="318" rx="116" ry="24" fill="#fbf6ec"/></g>
+<path d="M 322 326 C 350 338 456 338 484 326" fill="none" stroke="#d6cdb4" stroke-width="2.5"/>
+<g fill="none" stroke="#20180f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M 158 332 L 296 332 C 312 332 312 388 296 388 L 158 388 Z" fill="#fbf6ec"/><path d="M 158 332 C 140 332 132 346 132 360 C 132 374 140 388 158 388 C 174 388 182 374 182 360 C 182 348 174 340 162 344 C 154 347 152 356 158 360" fill="#ffffff"/></g>
+<g fill="none" stroke="#e9c9a8" stroke-width="4" stroke-linecap="round"><path d="M 248 340 L 248 380"/><path d="M 266 340 L 266 380"/></g>
+<g transform="translate(626 302) scale(0.78)"><g fill="none" stroke="#20180f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M -44 6 C -42 -80 42 -80 44 6 Z" fill="#d6cdb4"/><path d="M -30 2 C -34 -32 -27 -50 -30 -64 M -16 -2 C -20 -36 -13 -54 -16 -68 M 0 -4 C -4 -38 3 -56 0 -70 M 16 -2 C 12 -36 19 -54 16 -68 M 30 2 C 26 -32 33 -50 30 -64" stroke="#70675e" stroke-width="2"/><rect x="-38" y="6" width="76" height="22" rx="6" fill="#ffffff"/><path d="M -32 28 C -40 74 -28 108 -24 130 L 24 130 C 28 108 40 74 32 28 Z" fill="#ffffff"/><path d="M -26 76 L 26 76" stroke="#d6cdb4" stroke-width="2"/></g></g>
+<g transform="translate(400 418) rotate(-7) scale(0.6)"><g fill="none" stroke="#20180f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M -4 -13 L -150 -17 C -163 -17 -163 12 -150 12 L -4 8 Z" fill="#8f5d33"/><path d="M 8 -6 L 150 -21 C 172 -23 182 -14 182 -6 L 178 3 L 26 13 L 8 9 Z" fill="#ffffff"/><path d="M 24 -2 L 172 -15" stroke="#70675e" stroke-width="2"/><circle cx="0" cy="-2" r="6.5" fill="#fbf6ec"/></g></g>
+</svg>

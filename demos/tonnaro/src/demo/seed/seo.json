@@ -1,0 +1,58 @@
+{
+  "id": 1,
+  "seo_title": {
+    "en": "Tonnaro — tow trucks, cranes and heavy transport in Georgia",
+    "ka": "Tonnaro — ევაკუატორი, ამწე და მძიმე ტვირთის გადაზიდვა საქართველოში",
+    "ru": "Tonnaro — эвакуаторы, краны и перевозка тяжёлых грузов в Грузии"
+  },
+  "seo_description": {
+    "en": "Order a tow truck, crane, lowboy, concrete pump or excavator anywhere in Georgia. Fixed price agreed before dispatch, licensed operators, tracking to the last kilometre.",
+    "ka": "შეუკვეთეთ ევაკუატორი, ამწე, ტრალი, ბეტონტუმბო ან ექსკავატორი საქართველოს ნებისმიერ წერტილში. ფიქსირებული ფასი გასვლამდე, ლიცენზირებული ოპერატორები, თვალყურის დევნება ბოლო კილომეტრამდე.",
+    "ru": "Закажите эвакуатор, кран, трал, бетононасос или экскаватор в любой точке Грузии. Фиксированная цена до выезда, операторы с допуском, отслеживание до последнего километра."
+  },
+  "seo_keywords": {
+    "en": "tow truck Georgia, crane hire Tbilisi, lowboy transport, concrete pump, excavator rental, heavy haulage Georgia, vehicle recovery Batumi",
+    "ka": "ევაკუატორი თბილისი, ამწის დაქირავება, ტრალით გადაზიდვა, ბეტონტუმბო, ექსკავატორის დაქირავება, მძიმე ტვირთის გადაზიდვა, ავტოევაკუაცია ბათუმი",
+    "ru": "эвакуатор Тбилиси, аренда крана, перевозка тралом, бетононасос, аренда экскаватора, перевозка тяжёлых грузов Грузия, эвакуация Батуми"
+  },
+  "seo_og_image": "seo/og/tonnaro-og-1200x630.svg",
+  "seo_og_image_alt": "A Tonnaro lowboy trailer loaded with an excavator on the Tbilisi bypass",
+  "seo_canonical_url": "https://tonnaro.ge/",
+  "seo_robots": "index,follow",
+  "seo_theme_color": "#F97316",
+  "legal_name": "Tonnaro LLC",
+  "address_street": "14 Ketevan Dedopali Ave",
+  "address_locality": "Tbilisi",
+  "address_region": "Tbilisi",
+  "address_postal_code": "0144",
+  "address_country": "GE",
+  "geo_latitude": "41.697500",
+  "geo_longitude": "44.832000",
+  "opening_hours": [
+    {
+      "dayOfWeek": [
+        "Mo",
+        "Tu",
+        "We",
+        "Th",
+        "Fr"
+      ],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    {
+      "dayOfWeek": [
+        "Sa"
+      ],
+      "opens": "09:00",
+      "closes": "16:00"
+    }
+  ],
+  "same_as": [
+    "https://www.facebook.com/tonnaro.ge",
+    "https://www.instagram.com/tonnaro.ge",
+    "https://www.linkedin.com/company/tonnaro"
+  ],
+  "schema_type": "MovingCompany",
+  "updated_at": "2026-08-19T09:45:00+04:00"
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": 101,
+    "user_id": 5,
+    "document": "contracts/kartuli-mshenebloba-framework-2026.pdf",
+    "title": "Framework haulage agreement 2026",
+    "original_filename": "kartuli-mshenebloba-framework-2026.pdf",
+    "file_size": 1842311,
+    "uploaded_by": 1,
+    "created_at": "2026-01-12T10:20:00+04:00"
+  },
+  {
+    "id": 102,
+    "user_id": 5,
+    "document": "contracts/kartuli-mshenebloba-framework-2026.pdf",
+    "title": "Annex A — 2026 tariff schedule",
+    "original_filename": "kartuli-mshenebloba-framework-2026.pdf",
+    "file_size": 214776,
+    "uploaded_by": 1,
+    "created_at": "2026-01-12T10:24:00+04:00"
+  },
+  {
+    "id": 103,
+    "user_id": 5,
+    "document": "contracts/kartuli-mshenebloba-framework-2026.pdf",
+    "title": "Insurance certificate (cargo)",
+    "original_filename": "kartuli-mshenebloba-framework-2026.pdf",
+    "file_size": 96408,
+    "uploaded_by": 1,
+    "created_at": "2026-03-04T15:10:00+04:00"
+  },
+  {
+    "id": 104,
+    "user_id": 5,
+    "document": "contracts/kartuli-mshenebloba-framework-2026.pdf",
+    "title": "Site access permit — Saburtalo",
+    "original_filename": "kartuli-mshenebloba-framework-2026.pdf",
+    "file_size": 131502,
+    "uploaded_by": 1,
+    "created_at": "2026-08-19T09:35:00+04:00"
+  },
+  {
+    "id": 105,
+    "user_id": 7,
+    "document": "contracts/rustavi-steel-annex-a.pdf",
+    "title": "Heavy haulage agreement 2026",
+    "original_filename": "rustavi-steel-annex-a.pdf",
+    "file_size": 2907664,
+    "uploaded_by": 1,
+    "created_at": "2025-12-18T09:05:00+04:00"
+  },
+  {
+    "id": 106,
+    "user_id": 7,
+    "document": "contracts/rustavi-steel-annex-a.pdf",
+    "title": "Annex A — abnormal load routes",
+    "original_filename": "rustavi-steel-annex-a.pdf",
+    "file_size": 487920,
+    "uploaded_by": 1,
+    "created_at": "2026-02-27T11:45:00+04:00"
+  },
+  {
+    "id": 107,
+    "user_id": 10,
+    "document": "contracts/batumi-port-logistics-sla-2026.pdf",
+    "title": "Service level agreement 2026",
+    "original_filename": "batumi-port-logistics-sla-2026.pdf",
+    "file_size": 3614205,
+    "uploaded_by": 1,
+    "created_at": "2026-01-05T08:40:00+04:00"
+  },
+  {
+    "id": 108,
+    "user_id": 10,
+    "document": "contracts/batumi-port-logistics-sla-2026.pdf",
+    "title": "Quay access authorisation",
+    "original_filename": "batumi-port-logistics-sla-2026.pdf",
+    "file_size": 88147,
+    "uploaded_by": 1,
+    "created_at": "2026-04-08T13:15:00+04:00"
+  },
+  {
+    "id": 109,
+    "user_id": 12,
+    "document": "contracts/alazani-agro-haulage-2026.pdf",
+    "title": "Seasonal haulage agreement 2026",
+    "original_filename": "alazani-agro-haulage-2026.pdf",
+    "file_size": 1205998,
+    "uploaded_by": 1,
+    "created_at": "2026-01-14T12:05:00+04:00"
+  }
+]

@@ -1,0 +1,6 @@
+# The demos under /demos/ carry their own noindex meta — crawlers must be
+# able to fetch them to see it, so nothing is disallowed here. (A robots.txt
+# inside /demos/<name>/ is never read; those files matter only when a demo
+# deploys standalone at a domain root.)
+User-agent: *
+Allow: /

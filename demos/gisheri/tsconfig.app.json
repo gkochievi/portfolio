@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+
+    /* Linting — upstream's loose flags, verbatim. This is what lets the
+       ported tree compile untouched; tightening them here would mean
+       editing files whose whole value is being byte-identical. */
+    "strict": false,
+    /* ON, deliberately, and the one flag that departs from upstream. zod's
+       `addQuestionMarks` decides required-vs-optional with `undefined extends T`,
+       which is true for EVERY type once strictNullChecks is off — so `z.infer`
+       silently degrades every admin form's Values type to all-optional. Upstream
+       never runs tsc, so it never saw this; a demo that type-checks has to. */
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": false,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "react": ["./node_modules/@types/react"],
+      "react-dom": ["./node_modules/@types/react-dom"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["src/demo"]
+}

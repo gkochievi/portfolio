@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gisheri — live demo</title>
+    <meta
+      name="description"
+      content="A natural-stone jewellery storefront and its admin console, running with the backend cut off — seed data compiled into the bundle and served from memory."
+    />
+
+    <!-- A demo shop must not be indexed as if it were a real one. -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <meta name="theme-color" content="#f7f2ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c1511" media="(prefers-color-scheme: dark)" />
+
+    <!-- Root-absolute is safe: Vite rewrites it against `base` at build time. -->
+    <link rel="icon" href="/brand/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Gisheri" />
+    <meta property="og:title" content="Gisheri — live demo" />
+    <meta
+      property="og:description"
+      content="A natural-stone jewellery storefront and its admin console, running with the backend cut off."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ka_GE" />
+
+    <style>
+      /* Painted before the bundle parses, so the first frame is the shop's own
+         cream rather than a white flash. `src/main.tsx` removes it after the
+         first render. */
+      .boot-splash {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f7f2ea;
+      }
+      .boot-splash__ring {
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid rgba(200, 146, 42, 0.25);
+        border-top-color: #c8922a;
+        border-radius: 50%;
+        animation: boot-spin 0.9s linear infinite;
+      }
+      @keyframes boot-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-splash__ring {
+          animation-duration: 3s;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        .boot-splash {
+          background: #1c1511;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="boot-splash"><div class="boot-splash__ring"></div></div>
+    </div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

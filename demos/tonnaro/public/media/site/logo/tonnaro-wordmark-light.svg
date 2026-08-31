@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" width="260" height="56" role="img" aria-label="Tonnaro">
+<g transform="translate(4,6) scale(0.86)">
+<rect x="4" y="26" width="44" height="5" rx="2.5" fill="#F97316"/>
+<path d="M4 26V14a2 2 0 0 1 2-2h9l6 8v6z" fill="#F97316"/>
+<rect x="25" y="11" width="21" height="12" rx="2" fill="#F97316" opacity="0.62"/>
+<circle cx="14" cy="37" r="6" fill="#F97316"/><circle cx="39" cy="37" r="6" fill="#F97316"/>
+</g>
+<text x="62" y="38" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="30"
+      font-weight="800" letter-spacing="-0.6" fill="#0F172A">Tonnaro</text>
+</svg>
