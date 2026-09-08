@@ -3,6 +3,7 @@ import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 
 import { SiteLayout } from '@/components/Layout'
 import { PortalPage } from '@/pages/PortalPage'
+import { ProjectPage } from '@/pages/ProjectPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 
 /**
@@ -19,11 +20,18 @@ function SiteRouter({ children }: { children: ReactNode }) {
 }
 
 /**
- * The portal has exactly one route. Case-study pages were removed when it
- * became a portal: a card now opens the product itself, and a write-up in
- * between was one more click before the thing that actually demonstrates the
- * work. The project copy that fed those pages still lives in
- * `content/projects.json` if it is ever wanted back.
+ * Two routes: the grid, and one project.
+ *
+ * The grid used to link straight into a demo bundle. It no longer does — a
+ * visitor dropped into someone else's dispatch console cannot tell what the
+ * product is for or which parts were hard, so `/work/<slug>` says that first
+ * and the demo is a button on it. The copy those pages need was already in
+ * `content/projects.json`, written for the case studies an earlier version of
+ * this portal removed.
+ *
+ * `work/:slug` is declared before the catch-all, and an unknown slug renders
+ * the 404 page from inside the route rather than redirecting — see
+ * `ProjectPage`.
  */
 export function App() {
   return (
@@ -31,6 +39,7 @@ export function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route index element={<PortalPage />} />
+          <Route path="work/:slug" element={<ProjectPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

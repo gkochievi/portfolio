@@ -30,12 +30,12 @@ export function PortalPage() {
         <p className="mt-5 max-w-[54ch] text-body-lg leading-relaxed text-ink/70">{TAGLINE}</p>
         <p className="mt-3 max-w-[54ch] text-body leading-relaxed text-ink/65">
           {withDemos === projects.length
-            ? 'Every project below opens as a live demo in your browser — real data, real workflows, no sign-up.'
-            : 'Several of these open as live demos in your browser — real data, real workflows, no sign-up.'}
+            ? 'Each card opens the write-up — what the product does, what it is built from, and the parts worth naming — with a button that runs the real thing in your browser. Real data, real workflows, no sign-up.'
+            : 'Each card opens the write-up — what the product does, what it is built from, and the parts worth naming. Most of them run in your browser from there: real data, real workflows, no sign-up.'}
         </p>
       </section>
 
-      <section className="shell pb-xl">
+      <section className="shell pb-16 sm:pb-24">
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />

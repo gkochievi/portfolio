@@ -91,42 +91,60 @@ page; the first entry is the featured card and the one the hero's buttons point 
 
 ```jsonc
 {
-  // ── the eight the portal renders ──────────────────────────────────────
-  "slug": "kioskmap",                        // React key + seed for the card artwork
+  // ── the eight the grid renders ────────────────────────────────────────
+  "slug": "kioskmap",                        // React key, detail route, seed for the card artwork
   "name": "Kioskmap",                        // card title
   "tagline": "One line. This is the card's body copy — make it count.",
   "period": "2025 — 2026",
   "status": "shipped",                       // shipped | live | in-progress | archived
   "stack": ["Django 5", "React 18"],         // first five show, the rest collapse to +N
-  "demoUrl": "/demos/kioskmap/",             // base-relative; null makes the card unclickable
+  "demoUrl": "/demos/kioskmap/",             // base-relative; null → the button reads "No demo yet"
   "cover": null,                             // card image, base-relative; null draws the generated mark
 
-  // ── kept, but nothing renders these today ─────────────────────────────
-  "summary": "Two or three sentences.",
+  // ── the detail page at /work/kioskmap renders all of these ────────────
+  "summary": "Two or three sentences.",      // the hero
   "role": "What you owned.",
-  "highlights": ["…"],
-  "metrics": [{ "label": "Tests", "value": "96" }],
   "problem": "Prose. Blank lines split paragraphs.",
   "approach": "Prose.",
   "architecture": [{ "layer": "Kiosk", "detail": "…" }],
+  "metrics": [{ "label": "Tests", "value": "96" }],
   "results": ["…"],
-  "demoNote": "What the demo is and is not.",
+  "demoNote": "What the demo is and is not.",   // shown under the demo button
   "sourceUrl": null,
   "screenshots": [
+    // title + caption are rendered; `src` and `schematic` still are not
     { "title": "Map", "caption": "What this screen does.", "schematic": "dashboard", "src": null }
+  ],
+
+  "highlights": ["…"],                          // required — the `creative` fallback reads it
+
+  // ── optional: omit both and the page still renders correctly ──────────
+  // stackGroups falls back to `stack` as one unlabelled row;
+  // creative falls back to `highlights`.
+  "stackGroups": [{ "group": "Backend", "items": ["Django 5"] }],
+  "creative": [
+    {
+      "title": "Short claim, no full stop",
+      "constraint": "The real-world limit that made the obvious answer unavailable.",
+      "detail": "What was built, and why it matters that it was built that way."
+    }
   ]
 }
 ```
 
+Prose fields may carry `` `backticked` `` identifiers; they render as `<code>`.
+Nothing else in them is markdown — asterisks and links print literally.
+
 The comments above are for this page; the real file is strict JSON. Field-by-field notes are in
 [`site/README.md`](../site/README.md).
 
-The portal renders only eight of these — `slug`, `name`, `tagline`, `period`, `status`, `stack`,
-`demoUrl` and `cover`. The rest is kept because it is expensive to write and a detail view may return,
-but nothing reads it: a typo in `problem` or `screenshots` costs nothing, while a wrong
-`demoUrl` costs everything. And **nothing validates this file** — `content.ts` asserts it into
-`Project[]`, so a missing key survives `npm run typecheck`. Open `/` and click the new card
-before you call it done.
+The grid renders eight of these — `slug`, `name`, `tagline`, `period`, `status`, `stack`,
+`demoUrl` and `cover`. **Everything else is now rendered too**, on the detail page, so a typo in
+`problem` or a stale number in `metrics` is public rather than free; it used to cost nothing.
+Only `stackGroups` and `creative` may be left out altogether. The `as Project[]` cast validates
+nothing on its own, so `content.ts` carries a **dev-only assertion** behind it: `npm run dev` throws
+and names the project and the missing keys. That check does not run in a production build — open
+`/`, click the new card, and read the page before you call it done.
 
 ## 5. Verify
 
@@ -136,9 +154,10 @@ npm run build        # the summary table must list demos/kioskmap with the right
 npm run preview      # it prints a URL per demo
 ```
 
-Then click: the new card on `/`, which must land on the demo; a reload on a deep link inside it
-(`/demos/kioskmap/<some-route>` must boot the demo, not the portal); and the demo's console for
-404s on `assets/` or media.
+Then click: the new card on `/`, which must land on `/work/kioskmap`; the demo button on that
+page, which must open the bundle; a reload on `/work/kioskmap` itself (it must not 404); a reload on
+a deep link inside the demo (`/demos/kioskmap/<some-route>` must boot the demo, not the portal); and
+the demo's console for 404s on `assets/` or media.
 
 ## What the build does for you
 
@@ -149,7 +168,7 @@ Then click: the new card on `/`, which must land on the demo; a reload on a deep
 | Assembly | Output copied to `dist/demos/<name>/`. |
 | SPA fallback | The root `404.html` redirector and the generated `dist/_redirects` both pick the new demo up from discovery; `deploy/vercel.json` and `deploy/nginx.conf` match `/demos/:demo/*` generically. |
 | Preview | `scripts/preview.mjs` enumerates `dist/demos/` and serves each with the nearest-`index.html` rule. |
-| The portal | The whole grid renders from the JSON, and the card is the link. Nothing else has to be touched. |
+| The portal | The grid and the `/work/<slug>` detail page both render from the JSON. Nothing else has to be touched — the route is one parameterised entry, not one per project. |
 
 ## What it does not
 

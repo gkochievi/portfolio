@@ -34,6 +34,7 @@
 
   --font-display: var(--font-display-stack);
   --font-body: var(--font-body-stack);
+  --font-mono: var(--font-mono-stack);
 
   --text-display: var(--fs-display);
   --text-h1: var(--fs-h1);
@@ -85,6 +86,14 @@
 
   --font-display-stack: 'Montserrat Alternates', -apple-system, Roboto, Helvetica, sans-serif;
   --font-body-stack: 'Montserrat', -apple-system, Roboto, Helvetica, sans-serif;
+
+  /* The project write-ups name real identifiers — `select_for_update()`,
+     `/api/admin/` — and the brand kit has no monospace, so this is the one face
+     not taken from it. It is declared here rather than left to Tailwind's
+     default so the whole typographic system still lives in this file, and it
+     ships no webfont: every entry is a face the OS already has. */
+  --font-mono-stack: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
 
   --canvas-max-width: 1440px;
 

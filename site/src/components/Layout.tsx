@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { Mail } from 'lucide-react'
 
@@ -6,13 +6,37 @@ import { COMPANY, EMAIL, LOCATION, MAILTO } from '@/config'
 import { Logo } from './Logo'
 import { ThemeToggle } from './ThemeToggle'
 
-/** A route change lands at the top — instantly: the html `scroll-behavior:
- *  smooth` would otherwise animate the new page up from the old offset. */
+/**
+ * A route change lands at the top — instantly: the html `scroll-behavior:
+ * smooth` would otherwise animate the new page up from the old offset.
+ *
+ * It also moves focus, which scrolling alone does not. A client-side
+ * navigation replaces everything inside `<main>` without a document load, so
+ * the anchor that was focused is destroyed, focus falls back to `<body>`, and
+ * assistive tech is told nothing at all — no title, no heading, no
+ * announcement. Focusing the container puts the screen-reader cursor at the top
+ * of the new page and makes the next Tab continue from there rather than from
+ * the start of the document.
+ *
+ * Skipped on the first mount: a fresh page load already starts at the top with
+ * focus where the browser wants it, and stealing it there would suppress the
+ * skip link.
+ */
 function ScrollToTop() {
   const { pathname } = useLocation()
+  const first = useRef(true)
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
+    if (first.current) {
+      first.current = false
+      return
+    }
+    // `<main>` carries tabIndex={-1} for exactly this, and `outline-none`
+    // keeps the ring off a container the user never reached by keyboard.
+    document.getElementById('work')?.focus()
   }, [pathname])
+
   return null
 }
 

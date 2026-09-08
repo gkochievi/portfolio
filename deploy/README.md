@@ -40,7 +40,7 @@ before pushing it anywhere.
 | GitHub Pages (user/org site) | `/` | `404.html` |
 | Netlify | `/` | `deploy/_redirects` (copied into `dist/`) |
 | Cloudflare Pages | `/` | `_redirects`, with per-demo lines (see below) |
-| Vercel | `/` | `deploy/vercel.json` at the repo root |
+| Vercel | `/` | `vercel.json` at the repo root (committed) |
 | nginx / any VPS | `/` | `deploy/nginx.conf` |
 | S3 + CloudFront | `/` | CloudFront Function (below) |
 | Anything that cannot rewrite | whatever the path is | `VITE_ROUTER=hash` |
@@ -112,16 +112,69 @@ writes the rules out one demo at a time rather than with a placeholder.
 
 ## Vercel
 
-Copy `deploy/vercel.json` to the repo root (Vercel only reads it from there):
+**`vercel.json` is already at the repo root, committed.** Vercel reads it only
+from the project's Root Directory, so that is where it has to live;
+`deploy/vercel.json` is a byte-identical copy kept as the annotated reference
+next to the other hosts. Nothing to copy — connecting the repo is the whole job:
 
-```bash
-cp deploy/vercel.json vercel.json
-```
+1. **Add New → Project → Import Git Repository**, and pick this repo.
+2. **Root Directory:** leave it at `./`. Pointing it at `site/` would build the
+   portal alone with no `/demos/*` — and `vercel.json` would not be read at all.
+3. **Build & Output Settings:** leave Build Command, Output Directory and
+   Install Command **blank**. `vercel.json` owns all three and takes precedence;
+   a value typed there is a second source of truth.
+4. **Environment variables: add none.** Specifically not `VITE_BASE` — it must
+   stay unset so it defaults to `/`, which is what every rewrite in the file
+   assumes. Copying `/<repo>/` out of the Pages workflow is the single easiest
+   way to break this deploy: every asset URL and both router basenames would
+   move under a subpath while the rewrites still point at `/index.html`.
+5. **Node version:** set Settings → General → Node.js Version explicitly. Note
+   that `engines.node` in `package.json` takes precedence when present, and it
+   is a floating `>=20`.
+6. Deploy, then hard-reload each of these rather than clicking through:
+   `/`, `/work/<slug>`, `/demos/tonnaro/`, `/demos/tonnaro/app/orders`,
+   `/demos/nabadi/` and `/demos/nabadi/admin/bookings`. Then
+   `curl -sI <url>/assets/<hashed>.js` — `content-type: text/javascript` plus the
+   immutable `cache-control` proves the filesystem-before-rewrite order and the
+   header rules in one response.
 
-It sets the build command, `outputDirectory: dist`, the two rewrites, and
-immutable caching for hashed assets. Vercel checks the filesystem before
-applying rewrites, so the catch-all cannot shadow a real file. Leave
-`VITE_BASE` unset (`/`).
+Two details in that file are load-bearing and easy to "tidy" back into bugs:
+
+- **The rewrite sources use `(.*)`, not `:path*`.** A repeated parameter cannot
+  absorb a trailing slash: `/demos/:demo/:path*` does not match
+  `/demos/nabadi/admin/`. The original config got away with it only because
+  `trailingSlash: false` stripped the slash before matching — two mistakes
+  cancelling out, so removing either one alone breaks trailing-slash URLs.
+- **`trailingSlash` is deliberately absent.** Set to `false` it 308-redirects
+  `/demos/nabadi/` — the exact string the portal cards link to — to
+  `/demos/nabadi`. Setting it `true` would 308 every deep link the other way.
+  Absent, Vercel serves both forms and the rules cover both: rewrite 1 handles
+  the bare `/demos/<name>`, rewrite 2 the slashed and deep forms, so neither
+  form depends on a normalising redirect existing.
+- **The two SPA fallbacks exclude the asset directories**, via the lookaheads in
+  their sources, and that is not tidiness. `headers` are matched against the
+  **request** path in a phase that compiles *before* the filesystem check, so
+  `/assets/<hash>.js` collects `immutable, max-age=31536000` whether or not the
+  file exists. Without the exclusion, a browser holding a stale `index.html` and
+  requesting a since-deleted chunk gets the portal's HTML back with `200` and a
+  year-long immutable directive — the page dies on `Unexpected token '<'` and
+  the poisoned URL is pinned in that browser's disk cache with no revalidation
+  path. Excluded, the miss is a plain 404, which is what
+  [`nginx.conf`](./nginx.conf) achieves with `try_files $uri =404` and what
+  `preview.mjs` means by "a missing hashed asset is a broken build, not a client
+  route". The third lookahead is load-bearing: with only the demo-scoped one,
+  `/demos/nabadi/assets/gone.js` falls through to the root catch-all and is
+  served `index.html` anyway.
+
+Ordering is the rest of it: Vercel applies redirects, then the filesystem, then
+rewrites top-to-bottom with first match winning. So the two `/demos/…` rules
+must precede the catch-all — reverse them and every demo deep link boots the
+portfolio shell — and the catch-all cannot shadow a real file, because hashed
+assets are found by the filesystem first.
+
+`dist/_redirects`, `dist/404.html` and `dist/.nojekyll` ride along in the output
+and are inert here: Vercel never reads the first, and the other two are
+unreachable through any linked URL under these rewrites.
 
 ## nginx / any VPS
 

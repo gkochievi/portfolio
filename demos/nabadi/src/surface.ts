@@ -58,10 +58,21 @@ export function currentSurface(): SurfaceName {
  * the console still declares `/bookings` and `/users`, the customer site
  * still declares `/book` and `/profile`, and React Router strips the prefix
  * before either of them sees a path.
+ *
+ * The trailing slash is stripped, and that is load-bearing rather than tidy.
+ * `BASE` is `/demos/nabadi/`, and React Router's `stripBasename` does a plain
+ * `pathname.startsWith(basename)` — so with the slash kept, a request for
+ * `/demos/nabadi` (no slash) matches no route at all and the customer site
+ * renders its error page instead of the shop. A host that canonicalises away
+ * trailing slashes does exactly that to this demo's front door, and so does
+ * anyone who types the URL. The admin basename never had the problem, because
+ * appending the segment consumed the slash; this makes the customer surface
+ * behave the same way, and the other three demos already strip it.
  */
 export function surfaceBasename(surface: SurfaceName): string {
   const root = ROUTER_MODE === 'hash' ? '/' : BASE;
-  return surface === 'admin' ? `${root}${ADMIN_SEGMENT}` : root;
+  if (surface === 'admin') return `${root}${ADMIN_SEGMENT}`;
+  return root.replace(/\/$/, '') || '/';
 }
 
 /** Absolute URL of a surface's front door — for `<a href>` and new tabs. */

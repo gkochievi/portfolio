@@ -21,8 +21,85 @@
       "nginx",
       "DigitalOcean"
     ],
+    "stackGroups": [
+      {
+        "group": "Backend",
+        "items": [
+          "Django 4.2",
+          "Django REST Framework",
+          "SimpleJWT",
+          "PostgreSQL",
+          "Pillow"
+        ]
+      },
+      {
+        "group": "Front end",
+        "items": [
+          "React 18.3",
+          "Create React App",
+          "Ant Design 5.15",
+          "React Router 6.28",
+          "axios",
+          "dayjs",
+          "DOMPurify",
+          "dnd-kit",
+          "react-quill-new"
+        ]
+      },
+      {
+        "group": "Maps, routing and charts",
+        "items": [
+          "Leaflet 1.9",
+          "react-leaflet 4.2",
+          "OpenRouteService (driving-hgv, elevation + steepness)",
+          "Nominatim",
+          "OpenStreetMap tiles",
+          "Recharts 2.12"
+        ]
+      },
+      {
+        "group": "Infrastructure",
+        "items": [
+          "Docker",
+          "nginx",
+          "DigitalOcean"
+        ]
+      }
+    ],
+    "creative": [
+      {
+        "title": "Pricing waits for the climb",
+        "constraint": "The elevation surcharge multiplies the distance line, but a route's ascent arrives from an asynchronous routing call that a customer can outrun by pressing Submit.",
+        "detail": "The race is closed three times over: the review step refuses to ask for a price while the route is still resolving, every stop is posted with its coordinates as well as its address, and the server re-runs the route itself before pricing whenever a stored summary has a distance but a null ascent. The success test is distance present and ascent not null, because an ascent of zero is a legitimate answer for a flat city hop. A null ascent collapses the multiplier to 1.0 in silence, so the estimate the customer accepts undercuts the price the order is saved at by roughly 7-10% on a hilly route."
+      },
+      {
+        "title": "Zones are a dragged rule chain",
+        "constraint": "Which rate card applies is not a lookup — a crane hire inside Tbilisi, a run that leaves the city and a 400 km haul are different businesses, and the operator moves the boundaries.",
+        "detail": "Zone rows are evaluated in the administrator's own drag order and the first active match wins: a keyword zone tests every stop's address, with `within` requiring all stops inside and `crossing` requiring at least one outside, while a distance zone with a null cap is the catch-all. The winning zone then selects a whole rate row out of the type × zone table rather than multiplying anything, so two zones differ in every column instead of by a coefficient. Reordering rows in a table is a pricing change, which is what lets an operator retune the rules without a deploy — and why each keyword list carries the Latin, Georgian and Cyrillic spelling of the same district, since the address text comes back from the geocoder in whichever language the interface was set to."
+      },
+      {
+        "title": "An unpriced offer still holds the truck",
+        "constraint": "Two dispatchers must not sell the same crane twice, but a job that has only just been offered carries no committed time window yet.",
+        "detail": "A resource is held from `offer_sent` onward rather than from acceptance, and window overlap is deliberately asymmetric: two open-ended bookings collide, two scheduled windows get an ordinary half-open comparison, and one open against one scheduled does not collide at all. Vehicle status is derived from whether any order is holding the truck and never overwrites an administrator's maintenance or retired. Without the asymmetry a brand-new offer would clash with every scheduled job on that truck and the price could never be sent; without holding at `offer_sent`, one crane gets promised to two customers who are both still deciding."
+      },
+      {
+        "title": "Gradients measured over fifty metres",
+        "constraint": "OpenRouteService returns elevation sampled from a coarse DEM, so two route points a few metres apart can differ by three or four metres of interpolation noise.",
+        "detail": "`maxGradientPct` walks forward accumulating horizontal distance until it has at least a 50 m baseline, takes Δelevation over that whole stretch, then advances the start by one point; the profile chart is drawn from a five-point centred moving average rather than raw samples. Adjacent-point arithmetic reports 50% grades on flat motorway, which would print an absurd steepest-climb figure on a quote the customer is about to accept."
+      },
+      {
+        "title": "One restricted stop blocks the job",
+        "constraint": "Cranes may not set up on central Tbilisi streets during the morning rush and concrete may not be delivered inside the city at night — rules that belong to a transport category, a place name and a time of day, and that can wrap past midnight.",
+        "detail": "Each window carries a category, a location keyword and a time range, and the check matches that keyword against every address on the order rather than only the pickup — so a single stop in a restricted district is enough to refuse the requested time. A rule spanning 22:00 to 06:00 is held as two ranges, which keeps the comparison a plain containment test instead of a special case. A rule tested only against the pickup is trivially avoided by a job that starts outside the city and ends in the middle of it, which is the exact shape of the delivery the rule exists to stop."
+      },
+      {
+        "title": "One timestamp is the realtime layer",
+        "constraint": "Both sides of an order need to see the other side's moves on a console nobody is sitting at, with no websocket and no push.",
+        "detail": "Every write stamps `last_event_at` plus an event type on the order row, and both notification endpoints return the maximum of that column across all of the viewer's orders — not the unread ones, or marking everything read would move the scalar backwards and swallow the next real event. A ten-second poll, gated on document visibility with a single in-flight guard, diffs that one value; a forward move increments a `tick` every page subscribes to, and suppressing the first fetch stops a page load from replaying the backlog as news. Five pages refetch on real activity and stay quiet otherwise, and because audibility is decided by which side originated the event, a dispatcher never hears their own edits."
+      }
+    ],
     "highlights": [
-      "Pricing is a configurable engine, not a rate card: zones, per-type rates, weight and distance bands, an elevation surcharge, equipment add-ons and VAT all compose, and the admin can change any of them and watch the live quote calculator move.",
+      "Pricing is a configurable engine, not a rate card: zone rules are evaluated in the order the admin dragged them into, and the winning zone selects a whole rate row out of the transport-type × zone table. Per-kg weight, an elevation multiplier on the distance line, a per-day multiplier and a flat floor surcharge compose the total; the company fee and VAT are derived from it rather than added to it. Every one of those is an editable table, with a live quote calculator beside them.",
       "Routes are truck-aware. Every order is costed against an HGV route with a real elevation profile, because a 40-tonne load climbing 2,000 m out of the Mtkvari valley does not cost what the same distance costs on the flat.",
       "Describing the job in free text suggests the right service — 'my car broke down on the highway' proposes the tow truck — from a keyword engine the admin edits per service.",
       "Vehicle and driver assignment is checked, not trusted: licence categories must cover the vehicle, and overlapping bookings are refused rather than double-sold.",
@@ -32,8 +109,8 @@
     ],
     "metrics": [
       {
-        "label": "REST endpoints",
-        "value": "120"
+        "label": "API routes",
+        "value": "128"
       },
       {
         "label": "Django models",
@@ -57,7 +134,7 @@
       },
       {
         "layer": "Operations console",
-        "detail": "The dispatcher's surface: saved-view tabs with live counts, a polled notification bell that only sounds for the other side's actions, per-order assignment with eligibility and conflict checks, and CSV export that escapes formula-leading cells rather than handing a spreadsheet an injection."
+        "detail": "The dispatcher's surface: saved-view tabs with live counts, a polled notification bell that only sounds for the other side's actions, per-order assignment with eligibility and conflict checks, and server-side CSV exports that escape formula-leading cells rather than handing a spreadsheet an injection."
       },
       {
         "layer": "Pricing engine",
@@ -69,7 +146,7 @@
       },
       {
         "layer": "Content and identity",
-        "detail": "Landing page, site settings, terms and SEO are three singletons with multilingual JSON fields. The colour theme, site name, favicon and contact details are served to the front end at boot, so re-skinning the product is an admin action."
+        "detail": "Landing page, site settings, terms and SEO are four singletons with multilingual JSON fields. The colour theme, site name, favicon and contact details are served to the front end at boot, so re-skinning the product is an admin action."
       },
       {
         "layer": "Backend",
@@ -135,23 +212,123 @@
       "Zustand",
       "Docker"
     ],
+    "stackGroups": [
+      {
+        "group": "Backend",
+        "items": [
+          "Python 3.13",
+          "Django 5.2 LTS",
+          "Django REST Framework 3.15",
+          "SimpleJWT 5.3 (httpOnly cookies, rotation + blacklist)",
+          "drf-spectacular 0.28",
+          "django-cors-headers 4.6",
+          "phonenumbers 8.13"
+        ]
+      },
+      {
+        "group": "Data and jobs",
+        "items": [
+          "PostgreSQL 16 + btree_gist",
+          "psycopg 3.2",
+          "Redis 7",
+          "Celery 5.4",
+          "django-celery-beat 2.9",
+          "openpyxl 3.1",
+          "Pillow 11"
+        ]
+      },
+      {
+        "group": "Front ends",
+        "items": [
+          "React 19",
+          "TypeScript 6",
+          "Vite 8",
+          "Tailwind CSS 4",
+          "TanStack Query 5",
+          "Zustand 5 (customer app)",
+          "Recharts 3 (console)",
+          "Radix UI",
+          "React Hook Form 7 + Zod 3",
+          "React Router 7",
+          "i18next 23 (KA/EN)",
+          "date-fns 4"
+        ]
+      },
+      {
+        "group": "Testing and quality",
+        "items": [
+          "pytest 8.3 + pytest-django 4.9",
+          "pytest-cov (78% gate)",
+          "factory-boy 3.3",
+          "Vitest 2 + Testing Library",
+          "ruff 0.8 + black 24.10",
+          "ESLint 10 + Prettier 3",
+          "pre-commit",
+          "GitHub Actions"
+        ]
+      },
+      {
+        "group": "Runtime and delivery",
+        "items": [
+          "Docker Compose",
+          "Gunicorn 23",
+          "nginx",
+          "WhiteNoise 6.8",
+          "Sentry",
+          "smsoffice.ge SMS gateway",
+          "just"
+        ]
+      }
+    ],
+    "creative": [
+      {
+        "title": "The constraint that quietly locked customers out",
+        "constraint": "A partial unique index allows one active booking per (customer, service). It keeps arming after the appointment time passes, but a past pending booking appears in neither customer tab — \"upcoming\" needs start_at > now, \"past\" needs completed/no_show — so the customer sees nothing and gets a 409 they cannot explain or clear.",
+        "detail": "An hourly beat sweep (auto_complete_stale_bookings) completes any pending/confirmed booking whose end_at is more than a grace window (default 24h) old, giving staff a full day to mark a genuine no-show first. It is written as one conditional UPDATE, so Postgres re-evaluates the status filter at write time and a no-show committed after the queryset snapshot cannot be overwritten back to completed. Without the sweep a customer is permanently barred from re-booking the one service they had, with no visible cause and no self-service remedy; without the conditional UPDATE the sweep races staff and rewrites their decision."
+      },
+      {
+        "title": "Two constraints, one IntegrityError",
+        "constraint": "Two different Postgres constraints fire on the same INSERT path: the exclusion constraint (someone took the slot) and the partial unique (you already hold an active booking for this service). Both surface as a bare IntegrityError, and they call for opposite remedies — one is fixed by picking another time, the other never is.",
+        "detail": "booking_integrity_error_code reads the violated constraint's name out of the Postgres error text and maps it to a distinct API code — slot_taken or duplicate_active_booking — with slot_taken as the fallback for unknown names. The customer app keeps its own fallback that sniffs the constraint name out of a 409 body, for backends that predate the split. The naive single catch tells a blocked customer to \"pick another time\", which is advice that cannot work; they retry every slot in the calendar and every one of them fails."
+      },
+      {
+        "title": "Reminders keyed on a flag, not a clock",
+        "constraint": "A reminder dispatcher that looks for bookings near a target time needs a window, and any window silently drops every booking that slid past it while beat or the worker was down. Widening the window instead re-sends.",
+        "detail": "dispatch_due_reminders makes the reminder_24h_sent_at / reminder_1h_sent_at columns the only source of truth and selects every not-yet-reminded booking whose start is still in the future but inside the lead window, so a missed reminder is caught up on the next beat. A created_at <= start_at - lead clause excludes bookings made inside their own window, because a 24h template that says \"tomorrow\" must not go to somebody who booked twenty minutes ago. The flag is written only after a successful enqueue. It converts an outage from lost reminders into late ones, and stops the catch-up predicate from texting \"see you tomorrow\" to a customer already on their way."
+      },
+      {
+        "title": "A password reset that answers nothing",
+        "constraint": "The endpoint must behave identically whether or not the phone number has an account. Returning 204 either way is not enough: the SMS send only happens when the account exists, so provider latency or a provider outage turns response time and error rate into an account-existence oracle.",
+        "detail": "The send is handed to Celery rather than performed in the request, and the enqueue is wrapped in a bare except whose only job is to keep the response shape identical — the view returns 204 no matter what happens downstream. The code itself is stored as a SHA-256 digest with a 15-minute TTL and an attempt counter incremented by an atomic F() update; once the counter reaches the cap the row is filtered out of the lookup entirely, so even the correct code is dead. A 6-digit code is brute-forceable inside its own TTL without the cap, and a timing difference of a few hundred milliseconds is enough to enumerate a shop's customer list without ever logging in."
+      },
+      {
+        "title": "One PATCH, five status values, four keys",
+        "constraint": "Every booking lifecycle action has its own feature flag and its own endpoint, but the admin console also needs a generic PATCH for notes and reschedules. Gating that PATCH as one endpoint gives it one key — and PATCH {status: \"completed\"} then performs the action whose flag is off.",
+        "detail": "PATCH is treated as a bundle of per-field mutations rather than an endpoint: partial_update resolves its required keys from the validated body, mapping each requested status value to the same feature key as its dedicated endpoint, and a reschedule that also changes status requires both keys. The viewset deliberately omits partial_update from its action-to-key table so the routing cannot be bypassed by the class-level machinery. It closes a live privilege escalation — an administrator with cancel, complete and no-show all revoked could still perform all three — and a parametrised regression test now asserts the reschedule key alone grants none of them."
+      },
+      {
+        "title": "The API never sends a sentence",
+        "constraint": "The interface is Georgian-first with English second, and the API is written in English. Any human-readable message the backend returns is a string in the wrong language that a translator can never reach.",
+        "detail": "Every error response is flattened to {code, message, field} where code is a stable machine token, and both front ends use that token directly as an i18next key — so the Georgian wording of \"this slot was just taken\" lives in the customer app's locale files, not in Python. The same code also decides the HTTP status through a _STATUS_OVERRIDES table, which is how a serializer raising ValidationError({\"start_at\": [\"slot_taken\"]}) becomes a 409 rather than a 400. Content follows the same rule in the schema: name is the Georgian column and name_en is an optional override that degrades to Georgian when blank, rather than to nothing. It keeps the API's error contract translatable and its status codes honest from one table, and means a Georgian customer never sees an untranslated English sentence leak out of a validator."
+      }
+    ],
     "highlights": [
       "Double-booking is refused by the database, not by the application: a Postgres exclusion constraint over (barber, time range) means two requests racing for the same chair cannot both win, however the API is called.",
-      "Availability is computed, not stored. A barber's own hours fall back to the shop's, breaks and time off are subtracted, the chosen service's duration decides how wide a slot has to be, and lead time trims the front of today — so the calendar only ever offers a slot the shop can honour.",
-      "Four roles and one permission table. Every feature flag is enforced three times over — a DRF permission class on the endpoint, a React gate on the route, and the sidebar that decides the screen is worth showing — and a checker keeps the three from drifting.",
+      "Availability is computed, not stored. A barber's own hours fall back to the shop's, time off is subtracted — a lunch break is entered as one, so there is no second concept to keep in step — the chosen service's duration decides how wide a slot has to be, and lead time trims the front of today, so the calendar only ever offers a slot the shop can honour.",
+      "Four roles and one permission table of sixteen keys. Every flag is enforced three times over — a DRF permission class on the endpoint, a React gate on the route, and the sidebar that decides the screen is worth showing. A backend test holds the seeded matrix, the enforcement probes and the key list to each other; the console's own copy of the map is kept in step by a parity checker run over the three.",
       "Every staff mutation writes an audit row with a full before/after diff, including a pre-delete snapshot, so 'who changed this and when' has an answer after the row is gone.",
       "Bilingual to the content model: services, categories and every landing section store Georgian and English side by side, and an admin edits both in one form.",
       "The public site is admin-editable — hero, gallery, opening hours, address, social links and the featured reviews band are data, not a deploy.",
-      "566 backend tests and 36 front-end suites, with the booking constraints and the slot algorithm carrying the heaviest coverage."
+      "564 backend tests and 36 front-end suites holding 180 cases, with the booking constraints and the slot algorithm carrying the heaviest coverage, behind a 78% coverage gate in CI."
     ],
     "metrics": [
       {
         "label": "Django models",
-        "value": "18"
+        "value": "19"
       },
       {
         "label": "Backend tests",
-        "value": "566"
+        "value": "564"
       },
       {
         "label": "Front-end lines",
@@ -175,15 +352,15 @@
       },
       {
         "layer": "Availability engine",
-        "detail": "One module answers 'when can this barber do this service'. Per-barber working hours with a shop-hours fallback, breaks, barber-specific and shop-wide time off, service duration and per-barber overrides, minimum lead time and maximum booking horizon — all resolved in Asia/Tbilisi, which is the only timezone the shop has ever cared about."
+        "detail": "One module answers 'when can this barber do this service'. Per-barber working hours with a shop-hours fallback, barber-specific and shop-wide time off (which is also how a lunch break is entered), service duration and per-barber overrides, minimum lead time and maximum booking horizon — all resolved in Asia/Tbilisi, which is the only timezone the shop has ever cared about."
       },
       {
         "layer": "Permissions",
-        "detail": "Four roles — admin, administrator, barber, customer — over a seeded feature-flag table. The backend enforces it with a DRF permission class, the console gates the route and hides the nav entry, and a parity checker asserts the three agree, because a permission that is enforced in two places out of three is a bug waiting for a deep link."
+        "detail": "Four roles — admin, administrator, barber, customer — over a seeded feature-flag table. The backend enforces it with a DRF permission class, the console gates the route and hides the nav entry, and a parity checker is run over the three to keep them in step, because a permission that is enforced in two places out of three is a bug waiting for a deep link."
       },
       {
         "layer": "Backend",
-        "detail": "Eleven Django apps, 18 models, DRF with explicit per-view permissions, JWT in HttpOnly cookies with rotation and blacklisting, a single error envelope every endpoint speaks, and Celery for the reminder SMS and the sweep that closes yesterday's unfinished appointments."
+        "detail": "Eleven Django apps, 19 models, DRF with explicit per-view permissions, JWT in HttpOnly cookies with rotation and blacklisting, a single error envelope every endpoint speaks, and Celery for the reminder SMS and the sweep that closes yesterday's unfinished appointments."
       },
       {
         "layer": "Content and identity",
@@ -197,7 +374,7 @@
       "Every staff change to a booking, a customer or a price is recoverable from an audit row, including the ones that deleted something."
     ],
     "demoUrl": "/demos/nabadi/",
-    "demoNote": "Both front ends, with the Django backend replaced by an in-browser mock: seed data compiled into the bundle, served from memory. The two apps ship as one bundle over one store, so a booking you make on the site is waiting in the console when you switch — the banner in the corner signs you in as a customer or as staff. Nothing is persisted: a reload restores the pristine shop.",
+    "demoNote": "Both front ends, with the Django backend replaced by an in-browser mock: seed data compiled into the bundle, served from memory. The two apps ship as one bundle over one store, so a booking you make on the site is waiting in the console when you switch — the banner in the corner signs you in as a customer or as staff. No seeded row is ever written to storage, so a reload restores the pristine shop.",
     "sourceUrl": null,
     "cover": "/thumbnails/nabadi.webp",
     "screenshots": [
@@ -246,12 +423,105 @@
       "TanStack Query",
       "Tailwind CSS v4",
       "Docker",
-      "nginx"
+      "nginx",
+      "FastAPI"
+    ],
+    "stackGroups": [
+      {
+        "group": "Backend",
+        "items": [
+          "Python 3.12",
+          "Django 5.0",
+          "Django REST Framework 3.15",
+          "drf-spectacular 0.27",
+          "Channels 4.1 + channels-redis 4.2",
+          "Daphne 4.1",
+          "gunicorn 23",
+          "Pillow 10",
+          "django-crispy-forms 2.3"
+        ]
+      },
+      {
+        "group": "Payment service (separate)",
+        "items": [
+          "FastAPI 0.115",
+          "uvicorn 0.30",
+          "SQLAlchemy 2.0",
+          "httpx 0.27",
+          "cryptography 43 (AES-256-CBC + RSA key wrap)",
+          "KEEPZ integrator API",
+          "Python 3.11"
+        ]
+      },
+      {
+        "group": "Data and storage",
+        "items": [
+          "PostgreSQL 15",
+          "SQLite (default engine)",
+          "Redis 7",
+          "psycopg2",
+          "django-storages 1.14 + boto3 (DigitalOcean Spaces)"
+        ]
+      },
+      {
+        "group": "Console",
+        "items": [
+          "React 18.3",
+          "TypeScript 5.7 (strict)",
+          "Vite 6",
+          "Tailwind CSS 4 (CSS-first @theme)",
+          "TanStack Query 5.62",
+          "React Router 6.28",
+          "i18next 24",
+          "lucide-react"
+        ]
+      },
+      {
+        "group": "Infrastructure",
+        "items": [
+          "Docker + Compose",
+          "nginx 1.27-alpine",
+          "three-stage console image",
+          "GitHub Actions CI"
+        ]
+      }
+    ],
+    "creative": [
+      {
+        "title": "Cookie socket refuses cross-site openers",
+        "constraint": "`ALLOWED_HOSTS = ['*']` makes Channels' `AllowedHostsOriginValidator` a no-op, and the fleet socket is the first WebSocket in the project authenticated by session cookie rather than by device id.",
+        "detail": "`FleetConsumer` compares the `Origin` header's netloc against `Host` itself, closing 4403 on a mismatch and 4401 when anonymous, while an absent `Origin` is allowed because that means a non-browser client (the kiosks). The console's backoff then refuses to retry those two codes, and the demo nginx forwards `$http_host` — port included — plus `Origin`, so the comparison survives the proxy. Without it any page a signed-in operator visited could open `/ws/fleet/` with their cookie and read the whole fleet; without the client half, a permanent refusal would be retried forever."
+      },
+      {
+        "title": "Two aggregates, not one",
+        "constraint": "The dashboard wants fleet paper totals and photo counts in the same payload, but one `aggregate()` over Device joins Photo, so each device's `paper_count` is summed once per photo it has printed.",
+        "detail": "`dashboard_analytics()` deliberately runs device scalars, photo counts and payment revenue as three separate `aggregate()` calls and merges the dicts, with the reason written above the code and a regression test that inserts prints and asserts the paper total is unchanged. The single-query version inflated the fleet's remaining paper roughly twelvefold — the number an operator reads to decide whether to drive to a mall with a box of paper."
+      },
+      {
+        "title": "One overlay stack for four layers",
+        "constraint": "The modal, the photo lightbox, the command palette and the mobile drawer can nest, and each had hand-rolled its own body-scroll lock and Escape handler.",
+        "detail": "`useOverlay` keeps a module-level refcount and a stack of symbols: only the outermost layer restores `body.style.overflow` and the scrollbar-width padding it added, only the topmost acts on Escape, Tab is trapped inside the container, and focus returns to whatever opened the layer, preferring a `[data-autofocus]` target. The previous per-component version left the page permanently unscrollable after deleting a photo from inside the lightbox, and a single Escape collapsed every open layer at once."
+      },
+      {
+        "title": "The QR token's authority lives elsewhere",
+        "constraint": "A QR code on a kiosk screen can be photographed, and the payment service that serves it is public.",
+        "detail": "The QR carries `device_id` plus a token; `/pay` resolves the device through Printomato's own device API and compares the supplied token with the value stored there, then mints `secrets.token_urlsafe(32)` and pushes it back over the shared-secret endpoint before rendering the page. The payment service keeps no token table — an earlier commit removed it — so `Device.payment_token` is the only copy, and `_extract_device_token` walks four candidate field names so a rename upstream degrades to a validation error rather than an accepted blank. A photographed QR would otherwise stay payable indefinitely, and two copies of the token in two databases would eventually disagree about which one is current."
+      },
+      {
+        "title": "RSA padding as a runtime setting",
+        "constraint": "The provider's reference snippet ships a `use_pkc_padding` boolean, its documentation specifies OAEP with a SHA-256 digest and SHA-1 MGF1, and the live deployment ran PKCS#1 v1.5 — three answers to one question, on a channel where the wrong guess yields opaque ciphertext rather than an error.",
+        "detail": "`KEEPZ_RSA_PADDING_MODE` selects among `PKCS1V15`, `OAEP_SHA256_SHA1` and `OAEP_SHA256_SHA256` through a single `_rsa_padding()` that both the AES key wrap and the unwrap read, an unrecognised value raises instead of quietly defaulting, and both directions re-raise as a message naming the setting to check. Hardcoding the documented scheme produces undecryptable payloads with nothing to indicate which end is wrong; here a tenant on a different scheme is an environment variable, not a deploy."
+      },
+      {
+        "title": "A command cannot rewrite its envelope",
+        "constraint": "`Device.give_command` builds the channel message and then does `message.update(payload)`, while the admin endpoint lets an operator attach an arbitrary payload to a command.",
+        "detail": "The viewset strips `type`, `command` and `message` from the submitted payload before handing it over, and reports delivery honestly: `delivered` is `device.is_online`, because the channel layer accepting a message says nothing about a kiosk consuming it, and a channel-layer failure returns 502 naming the undelivered command rather than a cheerful 200. A caller-supplied `type` would route the event to a different consumer handler entirely, and a \"sent\" reply for a command nobody received is worse than an error."
+      }
     ],
     "highlights": [
       "Kiosks hold a WebSocket open — connecting flips a device online and broadcasts presence to every console watching, so the fleet grid never needs a refresh button.",
       "Twenty-seven session-authenticated routes were added alongside the device API rather than on top of it: the kiosks and the original server-rendered pages kept working untouched throughout.",
-      "Paper percentage, prints today, campaign progress and open-alert state are computed once in the serializer, so no two screens can disagree about the same number.",
+      "Paper percentage, prints today, campaign progress and open-alert state are all computed server-side — the percentages in the serializer, the counts as queryset annotations — so no two screens can disagree about the same number.",
       "KEEPZ card payments: a shared-secret endpoint mints a per-device token, triggers the flow on the kiosk over its socket, and logs every session as it settles.",
       "96 Django tests, 73 of them pinning the admin API's contract — filters, pagination edges, validation messages, permissions.",
       "One `docker compose up` brings the whole stack — Postgres, Redis, Daphne, nginx — to a seeded, sign-in-able console."
@@ -274,8 +544,8 @@
         "value": "3"
       }
     ],
-    "problem": "Printomato runs photo-printing kiosks — mall atriums, festival stands, hotel lobbies. Each kiosk prints branded photos for whichever campaign is live at that venue, and each one eventually runs out of paper, loses sight of its camera, or drops off the network at the worst possible moment.\n\nOperations ran on server-rendered Django pages: one for campaigns, one for devices, one for photos. They worked, but they only ever showed what was true the last time somebody pressed refresh. Answering *which kiosks are down right now* meant reloading four tabs and trusting the oldest one. Then the kiosks started taking card payments, which added a second live thing to watch and nowhere good to watch it from.",
-    "approach": "The rewrite was scoped to the operator, not to the fleet. The kiosks were left completely alone — they still POST to the same photo endpoint, still open the same WebSocket, still call the payment endpoints with the same shared secret. A second, session-authenticated API went in beside the first at `/api/admin/`, and a React single-page console mounted at `/app/` to consume it. The old server-rendered pages stayed live on their original URLs the whole time, so there was never a cutover weekend to survive.\n\nAnything an operator has to trust is computed server-side from a single annotated queryset — paper percentage, prints today, campaign progress, whether a device has open alerts — never reassembled in the browser. On the client, every endpoint gets exactly one TanStack Query hook, and that hook file is also where cache keys and invalidation live. Editing a device refreshes the fleet grid *and* the dashboard because that rule is written down once instead of repeated across eight components.",
+    "problem": "Printomato runs photo-printing kiosks — mall atriums, festival stands, hotel lobbies. Each kiosk prints branded photos for whichever campaign is live at that venue, and each one eventually runs out of paper, loses sight of its camera, or drops off the network at the worst possible moment.\n\nOperations ran on server-rendered Django pages: one for campaigns, one for devices, one for photos. They worked, but they only ever showed what was true the last time somebody pressed refresh. Answering which kiosks are down right now meant reloading four tabs and trusting the oldest one. Then the kiosks started taking card payments, which added a second live thing to watch and nowhere good to watch it from.",
+    "approach": "The rewrite was scoped to the operator, not to the fleet. The kiosks were left completely alone — they still POST to the same photo endpoint, still open the same WebSocket, still call the payment endpoints with the same shared secret. A second, session-authenticated API went in beside the first at `/api/admin/`, and a React single-page console mounted at `/app/` to consume it. The old server-rendered pages stayed live on their original URLs the whole time, so there was never a cutover weekend to survive.\n\nAnything an operator has to trust is computed server-side from a single annotated queryset — paper percentage, prints today, campaign progress, whether a device has open alerts — never reassembled in the browser. On the client, every endpoint gets exactly one TanStack Query hook, and that hook file is also where cache keys and invalidation live. Editing a device refreshes the fleet grid and the dashboard because that rule is written down once instead of repeated across eight components.",
     "architecture": [
       {
         "layer": "Kiosk",
@@ -283,11 +553,11 @@
       },
       {
         "layer": "Django 5 + Channels",
-        "detail": "One ASGI application serves the REST surface and three channel routes: the per-device socket, a fleet channel the console subscribes to, and a notifications channel that drives alert toasts. Redis is the channel layer; Daphne serves both HTTP and WebSockets."
+        "detail": "One ASGI application serves the REST surface and three channel routes: the per-device socket, a fleet channel the console subscribes to, and a notifications channel that drives alert toasts. Redis is the channel layer. The containerised console runs a single Daphne for both HTTP and WebSockets; the original compose keeps gunicorn on the WSGI app beside a separate Daphne for /ws/."
       },
       {
         "layer": "Domain",
-        "detail": "Five models — Campaign, Device, Photo, Notification, PaymentSession. Custom managers annotate online-device counts, print totals and campaign state, so a list view stays a single query no matter how many kiosks are attached."
+        "detail": "Five domain models — Campaign, Device, Photo, Notification, PaymentSession — beside a custom user. Manager methods annotate online-device counts, print totals and campaign state onto the queryset, so a list view does not fan out into a query per kiosk."
       },
       {
         "layer": "Admin API",
@@ -295,7 +565,7 @@
       },
       {
         "layer": "Console",
-        "detail": "React 18 in strict TypeScript, Vite 6, Tailwind v4 with a CSS-first theme block and no config file, TanStack Query v5 for server state, React Router v6 under a `/app` basename. Eight routes, code-split past the dashboard, about 113 KB gzipped on first load."
+        "detail": "React 18 in strict TypeScript, Vite 6, Tailwind v4 with a CSS-first theme block and no config file, TanStack Query v5 for server state, React Router v6 under a `/app` basename. Eleven route paths, code-split past the dashboard, 113 KB gzipped on first load."
       },
       {
         "layer": "Payments",
@@ -361,7 +631,7 @@
       "Django 5",
       "Django Ninja",
       "django-ninja-jwt",
-      "PostgreSQL 16",
+      "PostgreSQL 17",
       "React 19",
       "TypeScript",
       "Vite",
@@ -371,13 +641,99 @@
       "i18next",
       "Docker"
     ],
+    "stackGroups": [
+      {
+        "group": "Backend",
+        "items": [
+          "Python 3.12",
+          "Django 5.2",
+          "Django Ninja 1.3",
+          "django-ninja-jwt 5.3",
+          "Pydantic (camelCase wire schemas)",
+          "django-cors-headers",
+          "Pillow"
+        ]
+      },
+      {
+        "group": "Data",
+        "items": [
+          "PostgreSQL 17",
+          "psycopg 3 (binary)",
+          "committed migrations",
+          "JSONField for tag arrays and quiz banks",
+          "DecimalField for all money"
+        ]
+      },
+      {
+        "group": "Front end",
+        "items": [
+          "React 19",
+          "TypeScript 5.8",
+          "Vite 5.4",
+          "Tailwind CSS 3.4",
+          "shadcn/ui on Radix",
+          "TanStack Query 5",
+          "React Router 6.30",
+          "React Hook Form 7 + Zod 3",
+          "i18next 25 (KA/EN)",
+          "framer-motion 12",
+          "fuse.js 7",
+          "sonner"
+        ]
+      },
+      {
+        "group": "Tooling and infrastructure",
+        "items": [
+          "Docker Compose",
+          "Bun 1",
+          "pytest + pytest-django",
+          "Vitest 3 + Testing Library",
+          "ruff",
+          "mypy strict + django-stubs",
+          "ESLint 9",
+          "OpenAPI at /api/docs"
+        ]
+      }
+    ],
+    "creative": [
+      {
+        "title": "The client never names a price",
+        "constraint": "Checkout is a public endpoint, and the cart already knows the subtotal, the discount and the total — the browser is holding every number the order needs.",
+        "detail": "`OrderCreateIn` carries no money at all: line items are `product_id` / `size` / `quantity`, and the discount is a bare code string. The server re-reads each product, computes line totals and the subtotal in `Decimal`, resolves the code itself, and only then writes the row. Every figure on the order is one the server derived. A posted total is a price the customer chose. Without this the cheapest attack on the shop is a curl command, and the snapshot columns would faithfully record the wrong amount forever."
+      },
+      {
+        "title": "A usage cap kept by an absence",
+        "constraint": "The discount admin needs to see how many times a code has been redeemed, and the same endpoint writes every other field on that code with a blind `setattr` sweep over the whole payload.",
+        "detail": "`uses_count` is declared on `DiscountOut` and deliberately not on `DiscountIn`. The counter is therefore unreachable from the admin PATCH — not by a guard that could be forgotten, but because the field does not exist on the write shape. Its only writer is `create_order_for_user`, which increments it inside the same `transaction.atomic` block that took `select_for_update()` on the row. One shared schema, the obvious move, would let an admin editing an expiry silently reset a redemption count — and would leave the max-uses cap enforceable only by whoever remembered to exclude the field."
+      },
+      {
+        "title": "One predicate, one skip flag",
+        "constraint": "The shop's six purposes, twelve signs and three genders all show counts, and each count has to answer \"how many if I add this\" against whatever filters are already on.",
+        "detail": "A single `matches(product, opts)` takes a set of `skip*` flags naming the dimension to ignore. Each facet counts with every other filter live and its own dimension switched off, so the numbers change as you filter and a zero means the option is genuinely dead. `unisex` counts into both gendered facets, matching how the filter itself behaves. Counting the filtered result set instead — the default reflex — makes every facet in a group show the same number, and picking a zero-count option is the only way to discover it was empty."
+      },
+      {
+        "title": "Language is one attribute",
+        "constraint": "Georgian is the default language and Playfair Display carries no Georgian glyphs, so the shop's display face simply does not exist in the language most of its customers read.",
+        "detail": "An `i18n.on(\"languageChanged\")` handler writes `document.documentElement.lang`, and `[lang=\"ka\"]` rules in `index.css` swap both families — Noto Sans Georgian for body, Noto Serif Georgian for headings, so the serif/sans hierarchy survives the switch. The same value drives `og:locale` and `og:locale:alternate`, and is the `lang` a screen reader announces. Set the font per component and the Georgian storefront quietly renders in whatever the OS picks, with headings and body indistinguishable; forget the attribute and the page claims to be in the wrong language to crawlers and assistive tech alike."
+      },
+      {
+        "title": "One refresh in flight",
+        "constraint": "Access tokens last thirty minutes and the admin dashboard opens with several parallel queries. When the token has just expired, all of them get a 401 in the same tick.",
+        "detail": "`tryRefresh` stores its own promise in a module-level `refreshPromise` and hands that same promise to every later caller until it settles, clearing it in a `finally`. The first 401 refreshes; the rest wait on it and retry with the token it produced. Without the latch a single expiry fans out into one refresh POST per in-flight request, each racing to write `localStorage`, and the last writer wins — a class of bug that only appears on a page that loads more than one thing at once."
+      },
+      {
+        "title": "A phone order mints a claimable account",
+        "constraint": "Staff take orders over the phone from customers who have never registered, but `Order.user` is a non-null foreign key and the customer history pages aggregate per user.",
+        "detail": "`admin_create_order` matches the customer case-insensitively by email and, failing that, creates a `customer`-role user with `set_unusable_password()` and the name split off the shipping field. The order gets a real owner, the spend rollup starts from the first phone call, and the person can later adopt the account through the ordinary password-reset flow. `on_delete=PROTECT` on `Order.user` and `OrderItem.product` then means nothing with a sales history can be deleted out from under it. A nullable user or a free-text name splits the same customer across the web and the phone, and no amount of later reconciliation puts a returning regular's history back together."
+      }
+    ],
     "highlights": [
       "Georgian is the default language, and the catalogue resolves it in two layers: a database column per translated field for anything an admin writes, and an i18n key for the content that shipped with the app, with canonical English as the floor.",
       "The admin console is a full second surface inside the same SPA — eighteen pages, role-gated at the route and again at the API, sharing one sortable table, one date-range hook and one activity feed.",
       "Discounts are re-validated atomically at order creation, not just at the cart: a code that passed the check can still be refused a second later, and the order create path is the only thing that moves the usage counter.",
       "Order lines are snapshots — name, image and unit price are frozen at the moment of sale, so a later price edit never rewrites history, and the admin item editor recomputes the totals without re-evaluating the discount.",
-      "Every admin mutation that matters writes an audit row, and both the order and the customer pages render their own feed from it — who changed what, when, and from what to what.",
-      "The quiz scores the live catalogue against a zodiac sign, a mood and an intention; all four question banks are admin-editable, and saving one invalidates the storefront cache in the same session.",
+      "Every admin change to an order — and every role or activation change to a customer — writes an audit row, and both of those pages render their own feed from it: who changed what, when, and from what to what.",
+      "The quiz scores the live catalogue against a zodiac sign, a mood and an intention rather than a curated answer key, and all four question banks are admin-editable.",
       "SEO is data: a settings singleton supplies the defaults and a per-path override table beats them, both edited from the console rather than deployed."
     ],
     "metrics": [
@@ -391,7 +747,7 @@
       },
       {
         "label": "Front-end lines",
-        "value": "21k"
+        "value": "18k"
       },
       {
         "label": "Languages",
@@ -399,7 +755,7 @@
       }
     ],
     "problem": "A jewellery workshop making stone bracelets by hand had a catalogue that lived in a spreadsheet and an order book that lived in a phone. New designs were announced on Instagram, prices were typed back at customers from memory, and how many of a piece were left was whatever the person answering the phone remembered. Nothing recorded what a returning customer had bought before, so the shop met every regular as a stranger.\n\nThe shop's customers do not shop by product name either. They arrive asking what suits a Scorpio, or for something to calm a friend who is anxious, or for a gift that carries a meaning — questions a list of names and prices cannot answer. They also arrive reading Georgian, and every piece therefore has to be described twice, in both languages, by the person who made it, before it can be sold to either kind of visitor.",
-    "approach": "The catalogue is the product, so the catalogue is what the admin owns outright. A piece carries its stones, its purposes, its zodiac signs and its price, and every screen that sells it — the shop's facets, the collection pages, the twelve zodiac pages, the quiz — is a query over those fields rather than a list somebody curated by hand. Adding a stone to a sign, or a bracelet to a collection, is a form in the console, and the storefront's cache is invalidated in the same session, so the change is visible without a deploy.\n\nEvery translated field is a column pair, not a translation file. A product stores its Georgian name beside its English one, because a translation the shop has to write is data and belongs where the data is; only the fixed UI chrome stays in i18next. The resolver is one documented order — the Georgian column, then the i18n key for seeded content, then canonical English as the floor — so a piece nobody has finished translating degrades into something readable rather than a blank.\n\nThe order pipeline is deliberately small: no shipping calculator, no tax engine, one discount code. What it does do carefully is the part that costs money when it is wrong. The code is re-validated at order creation under a row lock instead of being trusted from the cart, so a code that was live a second ago can still be refused and the usage cap cannot be raced; every line snapshots the name, image and price it sold at; and every admin hand that touches an order or a customer leaves an audit row behind it.",
+    "approach": "The catalogue is the product, so the catalogue is what the admin owns outright. A piece carries its stones, its purposes, its zodiac signs and its price, and every screen that sells it — the shop's facets, the collection pages, the twelve zodiac pages, the quiz — is a query over those fields rather than a list somebody curated by hand. Adding a stone to a sign, or a bracelet to a collection, is a form in the console, and for collections, zodiac pages, the quiz and site settings the storefront's cache is invalidated in the same session, so the change is visible without a deploy.\n\nEvery translated field is a column pair, not a translation file. A product stores its Georgian name beside its English one, because a translation the shop has to write is data and belongs where the data is; only the fixed UI chrome stays in i18next. The resolver is one documented order — the Georgian column, then the i18n key for seeded content, then canonical English as the floor — so a piece nobody has finished translating degrades into something readable rather than a blank.\n\nThe order pipeline is deliberately small: no shipping calculator, no tax engine, one discount code. What it does do carefully is the part that costs money when it is wrong. The code is re-validated at order creation under a row lock instead of being trusted from the cart, so a code that was live a second ago can still be refused and the usage cap cannot be raced; every line snapshots the name, image and price it sold at; and every admin hand that touches an order or a customer leaves an audit row behind it.",
     "architecture": [
       {
         "layer": "Storefront",
@@ -423,7 +779,7 @@
       },
       {
         "layer": "Backend",
-        "detail": "Seven Django apps and 12 models on Postgres, with django-ninja routers mounted twice — a public router and an admin router per app — JWT from django-ninja-jwt, camelCase on the wire, and money serialised as decimal strings so no price ever passes through a float."
+        "detail": "Seven Django apps and 12 models on Postgres, with django-ninja routers mounted twice — a public router and an admin router per app — JWT from django-ninja-jwt, camelCase on the wire, and money serialised as decimal strings, so no price passes through a float anywhere on the server or the wire."
       },
       {
         "layer": "Deploy",
