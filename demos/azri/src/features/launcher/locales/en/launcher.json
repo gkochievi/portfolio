@@ -1,0 +1,138 @@
+{
+  "inbox": {
+    "eyebrow": "Live demo · SMS feedback",
+    "tagline": "One text. One honest opinion.",
+    "lead": "After a visit or a call, a business texts a one-time link. Pick a phone, open a link and answer the way a customer would.",
+    "steps": {
+      "label": "How it works",
+      "sms": { "title": "A text arrives", "description": "A personal link, valid for a few days" },
+      "rate": { "title": "You rate", "description": "3 to 5 questions, 1 to 5 stars" },
+      "console": { "title": "It lands in the console", "description": "Scores update while you watch" }
+    },
+    "personas": {
+      "title": "Phones",
+      "description": "Six demo recipients. Pick one to read their texts.",
+      "pending_one": "{{count}} pending",
+      "pending_other": "{{count}} pending",
+      "noPending": "Nothing pending",
+      "you": "You",
+      "newSms": "New SMS",
+      "error": "The phones could not be loaded."
+    },
+    "thread": {
+      "title": "Texts to {{name}}",
+      "count_one": "{{count}} message",
+      "count_other": "{{count}} messages",
+      "emptyTitle": "No texts yet",
+      "emptyDescription": "When a business sends this person a survey link, it shows up here.",
+      "error": "The messages could not be loaded."
+    },
+    "message": {
+      "openLink": "Open link",
+      "expiresIn_one": "expires in {{count}} d",
+      "expiresIn_other": "expires in {{count}} d",
+      "expiresToday": "expires today",
+      "answered": "answered {{when}}",
+      "expiredWhen": "expired {{when}}",
+      "unknownHint": "This token was never issued",
+      "missingHint": "The link carries no ?id",
+      "new": "New",
+      "senderLabel": "Sender ID"
+    },
+    "branches": {
+      "title": "Try every branch",
+      "description": "Each chip opens one end state of the respondent flow.",
+      "none": "none left",
+      "kinds": {
+        "valid": "Valid link",
+        "completed": "Already answered",
+        "expired": "Expired",
+        "unknown": "Unknown id",
+        "missing": "Missing id"
+      }
+    },
+    "tenants": {
+      "title": "Businesses",
+      "description": "Jump to a phone with a pending text from:",
+      "noPending": "No pending text from {{name}} right now.",
+      "jumped": "{{name}} has a pending text from {{tenant}}."
+    },
+    "toast": {
+      "newSms": "New SMS from {{sender}}",
+      "forOther": "{{name}} got a new SMS from {{sender}}",
+      "show": "Show"
+    },
+    "footer": {
+      "reset": "Demo data resets on reload",
+      "playground": "API playground",
+      "signIn": "Sign in to the console"
+    }
+  },
+  "playground": {
+    "eyebrow": "For developers",
+    "title": "API playground",
+    "description": "The three calls the survey page makes, run against the in-browser API. Same payloads, same envelopes, real status codes.",
+    "cards": {
+      "validate": {
+        "title": "Validate",
+        "description": "Checks a token and returns the campaign, its questions and the tenant branding."
+      },
+      "questions": {
+        "title": "Get questions",
+        "description": "Returns only the questions, with the same failure rules as Validate."
+      },
+      "submit": {
+        "title": "Submit",
+        "description": "Saves the answers and the comment, then spends the link for good."
+      }
+    },
+    "surveyId": "survey_id",
+    "surveyIdPlaceholder": "Type or pick a token",
+    "knownTokens": "Known tokens",
+    "noMatch": "No known token matches. Free text is fine.",
+    "requestJson": "Request body",
+    "response": "Response",
+    "run": "Run",
+    "running": "Running…",
+    "copyRequest": "Copy request",
+    "copyResponse": "Copy response",
+    "httpStatus": "HTTP {{status}}",
+    "envelopeOk": "success: true",
+    "envelopeFail": "success: false",
+    "idle": "Run the request to see the response here.",
+    "invalidJson": "The request body is not valid JSON: {{error}}",
+    "needObject": "The request body must be a JSON object.",
+    "prefilled_one": "responses[] rebuilt from this survey's {{count}} question.",
+    "prefilled_other": "responses[] rebuilt from this survey's {{count}} questions.",
+    "submitWarning": "Submitting a pending token spends it: the inbox and the console update at once.",
+    "legacy": {
+      "title": "Legacy test-page payload",
+      "body": "The original test page posted answers as {rate, question_id}. The survey form, and this API, send {id, question_rate}; null marks a skipped question."
+    },
+    "clock": {
+      "title": "Demo clock",
+      "description": "Move demo time forward and watch pending links expire everywhere.",
+      "now": "Demo now",
+      "real": "Real time",
+      "offset_one": "+{{count}} day",
+      "offset_other": "+{{count}} days",
+      "plusOne": "+1 day",
+      "plusSeven": "+7 days",
+      "reset": "Reset",
+      "moved": "Demo clock moved to {{date}}",
+      "resetDone": "Demo clock is back to real time",
+      "limit": "The demo clock goes up to 60 days ahead.",
+      "hint": "After +7 days every pending link shows as expired: in the inbox, in the branch strip and in the console."
+    },
+    "routes": {
+      "title": "Endpoints",
+      "description": "Every route the in-browser API answers.",
+      "count_one": "{{count}} route",
+      "count_other": "{{count}} routes",
+      "public": "public",
+      "auth": "auth",
+      "error": "The route list could not be loaded."
+    },
+    "backToInbox": "Open the SMS inbox"
+  }
+}

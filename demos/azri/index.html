@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F6F2EE" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#150D13" media="(prefers-color-scheme: dark)" />
+    <title>Azri - live demo</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="A live demo of Azri: one-time survey links sent by SMS open a white-label, mobile-first feedback page, and every answer lands in a results console. Runs entirely in your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Azri - live demo" />
+    <meta
+      property="og:description"
+      content="One text. One honest opinion. SMS survey links, star ratings, comments and a results console, served from your browser."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { margin: 0; padding: 0; background: #F6F2EE; color: #24161F; }
+      @media (prefers-color-scheme: dark) { html, body { background: #150D13; color: #F4EAF0; } }
+      #root { min-height: 100vh; }
+      .boot-splash { position: fixed; inset: 0; display: grid; place-items: center; }
+      .boot-splash__bars { display: flex; align-items: flex-end; gap: 5px; height: 28px; }
+      .boot-splash__bars i { display: block; width: 5px; border-radius: 3px; background: #7A2A68; animation: boot-rise 0.9s cubic-bezier(.2,.8,.2,1) infinite alternate; }
+      .boot-splash__bars i:nth-child(1) { height: 8px; }
+      .boot-splash__bars i:nth-child(2) { height: 13px; animation-delay: .04s; }
+      .boot-splash__bars i:nth-child(3) { height: 18px; animation-delay: .08s; }
+      .boot-splash__bars i:nth-child(4) { height: 23px; animation-delay: .12s; }
+      .boot-splash__bars i:nth-child(5) { height: 28px; animation-delay: .16s; }
+      @media (prefers-color-scheme: dark) { .boot-splash__bars i { background: #9EE6C6; } }
+      @keyframes boot-rise { from { opacity: .25; transform: scaleY(.6); } to { opacity: 1; transform: scaleY(1); } }
+      @media (prefers-reduced-motion: reduce) { .boot-splash__bars i { animation: none; } }
+    </style>
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash" aria-label="Loading"><div class="boot-splash__bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+  </body>
+</html>

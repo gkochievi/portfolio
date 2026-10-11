@@ -1,0 +1,154 @@
+{
+  "product": {
+    "name": "Bani",
+    "tagline": "Every line, one steady bass.",
+    "line": "One console for the whole voice estate."
+  },
+  "tenant": {
+    "name": "Saguramo Mutual"
+  },
+  "nav": {
+    "groups": {
+      "calls": "Calls",
+      "contactCentre": "Contact centre",
+      "extensions": "Extensions",
+      "operations": "Operations",
+      "administration": "Administration"
+    },
+    "calls": "Calls",
+    "campaigns": "Campaigns",
+    "agents": "Agents",
+    "nodes": "Node monitor",
+    "extensions": "Extensions",
+    "extensionActivity": "Extension activity",
+    "archive": "Archive jobs",
+    "activity": "Activity",
+    "status": "Platform status",
+    "connections": "Connections",
+    "people": "People",
+    "roles": "Roles",
+    "login": "Sign in",
+    "notFound": "Not found"
+  },
+  "roles": {
+    "superadmin": "Superadmin",
+    "admin": "Administrator",
+    "cc-admin": "Contact-centre admin",
+    "tel-admin": "Telephony admin",
+    "cc-operator": "Contact-centre operator",
+    "tel-operator": "Telephony operator",
+    "it-support": "IT support",
+    "user": "Read-only",
+    "api_service": "API account"
+  },
+  "features": {
+    "cdr": "Call records",
+    "cc_campaigns": "Campaigns",
+    "cc_agents": "Agents and skills",
+    "cc_nodes": "Node monitor",
+    "extensions": "Extensions",
+    "systems_sync": "Archive jobs",
+    "logs": "Activity logs",
+    "health": "Platform status",
+    "settings": "Connections",
+    "users": "People",
+    "rbac": "Roles"
+  },
+  "sources": {
+    "core": "Core Cluster",
+    "edge": "Edge PBX",
+    "both": "Both",
+    "voiceArchive": "Voice Archive"
+  },
+  "callStatus": {
+    "completed": "Completed",
+    "no_answer": "No answer",
+    "busy": "Busy",
+    "failed": "Failed",
+    "unknown": "Unknown"
+  },
+  "jobStatus": {
+    "running": "Running",
+    "completed": "Completed",
+    "failed": "Failed",
+    "canceled": "Canceled"
+  },
+  "nodeStatus": {
+    "up": "Up",
+    "down": "Down"
+  },
+  "testStatus": {
+    "passed": "Passed",
+    "failed": "Failed",
+    "skipped": "Skipped",
+    "degraded": "Degraded"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "refresh": "Refresh",
+    "retry": "Try again",
+    "search": "Search",
+    "reset": "Reset",
+    "export": "Export",
+    "download": "Download",
+    "copy": "Copy",
+    "copied": "Copied",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "showMore": "Show more",
+    "apply": "Apply",
+    "review": "Review",
+    "discard": "Discard changes",
+    "signOut": "Sign out",
+    "signIn": "Sign in",
+    "open": "Open",
+    "create": "Create",
+    "add": "Add",
+    "remove": "Remove",
+    "test": "Test",
+    "run": "Run now",
+    "clearFilters": "Clear filters",
+    "saveChanges": "Save changes",
+    "details": "Details",
+    "play": "Play",
+    "pause": "Pause"
+  },
+  "states": {
+    "loading": "Loading…",
+    "empty": "Nothing here yet",
+    "error": "Something went wrong",
+    "noResults": "No results",
+    "saved": "Changes saved",
+    "forbidden": "You do not have access to this",
+    "offline": "Unavailable",
+    "never": "Never",
+    "justNow": "Just now",
+    "live": "Live",
+    "updated": "Updated {{time}}"
+  },
+  "ui": {
+    "searchPlaceholder": "Search…",
+    "clear": "Clear",
+    "select": "Select…",
+    "more": "More",
+    "pagination": {
+      "range": "{{from}}–{{to}} of {{total}}",
+      "rows": "Rows",
+      "page": "Page {{page}} of {{pages}}",
+      "first": "First page",
+      "prev": "Previous page",
+      "next": "Next page",
+      "last": "Last page"
+    },
+    "yes": "Yes",
+    "no": "No",
+    "none": "None",
+    "all": "All",
+    "optional": "Optional",
+    "required": "Required"
+  }
+}

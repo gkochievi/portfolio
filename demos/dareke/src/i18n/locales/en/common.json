@@ -1,0 +1,186 @@
+{
+  "product": "Dareke",
+  "tagline": "Right call. Right moment.",
+  "tenant": "Ezo Contact Centre",
+  "loading": "Loading...",
+  "save": "Save",
+  "cancel": "Cancel",
+  "demoDataNote": "Demo data - synthetic numbers",
+  "actions": {
+    "save": "Save",
+    "saveChanges": "Save changes",
+    "cancel": "Cancel",
+    "close": "Close",
+    "confirm": "Confirm",
+    "create": "Create",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "remove": "Remove",
+    "search": "Search",
+    "filter": "Filter",
+    "filters": "Filters",
+    "clear": "Clear",
+    "clearFilters": "Clear filters",
+    "apply": "Apply",
+    "reset": "Reset",
+    "refresh": "Refresh",
+    "retry": "Try again",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "export": "Export",
+    "exportCsv": "Export CSV",
+    "import": "Import",
+    "importCsv": "Import CSV",
+    "download": "Download",
+    "upload": "Upload",
+    "copy": "Copy",
+    "copied": "Copied",
+    "view": "View",
+    "viewAll": "View all",
+    "details": "Details",
+    "more": "More",
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "stop": "Stop",
+    "test": "Test connection",
+    "yes": "Yes",
+    "no": "No",
+    "signOut": "Sign out",
+    "signIn": "Sign in"
+  },
+  "states": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "saved": "Saved",
+    "empty": "Nothing here yet",
+    "emptyHint": "When there is something to show, it will appear here.",
+    "noResults": "No results",
+    "noResultsHint": "Try a different search or clear the filters.",
+    "error": "Something went wrong",
+    "errorHint": "The request failed. Try again.",
+    "required": "Required",
+    "invalid": "Invalid value",
+    "all": "All",
+    "any": "Any",
+    "none": "None",
+    "unknown": "Unknown",
+    "notSet": "Not set",
+    "live": "Live",
+    "on": "On",
+    "off": "Off",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "table": {
+    "showing": "{{from}}-{{to}} of {{total}}",
+    "rows_one": "{{count}} row",
+    "rows_other": "{{count}} rows",
+    "sortBy": "Sort by {{column}}"
+  },
+  "roles": {
+    "operator": "Operator",
+    "supervisor": "Supervisor",
+    "admin": "Admin",
+    "super_admin": "Super admin"
+  },
+  "tones": {
+    "label": "Colour",
+    "lime": "Lime",
+    "success": "Green",
+    "info": "Denim",
+    "warning": "Amber",
+    "danger": "Red",
+    "muted": "Grey",
+    "ink": "Ink"
+  },
+  "campaignStatus": {
+    "draft": "Draft",
+    "active": "Active",
+    "paused": "Paused",
+    "completed": "Completed",
+    "archived": "Archived"
+  },
+  "dialingMode": {
+    "MANUAL": "Manual",
+    "AUTO": "Auto",
+    "PREDICTIVE": "Predictive"
+  },
+  "numberStatus": {
+    "PENDING": "Pending",
+    "DIALING": "Dialing",
+    "CONNECTED": "Connected",
+    "COMPLETED": "Completed",
+    "NO_ANSWER": "No answer",
+    "BUSY": "Busy",
+    "FAILED": "Failed",
+    "DNC": "Do not call",
+    "CALLBACK_SCHEDULED": "Callback scheduled"
+  },
+  "callOutcome": {
+    "IN_PROGRESS": "In progress",
+    "ANSWERED": "Answered",
+    "NO_ANSWER": "No answer",
+    "BUSY": "Busy",
+    "FAILED": "Failed",
+    "ABANDONED": "Abandoned"
+  },
+  "callMode": {
+    "MANUAL": "Manual",
+    "AUTO": "Auto"
+  },
+  "hangupBy": {
+    "AGENT": "Agent",
+    "CUSTOMER": "Customer",
+    "SYSTEM": "System"
+  },
+  "statusType": {
+    "working": "Working",
+    "paused": "Paused",
+    "offline": "Offline"
+  },
+  "dncSource": {
+    "MANUAL": "Manual",
+    "CUSTOMER_REQUEST": "Customer request",
+    "DISPOSITION": "Disposition",
+    "IMPORT": "Import"
+  },
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "last7": "Last 7 days",
+    "last30": "Last 30 days",
+    "thisMonth": "This month",
+    "from": "From",
+    "to": "To",
+    "seconds": "{{count}} s",
+    "minutes": "{{count}} min",
+    "hours": "{{count}} h",
+    "never": "Never",
+    "justNow": "Just now"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ka": "ქართული",
+    "short_en": "EN",
+    "short_ka": "ქარ",
+    "switchTo": "Switch language"
+  },
+  "errors": {
+    "forbidden": "You do not have access to this.",
+    "notFound": "Not found",
+    "network": "Request failed",
+    "validation": "Please check the highlighted fields."
+  }
+}

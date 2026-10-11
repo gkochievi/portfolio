@@ -1,0 +1,78 @@
+{
+  "skip": "Skip to content",
+  "nav": {
+    "primary": "Main navigation",
+    "inbox": "SMS inbox",
+    "playground": "API playground",
+    "console": "Console",
+    "overview": "Overview",
+    "responses": "Responses",
+    "campaigns": "Campaigns",
+    "links": "SMS log",
+    "send": "Send survey SMS",
+    "me": "My scores",
+    "openInbox": "Open SMS inbox",
+    "consoleSection": "Results console",
+    "demoSection": "Demo"
+  },
+  "roles": {
+    "admin": "CX manager",
+    "agent": "Branch staff",
+    "respondent": "Respondent"
+  },
+  "account": {
+    "menu": "Account menu",
+    "signedInAs": "Signed in as",
+    "home": "Go to my home",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "signedOut": "You are signed out."
+  },
+  "console": {
+    "simulated": "Simulated CRM view",
+    "simulatedHint": "Azri itself is the SMS survey page. This console stands in for the CRM where the answers land."
+  },
+  "site": {
+    "about": "SMS feedback links, white-label survey pages and a results console. Runs entirely in your browser.",
+    "resetNote": "Demo data resets on reload",
+    "rights": "© {{year}} Azri"
+  },
+  "respondent": {
+    "copyright": "© {{year}} {{holder}}",
+    "poweredBy": "Powered by",
+    "home": "Azri home"
+  },
+  "login": {
+    "title": "Sign in to the console",
+    "subtitle": "Pick a demo account, or use the form. Nothing leaves your browser.",
+    "accounts": "Demo accounts",
+    "oneClick": "One click signs you in",
+    "or": "or sign in with email",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "invalid": "That email and password don't match a demo account.",
+    "passwordHint": "Every demo account uses the password {{password}}.",
+    "back": "Back to the SMS inbox",
+    "current": "Signed in",
+    "welcome": "Signed in as {{name}}",
+    "brandTitle": "Feedback that arrives as a text and lands as a number.",
+    "brandBody": "After a visit, a call or a car service, the business texts one personal link. The customer rates in thirty seconds. Managers see it at once.",
+    "steps": {
+      "text": "A text arrives after the visit",
+      "rate": "The customer rates in 30 seconds",
+      "console": "It lands in the results console"
+    },
+    "accountDesc": {
+      "admin": "Every business, branch, result and comment",
+      "agent": "Sends survey SMS and sees his own scores",
+      "respondent": "Opens survey links from her SMS inbox"
+    }
+  },
+  "error": {
+    "title": "Something went wrong",
+    "body": "This screen hit an error. Reloading restores the demo.",
+    "reload": "Reload",
+    "home": "Go to the SMS inbox"
+  }
+}

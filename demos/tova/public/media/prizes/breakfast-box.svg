@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Breakfast box">
+  <rect width="400" height="300" fill="#DCEAEE"/>
+  <g fill="#FFFFFF" opacity=".8"><circle cx="46" cy="44" r="4"/><rect x="348" y="56" width="7" height="7" rx="2"/><circle cx="196" cy="34" r="3"/></g>
+  <ellipse cx="200" cy="266" rx="150" ry="12" fill="#BFDCE6"/>
+  <path d="M70 150 L330 150 L314 264 L86 264 Z" fill="#0A6F94"/>
+  <path d="M70 150 L40 112 L170 112 L196 150 Z" fill="#06506B"/>
+  <path d="M330 150 L360 112 L230 112 L204 150 Z" fill="#06506B"/>
+  <path d="M96 150 C96 96 196 92 200 150 Z" fill="#FF6B3D"/>
+  <g stroke="#0B2A31" stroke-width="5" stroke-linecap="round" opacity=".55"><path d="M124 128 L134 112"/><path d="M148 122 L156 106"/><path d="M172 124 L178 110"/></g>
+  <path d="M210 150 C214 112 252 104 268 132 C280 112 300 120 300 150 Z" fill="#F3F7F6"/>
+  <g transform="translate(258 70)">
+    <rect x="-26" y="0" width="52" height="48" rx="8" fill="#F3F7F6"/>
+    <path d="M26 12 C44 12 44 36 26 36" fill="none" stroke="#F3F7F6" stroke-width="7"/>
+    <rect x="-26" y="0" width="52" height="12" rx="6" fill="#0B2A31"/>
+    <g fill="none" stroke="#0A6F94" stroke-width="4" stroke-linecap="round"><path d="M-8 -10 C-14 -20 -2 -24 -8 -34"/><path d="M8 -10 C2 -20 14 -24 8 -34"/></g>
+  </g>
+  <rect x="150" y="196" width="100" height="26" rx="6" fill="#F3F7F6"/>
+  <circle cx="200" cy="209" r="7" fill="#FF6B3D"/>
+</svg>

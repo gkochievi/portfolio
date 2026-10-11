@@ -1,0 +1,232 @@
+/*
+ * Tova design tokens. Owner: design-system agent.
+ * Light-first frost ground, one persimmon spark. Dark mode is the class
+ * "dark" on <html> (set by src/shell/theme.ts: follows the OS until chosen).
+ * Use tokens as Tailwind classes (bg-panel, text-muted, border-line ...),
+ * never raw hex in JSX.
+ */
+@import "tailwindcss";
+@import "@fontsource-variable/unbounded/index.css";
+@import "@fontsource-variable/onest/index.css";
+@import "@fontsource-variable/noto-sans-georgian/index.css";
+@import "@fontsource-variable/jetbrains-mono/index.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Unbounded Variable', 'Noto Sans Georgian Variable', system-ui, sans-serif;
+  --font-sans: 'Onest Variable', 'Noto Sans Georgian Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', monospace;
+  --font-georgian: 'Noto Sans Georgian Variable', 'Onest Variable', system-ui, sans-serif;
+
+  --color-primary: #0A6F94;
+  --color-on-primary: #FFFFFF;
+  --color-primary-edge: #06506B;
+  --color-primary-soft: #DDEEF3;
+  --color-accent: #FF6B3D;
+  --color-on-accent: #0B2A31;
+  --color-accent-ink: #C2410C;
+  --color-accent-soft: #FFE3D8;
+  --color-surface: #F3F7F6;
+  --color-panel: #FFFFFF;
+  --color-sunken: #E7F0F0;
+  --color-line: #D3E2E4;
+  --color-line-strong: #B4CCD0;
+  --color-ink: #0B2A31;
+  --color-muted: #4A666C;
+  --color-success: #17804A;
+  --color-success-soft: #DFF2E7;
+  --color-warning: #A65300;
+  --color-warning-soft: #FBEBD8;
+  --color-danger: #C42B3A;
+  --color-danger-edge: #8E1C28;
+  --color-danger-soft: #FBE2E5;
+  --color-on-danger: #FFFFFF;
+  --color-info: #2860C4;
+  --color-info-soft: #E2EAFA;
+  --color-own-row: #FFE3D8;
+  --color-zebra: #F7FAFA;
+  --color-sky-top: #F3F7F6;
+  --color-sky-bottom: #DCEAEE;
+  --color-scrim: rgb(11 42 49 / 0.42);
+
+  --radius-chip: 6px;
+  --radius-card: 10px;
+  --radius-hero: 16px;
+
+  --shadow-card: 0 1px 0 var(--color-line), 0 10px 24px -14px rgb(11 42 49 / 0.22);
+  --shadow-pop: 0 1px 0 var(--color-line), 0 22px 44px -18px rgb(11 42 49 / 0.38);
+
+  --ease-drop: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --animate-drop-in: drop-in 220ms var(--ease-drop) both;
+  --animate-float-up: float-up 600ms var(--ease-drop) forwards;
+  --animate-fade-in: fade-in 180ms ease-out both;
+  --animate-pop-in: pop-in 200ms var(--ease-drop) both;
+  --animate-sheet-in: sheet-in 260ms var(--ease-drop) both;
+  --animate-sheet-up: sheet-up 260ms var(--ease-drop) both;
+  --animate-timer-pulse: timer-pulse 1s ease-in-out infinite;
+  --animate-live-dot: live-dot 1.6s ease-in-out infinite;
+
+  @keyframes drop-in {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes float-up {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-24px); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pop-in {
+    from { opacity: 0; transform: translate(-50%, calc(-50% - 12px)); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+  }
+  @keyframes sheet-in {
+    from { transform: translateX(100%); }
+    to { transform: none; }
+  }
+  @keyframes sheet-up {
+    from { transform: translateY(100%); }
+    to { transform: none; }
+  }
+  @keyframes timer-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+  }
+  @keyframes live-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  @keyframes flake-fall {
+    from { top: -12%; transform: translateX(0) rotate(0deg); }
+    to { top: 108%; transform: translateX(var(--flake-drift, 14px)) rotate(150deg); }
+  }
+}
+
+/* Dark: dim halls and booth TVs. Unlayered so it beats the theme layer. */
+.dark {
+  color-scheme: dark;
+  --color-primary: #38B6D6;
+  --color-on-primary: #071B20;
+  --color-primary-edge: #1D7C95;
+  --color-primary-soft: #0E3A45;
+  --color-on-accent: #071B20;
+  --color-accent-ink: #FF9066;
+  --color-accent-soft: #43271B;
+  --color-surface: #071B20;
+  --color-panel: #0F2A31;
+  --color-sunken: #0A2329;
+  --color-line: #1E3D45;
+  --color-line-strong: #2C5560;
+  --color-ink: #E6F2F1;
+  --color-muted: #93B3B8;
+  --color-success: #4CC98A;
+  --color-success-soft: #10342A;
+  --color-warning: #F0A24A;
+  --color-warning-soft: #3A2A14;
+  --color-danger: #FF7A85;
+  --color-danger-edge: #B9404C;
+  --color-danger-soft: #3E1C23;
+  --color-on-danger: #071B20;
+  --color-info: #7FA8F5;
+  --color-info-soft: #172A4C;
+  --color-own-row: #47291D;
+  --color-zebra: #0C252B;
+  --color-sky-top: #0D2B33;
+  --color-sky-bottom: #071B20;
+  --color-scrim: rgb(2 10 12 / 0.62);
+  --shadow-card: 0 1px 0 var(--color-line), 0 10px 24px -14px rgb(0 0 0 / 0.6);
+  --shadow-pop: 0 1px 0 var(--color-line), 0 22px 44px -18px rgb(0 0 0 / 0.7);
+}
+
+/* Beats the boot-splash inline style in index.html once the app is up. */
+html:root,
+html body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  :lang(ka) body,
+  body:lang(ka) {
+    font-family: var(--font-sans);
+  }
+  .font-display {
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  /* Georgian headings: Noto Sans Georgian 800 with a little air beside wide Unbounded. */
+  :lang(ka) .font-display,
+  .font-display:lang(ka) {
+    letter-spacing: 0.01em;
+  }
+  /* Never uppercase Georgian. */
+  :lang(ka) .uppercase,
+  .uppercase:lang(ka) {
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .font-mono,
+  .tabular,
+  table,
+  input[type='number'] {
+    font-variant-numeric: tabular-nums;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: default;
+  }
+}
+
+/* Decorative snowfall (components/brand/Flakes). */
+.tova-flake {
+  position: absolute;
+  top: -12%;
+  animation: flake-fall var(--flake-duration, 10s) linear var(--flake-delay, 0s) infinite;
+  will-change: top, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Flakes stay still where they are drawn. */
+  .tova-flake {
+    animation: none !important;
+    top: var(--flake-rest, 30%);
+  }
+  .motion-decor {
+    display: none !important;
+  }
+}

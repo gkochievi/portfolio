@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#16211B" />
+    <title>Bani - live demo</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="A live, fully interactive demo of Bani, one console for a company's whole voice estate: call records across two phone platforms, recording archive, contact-centre staffing and campaigns, extension provisioning and platform health. Runs entirely in your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bani - live demo" />
+    <meta
+      property="og:description"
+      content="Search and stitch call records, play recordings, staff contact-centre skills, provision extensions and watch platform health: served entirely from your browser."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { margin: 0; padding: 0; background: #F1F2EB; color: #16211B; }
+      #root { min-height: 100vh; }
+      .boot-splash { position: fixed; inset: 0; display: grid; place-items: center; background: #F1F2EB; z-index: 9999; }
+      .boot-splash__bar { width: 96px; height: 4px; border-radius: 999px; background: #A3441A; transform-origin: left center; animation: boot-draw 0.9s cubic-bezier(.2,.8,.2,1) infinite alternate; }
+      @keyframes boot-draw { from { transform: scaleX(0.15); } to { transform: scaleX(1); } }
+      @media (prefers-color-scheme: dark) {
+        html, body, .boot-splash { background: #0E1512; color: #E8ECE4; }
+        .boot-splash__bar { background: #E08A55; }
+      }
+      @media (prefers-reduced-motion: reduce) { .boot-splash__bar { animation: none; } }
+    </style>
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash" aria-hidden="true"><div class="boot-splash__bar"></div></div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Arsiani Bakery">
+  <circle cx="48" cy="48" r="48" fill="#C2410C"/>
+  <path d="M18 56c0-14 13-24 30-24s30 10 30 24c0 6-3 10-9 10H27c-6 0-9-4-9-10z" fill="#FFE3D8"/>
+  <g fill="none" stroke="#C2410C" stroke-width="4" stroke-linecap="round">
+    <path d="M34 40l-5 12M48 36v14M62 40l5 12"/>
+  </g>
+</svg>

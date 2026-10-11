@@ -1,0 +1,261 @@
+{
+  "title": "პლატფორმის სტატუსი",
+  "page": {
+    "title": "პლატფორმის სტატუსი",
+    "subtitle": "ხმოვანი ხაზები, სერვერის მეტრიკები და ყოველსაათიანი თვითტესტი."
+  },
+  "collector": {
+    "running": "კოლექტორი მუშაობს",
+    "stopped": "კოლექტორი გაჩერებულია",
+    "sampled": "ბოლო გაზომვა {{ago}}"
+  },
+  "banner": {
+    "passed": "გავლილი",
+    "failed": "ჩავარდნილი",
+    "none": "ტესტი ჯერ არ ჩატარებულა",
+    "line": "ბოლო გაშვება {{ago}} · გაგრძელდა {{duration}} · გაუშვა: {{by}}",
+    "noRun": "პლატფორმის მდგომარეობის სანახავად ჩაატარეთ პირველი თვითტესტი.",
+    "next": "შემდეგი დაგეგმილი გაშვება: {{time}}",
+    "schedule": "განრიგმა",
+    "total": "სულ",
+    "skipped": "გამოტოვებული",
+    "state": {
+      "passed": "ყველა სისტემა მუშაობს",
+      "degraded": "შეფერხებული მუშაობა",
+      "failed": "კრიტიკული მდგომარეობა"
+    }
+  },
+  "run": {
+    "now": "ტესტების გაშვება",
+    "running": "ტესტები სრულდება…",
+    "done": "თვითტესტი დასრულდა: {{status}}"
+  },
+  "lanes": {
+    "title": "ხმოვანი ხაზები",
+    "subtitle": "მიმოცვლის დრო თითოეულ პლატფორმამდე ბოლო 24 საათის განმავლობაში.",
+    "empty": "პინგის მონაცემები ჯერ არ არის",
+    "chartLabel": "{{name}}: მიმოცვლის დრო 24 საათის განმავლობაში",
+    "now": "ახლა",
+    "rtt": "მიმოცვლის დრო",
+    "loss": "დანაკარგი",
+    "state": {
+      "healthy": "ნორმაშია",
+      "degraded": "შეფერხებულია",
+      "down": "მიუწვდომელია"
+    }
+  },
+  "live": {
+    "title": "სერვერის მეტრიკები",
+    "cpu": "პროცესორი",
+    "ram": "ოპერატიული მეხსიერება",
+    "disk": "თავისუფალი დისკი",
+    "rx": "ქსელი, მიღება",
+    "tx": "ქსელი, გაგზავნა",
+    "uptime": "უწყვეტი მუშაობა",
+    "load": "დატვირთვა",
+    "processes": "პროცესები",
+    "peak": "24 სთ-ის მაქსიმუმი: {{value}}",
+    "ofTotal": "{{used}} / {{total}}",
+    "freeOf": "{{pct}} თავისუფალია, სულ {{total}}",
+    "sinceBoot": "ბოლო გადატვირთვიდან",
+    "loadHint": "5 წთ: {{five}} · 15 წთ: {{fifteen}}"
+  },
+  "selftest": {
+    "title": "თვითტესტი",
+    "passedOf": "{{passed}} / {{total}} გავლილია",
+    "category": {
+      "core": "ძირითადი ინფრასტრუქტურა",
+      "cron": "ფონური სერვისები",
+      "filesystem": "ფაილური სისტემა",
+      "integration": "გარე ინტეგრაციები"
+    }
+  },
+  "result": {
+    "passed": "გავლილია",
+    "failed": "ჩავარდა",
+    "skipped": "გამოტოვებულია"
+  },
+  "tests": {
+    "db": "არქივის მონაცემთა ბაზა",
+    "cache": "ქეშის შემოწმება",
+    "orm": "მონაცემთა წვდომის შრე",
+    "secrets": "საიდუმლოებების საცავი",
+    "runtime": "გარემო და საათი",
+    "schema": "სქემის ვერსია",
+    "core_sync_cron": "Core Cluster-ის იმპორტის განრიგი",
+    "recent_sync": "ბოლო იმპორტის გაშვება",
+    "drop_listener": "ფაილების მიმღები საქაღალდე",
+    "record_spool": "ჩანაწერების რიგი",
+    "voice_archive_active": "Voice Archive-ის საქაღალდე (აქტიური)",
+    "voice_archive_backup": "ფაილური არქივის საქაღალდე (სარეზერვო)",
+    "edge_archive_share": "Edge PBX-ის არქივის საქაღალდე",
+    "edge_recordings": "Edge PBX-ის ჩანაწერების საქაღალდე",
+    "directory": "დირექტორიასთან დაკავშირება",
+    "core_admin_api": "Core Cluster-ის ადმინისტრირების API",
+    "core_shell": "Core Cluster-ის ტერმინალური წვდომა",
+    "edge_api": "Edge PBX-ის API",
+    "core_record_push": "Core Cluster-ის ჩანაწერების გადაცემა",
+    "record_mirror": "სარეპორტო ასლი"
+  },
+  "history": {
+    "title": "თვითტესტების ისტორია",
+    "expand": "დეტალების ჩვენება",
+    "started": "დაწყება",
+    "status": "სტატუსი",
+    "by": "გამშვები",
+    "duration": "ხანგრძლივობა",
+    "empty": "თვითტესტების ისტორია ცარიელია",
+    "state": {
+      "passed": "გავლილია",
+      "degraded": "შეფერხებით",
+      "failed": "ჩავარდა"
+    },
+    "scheduled": "განრიგი"
+  },
+  "snapshot": {
+    "title": "მომენტის სურათი",
+    "cardTitle": "მეტრიკები არჩეულ დროს",
+    "subtitle": "აირჩიეთ დრო ბოლო 24 საათიდან და ვაჩვენებთ უახლოეს ერთწუთიან მონაცემს (±90 წმ) და იმავე მომენტის პინგებს.",
+    "at": "თარიღი და დრო (თბილისის დრო)",
+    "show": "ჩვენება",
+    "presets": "სწრაფი არჩევანი",
+    "preset": {
+      "m30": "30 წუთის წინ",
+      "h1": "1 საათის წინ",
+      "h6": "6 საათის წინ",
+      "h12": "12 საათის წინ"
+    },
+    "invalid": "მიუთითეთ სწორი თარიღი და დრო.",
+    "future": "დრო მომავალში ვერ იქნება.",
+    "tooOld": "მონაცემები ინახება მხოლოდ ბოლო 24 საათის განმავლობაში.",
+    "metrics": "{{at}} · უახლოესი მონაცემი ±{{window}} წმ-ის ფარგლებში",
+    "metric": "მეტრიკა",
+    "avg": "საშუალო",
+    "max": "მაქს.",
+    "min": "მინ.",
+    "noMetrics": "ამ მომენტისთვის მეტრიკა არ არის",
+    "noMetricsBody": "±{{window}} წამის ფარგლებში მონაცემი ვერ მოიძებნა. სცადეთ სხვა დრო.",
+    "pings": "პინგები ამ მომენტში",
+    "noPings": "ამ მომენტში პინგი არ დაფიქსირებულა"
+  },
+  "activity": {
+    "title": "აქტივობა",
+    "subtitle": "სინქრონიზაციის, სარეზერვო ასლებისა და საკონტაქტო ცენტრის ჟურნალები ერთ ადგილას.",
+    "autoRefresh": "ახლდება ყოველ 30 წამში",
+    "refresh": "განახლება",
+    "tab": {
+      "sync": "Core Cluster-ის სინქრონიზაცია",
+      "cc": "საკონტაქტო ცენტრი",
+      "reconcile": "შეჯერება",
+      "backup": "ჩანაწერების სარეზერვო ასლი",
+      "mirror": "Edge PBX-ის სარკე"
+    },
+    "errors": "შეცდომები",
+    "empty": "ჩანაწერები ვერ მოიძებნა",
+    "cron": "განრიგი",
+    "manualBy": "ხელით: {{user}}",
+    "verifyBackfill": "შემოწმების შევსება",
+    "ccNote": "ბოლო 200 მოქმედება საკონტაქტო ცენტრის ადმინისტრირებაში.",
+    "col": {
+      "status": "სტატუსი",
+      "duration": "ხანგრძლივობა",
+      "errors": "შეცდომები",
+      "ranAt": "გაშვების დრო",
+      "range": "პერიოდი",
+      "imported": "იმპორტირებული",
+      "gapsFound": "ნაპოვნი ხარვეზები",
+      "gapsFilled": "შევსებული ხარვეზები",
+      "started": "დაწყება",
+      "completed": "დასრულება",
+      "type": "ტიპი",
+      "triggeredBy": "გამშვები",
+      "filesFound": "ნაპოვნი ფაილები",
+      "processed": "დამუშავებული",
+      "skipped": "გამოტოვებული",
+      "time": "დრო",
+      "action": "მოქმედება",
+      "user": "მომხმარებელი",
+      "details": "დეტალები",
+      "flow": "ნაკადი",
+      "listed": "ნაპოვნი",
+      "copied": "დაკოპირებული",
+      "failedFiles": "ჩავარდნილი",
+      "size": "მოცულობა",
+      "level": "დონე",
+      "event": "მოვლენა",
+      "message": "შეტყობინება",
+      "trigger": "გამშვები",
+      "fetched": "მიღებული",
+      "inserted": "ჩაწერილი"
+    },
+    "syncType": {
+      "local": "ლოკალური",
+      "scheduled": "დაგეგმილი",
+      "reconcile": "შეჯერება",
+      "full": "სრული ისტორია"
+    },
+    "summary": {
+      "totalRuns": "სულ გაშვება",
+      "recordsImported": "იმპორტირებული ჩანაწერები",
+      "lastSuccess": "ბოლო წარმატებული",
+      "never": "არასდროს"
+    },
+    "cc": {
+      "campaign_change": "კამპანიის ცვლილება",
+      "campaign_view": "კამპანიის ნახვა",
+      "campaign_error": "კამპანიის შეცდომა",
+      "skills_update": "უნარების განახლება",
+      "skills_bulk_update": "უნარების მასობრივი განახლება",
+      "skills_error": "უნარების შეცდომა",
+      "dedicated_ports_above_limit": "პორტების ლიმიტის გადაჭარბება"
+    },
+    "sourceKey": {
+      "primary": "ძირითადი",
+      "secondary": "მეორადი"
+    },
+    "backup": {
+      "runs": "სარეზერვო ასლის გაშვებები",
+      "events": "მოვლენები რეალურ დროში"
+    },
+    "level": {
+      "all": "ყველა დონე",
+      "debug": "გამართვა",
+      "info": "ინფო",
+      "warn": "გაფრთხილება",
+      "error": "შეცდომა"
+    },
+    "trigger": {
+      "interval": "ინტერვალი",
+      "manual": "ხელით",
+      "reconcile": "შეჯერება"
+    }
+  },
+  "testMessages": {
+    "connected_41_tables_replication_lag_0_s": "დაკავშირებულია, 41 ცხრილი, რეპლიკაციის დაგვიანება 0 წმ",
+    "write_read_and_expire_ok": "ჩაწერა, წაკითხვა და ვადის გასვლა: წარმატებით",
+    "query_plan_cache_warm_0_pending_migrations": "მოთხოვნების გეგმის ქეში მზადაა, მოლოდინში მიგრაცია: 0",
+    "13_connection_secrets_readable": "13 კავშირის საიდუმლო იკითხება",
+    "clock_offset_4_ms_against_the_time_source": "საათის გადახრა დროის წყაროსთან: 4 მწმ",
+    "schema_2026_08_3_matches_the_application": "სქემა 2026.08.3 შეესაბამება აპლიკაციას",
+    "next_run_01_15_last_run_completed": "შემდეგი გაშვება 01:15, ბოლო გაშვება დასრულდა",
+    "last_successful_import_under_26_h_ago": "ბოლო წარმატებული იმპორტი 26 საათზე ნაკლები ხნის წინ",
+    "listening_0_files_waiting": "მოსმენის რეჟიმშია, მოლოდინში ფაილი: 0",
+    "spool_empty": "რიგი ცარიელია",
+    "listed_today_s_folder_read_1_file": "დღევანდელი საქაღალდის სია მიღებულია, 1 ფაილი წაკითხულია",
+    "write_and_delete_of_a_probe_file_ok": "საცდელი ფაილის ჩაწერა და წაშლა: წარმატებით",
+    "listed_today_s_folder_on_both_branches": "დღევანდელი საქაღალდის სია მიღებულია ორივე ფილიალში",
+    "bound_as_service_account_2_groups_resolved": "სერვისული ანგარიშით დაკავშირება შესრულდა, 2 ჯგუფი ამოცნობილია",
+    "version_query_answered": "ვერსიის მოთხოვნას უპასუხა",
+    "login_and_status_command_ok": "ავტორიზაცია და სტატუსის ბრძანება: წარმატებით",
+    "token_issued_extension_list_readable": "ტოკენი გაიცა, შიდა ნომრების სია იკითხება",
+    "last_pushed_file_4_min_ago": "ბოლო ფაილი გადაცემულია 4 წუთის წინ",
+    "not_configured": "არ არის გამართული",
+    "login_to_the_core_cluster_shell_timed_out_after_10_s": "Core Cluster-ის ტერმინალში შესვლამ 10 წმ-ში ვერ დაასრულა",
+    "edge_pbx_api_answered_503_service_unavailable": "Edge PBX-ის API-მ უპასუხა: 503 სერვისი მიუწვდომელია",
+    "directory_bind_refused_no_answer_from_the_server_on_port_636": "დირექტორიასთან დაკავშირება უარყოფილია: სერვერი 636 პორტზე არ პასუხობს",
+    "core_cluster_admin_api_did_not_answer_within_8_s": "Core Cluster-ის ადმინისტრირების API-მ 8 წმ-ში არ უპასუხა",
+    "skipped_the_core_cluster_is_in_a_maintenance_window": "გამოტოვებულია: Core Cluster ტექნიკური სამუშაოების ფანჯარაშია",
+    "skipped_a_previous_check_is_still_running": "გამოტოვებულია: წინა შემოწმება ჯერ კიდევ მიმდინარეობს",
+    "share_nas_1_vake_bani_example_voice_archive_did_not_answer_within_10_s": "საქაღალდემ \\\\nas-1.vake.bani.example\\voice-archive 10 წმ-ში არ უპასუხა"
+  }
+}

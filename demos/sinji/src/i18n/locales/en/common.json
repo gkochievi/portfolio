@@ -1,0 +1,68 @@
+{
+  "brand": { "name": "Sinji", "tagline": "Every call heard. Every score proven." },
+  "actions": {
+    "save": "Save", "saved": "Saved", "cancel": "Cancel", "close": "Close", "retry": "Retry", "confirm": "Confirm",
+    "delete": "Delete", "edit": "Edit", "add": "Add", "create": "Create", "remove": "Remove", "apply": "Apply",
+    "reset": "Reset", "back": "Back", "next": "Next", "previous": "Previous", "search": "Search", "clear": "Clear",
+    "filter": "Filter", "export": "Export", "import": "Import", "upload": "Upload", "download": "Download",
+    "copy": "Copy", "copied": "Copied", "view": "View", "open": "Open", "more": "More actions", "refresh": "Refresh",
+    "done": "Done", "continue": "Continue", "test": "Test", "rotate": "Rotate", "revoke": "Revoke",
+    "activate": "Activate", "deactivate": "Deactivate", "accept": "Accept", "decline": "Decline", "run": "Run",
+    "stop": "Stop", "play": "Play", "pause": "Pause", "select": "Select", "selectAll": "Select all"
+  },
+  "status": {
+    "active": "Active", "inactive": "Inactive", "pending": "Pending", "queued": "Queued", "running": "Running",
+    "processing": "Processing", "done": "Done", "completed": "Completed", "failed": "Failed", "error": "Error",
+    "ready": "Ready", "draft": "Draft", "disabled": "Disabled", "enabled": "Enabled", "online": "Online",
+    "offline": "Offline", "degraded": "Degraded", "ok": "OK", "public": "Public", "internal": "Internal",
+    "accepted": "Accepted", "declined": "Declined", "expired": "Expired", "revoked": "Revoked"
+  },
+  "verdicts": {
+    "SUPPORTED": "Supported", "PARTIALLY_SUPPORTED": "Partly supported", "CONTRADICTED": "Contradicted",
+    "NOT_IN_KB": "Not in KB"
+  },
+  "tones": {
+    "positive": "Positive", "neutral": "Neutral", "negative": "Negative", "mixed": "Mixed", "conflict": "Conflict",
+    "polite": "Polite", "calm": "Calm", "tense": "Tense", "angry": "Angry", "frustrated": "Frustrated",
+    "happy": "Happy", "sad": "Sad", "anxious": "Anxious"
+  },
+  "bands": { "excellent": "Excellent", "good": "Good", "fair": "Needs coaching", "poor": "Below bar" },
+  "speakers": { "agent": "Agent", "customer": "Customer", "bot": "Bot", "unknown": "Speaker" },
+  "empty": {
+    "title": "Nothing here yet",
+    "body": "When there is something to measure, it will appear here.",
+    "noResults": "No results match these filters.",
+    "clearFilters": "Clear filters"
+  },
+  "errors": {
+    "generic": "Something went wrong.",
+    "load": "Could not load this. Try again.",
+    "forbidden": "Your role cannot do this.",
+    "notFound": "Not found.",
+    "validation": "Check the highlighted fields.",
+    "required": "This field is required."
+  },
+  "time": {
+    "seconds": "s", "minutes": "min", "hours": "h", "days": "days", "today": "Today", "yesterday": "Yesterday",
+    "last24h": "Last 24 hours", "last7d": "Last 7 days", "last30d": "Last 30 days", "last90d": "Last 90 days",
+    "allTime": "All time"
+  },
+  "table": {
+    "loading": "Loading", "sortAsc": "Sort ascending", "sortDesc": "Sort descending", "rows": "rows",
+    "selected": "{{count}} selected", "actions": "Actions"
+  },
+  "pagination": {
+    "range": "{{from}}-{{to}} of {{total}}", "page": "Page {{page}} of {{pages}}", "previous": "Previous page",
+    "next": "Next page", "perPage": "Per page"
+  },
+  "search": { "placeholder": "Search", "clear": "Clear search" },
+  "readOnly": "Read-only for your role. An owner can change this.",
+  "secret": {
+    "title": "Copy it now",
+    "body": "This value is shown once. Store it somewhere safe; afterwards only a masked hint is kept.",
+    "acknowledge": "I have stored it"
+  },
+  "confirm": { "title": "Are you sure?", "irreversible": "This cannot be undone." },
+  "yes": "Yes", "no": "No", "on": "On", "off": "Off", "all": "All", "none": "None", "optional": "optional",
+  "loading": "Loading", "placeholder": "This screen is being built."
+}

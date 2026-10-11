@@ -1,0 +1,172 @@
+{
+  "window": "{{start}} – {{end}}",
+  "counts": {
+    "plays_one": "{{count}} round",
+    "plays_other": "{{count}} rounds",
+    "items_one": "{{count}} item",
+    "items_other": "{{count}} items",
+    "trivia_one": "{{count}} question",
+    "trivia_other": "{{count}} questions",
+    "prizes_one": "{{count}} prize",
+    "prizes_other": "{{count}} prizes"
+  },
+  "dashboard": {
+    "eyebrow": "Console",
+    "title": "Dashboard",
+    "greeting": "Hello, {{name}}",
+    "description": "Everything happening at the stand, at a glance.",
+    "players": "Players",
+    "playersHint": "Registered player accounts",
+    "plays": "Rounds played",
+    "playsHint": "Across every event",
+    "liveEvent": "Running now",
+    "noLive": "No event is running right now",
+    "noLiveEditor": "Publish an event and set its window to include today to open the game.",
+    "noLiveViewer": "The game opens as soon as an organiser publishes an event for today.",
+    "goToEvents": "Go to events",
+    "lastRound": "Last round {{when}}",
+    "noRoundsYet": "No rounds yet",
+    "boardPublic": "Standings: public",
+    "boardHidden": "Standings: hidden",
+    "prizesPublic": "Prizes: public",
+    "prizesHidden": "Prizes: hidden",
+    "openStandings": "Staff standings",
+    "manage": "Event settings",
+    "publicBoard": "Public board",
+    "shortcuts": "Shortcuts",
+    "cards": {
+      "events": {
+        "title": "Events",
+        "body": "Schedule, fairness caps, difficulty, speed and visibility."
+      },
+      "participants": {
+        "title": "Participants",
+        "body": "The lead list, searchable, with an Excel export."
+      },
+      "standings": {
+        "title": "Standings",
+        "body": "The full board with a catch breakdown per player."
+      },
+      "insights": {
+        "title": "Insights",
+        "body": "Rounds, players and catches over the last 30 days."
+      },
+      "people": {
+        "title": "People",
+        "body": "Staff accounts, roles and suspensions."
+      }
+    }
+  },
+  "list": {
+    "title": "Events",
+    "description": "Every event, newest first. Toggles take effect immediately.",
+    "new": "New event",
+    "manage": "Manage",
+    "contents": "Event contents",
+    "emptyTitle": "No events yet",
+    "emptyBody": "Create the first event to open the game at your stand.",
+    "deleteQuestion": "Delete this event with its items, trivia and prizes?",
+    "deleteQuestionPlays_one": "Delete this event? Its {{count}} round stays in the history.",
+    "deleteQuestionPlays_other": "Delete this event? Its {{count}} rounds stay in the history."
+  },
+  "toggles": {
+    "published": "Published",
+    "awardsVisible": "Prizes visible",
+    "leaderboardVisible": "Standings visible",
+    "publishedHint": "Players can play while the event window is open.",
+    "awardsVisibleHint": "Anyone can see the prizes page.",
+    "leaderboardVisibleHint": "Anyone can see the public standings. Staff always can."
+  },
+  "fields": {
+    "name": "Event name",
+    "duration": "Round length",
+    "durationHint": "Between 10 and 600 seconds.",
+    "startsAt": "Starts",
+    "endsAt": "Ends",
+    "startsAtShort": "Starts",
+    "endsAtShort": "Ends",
+    "maxGood": "Catchable points per round (maxGood)",
+    "maxGoodHint": "Total value of every coin dropped in one round.",
+    "maxBad": "Penalty points per round (maxBad)",
+    "maxBadHint": "Total value of every hazard dropped in one round.",
+    "difficulty": "Difficulty",
+    "leaderboardSize": "Places on the board",
+    "leaderboardSizeHint": "How many rows the standings show (1-100)."
+  },
+  "create": {
+    "title": "New event",
+    "description": "Set the basics now; fine-tune the rest on the settings page.",
+    "namePlaceholder": "e.g. Spring Market 2027",
+    "submit": "Create event",
+    "defaultsNote": "New events start unpublished, on normal difficulty and speed level 1, with 10 places on the board and both lists hidden."
+  },
+  "settings": {
+    "title": "Event settings",
+    "eyebrow": "Event settings",
+    "back": "All events",
+    "missingTitle": "This event no longer exists",
+    "missingBody": "It may have been deleted. Pick another event from the list.",
+    "links": {
+      "label": "Event content",
+      "items": "Falling items",
+      "trivia": "Trivia",
+      "prizes": "Prizes"
+    },
+    "schedule": {
+      "title": "Schedule",
+      "description": "The game is open while the event is published and now is inside this window."
+    },
+    "fairness": {
+      "title": "Fairness",
+      "description": "Every round is planned in advance from these two budgets.",
+      "note": "Every player gets the identical point budget: each round drops exactly {{good}} points of coins and {{bad}} points of hazards on the same four-stage ramp, so scores compare fairly.",
+      "difficultyHint": "Scales the fall speed: easy ×0.78, normal ×1, hard ×1.3."
+    },
+    "speed": {
+      "title": "Speed level",
+      "description": "Multiplies how fast everything falls, on top of difficulty.",
+      "level": "Level {{level}}",
+      "caption1": "Base fall speed",
+      "caption2": "Faster drops",
+      "caption3": "Double speed"
+    },
+    "visibility": {
+      "title": "Board and visibility",
+      "description": "What the public sees for this event.",
+      "notified": "Prize winners were notified on {{when}}."
+    },
+    "saved": "Saved",
+    "unsaved": "Unsaved changes",
+    "updated": "Last saved {{when}}",
+    "discard": "Discard"
+  },
+  "toasts": {
+    "created": "“{{name}}” created",
+    "deleted": "“{{name}}” deleted",
+    "saved": "“{{name}}” saved. The next round uses the new settings.",
+    "published": {
+      "on": "“{{name}}” is published",
+      "off": "“{{name}}” is on hold"
+    },
+    "awardsVisible": {
+      "on": "Prizes are now public",
+      "off": "Prizes are now hidden"
+    },
+    "leaderboardVisible": {
+      "on": "Standings are now public",
+      "off": "Standings are now hidden"
+    }
+  },
+  "errors": {
+    "notFound": "This event no longer exists.",
+    "nameRequired": "Give the event a name.",
+    "nameTooLong": "Keep the name under 120 characters.",
+    "duration": "Round length must be a whole number between 10 and 600 seconds.",
+    "dateInvalid": "Pick a date and time.",
+    "endBeforeStart": "The end must be after the start.",
+    "capPositive": "Enter a whole number above zero.",
+    "difficulty": "Choose easy, normal or hard.",
+    "speedLevel": "Choose speed level 1, 2 or 3.",
+    "boardSize": "Enter a whole number from 1 to 100."
+  }
+}

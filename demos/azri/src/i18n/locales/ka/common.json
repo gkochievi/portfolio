@@ -1,0 +1,167 @@
+{
+  "appName": "აზრი",
+  "tagline": "ერთი SMS — ერთი გულწრფელი აზრი.",
+  "loading": "იტვირთება…",
+  "language": {
+    "label": "ენა",
+    "en": "ENG",
+    "ka": "ქარ",
+    "english": "ინგლისური",
+    "georgian": "ქართული"
+  },
+  "theme": {
+    "toLight": "ნათელ რეჟიმზე გადართვა",
+    "toDark": "მუქ რეჟიმზე გადართვა",
+    "light": "ნათელი",
+    "dark": "მუქი"
+  },
+  "actions": {
+    "save": "შენახვა",
+    "cancel": "გაუქმება",
+    "close": "დახურვა",
+    "apply": "გამოყენება",
+    "reset": "განულება",
+    "clear": "გასუფთავება",
+    "clearFilters": "ფილტრების მოხსნა",
+    "search": "ძიება",
+    "back": "უკან",
+    "next": "შემდეგი",
+    "previous": "წინა",
+    "open": "გახსნა",
+    "openLink": "ბმულის გახსნა",
+    "copy": "კოპირება",
+    "copied": "დაკოპირდა",
+    "retry": "ხელახლა ცდა",
+    "viewAll": "ყველას ნახვა",
+    "refresh": "განახლება",
+    "send": "გაგზავნა",
+    "submit": "გაგზავნა",
+    "continue": "გაგრძელება",
+    "signIn": "შესვლა",
+    "signOut": "გასვლა",
+    "showMore": "მეტის ჩვენება",
+    "showLess": "ნაკლების ჩვენება",
+    "details": "დეტალები"
+  },
+  "status": {
+    "pending": "მოლოდინში",
+    "completed": "შევსებული",
+    "expired": "ვადაგასული",
+    "unknown": "არასწორი ბმული",
+    "missing": "ID აკლია",
+    "sending": "იგზავნება…",
+    "delivered": "მიწოდებულია",
+    "justNow": "ახლახან",
+    "live": "პირდაპირ",
+    "new": "ახალი"
+  },
+  "rating": {
+    "1": "ცუდი",
+    "2": "სუსტი",
+    "3": "საშუალო",
+    "4": "კარგი",
+    "5": "შესანიშნავი",
+    "poor": "ცუდი",
+    "excellent": "შესანიშნავი",
+    "outOf": "{{max}}-დან {{value}}",
+    "noRating": "შეფასების გარეშე",
+    "skipped": "გამოტოვებული",
+    "stars_one": "{{count}} ვარსკვლავი",
+    "stars_other": "{{count}} ვარსკვლავი"
+  },
+  "units": {
+    "days_one": "{{count}} დღე",
+    "days_other": "{{count}} დღე",
+    "daysShort": "{{count}} დ",
+    "responses_one": "{{count}} პასუხი",
+    "responses_other": "{{count}} პასუხი",
+    "questions_one": "{{count}} კითხვა",
+    "questions_other": "{{count}} კითხვა",
+    "links_one": "{{count}} ბმული",
+    "links_other": "{{count}} ბმული",
+    "comments_one": "{{count}} კომენტარი",
+    "comments_other": "{{count}} კომენტარი",
+    "ms": "{{value}} მწმ"
+  },
+  "window": {
+    "label": "პერიოდი",
+    "lastDays_one": "ბოლო {{count}} დღე",
+    "lastDays_other": "ბოლო {{count}} დღე",
+    "short": "{{count}} დ"
+  },
+  "filters": {
+    "tenant": "კომპანია",
+    "branch": "ფილიალი",
+    "staff": "თანამშრომელი",
+    "campaign": "კამპანია",
+    "status": "სტატუსი",
+    "rating": "შეფასება",
+    "allTenants": "ყველა კომპანია",
+    "allBranches": "ყველა ფილიალი",
+    "allStaff": "ყველა თანამშრომელი",
+    "allCampaigns": "ყველა კამპანია",
+    "allStatuses": "ყველა სტატუსი",
+    "anyRating": "ნებისმიერი შეფასება",
+    "hasComment": "კომენტარით",
+    "search": "ძიება"
+  },
+  "kpi": {
+    "csat": "CSAT",
+    "csatHint": "4 და 5 ქულიანი შეფასებების წილი",
+    "avgRating": "საშუალო შეფასება",
+    "responseRate": "პასუხის მაჩვენებელი",
+    "responseRateHint": "პასუხგაცემული ბმულები გაგზავნილებიდან",
+    "responsesToday": "დღევანდელი პასუხები",
+    "responses": "პასუხები",
+    "sent": "გაგზავნილი",
+    "completed": "შევსებული",
+    "expired": "ვადაგასული",
+    "pending": "მოლოდინში",
+    "vsPrevious": "წინა პერიოდთან შედარებით"
+  },
+  "chart": {
+    "responses": "პასუხები",
+    "avgRating": "საშუალო შეფასება",
+    "distribution": "შეფასებების განაწილება",
+    "trend": "დღიური პასუხები"
+  },
+  "table": {
+    "noResults": "ამ ფილტრებით ვერაფერი მოიძებნა",
+    "noResultsHint": "სცადეთ უფრო გრძელი პერიოდი ან მოხსენით ფილტრი.",
+    "sortAsc": "ზრდადობით დალაგება",
+    "sortDesc": "კლებადობით დალაგება"
+  },
+  "pagination": {
+    "label": "გვერდები",
+    "range": "{{from}}–{{to}} / {{total}}",
+    "previous": "წინა გვერდი",
+    "next": "შემდეგი გვერდი"
+  },
+  "empty": {
+    "title": "ჯერ აქ არაფერია",
+    "description": "როცა რამე გამოჩნდება, აქ ნახავთ.",
+    "noComments": "კომენტარები ჯერ არ არის",
+    "noData": "ამ პერიოდში მონაცემები არ არის"
+  },
+  "errors": {
+    "generic": "შეცდომა",
+    "loadFailed": "ვერ ჩაიტვირთა. გთხოვთ, სცადოთ ხელახლა.",
+    "required": "ეს ველი სავალდებულოა",
+    "email": "შეიყვანეთ სწორი ელფოსტა"
+  },
+  "time": {
+    "today": "დღეს",
+    "yesterday": "გუშინ",
+    "expiresIn": "ვადა გასდის {{relative}}",
+    "expiredAgo": "ვადა გაუვიდა {{relative}}"
+  },
+  "lang": {
+    "en": "EN",
+    "ka": "KA"
+  },
+  "demo": {
+    "resetsOnReload": "დემო მონაცემები გვერდის განახლებისას აღდგება",
+    "poweredBy": "მუშაობს აზრის ბაზაზე",
+    "simulated": "სიმულირებული CRM ხედი"
+  }
+}

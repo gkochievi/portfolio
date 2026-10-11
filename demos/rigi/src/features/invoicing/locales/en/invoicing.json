@@ -1,0 +1,236 @@
+{
+  "actions": {
+    "viewInvoices": "View invoices",
+    "newAdhoc": "New one-time invoice",
+    "generate": "Generate",
+    "issue": "Issue",
+    "markPaid": "Mark paid",
+    "void": "Void",
+    "regenerate": "Regenerate",
+    "editLines": "Edit lines",
+    "downloadPdf": "Download PDF",
+    "sendEmail": "Send by email"
+  },
+  "dashboard": {
+    "eyebrow": "Accounting",
+    "greeting": "Good to see you, {{name}}",
+    "title": "Accounting",
+    "description": "Drafts to review, invoices waiting for payment and what came in this month.",
+    "kpi": {
+      "activePartners": "Active partners",
+      "activePartnersHint": "Billed every month",
+      "drafts": "Drafts",
+      "draftsHint": "Waiting for review",
+      "unpaid": "Unpaid",
+      "unpaidHint": "Issued, not yet paid",
+      "revenue": "Revenue this month",
+      "revenueHint_one": "{{count}} invoice paid",
+      "revenueHint_other": "{{count}} invoices paid"
+    },
+    "queues": {
+      "drafts": "Drafts to review",
+      "draftsHint": "Newest first",
+      "overdue": "Overdue",
+      "overdueHint": "Past the due date, oldest first",
+      "recentlyPaid": "Recently paid",
+      "recentlyPaidHint": "Latest payments",
+      "created": "Created",
+      "due": "Due",
+      "paid": "Paid"
+    }
+  },
+  "list": {
+    "eyebrow": "Invoices",
+    "title": "Invoices",
+    "description": "Every monthly and one-time invoice. Filters are kept in the address, so a view can be shared.",
+    "empty": "No invoices yet"
+    ,
+    "emptyFiltered": "Nothing matches these filters. Clear them to see every invoice."
+  },
+  "filters": {
+    "year": "Year",
+    "anyYear": "Any year",
+    "month": "Month",
+    "anyMonth": "Any month"
+  },
+  "table": {
+    "number": "Number",
+    "period": "Period",
+    "kind": "Kind",
+    "issued": "Issued",
+    "paid": "Paid"
+  },
+  "generate": {
+    "eyebrow": "Monthly billing",
+    "title": "Generate invoices",
+    "description": "Draft the monthly invoice for one partner, or for every active partner at once.",
+    "formTitle": "What to generate",
+    "onePartnerHint": "One draft will be created and opened.",
+    "allPartnersHint": "Every active partner gets a draft. Partners already invoiced for the period are skipped.",
+    "partnerHint": "Leave on the first option to bill everyone.",
+    "allActive_one": "All active partners ({{count}})",
+    "allActive_other": "All active partners ({{count}})",
+    "template": "Invoice template",
+    "templateAuto": "Auto (default template)",
+    "templateDisabledHint": "Choose a partner to pick a specific template.",
+    "global": "global",
+    "submitOne": "Generate invoice",
+    "submitAll": "Generate for all partners",
+    "created": "Draft {{number}} created",
+    "enqueued_one": "{{count}} invoice enqueued",
+    "enqueued_other": "{{count}} invoices enqueued",
+    "skipped_one": "{{count}} partner skipped: already invoiced for the period.",
+    "skipped_other": "{{count}} partners skipped: already invoiced for the period.",
+    "duplicate": {
+      "title": "Already invoiced for this period",
+      "description": "This partner already has an invoice for {{period}}. Open it, or create another draft anyway.",
+      "openLatest": "Open latest",
+      "createAnother": "Create another draft"
+    }
+  },
+  "adhoc": {
+    "eyebrow": "One-time invoice",
+    "title": "New one-time invoice",
+    "description": "Bill something outside the monthly cycle: a setup fee, a training day, hardware.",
+    "details": "Details",
+    "choosePartner": "Choose a partner",
+    "currencyHint": "Billed in {{currency}}",
+    "subject": "Subject",
+    "subjectPlaceholder": "Setup fee · Training day · Hardware",
+    "linesTitle": "Lines",
+    "linesHint": "Amounts in {{currency}}. Quantity can be a decimal.",
+    "linesNoPartner": "Choose a partner to see the currency.",
+    "submit": "Create draft",
+    "created": "Draft {{number}} created"
+  },
+  "detail": {
+    "notFound": "Invoice not found",
+    "template": "PDF template"
+  },
+  "dispute": {
+    "marker": "Disputed",
+    "title": "The partner disputed this invoice",
+    "since": "Raised on"
+  },
+  "void": {
+    "banner": "This invoice is void",
+    "title": "Void {{number}}?",
+    "description": "A void invoice cannot be issued or paid again. Billed work becomes available for the next invoice.",
+    "reason": "Reason",
+    "reasonPlaceholder": "Why is this invoice being voided?",
+    "done": "{{number}} voided"
+  },
+  "lines": {
+    "title": "Line items",
+    "description": "Description",
+    "quantity": "Qty",
+    "unitPrice": "Unit price",
+    "amount": "Amount",
+    "descriptionPlaceholder": "What is being billed",
+    "remove": "Remove line",
+    "add": "Add line",
+    "total": "Total",
+    "blankHint": "Rows without a description are dropped when you save.",
+    "empty": "No line items",
+    "meta": {
+      "userDays": "{{value}} user-days",
+      "daysInMonth": "{{count}} days in month"
+    }
+  },
+  "tasks": {
+    "title": "Tasks billed",
+    "description": "Support work verified in the period, priced in points.",
+    "empty": "No support tasks were billed on this invoice",
+    "task": "Task",
+    "finished": "Finished",
+    "template": "Template",
+    "points": "Points",
+    "rate": "Rate",
+    "gross": "Gross",
+    "lessFree": "Less: free allowance",
+    "net": "Net"
+  },
+  "dates": {
+    "title": "Dates",
+    "created": "Created",
+    "issued": "Issued",
+    "due": "Due",
+    "paid": "Paid",
+    "notIssued": "Not issued yet"
+  },
+  "amounts": {
+    "title": "Amounts",
+    "subtotal": "Subtotal",
+    "vat": "VAT {{rate}}%",
+    "totalDue": "Total due",
+    "totalIncl": "Total, VAT included",
+    "vatIncluded": "VAT {{rate}}% incl.",
+    "vatExcluded": "VAT {{rate}}% excl.",
+    "switchLabel": "Prices include VAT",
+    "switchHint": "Off: VAT is added on top of the lines."
+  },
+  "notes": {
+    "placeholder": "Printed on the invoice",
+    "saved": "Notes saved",
+    "none": "No notes"
+  },
+  "issue": {
+    "title": "Issue invoice",
+    "description": "Issuing locks the lines. Leave a date as it is to use the default.",
+    "issuedHint_monthly": "Default: last day of the period",
+    "issuedHint_adhoc": "Default: today",
+    "dueHint": "Default: 14 days after issue",
+    "dueBeforeIssued": "The due date cannot be before the issue date.",
+    "done": "{{number}} issued"
+  },
+  "paid": {
+    "title": "Mark as paid",
+    "description": "Record the payment date for {{number}}.",
+    "beforeIssued": "The payment date cannot be before the issue date.",
+    "done": "{{number}} marked as paid"
+  },
+  "regenerate": {
+    "done": "Draft rebuilt from current data"
+  },
+  "editLines": {
+    "title": "Edit lines",
+    "description": "Replace the lines of {{number}}. Totals update when you save.",
+    "done": "Lines updated"
+  },
+  "email": {
+    "title": "Send by email",
+    "description": "Send {{number}} to the partner's billing contacts.",
+    "to": "To",
+    "cc": "Cc",
+    "toHint": "Prefilled from the partner's billing e-mails. Press Enter after each address.",
+    "sending": "Sending…",
+    "sent_one": "Invoice sent to {{count}} recipient",
+    "sent_other": "Invoice sent to {{count}} recipients",
+    "attachmentNote": "The invoice PDF is attached automatically.",
+    "history": "Sent by email",
+    "historyHint": "Every send is kept here.",
+    "none": "Not sent yet",
+    "sentBy": "Sent by {{name}}",
+    "invalidAddress": "Not a valid e-mail address: {{address}}",
+    "tooMany": "At most {{max}} addresses.",
+    "removeAddress": "Remove {{address}}"
+  },
+  "validation": {
+    "max200": "At most 200 characters.",
+    "max500": "At most 500 characters.",
+    "max4000": "At most 4000 characters.",
+    "quantity": "Enter a quantity above 0.",
+    "price": "Enter a price of 0 or more.",
+    "noLines": "Add at least one line with a description.",
+    "titleRequired": "The subject is required.",
+    "partnerRequired": "Choose a partner.",
+    "dateRequired": "Choose a date."
+  },
+  "errors": {
+    "invoice_invalid_transition": "This invoice is not in a state that allows that action.",
+    "invoice_already_void": "This invoice is already void.",
+    "invoice_has_no_lines": "An invoice without lines cannot be issued.",
+    "invoice_duplicate_period": "This partner already has an invoice for the period.",
+    "forbidden": "You do not have permission to do that."
+  }
+}

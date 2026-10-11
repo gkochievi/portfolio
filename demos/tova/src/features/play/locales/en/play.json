@@ -1,0 +1,72 @@
+{
+  "title": "Catch the coins",
+  "loading": "Loading the round…",
+  "home": "Home",
+  "intro": {
+    "lead": "Move the paddle, catch the sponsor coins and let the hazards fall. {{seconds}} seconds, and everyone gets the same fair round.",
+    "legendTitle": "What falls",
+    "bonusTitle": "Bonus coins",
+    "bonusHint": "A persimmon ring pays ×1.5 or ×2.",
+    "hazardHint": "A slashed red ring is a hazard. Let it fall.",
+    "controlsTouch": "Drag anywhere to move the paddle",
+    "controlsKeys": "or use the ← → arrow keys",
+    "best": "Your best",
+    "noBest": "No rounds yet",
+    "start": "Start round",
+    "seconds": "{{count}} s",
+    "speed": "Speed ×{{value}}",
+    "difficulty": {
+      "easy": "Easy",
+      "normal": "Normal",
+      "hard": "Hard"
+    }
+  },
+  "countdown": {
+    "label": "Get ready"
+  },
+  "hud": {
+    "score": "Score",
+    "time": "Time",
+    "secondsLeft": "{{count}} seconds left",
+    "canvas": "Game field. Drag or use the arrow keys to move the paddle."
+  },
+  "over": {
+    "title": "Time!",
+    "finalScore": "Final score",
+    "newBest": "New personal best",
+    "best": "Best",
+    "saving": "saving…",
+    "saved": "Saved",
+    "saveFailed": "This round was not saved.",
+    "retry": "Try again",
+    "cta": "Come by the Tova stand: the Ritmuli Events team will show you where you rank.",
+    "newRound": "New round",
+    "myResults": "My results",
+    "home": "Home"
+  },
+  "closed": {
+    "title": "No event is open right now",
+    "next": "Next up",
+    "startsAt": "Opens {{date}}",
+    "checkBack": "Check back soon: the next round opens with the next event.",
+    "standings": "Standings",
+    "home": "Home"
+  },
+  "errors": {
+    "eventClosed": "This event has closed, so the round was not saved.",
+    "invalidScore": "That score could not be read.",
+    "load": "The game could not load."
+  },
+  "itemNames": {
+    "Kvamli Coffee": "Kvamli Coffee",
+    "Mzevali Tea": "Mzevali Tea",
+    "Arsiani Bakery": "Arsiani Bakery",
+    "Tetri Kalami": "Tetri Kalami",
+    "Lurji Velo": "Lurji Velo",
+    "Icicle": "Icicle",
+    "Pinecone": "Pinecone",
+    "Storm cloud": "Storm cloud",
+    "Slush": "Slush",
+    "Snowball": "Snowball"
+  }
+}

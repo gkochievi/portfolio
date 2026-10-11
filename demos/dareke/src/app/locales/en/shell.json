@@ -1,0 +1,93 @@
+{
+  "notFound": "Page not found",
+  "notFoundHint": "This number is not in any campaign. Head back to your home screen.",
+  "backHome": "Back to home",
+  "forbidden": "No access",
+  "error": {
+    "title": "Something went wrong",
+    "hint": "The page hit an unexpected error. Reloading restores the demo data.",
+    "reload": "Reload"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "open": "Open menu",
+    "collapse": "Collapse",
+    "expand": "Expand menu",
+    "groups": {
+      "work": "Work",
+      "admin": "Administration",
+      "supervise": "Supervision"
+    },
+    "workspace": "Workspace",
+    "wall": "Live wall",
+    "reports": "Reports",
+    "calls": "Call history",
+    "dashboard": "Dashboard",
+    "campaigns": "Campaigns",
+    "users": "Users",
+    "agentStatuses": "Agent statuses",
+    "dispositions": "Dispositions",
+    "dnc": "Do-not-call list",
+    "settings": "Dialer settings",
+    "integrations": "Integrations"
+  },
+  "topbar": {
+    "search": "Jump to",
+    "userMenu": "Account menu",
+    "dialerConnected": "Dialer connected",
+    "dialerOffline": "Dialer offline",
+    "dialerHint_one": "{{count}} call in progress",
+    "dialerHint_other": "{{count}} calls in progress",
+    "ext": "Ext {{ext}}"
+  },
+  "palette": {
+    "title": "Command palette",
+    "placeholder": "Type a page or a command...",
+    "navigate": "Go to",
+    "preferences": "Preferences",
+    "account": "Account",
+    "toEnglish": "Switch to English",
+    "toGeorgian": "Switch to Georgian (ქართული)",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "description": "Work the floor without the mouse.",
+    "groups": {
+      "general": "Everywhere",
+      "call": "During a call (Workspace)"
+    },
+    "items": {
+      "palette": "Open the command palette",
+      "shortcuts": "Show this list",
+      "close": "Close a dialog or drawer",
+      "mute": "Mute / unmute",
+      "hold": "Hold / resume",
+      "end": "End the call",
+      "disposition": "Pick a disposition",
+      "submit": "Submit the disposition"
+    }
+  },
+  "login": {
+    "title": "Sign in",
+    "subtitle": "Use your work email, or pick a demo account below.",
+    "pitch": "Campaigns and lead lists, a click-to-dial or auto-paced dialer, forced dispositions and a live supervisor wall, in one outbound suite.",
+    "email": "Email",
+    "password": "Password",
+    "passwordHint": "Every demo account uses the same password.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "invalid": "Email or password is incorrect.",
+    "failed": "Sign-in failed. Try again.",
+    "orPick": "or sign in with one click",
+    "accountsLabel": "Demo accounts",
+    "accountHint": {
+      "operator": "Agent workspace: dial, talk, disposition",
+      "supervisor": "Live wall, reports and call history",
+      "admin": "Campaigns, lead lists, users, dialer settings",
+      "super_admin": "Everything, plus PBX and directory integrations"
+    }
+  }
+}

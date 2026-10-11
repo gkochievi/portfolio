@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Bike helmet">
+  <rect width="400" height="300" fill="#DCEAEE"/>
+  <g fill="#FFFFFF" opacity=".8"><circle cx="50" cy="60" r="4"/><rect x="340" y="40" width="7" height="7" rx="2"/><circle cx="356" cy="236" r="3"/><circle cx="70" cy="226" r="3"/></g>
+  <ellipse cx="200" cy="254" rx="130" ry="12" fill="#BFDCE6"/>
+  <path d="M84 196 C84 110 150 66 214 66 C284 66 330 120 330 196 Z" fill="#0A6F94"/>
+  <path d="M84 196 H330 L320 214 H96 Z" fill="#0B2A31"/>
+  <g fill="#06506B">
+    <path d="M130 120 C150 96 174 86 196 84 L190 120 Z"/>
+    <path d="M206 84 C236 84 262 96 280 118 L222 120 Z"/>
+    <path d="M118 160 L160 140 L176 160 Z"/>
+    <path d="M200 160 L222 138 L296 160 Z"/>
+  </g>
+  <path d="M296 120 C312 136 322 160 326 186 L300 186 C298 160 296 140 296 120 Z" fill="#FF6B3D"/>
+  <path d="M130 214 C140 244 170 252 200 252" fill="none" stroke="#0B2A31" stroke-width="7" stroke-linecap="round"/>
+  <rect x="192" y="244" width="22" height="14" rx="4" fill="#FF6B3D"/>
+</svg>

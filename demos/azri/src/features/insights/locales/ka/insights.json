@@ -1,0 +1,78 @@
+{
+  "filters": {
+    "label": "ფილტრები",
+    "refine": "პასუხების დაზუსტება",
+    "searchPlaceholder": "ძიება: კომენტარი, თანამშრომელი ან ფილიალი",
+    "ratingOption": "{{value}} · {{label}}"
+  },
+  "commentLang": {
+    "en": "დაწერილია ინგლისურად",
+    "ka": "დაწერილია ქართულად"
+  },
+  "comments": {
+    "openResponse": "{{tenant}} – პასუხის გახსნა"
+  },
+  "source": {
+    "seed": "ისტორია",
+    "session": "ეს სესია",
+    "simulated": "პირდაპირი (ფონური მომხმარებელი)"
+  },
+  "overview": {
+    "eyebrow": "შედეგები",
+    "title": "მიმოხილვა",
+    "description": "როგორ აფასებენ მომხმარებლები თითოეულ კომპანიას, ფილიალსა და თანამშრომელს – პირდაპირ SMS გამოკითხვებიდან.",
+    "live": "პირდაპირ",
+    "trendTitle_one": "პასუხები, ბოლო {{count}} დღე",
+    "trendTitle_other": "პასუხები, ბოლო {{count}} დღე",
+    "trendHint": "სვეტები დღიურ პასუხებს აჩვენებს, ხაზი – იმ დღის საშუალო შეფასებას.",
+    "ratingsCount_one": "{{count}} შეფასება",
+    "ratingsCount_other": "{{count}} შეფასება",
+    "ratingsHint_one": "{{count}} პასუხგაცემული კითხვიდან",
+    "ratingsHint_other": "{{count}} პასუხგაცემული კითხვიდან",
+    "rateHint": "{{sent}} ბმულიდან პასუხი გაეცა {{completed}}-ს",
+    "inWindow_one": "{{count}} ბოლო {{days}} დღეში",
+    "inWindow_other": "{{count}} ბოლო {{days}} დღეში",
+    "deltaPts": "{{value}} პუნქტი",
+    "byTenant": "კომპანიების მიხედვით",
+    "byTenantHint": "აირჩიეთ კომპანია მისი ფილიალების სანახავად.",
+    "byBranch": "ფილიალების მიხედვით",
+    "byBranchHint": "აირჩიეთ ფილიალი დეტალური ხედისთვის.",
+    "questionsTitle": "საშუალო შეფასება კითხვების მიხედვით",
+    "questionsHint": "არჩეული კამპანიის ყველა კითხვა.",
+    "answeredSkipped": "პასუხი: {{answered}} · გამოტოვებული: {{skipped}}",
+    "commentsTitle": "ბოლო კომენტარები",
+    "noCommentsHint": "აქ გამოჩნდება კომენტარები, რომლებსაც მომხმარებლები შეფასებასთან ერთად ტოვებენ."
+  },
+  "responses": {
+    "title": "პასუხები",
+    "description": "გამოკითხვის ყველა პასუხი, უახლესი პირველად. აირჩიეთ პასუხი, რომ ნახოთ თითოეული კითხვა და ბმულის ისტორია.",
+    "count_one": "{{formatted}} პასუხი",
+    "count_other": "{{formatted}} პასუხი"
+  },
+  "table": {
+    "time": "პასუხის დრო",
+    "branchStaff": "ფილიალი და თანამშრომელი",
+    "rating": "საშუალო",
+    "comment": "კომენტარი",
+    "noComment": "კომენტარის გარეშე"
+  },
+  "detail": {
+    "title": "პასუხი",
+    "notFound": "პასუხი ვერ მოიძებნა",
+    "notFoundHint": "შესაძლოა, მონაცემები განულდა.",
+    "answered": "პასუხი გაეცა {{total}}-დან {{answered}} კითხვას",
+    "questions": "კითხვები",
+    "comment": "კომენტარი",
+    "noComment": "მომხმარებელს კომენტარი არ დაუტოვებია.",
+    "link": "გამოკითხვის ბმული",
+    "recipient": "ადრესატი",
+    "phone": "ტელეფონი",
+    "token": "ბმულის ID",
+    "interactionAt": "ვიზიტი ან ზარი",
+    "sentAt": "SMS გაიგზავნა",
+    "expiresAt": "ბმულის ვადა",
+    "answeredAt": "პასუხის დრო",
+    "source": "წყარო",
+    "average": "საშუალო შეფასება"
+  }
+}

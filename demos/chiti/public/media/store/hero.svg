@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A wine cellar with clay qvevri vessels and bottles">
+<rect width="1600" height="900" fill="#3a1620"/>
+<rect y="640" width="1600" height="260" fill="#2a0f17"/>
+<g fill="#4a1c28">
+<path d="M80 640V330a160 160 0 0 1 320 0V640Z"/>
+<path d="M440 640V330a160 160 0 0 1 320 0V640Z"/>
+<path d="M800 640V330a160 160 0 0 1 320 0V640Z"/>
+<path d="M1160 640V330a160 160 0 0 1 320 0V640Z"/>
+</g>
+<g fill="#5a2433">
+<path d="M120 640V335a120 120 0 0 1 240 0V640Z"/>
+<path d="M480 640V335a120 120 0 0 1 240 0V640Z"/>
+<path d="M840 640V335a120 120 0 0 1 240 0V640Z"/>
+<path d="M1200 640V335a120 120 0 0 1 240 0V640Z"/>
+</g>
+<g stroke="#2a0f17" stroke-width="3" opacity=".5"><path d="M0 560H1600M0 480H1600M0 400H1600M0 320H1600M0 240H1600"/></g>
+<g fill="#c4793a">
+<path d="M230 640c-52 0-86-48-86-104 0-28 12-44 26-56l-4-30h128l-4 30c14 12 26 28 26 56 0 56-34 104-86 104Z" transform="translate(0,-8)"/>
+<path d="M590 640c-52 0-86-48-86-104 0-28 12-44 26-56l-4-30h128l-4 30c14 12 26 28 26 56 0 56-34 104-86 104Z" transform="translate(0,-8)"/>
+<path d="M950 640c-52 0-86-48-86-104 0-28 12-44 26-56l-4-30h128l-4 30c14 12 26 28 26 56 0 56-34 104-86 104Z" transform="translate(0,-8)"/>
+<path d="M1310 640c-52 0-86-48-86-104 0-28 12-44 26-56l-4-30h128l-4 30c14 12 26 28 26 56 0 56-34 104-86 104Z" transform="translate(0,-8)"/>
+</g>
+<g fill="#a85f27"><rect x="150" y="444" width="160" height="10" rx="5"/><rect x="510" y="444" width="160" height="10" rx="5"/><rect x="870" y="444" width="160" height="10" rx="5"/><rect x="1230" y="444" width="160" height="10" rx="5"/></g>
+<g fill="#f2c12e"><circle cx="230" cy="600" r="7"/><circle cx="590" cy="600" r="7"/><circle cx="950" cy="600" r="7"/><circle cx="1310" cy="600" r="7"/></g>
+<g stroke="#8cc46e" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"><path d="M0 120C200 160 320 80 520 130S860 190 1060 120 1400 80 1600 140"/></g>
+<g fill="#8cc46e" opacity=".85"><circle cx="220" cy="120" r="16"/><circle cx="520" cy="130" r="16"/><circle cx="860" cy="168" r="16"/><circle cx="1180" cy="112" r="16"/><circle cx="1480" cy="104" r="16"/></g>
+<g fill="#7a1f33"><circle cx="300" cy="170" r="9"/><circle cx="318" cy="182" r="9"/><circle cx="296" cy="192" r="9"/><circle cx="1000" cy="170" r="9"/><circle cx="1018" cy="182" r="9"/><circle cx="996" cy="192" r="9"/></g>
+<rect y="640" width="1600" height="14" fill="#1e1b12" opacity=".35"/>
+</svg>

@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "main": "Main navigation",
+    "calls": "Calls", "kb": "Knowledge base", "curation": "KB health", "rubric": "Rubric", "settings": "Settings",
+    "bot": "Bot", "copilot": "Copilot", "console": "Console", "aiSetup": "AI setup", "usage": "Usage",
+    "voiceTools": "Voice tools", "editor": "Audio editor", "workspace": "Workspace", "platform": "Platform",
+    "tools": "Tools", "collapse": "Collapse sidebar", "expand": "Expand sidebar", "openMenu": "Open menu"
+  },
+  "topbar": {
+    "workspace": "Workspace", "switchWorkspace": "Switch workspace", "language": "Language", "theme": "Theme",
+    "light": "Light", "dark": "Dark", "system": "Match system", "toDark": "Switch to dark theme",
+    "toLight": "Switch to light theme", "gloss": "English gloss",
+    "glossHint": "Show English translations of Georgian call content", "signIn": "Sign in",
+    "openWorkspace": "Open workspace", "inactive": "inactive"
+  },
+  "user": { "menu": "Account menu", "signOut": "Sign out", "role": { "operator": "Platform operator", "owner": "Owner", "member": "Member", "agent": "Agent" } },
+  "actingAs": "Viewing as {{name}}",
+  "actingAsHint": "You are acting inside this workspace with owner rights.",
+  "login": {
+    "title": "Sign in",
+    "subtitle": "Pick a demo account for one-click access, or use the form.",
+    "accounts": "Demo accounts",
+    "or": "or sign in with email",
+    "email": "Email", "password": "Password", "submit": "Sign in",
+    "invalid": "That email and password do not match a demo account.",
+    "passwordHint": "Every demo account uses the password {{password}}.",
+    "brandTitle": "Fair, evidence-first review of every support call.",
+    "point1": "Transcripts, tone and rubric scores pinned to the exact line.",
+    "point2": "Every claim checked against your own knowledge base.",
+    "point3": "Coaching notes your team can trust, not surveillance.",
+    "guest": "Continue to the public voice tools"
+  },
+  "demo": { "resetDone": "Demo data restored." },
+  "notFound": { "code": "404", "title": "This page is off the curve", "body": "The address does not match any screen in Sinji.", "home": "Go to start" },
+  "forbidden": { "code": "403", "title": "Not available for your role", "body": "Switch to an account with access from the demo bar.", "home": "Go to my home" },
+  "error": { "title": "Something went wrong", "body": "The screen hit an unexpected error. Reload or go back to start.", "reload": "Reload", "home": "Go to start" },
+  "skip": "Skip to content"
+}

@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "label": "Event content",
+    "items": "Falling items",
+    "trivia": "Trivia",
+    "prizes": "Prizes"
+  },
+  "header": {
+    "back": "Event settings",
+    "eventFallback": "Event"
+  },
+  "types": {
+    "GOOD": "Sponsor item",
+    "MINOR": "Minor hazard",
+    "MAJOR": "Major hazard"
+  },
+  "state": {
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "image": {
+    "alt": "Image preview",
+    "upload": "Upload image",
+    "replace": "Replace image",
+    "remove": "Remove",
+    "sample": "Use a sample image",
+    "hint": "PNG, JPG or SVG. In this demo the file stays in your browser and is never uploaded."
+  },
+  "ai": {
+    "button": "AI generate image",
+    "comingSoon": "AI image generation is coming soon",
+    "notInDemo": "It is not part of this demo. Upload an image or use a sample instead."
+  },
+  "items": {
+    "title": "Falling items",
+    "description": "Sponsor items players catch for points and hazards they have to dodge. Weight sets how often an item falls.",
+    "add": "Add item",
+    "noBrand": "No brand",
+    "weightShort": "weight {{value}}",
+    "summary": "{{good}} sponsor · {{hazards}} hazards",
+    "inactiveCount_one": "{{count}} inactive",
+    "inactiveCount_other": "{{count}} inactive",
+    "columns": {
+      "art": "Art",
+      "name": "Name",
+      "type": "Type",
+      "points": "Points",
+      "brand": "Brand name",
+      "weight": "Weight",
+      "active": "Status",
+      "actions": "Actions"
+    },
+    "empty": {
+      "title": "No falling items yet",
+      "description": "Until you add some, rounds for this event use the default set of sponsor items and hazards."
+    },
+    "deleteQuestion": "Delete this item?",
+    "toasts": {
+      "created": "“{{name}}” added",
+      "updated": "“{{name}}” saved",
+      "deleted": "“{{name}}” deleted"
+    },
+    "sheet": {
+      "createTitle": "New falling item",
+      "editTitle": "Edit falling item",
+      "description": "Shown in the round, the intro legend and the catch breakdown."
+    },
+    "fields": {
+      "image": "Art",
+      "name": "Name",
+      "namePlaceholder": "e.g. Kvamli Coffee cup",
+      "type": "Type",
+      "typeHint": "Picking a type fills in its default points.",
+      "points": "Points",
+      "pointsHint": "Negative for hazards.",
+      "weight": "Weight",
+      "weightHint": "1 to 100. Higher falls more often.",
+      "brandName": "Brand name",
+      "brandHint": "The sponsor behind this item, if any.",
+      "brandPlaceholder": "e.g. Kvamli Coffee",
+      "active": "Active",
+      "activeHint": "Inactive items never fall."
+    }
+  },
+  "trivia": {
+    "title": "Trivia",
+    "description": "Timed bonus questions. Every correct answer adds its points to the player's standings score.",
+    "add": "Add question",
+    "summary_one": "{{count}} active question · up to {{points}} bonus points",
+    "summary_other": "{{count}} active questions · up to {{points}} bonus points",
+    "optionsLabel": "Answer options",
+    "correct": "Correct",
+    "points": "+{{value}} pts",
+    "seconds": "{{value}} s",
+    "deleteQuestion": "Delete this question and its answers?",
+    "empty": {
+      "title": "No trivia questions yet",
+      "description": "Add a question and players will see it on My card after their round."
+    },
+    "toasts": {
+      "created": "Question added",
+      "updated": "Question saved",
+      "deleted": "Question deleted"
+    },
+    "sheet": {
+      "createTitle": "New question",
+      "editTitle": "Edit question",
+      "description": "Players get one try, against the clock."
+    },
+    "fields": {
+      "question": "Question",
+      "questionPlaceholder": "e.g. Which sponsor roasts its own beans?",
+      "options": "Options",
+      "optionsHint": "Fill in at least two. Pick the correct one with the radio button.",
+      "correct": "Correct answer",
+      "markCorrect": "Mark option {{n}} as correct",
+      "option": "Option {{n}}",
+      "correctHint": "Option {{n}} is marked as the correct answer.",
+      "points": "Points",
+      "seconds": "Seconds",
+      "secondsHint": "Time to answer, 5 to 120.",
+      "active": "Active",
+      "activeHint": "Inactive questions are hidden from players."
+    }
+  },
+  "prizes": {
+    "title": "Prizes",
+    "description": "What the top players win. Shown on the public Prizes page while it is visible.",
+    "add": "Add prize",
+    "noImage": "No image",
+    "order": "#{{n}}",
+    "noDescription": "No description",
+    "deleteQuestion": "Delete this prize?",
+    "empty": {
+      "title": "No prizes yet",
+      "description": "Add the prizes for this event and players will see them on the Prizes page."
+    },
+    "toasts": {
+      "created": "“{{name}}” added",
+      "updated": "“{{name}}” saved",
+      "deleted": "“{{name}}” deleted"
+    },
+    "sheet": {
+      "createTitle": "New prize",
+      "editTitle": "Edit prize",
+      "description": "Prizes are listed by sort order."
+    },
+    "fields": {
+      "label": "Label",
+      "labelPlaceholder": "e.g. City bike voucher",
+      "description": "Description",
+      "descriptionPlaceholder": "e.g. A month of rides from Lurji Velo",
+      "image": "Image",
+      "sortOrder": "Sort order",
+      "sortOrderHint": "Lower numbers come first."
+    }
+  },
+  "errors": {
+    "nameRequired": "Enter a name.",
+    "nameTooLong": "Keep the name under 80 characters.",
+    "typeInvalid": "Pick a type.",
+    "pointsRange": "Points must be a whole number between −100,000 and 100,000.",
+    "brandTooLong": "Keep the brand name under 120 characters.",
+    "weightRange": "Weight must be a whole number from 1 to 100.",
+    "sortOrderRange": "Sort order must be a whole number from 0 to 10,000.",
+    "questionRequired": "Enter the question.",
+    "questionTooLong": "Keep the question under 300 characters.",
+    "optionsMin": "Fill in at least two options.",
+    "optionTooLong": "Keep each option under 120 characters.",
+    "correctInvalid": "Pick the correct option.",
+    "correctEmpty": "The correct answer can't be an empty option.",
+    "triviaPointsRange": "Points must be a whole number from 1 to 10,000.",
+    "secondsRange": "Seconds must be a whole number from 5 to 120.",
+    "labelRequired": "Enter a label.",
+    "labelTooLong": "Keep the label under 120 characters.",
+    "descriptionTooLong": "Keep the description under 500 characters.",
+    "eventNotFound": "This event no longer exists.",
+    "itemNotFound": "This item no longer exists.",
+    "questionNotFound": "This question no longer exists.",
+    "prizeNotFound": "This prize no longer exists."
+  }
+}

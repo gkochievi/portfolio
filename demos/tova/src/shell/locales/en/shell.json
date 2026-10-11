@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "Home",
+    "play": "Play",
+    "myCard": "My card",
+    "standings": "Standings",
+    "prizes": "Prizes",
+    "console": "Console",
+    "dashboard": "Dashboard",
+    "events": "Events",
+    "participants": "Participants",
+    "insights": "Insights",
+    "people": "People",
+    "eventSettings": "Settings",
+    "items": "Falling items",
+    "trivia": "Trivia",
+    "eventPrizes": "Prizes",
+    "playerView": "Player view",
+    "main": "Main navigation"
+  },
+  "rail": { "console": "Organiser console", "event": "Selected event", "menu": "Menu", "openMenu": "Open menu" },
+  "switcher": { "label": "Event", "placeholder": "Choose an event", "empty": "No events yet" },
+  "user": { "menu": "Account menu", "signedInAs": "Signed in as", "register": "Register" },
+  "notFound": { "code": "404", "title": "This page melted away", "body": "The link may be old, or the page never existed.", "home": "Back to start" },
+  "crash": { "title": "Something went wrong", "body": "The page hit an error. Reload to try again; the demo data stays as it was.", "reload": "Reload", "home": "Back to start", "details": "Technical details" },
+  "loading": "Loading Tova…"
+}

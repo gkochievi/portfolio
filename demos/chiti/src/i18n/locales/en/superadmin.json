@@ -1,0 +1,359 @@
+{
+  "state": { "active": "Active", "disabled": "Disabled", "deleted": "Deleted" },
+  "roles": { "admin": "Admin", "operator": "Operator", "supervisor": "Supervisor" },
+  "tabs": { "admins": "Admins", "operators": "Operators", "supervisors": "Supervisors", "features": "Features", "chats": "Team chat audit" },
+  "tenants": {
+    "title": "Tenants",
+    "description": "Every organization on the platform. Create, pause, restore or step into any of them.",
+    "error": "The tenant list could not be loaded.",
+    "empty": "No tenants match",
+    "emptyHint": "Clear the search or pick another state."
+  },
+  "kpi": {
+    "label": "Platform totals",
+    "tenants": "Tenants",
+    "tenantsHint": "{{active}} active",
+    "admins": "Admins",
+    "operators": "Operators",
+    "customers": "Customers",
+    "sessions": "Chat sessions"
+  },
+  "quick": {
+    "label": "Quick actions",
+    "createTenant": "Create tenant",
+    "createAdmin": "Create admin",
+    "createOperator": "Create operator",
+    "createSupervisor": "Create supervisor",
+    "platform": "Platform integrations",
+    "health": "System health",
+    "ai": "AI key"
+  },
+  "filters": {
+    "title": "Filters",
+    "search": "Name or slug",
+    "state": "State",
+    "states": { "all": "All", "active": "Active", "disabled": "Disabled", "deleted": "Deleted" }
+  },
+  "table": {
+    "tenant": "Tenant",
+    "slug": "Slug",
+    "state": "State",
+    "admins": "Admins",
+    "operators": "Operators",
+    "supervisors": "Supervisors",
+    "customers": "Customers",
+    "origins": "Origins",
+    "created": "Created",
+    "actions": "Actions",
+    "copySlug": "Copy slug",
+    "manageLink_one": "{{count}} in {{tab}}, open manage page",
+    "manageLink_other": "{{count}} in {{tab}}, open manage page",
+    "editOrigins_one": "{{count}} allowed origin, edit",
+    "editOrigins_other": "{{count}} allowed origins, edit",
+    "rowMenu": "Actions for {{name}}"
+  },
+  "menu": {
+    "manage": "Manage",
+    "origins": "Allowed origins",
+    "disable": "Disable",
+    "enable": "Enable",
+    "delete": "Delete",
+    "restore": "Restore",
+    "erase": "Erase for good",
+    "logInAs": "Log in as admin"
+  },
+  "toast": {
+    "disable": "{{name}} is disabled. Its chat widget now shows the unavailable card.",
+    "enable": "{{name}} is active again.",
+    "delete": "{{name}} was deleted. You can restore it until it is erased.",
+    "restore": "{{name}} was restored.",
+    "erase": "{{name}} was erased."
+  },
+  "confirm": {
+    "disable": {
+      "title": "Disable {{name}}?",
+      "description": "Its staff cannot sign in and the chat widget shows an unavailable message. Nothing is lost; enable it any time.",
+      "action": "Disable"
+    },
+    "delete": {
+      "title": "Delete {{name}}?",
+      "description": "The tenant is hidden from the platform and its widget stops working. You can still restore it later.",
+      "action": "Delete"
+    },
+    "erase": {
+      "title": "Erase {{name}} for good?",
+      "description": "All of its staff, chats and settings are removed and cannot be recovered. Enter your password to confirm (demo password: chiti-demo).",
+      "action": "Erase",
+      "password": "Your password"
+    }
+  },
+  "createTenant": {
+    "title": "Create tenant",
+    "description": "The slug is built from the name plus a short random code.",
+    "name": "Organization name",
+    "nameHint": "English or Georgian. Shown in both languages until the admin edits it.",
+    "namePlaceholder": "e.g. Mtiebi Coffee",
+    "doneTitle": "Tenant created",
+    "doneBody": "{{name}} is ready.",
+    "offer": "Next, create its first admin so someone can sign in and set it up.",
+    "later": "Later",
+    "createAdmin": "Create the first admin"
+  },
+  "member": {
+    "createTitle": { "admin": "Create admin", "operator": "Create operator", "supervisor": "Create supervisor" },
+    "createDescription": "The new account can sign in right away with the username and password below.",
+    "add": { "admin": "Add admin", "operator": "Add operator", "supervisor": "Add supervisor" },
+    "tenant": "Tenant",
+    "tenantChoose": "Choose a tenant",
+    "name": "Full name",
+    "nameEn": "Name (English)",
+    "nameKa": "Name (Georgian)",
+    "nickname": "Nickname",
+    "nicknameHint": "Defaults to the first name.",
+    "email": "Email",
+    "username": "Username",
+    "password": "Password",
+    "passwordHint": "At least 6 characters.",
+    "number": "Staff number",
+    "numberHint": "3-4 digits, blank to generate.",
+    "external": "External staff",
+    "externalHint": "Works for a partner company rather than the tenant itself.",
+    "externalBadge": "External",
+    "created": "{{name}} was added as {{role}}."
+  },
+  "members": {
+    "count_one": "{{count}} member",
+    "count_other": "{{count}} members",
+    "empty": { "admin": "No admins yet", "operator": "No operators yet", "supervisor": "No supervisors yet" },
+    "emptyHint": "Add the first one with the button above.",
+    "logInAs": "Log in as",
+    "logInAsHint": "Open the console as this person, in this tab",
+    "logInBlocked": { "active": "", "disabled": "Enable the tenant first", "deleted": "Restore the tenant first" },
+    "deleteTitle": "Delete {{name}}?",
+    "deleteDescription": {
+      "admin": "This admin loses access immediately.",
+      "operator": "This operator loses access and any chats they hold go back to the queue.",
+      "supervisor": "This supervisor loses access immediately."
+    },
+    "deleted": "Member deleted",
+    "saved": "Changes saved",
+    "editing": "Editing {{name}}",
+    "newPassword": "New password",
+    "newPasswordHint": "Leave blank to keep the current one.",
+    "error": "The members could not be loaded."
+  },
+  "origins": {
+    "title": "Allowed origins",
+    "description": "Websites that may embed the chat widget of {{name}}.",
+    "label": "Origins, one per line",
+    "hint": "Full addresses such as https://www.shop.example. Up to 20.",
+    "saved_one": "Saved. {{count}} origin allowed.",
+    "saved_other": "Saved. {{count}} origins allowed."
+  },
+  "features": {
+    "description": "Channels this tenant may connect. Turning one off hides it from the tenant's integrations.",
+    "defaultOn": "On by default",
+    "defaultOff": "Off by default",
+    "enabled": "{{channel}} enabled",
+    "disabled": "{{channel}} disabled",
+    "switch": "Allow {{channel}}",
+    "locked": "This tenant is deleted. Restore it to change its channels."
+  },
+  "chats": {
+    "error": "The team chats could not be loaded.",
+    "empty": "No team conversations",
+    "emptyHint": "This tenant's staff have not used team chat yet.",
+    "readOnly": "Read-only audit. You can read these conversations but not reply.",
+    "list": "Staff conversations",
+    "thread": "Conversation messages",
+    "noMessages": "No messages yet",
+    "members_one": "{{count}} member",
+    "members_other": "{{count}} members"
+  },
+  "detail": {
+    "created": "Created {{date}}",
+    "back": "All tenants",
+    "disabledBanner": "This tenant is disabled (since {{date}}). Its staff cannot sign in and its chat widget shows the unavailable card.",
+    "deletedBanner": "This tenant was deleted on {{date}}. It is hidden from the platform until you restore it."
+  },
+  "platform": {
+    "title": "Platform integrations",
+    "description": "Which channels each tenant may use, and the platform-wide app credentials behind them.",
+    "error": "The platform settings could not be loaded.",
+    "saved": "Saved",
+    "test": "Test",
+    "testOk": "All checks passed",
+    "testFailed": "Some checks failed",
+    "grid": {
+      "title": "Channel access",
+      "description": "A switch here is the same flag as the Features tab of the tenant.",
+      "cell": "{{channel}} for {{tenant}}"
+    },
+    "meta": {
+      "title": "Meta app",
+      "description": "One app serves Messenger, Instagram and WhatsApp for every tenant.",
+      "secretSet": "Secret stored",
+      "secretMissing": "No secret",
+      "appId": "App id",
+      "appSecret": "App secret",
+      "secretHint": "Current: {{preview}}. Leave blank to keep it.",
+      "redirect": "OAuth redirect base",
+      "redirectHint": "Tenants return here after connecting a page.",
+      "loginConfig": "Login configuration id",
+      "whatsappConfig": "WhatsApp configuration id"
+    },
+    "tiktok": {
+      "title": "TikTok app",
+      "description": "Credentials for TikTok business messaging.",
+      "appId": "App id",
+      "appSecret": "App secret"
+    },
+    "webhook": {
+      "title": "Webhook",
+      "inSync": "Registered",
+      "mismatch": "Registered URL differs",
+      "notRegistered": "Not registered",
+      "expected": "Expected URL",
+      "registeredUrl": "Registered URL",
+      "none": "None",
+      "registeredAt": "Registered on",
+      "register": "Register webhooks",
+      "registered": "Webhook registered"
+    }
+  },
+  "health": {
+    "title": "System health",
+    "description": "Live server metrics, refreshed every 2 seconds while this tab is open.",
+    "error": "The health data could not be loaded.",
+    "live": "Live metrics",
+    "cpu": "CPU",
+    "memory": "Memory",
+    "storage": "Storage",
+    "ping": "Ping",
+    "netDown": "Network down",
+    "netUp": "Network up",
+    "lag": "Event-loop lag",
+    "uptime": "Uptime",
+    "load": "Load {{value}}",
+    "uptimeDays": "{{d}} d {{h}} h {{m}} min",
+    "uptimeHours": "{{h}} h {{m}} min",
+    "trends": "Trends",
+    "metric": "Metric",
+    "range": "Time range",
+    "metrics": { "cpu": "CPU", "mem": "Memory", "ping": "Ping", "lag": "Event loop", "net": "Network" },
+    "ranges": { "live": "Live", "1h": "1 h", "24h": "24 h", "7d": "7 d" },
+    "rangeNote": {
+      "live": "The last few minutes, one point every 2 seconds.",
+      "1h": "The last hour, one point per minute.",
+      "24h": "The last 24 hours, one point every 15 minutes.",
+      "7d": "The last 7 days, one point every 15 minutes."
+    },
+    "chartLabel": "{{metric}} over {{range}}",
+    "retention": {
+      "title": "Log retention",
+      "description": "How long health samples are kept before they are dropped.",
+      "months_one": "{{count}} month",
+      "months_other": "{{count}} months",
+      "saved_one": "Health samples are kept for {{count}} month.",
+      "saved_other": "Health samples are kept for {{count}} months."
+    }
+  },
+  "ai": {
+    "title": "AI platform key",
+    "description": "The one key the AI assistant and copilot use for every tenant.",
+    "error": "The AI key settings could not be loaded.",
+    "saved": "AI key settings saved",
+    "test": "Test",
+    "testOk": "The AI service is healthy",
+    "testFailed": "Some checks failed",
+    "source": { "db": "Stored in database", "env": "From server environment", "none": "No key" },
+    "key": {
+      "title": "API key",
+      "id": "Key id",
+      "preview": "Key preview",
+      "new": "New key",
+      "newHint": "Leave blank to keep the current key and only change the base URL.",
+      "newHintNone": "Paste the key issued for the platform."
+    },
+    "baseUrl": {
+      "label": "Base URL",
+      "useSuggested": "Use suggested",
+      "hint": "Suggested: {{url}}"
+    },
+    "remove": {
+      "action": "Remove key",
+      "title": "Remove the AI key?",
+      "description": "The assistant and copilot stop answering for every tenant until a new key is saved.",
+      "done": "AI key removed"
+    },
+    "mapped": {
+      "title": "Mapped tenants",
+      "description": "Tenants linked to the AI service with their client id.",
+      "empty": "No tenant is mapped yet."
+    },
+    "bot": {
+      "title": "Bot-enabled tenants",
+      "description": "Tenants whose chat starts with the AI assistant.",
+      "empty": "No tenant uses the bot."
+    }
+  },
+  "checks": {
+    "passed": "Passed",
+    "failed": "Failed",
+    "platform": {
+      "appId": { "label": "App id", "ok": "An app id is saved.", "fail": "No app id is saved." },
+      "appSecret": { "label": "App secret", "ok": "A secret is stored.", "fail": "No secret is stored." },
+      "redirect": { "label": "OAuth redirect", "ok": "{{value}} is a valid HTTPS address.", "fail": "The redirect base must be an HTTPS address." },
+      "loginConfig": { "label": "Login configuration", "ok": "A login configuration id is set.", "fail": "No login configuration id is set." },
+      "whatsappConfig": { "label": "WhatsApp configuration", "ok": "A WhatsApp configuration id is set.", "fail": "No WhatsApp configuration id is set." },
+      "graph": { "label": "Graph API", "ok": "Reached the Graph API in {{value}} ms.", "fail": "The app could not authenticate with the Graph API." },
+      "webhookRegistered": { "label": "Webhook registered", "ok": "A webhook is registered.", "fail": "No webhook is registered yet." },
+      "webhookMatches": { "label": "Webhook address", "ok": "The registered address matches the expected one.", "fail": "The registered address differs from the expected one." }
+    },
+    "ai": {
+      "health": { "label": "Service health", "ok": "The AI service answered in {{value}} ms.", "fail": "The AI service did not answer." },
+      "config": { "label": "Configuration", "ok": "Key accepted at {{value}}.", "fail": "No key is configured." },
+      "autopilot": { "label": "Autopilot", "ok": "Autopilot is ready for {{value}} mapped tenants.", "fail": "No tenant is mapped to the AI service." },
+      "languages": { "label": "Languages", "ok": "Supported: {{value}}.", "fail": "Languages could not be read." },
+      "scopes": { "label": "Scopes", "ok": "Key scopes: {{value}}.", "fail": "Key scopes could not be read." }
+    }
+  },
+  "errors": {
+    "forbidden": "Only the super admin can do that.",
+    "generic": "Something went wrong. Please try again.",
+    "no_admin": "This tenant has no admin to log in as. Create one first.",
+    "tenant_deleted": "This tenant is deleted. Restore it first.",
+    "tenant_disabled": "This tenant is disabled. Enable it first.",
+    "invalid_state": "The tenant is not in a state where that action applies.",
+    "not_deleted": "Only a deleted tenant can be erased.",
+    "cannot_erase_demo_tenant": "This tenant powers the demo account switcher and cannot be erased. Create another tenant to try erasing.",
+    "cannot_delete_demo_account": "This account powers the demo account switcher and cannot be removed. Create a new one to try deleting.",
+    "tiktok_not_configured": "Save the TikTok app id and secret first.",
+    "env_key": "This key comes from the server environment and cannot be removed here.",
+    "field": {
+      "required": "Required",
+      "name_short": "Enter a name of at least 2 characters.",
+      "name_long": "The name is too long (60 characters at most).",
+      "tenant_required": "Choose a tenant.",
+      "nickname_long": "The nickname is too long (30 characters at most).",
+      "email_invalid": "Enter a valid email address.",
+      "email_taken": "This email is already used.",
+      "username_invalid": "3-32 characters: letters, digits, dot, dash or underscore.",
+      "username_taken": "This username is already used.",
+      "password_short": "The password needs at least 6 characters.",
+      "password_required": "Enter your password.",
+      "password_wrong": "That password is not correct.",
+      "number_invalid": "Use 3 or 4 digits.",
+      "number_taken": "This number is already used in the tenant.",
+      "language_invalid": "Choose a valid language.",
+      "role_invalid": "Choose a valid role.",
+      "origin_invalid": "\"{{value}}\" is not a valid web address.",
+      "origin_limit": "At most 20 origins.",
+      "url_invalid": "Enter a full web address starting with https://.",
+      "secret_short": "The secret needs at least 8 characters.",
+      "key_invalid": "The key looks too short or contains spaces.",
+      "key_required": "Paste a key to get started.",
+      "months_invalid": "Choose between 1 and 36 months."
+    }
+  }
+}

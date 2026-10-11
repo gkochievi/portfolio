@@ -1,0 +1,160 @@
+{
+  "pages": {
+    "SupervisorWallPage": "Supervisor wall"
+  },
+  "header": {
+    "eyebrow": "Ezo Contact Centre · live floor",
+    "live": "Live",
+    "description": "Agents, calls and dialer pacing, refreshed every 5 seconds.",
+    "updated": "Refreshed every 5 seconds · last update {{time}}",
+    "wallMode": "Wall mode",
+    "wallModeHint": "Keep the wall dark. Turn off to follow the app theme."
+  },
+  "errors": {
+    "load": "This panel could not be loaded"
+  },
+  "kpi": {
+    "activeCalls": "Active calls",
+    "onCallHint": "Agents on a call: {{count}}",
+    "agentsWorking": "Agents working",
+    "offlineHint": "Offline: {{count}}",
+    "agentsPaused": "Agents paused",
+    "callsThisHour": "Calls this hour",
+    "avgWait": "Avg wait",
+    "seconds": "{{value}}s",
+    "avgWaitHint": "Customer wait before an agent picks up",
+    "dialedToday": "Dialed today",
+    "connectedToday": "Connected today",
+    "answerShare": "{{value}} of dialed",
+    "abandonRate": "Abandon %",
+    "target": "Target {{value}}"
+  },
+  "agents": {
+    "title": "Agents",
+    "description": "Live status of every active operator.",
+    "summary": {
+      "working": "Working {{count}}",
+      "paused": "Paused {{count}}",
+      "onCall": "On call {{count}}"
+    },
+    "filterLabel": "Filter agents by status",
+    "filter": {
+      "all": "All · {{count}}",
+      "onCall": "On call · {{count}}",
+      "working": "Ready · {{count}}",
+      "paused": "Paused · {{count}}",
+      "offline": "Offline · {{count}}"
+    },
+    "empty": "No agents in this group",
+    "emptyHint": "Pick another status filter to see the rest of the floor.",
+    "timeInStatus": "Time in status",
+    "noCampaign": "No campaign",
+    "ext": "ext {{ext}}",
+    "noExt": "No extension",
+    "overtime": "Overtime",
+    "ringing": "Ringing",
+    "onHold": "On hold",
+    "onCallBox": "On call",
+    "unknownCustomer": "Unknown customer",
+    "hold": "hold {{time}}"
+  },
+  "progress": {
+    "title": "Campaign progress",
+    "description": "Dialed share of the list and how calls are converting.",
+    "select": "Campaign",
+    "empty": "No running campaigns",
+    "emptyHint": "Active and paused campaigns show up here.",
+    "dialedOf": "{{dialed}} of {{total}} numbers dialed",
+    "total": "Total",
+    "dialed": "Dialed",
+    "connected": "Connected",
+    "pending": "Pending",
+    "answerRate": "Answer rate",
+    "conversionRate": "Conversion rate",
+    "footnote": "Sales {{sales}} · callbacks scheduled {{callbacks}} · do not call {{dnc}}"
+  },
+  "hourly": {
+    "title": "Calls by hour",
+    "description": "Dialed and connected calls over the last 9 hours.",
+    "dialed": "Dialed",
+    "connected": "Connected",
+    "empty": "No calls in the last 9 hours",
+    "emptyHint": "The chart fills in as calls are placed.",
+    "aria": "Line chart of dialed and connected calls per hour, {{total}} calls in total"
+  },
+  "feed": {
+    "title": "Live call activity",
+    "description": "The latest 50 call events across the floor.",
+    "answered5": "Answered {{count}} · 5 min",
+    "ended5": "Ended {{count}} · 5 min",
+    "empty": "No call activity yet",
+    "emptyHint": "Events appear here as soon as agents start dialing.",
+    "noAgent": "Auto-dialer, no agent",
+    "events": {
+      "ringing": "Ringing",
+      "answered": "Answered",
+      "ended": "Ended",
+      "hold": "On hold",
+      "unhold": "Resumed",
+      "no_answer": "No answer",
+      "busy": "Busy",
+      "abandoned": "Abandoned"
+    },
+    "cause": {
+      "16": "Normal clearing",
+      "17": "User busy",
+      "19": "No answer",
+      "21": "Call rejected",
+      "34": "No circuit available"
+    }
+  },
+  "dialer": {
+    "title": "Auto-dialer pacing",
+    "description": "Target calls = available agents × dial ratio, capped by max concurrent calls. Five errors in a row pause a campaign for 30 seconds.",
+    "engineOn": "Engine running",
+    "engineOff": "Engine stopped",
+    "start": "Start dialer",
+    "stop": "Stop dialer",
+    "empty": "No AUTO campaigns",
+    "emptyHint": "Switch an active campaign to AUTO dialing to see its pacing here.",
+    "comingSoon": "Coming soon",
+    "predictiveNote": "Predictive pacing is not available yet, so this campaign is not dialed automatically.",
+    "state": {
+      "backoff": "Backing off {{time}}",
+      "campaignPaused": "Campaign paused",
+      "engineOff": "Engine stopped",
+      "noAgents": "Waiting for agents",
+      "dialing": "Dialing"
+    },
+    "stats": {
+      "available": "Available agents",
+      "ratio": "Dial ratio",
+      "target": "Target",
+      "inFlight": "In flight / max",
+      "errors": "Errors in a row",
+      "interval": "Dial interval",
+      "lastDial": "Last dial",
+      "session": "Dialed this session"
+    },
+    "ms": "{{value}} ms",
+    "never": "Never",
+    "trigger": "Trigger cycle",
+    "triggerHint": "Place every call the pacing allows right now",
+    "triggerDisabled": "Start the campaign to dial it",
+    "reset": "Reset",
+    "fail": "Simulate error",
+    "failHint": "Originates fail for 10 seconds. Five in a row start the 30 second backoff.",
+    "abandon": "Abandon rate today",
+    "abandonTarget": "target {{value}}",
+    "toast": {
+      "started": "Auto-dialer started",
+      "stopped": "Auto-dialer stopped",
+      "triggered": "Dial cycle placed {{count}} calls",
+      "nothing": "Nothing to dial right now",
+      "nothingHint": "The pacing target is already reached or no agent is free.",
+      "reset": "Errors and backoff cleared",
+      "failed": "Originate error recorded",
+      "failedHint": "Calls fail for 10 seconds. Watch the error counter reach the backoff."
+    }
+  }
+}

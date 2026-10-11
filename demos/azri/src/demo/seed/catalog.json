@@ -1,0 +1,784 @@
+{
+  "tenants": [
+    {
+      "id": "t_nergi",
+      "name": {
+        "en": "Nergi Bank",
+        "ka": "ნერგი ბანკი"
+      },
+      "monogram": "NB",
+      "industry": "bank",
+      "copyrightName": "Nergi Bank JSC",
+      "smsSender": "NERGIBANK",
+      "primary": "#1F6B4F",
+      "onPrimary": "#FFFFFF",
+      "tint": "#E3F1EA",
+      "primaryDark": "#7FD3AE"
+    },
+    {
+      "id": "t_elva",
+      "name": {
+        "en": "Elva Telecom",
+        "ka": "ელვა ტელეკომი"
+      },
+      "monogram": "ET",
+      "industry": "telecom",
+      "copyrightName": "Elva Telecom LLC",
+      "smsSender": "ELVA",
+      "primary": "#2B47C2",
+      "onPrimary": "#FFFFFF",
+      "tint": "#E4E9FB",
+      "primaryDark": "#9DB0F5"
+    },
+    {
+      "id": "t_borbali",
+      "name": {
+        "en": "Borbali Auto Service",
+        "ka": "ბორბალი ავტოსერვისი"
+      },
+      "monogram": "BA",
+      "industry": "auto",
+      "copyrightName": "Borbali Auto Service LLC",
+      "smsSender": "BORBALI",
+      "primary": "#3B4652",
+      "onPrimary": "#FFFFFF",
+      "tint": "#E6EAEE",
+      "primaryDark": "#B7C3CF"
+    },
+    {
+      "id": "t_kalakuri",
+      "name": {
+        "en": "Kalakuri Clinic",
+        "ka": "ქალაქური კლინიკა"
+      },
+      "monogram": "KC",
+      "industry": "clinic",
+      "copyrightName": "Kalakuri Clinic LLC",
+      "smsSender": "KALAKURI",
+      "primary": "#0E6B73",
+      "onPrimary": "#FFFFFF",
+      "tint": "#DDF1F2",
+      "primaryDark": "#7BD0D6"
+    },
+    {
+      "id": "t_puri",
+      "name": {
+        "en": "Puri da Chai",
+        "ka": "პური და ჩაი"
+      },
+      "monogram": "PC",
+      "industry": "cafe",
+      "copyrightName": "Puri da Chai LLC",
+      "smsSender": "PURIDACHAI",
+      "primary": "#7A5A00",
+      "onPrimary": "#FFFFFF",
+      "tint": "#F5ECD3",
+      "primaryDark": "#E9C467"
+    }
+  ],
+  "branches": [
+    {
+      "id": "br_nergi_vake",
+      "tenantId": "t_nergi",
+      "name": {
+        "en": "Vake",
+        "ka": "ვაკე"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    },
+    {
+      "id": "br_nergi_saburtalo",
+      "tenantId": "t_nergi",
+      "name": {
+        "en": "Saburtalo",
+        "ka": "საბურთალო"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    },
+    {
+      "id": "br_nergi_batumi",
+      "tenantId": "t_nergi",
+      "name": {
+        "en": "Old Boulevard",
+        "ka": "ძველი ბულვარი"
+      },
+      "city": {
+        "en": "Batumi",
+        "ka": "ბათუმი"
+      }
+    },
+    {
+      "id": "br_elva_cc",
+      "tenantId": "t_elva",
+      "name": {
+        "en": "Contact centre",
+        "ka": "საკონტაქტო ცენტრი"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    },
+    {
+      "id": "br_elva_didube",
+      "tenantId": "t_elva",
+      "name": {
+        "en": "Didube shop",
+        "ka": "დიდუბის მაღაზია"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    },
+    {
+      "id": "br_elva_isani",
+      "tenantId": "t_elva",
+      "name": {
+        "en": "Isani shop",
+        "ka": "ისნის მაღაზია"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    },
+    {
+      "id": "br_borbali_digomi",
+      "tenantId": "t_borbali",
+      "name": {
+        "en": "Digomi workshop",
+        "ka": "დიღმის სახელოსნო"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    },
+    {
+      "id": "br_kalakuri_main",
+      "tenantId": "t_kalakuri",
+      "name": {
+        "en": "Reception desk",
+        "ka": "რეგისტრატურა"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    },
+    {
+      "id": "br_puri_vera",
+      "tenantId": "t_puri",
+      "name": {
+        "en": "Vera",
+        "ka": "ვერა"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    },
+    {
+      "id": "br_puri_sololaki",
+      "tenantId": "t_puri",
+      "name": {
+        "en": "Sololaki",
+        "ka": "სოლოლაკი"
+      },
+      "city": {
+        "en": "Tbilisi",
+        "ka": "თბილისი"
+      }
+    }
+  ],
+  "staff": [
+    {
+      "id": "stf_levan",
+      "tenantId": "t_nergi",
+      "branchId": "br_nergi_vake",
+      "name": {
+        "en": "Levan Japaridze",
+        "ka": "ლევან ჯაფარიძე"
+      },
+      "title": {
+        "en": "Loan officer",
+        "ka": "საკრედიტო ოფიცერი"
+      },
+      "accountId": "acc_levan"
+    },
+    {
+      "id": "stf_teona",
+      "tenantId": "t_nergi",
+      "branchId": "br_nergi_vake",
+      "name": {
+        "en": "Teona Abuladze",
+        "ka": "თეონა აბულაძე"
+      },
+      "title": {
+        "en": "Customer advisor",
+        "ka": "მომხმარებელთა კონსულტანტი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_rusudan",
+      "tenantId": "t_nergi",
+      "branchId": "br_nergi_vake",
+      "name": {
+        "en": "Rusudan Kobakhidze",
+        "ka": "რუსუდან კობახიძე"
+      },
+      "title": {
+        "en": "Teller",
+        "ka": "ოპერაციონისტი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_ana",
+      "tenantId": "t_nergi",
+      "branchId": "br_nergi_saburtalo",
+      "name": {
+        "en": "Ana Tsiklauri",
+        "ka": "ანა წიკლაური"
+      },
+      "title": {
+        "en": "Customer advisor",
+        "ka": "მომხმარებელთა კონსულტანტი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_otar",
+      "tenantId": "t_nergi",
+      "branchId": "br_nergi_saburtalo",
+      "name": {
+        "en": "Otar Lobzhanidze",
+        "ka": "ოთარ ლობჟანიძე"
+      },
+      "title": {
+        "en": "Loan officer",
+        "ka": "საკრედიტო ოფიცერი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_ketevan",
+      "tenantId": "t_nergi",
+      "branchId": "br_nergi_batumi",
+      "name": {
+        "en": "Ketevan Dolidze",
+        "ka": "ქეთევან დოლიძე"
+      },
+      "title": {
+        "en": "Senior advisor",
+        "ka": "უფროსი კონსულტანტი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_natia",
+      "tenantId": "t_elva",
+      "branchId": "br_elva_cc",
+      "name": {
+        "en": "Natia Gvaramia",
+        "ka": "ნათია გვარამია"
+      },
+      "title": {
+        "en": "Contact-centre operator",
+        "ka": "საკონტაქტო ცენტრის ოპერატორი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_zurab",
+      "tenantId": "t_elva",
+      "branchId": "br_elva_cc",
+      "name": {
+        "en": "Zurab Kiknadze",
+        "ka": "ზურაბ კიკნაძე"
+      },
+      "title": {
+        "en": "Contact-centre operator",
+        "ka": "საკონტაქტო ცენტრის ოპერატორი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_davit",
+      "tenantId": "t_elva",
+      "branchId": "br_elva_didube",
+      "name": {
+        "en": "Davit Kapanadze",
+        "ka": "დავით კაპანაძე"
+      },
+      "title": {
+        "en": "Sales consultant",
+        "ka": "გაყიდვების კონსულტანტი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_lika",
+      "tenantId": "t_elva",
+      "branchId": "br_elva_didube",
+      "name": {
+        "en": "Lika Nadiradze",
+        "ka": "ლიკა ნადირაძე"
+      },
+      "title": {
+        "en": "Sales consultant",
+        "ka": "გაყიდვების კონსულტანტი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_giorgi",
+      "tenantId": "t_elva",
+      "branchId": "br_elva_isani",
+      "name": {
+        "en": "Giorgi Maisuradze",
+        "ka": "გიორგი მაისურაძე"
+      },
+      "title": {
+        "en": "Sales consultant",
+        "ka": "გაყიდვების კონსულტანტი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_sandro",
+      "tenantId": "t_borbali",
+      "branchId": "br_borbali_digomi",
+      "name": {
+        "en": "Sandro Chikovani",
+        "ka": "სანდრო ჩიქოვანი"
+      },
+      "title": {
+        "en": "Service advisor",
+        "ka": "სერვის-კონსულტანტი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_salome",
+      "tenantId": "t_kalakuri",
+      "branchId": "br_kalakuri_main",
+      "name": {
+        "en": "Salome Gogoladze",
+        "ka": "სალომე გოგოლაძე"
+      },
+      "title": {
+        "en": "Receptionist",
+        "ka": "რეგისტრატორი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_maka",
+      "tenantId": "t_kalakuri",
+      "branchId": "br_kalakuri_main",
+      "name": {
+        "en": "Maka Svanidze",
+        "ka": "მაკა სვანიძე"
+      },
+      "title": {
+        "en": "Receptionist",
+        "ka": "რეგისტრატორი"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_elene",
+      "tenantId": "t_puri",
+      "branchId": "br_puri_vera",
+      "name": {
+        "en": "Elene Tabatadze",
+        "ka": "ელენე ტაბატაძე"
+      },
+      "title": {
+        "en": "Barista",
+        "ka": "ბარისტა"
+      },
+      "accountId": null
+    },
+    {
+      "id": "stf_beka",
+      "tenantId": "t_puri",
+      "branchId": "br_puri_sololaki",
+      "name": {
+        "en": "Beka Mchedlishvili",
+        "ka": "ბექა მჭედლიშვილი"
+      },
+      "title": {
+        "en": "Shift lead",
+        "ka": "ცვლის უფროსი"
+      },
+      "accountId": null
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "cmp_nergi_visit",
+      "tenantId": "t_nergi",
+      "title": {
+        "en": "How was your branch visit?",
+        "ka": "როგორ შეაფასებდით ფილიალში ვიზიტს?"
+      },
+      "description": {
+        "en": "You visited one of our branches recently. Four short questions help us serve you better.",
+        "ka": "ცოტა ხნის წინ ეწვიეთ ჩვენს ფილიალს. გაგვიზიარეთ თქვენი აზრი: ოთხი მოკლე კითხვა დაგვეხმარება, უკეთ მოგემსახუროთ."
+      },
+      "createdAt": "2026-03-02T08:00:00Z",
+      "linkTtlDays": 7,
+      "touchpoint": {
+        "en": "Branch visit",
+        "ka": "ვიზიტი ფილიალში"
+      }
+    },
+    {
+      "id": "cmp_elva_shop",
+      "tenantId": "t_elva",
+      "title": {
+        "en": "How was your visit to our shop?",
+        "ka": "როგორ შეაფასებდით ჩვენს მაღაზიაში ვიზიტს?"
+      },
+      "description": {
+        "en": "Thanks for stopping by. Tell us how our team helped you today.",
+        "ka": "გმადლობთ, რომ გვესტუმრეთ. გაგვიზიარეთ თქვენი აზრი ჩვენი გუნდის მომსახურებაზე."
+      },
+      "createdAt": "2026-04-14T07:30:00Z",
+      "linkTtlDays": 7,
+      "touchpoint": {
+        "en": "Shop visit",
+        "ka": "ვიზიტი მაღაზიაში"
+      }
+    },
+    {
+      "id": "cmp_elva_call",
+      "tenantId": "t_elva",
+      "title": {
+        "en": "How did our call go?",
+        "ka": "როგორ შეაფასებდით ჩვენთან საუბარს?"
+      },
+      "description": {
+        "en": "You called our contact centre. Three questions, thirty seconds.",
+        "ka": "თქვენ დაუკავშირდით ჩვენს საკონტაქტო ცენტრს. სამი კითხვა, ოცდაათი წამი."
+      },
+      "createdAt": "2026-05-06T10:15:00Z",
+      "linkTtlDays": 7,
+      "touchpoint": {
+        "en": "Contact-centre call",
+        "ka": "ზარი საკონტაქტო ცენტრში"
+      }
+    },
+    {
+      "id": "cmp_borbali_service",
+      "tenantId": "t_borbali",
+      "title": {
+        "en": "How did we look after your car?",
+        "ka": "როგორ მოვუარეთ თქვენს ავტომობილს?"
+      },
+      "description": {
+        "en": "Your car has left our workshop. Rate the work and how well we kept our word.",
+        "ka": "თქვენი ავტომობილი უკვე გამოვიდა ჩვენი სახელოსნოდან. შეაფასეთ შესრულებული სამუშაო და რამდენად შევასრულეთ დანაპირები."
+      },
+      "createdAt": "2026-06-01T06:45:00Z",
+      "linkTtlDays": 7,
+      "touchpoint": {
+        "en": "Car service",
+        "ka": "ავტომობილის მომსახურება"
+      }
+    },
+    {
+      "id": "cmp_kalakuri_visit",
+      "tenantId": "t_kalakuri",
+      "title": {
+        "en": "How was your check-in at the clinic?",
+        "ka": "როგორ შეაფასებდით რეგისტრატურის მომსახურებას?"
+      },
+      "description": {
+        "en": "You visited our clinic today. Tell us about your welcome at the reception desk.",
+        "ka": "დღეს ეწვიეთ ჩვენს კლინიკას. გაგვიზიარეთ თქვენი აზრი რეგისტრატურაში მიღებაზე."
+      },
+      "createdAt": "2026-05-20T09:00:00Z",
+      "linkTtlDays": 7,
+      "touchpoint": {
+        "en": "Clinic reception",
+        "ka": "კლინიკის რეგისტრატურა"
+      }
+    },
+    {
+      "id": "cmp_puri_visit",
+      "tenantId": "t_puri",
+      "title": {
+        "en": "How was your visit?",
+        "ka": "როგორი იყო თქვენი ვიზიტი?"
+      },
+      "description": {
+        "en": "Thanks for dropping in. Four quick questions about your order and our team.",
+        "ka": "გმადლობთ, რომ გვესტუმრეთ. ოთხი მოკლე კითხვა თქვენს შეკვეთასა და ჩვენს გუნდზე."
+      },
+      "createdAt": "2026-07-08T05:30:00Z",
+      "linkTtlDays": 3,
+      "touchpoint": {
+        "en": "Café visit",
+        "ka": "ვიზიტი კაფეში"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": 1101,
+      "campaignId": "cmp_nergi_visit",
+      "order": 1,
+      "text": {
+        "en": "How courteous was the staff member who served you?",
+        "ka": "რამდენად თავაზიანი იყო თანამშრომელი, რომელმაც მოგემსახურათ?"
+      }
+    },
+    {
+      "id": 1102,
+      "campaignId": "cmp_nergi_visit",
+      "order": 2,
+      "text": {
+        "en": "How satisfied are you with the waiting time?",
+        "ka": "რამდენად კმაყოფილი ხართ ლოდინის დროით?"
+      }
+    },
+    {
+      "id": 1103,
+      "campaignId": "cmp_nergi_visit",
+      "order": 3,
+      "text": {
+        "en": "How clearly were the loan terms explained to you?",
+        "ka": "რამდენად გასაგებად აგიხსნეს სესხის პირობები?"
+      }
+    },
+    {
+      "id": 1104,
+      "campaignId": "cmp_nergi_visit",
+      "order": 4,
+      "text": {
+        "en": "How likely are you to recommend Nergi Bank to a friend?",
+        "ka": "რამდენად სავარაუდოა, რომ ნერგი ბანკს მეგობარს ურჩიოთ?"
+      }
+    },
+    {
+      "id": 1201,
+      "campaignId": "cmp_elva_shop",
+      "order": 1,
+      "text": {
+        "en": "How well did we help you find the right plan?",
+        "ka": "რამდენად დაგეხმარეთ თქვენთვის შესაფერისი ტარიფის შერჩევაში?"
+      }
+    },
+    {
+      "id": 1202,
+      "campaignId": "cmp_elva_shop",
+      "order": 2,
+      "text": {
+        "en": "How satisfied are you with the waiting time in the shop?",
+        "ka": "რამდენად კმაყოფილი ხართ მაღაზიაში ლოდინის დროით?"
+      }
+    },
+    {
+      "id": 1203,
+      "campaignId": "cmp_elva_shop",
+      "order": 3,
+      "text": {
+        "en": "How knowledgeable was our consultant?",
+        "ka": "რამდენად კომპეტენტური იყო ჩვენი კონსულტანტი?"
+      }
+    },
+    {
+      "id": 1211,
+      "campaignId": "cmp_elva_call",
+      "order": 1,
+      "text": {
+        "en": "How fully was your issue resolved?",
+        "ka": "რამდენად სრულად მოგვარდა თქვენი საკითხი?"
+      }
+    },
+    {
+      "id": 1212,
+      "campaignId": "cmp_elva_call",
+      "order": 2,
+      "text": {
+        "en": "How quickly did you reach an operator?",
+        "ka": "რამდენად სწრაფად შეძელით ოპერატორთან დაკავშირება?"
+      }
+    },
+    {
+      "id": 1213,
+      "campaignId": "cmp_elva_call",
+      "order": 3,
+      "text": {
+        "en": "How courteous was the operator?",
+        "ka": "რამდენად თავაზიანი იყო ოპერატორი?"
+      }
+    },
+    {
+      "id": 1301,
+      "campaignId": "cmp_borbali_service",
+      "order": 1,
+      "text": {
+        "en": "How closely did the work match what we agreed?",
+        "ka": "რამდენად შეესაბამებოდა შესრულებული სამუშაო შეთანხმებას?"
+      }
+    },
+    {
+      "id": 1302,
+      "campaignId": "cmp_borbali_service",
+      "order": 2,
+      "text": {
+        "en": "How well did we keep to the promised ready time?",
+        "ka": "რამდენად დროულად იყო თქვენი ავტომობილი მზად?"
+      }
+    },
+    {
+      "id": 1303,
+      "campaignId": "cmp_borbali_service",
+      "order": 3,
+      "text": {
+        "en": "How closely did the final price match the estimate?",
+        "ka": "რამდენად შეესაბამებოდა საბოლოო ფასი წინასწარ შეფასებას?"
+      }
+    },
+    {
+      "id": 1304,
+      "campaignId": "cmp_borbali_service",
+      "order": 4,
+      "text": {
+        "en": "How clean was your car when we returned it?",
+        "ka": "რამდენად სუფთა დაგიბრუნდათ ავტომობილი?"
+      }
+    },
+    {
+      "id": 1401,
+      "campaignId": "cmp_kalakuri_visit",
+      "order": 1,
+      "text": {
+        "en": "How quick was your registration?",
+        "ka": "რამდენად სწრაფად გაიარეთ რეგისტრაცია?"
+      }
+    },
+    {
+      "id": 1402,
+      "campaignId": "cmp_kalakuri_visit",
+      "order": 2,
+      "text": {
+        "en": "How courteous was the receptionist?",
+        "ka": "რამდენად თავაზიანი იყო რეგისტრატორი?"
+      }
+    },
+    {
+      "id": 1403,
+      "campaignId": "cmp_kalakuri_visit",
+      "order": 3,
+      "text": {
+        "en": "How clean and comfortable was the waiting area?",
+        "ka": "რამდენად სუფთა და კომფორტული იყო მოსაცდელი სივრცე?"
+      }
+    },
+    {
+      "id": 1501,
+      "campaignId": "cmp_puri_visit",
+      "order": 1,
+      "text": {
+        "en": "How quick was the service?",
+        "ka": "რამდენად სწრაფი იყო მომსახურება?"
+      }
+    },
+    {
+      "id": 1502,
+      "campaignId": "cmp_puri_visit",
+      "order": 2,
+      "text": {
+        "en": "How friendly was our team?",
+        "ka": "რამდენად მეგობრული იყო ჩვენი გუნდი?"
+      }
+    },
+    {
+      "id": 1503,
+      "campaignId": "cmp_puri_visit",
+      "order": 3,
+      "text": {
+        "en": "How did you like the food and drinks?",
+        "ka": "როგორ მოგეწონათ საჭმელი და სასმელი?"
+      }
+    },
+    {
+      "id": 1504,
+      "campaignId": "cmp_puri_visit",
+      "order": 4,
+      "text": {
+        "en": "How clean was the café?",
+        "ka": "რამდენად სუფთა იყო კაფე?"
+      }
+    }
+  ],
+  "recipients": [
+    {
+      "id": "rcp_mariam",
+      "name": {
+        "en": "Mariam Lomidze",
+        "ka": "მარიამ ლომიძე"
+      },
+      "phoneMasked": "+995 5•• ••• 451",
+      "avatarColor": "#9EE6C6"
+    },
+    {
+      "id": "rcp_eka",
+      "name": {
+        "en": "Eka Beridze",
+        "ka": "ეკა ბერიძე"
+      },
+      "phoneMasked": "+995 5•• ••• 214",
+      "avatarColor": "#E2A3D2"
+    },
+    {
+      "id": "rcp_giorgi",
+      "name": {
+        "en": "Giorgi Mikadze",
+        "ka": "გიორგი მიქაძე"
+      },
+      "phoneMasked": "+995 5•• ••• 387",
+      "avatarColor": "#7FB2F0"
+    },
+    {
+      "id": "rcp_irakli",
+      "name": {
+        "en": "Irakli Abashidze",
+        "ka": "ირაკლი აბაშიძე"
+      },
+      "phoneMasked": "+995 5•• ••• 509",
+      "avatarColor": "#F5B83D"
+    },
+    {
+      "id": "rcp_tamar",
+      "name": {
+        "en": "Tamar Khutsishvili",
+        "ka": "თამარ ხუციშვილი"
+      },
+      "phoneMasked": "+995 5•• ••• 623",
+      "avatarColor": "#B7C3CF"
+    },
+    {
+      "id": "rcp_luka",
+      "name": {
+        "en": "Luka Meladze",
+        "ka": "ლუკა მელაძე"
+      },
+      "phoneMasked": "+995 5•• ••• 778",
+      "avatarColor": "#E9C467"
+    }
+  ]
+}

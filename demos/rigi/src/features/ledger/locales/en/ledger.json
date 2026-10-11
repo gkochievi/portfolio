@@ -1,0 +1,162 @@
+{
+  "account": {
+    "eyebrow": "Your account",
+    "title": "Licenses & users",
+    "description": "The seats you hold, who is using them and what they cost each month. Read-only: changes go through your account manager.",
+    "kpi": {
+      "activeUsers": "Active users",
+      "licensedHint_one": "{{count}} has a license",
+      "licensedHint_other": "{{count}} have a license",
+      "licenseTypes": "License types in use",
+      "licenseTypesHint": "Seats you hold or assign",
+      "monthlyCost": "Recurring monthly cost",
+      "monthlyCostHint": "Seats × unit price, before VAT"
+    },
+    "licenses": {
+      "title": "Licenses",
+      "description": "Unit prices include any rate agreed for your account.",
+      "license": "License",
+      "code": "Code",
+      "unitPrice": "Unit price",
+      "seats": "Seats",
+      "users": "Users",
+      "addon": "Add-on",
+      "monthlyCost": "Monthly cost",
+      "total": "Total per month",
+      "empty": "No licenses on this account yet"
+    },
+    "roster": {
+      "title": "Users",
+      "description": "Call-centre users synced from your system.",
+      "search": "Search users",
+      "username": "Username",
+      "fullName": "Full name",
+      "role": "Role",
+      "status": "Status",
+      "license": "License",
+      "unassigned": "Unassigned",
+      "cost": "Monthly cost",
+      "empty": "No active users have been synced yet"
+    }
+  },
+  "invoices": {
+    "eyebrow": "Billing",
+    "title": "Invoices",
+    "description": "Every invoice we have issued to you. Open one to see its lines, download a PDF or raise a dispute.",
+    "number": "Number",
+    "period": "Period",
+    "issued": "Issued",
+    "due": "Due",
+    "total": "Total",
+    "inclVat": "incl. VAT",
+    "plusVat": "excl. VAT",
+    "empty": "No invoices yet",
+    "emptyDescription": "Invoices appear here as soon as they are issued."
+  },
+  "invoice": {
+    "eyebrow": "Invoice",
+    "title": "Invoice",
+    "back": "Invoices",
+    "notFound": "Invoice not found",
+    "notFoundDescription": "It may not be issued yet, or it belongs to another account.",
+    "pdfFailed": "Could not prepare the PDF. Try again.",
+    "downloadPdf": "Download PDF",
+    "billedTo": "Billed to",
+    "paidOn": "Paid",
+    "subtotal": "Subtotal",
+    "tax": "VAT ({{rate}})",
+    "total": "Total",
+    "notes": "Notes",
+    "lines": {
+      "description": "Description",
+      "kind": "Type",
+      "amount": "Amount",
+      "empty": "This invoice has no lines"
+    },
+    "dispute": {
+      "open": "Dispute invoice",
+      "edit": "Edit dispute",
+      "title": "Dispute this invoice",
+      "editTitle": "Edit your dispute",
+      "description": "Tell us what looks wrong on {{number}}. The invoice stays as it is while our accountant reviews it.",
+      "reason": "What is wrong?",
+      "placeholder": "For example: two users on the Agent license left in the first week of the month.",
+      "count": "{{count}} / {{max}}",
+      "submit": "Send dispute",
+      "sent": "Dispute sent to the accountant",
+      "updated": "Dispute updated",
+      "tooShort": "Please write at least {{min}} characters.",
+      "tooLong": "Keep it under {{max}} characters.",
+      "notAllowed": "This invoice can no longer be disputed.",
+      "activeTitle": "This invoice is disputed",
+      "activeBody": "Our accountant has been notified. You can refine your note until it is settled.",
+      "closedTitle": "Your earlier dispute note"
+    }
+  },
+  "points": {
+    "eyebrow": "Support points",
+    "title": "Points meter",
+    "description": "Support work is priced in points. Each month starts with a free allowance; anything beyond it is billed at your rate.",
+    "meter": {
+      "allowance": "Free allowance",
+      "allowanceHint": "Included every month",
+      "freeUsed": "Free used",
+      "remaining": "Remaining",
+      "resets": "Resets on",
+      "billable": "Billable this month"
+    },
+    "chart": {
+      "title": "Last 12 months",
+      "description": "Points used each month, free versus billable.",
+      "aria": "Bar chart of points used per month over the last twelve months",
+      "free": "Free",
+      "billable": "Billable",
+      "allowance": "Monthly allowance"
+    },
+    "history": {
+      "title": "History",
+      "period": "Period",
+      "used": "Used / allowance",
+      "billable": "Billable pts",
+      "rate": "Rate",
+      "cost": "Cost",
+      "empty": "No history yet"
+    }
+  },
+  "reports": {
+    "eyebrow": "Reports",
+    "title": "Reports",
+    "description": "Finance views across all partners.",
+    "open": "Open report",
+    "totals": "Totals by currency",
+    "byPartner": "By partner",
+    "filters": {
+      "year": "Year",
+      "month": "Month",
+      "allMonths": "All months"
+    },
+    "payments": {
+      "title": "Payments",
+      "blurb": "What partners have paid, by year or month, in each currency.",
+      "description": "Paid invoices, grouped by the date the payment was recorded.",
+      "paid": "Paid",
+      "invoiceCount": "Invoices",
+      "invoices_one": "{{count}} invoice",
+      "invoices_other": "{{count}} invoices",
+      "none": "No payments recorded for {{period}}"
+    },
+    "unused": {
+      "title": "Unused allowance",
+      "blurb": "Free points partners left on the table, valued at their rate.",
+      "description": "Free monthly points that went unused, with what they would have cost at the partner's rate.",
+      "allowance": "Allowance",
+      "usage": "Free points used",
+      "used": "Used",
+      "unused": "Unused",
+      "equivalent": "Money equivalent",
+      "unusedPoints": "{{points}} unused",
+      "none": "No active partners to report on",
+      "note": "Unused points × the partner's rate for the month."
+    }
+  }
+}

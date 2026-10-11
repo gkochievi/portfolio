@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#FBF7EE" />
+    <title>Chiti - live demo</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="A live, fully interactive demo of Chiti, an omnichannel customer-support inbox: website chat widget, AI assistant with human handover, operator console, admin dashboards and platform control, served entirely from your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chiti - live demo" />
+    <meta
+      property="og:description"
+      content="Every channel, one nest. Website chat, WhatsApp, Telegram, Messenger, Instagram and TikTok in one operator inbox, with an AI assistant that answers first."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { margin: 0; padding: 0; background: #FBF7EE; color: #1E1B12; }
+      @media (prefers-color-scheme: dark) { html, body { background: #13130D; color: #F3EDDC; } }
+      #root { min-height: 100vh; }
+      .boot-splash { position: fixed; inset: 0; display: grid; place-items: center; z-index: 9999; }
+      .boot-splash__mark { width: 44px; height: 44px; border-radius: 999px; background: #F2C12E; border: 1.5px solid #1E1B12; animation: boot-hop 0.9s cubic-bezier(.2,.8,.2,1) infinite alternate; }
+      @keyframes boot-hop { to { transform: translateY(-6px); } }
+      @media (prefers-reduced-motion: reduce) { .boot-splash__mark { animation: none; } }
+    </style>
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash"><div class="boot-splash__mark"></div></div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+  </body>
+</html>

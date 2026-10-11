@@ -1,0 +1,237 @@
+{
+  "appName": "Chiti",
+  "tagline": "Every channel, one nest.",
+  "language": "Language",
+  "emptyNest": "All quiet in the nest",
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "add": "Add",
+    "search": "Search",
+    "close": "Close",
+    "confirm": "Confirm",
+    "retry": "Retry",
+    "copy": "Copy",
+    "copied": "Copied",
+    "back": "Back",
+    "next": "Next",
+    "send": "Send",
+    "refresh": "Refresh",
+    "export": "Export",
+    "open": "Open",
+    "signOut": "Sign out",
+    "viewAll": "View all",
+    "showMore": "Show more",
+    "clear": "Clear",
+    "apply": "Apply",
+    "reset": "Reset",
+    "remove": "Remove",
+    "enable": "Enable",
+    "disable": "Disable",
+    "filter": "Filter",
+    "more": "More"
+  },
+  "states": {
+    "loading": "Loading…",
+    "empty": "Nothing here yet",
+    "error": "Something went wrong",
+    "saved": "Saved",
+    "noResults": "No results",
+    "missing": "Missing translation",
+    "offline": "Offline",
+    "readOnly": "Read-only"
+  },
+  "confirm": {
+    "password": "Your password",
+    "areYouSure": "Are you sure?"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "previous": "Previous page",
+    "next": "Next page",
+    "range": "{{from}}–{{to}} of {{total}}",
+    "page": "Page {{page}} of {{count}}"
+  },
+  "dateRange": {
+    "from": "From",
+    "to": "To",
+    "lastDays_one": "{{count}}d",
+    "lastDays_other": "{{count}}d"
+  },
+  "avatar": {
+    "title": "Choose an avatar",
+    "initials": "Use initials",
+    "upload": "Upload image",
+    "presets": "Preset avatars"
+  },
+  "channel": {
+    "web_widget": "Website",
+    "facebook_messenger": "Messenger",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "tiktok": "TikTok",
+    "all": "All channels",
+    "bot": "Bot-handled"
+  },
+  "sessionStatus": {
+    "waiting": "Waiting",
+    "active": "Active",
+    "inactive": "Inactive",
+    "ended": "Ended"
+  },
+  "operatorStatus": {
+    "online": "Online",
+    "away": "Away",
+    "offline": "Offline"
+  },
+  "customerStatus": {
+    "waiting": "Waiting",
+    "connected": "Connected",
+    "disconnected": "Disconnected"
+  },
+  "role": {
+    "operator": "Operator",
+    "admin": "Admin",
+    "supervisor": "Supervisor",
+    "superadmin": "Super admin",
+    "customer": "Customer"
+  },
+  "endedBy": {
+    "customer": "Customer",
+    "operator": "Operator",
+    "admin": "Admin",
+    "system": "System"
+  },
+  "endReason": {
+    "manual": "Ended manually",
+    "inactivity": "Inactivity",
+    "customer_return": "Customer came back",
+    "queue_cleared": "Queue cleared",
+    "stale_waiting": "Waited too long"
+  },
+  "endCategory": {
+    "operator": "By operator",
+    "customer": "By customer",
+    "system": "By system",
+    "missed": "Missed"
+  },
+  "aiState": {
+    "bot": "AI assistant",
+    "handed_off": "Handed to a human",
+    "copilot": "Copilot",
+    "closed": "AI closed",
+    "none": "No AI"
+  },
+  "handoffReason": {
+    "customer_request": "Customer asked for a human",
+    "operator_claim": "Operator took over",
+    "ai_recommended": "AI suggested a human",
+    "unsupported_content": "Unsupported content",
+    "no_answer": "AI had no answer",
+    "circuit_open": "AI unavailable",
+    "bot_paused": "Bot paused",
+    "delivery_failed": "Delivery failed"
+  },
+  "topic": {
+    "delivery": "Delivery",
+    "order_status": "Order status",
+    "returns": "Returns",
+    "payment": "Payment",
+    "pairing": "Wine pairing",
+    "gift": "Gifts",
+    "corporate": "Corporate orders",
+    "other": "Other"
+  },
+  "deliveryStatus": {
+    "pending": "Sending",
+    "sent": "Sent",
+    "delivered": "Delivered",
+    "read": "Read",
+    "failed": "Failed"
+  },
+  "releaseReason": {
+    "response_timeout": "No reply in time",
+    "logout_grace": "Operator signed out",
+    "operator_removed": "Operator removed",
+    "reassigned": "Reassigned"
+  },
+  "assignedVia": {
+    "auto_assign": "Auto-assigned",
+    "claim": "Claimed",
+    "admin": "Assigned by admin"
+  },
+  "theme": {
+    "canary": "Canary",
+    "olive": "Olive",
+    "clay": "Clay",
+    "plum": "Plum",
+    "moss": "Moss",
+    "slate": "Slate",
+    "night": "Night",
+    "paper": "Paper",
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode"
+  },
+  "strategy": {
+    "ordered": "In order",
+    "round_robin": "Round robin",
+    "random": "Random",
+    "least_busy": "Least busy"
+  },
+  "weekday": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  },
+  "time": {
+    "justNow": "just now",
+    "minutesAgo_one": "{{count}} min ago",
+    "minutesAgo_other": "{{count}} min ago",
+    "hoursAgo_one": "{{count}} hour ago",
+    "hoursAgo_other": "{{count}} hours ago",
+    "daysAgo_one": "{{count}} day ago",
+    "daysAgo_other": "{{count}} days ago"
+  },
+  "lang": {
+    "en": "English",
+    "ka": "ქართული",
+    "ru": "Русский"
+  },
+  "chat": {
+    "typing": "typing…",
+    "aiLabel": "AI",
+    "sentByAdmin": "Sent by admin",
+    "preChat": "Before the chat",
+    "seen": "Seen",
+    "delivered": "Delivered",
+    "failed": "Not delivered",
+    "retry": "Retry",
+    "attach": "Attach a file",
+    "emoji": "Emoji",
+    "location": "Location",
+    "image": "Image",
+    "file": "File",
+    "audio": "Voice message",
+    "failure": {
+      "window_closed": "Reply window closed",
+      "cap_reached": "Message limit reached",
+      "unsupported_media": "Not supported on this channel",
+      "network": "Network error"
+    },
+    "react": "React",
+    "compose": "Write a message",
+    "handover": {
+      "label": "Handover history",
+      "ai": "AI assistant",
+      "released": "{{name}} released the chat"
+    }
+  }
+}

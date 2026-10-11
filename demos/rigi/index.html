@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F4F4F0" />
+    <title>Rigi - live demo</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="A live, fully interactive demo of Rigi, the operations and billing hub of a contact-centre software vendor: partners, seat licenses, support desk, prepaid points and invoicing, served entirely from your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rigi - live demo" />
+    <meta
+      property="og:description"
+      content="Partners, licenses, invoices and support, in order. Click through every role of a real operations hub; no backend, nothing leaves the page."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { margin: 0; padding: 0; background: #F4F4F0; color: #1A1B1E; }
+      @media (prefers-color-scheme: dark) {
+        html, body { background: #121316; color: #ECECE7; }
+      }
+      #root { min-height: 100vh; }
+      .boot-splash {
+        position: fixed; inset: 0; display: grid; place-items: center;
+        background: inherit; z-index: 9999;
+      }
+      .boot-splash__row { display: flex; align-items: flex-end; gap: 6px; }
+      .boot-splash__row span {
+        width: 10px; height: 10px; border-radius: 2px; background: currentColor; opacity: 0.25;
+        animation: boot-step 1.2s cubic-bezier(0.2, 0, 0, 1) infinite;
+      }
+      .boot-splash__row span:nth-child(2) { animation-delay: 0.15s; }
+      .boot-splash__row span:nth-child(3) { animation-delay: 0.3s; }
+      .boot-splash__row span:nth-child(4) { animation-delay: 0.45s; width: 14px; height: 14px; background: #2A7A2E; opacity: 1; }
+      @keyframes boot-step { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-splash__row span { animation: none; }
+      }
+    </style>
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash" aria-hidden="true">
+        <div class="boot-splash__row"><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+  </body>
+</html>

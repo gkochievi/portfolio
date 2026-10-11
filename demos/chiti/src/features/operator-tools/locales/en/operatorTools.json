@@ -1,0 +1,171 @@
+{
+  "drawer": {
+    "label": "Customer context",
+    "openCopilot": "Open Chiti Copilot",
+    "customer": "Customer",
+    "copilot": "Copilot"
+  },
+  "customer": {
+    "copied": "Copied",
+    "copyFailed": "Could not copy to the clipboard",
+    "loadError": "Could not load the customer details",
+    "contact": "Contact",
+    "locale": "Locale",
+    "lastInbound": "Last message from the customer",
+    "ip": "Client IP",
+    "fields": "Pre-chat details",
+    "noFields": "The customer did not fill in any details.",
+    "faq": "Before the chat",
+    "previous": "Previous chats",
+    "sameField": "Same {{field}}",
+    "noPrevious": "No earlier chats with this customer.",
+    "noPreview": "No summary",
+    "noOperator": "No operator",
+    "openTranscript": "Open transcript"
+  },
+  "notes": {
+    "title": "Internal notes",
+    "hint": "Only staff see these. They are never sent to the customer.",
+    "empty": "Write the note first.",
+    "added": "Note added",
+    "deleted": "Note deleted",
+    "loadError": "Could not load the notes.",
+    "none": "No notes on this chat yet.",
+    "placeholder": "Add a note for your team…",
+    "add": "Add note"
+  },
+  "copilot": {
+    "actionFailed": "Copilot could not do that. Please try again.",
+    "loadError": "Could not load Copilot",
+    "handoff": {
+      "title": "Handoff briefing",
+      "goal": "Customer's goal"
+    },
+    "claimHint": "Claim this chat to insert drafts and use Copilot.",
+    "notFoundTitle": "No suggestions yet",
+    "notFoundBody": "Chiti Copilot drafts a reply each time the customer writes in a chat handed to a human.",
+    "generate": "Draft a reply",
+    "reading": "Chiti Copilot is reading the chat…",
+    "circuitTitle": "Copilot is unavailable",
+    "circuitBody_one": "The AI link is not answering (circuit open). It tries again in {{count}} s.",
+    "circuitBody_other": "The AI link is not answering (circuit open). It tries again in {{count}} s.",
+    "errorTitle": "Copilot hit a problem",
+    "errorBody": "The draft could not be created. Try again in a moment.",
+    "tryAgain": "Try again",
+    "rateTitle": "Slow down a little",
+    "rateBody_one": "Too many requests. You can regenerate in {{count}} s.",
+    "rateBody_other": "Too many requests. You can regenerate in {{count}} s.",
+    "refusedTitle": "Copilot will not draft this",
+    "refusedBody": "This message is outside what Copilot can answer. Reply in your own words.",
+    "escalatedTitle": "Copilot suggests a manager",
+    "escalatedBody": "This looks like something a manager should decide.",
+    "emptyTitle": "Nothing to suggest",
+    "emptyBody": "The last message does not need a reply.",
+    "commitment": "This draft promises something (a date, a voucher or a refund). Check it is possible before you send it.",
+    "knowledge": "Knowledge used",
+    "drafts": "Suggested replies",
+    "sources": "Sources",
+    "kind": {
+      "answer": "Answer",
+      "clarify": "Ask",
+      "escalate": "Escalate"
+    },
+    "insert": "Insert",
+    "inserted": "Draft inserted. Edit it before you send.",
+    "transformLabel": "Change the drafts",
+    "transform": {
+      "shorter": "Shorter",
+      "warmer": "Warmer",
+      "formal": "Formal",
+      "to_ru": "→ RU",
+      "to_ka": "→ KA",
+      "to_en": "→ EN"
+    },
+    "regenerate": "Regenerate",
+    "debug": {
+      "simulate": "Simulate AI outage",
+      "hint": "Demo switch: opens the circuit for 45 s.",
+      "active_one": "Circuit open, closes in {{count}} s.",
+      "active_other": "Circuit open, closes in {{count}} s."
+    }
+  },
+  "quick": {
+    "title": "Quick replies",
+    "search": "Search quick replies…",
+    "loadError": "Could not load quick replies.",
+    "empty": "No quick reply matches.",
+    "insert": "Insert",
+    "category": {
+      "greetings": "Greetings",
+      "delivery": "Delivery",
+      "payment": "Payment",
+      "closing": "Closing"
+    }
+  },
+  "templates": {
+    "title": "Send a WhatsApp template",
+    "descriptionOpen": "The reply window is open, so you can also just type. A template starts with an approved message.",
+    "descriptionClosed": "The 24-hour reply window is closed. Only an approved template can reach this customer.",
+    "send": "Send template",
+    "sendButton": "Send a template",
+    "open": "WhatsApp templates",
+    "synced": "Catalogue synced {{when}}",
+    "notSynced": "Catalogue not synced yet",
+    "refresh": "Refresh catalogue",
+    "refreshed": "Catalogue refreshed",
+    "loadError": "Could not load the template catalogue",
+    "emptyTitle": "No templates yet",
+    "emptyBody": "Create templates in your WhatsApp Business account, then refresh the catalogue.",
+    "list": "Templates",
+    "recommended": "Recommended to re-engage",
+    "category": {
+      "UTILITY": "Utility",
+      "MARKETING": "Marketing",
+      "AUTHENTICATION": "Authentication"
+    },
+    "status": {
+      "APPROVED": "Approved",
+      "PENDING": "Pending",
+      "REJECTED": "Rejected",
+      "PAUSED": "Paused"
+    },
+    "quality": {
+      "GREEN": "High quality",
+      "YELLOW": "Medium quality",
+      "RED": "Low quality",
+      "UNKNOWN": "Not rated"
+    },
+    "unsendable": "Cannot be sent",
+    "slots": {
+      "header": "Header",
+      "body": "Message",
+      "button": "Buttons"
+    },
+    "slot": {
+      "urlSuffix": "Added to the end of the button link.",
+      "media": "File name of the header image."
+    },
+    "noSlots": "This template has no fields to fill in.",
+    "errors": {
+      "missing_values": "Fill in every field before sending.",
+      "wrong_channel": "Templates can only be sent on WhatsApp chats.",
+      "template_unsendable": "This template cannot be sent."
+    },
+    "sent": "Template {{name}} sent",
+    "preview": "Preview",
+    "pickTitle": "Choose a template",
+    "pickBody": "Pick one from the list to fill in its fields and see how it looks."
+  },
+  "history": {
+    "title": "History",
+    "search": "Search by name, phone or summary…",
+    "loadError": "Could not load the history",
+    "noResults": "No chats found",
+    "noResultsBody": "Try a different name, phone number or word.",
+    "empty": "No finished chats yet",
+    "emptyBody": "Chats you finish will show up here.",
+    "rating_one": "Rated {{count}} star",
+    "rating_other": "Rated {{count}} stars",
+    "noPreview": "No summary"
+  }
+}

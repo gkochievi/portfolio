@@ -1,0 +1,87 @@
+{
+  "title": "Agents",
+  "subtitle": "Team and skill assignments that decide how calls are routed.",
+  "tabs": {
+    "agent": "By agent",
+    "skill": "By skill"
+  },
+  "forbiddenTitle": "You do not have access to agents",
+  "forbiddenBody": "Ask an administrator to enable the Agents feature for your role.",
+  "supervisor": "Supervisor",
+  "byAgent": {
+    "search": "Search name, user ID, extension or team",
+    "count": "{{filtered}} filtered / {{total}} total agents",
+    "columns": {
+      "name": "Name",
+      "extension": "Extension",
+      "team": "Team",
+      "skills": "Skills",
+      "actions": "Actions"
+    },
+    "edit": "Edit {{name}}",
+    "skillsCount": "{{n}} skills, show list",
+    "emptyTitle": "No agents match",
+    "emptyBody": "Try a different name, user ID, extension or team."
+  },
+  "edit": {
+    "title": "Edit agent",
+    "ext": "ext. {{ext}}",
+    "team": "Team",
+    "teamHint": "An agent belongs to exactly one team.",
+    "assigned": "Assigned skills",
+    "assignedCount": "{{n}} assigned",
+    "noneAssigned": "No skills assigned. Add one below.",
+    "competency": "Competency",
+    "competencyFor": "Competency for {{skill}}",
+    "removeSkill": "Remove {{skill}}",
+    "add": "Add skills",
+    "filter": "Filter unassigned skills",
+    "noMatch": "No unassigned skill matches.",
+    "allAssigned": "Every skill is already assigned.",
+    "addSkill": "Add {{skill}}",
+    "addHint": "New skills start at competency {{level}}; levels you already set are kept.",
+    "saved": "Saved {{name}}",
+    "saveFailed": "The agent could not be saved."
+  },
+  "roster": {
+    "skill": "Skill",
+    "choose": "Choose a skill",
+    "searchSkills": "Search skills",
+    "noSkills": "No skills found",
+    "assignedCount": "{{n}} assigned",
+    "pickTitle": "Pick a skill to staff",
+    "pickBody": "Choose a skill above, tick the agents who should handle it and set each one's competency from 1 to 10.",
+    "unstaffedTitle": "Nobody staffs {{skill}} yet",
+    "unstaffedBody": "Calls to this skill have no one to reach. Tick agents below to staff it.",
+    "competency": "Competency",
+    "levelFor": "Competency for {{name}}",
+    "toggle": "Staff {{name}}",
+    "selectShown": "Select all shown",
+    "clearShown": "Clear all shown",
+    "noPending": "No pending changes",
+    "toAssign": "{{n}} to assign",
+    "toUnassign": "{{n}} to unassign",
+    "levelChanges": "{{n}} level changes"
+  },
+  "review": {
+    "title": "Apply roster changes to {{skill}}?",
+    "warning": "Call routing changes immediately. Calls queued for this skill will start reaching the new roster as soon as you apply."
+  },
+  "result": {
+    "title": "Roster applied",
+    "doneHint": "Every change was written.",
+    "partialHint": "Some agents could not be updated. They stay pending so you can try again.",
+    "assigned": "Assigned",
+    "unassigned": "Unassigned",
+    "levelChanged": "Level changed",
+    "unchanged": "Unchanged",
+    "failed": "Failed",
+    "locked": "Locked by another session",
+    "notFound": "Agent not found",
+    "done": "{{skill}} roster updated",
+    "partial": "{{n}} agents could not be updated",
+    "error": "The roster could not be applied."
+  },
+  "teamNames": {},
+  "skillNames": {}
+}

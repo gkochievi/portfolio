@@ -1,0 +1,204 @@
+{
+  "title": "Call explorer",
+  "subtitle": "Search call legs across Core Cluster and Edge PBX, follow transfers and play recordings.",
+  "legs_one": "{{count}} leg",
+  "legs_other": "{{count}} legs",
+  "form": {
+    "number": "Number",
+    "numberHint": "Partial match on caller or called number. Leave empty for all calls.",
+    "numberDisabled": "Disabled while a recording filename is set.",
+    "numberPlaceholder": "e.g. 2104 or 3220",
+    "recordingFile": "Recording filename",
+    "recordingHint": "Find the call behind an Edge PBX recording file.",
+    "recordingPlaceholder": "e.g. out-0322001234-5104-20260902-101512.wav",
+    "datesIgnored": "Dates are ignored when searching by filename.",
+    "from": "From",
+    "to": "To",
+    "source": "Source",
+    "sourceBoth": "Both",
+    "search": "Search",
+    "searching": "Searching… {{seconds}} s",
+    "reset": "Reset",
+    "errors": {
+      "from": "Enter a start date and time.",
+      "to": "Enter an end date and time.",
+      "order": "The end must come after the start."
+    }
+  },
+  "kpi": {
+    "total": "Results",
+    "legsHint": "{{count}} legs",
+    "combined": "Legs combined",
+    "combinedHint": "Merged into one call each",
+    "shown": "Shown",
+    "filtered": "after filters",
+    "unavailable": "Unavailable"
+  },
+  "toolbar": {
+    "searchAll": "Search all columns",
+    "combine": "Combine related calls",
+    "exportExcel": "Export to Excel",
+    "zipFormat": "ZIP recording format",
+    "zipOriginal": "Original",
+    "downloadZip": "Download ZIP ({{count}})",
+    "mp3Note": "MP3 only renames the files; the audio stays as recorded.",
+    "selected_one": "{{count}} call selected",
+    "selected_other": "{{count}} calls selected",
+    "clearSelection": "Clear selection",
+    "clearFilters": "Clear filters"
+  },
+  "cols": {
+    "recording": "Recording",
+    "timestamp": "Timestamp",
+    "caller": "Caller",
+    "called": "Called",
+    "transferred": "Transferred",
+    "transferFrom": "Transfer from",
+    "transferTo": "Transfer to",
+    "duration": "Duration",
+    "billable": "Billable",
+    "status": "Status",
+    "disposition": "Disposition",
+    "origDevice": "Orig device",
+    "destDevice": "Dest device",
+    "hangupBy": "Hangup by",
+    "source": "Source"
+  },
+  "table": {
+    "selectPage": "Select all rows on this page",
+    "selectRow": "Select row",
+    "filter": "Filter",
+    "filterColumn": "Filter {{column}}",
+    "playRecording": "Play recording",
+    "noRecording": "No recording",
+    "toggleLegs": "Show legs ({{count}})",
+    "hops_one": "{{count}} hop",
+    "hops_other": "{{count}} hops"
+  },
+  "legsTable": {
+    "title": "Legs",
+    "time": "Time",
+    "devices": "Devices",
+    "talk": "Talk"
+  },
+  "chain": {
+    "title": "Transfer chain",
+    "dialed": "dialed",
+    "caller": "caller",
+    "answered": "answered"
+  },
+  "reasons": {
+    "transfer": "Transfer",
+    "blindTransfer": "Blind transfer",
+    "attendedTransfer": "Attended transfer",
+    "forward": "Forward",
+    "conference": "Conference",
+    "redirect": "Redirect"
+  },
+  "details": {
+    "timestamp": "Timestamp",
+    "source": "Source",
+    "caller": "Caller",
+    "called": "Called",
+    "final": "Final",
+    "duration": "Duration",
+    "billable": "Billable",
+    "status": "Status",
+    "disposition": "Disposition",
+    "origDevice": "Origin device",
+    "destDevice": "Destination device",
+    "accountCode": "Account code",
+    "context": "Context",
+    "hangupBy": "Hangup by"
+  },
+  "drawer": {
+    "title": "Call details",
+    "notInResults": "That call is not in the current results. Widen the date range and search again."
+  },
+  "tabs": {
+    "details": "Details",
+    "raw": "Raw data",
+    "recording": "Recording"
+  },
+  "raw": {
+    "copy": "Copy JSON",
+    "single": "Record as stored by the platform.",
+    "answerLeg": "Answering leg of {{count}} combined legs."
+  },
+  "recording": {
+    "searching": "Looking for the recording…",
+    "found": "Recording found",
+    "none": "No recording found",
+    "searchedIn": "Searched in {{ms}} ms",
+    "play": "Play",
+    "pause": "Pause",
+    "seek": "Seek",
+    "download": "Download recording",
+    "path": "Path",
+    "copies_one": "{{count}} copy found",
+    "copies_other": "{{count}} copies found",
+    "chooseCopy": "Choose a copy",
+    "sources": {
+      "voice_archive": "Voice Archive",
+      "voice_archive_backup": "Voice Archive (backup)",
+      "edge_primary": "Edge PBX (primary share)",
+      "edge_backup": "Edge PBX (backup share)"
+    },
+    "fuzzy": "Closest match",
+    "fuzzyHint": "Matched by time and parties, not by the exact file name.",
+    "playbackFailed": "Playback is unavailable in this browser.",
+    "reasons": {
+      "call_not_found": "This call could not be found in the store.",
+      "never_answered": "The call was never answered, so nothing was recorded.",
+      "no_recording": "No recording file was found for this call in the archive or its backup."
+    }
+  },
+  "warnings": {
+    "edge_partial_range": "Edge PBX returned partial results: only the latest {{days}} days of the selected range were searched. Narrow the range for a complete list."
+  },
+  "errors": {
+    "core_archived_offline": "Core Cluster keeps 90 days online. Older records are archived offline, so this range was skipped.",
+    "unavailable": "This source is unavailable.",
+    "searchFailed": "Search failed",
+    "retry": "Try again"
+  },
+  "empty": {
+    "title": "No calls match",
+    "body": "Try a wider date range, a shorter number or another source.",
+    "filteredTitle": "No calls match these filters",
+    "filteredBody": "Clear the filters to see every result."
+  },
+  "zip": {
+    "done": "{{included}} included, {{skipped}} skipped",
+    "noneIncluded": "Nothing to download: all {{skipped}} selected calls were skipped.",
+    "failed": "Could not build the ZIP.",
+    "manifestTitle": "Bani recording bundle",
+    "manifestGenerated": "Generated",
+    "manifestFormat": "Format",
+    "manifestIncluded": "Included",
+    "manifestSkipped": "Skipped",
+    "formatOriginal": "Original (WAV)",
+    "formatMp3Note": "MP3 (files renamed, audio unchanged)",
+    "reasons": {
+      "call_not_found": "Call not found",
+      "not_permitted": "Not permitted for your role",
+      "never_answered": "Never answered",
+      "no_recording": "No recording on file"
+    }
+  },
+  "export": {
+    "yes": "Yes",
+    "no": "No",
+    "durationSec": "Duration (s)",
+    "billableSec": "Billable (s)",
+    "legs": "Legs",
+    "transferReason": "Transfer reason",
+    "transferHops": "Transfer hops",
+    "transferChain": "Transfer chain",
+    "recording": "Recording",
+    "callId": "Call ID",
+    "sheet": "Calls",
+    "done": "Exported {{count}} rows to Excel",
+    "failed": "Export failed"
+  }
+}

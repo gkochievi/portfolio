@@ -1,0 +1,198 @@
+{
+  "list": {
+    "eyebrow": "Your queue",
+    "title": "My tasks",
+    "description": "Everything your team has asked us to do, with the finished work waiting for you first.",
+    "newTask": "New task",
+    "yourTurn": "Your turn",
+    "yourTurnHint": "Our team finished these. Approve them or send them back.",
+    "review": "Review",
+    "finishedAgo": "Finished {{when}}",
+    "filters": { "all": "All", "open": "Open", "closed": "Closed" },
+    "columns": {
+      "number": "Ticket",
+      "title": "Title",
+      "template": "Template",
+      "state": "Status",
+      "points": "Points",
+      "deadline": "Deadline",
+      "updated": "Updated"
+    },
+    "pointsPending": "Pending",
+    "noTemplate": "Custom request",
+    "empty": {
+      "title": "Nobody is waiting in your queue",
+      "description": "Submit your first task from the catalogue and it takes its place in line.",
+      "cta": "Submit a task"
+    },
+    "error": "Could not load your tasks"
+  },
+  "newTask": {
+    "title": "New task",
+    "description": "Pick what you need from our catalogue. Fixed prices are billed in points once you approve the finished work.",
+    "back": "My tasks",
+    "stepTemplate": "1. Choose a template",
+    "stepDetails": "2. Describe the task",
+    "pts": "{{value}} pts",
+    "pricedAfterReview": "Priced after review",
+    "pickFirst": "Pick a template above to continue.",
+    "templateRequired": "Pick a template first.",
+    "catalogueError": "Could not load the catalogue",
+    "catalogueEmpty": "The catalogue is empty right now. Please contact our team.",
+    "fields": {
+      "title": "Title",
+      "titlePlaceholder": "What do you need us to do?",
+      "description": "Description",
+      "descriptionPlaceholder": "Give us the details: where it happens, what you expect, anything we should know.",
+      "deadline": "Deadline",
+      "deadlineHint": "Optional. The task is due by the end of that day."
+    },
+    "errors": {
+      "titleRequired": "Enter a title.",
+      "titleMax": "Title must be 500 characters or fewer.",
+      "descriptionMax": "Description must be 20,000 characters or fewer.",
+      "deadlineInvalid": "Enter a valid date."
+    },
+    "submit": "Submit task",
+    "submitted": "Task submitted",
+    "failed": "Could not submit the task"
+  },
+  "task": {
+    "back": "My tasks",
+    "notFound": "This task does not exist or belongs to another account.",
+    "loadError": "Could not load this task",
+    "pricingPending": "Pricing pending",
+    "pricingPendingHint": "Our team prices custom requests after review. You will see the points here once they do.",
+    "template": "Template",
+    "points": "Points",
+    "deadline": "Deadline",
+    "created": "Created",
+    "updated": "Updated",
+    "project": "Project",
+    "noDeadline": "No deadline",
+    "noDescription": "No description provided.",
+    "overdue": "Overdue",
+    "details": "Details",
+    "edit": "Edit",
+    "save": "Save changes",
+    "discard": "Discard",
+    "updatedToast": "Task updated",
+    "noChanges": "Nothing changed",
+    "locked": "This task is {{state}} and can no longer be edited.",
+    "conversation": "Conversation",
+    "cancel": {
+      "button": "Cancel task",
+      "title": "Cancel this task?",
+      "body": "Our team will stop working on it. This cannot be undone.",
+      "note": "Note (optional)",
+      "notePlaceholder": "Tell us why, if you like",
+      "confirm": "Cancel task",
+      "keep": "Keep task",
+      "done": "Task cancelled"
+    },
+    "verify": {
+      "bannerTitle": "Your turn: review the finished work",
+      "bannerBody": "Our team marked this task as finished. Approve it to close the ticket, or send it back with a comment.",
+      "approve": "Approve & verify",
+      "title": "Approve and verify TCK-{{number}}?",
+      "intro": "Approving closes the task and bills its points.",
+      "notBillable": "No points are billed for this task.",
+      "covered": "It costs {{points}} pts. Your free allowance has {{free}} pts left this month, so this task is fully covered.",
+      "over": "It costs {{points}} pts. Your free allowance has {{free}} pts left this month, so {{over}} pts go over and are invoiced at {{amount}} ({{rate}} per point).",
+      "overAll": "It costs {{points}} pts. No free allowance is left this month, so all {{over}} pts are invoiced at {{amount}} ({{rate}} per point).",
+      "confirm": "Approve & verify",
+      "done": "Task verified"
+    },
+    "sendBack": {
+      "button": "Send back",
+      "title": "Send back to our team",
+      "body": "The task returns to In progress and your comment is posted to the conversation.",
+      "comment": "What still needs work?",
+      "placeholder": "Describe what is missing or wrong",
+      "required": "Tell us what still needs work.",
+      "max": "Comment must be 10,000 characters or fewer.",
+      "confirm": "Send back",
+      "done": "Sent back to our team"
+    },
+    "emails": {
+      "title": "Linked emails",
+      "empty": "No emails are linked to this task.",
+      "from": "From",
+      "to": "To",
+      "show": "Show message",
+      "hide": "Hide message"
+    },
+    "history": {
+      "title": "History",
+      "you": "You",
+      "createdYou": "You created the task",
+      "createdBy": "{{who}} created the task",
+      "movedYou": "You moved it to {{state}}",
+      "movedBy": "{{who}} moved it to {{state}}",
+      "empty": "No history yet."
+    }
+  },
+  "projects": {
+    "eyebrow": "Bundles of work",
+    "title": "Projects",
+    "description": "Larger pieces of work that our team prices once, then delivers as a set of tasks.",
+    "request": "Request a project",
+    "formTitle": "Request a project",
+    "formHint": "Describe what you need. Our team will review it and set a price.",
+    "name": "Project name",
+    "namePlaceholder": "For example: Second site rollout",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Scope, timing, anything that helps us price it.",
+    "errors": {
+      "nameRequired": "Enter a project name.",
+      "nameMax": "Name must be 300 characters or fewer.",
+      "descriptionMax": "Description must be 20,000 characters or fewer."
+    },
+    "submit": "Send request",
+    "created": "Project created — our team will price it.",
+    "failed": "Could not create the project",
+    "columns": { "name": "Project", "tasks": "Tasks", "state": "Status", "price": "Price" },
+    "pricingPending": "Pricing pending",
+    "empty": {
+      "title": "No projects yet",
+      "description": "Ask for a project when the work is bigger than a single task."
+    },
+    "error": "Could not load your projects"
+  },
+  "project": {
+    "back": "Projects",
+    "notFound": "This project does not exist or belongs to another account.",
+    "loadError": "Could not load this project",
+    "state": "Status",
+    "price": "Price",
+    "pricingPending": "Pricing pending",
+    "pricingPendingHint": "Our team has not set a price yet.",
+    "created": "Requested",
+    "description": "Description",
+    "noDescription": "No description provided.",
+    "tasks": "Tasks in this project",
+    "tasksEmpty": "No tasks have been added to this project yet.",
+    "tasksNote": "Project tasks are covered by the project price and do not use points."
+  },
+  "documents": {
+    "eyebrow": "Read-only",
+    "title": "Documents",
+    "description": "Contracts and technical documentation shared with you, with every version kept.",
+    "current": "v{{n}}",
+    "versions": "{{count}} versions",
+    "versionOne": "1 version",
+    "columns": { "version": "Version", "file": "File", "size": "Size", "date": "Date", "note": "Note" },
+    "preview": "Preview",
+    "download": "Download",
+    "noPreview": "This file type cannot be previewed here. Download it to open it.",
+    "empty": {
+      "title": "No documents yet",
+      "description": "When our team shares a contract or technical document, it shows up here."
+    },
+    "error": "Could not load your documents"
+  },
+  "notices": {
+    "taskPriced": "TCK-{{number}} has been priced at {{points}} pts",
+    "projectPriced": "PRJ-{{number}} now has a price"
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "app": {
+    "name": "Rigi",
+    "tagline": "Partners, licenses, invoices and support, in order.",
+    "staffSpace": "Operations",
+    "partnerSpace": "Partner portal"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "back": "Back",
+    "confirm": "Confirm",
+    "apply": "Apply",
+    "clear": "Clear",
+    "reset": "Reset",
+    "refresh": "Refresh",
+    "search": "Search",
+    "export": "Export CSV",
+    "exportSelected": "Export selected",
+    "download": "Download",
+    "preview": "Preview",
+    "upload": "Upload",
+    "copy": "Copy",
+    "copied": "Copied to clipboard",
+    "open": "Open",
+    "view": "View",
+    "add": "Add",
+    "remove": "Remove",
+    "signOut": "Sign out",
+    "signIn": "Sign in",
+    "retry": "Retry",
+    "next": "Next",
+    "previous": "Previous",
+    "more": "More actions",
+    "menu": "Menu",
+    "showAll": "Show all",
+    "saveChanges": "Save changes",
+    "discard": "Discard"
+  },
+  "states": {
+    "loading": "Loading…",
+    "empty": "Nothing here yet",
+    "error": "Something went wrong",
+    "noResults": "No results match these filters",
+    "allCaughtUp": "All caught up",
+    "nextUp": "Next up",
+    "saved": "Saved",
+    "notAvailable": "Not available"
+  },
+  "taskState": {
+    "accepted": "Accepted",
+    "in_progress": "In progress",
+    "pending": "Pending",
+    "testing": "Testing",
+    "finished": "Finished",
+    "verified": "Verified",
+    "cancelled": "Cancelled"
+  },
+  "taskStatePartner": {
+    "accepted": "Accepted",
+    "in_progress": "In progress",
+    "pending": "Pending",
+    "testing": "Testing",
+    "finished": "Awaiting verification",
+    "verified": "Verified",
+    "cancelled": "Cancelled"
+  },
+  "invoiceStatus": {
+    "draft": "Draft",
+    "issued": "Issued",
+    "paid": "Paid",
+    "void": "Void"
+  },
+  "invoiceDisplayStatus": {
+    "pending": "Pending",
+    "overdue": "Overdue",
+    "paid": "Paid",
+    "void": "Void",
+    "disputed": "Disputed"
+  },
+  "invoiceKind": {
+    "monthly": "Monthly",
+    "adhoc": "Ad-hoc"
+  },
+  "lineKind": {
+    "subscription": "Subscription",
+    "points_overflow": "Points overflow",
+    "adhoc": "Ad-hoc",
+    "discount": "Discount",
+    "project": "Project"
+  },
+  "mailStatus": {
+    "new": "New",
+    "triaged": "Triaged",
+    "task_created": "Task created",
+    "followup": "Follow-up",
+    "ignored": "Ignored"
+  },
+  "projectState": {
+    "open": "Open",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "role": {
+    "superadmin": "Superadmin",
+    "accountant": "Accountant",
+    "l1_employee": "Support desk (L1)",
+    "technician": "Technician",
+    "partner_admin": "Partner admin"
+  },
+  "technicianType": {
+    "webdeveloper": "Web developer",
+    "voip_engineer": "VoIP engineer",
+    "both": "Web + VoIP"
+  },
+  "licenseKind": {
+    "per_user": "Per user",
+    "addon": "Add-on"
+  },
+  "architecture": {
+    "cloud": "Cloud",
+    "hybrid": "Hybrid",
+    "onprem": "On-premises"
+  },
+  "contactRole": {
+    "technical": "Technical",
+    "management": "Management",
+    "financial": "Financial",
+    "legal": "Legal"
+  },
+  "documentKind": {
+    "contract": "Contract",
+    "technical": "Technical"
+  },
+  "logLevel": {
+    "debug": "debug",
+    "info": "info",
+    "warn": "warn",
+    "error": "error"
+  },
+  "serviceStatus": {
+    "ok": "Operational",
+    "degraded": "Degraded",
+    "down": "Down"
+  },
+  "dependency": {
+    "postgres": "Database",
+    "jobqueue": "Job queue",
+    "smtp": "Outgoing mail (SMTP)",
+    "imap": "Mailbox (IMAP)",
+    "attachments": "Attachment storage"
+  },
+  "active": {
+    "true": "Active",
+    "false": "Inactive"
+  },
+  "units": {
+    "points": "pts",
+    "pointsLong": "points",
+    "seats": "seats",
+    "users": "users",
+    "days": "days"
+  },
+  "fields": {
+    "partner": "Partner",
+    "period": "Period",
+    "status": "Status",
+    "currency": "Currency",
+    "total": "Total",
+    "amount": "Amount",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "deadline": "Deadline",
+    "assignees": "Assignees",
+    "notes": "Notes",
+    "email": "Email",
+    "phone": "Phone",
+    "name": "Name",
+    "title": "Title",
+    "description": "Description",
+    "type": "Type",
+    "date": "Date",
+    "actions": "Actions",
+    "password": "Password",
+    "username": "Username",
+    "role": "Role",
+    "points": "Points",
+    "rate": "Rate",
+    "number": "Number"
+  },
+  "filters": {
+    "all": "All",
+    "allPartners": "All partners",
+    "allStatuses": "All statuses",
+    "from": "From",
+    "to": "To"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "range": "{{from}}–{{to}} of {{total}}",
+    "page": "Page {{page}} of {{pages}}",
+    "perPage": "Rows per page"
+  },
+  "table": {
+    "selected": "{{count}} selected",
+    "selectAll": "Select all rows on this page",
+    "selectRow": "Select row"
+  },
+  "internal": "Internal",
+  "overdue": "Overdue",
+  "yes": "Yes",
+  "no": "No",
+  "none": "None",
+  "nav": {
+    "mainLabel": "Main navigation",
+    "areas": {
+      "admin": "Administration",
+      "accountant": "Finance",
+      "l1": "Support desk",
+      "technician": "Technician",
+      "partner": "Partner portal"
+    },
+    "roleAreas": "Role areas",
+    "dashboard": "Dashboard",
+    "partners": "Partners",
+    "licenses": "Licenses",
+    "taskTemplates": "Task templates",
+    "users": "Users",
+    "apiKeys": "API keys",
+    "audit": "Audit log",
+    "systemLogs": "System log",
+    "systemHealth": "System health",
+    "settings": "Settings",
+    "invoices": "Invoices",
+    "payments": "Payments",
+    "unusedAllowance": "Unused allowance",
+    "reports": "Reports",
+    "templates": "Invoice templates",
+    "billing": "Billing details",
+    "mails": "Mail",
+    "tasks": "Tasks",
+    "projects": "Projects",
+    "myTasks": "My tasks",
+    "allTasks": "All tasks",
+    "portalTasks": "Tasks",
+    "portalProjects": "Projects",
+    "portalAccount": "Licenses & users",
+    "portalInvoices": "Invoices",
+    "portalDocuments": "Documents",
+    "portalPoints": "Points",
+    "opsGroup": "Ops"
+  },
+  "chrome": {
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "toggleTheme": "Switch theme",
+    "search": "Search or jump to…",
+    "searchShort": "Search",
+    "openMenu": "Open navigation",
+    "closeMenu": "Close navigation",
+    "account": "Account",
+    "signedInAs": "Signed in as",
+    "skipToContent": "Skip to content",
+    "home": "Home",
+    "commands": "Commands",
+    "goTo": "Go to",
+    "noMatches": "Nothing matches",
+    "switchLanguage": "Switch to Georgian",
+    "switchToEnglish": "Switch to English"
+  }
+}

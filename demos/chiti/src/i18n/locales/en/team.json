@@ -1,0 +1,145 @@
+{
+  "title": "Team chat",
+  "launcher": {
+    "label": "Team chat",
+    "withUnread": "Team chat, {{count}} unread"
+  },
+  "list": {
+    "search": "Search colleagues",
+    "room": "Team room",
+    "direct": "Direct messages",
+    "colleagues": "Start a conversation",
+    "noResults": "Nobody matches your search",
+    "error": "Could not load your team",
+    "openFailed": "Could not open the conversation"
+  },
+  "room": {
+    "members": "{{count}} members"
+  },
+  "presence": {
+    "online": "Online",
+    "away": "Away",
+    "offline": "Offline"
+  },
+  "role": {
+    "operator": "Operator",
+    "admin": "Admin",
+    "supervisor": "Supervisor",
+    "superadmin": "Super admin"
+  },
+  "thread": {
+    "back": "Back to conversations",
+    "image": "Shared image",
+    "file": "File",
+    "notDelivered": "Not delivered",
+    "retry": "Retry",
+    "discard": "Discard",
+    "sending": "Sending...",
+    "messages": "Messages",
+    "error": "Could not load messages",
+    "emptyTitle": "No messages yet",
+    "emptyDm": "Say hello to {{name}}.",
+    "emptyRoom": "Start the conversation with your team.",
+    "loadOlder": "Load older messages",
+    "typing": "{{name}} is typing..."
+  },
+  "composer": {
+    "image": "Send an image",
+    "file": "Attach a file",
+    "placeholder": "Write a message",
+    "send": "Send message",
+    "tooBig": "Files can be up to 10 MB.",
+    "tooLong": "Messages are limited to {{max}} characters."
+  },
+  "page": {
+    "description": "Talk to your operators and fellow admins without leaving the console.",
+    "pickTitle": "Pick a conversation",
+    "pickDescription": "Choose the team room or a colleague on the left."
+  },
+  "profile": {
+    "title": "My profile",
+    "description": "Your details, settings and how your shifts are going.",
+    "error": "Could not load your profile",
+    "identity": "Identity",
+    "changeAvatar": "Change avatar",
+    "nickname": "Nickname",
+    "nicknameHint": "Shown to customers and colleagues.",
+    "save": "Save",
+    "saved": "Profile saved",
+    "avatarSaved": "Avatar updated",
+    "username": "Username",
+    "number": "Operator number",
+    "settings": "Settings",
+    "language": "Content language",
+    "languageHint": "Used for quick replies, templates and AI drafts.",
+    "langs": {
+      "ka": "Georgian",
+      "en": "English",
+      "ru": "Russian"
+    },
+    "push": "Push notifications",
+    "pushHint": "Get a notification when a chat needs you.",
+    "pushOn": "Push notifications turned on",
+    "pushOff": "Push notifications turned off",
+    "signOut": "Sign out",
+    "signOutTitle": "Sign out?",
+    "signOutDescription": "You will go offline. Chats you are handling stay assigned to you for a while."
+  },
+  "stats": {
+    "title": "Statistics",
+    "description": "Your activity for the selected period.",
+    "range": "Period",
+    "today": "Today",
+    "days": "{{count}} days",
+    "custom": "Custom",
+    "refresh": "Refresh statistics",
+    "maxRange": "Up to 92 days.",
+    "error": "Could not load your statistics",
+    "chatsHandled": "Chats handled",
+    "chatsEndedByMe": "Ended by me",
+    "activeNow": "Active now",
+    "activeNowHint": "Right now",
+    "messagesSent": "Messages sent",
+    "customerMessages": "Customer messages",
+    "avgFirstResponse": "Avg. first response",
+    "avgHandling": "Avg. handling time",
+    "rating": "Rating",
+    "ratingCount": "{{count}} ratings",
+    "daily": "Chats and messages per day",
+    "dailyHint": "Bars show chats, the line shows messages you sent.",
+    "noActivity": "No activity in this period",
+    "noActivityHint": "Pick a longer period to see more.",
+    "endings": "How chats ended",
+    "endingsHint": "Chats you handled in this period.",
+    "noEndings": "No finished chats in this period.",
+    "end": {
+      "operator": "Ended by operator",
+      "customer": "Ended by customer",
+      "system": "Closed by the system",
+      "missed": "Missed"
+    },
+    "transfers": "Chats moved away from you",
+    "transfersHint": "Why chats returned to the queue.",
+    "noTransfers": "None in this period.",
+    "transfer": {
+      "response_timeout": "Response timeout",
+      "logout_grace": "Logged out too long",
+      "operator_removed": "Removed from the team",
+      "reassigned": "Reassigned"
+    }
+  },
+  "chats": {
+    "title": "My chats",
+    "description": "Every chat you handled. Open one to read the transcript.",
+    "search": "Search by customer or topic",
+    "customer": "Customer",
+    "summary": "Summary",
+    "status": "Status",
+    "started": "Started",
+    "messages": "Messages",
+    "rating": "Rating",
+    "empty": "No chats yet",
+    "emptyHint": "Chats you take will show up here.",
+    "noResults": "No chats match your search"
+  }
+}

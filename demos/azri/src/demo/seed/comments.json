@@ -1,0 +1,603 @@
+{
+  "positive": [
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ძალიან კმაყოფილი ვარ, ყველაფერი სწრაფად და მარტივად მოგვარდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "თანამშრომელი ძალიან ყურადღებიანი იყო, დიდი მადლობა."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ყველაფერი გასაგებად ამიხსნეს, არანაირი პრობლემა არ შემქმნია."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "სასიამოვნო გარემო და თავაზიანი პერსონალი."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "მადლობა, ასე გააგრძელეთ!"
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ლოდინი თითქმის არ მომიწია, ძალიან მოხარული ვარ."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "კარგი მომსახურებაა, აუცილებლად დავბრუნდები."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "პროფესიონალურად მომემსახურნენ, მადლობა."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ასეთი კარგი მომსახურება იშვიათად შემხვედრია."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "არავის გაუჩქარებივარ, ყველაფერი მშვიდად და გასაგებად ამიხსნეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ძალიან მომეწონა, რომ ჩემი დრო გაითვალისწინეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "სწრაფი და თავაზიანი მომსახურებაა, გმადლობთ."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "სესხის პირობები დეტალურად ამიხსნეს და ყველა კითხვას მიპასუხეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "ფილიალში რიგი არ იყო, ოპერაცია ხუთ წუთში დასრულდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "კონსულტანტმა ჩემთვის საუკეთესო ვარიანტი შეარჩია, მადლობა."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "ანგარიშის გახსნას ათი წუთი დასჭირდა, ყველაფერი უპრობლემოდ მოხდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "ბარათი იმავე დღეს მივიღე და ლოდინიც არ მომიწია."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "კონსულტანტმა ყველა პირობა სიმშვიდით ამიხსნა და ზედმეტი არაფერი შემომთავაზა."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "მობილბანკის გააქტიურებაშიც დამეხმარნენ, დიდი მადლობა."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "გადახდის გრაფიკი სამჯერ გადამიმოწმეს, რომ ყველაფერი გასაგები ყოფილიყო."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "ფილიალში სუფთა და მშვიდი გარემოა, თანამშრომლებიც თავაზიანები არიან."
+    },
+    {
+      "lang": "ka",
+      "industry": "telecom",
+      "text": "ახალი ტარიფი ზუსტად ჩემს საჭიროებებს შეესაბამება."
+    },
+    {
+      "lang": "ka",
+      "industry": "telecom",
+      "text": "ინტერნეტის პაკეტი ისე შემირჩიეს, რომ ზედმეტს არაფერს ვიხდი."
+    },
+    {
+      "lang": "ka",
+      "industry": "telecom",
+      "text": "ანგარიშსწორების საკითხიც გასაგებად ამიხსნეს, დიდი მადლობა."
+    },
+    {
+      "lang": "ka",
+      "industry": "shop",
+      "text": "ახალი ტელეფონის გამართვაშიც დამეხმარნენ, ძალიან კმაყოფილი ვარ."
+    },
+    {
+      "lang": "ka",
+      "industry": "shop",
+      "text": "ნომრის გადატანა ერთ ვიზიტში მოვასწარი, ძალიან მოხერხებულად."
+    },
+    {
+      "lang": "ka",
+      "industry": "shop",
+      "text": "კონსულტანტმა რამდენიმე ტარიფი შემადარა და ყველაზე ხელსაყრელი შემირჩია."
+    },
+    {
+      "lang": "ka",
+      "industry": "callcentre",
+      "text": "ოპერატორმა პრობლემა ერთ ზარში მომიგვარა."
+    },
+    {
+      "lang": "ka",
+      "industry": "callcentre",
+      "text": "ოპერატორი მშვიდად მისმენდა და ბოლომდე მიპასუხა."
+    },
+    {
+      "lang": "ka",
+      "industry": "callcentre",
+      "text": "ზარის დასრულებამდე დარწმუნდა, რომ ყველაფერი მოგვარდა, მადლობა."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "მანქანა დათქმულ დროს მზად იყო და სუფთაც დამიბრუნეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "ფასი ზუსტად ისეთი იყო, როგორიც წინასწარ მითხრეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "ხელოსნებმა ყველაფერი მაჩვენეს და ამიხსნეს, რა შეცვალეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "ხელოსანმა ძველი დეტალი დამანახა და ამიხსნა, რატომ შეიცვალა."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "ყველაფერი დათქმულ ფასში ჩაეტია, დამატებითი თანხა არ მომთხოვეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "სალონი სუფთა დამიბრუნეს, ამის იმედი არ მქონდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "რეგისტრაცია ორ წუთში გავიარე, რეგისტრატორი ძალიან თავაზიანი იყო."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "ყველაფერი ორგანიზებულად იყო, ექიმთან დროულად შევედი."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "მოსაცდელში სუფთა და მყუდრო გარემოა."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "რეგისტრატორმა სახელით მომმართა და ყველაფერი სიმშვიდით მომიგვარა."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "ჩაწერა სწრაფად მოხერხდა, ლოდინიც მინიმალური იყო."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "ყავა ძალიან გემრიელი იყო, ხაჭაპური კი ცხელი და ახალი."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "მეგობრული გუნდი და სასიამოვნო ატმოსფერო."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "შეკვეთა სწრაფად მომიტანეს, აუცილებლად დავბრუნდები."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "საუკეთესო ჩაი ქალაქში!"
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "მაგიდა სუფთა დამხვდა და ყავაც ცხელი მომიტანეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "ხაჭაპური ახალგამომცხვარი იყო, ბარისტაც ძალიან თავაზიანი."
+    },
+    {
+      "lang": "en",
+      "industry": "any",
+      "text": "Quick, friendly and no fuss. Thank you."
+    },
+    {
+      "lang": "en",
+      "industry": "any",
+      "text": "Everything was explained clearly. Great service."
+    },
+    {
+      "lang": "en",
+      "industry": "any",
+      "text": "Very polite staff, and I barely had to wait."
+    },
+    {
+      "lang": "en",
+      "industry": "bank",
+      "text": "The advisor walked me through every line of the loan agreement. Really appreciated it."
+    },
+    {
+      "lang": "en",
+      "industry": "bank",
+      "text": "Opened my account in ten minutes, with no queue and no pressure to buy anything else."
+    },
+    {
+      "lang": "en",
+      "industry": "bank",
+      "text": "Clear answers about fees. I knew exactly what I was signing."
+    },
+    {
+      "lang": "en",
+      "industry": "telecom",
+      "text": "A plain explanation of my bill, finally. Thank you."
+    },
+    {
+      "lang": "en",
+      "industry": "shop",
+      "text": "The consultant found me a cheaper plan than I expected."
+    },
+    {
+      "lang": "en",
+      "industry": "shop",
+      "text": "Swapped my SIM in five minutes and set up the phone too."
+    },
+    {
+      "lang": "en",
+      "industry": "callcentre",
+      "text": "Sorted out my roaming in one call. Impressive."
+    },
+    {
+      "lang": "en",
+      "industry": "callcentre",
+      "text": "Polite operator and no endless hold music. Thank you."
+    },
+    {
+      "lang": "en",
+      "industry": "auto",
+      "text": "Car was ready on time and the price matched the quote exactly."
+    },
+    {
+      "lang": "en",
+      "industry": "auto",
+      "text": "Honest quote, honest work. I will be back for the winter tyres."
+    },
+    {
+      "lang": "en",
+      "industry": "clinic",
+      "text": "Check-in took two minutes and the receptionist was lovely."
+    },
+    {
+      "lang": "en",
+      "industry": "clinic",
+      "text": "Calm reception and clear directions to the right floor."
+    },
+    {
+      "lang": "en",
+      "industry": "cafe",
+      "text": "Great coffee, warm welcome, lovely terrace."
+    },
+    {
+      "lang": "en",
+      "industry": "cafe",
+      "text": "Fresh pastries and quick service."
+    },
+    {
+      "lang": "en",
+      "industry": "cafe",
+      "text": "Best tea in the city, and the staff remembered my usual."
+    }
+  ],
+  "neutral": [
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ზოგადად ნორმალურად, მაგრამ ლოდინი ცოტა გაჭიანურდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "მომსახურება კარგი იყო, თუმცა საჭირო ინფორმაცია მოგვიანებით მივიღე."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "საშუალოდ. გასაუმჯობესებელი ნამდვილად არის."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ცუდი არაფერია, მაგრამ განსაკუთრებულიც არაფერი."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "თანამშრომელი თავაზიანი იყო, ოღონდ ჩემს კითხვას ბოლომდე ვერ უპასუხა."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "კონსულტანტი კარგი იყო, მაგრამ რიგში 20 წუთი ვიდექი."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "საქმე მოგვარდა, თუმცა ერთი საბუთი ორჯერ მთხოვეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "პირობები გასაგები იყო, ხელმოწერას კი ძალიან დიდი დრო წაართვა."
+    },
+    {
+      "lang": "ka",
+      "industry": "telecom",
+      "text": "საქმე მოგვარდა, თუმცა ტარიფის პირობები უფრო მკაფიოდ უნდა აგიხსნათ."
+    },
+    {
+      "lang": "ka",
+      "industry": "shop",
+      "text": "მაღაზიაში ბევრი ხალხი იყო და კონსულტანტს ძლივს დაველოდე."
+    },
+    {
+      "lang": "ka",
+      "industry": "shop",
+      "text": "კონსულტანტი კომპეტენტური იყო, მაგრამ ლოდინი 25 წუთს გასცდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "callcentre",
+      "text": "ოპერატორი თავაზიანი იყო, მაგრამ ხაზზე დიდხანს მომიწია ლოდინი."
+    },
+    {
+      "lang": "ka",
+      "industry": "callcentre",
+      "text": "პრობლემა გადაწყდა, თუმცა ორჯერ გადამრთეს სხვა განყოფილებაზე."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "სამუშაო კარგად შესრულდა, მაგრამ მანქანა ორი საათით გვიან მომცეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "ხარისხი კარგია, ფასი კი ოდნავ მაღალი მომეჩვენა."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "რეგისტრატურაში სწრაფად მომემსახურნენ, მაგრამ მოსაცდელი ხალხმრავალი იყო."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "რეგისტრატორი თავაზიანი იყო, მოსაცდელში კი ჯდომის ადგილი არ იყო საკმარისი."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "ყავა კარგი იყო, მაგრამ შეკვეთას დიდხანს ველოდებოდი."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "საჭმელი გემრიელი იყო, მაგრამ ხმაური ზედმეტად იყო."
+    },
+    {
+      "lang": "en",
+      "industry": "any",
+      "text": "Okay overall, but the wait was longer than I hoped."
+    },
+    {
+      "lang": "en",
+      "industry": "any",
+      "text": "Fine, nothing special."
+    },
+    {
+      "lang": "en",
+      "industry": "any",
+      "text": "Friendly enough, though I had to ask twice for help."
+    },
+    {
+      "lang": "en",
+      "industry": "bank",
+      "text": "Helpful advisor, but the paperwork took forever."
+    },
+    {
+      "lang": "en",
+      "industry": "telecom",
+      "text": "The plan is fine, but the pricing could be explained more simply."
+    },
+    {
+      "lang": "en",
+      "industry": "shop",
+      "text": "Knowledgeable consultant, but the shop was packed and I waited a while."
+    },
+    {
+      "lang": "en",
+      "industry": "callcentre",
+      "text": "Got there in the end, but I was transferred twice."
+    },
+    {
+      "lang": "en",
+      "industry": "auto",
+      "text": "Good repair, but the final bill was a bit higher than the estimate."
+    },
+    {
+      "lang": "en",
+      "industry": "clinic",
+      "text": "Reception was polite, but the waiting area felt cramped."
+    },
+    {
+      "lang": "en",
+      "industry": "cafe",
+      "text": "Tasty, but a bit noisy at lunchtime."
+    }
+  ],
+  "negative": [
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ძალიან დიდხანს მომიწია ლოდინი და არავინ განმიმარტა მიზეზი."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "თანამშრომელი უყურადღებო იყო, იმედგაცრუებული ვარ."
+    },
+    {
+      "lang": "ka",
+      "industry": "any",
+      "text": "ჩემს შეკითხვაზე პასუხი ვერ მივიღე, ძალიან უკმაყოფილო ვარ."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "სესხის პირობები ბოლომდე ვერ გავიგე, ორჯერ მომიწია მოსვლა."
+    },
+    {
+      "lang": "ka",
+      "industry": "bank",
+      "text": "ფილიალში ერთი სალარო მუშაობდა და რიგი ძალიან გრძელი იყო."
+    },
+    {
+      "lang": "ka",
+      "industry": "telecom",
+      "text": "ტარიფი ერთი რამ მითხრეს, ანგარიშზე სხვა თანხა მომივიდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "shop",
+      "text": "რიგი უკიდურესად გრძელი იყო, ერთი კონსულტანტი ემსახურებოდა ყველას."
+    },
+    {
+      "lang": "ka",
+      "industry": "shop",
+      "text": "ნომრის გადატანა ვერ მოვახერხე, ორჯერ მომიწია დაბრუნება."
+    },
+    {
+      "lang": "ka",
+      "industry": "callcentre",
+      "text": "პრობლემა ისევ არ მომგვარებია, უკვე მესამედ ვრეკავ."
+    },
+    {
+      "lang": "ka",
+      "industry": "callcentre",
+      "text": "ხაზზე ნახევარი საათი ველოდებოდი და ბოლოს ზარი გაითიშა."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "საბოლოო ფასი შეფასებაზე გაცილებით მაღალი აღმოჩნდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "auto",
+      "text": "მანქანა დაპირებულზე ერთი დღით გვიან დამიბრუნეს, არც გამაფრთხილეს."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "რეგისტრაციისას ჩემი ჩანაწერი ვერ იპოვეს და 30 წუთი დავკარგე."
+    },
+    {
+      "lang": "ka",
+      "industry": "clinic",
+      "text": "მოსაცდელი ცივი და გადაჭედილი იყო, ჯდომის ადგილი არ მქონდა."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "მაგიდები დაუსუფთავებელი იყო და შეკვეთაც აგვერია."
+    },
+    {
+      "lang": "ka",
+      "industry": "cafe",
+      "text": "ყავა ცივი მომიტანეს და ბოდიშიც არავინ მოიხადა."
+    },
+    {
+      "lang": "en",
+      "industry": "any",
+      "text": "Long wait and nobody told me why."
+    },
+    {
+      "lang": "en",
+      "industry": "any",
+      "text": "Felt like a number, not a customer."
+    },
+    {
+      "lang": "en",
+      "industry": "bank",
+      "text": "Had to come back twice because nobody told me which documents to bring."
+    },
+    {
+      "lang": "en",
+      "industry": "telecom",
+      "text": "The bill did not match what I was promised."
+    },
+    {
+      "lang": "en",
+      "industry": "shop",
+      "text": "One person serving a queue of twelve. Please add staff."
+    },
+    {
+      "lang": "en",
+      "industry": "callcentre",
+      "text": "Still not fixed. Third call this week."
+    },
+    {
+      "lang": "en",
+      "industry": "auto",
+      "text": "Car came back dirty and a day late."
+    },
+    {
+      "lang": "en",
+      "industry": "clinic",
+      "text": "The waiting area was cold and crowded."
+    },
+    {
+      "lang": "en",
+      "industry": "cafe",
+      "text": "Order mix-up and no apology."
+    }
+  ]
+}

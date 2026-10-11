@@ -1,0 +1,233 @@
+{
+  "appName": "ჩიტი",
+  "tagline": "ყველა არხი, ერთი ბუდე.",
+  "language": "ენა",
+  "emptyNest": "ბუდეში სიმშვიდეა",
+  "actions": {
+    "save": "შენახვა",
+    "cancel": "გაუქმება",
+    "delete": "წაშლა",
+    "edit": "რედაქტირება",
+    "create": "შექმნა",
+    "add": "დამატება",
+    "search": "ძებნა",
+    "close": "დახურვა",
+    "confirm": "დადასტურება",
+    "retry": "ხელახლა ცდა",
+    "copy": "კოპირება",
+    "copied": "დაკოპირდა",
+    "back": "უკან",
+    "next": "შემდეგი",
+    "send": "გაგზავნა",
+    "refresh": "განახლება",
+    "export": "ექსპორტი",
+    "open": "გახსნა",
+    "signOut": "გასვლა",
+    "viewAll": "ყველას ნახვა",
+    "showMore": "მეტის ჩვენება",
+    "clear": "გასუფთავება",
+    "apply": "გამოყენება",
+    "reset": "საწყისზე დაბრუნება",
+    "remove": "ამოღება",
+    "enable": "ჩართვა",
+    "disable": "გამორთვა",
+    "filter": "ფილტრი",
+    "more": "მეტი"
+  },
+  "states": {
+    "loading": "იტვირთება…",
+    "empty": "აქ ჯერ არაფერია",
+    "error": "რაღაც შეცდომა მოხდა",
+    "saved": "შენახულია",
+    "noResults": "შედეგი არ მოიძებნა",
+    "missing": "თარგმანი აკლია",
+    "offline": "ხაზგარეშე",
+    "readOnly": "მხოლოდ ნახვა"
+  },
+  "confirm": {
+    "password": "თქვენი პაროლი",
+    "areYouSure": "დარწმუნებული ხართ?"
+  },
+  "pagination": {
+    "label": "გვერდები",
+    "previous": "წინა გვერდი",
+    "next": "შემდეგი გვერდი",
+    "range": "{{from}}–{{to}} / {{total}}",
+    "page": "გვერდი {{page}} / {{count}}"
+  },
+  "dateRange": {
+    "from": "თარიღიდან",
+    "to": "თარიღამდე",
+    "lastDays": "{{count}} დღე"
+  },
+  "avatar": {
+    "title": "აირჩიეთ ავატარი",
+    "initials": "ინიციალები",
+    "upload": "სურათის ატვირთვა",
+    "presets": "მზა ავატარები"
+  },
+  "channel": {
+    "web_widget": "ვებსაიტი",
+    "facebook_messenger": "Messenger",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "tiktok": "TikTok",
+    "all": "ყველა არხი",
+    "bot": "ბოტის ჩატები"
+  },
+  "sessionStatus": {
+    "waiting": "ელოდება",
+    "active": "აქტიური",
+    "inactive": "უმოქმედო",
+    "ended": "დასრულებული"
+  },
+  "operatorStatus": {
+    "online": "ხაზზე",
+    "away": "შესვენებაზე",
+    "offline": "ხაზგარეშე"
+  },
+  "customerStatus": {
+    "waiting": "ელოდება",
+    "connected": "დაკავშირებული",
+    "disconnected": "გათიშული"
+  },
+  "role": {
+    "operator": "ოპერატორი",
+    "admin": "ადმინისტრატორი",
+    "supervisor": "ზედამხედველი",
+    "superadmin": "სუპერადმინი",
+    "customer": "მომხმარებელი"
+  },
+  "endedBy": {
+    "customer": "მომხმარებელი",
+    "operator": "ოპერატორი",
+    "admin": "ადმინისტრატორი",
+    "system": "სისტემა"
+  },
+  "endReason": {
+    "manual": "ხელით დასრულდა",
+    "inactivity": "უმოქმედობა",
+    "customer_return": "მომხმარებელი დაბრუნდა",
+    "queue_cleared": "რიგი გასუფთავდა",
+    "stale_waiting": "ლოდინი ძალიან გაგრძელდა"
+  },
+  "endCategory": {
+    "operator": "ოპერატორმა",
+    "customer": "მომხმარებელმა",
+    "system": "სისტემამ",
+    "missed": "გამოტოვებული"
+  },
+  "aiState": {
+    "bot": "AI ასისტენტი",
+    "handed_off": "გადაეცა ადამიანს",
+    "copilot": "თანაშემწე",
+    "closed": "AI დახურულია",
+    "none": "AI-ს გარეშე"
+  },
+  "handoffReason": {
+    "customer_request": "მომხმარებელმა ადამიანი მოითხოვა",
+    "operator_claim": "ოპერატორმა აიყვანა ჩატი",
+    "ai_recommended": "AI-მ ადამიანი შესთავაზა",
+    "unsupported_content": "მხარდაუჭერელი შინაარსი",
+    "no_answer": "AI-ს პასუხი არ ჰქონდა",
+    "circuit_open": "AI მიუწვდომელია",
+    "bot_paused": "ბოტი შეჩერებულია",
+    "delivery_failed": "მიწოდება ვერ მოხერხდა"
+  },
+  "topic": {
+    "delivery": "მიწოდება",
+    "order_status": "შეკვეთის სტატუსი",
+    "returns": "დაბრუნება",
+    "payment": "გადახდა",
+    "pairing": "ღვინის შეხამება",
+    "gift": "საჩუქრები",
+    "corporate": "კორპორატიული შეკვეთები",
+    "other": "სხვა"
+  },
+  "deliveryStatus": {
+    "pending": "იგზავნება",
+    "sent": "გაგზავნილია",
+    "delivered": "მიწოდებულია",
+    "read": "წაკითხულია",
+    "failed": "ვერ გაიგზავნა"
+  },
+  "releaseReason": {
+    "response_timeout": "დროულად არ უპასუხა",
+    "logout_grace": "ოპერატორი გავიდა",
+    "operator_removed": "ოპერატორი წაიშალა",
+    "reassigned": "გადანაწილდა"
+  },
+  "assignedVia": {
+    "auto_assign": "ავტომატურად",
+    "claim": "აიყვანა რიგიდან",
+    "admin": "ადმინისტრატორმა მიანიჭა"
+  },
+  "theme": {
+    "canary": "კანარა",
+    "olive": "ზეთისხილი",
+    "clay": "თიხა",
+    "plum": "ქლიავი",
+    "moss": "ხავსი",
+    "slate": "ფიქალი",
+    "night": "ღამე",
+    "paper": "ქაღალდი",
+    "toLight": "ნათელ რეჟიმზე გადართვა",
+    "toDark": "მუქ რეჟიმზე გადართვა"
+  },
+  "strategy": {
+    "ordered": "რიგითობით",
+    "round_robin": "რიგრიგობით",
+    "random": "შემთხვევით",
+    "least_busy": "ნაკლებად დატვირთულს"
+  },
+  "weekday": {
+    "0": "კვირა",
+    "1": "ორშაბათი",
+    "2": "სამშაბათი",
+    "3": "ოთხშაბათი",
+    "4": "ხუთშაბათი",
+    "5": "პარასკევი",
+    "6": "შაბათი"
+  },
+  "time": {
+    "justNow": "ახლახან",
+    "minutesAgo": "{{count}} წუთის წინ",
+    "hoursAgo": "{{count}} საათის წინ",
+    "daysAgo": "{{count}} დღის წინ"
+  },
+  "lang": {
+    "en": "English",
+    "ka": "ქართული",
+    "ru": "Русский"
+  },
+  "chat": {
+    "typing": "წერს…",
+    "aiLabel": "AI",
+    "sentByAdmin": "ადმინისტრატორმა გაგზავნა",
+    "preChat": "ჩატამდე",
+    "seen": "ნანახია",
+    "delivered": "მიწოდებულია",
+    "failed": "ვერ მიეწოდა",
+    "retry": "ხელახლა",
+    "attach": "ფაილის მიმაგრება",
+    "emoji": "ემოჯი",
+    "location": "მდებარეობა",
+    "image": "სურათი",
+    "file": "ფაილი",
+    "audio": "ხმოვანი შეტყობინება",
+    "failure": {
+      "window_closed": "პასუხის ფანჯარა დაიხურა",
+      "cap_reached": "შეტყობინებების ლიმიტი ამოიწურა",
+      "unsupported_media": "არ არის მხარდაჭერილი ამ არხზე",
+      "network": "ქსელის შეცდომა"
+    },
+    "react": "რეაქცია",
+    "compose": "დაწერეთ შეტყობინება",
+    "handover": {
+      "label": "გადაცემის ისტორია",
+      "ai": "AI ასისტენტი",
+      "released": "ჩატი გაათავისუფლა: {{name}}"
+    }
+  }
+}

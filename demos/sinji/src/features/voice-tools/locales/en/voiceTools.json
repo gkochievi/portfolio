@@ -1,0 +1,371 @@
+{
+  "title": "Voice tools",
+  "hero": {
+    "eyebrow": "Public voice tools",
+    "lead": "Text to speech in Georgian, English and Russian, quick transcription, a two-sided sentiment read and a bulk converter for telephony formats. No workspace needed to try them.",
+    "editor": "Open the audio editor",
+    "signIn": "Sign in for more"
+  },
+  "api": {
+    "checking": "Checking the API",
+    "online": "API online",
+    "offline": "API unreachable",
+    "version": "v{{version}}"
+  },
+  "tabs": {
+    "label": "Voice tools",
+    "tts": "Text to speech",
+    "transcribe": "Transcribe",
+    "sentiment": "Sentiment",
+    "convert": "Convert"
+  },
+  "signInHint": "Transcribe and Sentiment appear after you sign in.",
+  "languages": {
+    "ka": "Georgian",
+    "en": "English",
+    "ru": "Russian"
+  },
+  "errors": {
+    "generic": "Something went wrong. Try again in a moment.",
+    "off": "This tool is switched off right now.",
+    "signIn": "Sign in to use this tool.",
+    "catalog": "Could not load the voice catalog."
+  },
+  "quota": {
+    "title": "Daily allowance",
+    "guest": "Guest allowance. Signing in raises it.",
+    "account": "Your account allowance",
+    "renews": "Renews every day",
+    "left": "{{remaining}} of {{max}} left",
+    "spent": "Used up",
+    "refused": "Daily allowance used up. It renews tomorrow.",
+    "unavailable": "Allowance unavailable",
+    "unavailableBody": "We could not read your daily allowance. The tools may still work.",
+    "retry": "Try again",
+    "disabledTitle": "Voice tools are paused",
+    "disabled": "The public voice tools are switched off right now. Please try again later.",
+    "kinds": {
+      "tts": "Speech",
+      "analyses": "Analyses",
+      "conversions": "Conversions"
+    },
+    "exhausted": {
+      "tts": "You have used today's speech syntheses. They renew tomorrow.",
+      "analyses": "You have used today's analyses. They renew tomorrow.",
+      "conversions": "You have used today's conversions. They renew tomorrow."
+    }
+  },
+  "player": {
+    "empty": "Pick a voice preview or synthesize a clip to play it here.",
+    "label": "Audio player",
+    "play": "Play",
+    "pause": "Pause",
+    "seek": "Seek",
+    "missing": "This audio sample is not available in this build.",
+    "download": "Download"
+  },
+  "source": {
+    "notAudio": "This does not look like an audio file.",
+    "tooLarge": "This file is larger than {{mb}} MB.",
+    "empty": "The file is empty.",
+    "sampleBadge": "Prepared sample",
+    "origin": {
+      "file": "File",
+      "recording": "Recording",
+      "sample": "Sample"
+    },
+    "remove": "Remove audio",
+    "drop": "Drop an audio file here",
+    "dropHint": "WAV, MP3, M4A, OGG, FLAC or WebM, up to {{mb}} MB.",
+    "choose": "Choose a file",
+    "or": "or",
+    "useSample": "Use a sample",
+    "micUnsupported": "Recording is not supported in this browser.",
+    "micDenied": "Microphone access was blocked. Allow it in the browser to record.",
+    "stop": "Stop ({{time}})",
+    "record": "Record"
+  },
+  "tts": {
+    "samples": {
+      "ka": "გამარჯობა! ჩვენი ხაზი ყოველდღე 09:00-დან 21:00 საათამდე მუშაობს. გთხოვთ, დარჩეთ ხაზზე.",
+      "en": "Hello, thank you for calling. Your request has been received and we will get back to you within one working day.",
+      "ru": "Здравствуйте! Ваша заявка принята, мы свяжемся с вами в течение одного рабочего дня."
+    },
+    "previewOf": "Preview: {{name}}",
+    "previewNote": "A short sample of this voice",
+    "ready": "Your clip is ready",
+    "clipBy": "Clip in {{name}}'s voice",
+    "clipMeta": "{{language}} · {{model}}",
+    "language": "Language",
+    "languageNote": {
+      "ka": "Georgian: natural prosody, best for support scripts.",
+      "en": "English with a neutral international accent.",
+      "ru": "Russian for customers who prefer it."
+    },
+    "text": "Text",
+    "chars": "{{n}} / {{max}}",
+    "tooLong": "Text can be at most {{max}} characters.",
+    "textPlaceholder": "Type what the voice should say...",
+    "voice": "Voice",
+    "noVoices": "No voices for this language",
+    "noVoicesBody": "An operator has not enabled a voice for this language yet.",
+    "gender": {
+      "female": "Female",
+      "male": "Male"
+    },
+    "category": {
+      "premade": "Studio voice",
+      "cloned": "Cloned voice",
+      "designed": "Designed voice"
+    },
+    "previewVoice": "Preview the voice {{name}}",
+    "preview": "Preview",
+    "model": "Model",
+    "advanced": "Advanced voice settings",
+    "advancedHint": "Kept in this tab only. Nothing is saved.",
+    "resetAdvanced": "Reset to defaults",
+    "working": "Synthesizing...",
+    "synthesize": "Synthesize",
+    "result": "Your clip",
+    "seconds": "{{n}} s",
+    "demoNote": "Demo: Synthesize plays a pre-recorded sample in the chosen voice. The text you type is not spoken.",
+    "presetHint": "This model is tuned with one delivery preset.",
+    "presets": {
+      "creative": "Creative",
+      "natural": "Natural",
+      "robust": "Robust"
+    },
+    "presetNote": {
+      "creative": "More expressive and varied. Good for storytelling, less predictable on long numbers.",
+      "natural": "Balanced delivery that sounds like a calm agent. The default.",
+      "robust": "Steady and consistent. Best for IVR prompts and anything read word for word."
+    },
+    "stability": "Stability",
+    "stabilityHint": "Lower is more expressive, higher is more even.",
+    "similarity": "Similarity",
+    "similarityHint": "How closely the clip follows the original voice.",
+    "style": "Style exaggeration",
+    "styleHint": "Adds character; can cost some stability.",
+    "speed": "Speed",
+    "speedHint": "Speaking pace. 1.00x is normal.",
+    "boost": "Speaker boost",
+    "boostHint": "Sharpens the likeness to the chosen voice."
+  },
+  "transcribe": {
+    "lead": "Upload or record a call and get a transcript with the detected language.",
+    "working": "Listening to the audio...",
+    "run": "Transcribe",
+    "demoNote": "Demo: the transcript is a prepared sample. Your audio stays in the browser and is not uploaded.",
+    "result": "Transcript",
+    "detected": "Detected: {{language}}",
+    "again": "Start over",
+    "took": "{{s}} s · {{model}}",
+    "empty": "The transcript appears here after you add audio."
+  },
+  "sentiment": {
+    "lead": "Read the same call two ways: what the words say and how the voice sounds.",
+    "working": "Reading the call...",
+    "run": "Read sentiment",
+    "useMismatch": "Try a mismatch sample",
+    "whyTitle": "Words and voice, never averaged",
+    "why": "A polite sentence can be spoken with tension. Sinji reads the transcript and the voice separately and flags the call when they disagree, instead of blending them into one number.",
+    "conflictTitle": "The words and the voice disagree",
+    "conflictBody": "The wording is courteous but the voice sounds tense. Sinji keeps both readings and marks the call as a conflict, so a reviewer listens before judging.",
+    "agreement": {
+      "agree": "Words and voice agree",
+      "partial": "Partly aligned",
+      "conflict": "Conflict",
+      "text_only": "Words only",
+      "prosody_only": "Voice only",
+      "unknown": "No reading"
+    },
+    "agreementBody": {
+      "agree": "Both readings point the same way.",
+      "partial": "One reading is neutral while the other leans positive or negative.",
+      "conflict": "The readings point in opposite directions.",
+      "text_only": "No voice reading was available for this audio.",
+      "prosody_only": "No usable words were found in this audio.",
+      "unknown": "There was not enough to read."
+    },
+    "text": "What was said",
+    "textSub": "The words, read as text",
+    "voice": "How it was said",
+    "voiceSub": "The voice, read as sound",
+    "polarity": {
+      "positive": "Positive",
+      "neutral": "Neutral",
+      "negative": "Negative"
+    },
+    "polarityLabel": "Polarity",
+    "polarityHint": "From -1 (negative) to +1 (positive).",
+    "noText": "No text reading.",
+    "noVoice": "No voice reading.",
+    "emotions": {
+      "calm": "Calm",
+      "happy": "Happy",
+      "neutral": "Neutral",
+      "sad": "Sad",
+      "frustrated": "Frustrated",
+      "angry": "Angry"
+    },
+    "arousal": "Arousal",
+    "arousalHint": "How activated the voice is, from relaxed to intense.",
+    "valence": "Valence",
+    "valenceHint": "How pleasant the voice sounds, from negative to positive.",
+    "confidence": "Confidence {{pct}}%",
+    "transcript": "Transcript"
+  },
+  "convert": {
+    "lead": "Convert many recordings to telephony and PBX formats in one batch and download them as one ZIP.",
+    "drop": "Drop audio files here",
+    "dropHint": "Up to {{files}} files, {{file}} each, {{batch}} per batch.",
+    "choose": "Choose files",
+    "addMore": "Add more files",
+    "files": "Files ({{n}})",
+    "clearAll": "Clear all",
+    "remove": "Remove {{name}}",
+    "empty": "No files yet.",
+    "format": "Target format",
+    "starting": "Starting...",
+    "run_one": "Convert {{count}} file",
+    "run_other": "Convert {{count}} files",
+    "ttl": "Converted files stay available for {{days}} days, then they expire.",
+    "demoNote": "Demo: nothing is uploaded. The ZIP is built in your browser from the files you picked, renamed to the target extension; the audio itself is not re-encoded.",
+    "errors": {
+      "notAudio": "{{name}} is not an audio file.",
+      "empty": "{{name}} is empty.",
+      "tooBig": "{{name}} is larger than {{size}}.",
+      "tooMany": "A batch holds at most {{n}} files.",
+      "batchTooBig": "A batch can be at most {{size}} in total."
+    },
+    "states": {
+      "queued": "Queued",
+      "converting": "Converting",
+      "done": "Done",
+      "failed": "Failed"
+    },
+    "failures": {
+      "header": "The file ends before the audio header is complete.",
+      "codec": "The audio stream uses a codec this converter cannot read.",
+      "silent": "The file is empty or contains only silence."
+    },
+    "progress": "Converting {{done}} of {{total}}",
+    "summary": "{{ok}} converted, {{failed}} failed",
+    "download": "Download ZIP ({{n}} files)",
+    "expires": "Expires in {{time}}",
+    "expired": "This download has expired.",
+    "expiry": {
+      "dh": "{{d}} d {{h}} h",
+      "hm": "{{h}} h {{m}} min",
+      "ms": "{{m}} min {{s}} s"
+    },
+    "zipNote": "Files are stored as .{{ext}} in an uncompressed ZIP.",
+    "zipFailed": "Could not build the ZIP. Try again.",
+    "noneOk": "No file could be converted, so there is nothing to download.",
+    "newBatch": "Start another batch"
+  },
+  "editor": {
+    "title": "Audio editor",
+    "lead": "Cut, trim, fade and mix recordings right in the browser. Nothing leaves your device.",
+    "emptyTitle": "Open a recording to start",
+    "emptyBody": "Drop an audio file here or choose one (up to {{mb}} MB), or try the built-in demo clip.",
+    "open": "Open file",
+    "loadDemo": "Load the demo clip",
+    "demoClipName": "Demo clip",
+    "points": {
+      "local": {
+        "title": "Runs in your browser",
+        "body": "Decoding, editing and export all happen on this device."
+      },
+      "layers": {
+        "title": "Layers",
+        "body": "Stack recordings with their own offset, level, mute and solo, then flatten them."
+      },
+      "export": {
+        "title": "Export",
+        "body": "Save a WAV, or send the mix through the converter to a telephony format."
+      }
+    },
+    "decodeFailed": "Could not read this audio file.",
+    "tooLarge": "This file is larger than {{mb}} MB.",
+    "playFailed": "Playback could not start.",
+    "needSelection": "Select a range first: drag on the waveform, or use Mark in and Mark out.",
+    "nothingToDo": "Nothing to change here.",
+    "flattened": "Flattened mix",
+    "flattenedToast": "Layers flattened into one",
+    "exported": "WAV exported",
+    "canvasLabel": "Waveform, {{layers}} layer(s), {{duration}} seconds. Arrow keys move the playhead.",
+    "canvasHint": "Click to place the playhead, drag to select a range. Space plays, I and O mark the range.",
+    "exportWav": "Export WAV",
+    "exportPhone": "Export to telephony format",
+    "toStart": "Back to start",
+    "play": "Play",
+    "pause": "Pause",
+    "space": "Space",
+    "playSelection": "Play selection",
+    "position": "Playhead position",
+    "markIn": "Mark in",
+    "markOut": "Mark out",
+    "selection": "{{start}} - {{end}} ({{length}} s)",
+    "noSelection": "No range selected",
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "zoomFit": "Fit to window",
+    "tools": "Edit",
+    "activeLayer": "Editing layer: {{name}}",
+    "groups": {
+      "history": "History",
+      "cut": "Cut and shape",
+      "fades": "Fades",
+      "levels": "Level",
+      "channels": "Channels"
+    },
+    "undo": "Undo",
+    "redo": "Redo",
+    "steps": "{{n}} / {{max}} steps",
+    "cut": "Cut",
+    "cutHint": "Remove the selected range and close the gap",
+    "trim": "Trim",
+    "trimHint": "Keep only the selected range",
+    "silence": "Silence",
+    "reverse": "Reverse",
+    "scopeHint": "Applies to the selection, or the whole layer",
+    "fadeIn": "Fade in",
+    "fadeOut": "Fade out",
+    "fadeHint": "Applies to the selection, or 0.5 s at the edge of the layer",
+    "gain": "Gain",
+    "applyGain": "Apply gain",
+    "normalise": "Normalise",
+    "normaliseHint": "Bring the loudest peak to -1 dB",
+    "channelOp": "Channel operation",
+    "channelOps": {
+      "swap": "Swap left and right",
+      "mono": "Mix down to mono",
+      "left": "Left to both",
+      "right": "Right to both",
+      "invert": "Invert phase",
+      "stereo": "Mono to stereo"
+    },
+    "applyChannels": "Apply",
+    "scopeNote": "Silence, reverse, fades, gain, normalise and channel operations use the selected range, or the whole layer when nothing is selected.",
+    "layers": "Layers",
+    "layersHint": "Each layer has its own start offset and level. Mute and solo are heard instantly.",
+    "addLayer": "Add layer",
+    "addDemo": "Add demo clip",
+    "flatten": "Flatten",
+    "layerMeta": "{{duration}} s · {{channels}} · {{rate}} kHz",
+    "mono": "mono",
+    "stereo": "stereo",
+    "offset": "Offset (s)",
+    "layerGain": "Level",
+    "mute": "Mute",
+    "solo": "Solo",
+    "removeLayer": "Remove layer {{name}}",
+    "privacy": "Your audio is decoded and edited in this tab only. Telephony export sends a copy through the demo converter, which also stays in the browser.",
+    "phoneTitle": "Export to telephony format",
+    "phoneBody": "Mix all audible layers to one WAV and convert it for your PBX.",
+    "phoneLoading": "Loading formats...",
+    "phoneUses": "This uses one conversion. {{remaining}} left today.",
+    "phoneRun": "Convert the mix"
+  }
+}

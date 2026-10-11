@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="MUKUZANI SINGLE VINEYARD">
+<rect width="400" height="500" fill="#e9ddd0"/>
+<circle cx="200" cy="250" r="168" fill="#fffdf8" opacity=".55"/>
+<ellipse cx="200" cy="474" rx="96" ry="12" fill="#1e1b12" opacity=".14"/>
+<path d="M176 36H224V60H222V150C222 175 262 190 262 235V450Q262 466 246 466H154Q138 466 138 450V235C138 190 178 175 178 150V60H176Z" fill="#231a1a"/>
+<rect x="174" y="34" width="52" height="58" rx="5" fill="#b02a1f"/>
+<rect x="174" y="84" width="52" height="8" fill="#1e1b12" opacity=".18"/>
+<rect x="146" y="268" width="108" height="140" rx="6" fill="#fbf7ee"/>
+<rect x="146" y="268" width="108" height="10" rx="5" fill="#b02a1f"/>
+<g fill="none" stroke="#b02a1f" stroke-width="2.2" stroke-linecap="round">
+<path d="M200 330c0-14 6-24 16-30M200 330c0-12-6-20-14-26M200 330v26"/>
+</g>
+<g fill="#b02a1f"><circle cx="216" cy="300" r="4"/><circle cx="186" cy="304" r="4"/><circle cx="200" cy="318" r="4"/></g>
+<text x="200" y="378" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-weight="700" letter-spacing="1.4" fill="#1e1b12">MUKUZANI</text>
+<text x="200" y="393" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="8" letter-spacing="1.6" fill="#665f4e">SINGLE VINEYARD · 2020</text>
+<rect x="152" y="236" width="9" height="206" rx="4.5" fill="#fff" opacity=".16"/>
+</svg>

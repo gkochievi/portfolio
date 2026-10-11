@@ -1,0 +1,254 @@
+{
+  "title": "Settings",
+  "retry": "Try again",
+  "loadError": "Could not load these settings.",
+  "layout": {
+    "title": "Workspace settings",
+    "subtitle": "How Sinji reads the tone of your calls, transcribes audio and which AI keys it uses.",
+    "tabs": { "sentiment": "Sentiment", "transcription": "Transcription", "ai": "Own AI keys" }
+  },
+  "rubric": {
+    "title": "Scoring rubric",
+    "subtitle": "The criteria every call is scored against, and how much each one counts. Every score is shown with the quote that earned it.",
+    "version": "Version {{n}}",
+    "sharedBadge": "Shared default",
+    "lastSaved": "Saved {{when}} by {{who}}",
+    "shared": {
+      "title": "Using the shared default rubric",
+      "body": "This workspace has no rubric of its own yet, so calls are scored with the shared default (version {{version}}). Saving creates your own copy and detaches it from the default."
+    },
+    "dimensions": {
+      "title": "Dimensions",
+      "description": "Each dimension is scored 0 to 100. The weights decide how the final score is built and must add up to 100%.",
+      "add": "Add dimension",
+      "remove": "Remove dimension {{name}}",
+      "none": "No dimensions yet. Add at least one."
+    },
+    "unnamed": "Unnamed dimension",
+    "field": {
+      "name": "Name",
+      "nameEn": "English name",
+      "weight": "Weight",
+      "description": "Description",
+      "descriptionHint": "What this dimension looks for.",
+      "guidance": "Scoring guidance",
+      "guidanceHint": "What earns a high score and what caps it."
+    },
+    "measured": {
+      "factcheck": "Measured · fact-check",
+      "sentiment": "Measured · tone",
+      "note": "Sinji measures this from the call itself, so only its weight can be changed."
+    },
+    "text": {
+      "title": "Free-text rubric",
+      "description": "House rules that apply to every dimension.",
+      "label": "Instructions for the scorer",
+      "hint": "Optional. Tell the scorer what to ignore, which sources to trust and how to treat missing evidence.",
+      "placeholder": "Score the agent, not the customer. Quote the line that justifies every score."
+    },
+    "sum": { "ok": "Weights total {{sum}}%", "bad": "Weights total {{sum}}%, must be 100%" },
+    "normalise": "Normalise to 100",
+    "errors": {
+      "title": "Fix these before saving",
+      "empty": "Add at least one dimension.",
+      "unnamed": "Every dimension needs a name.",
+      "sum": "The weights must add up to 100% (now {{sum}}%).",
+      "negative": "A weight cannot be negative.",
+      "duplicate_key": "Two dimensions share the same identifier."
+    },
+    "validate": { "button": "Validate", "ok": "The rubric is valid and ready to save." },
+    "save": "Save rubric",
+    "discard": "Discard changes",
+    "saveFailed": "Could not save the rubric.",
+    "savedToast": "Rubric saved as version {{n}}",
+    "draft": {
+      "title": "Unsaved draft",
+      "titleFile": "Unsaved draft from {{file}}",
+      "body": "The measured dimensions were kept. Review the criteria and weights, then save when you are happy with them.",
+      "discard": "Discard draft"
+    }
+  },
+  "import": {
+    "button": "Import from a document",
+    "title": "Draft a rubric from a document",
+    "description": "Upload your QA scorecard, onboarding guide or call script. Sinji reads it and proposes dimensions you can edit.",
+    "hint": "Have a QA form already? Import it and edit the draft instead of starting from blank.",
+    "choose": "Choose a document or drop it here",
+    "formats": "PDF, Word, text or Markdown, up to 10 MB",
+    "start": "Start import",
+    "cancel": "Cancel",
+    "retry": "Try again",
+    "stage": {
+      "uploading": "Uploading",
+      "queued": "Waiting in the queue",
+      "extracting": "Extracting the text",
+      "analysing": "Analysing the criteria",
+      "done": "Done"
+    },
+    "wait": "This takes a few seconds. You can cancel at any time.",
+    "loaded": "Draft loaded. Review it, then save.",
+    "empty": "That file is empty.",
+    "tooBig": "That file is larger than 10 MB.",
+    "failed": "The import failed. Try another file."
+  },
+  "reset": {
+    "button": "Reset to default",
+    "title": "Reset to the shared default?",
+    "body": "Your own rubric will be removed and calls will be scored with the shared default again. Confirm with your password.",
+    "password": "Your password",
+    "passwordHint": "Demo password: sinji-demo",
+    "wrong": "Wrong password (403). The rubric was not reset.",
+    "failed": "Could not reset the rubric.",
+    "confirm": "Reset rubric",
+    "done": "Rubric reset to the shared default"
+  },
+  "bands": {
+    "title": "Score colour bands",
+    "description": "Where a score turns amber and green on scorecards, call lists and charts.",
+    "amber": "Amber from",
+    "amberHint": "Scores below this are red.",
+    "green": "Green from",
+    "greenHint": "Scores from here up are green.",
+    "low": "Needs attention",
+    "mid": "Needs coaching",
+    "high": "On target",
+    "previewLabel": "Red below {{amber}}, amber from {{amber}}, green from {{green}}",
+    "save": "Save bands",
+    "saved": "Score bands saved",
+    "reset": "Reset to 50 / 80",
+    "resetDone": "Score bands reset to 50 and 80",
+    "failed": "Could not save the score bands.",
+    "errors": {
+      "amber": "Enter a whole number from 1 to 99.",
+      "green": "Enter a whole number from 2 to 100.",
+      "order": "Green must start above amber."
+    }
+  },
+  "sentiment": {
+    "title": "Sentiment analysis",
+    "description": "Reads the tone of the words and, separately, the tone of the voice. The two are never averaged, so a polite customer with an angry voice is flagged as a conflict.",
+    "enable": "Analyse call tone",
+    "enableHint": "When off, calls are not tone-checked and the tone lane stays empty.",
+    "guidance": "Guidance for the analyser",
+    "guidanceHint": "Context about your callers that changes how tone should be read. {{n}} / {{max}}",
+    "tooLong": "Keep the guidance under {{max}} characters.",
+    "placeholder": "For example: callers about overdue payments are often upset; judge the agent's calm, not the customer's mood.",
+    "save": "Save",
+    "saved": "Sentiment settings saved",
+    "failed": "Could not save the sentiment settings.",
+    "service": {
+      "title": "Voice-tone service",
+      "description": "The model that listens to how the voice sounds."
+    },
+    "status": {
+      "ok": { "label": "Running", "hint": "The voice-tone service is answering normally." },
+      "warming": { "label": "Warming up", "hint": "The model is loading. Voice tone will be available in a few seconds." },
+      "model_error": { "label": "Model error", "hint": "The model returned an error. Calls are analysed on words only until it recovers." },
+      "unreachable": { "label": "Unreachable", "hint": "Sinji cannot reach the service. Calls are analysed on words only." },
+      "disabled": { "label": "Off", "hint": "Sentiment analysis is switched off for this workspace." }
+    }
+  },
+  "transcription": {
+    "title": "Transcription",
+    "description": "Defaults for every new recording. A single file can still override them when you upload it.",
+    "language": "Language",
+    "languageHint": "Auto-detect works well unless your calls mix languages.",
+    "languages": { "auto": "Auto-detect", "ka": "Georgian", "en": "English", "ru": "Russian" },
+    "format": "Audio format",
+    "formatHint": "How the recording is prepared before transcription.",
+    "formats": {
+      "original": "Original file",
+      "flac_full": "FLAC, full quality",
+      "flac_16k": "FLAC, 16 kHz",
+      "wav_16k": "WAV, 16 kHz",
+      "mp3_16k": "MP3, 16 kHz"
+    },
+    "diarize": "Separate speakers",
+    "diarizeHint": "Labels who is speaking so lines can be attributed to the agent or the customer.",
+    "keyterms": "Key terms",
+    "keytermsHint": "One per line: product names, jargon and places the transcriber should spell correctly. Up to {{max}} terms, each under {{chars}} characters and at most {{words}} words.",
+    "keytermsPlaceholder": "Gold Card\nearly repayment\nSWIFT",
+    "termCount": "{{n}} of {{max}} terms",
+    "errors": {
+      "too_long": "Line {{line}}: \"{{term}}\" is too long (under {{chars}} characters).",
+      "too_many_words": "Line {{line}}: \"{{term}}\" has too many words (at most {{words}}).",
+      "tooMany": "That is too many terms (at most {{max}}).",
+      "more": "...and {{n}} more lines with problems."
+    },
+    "save": "Save override",
+    "saved": "Transcription override saved",
+    "failed": "Could not save the transcription settings.",
+    "revert": "Revert to inherited",
+    "revertTitle": "Revert to inherited settings?",
+    "revertBody": "Your workspace override is removed and new recordings use the platform defaults again.",
+    "revertConfirm": "Revert",
+    "reverted": "Reverted to the inherited settings",
+    "effective": {
+      "title": "In effect",
+      "description": "What new recordings use, and where each value comes from."
+    },
+    "fields": { "language_code": "Language", "diarize": "Separate speakers", "keyterms": "Key terms", "audio_format": "Audio format" },
+    "on": "On",
+    "off": "Off",
+    "termsCount": "{{n}} terms",
+    "noTerms": "None",
+    "source": { "code": "built-in default", "operator": "platform default" },
+    "origin": { "workspace": "Your override", "inherited": "Inherited" },
+    "inheritedValue": "Inherited: {{value}} ({{source}})",
+    "chain": "Order of precedence: built-in default, platform default, your workspace, then the single file."
+  },
+  "ai": {
+    "intro": "Sinji uses the platform's AI by default. Add your own provider key per capability to run that capability on your own account. Precedence: platform default, then the connection assigned to you, then your own key.",
+    "capabilities": {
+      "llm": { "name": "Analysis model", "description": "Fact-checking, tone, scoring and summaries." },
+      "stt": { "name": "Speech to text", "description": "Turns recordings into diarised transcripts." },
+      "tts": { "name": "Text to speech", "description": "Voices for the text-to-speech tool and the bot." }
+    },
+    "source": { "byo": "Your own key", "assigned": "Assigned to you", "default": "Platform default", "legacy": "Legacy key" },
+    "effective": "In effect",
+    "connection": "Connection",
+    "provider": "Provider",
+    "model": "Model",
+    "ownKeyLabel": "Your own key",
+    "needsKey": "Your override is on but has no key, so the connection above still applies.",
+    "overrideOff": "Your override is switched off. {{name}} applies.",
+    "byoNote": "Removing your key falls back to {{name}}.",
+    "override": {
+      "title": "Your own key",
+      "readOnlySet": "An owner has set an own-key override for this capability.",
+      "readOnlyNone": "No own-key override is set. An owner can add one."
+    },
+    "key": {
+      "label": "API key",
+      "hint": "Write-only. The key is stored masked and is never shown again.",
+      "stored": "A key ending {{hint}} is stored. Type a new one to replace it.",
+      "placeholder": "Paste your provider key"
+    },
+    "notes": "Notes",
+    "notesHint": "Why this override exists, for your team. {{n}} / {{max}}",
+    "notesTooLong": "Keep the notes under {{max}} characters.",
+    "enable": "Use my own key",
+    "enableHint": "Requests for this capability are sent with your key and counted as your own usage.",
+    "save": "Save",
+    "saved": "{{capability}} override saved",
+    "failed": "Could not save the override.",
+    "keyRemoved": "Key removed",
+    "overrideRemoved": "Override removed",
+    "removeKey": "Remove key",
+    "removeOverride": "Remove override",
+    "test": {
+      "button": "Test connection",
+      "ok": "Connection works",
+      "fail": "Test failed",
+      "okDetail": "{{detail}}.",
+      "failDetail": "{{detail}}."
+    }
+  },
+  "defaultRubric": {
+    "title": "Default rubric",
+    "description": "The rubric used by every workspace that has not saved one of its own.",
+    "note": "Changing this affects only workspaces on the shared default. Workspaces with their own rubric keep it.",
+    "source": { "built-in": "Built-in", "saved": "Saved" },
+    "saved": "Default rubric saved as version {{n}}"
+  }
+}

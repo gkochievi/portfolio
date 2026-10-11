@@ -1,0 +1,332 @@
+{
+  "validation": {
+    "required": "This field is required.",
+    "tooLong": "That is too long.",
+    "iban": "Enter a valid IBAN, for example GE00DEMO0000000000000000.",
+    "swift": "Enter an 8 or 11 character SWIFT/BIC code.",
+    "dateRange": "The start date must not be after the end date.",
+    "retention": "Enter a whole number of days between 1 and 3650.",
+    "port": "Port must be a number between 1 and 65535.",
+    "email": "Enter a valid sender address.",
+    "url": "Enter a full URL, starting with https://"
+  },
+  "pager": {
+    "summary": "Page {{page}} · {{total}} total"
+  },
+  "audit": {
+    "eyebrow": "Operations",
+    "title": "Audit log",
+    "description": "Who changed what, with the before and after of every change.",
+    "note": "Superadmin actions are not audited by design. This log lists actions by accountants, support desk staff and technicians.",
+    "filters": {
+      "entityType": "Entity type",
+      "actor": "Actor",
+      "partner": "Partner"
+    },
+    "entity": {
+      "task": "Task",
+      "user": "User",
+      "invoice": "Invoice",
+      "partner": "Partner",
+      "mail": "Mail",
+      "license": "License",
+      "settings": "Settings",
+      "template": "Template",
+      "project": "Project"
+    },
+    "cols": {
+      "expand": "Expand",
+      "time": "Time",
+      "actor": "Actor",
+      "action": "Action",
+      "entity": "Entity",
+      "partner": "Partner"
+    },
+    "expand": "Show details",
+    "collapse": "Hide details",
+    "json": {
+      "before": "Before",
+      "after": "After",
+      "diff": "Diff",
+      "requestId": "Request",
+      "ip": "IP",
+      "entityId": "Entity id"
+    },
+    "empty": {
+      "title": "No audited actions yet",
+      "description": "Actions by non-superadmin staff will appear here as they happen."
+    }
+  },
+  "logs": {
+    "eyebrow": "Operations",
+    "title": "System log",
+    "description": "Background jobs, partner sync, authentication and server events. Times are shown in Tbilisi time (+04).",
+    "exportFiltered": "Export filtered CSV",
+    "exportSelected": "Export selected CSV ({{count}})",
+    "exportNeedsFilter": "Set at least one filter before exporting, so the file does not contain the whole log.",
+    "exportEmpty": "No rows match the current filters.",
+    "exported": "Exported {{count}} rows.",
+    "clearSelection": "Clear selection ({{count}})",
+    "empty": "The system log is empty.",
+    "filterByRequest": "Show only this request",
+    "filters": {
+      "level": "Level",
+      "source": "Source",
+      "partner": "Partner",
+      "requestId": "Request id",
+      "q": "Message contains"
+    },
+    "cols": {
+      "time": "Time (+04)",
+      "level": "Level",
+      "source": "Source",
+      "partner": "Partner",
+      "message": "Message"
+    },
+    "json": {
+      "context": "Context",
+      "payload": "Payload",
+      "requestId": "Request"
+    },
+    "csv": {
+      "time": "time",
+      "level": "level",
+      "source": "source",
+      "partner": "partner",
+      "requestId": "request_id",
+      "message": "message",
+      "context": "context",
+      "payload": "payload"
+    },
+    "retention": {
+      "label": "Retention",
+      "hint": "Rows older than this are removed. 1 to 3650 days.",
+      "days": "days",
+      "note": "Applies to the whole log"
+    },
+    "retentionSaved": "Log retention set to {{days}} days."
+  },
+  "health": {
+    "eyebrow": "Operations",
+    "title": "System health",
+    "description": "Live status of the services Rigi depends on, with history and incidents.",
+    "autoRefresh": "Auto-refresh every 5s",
+    "unknownMetric": "unknown",
+    "bucket": {
+      "1m": "1 minute",
+      "5m": "5 minute",
+      "1h": "1 hour"
+    },
+    "duration": {
+      "s": "{{s}}s",
+      "ms": "{{m}}m {{s}}s",
+      "hm": "{{h}}h {{m}}m",
+      "dh": "{{d}}d {{h}}h"
+    },
+    "services": {
+      "title": "Services",
+      "takenAt": "Snapshot taken {{time}}",
+      "latency": "Latency",
+      "noIssues": "No issues detected",
+      "lastChecked": "Checked {{time}}"
+    },
+    "resources": {
+      "title": "Resources",
+      "cpu": "CPU load (1 / 5 / 15 min)",
+      "eventLoop": "Event loop (p50 / p99)",
+      "rss": "Memory (RSS)",
+      "disk": "Disk free",
+      "node": "Node version",
+      "uptime": "Uptime",
+      "pid": "Process id"
+    },
+    "backlog": {
+      "title": "Backlog",
+      "queuedJobs": "Queued jobs",
+      "failedJobs24h": "Failed jobs (24h)",
+      "staleSync": "Partners with stale sync",
+      "staleSyncHint": "No user sync for more than 48 hours",
+      "errors15m": "Errors (15 min)"
+    },
+    "history": {
+      "title": "History",
+      "description": "Average with min–max band, bucketed per {{bucket}}.",
+      "metric": "Metric",
+      "avg": "avg",
+      "min": "min",
+      "max": "max",
+      "emptyTitle": "No data to show",
+      "emptyNoData": "There are no samples for this metric in the selected range.",
+      "emptyUnknown": "“{{metric}}” is not a known metric. Pick one from the list.",
+      "chartLabel": "History chart for {{metric}}"
+    },
+    "metrics": {
+      "cpu_load1": "CPU load, 1 min",
+      "cpu_load5": "CPU load, 5 min",
+      "cpu_load15": "CPU load, 15 min",
+      "mem_process_rss_bytes": "Process memory (RSS)",
+      "mem_heap_used_bytes": "Heap used",
+      "mem_system_free_bytes": "System memory free",
+      "eventloop_lag_p50_ms": "Event loop lag, p50",
+      "eventloop_lag_p99_ms": "Event loop lag, p99",
+      "disk_free_bytes": "Disk free",
+      "dep_postgres_latency_ms": "Database latency",
+      "dep_jobqueue_latency_ms": "Job queue latency",
+      "dep_smtp_latency_ms": "SMTP latency",
+      "dep_imap_latency_ms": "IMAP latency",
+      "dep_attachments_latency_ms": "Attachment storage latency",
+      "dep_postgres_up": "Database availability",
+      "dep_jobqueue_up": "Job queue availability",
+      "dep_smtp_up": "SMTP availability",
+      "dep_imap_up": "IMAP availability",
+      "jobs_failed_24h": "Failed jobs (24h)",
+      "partner_sync_stale_over_48h": "Partners with stale sync",
+      "system_log_errors_15m": "Logged errors (15 min)"
+    },
+    "incidents": {
+      "title": "Incidents",
+      "description": "Outages and degradations of a dependency, newest first.",
+      "dependency": "Dependency",
+      "start": "Started",
+      "end": "Ended",
+      "duration": "Duration",
+      "reason": "Reason",
+      "ongoing": "Ongoing",
+      "empty": "No incidents recorded."
+    },
+    "retention": {
+      "title": "Health data retention",
+      "description": "How long samples and incidents are kept.",
+      "label": "Retention",
+      "saved": "Health retention set to {{days}} days."
+    }
+  },
+  "notify": {
+    "down": "{{service}} is down",
+    "degraded": "{{service}} is degraded",
+    "recovered": "{{service}} has recovered",
+    "backfillDone": "Mail backfill finished: {{ingested}} of {{total}} ingested"
+  },
+  "billing": {
+    "eyebrow": "Billing",
+    "title": "Bank details",
+    "description": "Printed on every invoice and shown to partners.",
+    "pageTitle": "Billing details",
+    "pageDescription": "The bank account partners pay into. Changes appear on all invoices that are issued or printed from now on.",
+    "saved": "Billing details saved.",
+    "fields": {
+      "bankName": "Bank name",
+      "accountHolder": "Account holder",
+      "iban": "IBAN",
+      "swift": "SWIFT / BIC",
+      "address": "Bank address",
+      "notes": "Payment notes"
+    },
+    "hints": {
+      "iban": "Spaces are ignored; letters are capitalised.",
+      "swift": "8 or 11 characters.",
+      "notes": "Shown under the bank details, for example a payment reference."
+    }
+  },
+  "settings": {
+    "eyebrow": "System",
+    "title": "Settings",
+    "description": "Mailbox connections, application address, billing details and maintenance tools.",
+    "saved": "Settings saved.",
+    "saveAll": "Save settings",
+    "host": "Host",
+    "port": "Port",
+    "user": "Username",
+    "password": "Password",
+    "passwordKept": "Leave blank to keep the current password",
+    "passwordNone": "No password set",
+    "tls": "Use TLS",
+    "test": "Test connection",
+    "testing": "Testing…",
+    "testOk": "Connection works ({{ms}} ms).",
+    "refused": "Connection refused",
+    "imap": {
+      "title": "IMAP (incoming)",
+      "description": "The support mailbox that is read into the mail desk."
+    },
+    "smtp": {
+      "title": "SMTP (outgoing)",
+      "description": "Used to email invoices and notifications.",
+      "from": "From address"
+    },
+    "baseUrl": {
+      "title": "Application address",
+      "description": "Used for links inside emails and PDF documents.",
+      "label": "App base URL"
+    },
+    "sections": {
+      "mail": "Mail servers",
+      "mailHint": "Passwords are stored write-only: they are never shown again after saving.",
+      "billing": "Billing",
+      "billingHint": "Same details the accountant sees under Billing details.",
+      "maintenance": "Mail maintenance",
+      "scheduler": "Scheduler"
+    }
+  },
+  "backfill": {
+    "title": "Mail backfill",
+    "description": "Re-reads the mailbox history and ingests messages that are not yet in Rigi. Duplicates are skipped.",
+    "limit": "Message limit (optional)",
+    "limitHint": "Leave empty to process the whole mailbox.",
+    "limitInvalid": "Enter a whole number between 1 and 10000, or leave empty.",
+    "start": "Start backfill",
+    "runAgain": "Run again",
+    "cancel": "Cancel run",
+    "cancelling": "Cancelling…",
+    "started": "Mail backfill started.",
+    "cancelRequested": "Cancel requested. The run stops at the next step.",
+    "never": "No backfill has been run yet.",
+    "history": "Earlier runs ({{count}})",
+    "summaryLine": "{{processed}}/{{total}} processed, {{ingested}} ingested",
+    "progress": "Backfill progress",
+    "processed": "Processed",
+    "limitedTo": "Limited to {{limit}} messages",
+    "ingested": "Ingested",
+    "skipped": "Skipped duplicates",
+    "errors": "Errors",
+    "startedBy": "Started by",
+    "startedAt": "Started",
+    "finishedAt": "Finished",
+    "lastError": "Last error",
+    "state": {
+      "running": "Running",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "failed": "Failed"
+    }
+  },
+  "purge": {
+    "title": "Purge mail storage",
+    "description": "Removes stored message bodies and attachment files. Mail rows, threads and task links are kept.",
+    "button": "Purge mail storage",
+    "confirmTitle": "Purge mail storage?",
+    "confirmBody": "Message bodies and attachments will be removed from storage and cannot be restored. Mail rows, threads and task links stay in place.",
+    "confirm": "Purge storage",
+    "done": "Mail storage purged.",
+    "doneDetail": "{{mails}} message bodies and {{files}} attachment files removed."
+  },
+  "scheduler": {
+    "title": "Scheduled jobs",
+    "description": "The product's cron jobs. Run any of them now to see what it does.",
+    "demoOnly": "Demo only",
+    "cron": "Cron schedule",
+    "runNow": "Run now",
+    "lastRun": "Last run",
+    "neverRun": "Has not run yet",
+    "notRegistered": "This job is not available in the demo.",
+    "done": "{{job}} finished",
+    "failed": "{{job}} failed",
+    "jobs": {
+      "mail_imap_poll": "Reads new messages from the support mailbox and files them into threads.",
+      "points_month_close": "Closes the previous month's points ledger for every partner.",
+      "invoices_generate_month": "Creates draft monthly invoices for all active partners.",
+      "invoices_autodraft_daily": "Drafts invoices for partners whose invoicing day is today.",
+      "usercount_snapshot_daily": "Records each partner's synced user count for the day."
+    }
+  }
+}

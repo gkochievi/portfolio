@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-label="A padded travel box for three bottles">
+<rect width="640" height="480" fill="#FBF7EE"/>
+<rect x="0" y="372" width="640" height="108" fill="#E7DFCB"/>
+<rect x="170" y="150" width="300" height="222" rx="12" fill="#FFFDF8" stroke="#1E1B12" stroke-width="3"/>
+<rect x="194" y="176" width="70" height="176" rx="10" fill="#E7DFCB"/><circle cx="229" cy="204" r="16" fill="#6B1E2A"/><rect x="286" y="176" width="70" height="176" rx="10" fill="#E7DFCB"/><circle cx="321" cy="204" r="16" fill="#C98A2B"/><rect x="378" y="176" width="70" height="176" rx="10" fill="#E7DFCB"/><circle cx="413" cy="204" r="16" fill="#6B1E2A"/>
+<path d="M170 150 l40 -50 h220 l40 50" fill="#F2C12E" stroke="#1E1B12" stroke-width="3" stroke-linejoin="round"/>
+<text x="320" y="138" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#1E1B12">FRAGILE · 3</text>
+</svg>

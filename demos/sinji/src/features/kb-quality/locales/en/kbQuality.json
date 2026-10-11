@@ -1,0 +1,302 @@
+{
+  "title": "Knowledge quality",
+  "common": {
+    "refresh": "Refresh",
+    "retry": "Try again",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "loadError": "Could not load this data. Please try again.",
+    "actionError": "That did not work. Please try again."
+  },
+  "docType": {
+    "product": "Product",
+    "policy": "Policy",
+    "faq": "FAQ",
+    "procedure": "Procedure",
+    "script": "Script",
+    "glossary": "Glossary",
+    "other": "Other"
+  },
+  "visibility": {
+    "public": "Public",
+    "internal": "Internal",
+    "internalHint": "Internal: the customer bot will never quote this passage. Only staff tools can use it."
+  },
+  "retrieval": {
+    "title": "Retrieval playground",
+    "description": "Ask a question the way a customer would and see which passages the knowledge base returns, how strongly, and how confident the bot would be.",
+    "query": "Question",
+    "queryPlaceholder": "For example: can I repay my loan early?",
+    "topK": "Top K",
+    "threshold": "Minimum score",
+    "thresholdHint": "Passages scoring below this are dropped from the results.",
+    "run": "Run retrieval",
+    "examples": "Try:",
+    "ex1": "Can I repay my loan early?",
+    "ex2": "How much does a gold card cost per year?",
+    "ex3": "What fee do intermediary banks charge on a SWIFT transfer?",
+    "ex4": "How do I block a lost card?",
+    "ex5": "What is the maximum discount an agent can offer on a loan?",
+    "ex6": "What will the weather be like in Batumi tomorrow?",
+    "method": "Method",
+    "methods": {
+      "vector": "Vector search",
+      "keyword": "Keyword",
+      "none": "No index"
+    },
+    "topScore": "Top score",
+    "margin": "Margin",
+    "took": "Time",
+    "confidence": "Confidence",
+    "level": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "low": {
+      "title": "Why confidence is low",
+      "empty": "The knowledge base has no ready passages yet, so there is nothing to retrieve from.",
+      "threshold": "Every passage scored below the minimum score you set, so nothing was returned. Lower the threshold to see the closest matches.",
+      "lowScore": "Even the best passage scores 0.5 or less. The knowledge base probably does not cover this question, and the bot would hand it to an agent instead of answering.",
+      "narrow": "The best passage is not far enough ahead of the runner-up. Several passages are about equally relevant, so the bot cannot be sure which one answers the question."
+    },
+    "hits_one": "{{count}} passage",
+    "hits_other": "{{count}} passages",
+    "hitsHint": "ranked by score; the tick on each bar is your minimum score",
+    "hit": {
+      "chunk": "Passage {{n}}",
+      "score": "Similarity score"
+    },
+    "openChunks": "Open in chunks",
+    "noHits": "No passages matched",
+    "noHitsBody": "Nothing reached the minimum score. Try rewording the question or lowering the threshold."
+  },
+  "quick": {
+    "title": "Quick search",
+    "description": "A fast keyword lookup across all ready passages, without scoring or confidence.",
+    "placeholder": "Search the knowledge base",
+    "idle": "Type a word or two to search.",
+    "none": "Nothing found for that search"
+  },
+  "duplicates": {
+    "description": "Repeated and near-identical documents make the bot see the same fact twice and can hide an outdated version.",
+    "scanned": "Scanned {{when}}.",
+    "noneTitle": "No duplicates found",
+    "noneBody": "Every document in the knowledge base is distinct.",
+    "exactTitle": "Identical documents",
+    "exactHint": "Same text, matched by checksum. The first document in each group is the one to keep.",
+    "exactNone": "No identical documents.",
+    "sameText_one": "{{count}} document with the same text",
+    "sameText_other": "{{count}} documents with the same text",
+    "updated": "Updated {{when}}",
+    "keep": "Keep",
+    "duplicate": "Duplicate",
+    "nearTitle": "Near-duplicates",
+    "nearHint": "Documents that share more than 85% of their wording.",
+    "nearNone": "No near-duplicates.",
+    "similarity": "similar",
+    "deleteNamed": "Delete \"{{title}}\"",
+    "confirmTitle": "Delete this document?",
+    "confirmBody": "\"{{title}}\" and all of its passages will be removed from the knowledge base. This cannot be undone.",
+    "deleted": "Deleted \"{{title}}\""
+  },
+  "activity": {
+    "all": "All",
+    "caption": "Knowledge base activity log",
+    "when": "When",
+    "action": "Action",
+    "document": "Document",
+    "detail": "Detail",
+    "actor": "By",
+    "chunks": "Passages",
+    "duration": "Duration",
+    "status": "Result",
+    "empty": "No activity yet",
+    "actions": {
+      "import": "Import",
+      "edit": "Edit",
+      "delete": "Delete",
+      "reembed": "Re-embed",
+      "chunk_edit": "Passage edit",
+      "chunk_delete": "Passage delete",
+      "bulk": "Bulk action",
+      "export": "Export",
+      "curation": "Curation"
+    },
+    "statuses": {
+      "ok": "OK",
+      "error": "Failed"
+    }
+  },
+  "maintenance": {
+    "exportTitle": "Export",
+    "exportBody": "Download the whole knowledge base as a file for backup or for use elsewhere.",
+    "jsonHint": "JSON keeps documents, tags, metadata and passages together.",
+    "csvHint": "CSV has one row per document, ready for a spreadsheet.",
+    "exportButton": "Export as {{format}}",
+    "exported": "Exported {{name}}",
+    "reembedTitle": "Full re-embed",
+    "reembedBody": "Rebuild the search index for every document. Run it after changing the embedding model or when retrieval looks stale.",
+    "never": "No re-embed has been run yet.",
+    "state": {
+      "queued": "Queued",
+      "running": "Running",
+      "done": "Finished",
+      "failed": "Failed"
+    },
+    "startedAt": "Started {{when}}",
+    "finishedAt": "Finished {{when}}",
+    "progress": "{{done}} of {{total}} documents",
+    "failed_one": "{{count}} document failed to re-embed.",
+    "failed_other": "{{count}} documents failed to re-embed.",
+    "reembedButton": "Re-embed everything",
+    "running": "Re-embedding...",
+    "started": "Re-embed started",
+    "alreadyRunning": "A re-embed is already running.",
+    "readOnly": "Members can export the knowledge base. Starting a re-embed is limited to owners."
+  },
+  "curation": {
+    "title": "KB health",
+    "description": "Sinji mines conversations for answers the knowledge base got wrong or could not give, and proposes fixes here for you to review.",
+    "runNow": "Run now",
+    "mining": "Mining conversations...",
+    "readOnly": "Members can review proposals. Accepting and declining are limited to owners.",
+    "stats": {
+      "pending": "Waiting for review",
+      "high": "High priority",
+      "accepted": "Accepted",
+      "declined": "Declined"
+    },
+    "tabs": {
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "declined": "Declined"
+    },
+    "empty": {
+      "pending": {
+        "title": "Nothing to review",
+        "body": "The knowledge base is keeping up. Run the check to look for new gaps."
+      },
+      "accepted": {
+        "title": "No accepted proposals yet",
+        "body": "Proposals you accept will be listed here."
+      },
+      "declined": {
+        "title": "No declined proposals",
+        "body": "Proposals you decline will be listed here, with your reason."
+      }
+    },
+    "cluster": "Topic",
+    "bulkHint": "Select proposals to accept them together. Removals always need their own confirmation.",
+    "selected_one": "{{count}} proposal selected",
+    "selected_other": "{{count}} proposals selected",
+    "selectAll": "Select all",
+    "clearSelection": "Clear selection",
+    "bulkAccept": "Accept selected",
+    "bulkConfirm": {
+      "title_one": "Accept {{count}} proposal?",
+      "title_other": "Accept {{count}} proposals?",
+      "body": "Each change is applied to its document, which is then re-chunked and re-embedded."
+    },
+    "select": "Select \"{{title}}\"",
+    "ops": {
+      "add": "Add",
+      "update": "Update",
+      "remove": "Remove"
+    },
+    "priority": "Priority",
+    "levels": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "states": {
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "declined": "Declined"
+    },
+    "confidence": "Confidence",
+    "risk": "Risk",
+    "occurrences": "Occurrences",
+    "distinctSources": "Distinct sources",
+    "signal": "Signal",
+    "signals": {
+      "S1": { "name": "Bot refusal", "meaning": "The bot declined to answer because the knowledge base had nothing it could rely on." },
+      "S2": { "name": "Weak retrieval", "meaning": "The bot found only loosely related passages and answered with low confidence." },
+      "S3": { "name": "Answer rewritten", "meaning": "An agent rewrote the AI's suggested answer before sending it. This is the strongest signal." },
+      "S4": { "name": "Agent took over", "meaning": "The bot failed and an agent answered the customer from scratch." },
+      "S5": { "name": "Claim not in KB", "meaning": "A fact-check found a statement that the knowledge base neither supports nor contradicts." },
+      "S6": { "name": "KB contradicted", "meaning": "A fact-check found that what was said conflicts with the knowledge base, which may be outdated." }
+    },
+    "target": "Changes document",
+    "removeNote": "Proposed for removal: this passage is outdated or contradicts newer documents.",
+    "newDocument": "New document",
+    "tags": "Suggested tags",
+    "diff": {
+      "current": "Current",
+      "proposed": "Proposed",
+      "stats": "{{added}} words added, {{removed}} words removed"
+    },
+    "evidence_one": "Evidence ({{count}} conversation)",
+    "evidence_other": "Evidence ({{count}} conversations)",
+    "showAll": "Show all {{count}}",
+    "showFewer": "Show fewer",
+    "customer": "Customer",
+    "answer": "Answer",
+    "channels": {
+      "web": "Website chat",
+      "instagram": "Instagram",
+      "messenger": "Messenger",
+      "whatsapp": "WhatsApp",
+      "call": "Phone call"
+    },
+    "sources": {
+      "operator_rewrite": "Agent rewrote the answer",
+      "operator_answer": "Agent answered instead",
+      "factcheck_contradiction": "Fact-check contradiction",
+      "factcheck_not_in_kb": "Fact-check: not in KB",
+      "weak_retrieval": "Weak retrieval",
+      "bot_refusal": "Bot refused"
+    },
+    "accept": "Accept",
+    "acceptEdit": "Accept with edits",
+    "declineButton": "Decline",
+    "acceptedBy": "Accepted by {{name}} on {{when}}",
+    "declinedBy": "Declined by {{name}} on {{when}}",
+    "reason": "Reason",
+    "edit": {
+      "title": "Accept with edits",
+      "description": "Adjust the proposed text. It is applied exactly as written below.",
+      "label": "Text to apply",
+      "required": "The text cannot be empty.",
+      "submit": "Apply and accept"
+    },
+    "decline": {
+      "title": "Decline this proposal",
+      "description": "Say why, so similar proposals are not suggested again.",
+      "label": "Reason",
+      "placeholder": "For example: this depends on the processing system and we do not promise it",
+      "required": "Please give a reason.",
+      "submit": "Decline"
+    },
+    "removeConfirm": {
+      "title": "Remove this document?",
+      "body": "\"{{title}}\" will be deleted from the knowledge base. This cannot be undone.",
+      "confirm": "Remove document"
+    },
+    "toast": {
+      "accepted": {
+        "add": "New document added. It will be ready in a moment.",
+        "update": "Document updated and queued for re-embedding.",
+        "remove": "Document removed from the knowledge base."
+      },
+      "declined": "Proposal declined",
+      "bulk_one": "{{count}} proposal accepted",
+      "bulk_other": "{{count}} proposals accepted",
+      "runStarted": "Mining recent conversations...",
+      "runDone_one": "{{count}} new proposal to review",
+      "runDone_other": "{{count}} new proposals to review",
+      "runNone": "No new gaps found since the last run"
+    }
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "app": {
+    "name": "Rigi",
+    "tagline": "პარტნიორები, ლიცენზიები, ინვოისები და მხარდაჭერა — წესრიგში.",
+    "staffSpace": "ოპერაციები",
+    "partnerSpace": "პარტნიორის პორტალი"
+  },
+  "actions": {
+    "save": "შენახვა",
+    "cancel": "გაუქმება",
+    "create": "შექმნა",
+    "edit": "რედაქტირება",
+    "delete": "წაშლა",
+    "close": "დახურვა",
+    "back": "უკან",
+    "confirm": "დადასტურება",
+    "apply": "გამოყენება",
+    "clear": "გასუფთავება",
+    "reset": "საწყისზე დაბრუნება",
+    "refresh": "განახლება",
+    "search": "ძიება",
+    "export": "CSV ექსპორტი",
+    "exportSelected": "მონიშნულის ექსპორტი",
+    "download": "ჩამოტვირთვა",
+    "preview": "გადახედვა",
+    "upload": "ატვირთვა",
+    "copy": "კოპირება",
+    "copied": "დაკოპირდა",
+    "open": "გახსნა",
+    "view": "ნახვა",
+    "add": "დამატება",
+    "remove": "მოხსნა",
+    "signOut": "გასვლა",
+    "signIn": "შესვლა",
+    "retry": "ხელახლა ცდა",
+    "next": "შემდეგი",
+    "previous": "წინა",
+    "more": "მეტი მოქმედება",
+    "menu": "მენიუ",
+    "showAll": "ყველას ჩვენება",
+    "saveChanges": "ცვლილებების შენახვა",
+    "discard": "უარყოფა"
+  },
+  "states": {
+    "loading": "იტვირთება…",
+    "empty": "ჯერ აქ არაფერია",
+    "error": "რაღაც შეცდომა მოხდა",
+    "noResults": "ამ ფილტრებით ვერაფერი მოიძებნა",
+    "allCaughtUp": "ყველაფერი წესრიგშია",
+    "nextUp": "შემდეგი რიგში",
+    "saved": "შენახულია",
+    "notAvailable": "მიუწვდომელია"
+  },
+  "taskState": {
+    "accepted": "მიღებული",
+    "in_progress": "მიმდინარე",
+    "pending": "მოლოდინში",
+    "testing": "ტესტირება",
+    "finished": "დასრულებული",
+    "verified": "დადასტურებული",
+    "cancelled": "გაუქმებული"
+  },
+  "taskStatePartner": {
+    "accepted": "მიღებული",
+    "in_progress": "მიმდინარე",
+    "pending": "მოლოდინში",
+    "testing": "ტესტირება",
+    "finished": "ელოდება დადასტურებას",
+    "verified": "დადასტურებული",
+    "cancelled": "გაუქმებული"
+  },
+  "invoiceStatus": {
+    "draft": "მონახაზი",
+    "issued": "გაცემული",
+    "paid": "გადახდილი",
+    "void": "ანულირებული"
+  },
+  "invoiceDisplayStatus": {
+    "pending": "მოლოდინში",
+    "overdue": "ვადაგადაცილებული",
+    "paid": "გადახდილი",
+    "void": "ანულირებული",
+    "disputed": "სადავო"
+  },
+  "invoiceKind": {
+    "monthly": "ყოველთვიური",
+    "adhoc": "ერთჯერადი"
+  },
+  "lineKind": {
+    "subscription": "გამოწერა",
+    "points_overflow": "ქულების გადაჭარბება",
+    "adhoc": "ერთჯერადი",
+    "discount": "ფასდაკლება",
+    "project": "პროექტი"
+  },
+  "mailStatus": {
+    "new": "ახალი",
+    "triaged": "დახარისხებული",
+    "task_created": "დავალება შექმნილია",
+    "followup": "საჭიროებს რეაგირებას",
+    "ignored": "უგულებელყოფილი"
+  },
+  "projectState": {
+    "open": "ღია",
+    "completed": "დასრულებული",
+    "cancelled": "გაუქმებული"
+  },
+  "role": {
+    "superadmin": "სუპერადმინი",
+    "accountant": "ბუღალტერი",
+    "l1_employee": "მხარდაჭერა (L1)",
+    "technician": "ტექნიკოსი",
+    "partner_admin": "პარტნიორის ადმინი"
+  },
+  "technicianType": {
+    "webdeveloper": "ვებ-დეველოპერი",
+    "voip_engineer": "VoIP ინჟინერი",
+    "both": "ვებ + VoIP"
+  },
+  "licenseKind": {
+    "per_user": "მომხმარებელზე",
+    "addon": "დამატებითი მოდული"
+  },
+  "architecture": {
+    "cloud": "ღრუბლოვანი",
+    "hybrid": "ჰიბრიდული",
+    "onprem": "ლოკალური"
+  },
+  "contactRole": {
+    "technical": "ტექნიკური",
+    "management": "მენეჯმენტი",
+    "financial": "ფინანსური",
+    "legal": "იურიდიული"
+  },
+  "documentKind": {
+    "contract": "ხელშეკრულება",
+    "technical": "ტექნიკური"
+  },
+  "logLevel": {
+    "debug": "debug",
+    "info": "info",
+    "warn": "warn",
+    "error": "error"
+  },
+  "serviceStatus": {
+    "ok": "მუშაობს",
+    "degraded": "შეფერხებით",
+    "down": "გათიშულია"
+  },
+  "dependency": {
+    "postgres": "მონაცემთა ბაზა",
+    "jobqueue": "ამოცანების რიგი",
+    "smtp": "გამავალი ფოსტა (SMTP)",
+    "imap": "საფოსტო ყუთი (IMAP)",
+    "attachments": "დანართების საცავი"
+  },
+  "active": {
+    "true": "აქტიური",
+    "false": "არააქტიური"
+  },
+  "units": {
+    "points": "ქულა",
+    "pointsLong": "ქულა",
+    "seats": "ადგილი",
+    "users": "მომხმარებელი",
+    "days": "დღე"
+  },
+  "fields": {
+    "partner": "პარტნიორი",
+    "period": "პერიოდი",
+    "status": "სტატუსი",
+    "currency": "ვალუტა",
+    "total": "ჯამი",
+    "amount": "თანხა",
+    "createdAt": "შექმნილია",
+    "updatedAt": "განახლდა",
+    "deadline": "ვადა",
+    "assignees": "შემსრულებლები",
+    "notes": "შენიშვნები",
+    "email": "ელფოსტა",
+    "phone": "ტელეფონი",
+    "name": "სახელი",
+    "title": "სათაური",
+    "description": "აღწერა",
+    "type": "ტიპი",
+    "date": "თარიღი",
+    "actions": "მოქმედებები",
+    "password": "პაროლი",
+    "username": "მომხმარებლის სახელი",
+    "role": "როლი",
+    "points": "ქულები",
+    "rate": "ტარიფი",
+    "number": "ნომერი"
+  },
+  "filters": {
+    "all": "ყველა",
+    "allPartners": "ყველა პარტნიორი",
+    "allStatuses": "ყველა სტატუსი",
+    "from": "თარიღიდან",
+    "to": "თარიღამდე"
+  },
+  "pagination": {
+    "label": "გვერდები",
+    "range": "{{from}}–{{to}} / {{total}}",
+    "page": "გვერდი {{page}} / {{pages}}",
+    "perPage": "სტრიქონი გვერდზე"
+  },
+  "table": {
+    "selected": "მონიშნულია {{count}}",
+    "selectAll": "ამ გვერდის ყველა სტრიქონის მონიშვნა",
+    "selectRow": "სტრიქონის მონიშვნა"
+  },
+  "internal": "შიდა",
+  "overdue": "ვადაგადაცილებული",
+  "yes": "დიახ",
+  "no": "არა",
+  "none": "არცერთი",
+  "nav": {
+    "mainLabel": "მთავარი ნავიგაცია",
+    "areas": {
+      "admin": "ადმინისტრირება",
+      "accountant": "ფინანსები",
+      "l1": "მხარდაჭერა",
+      "technician": "ტექნიკოსი",
+      "partner": "პარტნიორის პორტალი"
+    },
+    "roleAreas": "როლების სივრცეები",
+    "dashboard": "მიმოხილვა",
+    "partners": "პარტნიორები",
+    "licenses": "ლიცენზიები",
+    "taskTemplates": "დავალების შაბლონები",
+    "users": "მომხმარებლები",
+    "apiKeys": "API გასაღებები",
+    "audit": "აუდიტის ჟურნალი",
+    "systemLogs": "სისტემური ჟურნალი",
+    "systemHealth": "სისტემის მდგომარეობა",
+    "settings": "პარამეტრები",
+    "invoices": "ინვოისები",
+    "payments": "გადახდები",
+    "unusedAllowance": "აუთვისებელი ლიმიტი",
+    "reports": "ანგარიშები",
+    "templates": "ინვოისის შაბლონები",
+    "billing": "საბანკო რეკვიზიტები",
+    "mails": "ფოსტა",
+    "tasks": "დავალებები",
+    "projects": "პროექტები",
+    "myTasks": "ჩემი დავალებები",
+    "allTasks": "ყველა დავალება",
+    "portalTasks": "დავალებები",
+    "portalProjects": "პროექტები",
+    "portalAccount": "ლიცენზიები და მომხმარებლები",
+    "portalInvoices": "ინვოისები",
+    "portalDocuments": "დოკუმენტები",
+    "portalPoints": "ქულები",
+    "opsGroup": "ოპერაციები"
+  },
+  "chrome": {
+    "language": "ენა",
+    "theme": "თემა",
+    "themeLight": "ნათელი",
+    "themeDark": "მუქი",
+    "themeSystem": "სისტემური",
+    "toggleTheme": "თემის შეცვლა",
+    "search": "ძიება ან გადასვლა…",
+    "searchShort": "ძიება",
+    "openMenu": "ნავიგაციის გახსნა",
+    "closeMenu": "ნავიგაციის დახურვა",
+    "account": "ანგარიში",
+    "signedInAs": "შესული ხართ როგორც",
+    "skipToContent": "შიგთავსზე გადასვლა",
+    "home": "მთავარი",
+    "commands": "ბრძანებები",
+    "goTo": "გადასვლა",
+    "noMatches": "ვერაფერი მოიძებნა",
+    "switchLanguage": "ქართულზე გადართვა",
+    "switchToEnglish": "ინგლისურზე გადართვა"
+  }
+}

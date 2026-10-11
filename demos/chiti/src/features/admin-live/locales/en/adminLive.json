@@ -1,0 +1,113 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "How the desk is doing right now.",
+    "loadError": "We couldn't load the dashboard",
+    "kpi": {
+      "online": "Operators online",
+      "onlineHint": "of {{total}} on the team",
+      "awayOffline": "Away or offline",
+      "awayOfflineHint": "{{away}} away · {{offline}} offline",
+      "activeCustomers": "Active customers",
+      "activeCustomersHint": "{{waiting}} waiting in the queue",
+      "totalToday": "Chats today",
+      "totalTodayHint": "{{total}} in total"
+    },
+    "operators": {
+      "title": "Operators",
+      "manage": "Manage",
+      "empty": "No operators on the team yet.",
+      "load": "{{count}} / {{limit}} chats",
+      "loadUnlimited": "{{count}} chats"
+    },
+    "open": {
+      "title": "Open conversations",
+      "viewAll": "View all",
+      "empty": "No open conversations. All quiet in the nest.",
+      "waitingFor": "Waiting {{time}}",
+      "unassigned": "No operator yet"
+    }
+  },
+  "chats": {
+    "title": "Conversations",
+    "subtitle": "Watch every chat as it happens and step in when a customer needs you.",
+    "subtitleReadOnly": "A read-only view of every chat as it happens.",
+    "loadError": "We couldn't load the conversations",
+    "tabs": {
+      "live": "Live",
+      "pending": "Pending",
+      "inactive": "Inactive",
+      "today": "Today"
+    },
+    "empty": {
+      "liveTitle": "No live chats right now",
+      "liveText": "Active conversations will show up here as they start.",
+      "pendingTitle": "Nobody is waiting",
+      "pendingText": "New chats that need an operator land here first.",
+      "inactiveTitle": "No inactive chats",
+      "inactiveText": "Chats where the customer went quiet appear here.",
+      "todayTitle": "No chats have ended today",
+      "todayText": "Finished conversations from today are listed here."
+    },
+    "row": {
+      "messages_one": "{{count}} message",
+      "messages_other": "{{count}} messages",
+      "unassigned": "Not assigned",
+      "waitingFor": "Waiting {{time}}",
+      "endedBy": "Ended by {{who}}",
+      "ai": "AI",
+      "adminIn": "Admin in chat"
+    },
+    "clear": {
+      "button": "Clear waiting queue",
+      "title": "Clear the waiting queue?",
+      "description": "All {{count}} waiting chats will be ended by the system. Those customers will see the chat was closed.",
+      "confirm": "Clear queue",
+      "done": "Waiting queue cleared. {{count}} chats ended.",
+      "empty": "The waiting queue is already empty."
+    },
+    "select": {
+      "title": "Pick a conversation",
+      "text": "Choose a chat from the list to watch it live."
+    }
+  },
+  "thread": {
+    "back": "Back to list",
+    "readOnly": "Read-only",
+    "readOnlyHint": "Supervisors can watch but not step in.",
+    "loadError": "We couldn't open this conversation",
+    "details": "Customer details",
+    "customerId": "Customer ID",
+    "language": "Language",
+    "ipAddress": "IP address",
+    "formAnswers": "Form answers",
+    "noFormAnswers": "No form answers",
+    "channelProfile": "Channel profile",
+    "operator": "Operator",
+    "noOperator": "Waiting for an operator",
+    "handover": "Handover",
+    "notes": "Internal notes",
+    "notesEmpty": "No notes on this chat.",
+    "empty": "No messages yet.",
+    "typing": "{{name}} is typing…",
+    "typingCustomer": "Customer is typing…",
+    "startIntervention": "Step in",
+    "stopIntervention": "Hand back",
+    "needsOperator": "You can step in once an operator has taken the chat.",
+    "bannerYou": "You are in this chat. {{operator}}'s composer is locked.",
+    "bannerOther": "{{admin}} is in this chat. {{operator}}'s composer is locked.",
+    "composerPlaceholder": "Write to {{name}} as admin…",
+    "composerLabel": "Message to the customer",
+    "send": "Send",
+    "endChat": "End chat",
+    "endTitle": "End this chat?",
+    "endDescription": "The chat with {{name}} will close for the customer and the operator.",
+    "endConfirm": "End chat",
+    "ended": "This chat has ended",
+    "endedLine": "Ended by {{who}} · {{reason}}",
+    "toastStepIn": "You stepped in. The operator's composer is locked.",
+    "toastHandBack": "Chat handed back to the operator.",
+    "toastEnded": "Chat ended.",
+    "sentByAdmin": "Sent by you"
+  }
+}

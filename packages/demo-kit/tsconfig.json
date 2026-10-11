@@ -1,0 +1,29 @@
+{
+  // Deliberately stricter than any demo (exactOptionalPropertyTypes,
+  // noUncheckedIndexedAccess): the demos compile these sources with their own
+  // settings, so code that passes here passes under every looser config too.
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // DOM globals only — keeps a hoisted @types/node from retyping setTimeout.
+    "types": []
+  },
+  "include": ["src"]
+}

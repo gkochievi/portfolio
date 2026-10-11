@@ -1,0 +1,25 @@
+{
+  "name": "@portfolio/demo-kit",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Shared seam for the backend-less portfolio demos: mock API, session, router, demo chrome",
+  "exports": {
+    ".": "./src/index.ts",
+    "./demo-kit.css": "./src/demo-kit.css"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "react-router-dom": "^6.28.0",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "product": "დარეკე",
+  "tagline": "სწორი ზარი, სწორ დროს.",
+  "tenant": "ეზო კონტაქტ ცენტრი",
+  "loading": "იტვირთება...",
+  "save": "შენახვა",
+  "cancel": "გაუქმება",
+  "demoDataNote": "სადემონსტრაციო მონაცემები - სინთეტიკური ნომრები",
+  "actions": {
+    "save": "შენახვა",
+    "saveChanges": "ცვლილებების შენახვა",
+    "cancel": "გაუქმება",
+    "close": "დახურვა",
+    "confirm": "დადასტურება",
+    "create": "შექმნა",
+    "add": "დამატება",
+    "edit": "რედაქტირება",
+    "delete": "წაშლა",
+    "remove": "მოხსნა",
+    "search": "ძიება",
+    "filter": "ფილტრი",
+    "filters": "ფილტრები",
+    "clear": "გასუფთავება",
+    "clearFilters": "ფილტრების მოხსნა",
+    "apply": "გამოყენება",
+    "reset": "განულება",
+    "refresh": "განახლება",
+    "retry": "ხელახლა ცდა",
+    "back": "უკან",
+    "next": "შემდეგი",
+    "previous": "წინა",
+    "export": "ექსპორტი",
+    "exportCsv": "CSV ექსპორტი",
+    "import": "იმპორტი",
+    "importCsv": "CSV იმპორტი",
+    "download": "ჩამოტვირთვა",
+    "upload": "ატვირთვა",
+    "copy": "კოპირება",
+    "copied": "დაკოპირდა",
+    "view": "ნახვა",
+    "viewAll": "ყველას ნახვა",
+    "details": "დეტალები",
+    "more": "მეტი",
+    "start": "დაწყება",
+    "pause": "პაუზა",
+    "resume": "გაგრძელება",
+    "stop": "გაჩერება",
+    "test": "კავშირის შემოწმება",
+    "yes": "დიახ",
+    "no": "არა",
+    "signOut": "გასვლა",
+    "signIn": "შესვლა"
+  },
+  "states": {
+    "loading": "იტვირთება...",
+    "saving": "ინახება...",
+    "saved": "შენახულია",
+    "empty": "ჯერ აქ არაფერია",
+    "emptyHint": "როცა რამე გამოჩნდება, აქ ნახავთ.",
+    "noResults": "შედეგი არ მოიძებნა",
+    "noResultsHint": "სცადეთ სხვა ძიება ან მოხსენით ფილტრები.",
+    "error": "რაღაც შეცდომა მოხდა",
+    "errorHint": "მოთხოვნა ვერ შესრულდა. სცადეთ თავიდან.",
+    "required": "სავალდებულოა",
+    "invalid": "არასწორი მნიშვნელობა",
+    "all": "ყველა",
+    "any": "ნებისმიერი",
+    "none": "არცერთი",
+    "unknown": "უცნობი",
+    "notSet": "არ არის მითითებული",
+    "live": "ლაივი",
+    "on": "ჩართ.",
+    "off": "გამორთ.",
+    "enabled": "ჩართულია",
+    "disabled": "გამორთულია",
+    "active": "აქტიური",
+    "inactive": "არააქტიური"
+  },
+  "table": {
+    "showing": "{{from}}-{{to}} / {{total}}",
+    "rows_one": "{{count}} ჩანაწერი",
+    "rows_other": "{{count}} ჩანაწერი",
+    "sortBy": "დალაგება: {{column}}"
+  },
+  "roles": {
+    "operator": "ოპერატორი",
+    "supervisor": "სუპერვაიზერი",
+    "admin": "ადმინისტრატორი",
+    "super_admin": "სუპერ ადმინი"
+  },
+  "tones": {
+    "label": "ფერი",
+    "lime": "ლაიმი",
+    "success": "მწვანე",
+    "info": "ლურჯი",
+    "warning": "ქარვა",
+    "danger": "წითელი",
+    "muted": "ნაცრისფერი",
+    "ink": "მუქი"
+  },
+  "campaignStatus": {
+    "draft": "მონახაზი",
+    "active": "აქტიური",
+    "paused": "შეჩერებული",
+    "completed": "დასრულებული",
+    "archived": "დაარქივებული"
+  },
+  "dialingMode": {
+    "MANUAL": "ხელით",
+    "AUTO": "ავტო",
+    "PREDICTIVE": "პროგნოზული"
+  },
+  "numberStatus": {
+    "PENDING": "მოლოდინში",
+    "DIALING": "ირეკება",
+    "CONNECTED": "დაკავშირებულია",
+    "COMPLETED": "დასრულებული",
+    "NO_ANSWER": "არ უპასუხა",
+    "BUSY": "დაკავებულია",
+    "FAILED": "წარუმატებელი",
+    "DNC": "არ დაურეკოთ",
+    "CALLBACK_SCHEDULED": "გადარეკვა დაგეგმილია"
+  },
+  "callOutcome": {
+    "IN_PROGRESS": "მიმდინარე",
+    "ANSWERED": "უპასუხა",
+    "NO_ANSWER": "არ უპასუხა",
+    "BUSY": "დაკავებულია",
+    "FAILED": "წარუმატებელი",
+    "ABANDONED": "მიტოვებული"
+  },
+  "callMode": {
+    "MANUAL": "ხელით",
+    "AUTO": "ავტო"
+  },
+  "hangupBy": {
+    "AGENT": "ოპერატორი",
+    "CUSTOMER": "მომხმარებელი",
+    "SYSTEM": "სისტემა"
+  },
+  "statusType": {
+    "working": "სამუშაო",
+    "paused": "პაუზა",
+    "offline": "ოფლაინი"
+  },
+  "dncSource": {
+    "MANUAL": "ხელით",
+    "CUSTOMER_REQUEST": "მომხმარებლის მოთხოვნა",
+    "DISPOSITION": "ზარის შედეგი",
+    "IMPORT": "იმპორტი"
+  },
+  "time": {
+    "today": "დღეს",
+    "yesterday": "გუშინ",
+    "last7": "ბოლო 7 დღე",
+    "last30": "ბოლო 30 დღე",
+    "thisMonth": "ეს თვე",
+    "from": "თარიღიდან",
+    "to": "თარიღამდე",
+    "seconds": "{{count}} წმ",
+    "minutes": "{{count}} წთ",
+    "hours": "{{count}} სთ",
+    "never": "არასდროს",
+    "justNow": "ახლახან"
+  },
+  "theme": {
+    "light": "ნათელი",
+    "dark": "მუქი",
+    "system": "სისტემური",
+    "toggle": "თემის შეცვლა"
+  },
+  "language": {
+    "label": "ენა",
+    "en": "English",
+    "ka": "ქართული",
+    "short_en": "EN",
+    "short_ka": "ქარ",
+    "switchTo": "ენის შეცვლა"
+  },
+  "errors": {
+    "forbidden": "ამაზე წვდომა არ გაქვთ.",
+    "notFound": "ვერ მოიძებნა",
+    "network": "მოთხოვნა ვერ შესრულდა",
+    "validation": "გადაამოწმეთ მონიშნული ველები."
+  }
+}

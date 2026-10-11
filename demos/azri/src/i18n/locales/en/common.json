@@ -1,0 +1,167 @@
+{
+  "appName": "Azri",
+  "tagline": "One text. One honest opinion.",
+  "loading": "Loading...",
+  "language": {
+    "label": "Language",
+    "en": "ENG",
+    "ka": "ქარ",
+    "english": "English",
+    "georgian": "Georgian"
+  },
+  "theme": {
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "apply": "Apply",
+    "reset": "Reset",
+    "clear": "Clear",
+    "clearFilters": "Clear filters",
+    "search": "Search",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "open": "Open",
+    "openLink": "Open link",
+    "copy": "Copy",
+    "copied": "Copied",
+    "retry": "Try again",
+    "viewAll": "View all",
+    "refresh": "Refresh",
+    "send": "Send",
+    "submit": "Submit",
+    "continue": "Continue",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "details": "Details"
+  },
+  "status": {
+    "pending": "Pending",
+    "completed": "Completed",
+    "expired": "Expired",
+    "unknown": "Broken link",
+    "missing": "Missing ID",
+    "sending": "Sending…",
+    "delivered": "Delivered",
+    "justNow": "Just now",
+    "live": "Live",
+    "new": "New"
+  },
+  "rating": {
+    "1": "Poor",
+    "2": "Fair",
+    "3": "Okay",
+    "4": "Good",
+    "5": "Excellent",
+    "poor": "Poor",
+    "excellent": "Excellent",
+    "outOf": "{{value}} out of {{max}}",
+    "noRating": "Not rated",
+    "skipped": "Skipped",
+    "stars_one": "{{count}} star",
+    "stars_other": "{{count}} stars"
+  },
+  "units": {
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "daysShort": "{{count}} d",
+    "responses_one": "{{count}} response",
+    "responses_other": "{{count}} responses",
+    "questions_one": "{{count}} question",
+    "questions_other": "{{count}} questions",
+    "links_one": "{{count}} link",
+    "links_other": "{{count}} links",
+    "comments_one": "{{count}} comment",
+    "comments_other": "{{count}} comments",
+    "ms": "{{value}} ms"
+  },
+  "window": {
+    "label": "Period",
+    "lastDays_one": "Last {{count}} day",
+    "lastDays_other": "Last {{count}} days",
+    "short": "{{count}} d"
+  },
+  "filters": {
+    "tenant": "Business",
+    "branch": "Branch",
+    "staff": "Staff member",
+    "campaign": "Campaign",
+    "status": "Status",
+    "rating": "Rating",
+    "allTenants": "All businesses",
+    "allBranches": "All branches",
+    "allStaff": "All staff",
+    "allCampaigns": "All campaigns",
+    "allStatuses": "All statuses",
+    "anyRating": "Any rating",
+    "hasComment": "With comment",
+    "search": "Search"
+  },
+  "kpi": {
+    "csat": "CSAT",
+    "csatHint": "Share of ratings that are 4 or 5",
+    "avgRating": "Average rating",
+    "responseRate": "Response rate",
+    "responseRateHint": "Answered links out of links sent",
+    "responsesToday": "Responses today",
+    "responses": "Responses",
+    "sent": "Sent",
+    "completed": "Completed",
+    "expired": "Expired",
+    "pending": "Pending",
+    "vsPrevious": "vs previous period"
+  },
+  "chart": {
+    "responses": "Responses",
+    "avgRating": "Average rating",
+    "distribution": "Rating distribution",
+    "trend": "Daily responses"
+  },
+  "table": {
+    "noResults": "Nothing matches these filters",
+    "noResultsHint": "Try a longer period or clear a filter.",
+    "sortAsc": "Sort ascending",
+    "sortDesc": "Sort descending"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "range": "{{from}}–{{to}} of {{total}}",
+    "previous": "Previous page",
+    "next": "Next page"
+  },
+  "empty": {
+    "title": "Nothing here yet",
+    "description": "When there is something to show, it will appear here.",
+    "noComments": "No comments yet",
+    "noData": "No data for this period"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "loadFailed": "This didn't load. Please try again.",
+    "required": "This field is required",
+    "email": "Enter a valid email address"
+  },
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "expiresIn": "expires {{relative}}",
+    "expiredAgo": "expired {{relative}}"
+  },
+  "lang": {
+    "en": "EN",
+    "ka": "KA"
+  },
+  "demo": {
+    "resetsOnReload": "Demo data resets on reload",
+    "poweredBy": "Powered by Azri",
+    "simulated": "Simulated CRM view"
+  }
+}

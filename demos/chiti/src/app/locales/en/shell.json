@@ -1,0 +1,39 @@
+{
+  "nav": {
+    "main": "Main navigation", "inbox": "Inbox", "profile": "Profile", "liveDesk": "Live desk", "widget": "Website & widget",
+    "dashboard": "Dashboard", "chats": "Conversations", "team": "Team chat", "history": "History", "operators": "Operators",
+    "admins": "Admins", "supervisors": "Supervisors", "statistics": "Statistics", "activity": "Activity", "settings": "Settings",
+    "tenants": "Tenants", "platform": "Platform", "health": "System health", "aiKey": "AI key",
+    "groupLive": "Live", "groupPeople": "People", "groupInsights": "Insights", "groupConfig": "Configuration",
+    "openMenu": "Open menu", "closeMenu": "Close menu"
+  },
+  "surface": { "operator": "Operator console", "admin": "Admin console", "supervisor": "Supervisor console", "superadmin": "Platform console" },
+  "header": {
+    "open": "Open", "closed": "Closed", "openUntil": "Open until {{time}}", "closedUntil": "Opens {{time}}",
+    "goOperator": "Go to operator console", "goAdmin": "Admin console", "userMenu": "Account menu",
+    "statusLabel": "Your status", "statusChanged": "You are now {{status}}", "readOnly": "Read-only access",
+    "forcedPause": "An admin paused you", "platform": "Chiti platform"
+  },
+  "impersonation": { "banner": "You are signed in as {{name}} ({{role}}) from the platform console.", "back": "Back to super admin" },
+  "toast": {
+    "signedOut": "Signed out", "forceLogout": "An admin signed you out of the operator console.",
+    "noAccess": "That page is not available for your role, so we took you home.", "resetDone": "Demo data restored",
+    "welcome": "Signed in as {{name}}"
+  },
+  "login": {
+    "title": "Sign in to Chiti", "subtitle": "Staff console for Vazi Wine Cellar and the Chiti platform.",
+    "login": "Email or username", "password": "Password", "submit": "Sign in", "show": "Show password", "hide": "Hide password",
+    "required": "This field is required", "invalid": "Wrong email, username or password.", "error": "Could not sign in. Try again.",
+    "accounts": "One-click demo accounts", "accountsHint": "Pick a role to sign in instantly. Every account uses the password chiti-demo.",
+    "or": "or sign in with a form", "heroTitle": "Every channel, one nest.",
+    "heroBody": "Website chat, WhatsApp, Telegram, Messenger, Instagram and TikTok land in one inbox. The AI assistant answers first and hands over to a person when it should.",
+    "heroWidget": "Open the customer widget", "heroLive": "Try the live desk (widget + inbox side by side)",
+    "customerNote": "Customer persona: opens the storefront with the chat widget."
+  },
+  "system": {
+    "notFoundTitle": "This page flew away", "notFoundBody": "We looked in every nest and could not find that address.",
+    "forbiddenTitle": "Not for this role", "forbiddenBody": "Your account cannot open this page. Ask an admin if you think it should.",
+    "home": "Take me home", "login": "Go to sign in", "code": "Error {{code}}"
+  },
+  "title": { "suffix": "Chiti demo" }
+}

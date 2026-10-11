@@ -1,0 +1,240 @@
+{
+  "filters": {
+    "state": "State",
+    "allStates": "All states",
+    "open": "Open (unfinished)",
+    "partner": "Partner",
+    "searchPlaceholder": "Search title, number or partner",
+    "onlyMine": "Only mine"
+  },
+  "table": {
+    "caption": "Tasks",
+    "number": "Ticket",
+    "title": "Title",
+    "partner": "Partner",
+    "state": "State",
+    "points": "Points",
+    "deadline": "Deadline",
+    "assignees": "Assigned to",
+    "mails": "Linked mails",
+    "newReplies": "New replies",
+    "pricingPending": "Pricing pending",
+    "unassigned": "Unassigned"
+  },
+  "csv": {
+    "number": "Ticket",
+    "title": "Title",
+    "partner": "Partner",
+    "state": "State",
+    "points": "Points",
+    "deadline": "Deadline",
+    "overdue": "Overdue",
+    "assignees": "Assigned to",
+    "mails": "Mails",
+    "created": "Created"
+  },
+  "list": {
+    "eyebrowL1": "Support desk",
+    "eyebrowTechnician": "Technician",
+    "titleL1": "Tasks",
+    "titleTechnician": "Tasks",
+    "descriptionL1": "Every task in the queue. Filters are kept in the address bar, so a view can be shared.",
+    "descriptionTechnician": "Work what is yours, pick up what nobody has taken, or browse the whole queue.",
+    "new": "New task",
+    "count_one": "{{count}} task",
+    "count_other": "{{count}} tasks",
+    "empty": "The queue is empty.",
+    "emptyUnassigned": "Every open task has someone on it.",
+    "emptyFiltered": "Try removing a filter or searching for something else."
+  },
+  "tabs": {
+    "mine": "Mine",
+    "unassigned": "Unassigned",
+    "all": "All",
+    "unassignedTitle": "Nobody is working on these",
+    "unassignedNote": "Open tasks with no assignee. Open one and choose Assign to me to take it."
+  },
+  "dashboard": {
+    "eyebrow": "Technician",
+    "title": "Dashboard",
+    "youHandle": "You handle:",
+    "allTypes": "All task types",
+    "allTasks": "All tasks",
+    "loadFailed": "The dashboard could not be loaded.",
+    "kpi": {
+      "myOpen": "My open",
+      "finishedThisMonth": "Finished this month",
+      "unassigned": "Unassigned",
+      "allOpen": "All open"
+    },
+    "plate": "What's on your plate",
+    "plateHint": "Your unfinished tasks, soonest deadline first.",
+    "plateEmpty": "Nothing is assigned to you right now.",
+    "pickUp": "Pick up an unassigned task"
+  },
+  "create": {
+    "eyebrow": "Support desk",
+    "title": "New task",
+    "description": "Open a task for a partner or for the team. Link the mail it came from so replies stay together.",
+    "details": "Task details",
+    "template": "Template",
+    "templateHint": "Fills the title, points and description, but only the ones you have not typed yet.",
+    "noTemplate": "No template",
+    "pointsHint": "Leave empty to price it later. The task cannot be finished until it has points.",
+    "assigneesHint": "Who should work on it. You can change this later.",
+    "mailsTitle": "Link mails",
+    "mailsHint": "Recent mail. Linked mail is marked as having a task.",
+    "noMails": "There is no mail to link yet.",
+    "loadFailed": "This list could not be loaded.",
+    "threadBannerTitle": "Created from a conversation",
+    "threadBannerBody": "Replies on this conversation will be added to the task and flagged as new replies.",
+    "submit": "Create task",
+    "created": "TCK-{{number}} created",
+    "failed": "The task could not be created.",
+    "errors": {
+      "required": "Enter a title.",
+      "titleTooLong": "The title can have at most 500 characters.",
+      "descriptionTooLong": "The description can have at most 20000 characters.",
+      "points": "Enter a number that is 0 or more."
+    }
+  },
+  "workspace": {
+    "back": "All tasks",
+    "due": "Due",
+    "noDeadline": "No deadline",
+    "pricingPendingTitle": "Pricing pending",
+    "pricingPendingBody": "This task has no points yet. Set them in the edit card; the task cannot be finished before that.",
+    "errorTitle": "Task",
+    "notFound": "This task does not exist",
+    "notFoundHint": "It may have been removed, or the link is wrong.",
+    "loadFailed": "The task could not be loaded"
+  },
+  "transition": {
+    "label": "Move task",
+    "reopen": "Reopen",
+    "dialogTitle": "Move from {{from}} to {{to}}",
+    "dialogDescription": "The move is added to the task history.",
+    "note": "Note (optional)",
+    "noteHint": "Visible in the history. Partners do not see it.",
+    "noteTooLong": "The note can have at most {{max}} characters.",
+    "confirm": "Move task",
+    "done": "Task moved to {{state}}",
+    "conflict": "Cannot transition from {{from}} to {{to}}",
+    "finishBlocked": "Set the points first. A task cannot be finished while its price is pending.",
+    "waitingVerify": "Finished. Waiting for the partner to verify it.",
+    "terminal": "This task is closed. No further moves."
+  },
+  "edit": {
+    "title": "Details",
+    "descriptionL1": "Change what the task says, who it is for and when it is due.",
+    "descriptionTechnician": "Update the title, description, deadline or points.",
+    "fields": {
+      "title": "Title",
+      "partner": "Partner",
+      "deadline": "Deadline",
+      "points": "Points",
+      "description": "Description"
+    },
+    "pricingHint": "Setting points here clears \"Pricing pending\".",
+    "closed": "This task is closed and can no longer be edited.",
+    "saved": "Task saved",
+    "failed": "The task could not be saved.",
+    "errors": {
+      "required": "Enter a title.",
+      "tooLong": "Use at most {{max}} characters.",
+      "points": "Enter a number that is 0 or more."
+    }
+  },
+  "assignees": {
+    "title": "Assigned to",
+    "descriptionL1": "Technicians working on this task.",
+    "descriptionTechnician": "Who is working on this task.",
+    "none": "Nobody is assigned yet.",
+    "you": "(you)",
+    "pick": "Add a technician",
+    "remove": "Remove {{name}}",
+    "added": "Technician added",
+    "removed": "Technician removed",
+    "already": "That technician is already on this task.",
+    "assignToMe": "Assign to me",
+    "assignedToMe": "The task is yours",
+    "alreadyTaken": "Someone else picked this task up just now."
+  },
+  "threads": {
+    "title": "Linked conversations",
+    "description": "Future replies route here. New mail on a linked conversation is added to the task.",
+    "add": "Link",
+    "none": "No conversation is linked.",
+    "meta_one": "{{count}} message · {{when}}",
+    "meta_other": "{{count}} messages · {{when}}",
+    "unlink": "Unlink conversation",
+    "unlinked": "Conversation unlinked",
+    "linked": "Conversation linked",
+    "already": "That conversation is already linked to this task.",
+    "notFound": "No conversation with that ID.",
+    "pickerTitle": "Link a conversation",
+    "pickerDescription": "Search the mail threads or paste a conversation ID.",
+    "routeNote": "Future replies route here: new mail on a linked conversation is added to this task and shown as New replies.",
+    "searchPlaceholder": "Search conversations",
+    "searchFailed": "Conversations could not be loaded.",
+    "noResults": "No conversations found",
+    "link": "Link",
+    "pasteLabel": "Or paste a conversation ID"
+  },
+  "mails": {
+    "title": "Linked mails",
+    "descriptionL1": "Search the inbox to attach the mails that belong to this task.",
+    "descriptionTechnician": "Mails the desk attached to this task.",
+    "searchPlaceholder": "Search mail by subject, sender or text",
+    "minChars": "Type at least 2 characters.",
+    "searchFailed": "Search failed.",
+    "noResults": "No matching mail",
+    "link": "Link",
+    "linked": "Mail linked",
+    "unlink": "Unlink mail",
+    "unlinked": "Mail unlinked",
+    "none": "No mail is linked."
+  },
+  "meta": {
+    "title": "About this task",
+    "createdBy": "Created by",
+    "byPartner": "(partner)",
+    "createdAt": "Created",
+    "updatedAt": "Updated",
+    "template": "Template",
+    "noTemplate": "None (created by hand)",
+    "project": "Project",
+    "noProject": "Not in a project",
+    "finishedAt": "Finished",
+    "verifiedAt": "Verified"
+  },
+  "history": {
+    "title": "History",
+    "description": "Every move, newest first.",
+    "none": "No history yet.",
+    "created": "Created",
+    "partner": "Partner"
+  },
+  "chat": {
+    "title": "Chat",
+    "descriptionStaff": "Talk to the partner about this task, or leave an internal note for the team.",
+    "descriptionPartner": "Talk to the support team about this task.",
+    "empty": "No messages yet",
+    "emptyHint": "Write the first message below.",
+    "placeholder": "Write a message (Ctrl+Enter to send)",
+    "internalOnly": "Internal only",
+    "internalOnlyHint": "The partner will not see this message.",
+    "internalBadge": "Internal",
+    "partnerAuthor": "{{name}} (partner)",
+    "send": "Send",
+    "sendFailed": "The message was not sent.",
+    "loadFailed": "Messages could not be loaded.",
+    "errors": {
+      "required": "Write a message first.",
+      "tooLong": "A message can have at most {{max}} characters."
+    }
+  },
+  "notify": {
+    "staffReplied": "{{name}} replied on TCK-{{number}}"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "auth": {
+    "personas": "Demo personas",
+    "orPersona": "or pick a persona",
+    "forgot": "Forgot password?",
+    "backToSignIn": "Back to sign in",
+    "demoNote": "Live demo. Every account uses the password rigi-demo; nothing you do leaves this browser tab.",
+    "pitch": {
+      "staff": "One desk for the partners who resell and run our contact-centre platform: their contracts and seat licenses, the support queue, prepaid points and the monthly invoice run.",
+      "partner": "Submit work from your priced catalogue, verify what is finished, follow your points and pay your invoices."
+    },
+    "board": {
+      "staff": [
+        "Seat sync from Mzeo Bank",
+        "Points closed for last month",
+        "Invoice run for September",
+        "Mail triage: 4 new threads"
+      ],
+      "partner": [
+        "IVR change approved",
+        "New queue live",
+        "Verify agent onboarding",
+        "September invoice"
+      ]
+    },
+    "staff": {
+      "title": "Sign in to Rigi",
+      "subtitle": "Staff sign-in for operations, finance, the support desk and technicians.",
+      "partnerHint": "Partner admin?",
+      "partnerLink": "Use the partner portal"
+    },
+    "partner": {
+      "title": "Sign in to your portal",
+      "subtitle": "For partner administrators.",
+      "username": "Username or email",
+      "usernameHint": "Your portal username, e.g. tamar.gogua",
+      "staffHint": "Rigi staff?",
+      "staffLink": "Staff sign-in"
+    },
+    "forgotPage": {
+      "title": "Reset your password",
+      "subtitle": "Enter the email you sign in with. We will send a reset link.",
+      "submit": "Send reset link",
+      "sentTitle": "Check your inbox",
+      "sentBody": "If {{email}} belongs to a Rigi account, a reset link is on its way.",
+      "demoHint": "This is a demo, so no email is sent. You can open the reset screen directly.",
+      "openLink": "Open the reset link"
+    },
+    "resetPage": {
+      "title": "Choose a new password",
+      "subtitle": "Use at least 8 characters.",
+      "newPassword": "New password",
+      "confirm": "Repeat the password",
+      "hint": "At least 8 characters.",
+      "submit": "Save password",
+      "invalidLink": "This reset link is invalid or has expired",
+      "invalidBody": "Request a new link and use it within an hour.",
+      "requestNew": "Request a new link",
+      "doneTitle": "Password updated",
+      "doneBody": "Sign in with your new password. In this demo the password stays rigi-demo."
+    },
+    "errors": {
+      "required": "Required",
+      "email": "Enter a valid email address",
+      "invalid": "Invalid email or password",
+      "invalidUsername": "Invalid username or password",
+      "disabled": "This partner account is disabled. Contact your Rigi account manager.",
+      "minPassword": "Use at least 8 characters",
+      "mismatch": "The passwords do not match"
+    }
+  },
+  "personas": {
+    "usr_nino": "Owner. Sees every area: partners, licenses and the ops tooling.",
+    "usr_levan": "Finance. Generates, issues and collects invoices.",
+    "usr_mariam": "Triages the support mailbox and turns mail into tasks.",
+    "usr_giorgi": "VoIP engineer. Claims and works support tasks.",
+    "padm_tamar": "Zemo Systems. Submits tasks, verifies work, pays invoices."
+  },
+  "disabled": {
+    "title": "This account is disabled",
+    "body": "Your company's access to the partner portal is switched off. Your Rigi account manager can turn it back on."
+  },
+  "system": {
+    "goHome": "Go to my home",
+    "forbidden": {
+      "title": "Not your queue",
+      "body": "A {{role}} cannot open this area.",
+      "bodySignedOut": "Sign in to continue.",
+      "switch": "Sign in as someone else"
+    },
+    "notFound": {
+      "title": "Not in the queue",
+      "body": "There is no page at"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "scores": {
+    "eyebrow": "My scores",
+    "greeting": "Hello, {{name}}",
+    "subtitle": "{{title}} · {{branch}} · {{tenant}}",
+    "sendCta": "Send survey SMS",
+    "period": "Period",
+    "kpi": {
+      "avg": "Average rating",
+      "avgHint": "Mean of every answered question",
+      "csat": "CSAT",
+      "csatHint": "Share of ratings that are 4 or 5",
+      "responses": "Responses",
+      "responsesHint": "Surveys answered in the last {{count}} days",
+      "responseRate": "Response rate",
+      "responseRateHint": "{{completed}} of {{sent}} links answered",
+      "vsBranch": "vs branch"
+    },
+    "compare": {
+      "title": "How you compare",
+      "description": "Average rating, last {{count}} days",
+      "you": "You",
+      "branch": "{{branch}} branch",
+      "tenant": "All of {{tenant}}",
+      "rankLabel": "Rank in branch",
+      "rank": "{{position}} of {{of}}",
+      "rankHint": "Ranked by average rating among the staff of your branch.",
+      "noData": "No ratings yet"
+    },
+    "trend": {
+      "title": "30-day trend",
+      "titleDays": "{{count}}-day trend",
+      "description": "Responses per day and the average rating"
+    },
+    "distribution": {
+      "title": "Rating spread",
+      "description": "Every answered question, 1 to 5"
+    },
+    "questions": {
+      "title": "Question by question",
+      "description": "{{campaign}}",
+      "answered_one": "{{count}} answer",
+      "answered_other": "{{count}} answers",
+      "empty": "No answers for this campaign in the period."
+    },
+    "comments": {
+      "title": "What customers said",
+      "description": "Verbatim, newest first. New answers appear here as they arrive.",
+      "onlyWithComment": "Only with a comment",
+      "emptyTitle": "No comments yet",
+      "emptyDescription": "When a customer you served leaves a comment, it shows up here.",
+      "noComment": "Rated without a comment",
+      "answered": "{{answered}} of {{total}} answered"
+    },
+    "errorTitle": "Your scores could not be loaded"
+  },
+  "send": {
+    "eyebrow": "Simulated CRM action",
+    "title": "Send survey SMS",
+    "description": "Text a customer a one-time survey link after a visit or a call.",
+    "form": {
+      "title": "New survey SMS",
+      "campaign": "Campaign",
+      "campaignPlaceholder": "Choose a campaign",
+      "branch": "Branch",
+      "branchPlaceholder": "Choose a branch",
+      "staff": "Staff member",
+      "staffPlaceholder": "Choose a staff member",
+      "lockedHint": "Fixed to your own branch and name.",
+      "recipientMode": "Send to",
+      "modePersona": "Demo persona",
+      "modePhone": "Phone number",
+      "persona": "Demo persona",
+      "personaPlaceholder": "Choose a persona",
+      "personaHint": "The SMS lands in this persona's inbox on the start page.",
+      "phone": "Phone number",
+      "phoneHint": "Demo only: use the fake pattern 5XX 00 00 XX. A typed number has no inbox.",
+      "phonePlaceholder": "5XX 00 00 XX",
+      "interactionAt": "Interaction date",
+      "interactionHint": "When the visit or call took place.",
+      "submit": "Send survey SMS",
+      "sending": "Sending…",
+      "delivered": "Delivered",
+      "created": "Link created",
+      "reset": "New SMS"
+    },
+    "errors": {
+      "campaign": "Choose a campaign.",
+      "branch": "Choose a branch.",
+      "staff": "Choose a staff member.",
+      "persona": "Choose a demo persona.",
+      "phoneRequired": "Enter a phone number.",
+      "phonePattern": "Use the demo pattern 5XX 00 00 XX.",
+      "dateInvalid": "Enter a valid date and time.",
+      "dateFuture": "The interaction cannot be in the future.",
+      "dateOld": "The interaction must be within the last 30 days.",
+      "generic": "The SMS could not be sent. Check the form and try again."
+    },
+    "preview": {
+      "title": "SMS preview",
+      "description": "What the customer receives, in the current language.",
+      "now": "now",
+      "to": "To: {{who}}",
+      "noRecipient": "No recipient yet",
+      "tokenNote": "The personal link token is generated when you send.",
+      "chooseCampaign": "Choose a campaign to see the message."
+    },
+    "toast": {
+      "deliveredTitle": "Survey SMS delivered",
+      "deliveredDescription": "{{sender}} to {{name}} · link {{token}}",
+      "openInbox": "Open {{name}}'s inbox",
+      "createdTitle": "Survey link created",
+      "createdDescription": "{{phone}} · link {{token}}. It appears in your recent sends."
+    },
+    "recent": {
+      "title": "My recent sends",
+      "titleAdmin": "Recent sends",
+      "description": "Status updates live: pending turns to completed when the customer answers.",
+      "token": "Link",
+      "recipient": "Recipient",
+      "campaign": "Campaign",
+      "staff": "Staff",
+      "sent": "Sent",
+      "status": "Status",
+      "expires": "expires {{when}}",
+      "answered": "answered {{when}}",
+      "emptyTitle": "Nothing sent yet",
+      "emptyDescription": "Survey SMS you send appear here with their live status."
+    },
+    "errorTitle": "The send form could not be loaded"
+  }
+}

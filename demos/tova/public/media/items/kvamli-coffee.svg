@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Kvamli Coffee">
+  <circle cx="48" cy="48" r="48" fill="#FFE3D8"/>
+  <g fill="none" stroke="#0B2A31" stroke-width="4" stroke-linecap="round">
+    <path d="M38 22c-4 4 4 8 0 12M48 20c-4 4 4 8 0 12M58 22c-4 4 4 8 0 12"/>
+    <path d="M65 46h4a7 7 0 0 1 0 14h-5"/>
+  </g>
+  <path d="M26 42h40v10c0 12-8 22-20 22s-20-10-20-22z" fill="#0B2A31"/>
+  <rect x="22" y="72" width="48" height="5" rx="2.5" fill="#0B2A31"/>
+</svg>

@@ -1,0 +1,134 @@
+{
+  "pages": {
+    "ReportsPage": "Reports",
+    "CallHistoryPage": "Call history"
+  },
+  "reportsIntro": "Agent output, campaign results and every call in a date range. Exports are built in your browser.",
+  "tabs": {
+    "agents": "Agent performance",
+    "campaign": "Campaign report",
+    "detail": "Call detail"
+  },
+  "actions": {
+    "generate": "Generate"
+  },
+  "filters": {
+    "from": "From",
+    "to": "To",
+    "campaign": "Campaign",
+    "agent": "Agent",
+    "disposition": "Disposition",
+    "outcome": "Outcome",
+    "phone": "Phone",
+    "phonePlaceholder": "Digits, e.g. 345",
+    "allCampaigns": "All campaigns",
+    "allAgents": "All agents",
+    "allDispositions": "All dispositions",
+    "noDisposition": "Without disposition",
+    "allOutcomes": "All outcomes",
+    "pickCampaign": "Choose a campaign",
+    "loading": "Loading…"
+  },
+  "validation": {
+    "fromRequired": "Choose a start date",
+    "toRequired": "Choose an end date",
+    "invalidDate": "Enter a valid date",
+    "toBeforeFrom": "The end date is before the start date",
+    "tooLong": "The range can be at most one year",
+    "campaignRequired": "Choose a campaign"
+  },
+  "empty": {
+    "tryRange": "Try a wider date range."
+  },
+  "export": {
+    "done": "Exported {{count}} records to {{filename}}"
+  },
+  "perf": {
+    "agent": "Agent",
+    "callsHandled": "Calls handled",
+    "talkTime": "Total talk time",
+    "talkTimeSec": "Total talk time (s)",
+    "avgDuration": "Avg duration",
+    "avgDurationSec": "Avg duration (s)",
+    "sales": "Sales",
+    "callbacks": "Callbacks",
+    "notInterested": "Not interested",
+    "totalCalls": "Calls in range",
+    "totalTalk": "Talk time",
+    "totalSales": "Sales",
+    "empty": "No agent calls in this range"
+  },
+  "campaign": {
+    "totalDialed": "Total dialed",
+    "answerRate": "Answer rate",
+    "conversionRate": "Conversion rate",
+    "avgTalk": "Avg talk time",
+    "answeredHint_one": "{{count}} answered",
+    "answeredHint_other": "{{count}} answered",
+    "conversionHint": "Sales of answered calls",
+    "pieTitle": "Dispositions",
+    "pieHint_one": "{{count}} disposed call",
+    "pieHint_other": "{{count}} disposed calls",
+    "barTitle": "Calls by disposition",
+    "barHint": "Count per disposition code",
+    "empty": "No dispositioned calls for this campaign in this range"
+  },
+  "detail": {
+    "count_one": "{{count}} call",
+    "count_other": "{{count}} calls",
+    "empty": "No calls in this range"
+  },
+  "table": {
+    "dateTime": "Date / time",
+    "campaign": "Campaign",
+    "agent": "Agent",
+    "phone": "Phone",
+    "customer": "Customer name",
+    "duration": "Duration",
+    "durationSec": "Duration (s)",
+    "outcome": "Outcome",
+    "disposition": "Disposition",
+    "notes": "Notes",
+    "recording": "Recording",
+    "noAgent": "No agent",
+    "noDisposition": "None"
+  },
+  "recording": {
+    "none": "No recording in demo"
+  },
+  "cdr": {
+    "intro": "Every dialed call with its timing, hangup cause and disposition. New calls appear as they finish.",
+    "live": "Live",
+    "count_one": "{{count}} call",
+    "count_other": "{{count}} calls",
+    "empty": "No calls found",
+    "emptyFiltered": "No call matches these filters."
+  },
+  "drawer": {
+    "eyebrow": "Call record",
+    "loading": "Loading call…",
+    "unknownCustomer": "Unknown customer",
+    "timeline": "Timeline",
+    "initiated": "Initiated",
+    "answered": "Answered",
+    "ended": "Ended",
+    "never": "—",
+    "durations": "Durations",
+    "ring": "Ring",
+    "talk": "Talk",
+    "hold": "Hold",
+    "total": "Total",
+    "hangup": "Hangup",
+    "cause": "Q.850 cause",
+    "hangupBy": "Hung up by",
+    "callerId": "Caller ID",
+    "callId": "Call ID",
+    "notYet": "Still in progress",
+    "disposition": "Disposition",
+    "noNote": "No note",
+    "callback": "Callback",
+    "recording": "Recording",
+    "otherCalls": "Other calls to this number",
+    "noOtherCalls": "This is the only call to this number."
+  }
+}

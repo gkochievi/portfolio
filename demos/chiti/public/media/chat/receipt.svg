@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-label="A paper receipt from Vazi Wine Cellar for order VZ-24817">
+<rect width="640" height="480" fill="#FBF7EE"/>
+<rect x="0" y="372" width="640" height="108" fill="#E7DFCB"/>
+<path d="M200 40 h240 v330 l-20 -12 -20 12 -20 -12 -20 12 -20 -12 -20 12 -20 -12 -20 12 -20 -12 -20 12 -20 -12 -20 12 z" fill="#FFFDF8" stroke="#1E1B12" stroke-width="2"/>
+<text x="320" y="90" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#1E1B12">Vazi Wine Cellar</text>
+<text x="320" y="118" font-family="Helvetica, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#4E5C17">Order VZ-24817</text>
+<rect x="226" y="150" width="120" height="10" rx="5" fill="#E7DFCB"/><rect x="380" y="150" width="36" height="10" rx="5" fill="#E7DFCB"/><rect x="226" y="184" width="96" height="10" rx="5" fill="#E7DFCB"/><rect x="380" y="184" width="36" height="10" rx="5" fill="#E7DFCB"/><rect x="226" y="218" width="140" height="10" rx="5" fill="#E7DFCB"/><rect x="380" y="218" width="36" height="10" rx="5" fill="#E7DFCB"/><rect x="226" y="252" width="80" height="10" rx="5" fill="#E7DFCB"/><rect x="380" y="252" width="36" height="10" rx="5" fill="#E7DFCB"/>
+<path d="M226 300 h188" stroke="#1E1B12" stroke-dasharray="4 6" stroke-width="2"/>
+<text x="226" y="334" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#1E1B12">Total</text>
+<text x="414" y="334" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="end" fill="#1E1B12">141.00 GEL</text>
+</svg>

@@ -1,0 +1,215 @@
+{
+  "pages": {
+    "AgentWorkspacePage": "Agent workspace"
+  },
+  "topbar": {
+    "campaign": "Campaign",
+    "campaignPlaceholder": "Select a campaign",
+    "noCampaigns": "No active campaigns assigned",
+    "campaignChanged": "Now working on {{name}}",
+    "status": "Status",
+    "working": "Working",
+    "paused": "Paused",
+    "noTimeout": "No limit",
+    "lockedDuringCall": "Your status is locked during a call",
+    "timeInStatus": "Time in status",
+    "statusChanged": "Status: {{name}}",
+    "systemNote": "On call and Offline are set by the dialer."
+  },
+  "units": {
+    "hours_one": "{{count}} h",
+    "hours_other": "{{count}} h",
+    "minutes_one": "{{count}} min",
+    "minutes_other": "{{count}} min",
+    "seconds_one": "{{count}} s",
+    "seconds_other": "{{count}} s"
+  },
+  "mode": {
+    "MANUAL": "Manual",
+    "AUTO": "Auto",
+    "PREDICTIVE": "Predictive"
+  },
+  "status": {
+    "title": "My status",
+    "ext": "ext {{ext}}",
+    "noExt": "No extension",
+    "timeInStatus": "Time in status",
+    "overtime": "Over the {{limit}} limit by {{over}}",
+    "wrapUpReturn": "Back to Available in {{seconds}} s"
+  },
+  "softphone": {
+    "connected": "Softphone connected (demo)",
+    "ext": "ext {{ext}}",
+    "register": "Register",
+    "registerTitle": "Register softphone",
+    "registerHint": "Any extension and password work in the demo. Nothing leaves your browser.",
+    "extension": "SIP extension",
+    "password": "Password",
+    "registered": "Softphone registered as ext {{ext}}"
+  },
+  "kpis": {
+    "title": "Today",
+    "calls": "Calls",
+    "avgDuration": "Avg duration",
+    "conversions": "Conversions",
+    "conversionRate": "Conversion rate"
+  },
+  "lead": {
+    "title": "Lead",
+    "lastLead": "Last lead",
+    "empty": "No lead yet",
+    "emptyHint": "Press Next lead to get the next customer.",
+    "unknown": "Unknown customer",
+    "masked": "The full number shows once the call connects.",
+    "copy": "Copy number",
+    "copied": "Number copied",
+    "campaign": "Campaign",
+    "client": "Client",
+    "attempts": "Attempts",
+    "history": "Calls to this number",
+    "noHistory": "No earlier calls to this number."
+  },
+  "fields": {
+    "city": "City",
+    "currentPlan": "Current plan",
+    "monthlySpend": "Monthly spend",
+    "contractEnds": "Contract ends",
+    "loanType": "Loan type",
+    "lastPayment": "Last payment",
+    "previousPlan": "Previous plan",
+    "leftOn": "Left on",
+    "carModel": "Car model",
+    "policyExpires": "Policy expires",
+    "interest": "Interest",
+    "budget": "Budget",
+    "membershipTier": "Membership tier",
+    "lastOrder": "Last order",
+    "orderNo": "Order no.",
+    "deliveryDate": "Delivery date",
+    "name": "Name",
+    "phone": "Phone"
+  },
+  "stage": {
+    "ready": "Ready for calls",
+    "readyHint": "Press Next lead, or wait for an auto-dialed call.",
+    "hoursNote": "Working hours {{start}}-{{end}} are shown but relaxed in this demo.",
+    "nextLead": "Next lead",
+    "requesting": "Finding the next number…",
+    "dialing": "Connecting to the customer…",
+    "ringing": "Ringing the customer's phone…",
+    "step": {
+      "requesting": "Finding",
+      "dialing": "Dialing",
+      "ringing": "Ringing"
+    },
+    "cancel": "Cancel call",
+    "incoming": "Incoming call",
+    "incomingHint": "Auto-dialed. The customer is on the line.",
+    "autoReject": "Auto-reject in {{seconds}} s",
+    "answer": "Answer",
+    "reject": "Reject",
+    "inCall": "In call",
+    "onHold": "On hold",
+    "muted": "Muted",
+    "ended": "Call ended",
+    "endedHint": "Choose a disposition to continue."
+  },
+  "endReason": {
+    "AGENT": "You ended the call",
+    "CUSTOMER": "The customer hung up",
+    "NO_ANSWER": "No answer",
+    "BUSY": "The line was busy",
+    "REJECTED": "Call declined",
+    "TRANSFERRED": "Transferred"
+  },
+  "script": {
+    "title": "Call script",
+    "empty": "This campaign has no script.",
+    "prev": "Previous",
+    "next": "Next",
+    "step": "Step {{n}} of {{total}}"
+  },
+  "waveform": {
+    "label": "Live audio level"
+  },
+  "notes": {
+    "label": "Call notes",
+    "placeholder": "What did the customer say?",
+    "hint": "Saved with the disposition."
+  },
+  "disposition": {
+    "title": "Disposition",
+    "required": "Disposition required",
+    "requiredShort": "Required",
+    "requiredHint": "The next call is blocked until you submit one.",
+    "idleHint": "Available once a call is under way.",
+    "recent": "Recently used",
+    "all": "All dispositions",
+    "suggested": "Suggested from the call result.",
+    "callback": "Callback date and time",
+    "callbackRequired": "Choose a callback date and time",
+    "callbackPast": "The callback time cannot be in the past",
+    "notes": "Notes (optional)",
+    "submit": "Submit",
+    "submitted": "Saved: {{name}}",
+    "choose": "Choose a disposition",
+    "modalTitle": "How did the call end?",
+    "hotkeyHint": "pick a disposition, then"
+  },
+  "today": {
+    "title": "Today's calls",
+    "empty": "No calls yet today",
+    "emptyHint": "Calls you finish today appear here.",
+    "phone": "Phone",
+    "campaign": "Campaign",
+    "disposition": "Disposition",
+    "noDisposition": "None",
+    "notes": "Notes",
+    "noNotes": "No notes"
+  },
+  "dialbar": {
+    "label": "Call controls",
+    "timer": "Call timer",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "hold": "Hold",
+    "resume": "Resume",
+    "transfer": "Transfer",
+    "hangup": "Hang up",
+    "transferTitle": "Transfer to extension",
+    "transferHint": "For example 1201, the supervisor desk.",
+    "transferDo": "Transfer",
+    "transferred": "Transferred to ext {{ext}}",
+    "extensionInvalid": "Enter an extension (3-6 digits)",
+    "nextIn": "Next lead in {{seconds}} s",
+    "awaiting": "Disposition required",
+    "idle": "Ready",
+    "phase": {
+      "requesting": "Finding a number",
+      "dialing": "Dialing",
+      "ringing": "Ringing",
+      "incoming": "Incoming call",
+      "answered": "Connected",
+      "ended": "Call ended"
+    }
+  },
+  "toast": {
+    "noAnswer": "No answer. Choose a disposition.",
+    "busy": "The line was busy. Choose a disposition.",
+    "customerHungUp": "The customer hung up",
+    "missed": "Auto call declined. The number goes back to the queue.",
+    "rejected": "Call declined",
+    "muted": "Microphone muted",
+    "unmuted": "Microphone on"
+  },
+  "errors": {
+    "selectCampaign": "Please select a campaign first",
+    "noNumbers": "No more numbers available in this campaign",
+    "notWorking": "Set your status to Available to take calls",
+    "dispositionFirst": "Submit the disposition for the last call first",
+    "campaignInactive": "This campaign is not active",
+    "notAssigned": "You are not assigned to this campaign",
+    "alreadyOnCall": "You are already on a call",
+    "loadTitle": "The workspace could not load"
+  }
+}

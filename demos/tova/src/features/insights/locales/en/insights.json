@@ -1,0 +1,81 @@
+{
+  "title": "Insights",
+  "description": "Every number in one place, recomputed the moment a round lands.",
+  "live": "Live",
+  "generatedAt": "Computed at {{time}}",
+  "overview": {
+    "title": "Overview",
+    "players": "Players",
+    "playersHint": "{{active}} played · {{disabled}} suspended",
+    "rounds": "Rounds",
+    "roundsHint": "{{avg}} per active player",
+    "record": "Record score",
+    "recordHint": "Average round {{avg}}",
+    "points": "Points scored",
+    "pointsHint": "Across every round",
+    "events": "Events",
+    "eventsHint": "{{published}} published",
+    "staff": "Staff",
+    "staffHint": "Console accounts",
+    "trivia": "Trivia answers",
+    "triviaHint": "{{pct}} correct",
+    "triviaNone": "No answers yet",
+    "bonus": "Bonus given",
+    "bonusHint": "From {{correct}} correct answers"
+  },
+  "month": {
+    "title": "This month",
+    "newPlayers": "New players",
+    "plays": "Rounds played",
+    "activeEvents": "Active events"
+  },
+  "charts": {
+    "title": "Last 30 days",
+    "description": "Daily activity. Today is highlighted.",
+    "signups": "Sign-ups per day",
+    "signupsUnit": "Sign-ups",
+    "plays": "Rounds per day",
+    "playsUnit": "Rounds",
+    "total_one": "{{value}} in total",
+    "total_other": "{{value}} in total",
+    "peak": "peak {{value}} on {{day}}",
+    "today": "today",
+    "todayKey": "Today",
+    "day": "Day"
+  },
+  "events": {
+    "title": "By event",
+    "description": "How each event performed, newest first.",
+    "name": "Event",
+    "status": "Status",
+    "players": "Players",
+    "plays": "Rounds",
+    "avg": "Average",
+    "top": "Top score",
+    "topPlayer": "Top player",
+    "signups": "Sign-ups",
+    "trivia": "Trivia",
+    "empty": "No events yet"
+  },
+  "records": {
+    "title": "Records",
+    "description": "Staff and suspended accounts are left out.",
+    "topScores": "Top rounds",
+    "topPlayers": "Most active players",
+    "noEvent": "No event",
+    "empty": "No rounds yet",
+    "rounds_one": "{{value}} round",
+    "rounds_other": "{{value}} rounds",
+    "best": "Best {{value}}"
+  },
+  "catches": {
+    "title": "Items caught",
+    "description": "Totals across every round, split by bonus level.",
+    "total": "Caught in total",
+    "byType": "By type",
+    "legend": "Bonus level",
+    "levels": { "l1": "Plain", "l2": "×1.5 bonus", "l3": "×2 bonus" },
+    "top": "Most caught",
+    "empty": "Nothing caught yet"
+  }
+}

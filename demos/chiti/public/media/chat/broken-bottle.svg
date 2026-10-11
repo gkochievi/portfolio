@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-label="A broken wine bottle in a wet delivery box">
+<rect width="640" height="480" fill="#FBF7EE"/>
+<rect x="0" y="372" width="640" height="108" fill="#E7DFCB"/>
+<rect x="120" y="250" width="400" height="122" rx="10" fill="#B98552"/><rect x="120" y="250" width="400" height="20" fill="#1E1B12" opacity=".15"/>
+<g transform="rotate(-12 320 300)"><g transform="translate(275 112)">
+<rect x="34" y="0" width="22" height="70" rx="4" fill="#6B1E2A"/><rect x="30" y="-8" width="30" height="16" rx="3" fill="#1E1B12"/>
+<path d="M34 60 Q4 86 4 120 L4 250 Q4 260 14 260 L76 260 Q86 260 86 250 L86 120 Q86 86 56 60 Z" fill="#6B1E2A"/>
+<rect x="12" y="140" width="66" height="70" rx="6" fill="#FFFDF8"/><rect x="22" y="160" width="46" height="6" rx="3" fill="#4E5C17"/><rect x="22" y="176" width="30" height="6" rx="3" fill="#F2C12E"/></g></g>
+<path d="M300 170 l18 30 -14 22 20 26 -10 30" stroke="#FBF7EE" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M330 205 l22 14 -8 24" stroke="#FBF7EE" stroke-width="4" fill="none" stroke-linecap="round"/>
+<ellipse cx="400" cy="420" rx="150" ry="26" fill="#6B1E2A" opacity=".75"/>
+<path d="M470 395 l26 -18 6 22 z M520 410 l18 -8 0 16 z M430 400 l14 -16 10 14 z" fill="#4E5C17" opacity=".6"/>
+</svg>

@@ -1,0 +1,183 @@
+{
+  "title": "People",
+  "subtitle": "Console accounts, directory sign-in and the roles they hold.",
+  "add": "Add user",
+  "count_one": "{{count}} user",
+  "count_other": "{{count}} users",
+  "disabledCount": "{{count}} disabled",
+  "search": { "placeholder": "Search username, name or email", "label": "Search users" },
+  "filter": { "type": "Type", "all": "All types" },
+  "types": { "ldap": "Directory", "internal": "Local", "api_service": "API" },
+  "typeTitle": {
+    "ldap": "Signs in with a directory account",
+    "internal": "Local account with its own password",
+    "api_service": "Service account for the external API"
+  },
+  "status": { "active": "Active", "disabled": "Disabled" },
+  "col": {
+    "username": "Username",
+    "name": "Display name",
+    "type": "Type",
+    "role": "Role",
+    "status": "Status",
+    "lastLogin": "Last login",
+    "actions": "Actions"
+  },
+  "noDisplayName": "No display name",
+  "table": {
+    "emptyTitle": "No console users yet",
+    "emptyBody": "Add the first user to give someone access to the console.",
+    "noMatchTitle": "No users match",
+    "noMatchBody": "Try another search or clear the type filter."
+  },
+  "row": {
+    "edit": "Edit {{name}}",
+    "delete": "Delete {{name}}",
+    "deleteSuperadmin": "The superadmin account cannot be deleted",
+    "deleteSelf": "You cannot delete the account you are signed in with"
+  },
+  "legend": {
+    "title": "Roles",
+    "subtitle": "What each role can reach in the console.",
+    "members_one": "{{count}} user",
+    "members_other": "{{count}} users"
+  },
+  "roleDesc": {
+    "superadmin": "Everything, including People. The only role that manages console users. Cannot be deleted.",
+    "admin": "Every area except People: calls, archive, contact centre, extensions, health and connections.",
+    "cc-admin": "Contact-centre administration: agents, campaigns (optionally scoped) and the node monitor, plus Core Cluster calls.",
+    "tel-admin": "Telephony administration with access to Edge PBX call records.",
+    "cc-operator": "Searches and plays Core Cluster call records.",
+    "tel-operator": "Searches and plays Edge PBX call records.",
+    "it-support": "Reserves and creates Edge PBX extensions and browses the extension directory.",
+    "user": "Read-only access to call records from both sources.",
+    "api_service": "A service identity for integrations. Signs in to the external API only, never to the console."
+  },
+  "create": {
+    "title": "Add a console user",
+    "description": "Give a colleague or a service access to Bani.",
+    "role": "Role",
+    "userType": "User type",
+    "typeLdap": "Directory",
+    "typeInternal": "Local",
+    "apiNote": "API accounts are always local service identities, so the user type is fixed.",
+    "submit": "Create user"
+  },
+  "directory": {
+    "search": "Search the directory",
+    "searchPlaceholder": "Name, username or email",
+    "counts": "{{found}} found / {{registered}} registered",
+    "registered": "Registered",
+    "loading": "Searching the directory…",
+    "emptyTitle": "No one found",
+    "emptyBody": "Try a different name or username.",
+    "selected": "Selected directory user",
+    "change": "Change selection",
+    "pick": "Pick a person from the directory"
+  },
+  "access": {
+    "label": "Access mode",
+    "direct": "Direct",
+    "group": "By group",
+    "directHint": "The role you choose here applies.",
+    "groupHint": "The role follows the group mapping.",
+    "warningTitle": "Roles come from the group mapping",
+    "warning": "With group access the role is set by the directory groups mapped below. The role chosen here is only a fallback."
+  },
+  "field": {
+    "username": "Username",
+    "displayName": "Display name",
+    "email": "Email",
+    "password": "Password",
+    "description": "Description",
+    "descriptionPlaceholder": "What this account is for",
+    "generate": "Generate",
+    "show": "Show password",
+    "hide": "Hide password",
+    "passwordHint": "At least 8 characters, or generate one.",
+    "generatedHint": "Generated. You will see it once more after saving."
+  },
+  "validation": {
+    "required": "This field is required.",
+    "username": "Use 3-64 letters, digits, dots, dashes or underscores.",
+    "email": "Enter a valid email address.",
+    "password": "Use at least 8 characters.",
+    "pickDirectory": "Pick a person from the directory.",
+    "groupDn": "Enter a group distinguished name.",
+    "groupDnFormat": "Use a name such as CN=group,OU=Groups,DC=example.",
+    "groupDuplicate": "This group is already mapped.",
+    "role": "Choose a role.",
+    "tooLong": "That is too long."
+  },
+  "secret": {
+    "title": "Copy the password now",
+    "bodyNew": "{{name}} was created. This password is shown only once and cannot be recovered later.",
+    "bodyRegenerated": "A new password was set for {{name}}. It is shown only once and the old one no longer works.",
+    "username": "Username",
+    "password": "Password",
+    "done": "I have copied it"
+  },
+  "edit": {
+    "title": "Edit user",
+    "roleLocked": "The role of an API account cannot be changed.",
+    "roleSelf": "You cannot change your own role.",
+    "activeSelf": "You cannot disable your own account.",
+    "active": "Account is active",
+    "activeHint": "Disabled accounts cannot sign in.",
+    "directoryPassword": "This account signs in with its directory password, which is managed in the directory.",
+    "newPassword": "New password",
+    "newPasswordHint": "Leave empty to keep the current password.",
+    "regenerate": "Regenerate password",
+    "regenerateTitle": "Regenerate the password?",
+    "regenerateBody": "A new password is generated for {{name}} and shown once. The current password stops working immediately.",
+    "downloadFormat": "Default download format",
+    "downloadHint": "Format of recordings fetched through the API.",
+    "formatMp3": "MP3",
+    "formatOriginal": "Original",
+    "created": "Created",
+    "updated": "Updated",
+    "lastLogin": "Last login",
+    "save": "Save changes"
+  },
+  "campaigns": {
+    "title": "Allowed campaigns",
+    "hint": "Leave empty to allow every campaign.",
+    "search": "Search campaigns",
+    "selectAll": "Select all",
+    "clear": "Clear",
+    "selected_one": "{{count}} selected",
+    "selected_other": "{{count}} selected",
+    "empty": "No campaigns match.",
+    "error": "Could not load campaigns."
+  },
+  "delete": {
+    "title": "Delete {{name}}?",
+    "body": "The account loses access to the console immediately. This cannot be undone.",
+    "confirm": "Delete user"
+  },
+  "mappings": {
+    "title": "Group to role mapping",
+    "subtitle": "Directory groups decide the role of users who sign in by group.",
+    "group": "Group distinguished name",
+    "groupPlaceholder": "CN=group,OU=Groups,DC=example,DC=com",
+    "role": "Role",
+    "add": "Add mapping",
+    "remove": "Remove mapping",
+    "empty": "No groups mapped yet. Users with group access fall back to their own role.",
+    "nested": "Resolve nested groups",
+    "nestedHint": "Members of child groups inherit the role of their parent group.",
+    "save": "Save mapping",
+    "saved": "Saved",
+    "groupUsers_one": "{{count}} user signs in by group.",
+    "groupUsers_other": "{{count}} users sign in by group.",
+    "loadError": "Could not load the mapping."
+  },
+  "toast": {
+    "created": "{{name}} was added",
+    "updated": "{{name}} was updated",
+    "deleted": "{{name}} was deleted",
+    "passwordRegenerated": "New password set for {{name}}",
+    "mappingsSaved": "Group mapping saved",
+    "copied": "Copied to the clipboard"
+  }
+}

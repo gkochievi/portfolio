@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Tea gift box">
+  <rect width="400" height="300" fill="#DCEAEE"/>
+  <g fill="#FFFFFF" opacity=".8"><circle cx="54" cy="52" r="4"/><rect x="330" y="44" width="7" height="7" rx="2"/><circle cx="350" cy="240" r="3"/></g>
+  <ellipse cx="200" cy="262" rx="130" ry="12" fill="#BFDCE6"/>
+  <rect x="90" y="122" width="220" height="140" rx="10" fill="#0A6F94"/>
+  <rect x="80" y="100" width="240" height="40" rx="10" fill="#06506B"/>
+  <rect x="188" y="100" width="24" height="162" fill="#FF6B3D"/>
+  <path d="M200 100 C170 62 138 74 150 96 C158 108 184 104 200 100 Z" fill="#FF6B3D"/>
+  <path d="M200 100 C230 62 262 74 250 96 C242 108 216 104 200 100 Z" fill="#FF6B3D"/>
+  <circle cx="200" cy="100" r="10" fill="#0B2A31"/>
+  <g transform="translate(140 196)">
+    <path d="M-34 0 C-24 -30 18 -34 34 0 C18 30 -24 30 -34 0 Z" fill="#F3F7F6"/>
+    <path d="M-30 0 H30" stroke="#0A6F94" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(260 196)">
+    <path d="M-34 0 C-24 -30 18 -34 34 0 C18 30 -24 30 -34 0 Z" fill="#F3F7F6"/>
+    <path d="M-30 0 H30" stroke="#0A6F94" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

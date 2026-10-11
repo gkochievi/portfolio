@@ -1,0 +1,72 @@
+{
+  "loading": "Checking your link…",
+  "missing": {
+    "title": "Survey ID not found",
+    "description": "This link doesn't include a survey ID. Open the full link from the SMS, or pick a message in the demo inbox.",
+    "back": "Back to the inbox"
+  },
+  "progress": {
+    "short": "{{answered}} / {{total}}",
+    "label": "{{answered}} of {{total}} questions answered"
+  },
+  "intro": {
+    "eyebrow": "Your feedback",
+    "fallbackTitle": "Share your feedback",
+    "contextLabel": "What you're rating",
+    "openUntil": "Open until {{date}}",
+    "time": "about 30 seconds"
+  },
+  "question": {
+    "counter": "Question {{n}} of {{total}}",
+    "tapToRate": "Tap a star to rate",
+    "star_one": "{{count}} star, {{label}}",
+    "star_other": "{{count}} stars, {{label}}"
+  },
+  "comment": {
+    "label": "Anything else you'd like to tell us?",
+    "hint": "Your words go straight to the team.",
+    "placeholder": "What went well, what could be better…"
+  },
+  "submit": {
+    "send": "Send",
+    "sending": "Sending…",
+    "sent": "Sent",
+    "optional": "Every question is optional.",
+    "allDone": "All questions answered. Thank you!",
+    "skipped_one": "You skipped 1 question. You can still send.",
+    "skipped_other": "You skipped {{count}} questions. You can still send.",
+    "error": "We couldn't send your answers",
+    "errorRetry": "Your ratings are still here. Please try again.",
+    "errorExpired": "This link expired while you were answering.",
+    "errorCompleted": "Answers for this link have already been sent."
+  },
+  "finished": {
+    "title": "Thank you. We've got your answers.",
+    "description": "Every rating is read by the team. It's how the next visit gets better.",
+    "descriptionTenant": "Everyone at {{tenant}} reads these ratings. It's how the next visit gets better.",
+    "alreadyTitle": "You've already answered this one",
+    "alreadyDescription": "Each survey link works once, and your answers for this visit are already in. Thank you for taking the time."
+  },
+  "expired": {
+    "title": "This link has run out of time",
+    "description": "Survey links stay open for a few days after your visit, and this one has now closed. Thank you for thinking of us.",
+    "nextTenant": "After your next visit, {{tenant}} will send you a fresh link by SMS."
+  },
+  "invalid": {
+    "title": "This link isn't valid",
+    "description": "We couldn't find a survey for this link. It may have been cut short, so try opening it again straight from the SMS.",
+    "hint": "In this demo, Luka's inbox holds a link like this on purpose."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "There's nothing at this address. Open a survey from the SMS inbox, or try the three survey calls in the API playground.",
+    "playground": "API playground"
+  },
+  "demo": {
+    "label": "Demo shortcuts",
+    "backToInbox": "Back to the inbox",
+    "seeInConsole": "See it in the console",
+    "consoleHint": "Opens the simulated CRM view, where your answer sits at the top of the feed.",
+    "alreadyHint": "Pick another pending link in the inbox to try the full survey."
+  }
+}

@@ -1,0 +1,252 @@
+/*
+ * Sinji design tokens + base layer. Owned by the design-system agent.
+ *
+ * Colours are CSS variables that the dark theme redefines, so every utility
+ * (`bg-panel`, `text-muted`, `border-line`, `bg-primary/12`...) follows the theme.
+ * Dark mode: class `dark` (or data-theme="dark") on <html>; see components/shell/theme.ts.
+ * Fonts are imported from @fontsource-variable in src/main.tsx.
+ */
+@import "tailwindcss";
+
+/* Classes built from tone names at runtime (StatTile, ProgressBar, Meter, AssayGauge). */
+@source inline("{bg,text,border}-{primary,accent,success,warning,danger,info,muted,ink}");
+
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  /* surfaces */
+  --color-bg: #f4f0e6;
+  --color-panel: #fffcf5;
+  --color-sunken: #ece6d8;
+  --color-line: #e3dccd;
+  --color-line-strong: #cfc6b3;
+  /* text */
+  --color-ink: #1b1915;
+  --color-muted: #655d52;
+  --color-subtle: #8a8174;
+  /* brand */
+  --color-primary: #0d6b5a;
+  --color-primary-hover: #0a5a4b;
+  --color-on-primary: #ffffff;
+  --color-accent: #985722;
+  --color-on-accent: #ffffff;
+  /* status (earthy, never bright) */
+  --color-success: #4a7424;
+  --color-warning: #8f6410;
+  --color-danger: #ad3a2c;
+  --color-info: #3d64a0;
+  /* sentiment ribbon */
+  --color-ribbon-neg: #985722;
+  --color-ribbon-neu: #d9cfb9;
+  --color-ribbon-pos: #0d6b5a;
+
+  --font-display: "Newsreader Variable", "Noto Serif Georgian Variable", Georgia, serif;
+  --font-sans: "Hanken Grotesk Variable", "Noto Sans Georgian Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --font-georgian: "Noto Sans Georgian Variable", "Hanken Grotesk Variable", system-ui, sans-serif;
+  --font-georgian-display: "Noto Serif Georgian Variable", "Newsreader Variable", Georgia, serif;
+
+  --radius-card: 10px;
+  --radius-ctl: 8px;
+  --radius-pill: 999px;
+
+  --shadow-pop: 0 10px 28px -14px rgba(27, 25, 21, 0.28);
+
+  --ease-assay: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --animate-panel-in: panel-in 180ms var(--ease-assay) both;
+  --animate-fade-in: fade-in 160ms ease-out both;
+  --animate-drawer-in: drawer-in 220ms var(--ease-assay) both;
+  --animate-bead-drop: bead-drop 220ms var(--ease-assay) both;
+  --animate-shimmer: shimmer 1.4s ease-in-out infinite;
+
+  @keyframes panel-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes drawer-in {
+    from { opacity: 0; transform: translateX(16px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bead-drop {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+}
+
+/* ------------------------------------------------------------- dark theme */
+:root.dark,
+:root[data-theme="dark"] {
+  --color-bg: #12110f;
+  --color-panel: #1c1a17;
+  --color-sunken: #161512;
+  --color-line: #2c2924;
+  --color-line-strong: #3d3932;
+  --color-ink: #efe8dc;
+  --color-muted: #a69d8f;
+  --color-subtle: #7d7568;
+  --color-primary: #5cc4ab;
+  --color-primary-hover: #74d1ba;
+  --color-on-primary: #12110f;
+  --color-accent: #d9914f;
+  --color-on-accent: #12110f;
+  --color-success: #93c25d;
+  --color-warning: #d4ad57;
+  --color-danger: #ef9a8c;
+  --color-info: #8fb0e3;
+  --color-ribbon-neg: #d9914f;
+  --color-ribbon-neu: #3d3932;
+  --color-ribbon-pos: #5cc4ab;
+  --shadow-pop: 0 0 0 1px #2c2924, 0 12px 28px -10px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+/* --------------------------------------------------------------- base */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Georgian: own faces first, airy line-height, no tracking. Never uppercase Georgian. */
+  :lang(ka) {
+    --font-sans: var(--font-georgian);
+    --font-display: var(--font-georgian-display);
+    letter-spacing: 0;
+  }
+  :lang(ka) body,
+  body:lang(ka) {
+    line-height: 1.6;
+  }
+  :lang(ka) .uppercase,
+  :lang(ka) .caps {
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 0;
+  }
+  :lang(ka) h1, :lang(ka) h2, :lang(ka) h3, :lang(ka) h4 {
+    letter-spacing: 0;
+    line-height: 1.35;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 22%, transparent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  button, [role="button"] {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--color-subtle);
+  }
+}
+
+/* Paper grain: 2% noise on the light parchment only. */
+:root:not(.dark):not([data-theme="dark"]) body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .caps {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+  /* KB fact-check claim marks (transcript) */
+  .claim-supported {
+    text-decoration: underline dotted var(--color-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .claim-partial {
+    text-decoration: underline dotted var(--color-warning);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .claim-contradicted {
+    text-decoration: underline wavy var(--color-danger);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .claim-not-in-kb {
+    text-decoration: underline dashed var(--color-muted);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .hallmark-clip {
+    clip-path: polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
+  }
+}
+
+/* sonner toasts in the brand */
+[data-sonner-toaster] [data-sonner-toast] {
+  font-family: var(--font-sans);
+  background: var(--color-panel);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-pop);
+}
+[data-sonner-toaster] [data-sonner-toast] [data-description] {
+  color: var(--color-muted);
+}
+[data-sonner-toaster] [data-sonner-toast][data-type="success"] [data-icon] { color: var(--color-success); }
+[data-sonner-toaster] [data-sonner-toast][data-type="error"] [data-icon] { color: var(--color-danger); }
+[data-sonner-toaster] [data-sonner-toast][data-type="warning"] [data-icon] { color: var(--color-warning); }
+[data-sonner-toaster] [data-sonner-toast][data-type="info"] [data-icon] { color: var(--color-info); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "pages": {
+    "AdminDashboardPage": "Admin dashboard",
+    "UsersPage": "Users"
+  },
+  "dashboard": {
+    "eyebrow": "Ezo Contact Centre",
+    "description": "Campaigns, people and today's calls at a glance.",
+    "stats": {
+      "totalCampaigns": "Total campaigns",
+      "activeCampaigns": "Active campaigns",
+      "totalUsers": "Total users",
+      "activeOperators": "Active operators",
+      "callsToday": "Calls today"
+    },
+    "statHints": {
+      "totalCampaigns": "Archived included",
+      "activeCampaigns": "Dialing now",
+      "totalUsers": "Visible to you",
+      "activeOperators": "Enabled accounts",
+      "callsToday": "Since 00:00"
+    },
+    "live": {
+      "title": "Floor now",
+      "onCall": "On call",
+      "available": "Available",
+      "paused": "Paused",
+      "openWall": "Open wall"
+    },
+    "recent": {
+      "title": "Recent campaigns",
+      "description": "The five newest campaigns",
+      "dialed": "{{dialed}} of {{total}} dialed",
+      "agents_one": "{{count}} agent",
+      "agents_other": "{{count}} agents",
+      "emptyTitle": "No campaigns yet",
+      "emptyHint": "Create the first campaign to start dialing."
+    },
+    "quick": {
+      "title": "Quick actions",
+      "createCampaign": "Create campaign",
+      "createCampaignHint": "Starts as a draft",
+      "uploadNumbers": "Upload numbers",
+      "uploadNumbersHint": "To {{name}}",
+      "uploadNumbersNone": "No active campaign",
+      "viewReports": "View reports",
+      "viewReportsHint": "Agents, campaigns, call detail",
+      "openWall": "Open wall",
+      "openWallHint": "Live supervisor view",
+      "viewAll": "View all campaigns",
+      "viewAllHint": "Lists, agents, dialing modes"
+    }
+  },
+  "users": {
+    "description": "Accounts, roles and SIP extensions for the contact centre.",
+    "create": "New user",
+    "filters": {
+      "role": "Role",
+      "allRoles": "All roles",
+      "search": "Search name, username, email or extension",
+      "status": "Status",
+      "all": "All statuses",
+      "active": "Active",
+      "inactive": "Disabled"
+    },
+    "count_one": "{{count}} user",
+    "count_other": "{{count}} users",
+    "columns": {
+      "name": "Name",
+      "username": "Username",
+      "email": "Email",
+      "role": "Role",
+      "extension": "Extension",
+      "active": "Status",
+      "lastLogin": "Last login",
+      "actions": "Actions"
+    },
+    "you": "You",
+    "noExtension": "No extension",
+    "neverSignedIn": "Never",
+    "activePill": "Active",
+    "inactivePill": "Disabled",
+    "readOnly": "View only",
+    "readOnlyHint": "Admins manage operators and supervisors. Ask a super admin to change this account.",
+    "emptyTitle": "No users match",
+    "emptyHint": "Try another role, status or search.",
+    "loadError": "Could not load users",
+    "matrixTitle": "Who can do what",
+    "matrix": {
+      "admin": "As an admin you manage operators and supervisors. Admin accounts are view only.",
+      "super_admin": "As a super admin you manage every account, including admins. Super admin is given only through Grant super admin, and you cannot change your own role or disable yourself."
+    }
+  },
+  "actions": {
+    "menu": "Actions for {{name}}",
+    "edit": "Edit",
+    "resetPassword": "Reset password",
+    "disable": "Disable",
+    "enable": "Enable",
+    "grantSuper": "Grant super admin"
+  },
+  "form": {
+    "createTitle": "New user",
+    "createDescription": "The user signs in with this username or email.",
+    "editTitle": "Edit {{name}}",
+    "editDescription": "The username cannot be changed.",
+    "username": "Username",
+    "usernameHint": "3-32 characters: a-z, 0-9, dot, dash, underscore",
+    "usernameLocked": "Locked after creation",
+    "nameEn": "Display name (English)",
+    "nameKa": "Display name (Georgian)",
+    "nameKaHint": "Leave empty to use the English name",
+    "email": "Email",
+    "role": "Role",
+    "roleHint": "Super admin is given only through Grant super admin.",
+    "ownRoleHint": "You cannot change your own role.",
+    "extension": "SIP extension",
+    "extensionHint": "Operators need one to take calls",
+    "extensionPlaceholder": "e.g. 1110",
+    "password": "Password",
+    "passwordHint": "At least 8 characters",
+    "confirmPassword": "Confirm password",
+    "submitCreate": "Create user",
+    "submitEdit": "Save changes",
+    "created": "User {{name}} created",
+    "updated": "Changes to {{name}} saved"
+  },
+  "reset": {
+    "title": "Reset password",
+    "description": "Set a new password for {{name}}.",
+    "newPassword": "New password",
+    "confirm": "Confirm new password",
+    "submit": "Reset password",
+    "done": "Password reset for {{name}}",
+    "doneHint": "Demo: every account keeps the shared demo password."
+  },
+  "toggle": {
+    "disableTitle": "Disable {{name}}",
+    "disableBody": "They will be signed out of the dialer, taken off the floor and cannot sign in until enabled again. Call history stays.",
+    "enableTitle": "Enable {{name}}",
+    "enableBody": "They can sign in again. Operators start Offline.",
+    "disabled": "{{name}} disabled",
+    "enabled": "{{name}} enabled"
+  },
+  "grant": {
+    "title": "Grant super admin",
+    "description": "Give {{name}} full control of Dareke.",
+    "warningTitle": "This cannot be undone here",
+    "warning": "A super admin can manage every account, edit PBX and directory integrations and grant super admin to others. Operators lose their campaign assignments.",
+    "password": "Your password",
+    "passwordHint": "Re-enter your own password to confirm. In this demo it is dareke-demo.",
+    "submit": "Grant super admin",
+    "done": "{{name}} is now a super admin"
+  },
+  "errors": {
+    "notFound": "This user no longer exists.",
+    "forbidden": "You cannot change this account.",
+    "nameRequired": "Enter a display name",
+    "emailRequired": "Enter an email",
+    "emailInvalid": "Enter a valid email",
+    "emailTaken": "Another user already has this email",
+    "extensionInvalid": "Use 3 to 6 digits",
+    "extensionTaken": "This extension is already in use",
+    "usernameRequired": "Enter a username",
+    "usernameInvalid": "Use 3-32 characters: a-z, 0-9, dot, dash, underscore",
+    "usernameTaken": "This username is taken",
+    "usernameLocked": "The username cannot be changed",
+    "roleNotAllowed": "You cannot assign this role",
+    "ownRole": "You cannot change your own role",
+    "ownActive": "You cannot disable your own account",
+    "passwordRequired": "Enter a password",
+    "passwordShort": "Use at least 8 characters",
+    "passwordMismatch": "Passwords do not match",
+    "confirmRequired": "Enter your password to confirm",
+    "confirmWrong": "Incorrect password",
+    "alreadySuper": "This user is already a super admin",
+    "inactiveTarget": "Enable this user first",
+    "onCall": "This operator is on a call. Try again when the call ends.",
+    "fixFields": "Check the highlighted fields"
+  }
+}

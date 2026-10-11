@@ -1,0 +1,261 @@
+{
+  "title": "Platform status",
+  "page": {
+    "title": "Platform status",
+    "subtitle": "Voice lanes, host metrics and the hourly self-test."
+  },
+  "collector": {
+    "running": "Collector running",
+    "stopped": "Collector stopped",
+    "sampled": "sampled {{ago}}"
+  },
+  "banner": {
+    "passed": "Passed",
+    "failed": "Failed",
+    "none": "No test run yet",
+    "line": "Last run {{ago}} · took {{duration}} · triggered by {{by}}",
+    "noRun": "Run the first self-test to see the state of the platform.",
+    "next": "Next scheduled run at {{time}}",
+    "schedule": "the schedule",
+    "total": "Total",
+    "skipped": "Skipped",
+    "state": {
+      "passed": "All systems operational",
+      "degraded": "Degraded",
+      "failed": "Critical"
+    }
+  },
+  "run": {
+    "now": "Run tests now",
+    "running": "Running tests…",
+    "done": "Self-test finished: {{status}}"
+  },
+  "lanes": {
+    "title": "Voice lanes",
+    "subtitle": "Round-trip time to each platform over the last 24 hours.",
+    "empty": "No ping data yet",
+    "chartLabel": "{{name}}: round-trip time over 24 hours",
+    "now": "now",
+    "rtt": "Round trip",
+    "loss": "Loss",
+    "state": {
+      "healthy": "Healthy",
+      "degraded": "Degraded",
+      "down": "Unreachable"
+    }
+  },
+  "live": {
+    "title": "Host metrics",
+    "cpu": "CPU",
+    "ram": "RAM",
+    "disk": "Disk free",
+    "rx": "Network in",
+    "tx": "Network out",
+    "uptime": "Uptime",
+    "load": "Load",
+    "processes": "Processes",
+    "peak": "24 h peak {{value}}",
+    "ofTotal": "{{used}} of {{total}}",
+    "freeOf": "{{pct}} free of {{total}}",
+    "sinceBoot": "Since last restart",
+    "loadHint": "5 min {{five}} · 15 min {{fifteen}}"
+  },
+  "selftest": {
+    "title": "Self-test",
+    "passedOf": "{{passed}} of {{total}} passed",
+    "category": {
+      "core": "Core infrastructure",
+      "cron": "Background services",
+      "filesystem": "File system",
+      "integration": "External integrations"
+    }
+  },
+  "result": {
+    "passed": "Passed",
+    "failed": "Failed",
+    "skipped": "Skipped"
+  },
+  "tests": {
+    "db": "Archive database",
+    "cache": "Cache round-trip",
+    "orm": "Data access layer",
+    "secrets": "Secrets store",
+    "runtime": "Runtime and clock",
+    "schema": "Schema version",
+    "core_sync_cron": "Core Cluster import schedule",
+    "recent_sync": "Recent import ran",
+    "drop_listener": "Drop-folder listener",
+    "record_spool": "Record spool drained",
+    "voice_archive_active": "Voice Archive share (active)",
+    "voice_archive_backup": "File archive share (backup)",
+    "edge_archive_share": "Edge PBX archive share",
+    "edge_recordings": "Edge PBX recordings share",
+    "directory": "Directory bind",
+    "core_admin_api": "Core Cluster admin API",
+    "core_shell": "Core Cluster shell access",
+    "edge_api": "Edge PBX API",
+    "core_record_push": "Core Cluster record push",
+    "record_mirror": "Reporting replica"
+  },
+  "history": {
+    "title": "Self-test history",
+    "expand": "Show details",
+    "started": "Started",
+    "status": "Status",
+    "by": "Triggered by",
+    "duration": "Duration",
+    "empty": "No self-test runs yet",
+    "state": {
+      "passed": "Passed",
+      "degraded": "Degraded",
+      "failed": "Failed"
+    },
+    "scheduled": "Schedule"
+  },
+  "snapshot": {
+    "title": "Time snapshot",
+    "cardTitle": "Metrics at a chosen moment",
+    "subtitle": "Pick a time within the last 24 hours to see the nearest one-minute bucket (±90 s) and the pings at that moment.",
+    "at": "Date and time (Tbilisi time)",
+    "show": "Show snapshot",
+    "presets": "Quick picks",
+    "preset": {
+      "m30": "30 min ago",
+      "h1": "1 h ago",
+      "h6": "6 h ago",
+      "h12": "12 h ago"
+    },
+    "invalid": "Enter a valid date and time.",
+    "future": "The time cannot be in the future.",
+    "tooOld": "Only the last 24 hours are kept.",
+    "metrics": "{{at}} · nearest bucket within ±{{window}} s",
+    "metric": "Metric",
+    "avg": "Average",
+    "max": "Max",
+    "min": "Min",
+    "noMetrics": "No metrics at that moment",
+    "noMetricsBody": "No bucket was found within ±{{window}} s. Try another time.",
+    "pings": "Pings at that moment",
+    "noPings": "No ping was recorded at that moment"
+  },
+  "activity": {
+    "title": "Activity",
+    "subtitle": "Sync, backup and contact-centre logs in one place.",
+    "autoRefresh": "Refreshes every 30 s",
+    "refresh": "Refresh",
+    "tab": {
+      "sync": "Core Cluster syncs",
+      "cc": "Contact centre",
+      "reconcile": "Reconcile runs",
+      "backup": "Recording backup",
+      "mirror": "Edge PBX mirror"
+    },
+    "errors": "Errors",
+    "empty": "No entries found",
+    "cron": "Schedule",
+    "manualBy": "Manual: {{user}}",
+    "verifyBackfill": "Verify backfill",
+    "ccNote": "The last 200 actions in contact-centre administration.",
+    "col": {
+      "status": "Status",
+      "duration": "Duration",
+      "errors": "Errors",
+      "ranAt": "Ran at",
+      "range": "Range",
+      "imported": "Imported",
+      "gapsFound": "Gaps found",
+      "gapsFilled": "Gaps filled",
+      "started": "Started",
+      "completed": "Completed",
+      "type": "Type",
+      "triggeredBy": "Triggered by",
+      "filesFound": "Files found",
+      "processed": "Processed",
+      "skipped": "Skipped",
+      "time": "Time",
+      "action": "Action",
+      "user": "User",
+      "details": "Details",
+      "flow": "Flow",
+      "listed": "Listed",
+      "copied": "Copied",
+      "failedFiles": "Failed",
+      "size": "Size",
+      "level": "Level",
+      "event": "Event",
+      "message": "Message",
+      "trigger": "Trigger",
+      "fetched": "Fetched",
+      "inserted": "Inserted"
+    },
+    "syncType": {
+      "local": "Local",
+      "scheduled": "Scheduled",
+      "reconcile": "Reconcile",
+      "full": "Full history"
+    },
+    "summary": {
+      "totalRuns": "Total runs",
+      "recordsImported": "Records imported",
+      "lastSuccess": "Last success",
+      "never": "Never"
+    },
+    "cc": {
+      "campaign_change": "Campaign change",
+      "campaign_view": "Campaign view",
+      "campaign_error": "Campaign error",
+      "skills_update": "Skills update",
+      "skills_bulk_update": "Skills bulk update",
+      "skills_error": "Skills error",
+      "dedicated_ports_above_limit": "Ports above limit"
+    },
+    "sourceKey": {
+      "primary": "primary",
+      "secondary": "secondary"
+    },
+    "backup": {
+      "runs": "Backup runs",
+      "events": "Live events"
+    },
+    "level": {
+      "all": "All levels",
+      "debug": "Debug",
+      "info": "Info",
+      "warn": "Warning",
+      "error": "Error"
+    },
+    "trigger": {
+      "interval": "Interval",
+      "manual": "Manual",
+      "reconcile": "Reconcile"
+    }
+  },
+  "testMessages": {
+    "connected_41_tables_replication_lag_0_s": "Connected, 41 tables, replication lag 0 s",
+    "write_read_and_expire_ok": "Write, read and expire OK",
+    "query_plan_cache_warm_0_pending_migrations": "Query plan cache warm, 0 pending migrations",
+    "13_connection_secrets_readable": "13 connection secrets readable",
+    "clock_offset_4_ms_against_the_time_source": "Clock offset 4 ms against the time source",
+    "schema_2026_08_3_matches_the_application": "Schema 2026.08.3 matches the application",
+    "next_run_01_15_last_run_completed": "Next run 01:15, last run completed",
+    "last_successful_import_under_26_h_ago": "Last successful import under 26 h ago",
+    "listening_0_files_waiting": "Listening, 0 files waiting",
+    "spool_empty": "Spool empty",
+    "listed_today_s_folder_read_1_file": "Listed today's folder, read 1 file",
+    "write_and_delete_of_a_probe_file_ok": "Write and delete of a probe file OK",
+    "listed_today_s_folder_on_both_branches": "Listed today's folder on both branches",
+    "bound_as_service_account_2_groups_resolved": "Bound as service account, 2 groups resolved",
+    "version_query_answered": "Version query answered",
+    "login_and_status_command_ok": "Login and status command OK",
+    "token_issued_extension_list_readable": "Token issued, extension list readable",
+    "last_pushed_file_4_min_ago": "Last pushed file 4 min ago",
+    "not_configured": "Not configured",
+    "login_to_the_core_cluster_shell_timed_out_after_10_s": "Login to the Core Cluster shell timed out after 10 s",
+    "edge_pbx_api_answered_503_service_unavailable": "Edge PBX API answered 503 Service Unavailable",
+    "directory_bind_refused_no_answer_from_the_server_on_port_636": "Directory bind refused: no answer from the server on port 636",
+    "core_cluster_admin_api_did_not_answer_within_8_s": "Core Cluster admin API did not answer within 8 s",
+    "skipped_the_core_cluster_is_in_a_maintenance_window": "Skipped: the Core Cluster is in a maintenance window",
+    "skipped_a_previous_check_is_still_running": "Skipped: a previous check is still running",
+    "share_nas_1_vake_bani_example_voice_archive_did_not_answer_within_10_s": "Share \\\\nas-1.vake.bani.example\\voice-archive did not answer within 10 s"
+  }
+}

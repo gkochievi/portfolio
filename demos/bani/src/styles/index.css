@@ -1,0 +1,254 @@
+/*
+ * Bani design tokens: cast bronze, brass and pine ink on linen.
+ * Light is the default; `.dark` on <html> switches every semantic token.
+ * Components only ever use the semantic utilities (bg-panel, text-muted,
+ * border-line, bg-primary ...), never raw hex values.
+ */
+@import "@fontsource-variable/epilogue";
+@import "@fontsource-variable/public-sans";
+@import "@fontsource-variable/noto-sans-georgian";
+@import "@fontsource-variable/jetbrains-mono";
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bani-bg: #F1F2EB;
+  --bani-panel: #FBFCF8;
+  --bani-sunken: #ECEEE5;
+  --bani-hover: #E9ECE2;
+  --bani-ink: #16211B;
+  --bani-muted: #56625A;
+  --bani-faint: #7C877F;
+  --bani-line: #DCDFD5;
+  --bani-line-strong: #C9CEC1;
+  --bani-primary: #A3441A;
+  --bani-primary-hover: #8C3814;
+  --bani-on-primary: #FFFFFF;
+  --bani-accent: #D9A33B;
+  --bani-pine: #16211B;
+  --bani-pine-2: #1F2E26;
+  --bani-pine-3: #2F5D4E;
+  --bani-linen: #F1F2EB;
+  --bani-success: #2B7543;
+  --bani-warning: #8F6200;
+  --bani-danger: #B8232C;
+  --bani-info: #3F6178;
+  --bani-skeleton: #E6E9DF;
+  --bani-focus: #A3441A;
+  --bani-overlay: rgba(14, 21, 18, 0.42);
+  --bani-pop-shadow: 0 8px 24px rgba(14, 21, 18, 0.14);
+  --bani-pop-border: #DCDFD5;
+  color-scheme: light;
+}
+
+.dark {
+  --bani-bg: #0E1512;
+  --bani-panel: #17201B;
+  --bani-sunken: #121A16;
+  --bani-hover: #1F2924;
+  --bani-ink: #E8ECE4;
+  --bani-muted: #9AA79F;
+  --bani-faint: #77837C;
+  --bani-line: #26302A;
+  --bani-line-strong: #34403A;
+  --bani-primary: #E08A55;
+  --bani-primary-hover: #EA9D6D;
+  --bani-on-primary: #0E1512;
+  --bani-success: #6CC28A;
+  --bani-warning: #E3B341;
+  --bani-danger: #F07A78;
+  --bani-info: #8FB3CC;
+  --bani-skeleton: #1F2924;
+  --bani-focus: #D9A33B;
+  --bani-overlay: rgba(0, 0, 0, 0.58);
+  --bani-pop-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --bani-pop-border: #2E3A33;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bani-bg);
+  --color-panel: var(--bani-panel);
+  --color-sunken: var(--bani-sunken);
+  --color-hover: var(--bani-hover);
+  --color-ink: var(--bani-ink);
+  --color-muted: var(--bani-muted);
+  --color-faint: var(--bani-faint);
+  --color-line: var(--bani-line);
+  --color-line-strong: var(--bani-line-strong);
+  --color-primary: var(--bani-primary);
+  --color-primary-hover: var(--bani-primary-hover);
+  --color-on-primary: var(--bani-on-primary);
+  --color-accent: var(--bani-accent);
+  --color-brass: #D9A33B;
+  --color-bronze: #A3441A;
+  --color-pine: var(--bani-pine);
+  --color-pine-2: var(--bani-pine-2);
+  --color-pine-3: var(--bani-pine-3);
+  --color-linen: var(--bani-linen);
+  --color-sage: #8AA394;
+  --color-steel: #3F6178;
+  --color-success: var(--bani-success);
+  --color-warning: var(--bani-warning);
+  --color-danger: var(--bani-danger);
+  --color-info: var(--bani-info);
+  --color-skeleton: var(--bani-skeleton);
+  --color-focus: var(--bani-focus);
+  --color-overlay: var(--bani-overlay);
+  --color-pop-border: var(--bani-pop-border);
+
+  --font-display: 'Epilogue Variable', 'Noto Sans Georgian Variable', system-ui, sans-serif;
+  --font-sans: 'Public Sans Variable', 'Noto Sans Georgian Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-ka: 'Noto Sans Georgian Variable', 'Public Sans Variable', system-ui, sans-serif;
+
+  --radius-card: 10px;
+  --radius-control: 8px;
+
+  --shadow-pop: var(--bani-pop-shadow);
+
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --animate-breathe: bani-breathe 2.4s ease-in-out infinite;
+  --animate-shimmer: bani-shimmer 1.4s ease-in-out infinite;
+  --animate-draw: bani-draw 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-settle: bani-settle 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-fade-in: bani-fade-in 160ms ease-out both;
+  --animate-pop-in: bani-pop-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-drawer-in: bani-drawer-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-spin-slow: spin 0.9s linear infinite;
+}
+
+@keyframes bani-breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+@keyframes bani-shimmer {
+  0% { background-position: 120% 0; }
+  100% { background-position: -20% 0; }
+}
+@keyframes bani-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes bani-settle {
+  from { transform: translateY(-4px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes bani-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes bani-pop-in {
+  from { opacity: 0; transform: translateY(4px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes bani-drawer-in {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@layer base {
+  html {
+    background: var(--bani-bg);
+    color: var(--bani-ink);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bani-bg);
+    color: var(--bani-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  :lang(ka) body,
+  body:lang(ka) {
+    font-family: var(--font-ka);
+    font-weight: 450;
+    line-height: 1.55;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  :lang(ka) h1, :lang(ka) h2, :lang(ka) h3, :lang(ka) h4 {
+    font-family: var(--font-ka);
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  /* Mkhedruli must never become Mtavruli or be letter-spaced. */
+  :lang(ka) .uppercase,
+  :lang(ka) .eyebrow {
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+  }
+  :focus-visible {
+    outline: 2px solid var(--bani-focus);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--bani-accent) 35%, transparent);
+  }
+  button, [role='button'] { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  input[type='number'] { font-variant-numeric: tabular-nums; }
+}
+
+@layer components {
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bani-muted);
+  }
+  :lang(ka) .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .skeleton {
+    background: linear-gradient(90deg, var(--bani-skeleton) 0%, color-mix(in srgb, var(--bani-skeleton) 55%, var(--bani-panel)) 50%, var(--bani-skeleton) 100%);
+    background-size: 220% 100%;
+    animation: var(--animate-shimmer);
+  }
+  .scrollbar-thin { scrollbar-width: thin; scrollbar-color: var(--bani-line-strong) transparent; }
+}
+
+:root,
+:root body {
+  /* Unlayered and more specific than index.html's boot style, so a chosen theme wins over the OS. */
+  background: var(--bani-bg);
+  color: var(--bani-ink);
+}
+
+/* Popovers rendered by sonner follow the theme tokens. */
+[data-sonner-toaster] [data-sonner-toast] {
+  font-family: var(--font-sans);
+  border-radius: 10px !important;
+  background: var(--bani-panel) !important;
+  color: var(--bani-ink) !important;
+  border: 1px solid var(--bani-pop-border) !important;
+  box-shadow: var(--bani-pop-shadow) !important;
+}
+[data-sonner-toaster] [data-sonner-toast] [data-description] { color: var(--bani-muted) !important; }
+
+/* Keep the demo pill above the mobile bottom tab bar. */
+@media (max-width: 767px) {
+  .bdk-root { --bdk-offset-bottom: 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .skeleton { animation: none; }
+}

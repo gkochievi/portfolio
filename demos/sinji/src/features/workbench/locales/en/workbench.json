@@ -1,0 +1,207 @@
+{
+  "title": "Calls",
+  "subtitle": "Recordings and chat transcripts your team has uploaded, with every analysis in one place.",
+  "new": {
+    "button": "New analysis",
+    "title": "New analysis",
+    "description": "Upload recordings or paste a transcript. Sinji transcribes audio, then you choose which analysers to run.",
+    "audio": "Audio files",
+    "text": "Pasted transcript",
+    "runAll": "Run all analysers after transcription",
+    "runAllHint": "Fact-check and tone first, then score and summary.",
+    "submitAudio": "Upload and transcribe",
+    "submitText": "Create call"
+  },
+  "queue": {
+    "notAudio": "{{name}} is not a supported audio file.",
+    "tooBig": "{{name}} is larger than 100 MB.",
+    "tooMany": "Up to {{max}} files at a time.",
+    "totalExceeded": "{{name}} would take the queue past 300 MB.",
+    "uploaded_one": "{{count}} file uploaded. Transcription has started.",
+    "uploaded_other": "{{count}} files uploaded. Transcription has started.",
+    "open": "Open",
+    "drop": "Drop audio files here",
+    "limits": "Up to {{files}} files, {{each}} MB each, {{total}} MB in total.",
+    "choose": "Choose files",
+    "custom": "Custom settings",
+    "options": "Transcription options for this file",
+    "remove": "Remove from queue",
+    "summary": "{{count}} of {{max}} files, {{size}} of {{total}}"
+  },
+  "text": {
+    "titleRequired": "Give the conversation a title.",
+    "textRequired": "Paste the transcript first.",
+    "created": "Call created.",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Web chat: card limit question",
+    "language": "Language",
+    "transcript": "Transcript",
+    "transcriptHint": "One line per turn. Start each line with Agent: or Customer: so Sinji can tell the speakers apart. Lines without a prefix continue the previous speaker.",
+    "placeholder": "Agent: Good afternoon, how can I help?\nCustomer: I would like to repay my loan early.",
+    "insertSample": "Insert an example",
+    "sample": "Agent: Good afternoon, thank you for calling. How can I help?\nCustomer: Hello. I want to repay my consumer loan early. Is there a fee?\nAgent: Early repayment in the first 12 months carries a fee of 1% of the repaid amount. After 12 months it is free.\nCustomer: And how long does the repayment take to show in my account?\nAgent: The balance updates within 1 business day.\nCustomer: Thank you, that is clear.\nAgent: You are welcome. Is there anything else I can do for you?"
+  },
+  "override": {
+    "title": "Transcription options",
+    "description": "Applies to {{name}} only. Leave the defaults to follow your workspace settings.",
+    "useDefaults": "Use workspace defaults",
+    "apply": "Apply",
+    "language": "Language",
+    "languageHint": "Auto-detect works for most calls.",
+    "auto": "Auto-detect",
+    "diarize": "Separate speakers",
+    "diarizeHint": "Label who is speaking on each line.",
+    "keyterms": "Key terms",
+    "keytermsHint": "One per line. Names and product terms the transcriber should recognise.",
+    "keytermsError": {
+      "count": "At most 1,000 key terms.",
+      "length": "Each key term must be shorter than 50 characters.",
+      "words": "Each key term can have at most 5 words."
+    },
+    "format": "Audio format sent for transcription",
+    "applyAll": "Apply to every file in the queue"
+  },
+  "audioFormat": {
+    "original": "Original file",
+    "flac_full": "FLAC, full quality",
+    "flac_16k": "FLAC, 16 kHz",
+    "wav_16k": "WAV, 16 kHz",
+    "mp3_16k": "MP3, 16 kHz"
+  },
+  "lang": { "ka": "Georgian", "en": "English", "ru": "Russian" },
+  "list": {
+    "title": "Recordings",
+    "search": "Search by file name or uploader",
+    "allStatuses": "All statuses",
+    "allSources": "All sources",
+    "selection": "Selected recordings",
+    "maxSummarise": "A digest covers up to 10 calls.",
+    "delete": "Delete",
+    "deleted_one": "{{count}} recording deleted.",
+    "deleted_other": "{{count}} recordings deleted.",
+    "noMatch": "No recordings match",
+    "emptyTitle": "No calls yet",
+    "emptyBody": "Upload a recording or paste a chat transcript to see the first scorecard.",
+    "deleteTitle_one": "Delete {{count}} recording?",
+    "deleteTitle_other": "Delete {{count}} recordings?",
+    "deleteBody": "The transcripts and every analysis are removed. This cannot be undone."
+  },
+  "cols": {
+    "recording": "Recording",
+    "status": "Status",
+    "language": "Language",
+    "duration": "Length",
+    "analysers": "Analysers",
+    "score": "Score",
+    "accuracy": "Accuracy",
+    "agreement": "Text vs voice",
+    "created": "Added by"
+  },
+  "status": {
+    "pending": "Pending",
+    "transcribing": "Transcribing",
+    "ready": "Transcribed",
+    "analyzing": "Analysing",
+    "done": "Analysed",
+    "error": "Error",
+    "running": "Running"
+  },
+  "source": { "audio": "Audio", "text": "Text" },
+  "agreement": {
+    "agree": "Agree",
+    "partial": "Partly agree",
+    "conflict": "Conflict",
+    "text_only": "Words only",
+    "prosody_only": "Voice only",
+    "unknown": "Unknown"
+  },
+  "analysers": {
+    "transcribe": "Transcription",
+    "factcheck": "Fact-check",
+    "score": "Score",
+    "semantic": "Tone",
+    "summary": "Summary",
+    "ran": "done",
+    "notRun": "not run"
+  },
+  "digests": {
+    "title": "Digests",
+    "description": "Summaries that span several calls. Select calls above and choose Summarise to create one.",
+    "emptyTitle": "No digests yet",
+    "emptyBody": "Select two or more calls in the table and summarise them together.",
+    "calls_one": "{{count}} call",
+    "calls_other": "{{count}} calls"
+  },
+  "detail": {
+    "notFoundTitle": "Call not found",
+    "notFoundBody": "It may have been deleted, or it belongs to another workspace.",
+    "errorTitle": "Could not load this call",
+    "backToCalls": "All calls",
+    "running": "{{name}} is running...",
+    "notRunTitle": "{{name}} has not run yet",
+    "notRunBody": "Run it to see the result here and on the timeline.",
+    "textMode": "Text",
+    "switcher": "Switch call",
+    "position": "{{n}} of {{total}}",
+    "prev": "Previous call",
+    "next": "Next call",
+    "score": "Score",
+    "accuracy": "Fact accuracy",
+    "agreement": "Text vs voice",
+    "transcribingTitle": "Transcribing",
+    "transcribingBody": "Sinji is turning the audio into speaker-labelled, timestamped lines. This takes a moment.",
+    "errorStateTitle": "This recording could not be processed",
+    "retryTranscribe": "Try transcribing again"
+  },
+  "tabs": { "score": "Score", "factcheck": "Fact-check", "tone": "Tone", "summary": "Summary" },
+  "run": {
+    "run": "Run {{name}}",
+    "rerun": "Re-run {{name}}",
+    "all": "All at once",
+    "allDone": "All analysers finished.",
+    "allPartial": "{{ok}} finished, but these did not: {{failed}}.",
+    "failed": "The analysis could not be started.",
+    "needsTranscript": "Transcribe the recording first; the analysers work on the transcript.",
+    "stage": {
+      "transcribe": "Transcribing...",
+      "parallel": "Fact-check and tone...",
+      "score": "Score and summary..."
+    },
+    "batchDone_one": "{{count}} call fully analysed.",
+    "batchDone_other": "{{count}} calls fully analysed.",
+    "batchPartial_one": "{{count}} call processed, {{failed}} analyser failed.",
+    "batchPartial_other": "{{count}} calls processed, {{failed}} analysers failed."
+  },
+  "player": {
+    "play": "Play",
+    "pause": "Pause",
+    "speed": "Playback speed",
+    "hint": "Space plays and pauses",
+    "position": "Audio position",
+    "silent": "The audio file is not available in this demo build, so playback runs as a silent clock. Everything else works the same."
+  },
+  "lanes": {
+    "title": "Findings timeline",
+    "factcheck": "Fact-check",
+    "text_tone": "Text tone",
+    "voice_tone": "Voice tone"
+  },
+  "levels": { "good": "Good", "mid": "Mixed", "bad": "Needs attention" },
+  "transcript": {
+    "title": "Transcript",
+    "legendSupported": "supported",
+    "legendContradicted": "contradicted",
+    "legendNotInKb": "not in KB",
+    "empty": "The transcript will appear here once transcription finishes."
+  },
+  "fact": {
+    "noEvidence": "No matching passage in the knowledge base.",
+    "viewChunks": "View chunks in the knowledge base",
+    "accuracy": "Fact accuracy",
+    "noScore": "There was nothing checkable that the knowledge base could confirm or contradict.",
+    "formula": "Supported claims count in full, partly supported ones count half. Claims the knowledge base does not cover are left out.",
+    "noClaims": "No checkable claims were found in this call.",
+    "seek": "Jump to this moment",
+    "confidence": "Confidence"
+  }
+}

@@ -1,0 +1,606 @@
+/* ==========================================================================
+   @portfolio/demo-kit — shared demo chrome
+   Import once from the demo's entry: `import '@portfolio/demo-kit/demo-kit.css'`.
+
+   Two blocks, two intents:
+   - .bdk-root …      the Boulder demo bar. Studio-branded, deliberately NOT in
+                      the demo's palette, identical across all seven demos.
+   - .bdk-accounts …  the login helper. Neutral, derives from currentColor so it
+                      inherits whichever demo it sits in; replace classes to restyle.
+
+   Everything is unlayered on purpose: a Tailwind 4 preflight lives in
+   `@layer base`, and unlayered rules beat every layer, so a demo's resets can
+   never reach into the bar. Every class is `bdk-`, every variable `--bdk-`.
+   No web fonts — the system UI stack (which covers Georgian on every major OS).
+   ========================================================================== */
+
+.bdk-root {
+  /* ---- Boulder palette -------------------------------------------------- */
+  --bdk-ink: #111224;
+  --bdk-ink-2: #1a1b33;
+  --bdk-ink-3: #24254a;
+  --bdk-lavender: #e0dff7;
+  --bdk-lavender-dim: rgba(224, 223, 247, 0.7);
+  --bdk-line: rgba(224, 223, 247, 0.14);
+  --bdk-line-strong: rgba(224, 223, 247, 0.32);
+  --bdk-accent: #ff3366;
+  --bdk-violet: #5c4de8;
+  --bdk-white: #ffffff;
+
+  /* ---- Shape & motion --------------------------------------------------- */
+  --bdk-font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --bdk-edge: 12px;
+  --bdk-radius: 18px;
+  --bdk-radius-sm: 10px;
+  --bdk-shadow: 0 0 0 1px rgba(224, 223, 247, 0.16), 0 18px 44px -14px rgba(6, 6, 18, 0.6);
+  --bdk-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --bdk-z: 2147483000;
+
+  position: fixed;
+  z-index: var(--bdk-z);
+  /* A demo with its own fixed bottom UI (a tab bar, a call dock) lifts the bar clear of it
+     by setting `--bdk-offset-bottom` on `.bdk-root`; the default is no lift. */
+  bottom: calc(max(var(--bdk-edge), env(safe-area-inset-bottom)) + var(--bdk-offset-bottom, 0px));
+  left: max(var(--bdk-edge), env(safe-area-inset-left));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: calc(100vw - 2 * var(--bdk-edge));
+  margin: 0;
+  padding: 0;
+
+  /* Reset everything a host page might cascade into us. */
+  font: 400 14px/1.45 var(--bdk-font);
+  color: var(--bdk-lavender);
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bdk-root--bottom-right {
+  left: auto;
+  right: max(var(--bdk-edge), env(safe-area-inset-right));
+  align-items: flex-end;
+}
+
+.bdk-root *,
+.bdk-root *::before,
+.bdk-root *::after {
+  box-sizing: border-box;
+}
+
+.bdk-root :focus-visible {
+  outline: 2px solid var(--bdk-accent);
+  outline-offset: 2px;
+}
+
+.bdk-mark,
+.bdk-icon {
+  display: block;
+  flex: none;
+}
+
+/* ---- The pill ------------------------------------------------------------ */
+
+.bdk-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bdk-root--bottom-right .bdk-pill-row {
+  flex-direction: row-reverse;
+}
+
+.bdk-pill {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  margin: 0;
+  padding: 0 12px 0 9px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--bdk-ink);
+  color: var(--bdk-white);
+  font: 600 13px/1 var(--bdk-font);
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--bdk-shadow);
+  transition: background-color 0.18s var(--bdk-ease), transform 0.18s var(--bdk-ease);
+}
+
+.bdk-pill:hover {
+  background: var(--bdk-ink-2);
+}
+
+.bdk-pill:active {
+  transform: translateY(1px);
+}
+
+.bdk-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bdk-accent);
+  animation: bdk-pulse 2.4s ease-out infinite;
+}
+
+.bdk-chevron {
+  color: var(--bdk-lavender-dim);
+  transition: transform 0.2s var(--bdk-ease);
+}
+
+.bdk-pill[aria-expanded='true'] .bdk-chevron {
+  transform: rotate(180deg);
+}
+
+.bdk-dismiss {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--bdk-ink);
+  color: var(--bdk-lavender-dim);
+  cursor: pointer;
+  box-shadow: var(--bdk-shadow);
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.bdk-dismiss:hover {
+  background: var(--bdk-ink-2);
+  color: var(--bdk-white);
+}
+
+/* ---- The panel ----------------------------------------------------------- */
+
+.bdk-panel {
+  position: relative;
+  width: 352px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 88px);
+  max-height: calc(100dvh - 88px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  margin: 0;
+  padding: 16px;
+  border-radius: var(--bdk-radius);
+  /* Solid ink first, so it is opaque on any page; the dotted grid on top. */
+  background-color: var(--bdk-ink);
+  background-image: radial-gradient(rgba(224, 223, 247, 0.1) 1px, transparent 1.3px);
+  background-size: 14px 14px;
+  background-position: 7px 7px;
+  color: var(--bdk-lavender);
+  box-shadow: var(--bdk-shadow);
+  transform-origin: bottom left;
+  animation: bdk-rise 0.2s var(--bdk-ease);
+}
+
+.bdk-root--bottom-right .bdk-panel {
+  transform-origin: bottom right;
+}
+
+/* Programmatic focus lands on the panel itself; the ring belongs on controls. */
+.bdk-panel:focus,
+.bdk-panel:focus-visible {
+  outline: none;
+}
+
+.bdk-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.bdk-head__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.bdk-eyebrow,
+.bdk-section-title {
+  margin: 0 0 4px;
+  font: 600 11px/1.3 var(--bdk-font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bdk-lavender-dim);
+}
+
+.bdk-product {
+  margin: 0;
+  font: 700 19px/1.2 var(--bdk-font);
+  letter-spacing: -0.01em;
+  color: var(--bdk-white);
+  overflow-wrap: anywhere;
+}
+
+.bdk-icon-btn {
+  appearance: none;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--bdk-line);
+  border-radius: var(--bdk-radius-sm);
+  background: var(--bdk-ink-2);
+  color: var(--bdk-lavender);
+  cursor: pointer;
+}
+
+.bdk-icon-btn:hover {
+  border-color: var(--bdk-line-strong);
+}
+
+.bdk-flip {
+  display: block;
+  transform: rotate(180deg);
+}
+
+.bdk-note {
+  margin: 0 0 16px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--bdk-lavender-dim);
+}
+
+.bdk-section-title {
+  margin-bottom: 8px;
+}
+
+.bdk-hint {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--bdk-lavender);
+}
+
+.bdk-list {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.bdk-account {
+  appearance: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--bdk-line);
+  border-radius: 12px;
+  background: var(--bdk-ink-2);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.bdk-account:hover {
+  border-color: var(--bdk-line-strong);
+  background: var(--bdk-ink-3);
+}
+
+.bdk-account[aria-current='true'] {
+  border-color: var(--bdk-violet);
+  background: #221f52;
+  box-shadow: inset 3px 0 0 var(--bdk-violet);
+}
+
+.bdk-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bdk-avatar, var(--bdk-violet));
+  color: var(--bdk-white);
+  font: 700 14px/1 var(--bdk-font);
+}
+
+.bdk-account__body {
+  display: grid;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.bdk-account__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.bdk-account__name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--bdk-white);
+}
+
+.bdk-account__role {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(224, 223, 247, 0.12);
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--bdk-lavender);
+}
+
+.bdk-current {
+  margin-left: auto;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--bdk-violet);
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--bdk-white);
+}
+
+.bdk-account__desc {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--bdk-lavender-dim);
+}
+
+.bdk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bdk-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  margin: 0;
+  padding: 0 12px;
+  border: 1px solid var(--bdk-line-strong);
+  border-radius: var(--bdk-radius-sm);
+  background: var(--bdk-ink-2);
+  color: var(--bdk-white);
+  font: 600 13px/1 var(--bdk-font);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.bdk-btn:hover {
+  border-color: var(--bdk-lavender-dim);
+  background: var(--bdk-ink-3);
+}
+
+.bdk-btn--ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--bdk-lavender);
+}
+
+/* White on violet is 5.7:1; on the accent it would be 3.5:1, hence violet. */
+.bdk-btn--primary {
+  border-color: var(--bdk-violet);
+  background: var(--bdk-violet);
+  color: var(--bdk-white);
+}
+
+.bdk-btn--primary:hover {
+  border-color: #6f61f0;
+  background: #6f61f0;
+}
+
+.bdk-status {
+  min-height: 18px;
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--bdk-accent);
+}
+
+.bdk-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bdk-line);
+}
+
+.bdk-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bdk-lavender-dim);
+}
+
+/* ---- Motion -------------------------------------------------------------- */
+
+@keyframes bdk-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.55);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 7px rgba(255, 51, 102, 0);
+  }
+}
+
+@keyframes bdk-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bdk-root *,
+  .bdk-accounts * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---- Small screens: the pill alone until asked ---------------------------- */
+
+@media (max-width: 639px) {
+  .bdk-root {
+    --bdk-edge: 10px;
+  }
+
+  .bdk-panel {
+    width: calc(100vw - 24px);
+  }
+}
+
+/* ---- Windows High Contrast: keep edges where shadows used to be ---------- */
+
+@media (forced-colors: active) {
+  .bdk-pill,
+  .bdk-dismiss,
+  .bdk-panel,
+  .bdk-account,
+  .bdk-btn {
+    border: 1px solid CanvasText;
+  }
+}
+
+@media print {
+  .bdk-root {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   <DemoAccounts> — the login helper. Neutral by design; restyle by passing
+   `className` / `classNames`, which replace these classes outright.
+   ========================================================================== */
+
+.bdk-accounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bdk-accounts__item {
+  display: flex;
+}
+
+.bdk-accounts__card {
+  appearance: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border-radius: 14px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.bdk-accounts__card:hover:not(:disabled) {
+  border-color: color-mix(in srgb, currentColor 45%, transparent);
+  background: color-mix(in srgb, currentColor 5%, transparent);
+}
+
+.bdk-accounts__card:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.bdk-accounts__card[aria-current='true'] {
+  border-color: currentColor;
+}
+
+.bdk-accounts__card:disabled {
+  cursor: progress;
+  opacity: 0.6;
+}
+
+.bdk-accounts__avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bdk-accounts__avatar[data-tinted='true'] {
+  background: var(--bdk-avatar);
+  color: #ffffff;
+}
+
+.bdk-accounts__body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.bdk-accounts__name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bdk-accounts__role {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.bdk-accounts__email {
+  font-size: 13px;
+  opacity: 0.8;
+  overflow-wrap: anywhere;
+}
+
+.bdk-accounts__description {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.45;
+  opacity: 0.7;
+}

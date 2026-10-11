@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F5F3EC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B1517" media="(prefers-color-scheme: dark)" />
+    <title>Dareke - live demo</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="A live, fully interactive demo of Dareke, an outbound contact-centre suite: campaigns and lead lists, a click-to-dial and auto-paced dialer with an in-browser softphone, forced call dispositions, a live supervisor wallboard and reports. Runs entirely in your browser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dareke - live demo" />
+    <meta
+      property="og:description"
+      content="Outbound contact-centre suite: campaigns, auto-paced dialer, forced dispositions, live supervisor wall and reports. Served entirely from your browser with synthetic data."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { margin: 0; padding: 0; background: #F5F3EC; color: #142321; }
+      @media (prefers-color-scheme: dark) { html, body { background: #0B1517; color: #E8EFE9; } }
+      #root { min-height: 100vh; }
+      .boot-splash { position: fixed; inset: 0; display: grid; place-items: center; z-index: 9999; }
+      .boot-splash svg { width: 48px; height: 48px; }
+      .boot-splash .arc { transform-origin: 13px 27px; animation: boot-ring 1.2s ease-out infinite; }
+      .boot-splash .arc.outer { animation-delay: 0.3s; }
+      @keyframes boot-ring { from { transform: scale(0.6); opacity: 1; } to { transform: scale(1); opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .boot-splash .arc { animation: none; } }
+    </style>
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash" aria-label="Loading">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="9" fill="#1C2523" />
+          <path class="arc outer" d="M13 10 A17 17 0 0 1 30 27" fill="none" stroke="#C2EF4A" stroke-width="3.5" stroke-linecap="round" />
+          <path class="arc" d="M13 17 A10 10 0 0 1 23 27" fill="none" stroke="#F5F3EC" stroke-width="3.5" stroke-linecap="round" />
+          <circle cx="13" cy="27" r="5" fill="#C2EF4A" />
+        </svg>
+      </div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+  </body>
+</html>

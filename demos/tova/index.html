@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0A6F94" />
+    <title>Tova - live demo</title>
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="A live, fully interactive demo of Tova: a 60-second catch-what-falls booth game that turns event visitors into leads, with live standings, trivia bonuses, prizes and an organiser console with insights and lead export."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { margin: 0; padding: 0; background: #F3F7F6; color: #0B2A31; }
+      #root { min-height: 100vh; }
+      .boot-splash { position: fixed; inset: 0; display: grid; place-items: center; background: #F3F7F6; }
+      .boot-splash__mark { width: 44px; height: 44px; border-radius: 12px; background: #0A6F94; position: relative; animation: boot-drop 0.9s cubic-bezier(.2,.8,.2,1) infinite alternate; }
+      .boot-splash__mark::after { content: ''; position: absolute; left: 50%; bottom: 7px; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%; background: #FF6B3D; }
+      @keyframes boot-drop { from { transform: translateY(-8px); opacity: .6; } to { transform: translateY(0); opacity: 1; } }
+      @media (prefers-color-scheme: dark) {
+        html, body, .boot-splash { background: #071B20; color: #E6F2F1; }
+        .boot-splash__mark { background: #38B6D6; }
+      }
+      @media (prefers-reduced-motion: reduce) { .boot-splash__mark { animation: none; } }
+    </style>
+    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash"><div class="boot-splash__mark"></div></div>
+    </div>
+    <noscript>This demo is a JavaScript application. Please enable JavaScript to run it.</noscript>
+  </body>
+</html>

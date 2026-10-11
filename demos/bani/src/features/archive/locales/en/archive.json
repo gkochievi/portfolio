@@ -1,0 +1,324 @@
+{
+  "title": "Archive jobs",
+  "subtitle": "Import, mirror and back up call records and recordings from both phone platforms.",
+  "refreshAll": "Refresh all",
+  "demoNote": "Demo: jobs run against simulated data. Reset demo data restores everything.",
+  "form": {
+    "from": "From",
+    "to": "To",
+    "source": "Source",
+    "errors": {
+      "fromRequired": "Pick a start date.",
+      "toRequired": "Pick an end date.",
+      "toBeforeFrom": "The end date must be on or after the start date.",
+      "future": "The end date cannot be in the future.",
+      "yesterday": "Pick yesterday or earlier.",
+      "tooLong": "Pick a range of {{max}} days or fewer."
+    }
+  },
+  "sources": {
+    "all": "All sources",
+    "voice_archive": "Voice Archive",
+    "edge_primary": "Edge PBX (primary)",
+    "edge_secondary": "Edge PBX (secondary)"
+  },
+  "triggers": {
+    "cron": "Scheduled",
+    "manual": "Manual ({{who}})",
+    "verify": "Verify backfill",
+    "interval": "Interval",
+    "reconcile": "Backfill"
+  },
+  "password": {
+    "label": "Your password",
+    "placeholder": "Enter your password to confirm",
+    "required": "Enter your password.",
+    "verifying": "Checking…",
+    "simulated": "Demo: any non-empty password is accepted, and the action is simulated."
+  },
+  "core": {
+    "title": "Core Cluster record import",
+    "subtitle": "Reads call record files from the drop folder into the archive.",
+    "tiles": {
+      "totalRecords": "Total records",
+      "totalFiles": "Total files",
+      "oldest": "Oldest record",
+      "newest": "Newest record",
+      "localFiles": "Local files available",
+      "localFilesHint": "Waiting in the drop folder",
+      "lastSync": "Last sync",
+      "lastSyncHint": "{{files}} files, {{records}} records",
+      "noSync": "No sync yet"
+    },
+    "chips": {
+      "running": "Sync running",
+      "idle": "Idle",
+      "listenerOn": "File-drop listener running",
+      "listenerOff": "File-drop listener stopped",
+      "cronOn": "Cron running",
+      "cronOff": "Cron stopped"
+    },
+    "setup": {
+      "title": "The archive is empty",
+      "body": "Place Core Cluster record files in the drop folder, then run Sync local files. Use Full history sync to read everything already on disk."
+    },
+    "actions": {
+      "syncLocal": "Sync local files",
+      "reconcile": "Reconcile",
+      "advanced": "Advanced",
+      "advancedHint": "These actions ask for your password.",
+      "full": "Full history sync",
+      "reset": "Reset sync state",
+      "purge": "Purge archive"
+    },
+    "dialogs": {
+      "full": {
+        "title": "Run a full history sync?",
+        "body": "Re-reads every record file on disk. It takes a while and only imports records that are not in the archive yet.",
+        "confirm": "Start full sync"
+      },
+      "reset": {
+        "title": "Reset the sync state?",
+        "body": "Forgets which drop files were imported. The next sync re-reads the recent drop folder.",
+        "confirm": "Reset state"
+      },
+      "purge": {
+        "title": "Purge the Core Cluster archive?",
+        "body": "Removes every imported Core Cluster record from the archive. This cannot be undone outside the demo.",
+        "confirm": "Purge archive"
+      }
+    },
+    "toasts": {
+      "started": "Local sync started",
+      "reconcileStarted": "Reconcile started",
+      "fullStarted": "Full history sync started",
+      "completed": "Sync finished: {{records}} records imported",
+      "failed": "Sync failed",
+      "resetDone": "Sync state cleared",
+      "purged": "Archive purged: {{records}} records removed"
+    }
+  },
+  "mirror": {
+    "title": "Edge PBX mirror",
+    "subtitle": "Compare a date range with the local mirror and backfill gaps.",
+    "chips": {
+      "enabled": "Mirror enabled",
+      "disabled": "Mirror disabled",
+      "configured": "Configured",
+      "notConfigured": "Not configured",
+      "running": "Sync running",
+      "interval": "Every {{minutes}} min"
+    },
+    "tiles": {
+      "totalRecords": "Mirrored records",
+      "oldest": "Oldest record",
+      "newest": "Newest record",
+      "interval": "Sync interval",
+      "intervalValue": "{{minutes}} min"
+    },
+    "range": "Date range",
+    "check": "Check range",
+    "reconcile": "Reconcile range",
+    "result": {
+      "title": "Last check",
+      "caption": "{{from}} to {{to}}, checked {{when}}",
+      "total": "Total",
+      "distinct": "Distinct",
+      "duplicates": "Duplicates",
+      "mirror": "In mirror",
+      "missing": "Missing",
+      "none": "Run a check to compare a range with the mirror.",
+      "clean": "The mirror has every record in this range."
+    },
+    "runs": {
+      "title": "Sync runs",
+      "empty": "No sync runs yet",
+      "trigger": "Trigger",
+      "range": "Range",
+      "status": "Status",
+      "fetched": "Fetched",
+      "inserted": "Inserted",
+      "duration": "Duration",
+      "started": "Started",
+      "error": "Error"
+    },
+    "toasts": {
+      "checked": "Check finished: {{missing}} missing",
+      "reconcileStarted": "Backfill started",
+      "reconcileDone": "Backfill finished: {{inserted}} records inserted"
+    }
+  },
+  "hangup": {
+    "title": "Hangup by backfill",
+    "subtitle": "Fills the Hangup by column from the Edge PBX event log.",
+    "tiles": {
+      "eventTable": "Event table present",
+      "carriesSource": "Carries hangup source",
+      "withHangup": "Rows with Hangup by",
+      "notChecked": "Not yet checked",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "noTable": "The event table is missing, so there is nothing to backfill from.",
+    "backfill": "Backfill range",
+    "running": "Backfill running",
+    "result": {
+      "title": "Last backfill",
+      "caption": "{{from}} to {{to}}, finished {{when}}",
+      "scanned": "Scanned",
+      "filled": "Filled",
+      "noSource": "No source",
+      "none": "No backfill has run yet."
+    },
+    "toasts": {
+      "started": "Backfill started",
+      "done": "Backfill finished: {{filled}} rows filled"
+    }
+  },
+  "backup": {
+    "title": "Recording backup",
+    "subtitle": "Copies recordings from the Voice Archive and Edge PBX into the file archive.",
+    "schedule": "Daily {{time}}",
+    "retry": "{{days}}-day trailing retry",
+    "flow": {
+      "lastRun": "Last run",
+      "noRun": "No runs yet",
+      "openGaps": "Open gaps",
+      "filesBackedUp": "Files backed up",
+      "totalStored": "Total stored",
+      "cronOn": "Cron on",
+      "cronOff": "Cron off",
+      "days": "{{count}} days"
+    },
+    "manual": {
+      "title": "Manual backfill",
+      "start": "Start backfill",
+      "hint": "Copies files in the range that are missing from the file archive."
+    },
+    "runs": {
+      "title": "Recent runs",
+      "empty": "No backup runs yet",
+      "source": "Source",
+      "range": "Range",
+      "trigger": "Trigger",
+      "status": "Status",
+      "listed": "Listed",
+      "copied": "Copied",
+      "skipped": "Skipped",
+      "failed": "Failed",
+      "duration": "Duration",
+      "started": "Started",
+      "cancel": "Cancel",
+      "cancelling": "Canceling…"
+    },
+    "cancelDialog": {
+      "title": "Cancel this backup run?",
+      "body": "Files already copied stay in the file archive. The run stops on its next step.",
+      "confirm": "Cancel run",
+      "keep": "Keep running"
+    },
+    "toasts": {
+      "started_one": "Backup started",
+      "started_other": "{{count}} backups started",
+      "canceling": "Cancel requested"
+    }
+  },
+  "events": {
+    "title": "Live backup events",
+    "subtitle": "Tail of the backup event log.",
+    "flow": "Flow",
+    "flows": {
+      "all": "All flows",
+      "voice_archive": "Voice Archive",
+      "edge_pbx": "Edge PBX"
+    },
+    "minLevel": "Minimum level",
+    "levels": {
+      "debug": "Debug",
+      "info": "Info",
+      "warn": "Warning",
+      "error": "Error"
+    },
+    "levelAtLeast": "{{level}} and above",
+    "rows": "Show",
+    "rowsValue": "{{count}} rows",
+    "pause": "Pause tail",
+    "paused": "Paused",
+    "live": "Live, every 5 s",
+    "empty": "No events match these filters",
+    "columns": {
+      "time": "Time",
+      "level": "Level",
+      "event": "Event",
+      "dateDir": "Date dir",
+      "path": "Path",
+      "size": "Size",
+      "duration": "Duration",
+      "message": "Message"
+    }
+  },
+  "verify": {
+    "title": "Verify a date",
+    "subtitle": "Compare the source and the file archive day by day, then backfill what is missing.",
+    "start": "Start verify",
+    "maxHint": "Up to {{max}} days, ending yesterday.",
+    "empty": {
+      "title": "No verify runs yet",
+      "body": "Pick a source and a date range, then start. Choose All sources to verify each one in turn."
+    },
+    "progress": "{{done}} of {{total}} days",
+    "cancel": "Cancel verify",
+    "cancelDialog": {
+      "title": "Cancel this verify run?",
+      "body": "Days already compared keep their results.",
+      "confirm": "Cancel verify",
+      "keep": "Keep running"
+    },
+    "tiles": {
+      "source": "Source files",
+      "dest": "Archive files",
+      "both": "Present on both",
+      "missingDest": "Missing from archive",
+      "missingSource": "Missing from source",
+      "mismatched": "Days mismatched",
+      "failed": "Days failed"
+    },
+    "days": {
+      "title": "Days",
+      "date": "Date",
+      "status": "Status",
+      "source": "Source",
+      "dest": "Archive",
+      "missingDest": "Missing from archive",
+      "missingSource": "Missing from source",
+      "duration": "Duration",
+      "ok": "OK",
+      "mismatch": "Mismatch",
+      "failed": "Failed",
+      "pending": "Pending",
+      "expand": "Show missing files",
+      "collapse": "Hide missing files"
+    },
+    "missing": {
+      "fromDest": "Missing from the file archive ({{count}})",
+      "fromSource": "Missing from the source ({{count}})",
+      "name": "File",
+      "path": "Path",
+      "size": "Size"
+    },
+    "backfill": {
+      "action": "Backfill {{count}} missing files",
+      "running": "Backfilling {{copied}} of {{listed}} files",
+      "done": "Backfill finished: copied {{copied}}, skipped {{skipped}}, failed {{failed}}",
+      "canceled": "Backfill canceled: copied {{copied}}, skipped {{skipped}}, failed {{failed}}",
+      "failed": "Backfill failed: copied {{copied}}, skipped {{skipped}}, failed {{failed}}"
+    },
+    "toasts": {
+      "started_one": "Verify started",
+      "started_other": "{{count}} verify runs started",
+      "canceling": "Cancel requested",
+      "backfillStarted": "Backfill started",
+      "backfillDone": "Backfill finished: {{copied}} files copied"
+    }
+  }
+}

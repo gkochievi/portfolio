@@ -1,0 +1,115 @@
+{
+  "loading": "Loading…",
+  "list": {
+    "label": "Conversations"
+  },
+  "rail": {
+    "label": "Channel filter",
+    "count": "{{count}} chats"
+  },
+  "queue": {
+    "title": "Queue",
+    "waiting": "{{count}} waiting",
+    "longest": "Longest wait {{time}}",
+    "autoNotice": "Auto-assign is on: new chats go straight to the next available operator.",
+    "empty": "No one is waiting",
+    "emptyFiltered": "Nobody is waiting on this channel",
+    "showMore": "Show {{count}} more",
+    "showLess": "Show less",
+    "botHandling": "Chiti Assistant is handling",
+    "atLimit": "You're at your chat limit. Finish one to take another.",
+    "take": "Take",
+    "taken": "You took the chat with {{name}}"
+  },
+  "mine": {
+    "title": "My chats",
+    "counter": "{{active}}/{{limit}} active",
+    "counterLabel": "{{active}} of {{limit}} chats active",
+    "counterUnlimited": "{{active}} active",
+    "limitWarning": "You've reached your limit of {{limit}} chats. Finish one to take another.",
+    "emptyFiltered": "No chats of yours on this channel"
+  },
+  "empty": {
+    "title": "All quiet in the nest",
+    "mine": "Chats you take will show up here.",
+    "description": "New messages from every channel land here."
+  },
+  "row": {
+    "bot": "Bot",
+    "handedOver": "Handed over",
+    "you": "You:",
+    "inactive": "Inactive chat",
+    "unread": "{{count}} unread",
+    "preview": {
+      "image": "Photo",
+      "file": "File",
+      "location": "Location",
+      "audio": "Voice message"
+    }
+  },
+  "presence": {
+    "waiting": "Waiting",
+    "connected": "Online",
+    "disconnected": "Left"
+  },
+  "thread": {
+    "label": "Chat with {{name}}",
+    "pick": "Pick a chat",
+    "pickHint": "Or take a new one from the queue.",
+    "clientIp": "Customer IP address",
+    "toggleDrawer": "Customer and Copilot",
+    "toggleHistory": "History",
+    "finish": "Finish chat",
+    "demoActions": "Demo actions",
+    "simulateTimeout": "Simulate response timeout",
+    "timeoutToast": "The chat went back to the queue and you were excluded from it.",
+    "messages": "Messages",
+    "loadOlder": "Load earlier messages",
+    "noMessages": "No messages yet.",
+    "waitingAuto": "This chat will be assigned to an available operator automatically.",
+    "waitingTake": "This chat is waiting in the queue. Take it to reply.",
+    "takeChat": "Take chat",
+    "ended": "This chat has ended.",
+    "readOnly": "This chat is handled by someone else.",
+    "backToChat": "Back to chat",
+    "preChat": "Before the chat"
+  },
+  "banner": {
+    "handoffTitle": "Handoff briefing",
+    "summary": "Summary",
+    "goal": "Customer's goal",
+    "anAdmin": "An admin",
+    "interventionTitle": "{{name}} is replying",
+    "interventionBody": "An admin has stepped in. Your composer is locked until they hand the chat back.",
+    "windowClosedTitle": "The {{hours}}-hour {{channel}} window has closed",
+    "windowTemplate": "You can't send free-form messages now. Use a template to restart the conversation.",
+    "windowNoRemedy": "You can't send anything until the customer writes again.",
+    "capReached": "Message limit reached ({{limit}} of {{limit}}). Wait for the customer to reply.",
+    "capLeft": "{{left}} of {{limit}} messages left until the customer replies."
+  },
+  "typing": {
+    "who": "{{name}} is typing…",
+    "livePreview": "Live preview"
+  },
+  "composer": {
+    "placeholder": "Write a reply…",
+    "lockedIntervention": "{{name}} is replying",
+    "lockedTemplate": "Window closed: use a template",
+    "lockedWindow": "Window closed: you can't reply",
+    "lockedCap": "Limit reached: wait for the customer"
+  },
+  "finish": {
+    "title": "Finish the chat with {{name}}?",
+    "description": "The chat will end and free up one of your slots.",
+    "confirm": "Finish chat",
+    "done": "Chat with {{name}} finished"
+  },
+  "error": {
+    "list": "Couldn't load your chats",
+    "thread": "Couldn't load this chat",
+    "messages": "Couldn't load the messages",
+    "send": "The message wasn't sent",
+    "take": "Couldn't take the chat",
+    "retry": "Try again"
+  }
+}

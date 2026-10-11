@@ -1,0 +1,296 @@
+{
+  "title": {
+    "fallback": "Chat with us"
+  },
+  "loading": "Loading chat",
+  "powered": "Powered by chiti",
+  "launcher": {
+    "open": "Open chat",
+    "close": "Minimize chat"
+  },
+  "header": {
+    "connect": "Connect to operator",
+    "minimize": "Minimize",
+    "endChat": "End chat"
+  },
+  "status": {
+    "assistant": "Chiti Assistant",
+    "waiting": "Waiting for an operator",
+    "operatorOnline": "{{name}} is online",
+    "ended": "Chat ended",
+    "offline": "Offline"
+  },
+  "typing": {
+    "botName": "Chiti Assistant",
+    "bot": "Chiti Assistant is typing...",
+    "operator": "{{name}} is typing...",
+    "someone": "An operator"
+  },
+  "faq": {
+    "hint": "Pick a topic, or connect to a person at any time.",
+    "options": "Topics",
+    "back": "Back",
+    "startOver": "Start over",
+    "connect": "Connect to operator",
+    "empty": "No topics are set up yet."
+  },
+  "form": {
+    "title": "Before we start",
+    "subtitle": "Tell us a little about you so the right person can help.",
+    "start": "Start chat",
+    "starting": "Connecting...",
+    "back": "Back to topics",
+    "required": "This field is required.",
+    "invalid": "Please check this value.",
+    "select": "Choose one"
+  },
+  "errors": {
+    "OFFLINE": "We are offline right now.",
+    "MISSING_FIELDS": "Please fill in the required fields.",
+    "GENERIC": "We could not start the chat. Please try again.",
+    "retry": "Try again"
+  },
+  "error": {
+    "title": "The chat could not load"
+  },
+  "chat": {
+    "placeholder": "Write a message",
+    "send": "Send",
+    "attach": "Attach an image or file",
+    "emoji": "Emoji",
+    "location": "Share location",
+    "talkToHuman": "Talk to a human",
+    "waiting": "You are in the queue. A colleague will join soon.",
+    "newBelow": "New messages",
+    "log": "Conversation",
+    "startNew": "Start a new chat",
+    "fileTooLarge": "That file is larger than 10 MB.",
+    "ended": {
+      "customer": "You ended this chat.",
+      "operator": "The operator ended this chat.",
+      "admin": "A supervisor ended this chat.",
+      "system": "This chat was closed because of inactivity."
+    }
+  },
+  "bubble": {
+    "ai": "AI",
+    "preChat": "Pre-chat",
+    "admin": "Admin",
+    "sources": "Sources:",
+    "seen": "Seen",
+    "delivered": "Delivered",
+    "location": "Shared location"
+  },
+  "end": {
+    "title": "End this chat?",
+    "body": "The conversation will be closed. You can start a new one any time.",
+    "cancel": "Keep chatting",
+    "confirm": "End chat"
+  },
+  "inactivity": {
+    "title": "Still there?",
+    "body": "The chat will close at {{time}}.",
+    "ok": "Got it"
+  },
+  "feedback": {
+    "title": "How was your chat?",
+    "subtitle": "Rate the help you got today.",
+    "comment": "Add a comment (optional)",
+    "send": "Send",
+    "skip": "Skip",
+    "stars": "{{count}} stars",
+    "stars_one": "{{count}} star",
+    "thanksTitle": "Thank you!",
+    "thanks": "Your feedback helps us improve."
+  },
+  "offline": {
+    "title": "We are offline right now",
+    "today": "Today: {{start}} - {{end}}",
+    "closedToday": "Closed today",
+    "nextOpen": "Next available: {{when}}",
+    "close": "Close"
+  },
+  "banned": {
+    "title": "Chat unavailable",
+    "close": "Close"
+  },
+  "disabled": {
+    "title": "Chat is not available",
+    "body": "This chat has been switched off by the business. Please contact them another way."
+  },
+  "notFound": {
+    "title": "Shop not found",
+    "body": "There is no chat for \"{{slug}}\". Check the link and try again."
+  },
+  "widgetPage": {
+    "title": "Chiti chat widget",
+    "subtitle": "The same widget, full page.",
+    "tenants": "Try tenant:",
+    "sample": {
+      "vazi": "vazi",
+      "gza": "gza (disabled)",
+      "nowhere": "unknown"
+    },
+    "back": "Back to the Vazi storefront"
+  },
+  "live": {
+    "title": "Live desk",
+    "subtitle": "The customer on the left, the operator on the right. Both sides are live.",
+    "back": "Back to storefront",
+    "scriptTitle": "3-minute script",
+    "switch": "Switch side",
+    "customer": "Customer",
+    "operator": "Operator",
+    "customerLabel": "Customer: Vazi Wine Cellar storefront",
+    "operatorLabel": "Operator: Luka's inbox",
+    "signingIn": "Signing in as Luka",
+    "steps": {
+      "open": {
+        "title": "Open the chat",
+        "body": "Pick a delivery topic, then start the chat. Ana's details are pre-filled."
+      },
+      "ask": {
+        "title": "Ask the assistant",
+        "body": "Try: \"What goes with khachapuri?\" The bot answers with sources."
+      },
+      "human": {
+        "title": "Talk to a human",
+        "body": "Press the button. The chat jumps into the queue with a briefing."
+      },
+      "claim": {
+        "title": "Claim as Luka",
+        "body": "Open the new chat in the queue and claim it."
+      },
+      "reply": {
+        "title": "Reply with help",
+        "body": "Use the Copilot draft or a quick reply and send it."
+      },
+      "rate": {
+        "title": "End and rate",
+        "body": "Finish the chat, then rate it as the customer."
+      }
+    }
+  },
+  "demo": {
+    "title": "Demo controls",
+    "collapse": "Collapse demo controls",
+    "intro": "Change the hidden states of the widget. Settings here also change the admin console.",
+    "liveDesk": "Open the live desk",
+    "widgetPage": "Open the widget as a full page",
+    "position": "Widget position",
+    "left": "Left",
+    "right": "Right",
+    "language": "Language",
+    "theme": "Client theme",
+    "themes": {
+      "canary": "Canary",
+      "olive": "Olive",
+      "clay": "Clay",
+      "plum": "Plum",
+      "moss": "Moss",
+      "slate": "Slate",
+      "night": "Night",
+      "paper": "Paper"
+    },
+    "hours": "Opening hours",
+    "hoursOpen": "Open (always)",
+    "hoursClosed": "Force closed",
+    "hoursTemporary": "Temporarily closed",
+    "hoursAuto": "Follow the schedule",
+    "behaviour": "Behaviour",
+    "bot": "Chiti Assistant (bot)",
+    "botHint": "Answers first, then hands off.",
+    "fastInactivity": "Fast inactivity timer",
+    "fastInactivityHint": "Warning after 45 s, close after 90 s.",
+    "spawner": "New customers arrive",
+    "spawnerHint": "Waiting chats keep appearing in the queue.",
+    "banned": "Be banned",
+    "bannedHint": "Uses phone {{phone}} and IP {{ip}}.",
+    "tools": "Tools",
+    "aiOutage": "AI outage 45 s",
+    "resetChat": "Reset chat",
+    "embed": "Embed snippet",
+    "copy": "Copy snippet",
+    "copiedShort": "Copied",
+    "copied": "Snippet copied",
+    "copyFailed": "Could not copy. Select the text and copy it."
+  },
+  "store": {
+    "brand": "Vazi Wine Cellar",
+    "cart": "Cart, {{count}} items",
+    "add": "Add to cart",
+    "added": "{{name}} added to your cart",
+    "ribbon": "Chiti demo: this is a fictional shop with the Chiti chat widget.",
+    "ribbonCta": "Open the live desk",
+    "nav": {
+      "label": "Shop",
+      "wines": "Wines",
+      "qvevri": "Qvevri",
+      "gifts": "Gifts",
+      "delivery": "Delivery"
+    },
+    "hero": {
+      "eyebrow": "FAMILY CELLAR, TBILISI",
+      "title": "Wine from the vine to your door",
+      "body": "Small-batch Georgian wines, delivered in Tbilisi the same day. Ask the little yellow bird in the corner if you need help choosing.",
+      "cta": "Shop the autumn wines",
+      "secondary": "Delivery info"
+    },
+    "products": {
+      "title": "The autumn selection",
+      "subtitle": "Six bottles our cellar team is pouring this month.",
+      "saperavi": {
+        "name": "Saperavi Reserve 2021",
+        "meta": "Kakheti · 13.5% · 750 ml",
+        "note": "Deep, dark fruit with a long peppery finish."
+      },
+      "rkatsiteli": {
+        "name": "Rkatsiteli Qvevri 2022",
+        "meta": "Kakheti · amber · 12.5%",
+        "note": "Fermented on skins in clay. Apricot, tea and honey."
+      },
+      "mtsvane": {
+        "name": "Mtsvane Kakheti 2023",
+        "meta": "Kakheti · white · 12%",
+        "note": "Fresh and crisp, made for fish and salads."
+      },
+      "kindzmarauli": {
+        "name": "Kindzmarauli 2022",
+        "meta": "Kakheti · semi-sweet · 11.5%",
+        "note": "Ripe cherry and pomegranate. Lovely with dessert."
+      },
+      "tsolikouri": {
+        "name": "Tsolikouri Imereti 2023",
+        "meta": "Imereti · white · 12.5%",
+        "note": "Citrus and white flowers with a mineral edge."
+      },
+      "mukuzani": {
+        "name": "Mukuzani Single Vineyard 2020",
+        "meta": "Kakheti · red · 13.5%",
+        "note": "Oak-aged Saperavi, structured and elegant."
+      }
+    },
+    "delivery": {
+      "title": "Delivery and gifts",
+      "tbilisi": {
+        "title": "Same day in Tbilisi",
+        "body": "Order before 16:00 and it arrives today. Free from 120 ₾."
+      },
+      "regions": {
+        "title": "Courier to the regions",
+        "body": "Batumi, Kutaisi and Telavi in 1-2 working days for 8 ₾."
+      },
+      "gifts": {
+        "title": "Gift boxes",
+        "body": "From 12 ₾ with a handwritten card. Corporate orders get 12% off from 24 bottles."
+      },
+      "help": "Questions about an order, a broken bottle or what to pour? Chat with us with the button in the corner."
+    },
+    "footer": {
+      "name": "Vazi Wine Cellar (fictional)",
+      "address": "Rustaveli Avenue 18, Tbilisi",
+      "hours": "Mon-Sat 09:00-21:00",
+      "note": "Drink responsibly. Wine is sold to customers aged 21 and over. This shop is a demo."
+    }
+  }
+}

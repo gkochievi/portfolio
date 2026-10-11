@@ -1,0 +1,311 @@
+/*
+ * Rigi design tokens, base styles, dark mode and the partner realm.
+ * Owner: design-system.
+ *
+ * Fonts are imported once in src/main.tsx (@fontsource-variable/*).
+ * Dark mode: class "dark" + data-theme="dark" on <html> (src/app/theme.ts follows
+ * the OS until the visitor picks; in memory only).
+ * Partner portal: [data-realm="partner"] swaps the signal from green to ochre.
+ */
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------ raw tokens */
+
+:root {
+  --surface: #f4f4f0;
+  --panel: #ffffff;
+  --sunken: #ebebe5;
+  --ink: #1a1b1e;
+  --muted: #5d6067;
+  --subtle: #8a8f98;
+  --hairline: #e2e2dc;
+  --hairline-strong: #cfcfc7;
+
+  --primary: #2a7a2e;
+  --primary-hover: #22662a;
+  --on-primary: #ffffff;
+  --primary-soft: rgba(42, 122, 46, 0.1);
+  --accent: #8a6400;
+  --on-accent: #ffffff;
+  --link: #2a7a2e;
+  /* The "now serving" signal (green for staff, ochre in the partner realm). */
+  --signal: #2a7a2e;
+  --row-hover: rgba(42, 122, 46, 0.07);
+  --ring: #1a1b1e;
+  --ring-halo: rgba(42, 122, 46, 0.35);
+
+  --success: #0f7062;
+  --warning: #b4480c;
+  --danger: #b42318;
+  --on-danger: #ffffff;
+  --info: #2d5ba6;
+
+  --chart-1: #1a1b1e;
+  --chart-2: #2a7a2e;
+  --chart-3: #8a6400;
+  --chart-4: #8a8f98;
+  --chart-5: #0f7062;
+
+  --overlay-shadow: 0 12px 32px -8px rgba(26, 27, 30, 0.18);
+  --scrim: rgba(18, 19, 22, 0.42);
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  color-scheme: light;
+}
+
+.dark {
+  --surface: #121316;
+  --panel: #1b1c20;
+  --sunken: #16171a;
+  --ink: #ececE7;
+  --muted: #a0a3aa;
+  --subtle: #7a7d85;
+  --hairline: #2a2b30;
+  --hairline-strong: #3a3b41;
+
+  --primary: #7bd483;
+  --primary-hover: #93dd9a;
+  --on-primary: #121316;
+  --primary-soft: rgba(123, 212, 131, 0.12);
+  --accent: #e0b54a;
+  --on-accent: #121316;
+  --link: #7bd483;
+  --signal: #7bd483;
+  --row-hover: rgba(123, 212, 131, 0.12);
+  --ring: #7bd483;
+  --ring-halo: transparent;
+
+  --success: #5cc7b5;
+  --warning: #f08a4b;
+  --danger: #f07a6e;
+  --on-danger: #121316;
+  --info: #86a9e6;
+
+  --chart-1: #ececE7;
+  --chart-2: #7bd483;
+  --chart-3: #e0b54a;
+  --chart-4: #8a8f98;
+  --chart-5: #5cc7b5;
+
+  --overlay-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.55);
+  --scrim: rgba(0, 0, 0, 0.6);
+
+  color-scheme: dark;
+}
+
+/* Partner portal: same system, ochre signal. */
+[data-realm="partner"] {
+  --primary: #8a6400;
+  --primary-hover: #745400;
+  --on-primary: #ffffff;
+  --primary-soft: rgba(138, 100, 0, 0.1);
+  --link: #8a6400;
+  --signal: #8a6400;
+  --row-hover: rgba(138, 100, 0, 0.07);
+  --ring-halo: rgba(138, 100, 0, 0.35);
+}
+.dark [data-realm="partner"],
+.dark[data-realm="partner"] {
+  --primary: #e0b54a;
+  --primary-hover: #e8c46c;
+  --on-primary: #121316;
+  --primary-soft: rgba(224, 181, 74, 0.12);
+  --link: #e0b54a;
+  --signal: #e0b54a;
+  --row-hover: rgba(224, 181, 74, 0.12);
+  --ring: #e0b54a;
+}
+
+/* ------------------------------------------------------- tailwind theme */
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-sunken: var(--sunken);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-signal: var(--signal);
+  --color-row-hover: var(--row-hover);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-on-danger: var(--on-danger);
+  --color-info: var(--info);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --font-display: "Schibsted Grotesk Variable", "Noto Sans Georgian Variable", ui-sans-serif, sans-serif;
+  --font-sans: "Instrument Sans Variable", "Noto Sans Georgian Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "Noto Sans Georgian Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --shadow-overlay: var(--overlay-shadow);
+  --ease-rigi: cubic-bezier(0.2, 0, 0, 1);
+
+  --animate-rise: rise 160ms cubic-bezier(0.2, 0, 0, 1) both;
+  --animate-fade: fade 160ms cubic-bezier(0.2, 0, 0, 1) both;
+  --animate-sheet: sheet 200ms cubic-bezier(0.2, 0, 0, 1) both;
+  --animate-pop: pop 160ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes sheet {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes pop {
+  from { opacity: 0; transform: translateY(4px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------------------------ base */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  :lang(ka) body,
+  html:lang(ka) {
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  :lang(ka) h1, :lang(ka) h2, :lang(ka) h3 {
+    letter-spacing: 0;
+  }
+  ::selection {
+    background: var(--primary-soft);
+  }
+  /* Focus: 2px ink ring + green halo (light); 2px green ring (dark). */
+  :where(a, button, input, textarea, select, summary, [tabindex], [role="tab"], [role="menuitem"], [role="option"], [role="switch"], [role="checkbox"]):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 1px;
+    box-shadow: 0 0 0 4px var(--ring-halo);
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--subtle);
+  }
+  hr {
+    border-color: var(--hairline);
+  }
+}
+
+/* -------------------------------------------------------- signature bits */
+
+@layer components {
+  /* Mono eyebrow: 11px uppercase Latin; normal case for Georgian (never Mtavruli). */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  :lang(ka) .eyebrow {
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-family: var(--font-sans);
+    font-size: 12px;
+  }
+
+  /* The "now serving" 3px rule for the selected / next-up row or card. */
+  .serving {
+    box-shadow: inset 3px 0 0 var(--signal);
+  }
+  tr.serving {
+    box-shadow: none;
+  }
+  tr.serving > td:first-child {
+    box-shadow: inset 3px 0 0 var(--signal);
+  }
+
+  /* Ticket stub: notched top-right corner + dashed perforation above the footer. */
+  .ticket {
+    -webkit-mask: radial-gradient(circle 9px at top right, transparent 8px, #000 8.5px);
+    mask: radial-gradient(circle 9px at top right, transparent 8px, #000 8.5px);
+  }
+  .ticket-perf {
+    border-top: 1px dashed var(--hairline-strong);
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Text link on light: ink + 2px signal underline. */
+  .link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--signal);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 160ms var(--ease);
+  }
+  .link:hover {
+    color: var(--link);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--hairline-strong) transparent;
+  }
+}
+
+/* Toasts (sonner) follow the tokens. */
+[data-sonner-toaster] [data-sonner-toast] {
+  font-family: var(--font-sans);
+  border-radius: 8px;
+  border: 1px solid var(--hairline);
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: var(--overlay-shadow);
+}
+[data-sonner-toaster] [data-sonner-toast] [data-description] {
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

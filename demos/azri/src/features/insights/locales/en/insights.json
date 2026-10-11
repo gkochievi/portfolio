@@ -1,0 +1,78 @@
+{
+  "filters": {
+    "label": "Filters",
+    "refine": "Refine responses",
+    "searchPlaceholder": "Search comments, staff or branch",
+    "ratingOption": "{{value}} · {{label}}"
+  },
+  "commentLang": {
+    "en": "Written in English",
+    "ka": "Written in Georgian"
+  },
+  "comments": {
+    "openResponse": "Open the response for {{tenant}}"
+  },
+  "source": {
+    "seed": "History",
+    "session": "This session",
+    "simulated": "Live (background customer)"
+  },
+  "overview": {
+    "eyebrow": "Results",
+    "title": "Overview",
+    "description": "How customers rate every business, branch and person, straight from their SMS surveys.",
+    "live": "Live",
+    "trendTitle_one": "Responses, last {{count}} day",
+    "trendTitle_other": "Responses, last {{count}} days",
+    "trendHint": "Bars show daily responses; the line is the average rating that day.",
+    "ratingsCount_one": "{{count}} rating",
+    "ratingsCount_other": "{{count}} ratings",
+    "ratingsHint_one": "From {{count}} answered question",
+    "ratingsHint_other": "From {{count}} answered questions",
+    "rateHint": "{{completed}} of {{sent}} links answered",
+    "inWindow_one": "{{count}} in the last {{days}} days",
+    "inWindow_other": "{{count}} in the last {{days}} days",
+    "deltaPts": "{{value}} pts",
+    "byTenant": "By business",
+    "byTenantHint": "Select a business to see its branches.",
+    "byBranch": "By branch",
+    "byBranchHint": "Select a branch to focus on it.",
+    "questionsTitle": "Per-question averages",
+    "questionsHint": "Every question of the selected campaign.",
+    "answeredSkipped": "{{answered}} answered · {{skipped}} skipped",
+    "commentsTitle": "Latest comments",
+    "noCommentsHint": "Comments customers leave with their ratings appear here."
+  },
+  "responses": {
+    "title": "Responses",
+    "description": "Every survey answer, newest first. Select one to see each question and the link's timeline.",
+    "count_one": "{{formatted}} response",
+    "count_other": "{{formatted}} responses"
+  },
+  "table": {
+    "time": "Answered",
+    "branchStaff": "Branch and staff",
+    "rating": "Average",
+    "comment": "Comment",
+    "noComment": "No comment"
+  },
+  "detail": {
+    "title": "Response",
+    "notFound": "Response not found",
+    "notFoundHint": "It may belong to data that was reset.",
+    "answered": "{{answered}} of {{total}} questions answered",
+    "questions": "Questions",
+    "comment": "Comment",
+    "noComment": "The customer left no comment.",
+    "link": "Survey link",
+    "recipient": "Recipient",
+    "phone": "Phone",
+    "token": "Link ID",
+    "interactionAt": "Visit or call",
+    "sentAt": "SMS sent",
+    "expiresAt": "Link expires",
+    "answeredAt": "Answered",
+    "source": "Source",
+    "average": "Average rating"
+  }
+}

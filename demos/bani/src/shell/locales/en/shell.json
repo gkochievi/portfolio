@@ -1,0 +1,78 @@
+{
+  "login": {
+    "title": "Sign in",
+    "subtitle": "Pick a demo account, or sign in with any username.",
+    "username": "Username or email",
+    "password": "Password",
+    "submit": "Sign in",
+    "invalid": "Invalid username or password",
+    "accounts": "Demo accounts",
+    "accountsHint": "One click signs you in with that role.",
+    "or": "or sign in with a username",
+    "demoNote": "Every account uses the password {{password}}. Any other username signs in as the superadmin.",
+    "tenant": "Tenant: {{tenant}}",
+    "features": {
+      "calls": "Call records across Core Cluster and Edge PBX, stitched into one call",
+      "archive": "Recording archive, backups and day-by-day verify",
+      "cc": "Contact-centre staffing, campaigns and node health",
+      "ext": "Extension provisioning with a 10-minute lock"
+    }
+  },
+  "header": {
+    "menu": "Menu",
+    "expand": "Expand navigation",
+    "collapse": "Collapse navigation",
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "Follow system",
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme",
+    "viewAs": "View as",
+    "viewAsHint": "Switch persona to see what each role can do",
+    "signedInAs": "Signed in as",
+    "signOut": "Sign out",
+    "resetDemo": "Reset demo data",
+    "resetDone": "Demo data restored",
+    "switched": "Now viewing as {{name}}",
+    "home": "Home",
+    "skip": "Skip to content",
+    "more": "More"
+  },
+  "search": {
+    "open": "Search calls",
+    "shortcut": "⌘K",
+    "placeholder": "Phone number, extension or call ID…",
+    "searchNumber": "Search calls for “{{q}}”",
+    "goTo": "Go to",
+    "calls": "Calls",
+    "empty": "Type a number to search call records",
+    "noCalls": "You cannot search call records with this role"
+  },
+  "notFound": {
+    "title": "This page does not exist",
+    "body": "The link may be old, or the page moved. Nothing was changed.",
+    "home": "Back to the console"
+  },
+  "forbidden": {
+    "title": "Not available for this role",
+    "body": "Your role does not include {{feature}}. Switch persona with View as to try it.",
+    "home": "Go to my start page"
+  },
+  "errors": {
+    "title": "This screen failed to load",
+    "body": "Reload the page to start again. Demo data resets on reload.",
+    "reload": "Reload"
+  },
+  "personas": {
+    "superadmin": "Everything, including People and no campaign port cap.",
+    "admin": "Runs the whole estate except console accounts.",
+    "cc-admin": "Core Cluster calls, agents, campaigns (port cap 10), nodes.",
+    "tel-admin": "Edge PBX call records only.",
+    "cc-operator": "Core Cluster call records only.",
+    "tel-operator": "Edge PBX call records only.",
+    "it-support": "Reserves and creates extensions.",
+    "user": "Searches call records on both platforms."
+  }
+}

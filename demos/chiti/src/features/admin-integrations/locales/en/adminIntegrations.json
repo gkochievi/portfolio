@@ -1,0 +1,366 @@
+{
+  "common": {
+    "backToSettings": "Settings"
+  },
+  "errors": {
+    "required": "This field is required.",
+    "invalid_id": "Use the numeric id, 6 to 20 digits.",
+    "too_short": "That looks too short to be valid.",
+    "too_long": "That is too long.",
+    "invalid_telegram_token": "Paste the token exactly as BotFather gave it: 123456789:AA…",
+    "invalid_uuid": "Enter a valid client UUID, like 7c2e4f1a-3b8d-4e6a-9f21-5d0c8a4b7e13.",
+    "required_to_enable": "Save a client UUID before switching the assistant on.",
+    "already_replied": "This comment already has a reply.",
+    "faq_invalid": "The flow has problems that need fixing first."
+  },
+  "faq": {
+    "title": "FAQ flow",
+    "description": "The questions visitors walk through before the chat starts. Drag cards to arrange them and drag from an option's dot onto a card to connect it.",
+    "unsaved": "Unsaved changes",
+    "discard": "Discard changes",
+    "loadError": "We couldn't load the FAQ flow",
+    "enabled": "Show the FAQ before the chat",
+    "enabledHint": "Visitors walk the flow first and can still ask for a person.",
+    "showOperator": "Show the “Connect to operator” button",
+    "showOperatorHint": "Lets visitors skip the flow at any step.",
+    "previewLanguage": "Preview language",
+    "problemsTitle_one": "{{count}} card needs fixing before this can be saved",
+    "problemsTitle_other": "{{count}} cards need fixing before this can be saved",
+    "nodeCount_one": "{{count}} card",
+    "nodeCount_other": "{{count}} cards",
+    "addQuestion": "Add question",
+    "addAnswer": "Add answer",
+    "empty": {
+      "title": "No FAQ cards yet",
+      "description": "Start with the first question. It becomes the root of the flow."
+    },
+    "toast": {
+      "saved": "FAQ flow saved. The widget uses it right away.",
+      "invalid_one": "{{count}} card has a problem. Fix it and save again.",
+      "invalid_other": "{{count}} cards have problems. Fix them and save again."
+    },
+    "canvas": {
+      "label": "FAQ flow canvas",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out",
+      "fit": "Fit to view",
+      "hint": "Drag the background to pan. Drag a card by its header. Arrow keys nudge a focused card.",
+      "minimap": "Flow overview"
+    },
+    "node": {
+      "question": "Question",
+      "answer": "Answer",
+      "root": "Start",
+      "problem": "Fix me",
+      "empty": "No text yet",
+      "emptyOption": "Untitled option",
+      "toOperator": "Operator",
+      "dragHandle": "Connect “{{label}}” to a card",
+      "dragHandleHint": "Drag onto a card to connect"
+    },
+    "inspector": {
+      "title": "Card",
+      "empty": "Select a card on the canvas to edit its text and options.",
+      "rootCannotDelete": "The first card is the start of the flow and can't be deleted.",
+      "deleteNode": "Delete card",
+      "questionText": "Question text",
+      "answerText": "Answer text",
+      "options": "Options",
+      "addOption": "Add option",
+      "noOptions": "A question needs at least one option.",
+      "optionN": "Option {{n}}",
+      "removeOption": "Remove option",
+      "leadsTo": "Leads to",
+      "noTarget": "Nothing yet",
+      "transfer": "Connect to an operator",
+      "transferFlag": "Hand over to an operator",
+      "answerHint": "Answers end the flow. Visitors read them and can ask for a person or close the chat."
+    },
+    "issues": {
+      "no_root": "The flow needs exactly one start card.",
+      "unreachable": "Visitors can never reach this card. Connect an option to it.",
+      "no_options": "A question needs at least one option.",
+      "option_no_target": "An option needs a target card or an operator handover.",
+      "dangling_target": "An option points to a card that no longer exists.",
+      "empty_text": "The text is empty in Georgian or English.",
+      "empty_label": "An option label is empty in Georgian or English."
+    }
+  },
+  "channels": {
+    "title": "Channels",
+    "description": "Connect the messaging channels whose conversations should land in your inbox.",
+    "loadError": "We couldn't load your channels",
+    "disabledByPlatform": "Disabled by the platform",
+    "disabledByPlatformHint": "This channel isn't available for your workspace yet. Ask the platform administrator to switch it on.",
+    "aiNotAllowed": "The AI assistant is not allowed on {{channel}}. Every conversation here goes straight to your operators.",
+    "status": {
+      "not_configured": "Not configured",
+      "disabled": "Disabled",
+      "connected": "Connected",
+      "invalid_credentials": "Invalid credentials",
+      "network_error": "Network error",
+      "saved_untested": "Saved, untested"
+    },
+    "meta": {
+      "displayName": "Display name",
+      "routing": {
+        "facebook_messenger": "Page ID",
+        "instagram": "Instagram account ID",
+        "whatsapp": "Phone number ID"
+      },
+      "intro": {
+        "facebook_messenger": "Answer messages sent to your Facebook page from the same inbox as your website chats.",
+        "instagram": "Reply to Instagram direct messages without leaving the inbox.",
+        "whatsapp": "Talk to customers on WhatsApp Business, with templates once the 24-hour window closes."
+      },
+      "token": "Access token",
+      "lastTested": "Last tested",
+      "never": "Never",
+      "webhook": "Webhook URL",
+      "copyFailed": "Couldn't copy. Select the text and copy it by hand.",
+      "connect": "Connect",
+      "reconnect": "Reconnect",
+      "manual": "Manual setup",
+      "test": "Test",
+      "testOk": "Connection verified. The credentials work.",
+      "deleteTitle": "Remove {{channel}}?",
+      "deleteDescription": "Chiti stops receiving and sending messages on this channel. Existing conversations stay in the history.",
+      "deleted": "{{channel}} removed",
+      "saved": "Credentials saved. Run a test to verify them."
+    },
+    "authorize": {
+      "title": "Authorize Chiti for {{channel}}",
+      "description": "You are about to give Chiti access to your {{channel}} account.",
+      "allow": "Authorize",
+      "working": "Connecting…",
+      "done": "Connected as {{name}}.",
+      "toast": "{{channel}} connected",
+      "scope": {
+        "read": "Read the messages people send to you",
+        "send": "Send replies on your behalf",
+        "webhooks": "Receive new messages as they arrive"
+      },
+      "demoNote": "Demo: this is a simulated authorization window. Nothing leaves your browser."
+    },
+    "form": {
+      "title": "Set up {{channel}} manually",
+      "description": "Paste the credentials from your developer console.",
+      "enabled": "Channel enabled",
+      "routingHint": "Digits only.",
+      "keepSecret": "Saved: {{preview}}. Leave blank to keep it.",
+      "tokenHint": "A long-lived access token.",
+      "appSecret": "App secret",
+      "appSecretSaved": "A secret is saved. Leave blank to keep it.",
+      "verifyToken": "Verify token",
+      "generate": "Generate",
+      "testHint": "Tip: a token containing “bad” fails the test, so you can see the error state."
+    },
+    "telegram": {
+      "title": "Telegram Business",
+      "short": "Telegram",
+      "state": {
+        "not_configured": "Not connected",
+        "awaiting_business_connection": "Waiting for Telegram",
+        "connected": "Connected"
+      },
+      "botfatherTitle": "Create the bot",
+      "botfather": {
+        "1": "Open a chat with BotFather in Telegram.",
+        "2": "Send /newbot and pick a name and a username.",
+        "3": "Copy the token BotFather replies with and paste it below."
+      },
+      "token": "Bot token",
+      "tokenHint": "Looks like 123456789:AAH… and is stored masked.",
+      "acknowledge": "I understand this replaces any bot already attached to my business account",
+      "acknowledgeHint": "Telegram allows one chatbot per business account.",
+      "connect": "Connect bot",
+      "awaitingIntro": "{{bot}} is ready. Now attach it to your Telegram Business account:",
+      "attach": {
+        "1": "Open Telegram and go to Settings.",
+        "2": "Choose Telegram Business, then Chatbots.",
+        "3": "Search for the bot username shown above and select it.",
+        "4": "Allow it to reply to messages.",
+        "5": "Come back here. This card updates by itself."
+      },
+      "checking": "Checking with Telegram…",
+      "polling": "Waiting for the attachment. Checking every 5 seconds.",
+      "cancel": "Cancel setup",
+      "bot": "Bot",
+      "business": "Business account",
+      "connectedAt": "Connected",
+      "window": "Reply window",
+      "windowValue": "24 hours after the customer's message",
+      "testOk": "Telegram answered. The bot is attached and can reply.",
+      "testFail": "Telegram did not answer. Try again in a moment.",
+      "disconnect": "Disconnect",
+      "disconnectTitle": "Disconnect Telegram?",
+      "disconnectDescription": "The bot is detached from the business account and new Telegram messages stop arriving.",
+      "disconnected": "Telegram disconnected"
+    },
+    "tiktok": {
+      "title": "TikTok",
+      "intro": "Receive TikTok direct messages from your business account in the inbox.",
+      "state": {
+        "not_configured": "Not connected",
+        "connected": "Connected",
+        "unverified": "Unverified",
+        "blocked": "Blocked",
+        "needs_reauth": "Needs reauthorization"
+      },
+      "stateHint": {
+        "connected": "Messages flow into the inbox.",
+        "unverified": "The account is connected, but TikTok has not verified the business profile yet. Check again once it is approved.",
+        "blocked": "TikTok has blocked messaging for this account. Resolve it in TikTok, then check again.",
+        "needs_reauth": "The authorization expired. Reconnect to keep receiving messages."
+      },
+      "window": "Reply window",
+      "windowValue": "48 hours after the customer's message",
+      "cap": "Message cap",
+      "capValue": "10 messages in a row until the customer replies",
+      "euDropped": "EU inbound dropped",
+      "euDroppedHint": "TikTok does not deliver direct messages from people in the EU, so these never reach the inbox.",
+      "connectedAt": "Connected",
+      "connect": "Connect TikTok",
+      "reconnect": "Reconnect",
+      "check": "Check again",
+      "testOk": "TikTok answered. Messaging works.",
+      "testFail": "The connection is not ready for messaging yet. Check its state above.",
+      "disconnect": "Disconnect",
+      "disconnectTitle": "Disconnect TikTok?",
+      "disconnectDescription": "New TikTok messages stop arriving. The conversations you already have stay in the history.",
+      "disconnected": "TikTok disconnected",
+      "result": {
+        "not_configured": "TikTok is not connected.",
+        "connected": "Connected as {{name}}.",
+        "unverified": "{{name}} is connected but not verified yet.",
+        "blocked": "TikTok blocked {{name}} from messaging.",
+        "needs_reauth": "TikTok asked for authorization again. Reconnect to finish."
+      },
+      "unchanged": {
+        "not_configured": "Nothing to check. Connect TikTok first.",
+        "connected": "Still connected. Nothing has changed.",
+        "unverified": "Still waiting for TikTok to verify the profile.",
+        "blocked": "Still blocked by TikTok.",
+        "needs_reauth": "Still needs reauthorization. Use Reconnect."
+      },
+      "popup": {
+        "title": "TikTok authorization",
+        "description": "A simulated authorization window.",
+        "authorize": "Authorize",
+        "close": "Close",
+        "waiting": "Waiting for TikTok to confirm…",
+        "polling": "Checking every 3 seconds. You can close this window.",
+        "demoNote": "Demo: the outcome follows the TikTok connect switch in the demo controls.",
+        "scope": {
+          "read": "Read direct messages sent to your business account",
+          "send": "Send replies from your business account",
+          "profile": "See your basic profile"
+        }
+      }
+    }
+  },
+  "comments": {
+    "title": "Page comments",
+    "description": "Moderate public comments on your Facebook and Instagram posts.",
+    "loadError": "We couldn't load the comments",
+    "platform": {
+      "facebook_messenger": "Facebook",
+      "instagram": "Instagram"
+    },
+    "filter": {
+      "all": "All"
+    },
+    "empty": {
+      "title": "No comments here",
+      "description": "New comments on your posts show up here as they arrive."
+    },
+    "post_one": "{{channel}} post · {{count}} comment",
+    "post_other": "{{channel}} post · {{count}} comments",
+    "hidden": "Hidden",
+    "repliedBy": "Replied by {{name}} · {{time}}",
+    "replyPlaceholder": "Write a public reply…",
+    "sendReply": "Post reply",
+    "replySent": "Reply posted",
+    "reply": "Reply",
+    "hide": "Hide",
+    "unhide": "Unhide",
+    "hiddenToast": "Comment hidden from the public",
+    "unhidden": "Comment visible again",
+    "openOnPlatform": "Open on platform",
+    "deleteTitle": "Delete this comment?",
+    "deleteDescription": "The comment by {{author}} is removed from the post for good.",
+    "deleted": "Comment deleted"
+  },
+  "ai": {
+    "title": "AI assistant link",
+    "description": "Connect this workspace to the Chiti AI service for bot-first answers and copilot drafts.",
+    "loadError": "We couldn't load the AI link",
+    "status": {
+      "live": "Live",
+      "notLive": "Not live",
+      "liveHint": "The assistant greets visitors first and the copilot drafts replies for operators.",
+      "notLiveHint": "Visitors go straight to a human until everything below is in place."
+    },
+    "reasons": {
+      "title": "Why it isn't live",
+      "server_not_configured": "The platform has no AI key yet.",
+      "no_client_id": "No client UUID is saved for this workspace.",
+      "switch_off": "The assistant switch is off.",
+      "autopilot_off": "Autopilot is not enabled for this client on the AI service.",
+      "circuit_open": "The circuit breaker is open after repeated failures.",
+      "bot_paused": "The bot is paused for now."
+    },
+    "connection": {
+      "title": "Connection",
+      "description": "Your workspace's identity on the AI service."
+    },
+    "switch": {
+      "label": "Chiti Assistant answers first",
+      "description": "When on, visitors on the website, Messenger, Instagram and WhatsApp are greeted by the assistant."
+    },
+    "clientId": {
+      "label": "Client UUID",
+      "hint": "Provided by the AI service when your workspace is registered."
+    },
+    "toast": {
+      "enabled": "Assistant switched on",
+      "disabled": "Assistant switched off",
+      "saved": "AI link saved"
+    },
+    "state": {
+      "title": "Service state",
+      "description": "What the AI service reports for this workspace.",
+      "server": "AI service key",
+      "configured": "Configured",
+      "notConfigured": "Missing",
+      "autopilot": "Remote autopilot",
+      "on": "On",
+      "off": "Off",
+      "circuit": "Circuit breaker",
+      "circuitValue": {
+        "closed": "Closed",
+        "open": "Open",
+        "half_open": "Half open"
+      },
+      "failures": "Recent failures",
+      "lastReason": "Last failure",
+      "openUntil": "Open until",
+      "botPause": "Bot pause",
+      "none": "None",
+      "lastTest": "Last test",
+      "never": "Never run"
+    },
+    "test": {
+      "title": "Test connection",
+      "description": "Runs the same checks the platform runs: health, client config and a dry-run answer.",
+      "run": "Run test",
+      "running": "Testing…",
+      "idle": "Run the test to see the diagnostic output here.",
+      "output": "Diagnostic output",
+      "passed": "Passed",
+      "failed": "Failed",
+      "okSummary": "The link is healthy.",
+      "failSummary": "The test failed. See the last lines above for the reason."
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "title": "Analysis",
+  "score": {
+    "running": "Scoring the call against the rubric...",
+    "empty": {
+      "title": "Not scored yet",
+      "body": "Run the score analyser to weigh this call against your rubric. Fact-check and tone results feed the measured dimensions."
+    },
+    "outOf": "out of {{max}}",
+    "finalScore": "Final score",
+    "revision": "Revision {{n}}",
+    "configVersion": "Rubric v{{n}}",
+    "edited": "Edited",
+    "editedBy": "Adjusted by {{name}}",
+    "modelTotal": "model gave {{n}}",
+    "byModel": "Scored by the Sinji model; no manual changes.",
+    "scoredAt": "Scored {{date}}",
+    "weightCounted": "{{n}}% of the rubric weight counted",
+    "dimensions": "Score by dimension",
+    "weight": "Weight {{n}}%",
+    "contribution": "contributes {{n}} pts",
+    "evidence": "Evidence",
+    "line": "line {{n}}",
+    "seekTo": "Jump to {{time}} in the recording",
+    "goToLine": "Go to line {{n}} of the transcript",
+    "measured": {
+      "factcheck": "Measured: fact-check",
+      "sentiment": "Measured: tone",
+      "model": "Judged by the model"
+    },
+    "measuredHint": "Calculated from another analyser, not judged. Change the rubric to change how it counts.",
+    "editedBadge": "Edited (model gave {{ai}})",
+    "rubricLink": "Open the rubric",
+    "readOnly": "Members can read scores but not change them. Ask an owner to adjust a score.",
+    "excluded": {
+      "title": "Left out of the total",
+      "body": "These dimensions are not part of the weighted total for this call. The remaining weights are rescaled, so nothing counts as zero.",
+      "reason": {
+        "notApplicable": "does not apply to this call",
+        "unscored": "not scored",
+        "noWeight": "weight is 0%"
+      }
+    },
+    "edit": {
+      "button": "Adjust scores",
+      "title": "Adjust scores",
+      "hint": "Change the model's judgement where you disagree. Every save creates a new revision; the model's original stays untouched.",
+      "inputLabel": "Score for {{name}}",
+      "range": "Enter a whole number from 0 to {{max}}.",
+      "noteLabel": "Why are you changing these scores?",
+      "noteHint": "Shown in the revision history.",
+      "notePlaceholder": "e.g. Agent did offer a callback; the model missed it in line 14.",
+      "noteRequired": "A reason is required.",
+      "noteTooLong": "Keep the reason under {{max}} characters.",
+      "noChange": "Change at least one score before saving.",
+      "measuredLocked": "Measured from another analyser; not editable here.",
+      "preview": "Total {{was}} -> {{now}}",
+      "save": "Save as new revision",
+      "cancel": "Cancel",
+      "saved": "Scores saved as a new revision.",
+      "failed": "Could not save the scores."
+    },
+    "history": {
+      "button": "History ({{n}})",
+      "title": "Score history",
+      "description": "Revision 1 is the model's own result and cannot be changed. Each later revision is a reviewer's edit.",
+      "close": "Close",
+      "current": "Current",
+      "immutable": "Immutable",
+      "model": "Sinji model",
+      "noChanges": "No individual scores differ from the previous revision."
+    }
+  },
+  "tone": {
+    "running": "Reading tone from words and voice...",
+    "empty": {
+      "title": "No tone analysis yet",
+      "body": "Run the tone analyser to see politeness per speaker, tone line by line and whether the voice agrees with the words."
+    },
+    "summary": "Tone summary",
+    "modes": {
+      "label": "Signals shown",
+      "words": "Words",
+      "voice": "Voice",
+      "voiceOff": "Voice unavailable"
+    },
+    "simulate": {
+      "label": "Simulate voice model unavailable",
+      "hint": "Demo switch: shows how the panel behaves when only text can be read."
+    },
+    "text": {
+      "polite": "Polite",
+      "neutral": "Neutral",
+      "curt": "Curt",
+      "impolite": "Impolite",
+      "rude": "Rude",
+      "aggressive": "Aggressive"
+    },
+    "voice": {
+      "calm": "Calm",
+      "happy": "Happy",
+      "neutral": "Neutral",
+      "sad": "Sad",
+      "frustrated": "Frustrated",
+      "angry": "Angry"
+    },
+    "flags": {
+      "deflection": "Deflection",
+      "frustration": "Frustration",
+      "no_empathy": "No empathy",
+      "no_greeting": "No greeting",
+      "blame_shift": "Shifts blame",
+      "overpromise": "Over-promise",
+      "reassurance": "Reassurance",
+      "repeat_contact": "Repeat contact",
+      "voice_text_conflict": "Voice and words differ",
+      "sarcasm": "Sarcasm",
+      "escalation": "Escalation",
+      "self_correction": "Self-correction"
+    },
+    "speaker": {
+      "politeness": "Politeness",
+      "flags": "Flags",
+      "noFlags": "No flags raised.",
+      "voice": "Voice",
+      "shareBad": "Share of strained speech",
+      "shareGood": "Share of positive speech"
+    },
+    "agreement": {
+      "agree": {
+        "title": "Words and voice agree",
+        "body": "The words read as {{text}} and the voice sounds {{voice}}. Overall: {{overall}}."
+      },
+      "partial": {
+        "title": "Words and voice partly agree",
+        "body": "The words read as {{text}} but the voice sounds {{voice}}. Overall: {{overall}}."
+      },
+      "conflict": {
+        "title": "The voice contradicts the words",
+        "body": "The words read as {{text}}, yet the voice sounds {{voice}}. The voice leads: overall reading is {{overall}}."
+      },
+      "text_only": {
+        "title": "Tone read from words only",
+        "body": ""
+      },
+      "prosody_only": {
+        "title": "Tone read from voice only",
+        "body": "There was too little speech text to judge the words. The voice sounds {{voice}}. Overall: {{overall}}."
+      },
+      "unknown": {
+        "title": "Agreement not determined",
+        "body": "There is not enough signal to compare words and voice."
+      }
+    },
+    "noVoice": {
+      "simulated": "The voice model is switched off for this demo view, so only the words are read. Switch it back on to see the voice side.",
+      "textSource": "This call was pasted as text, so there is no audio to read a voice from.",
+      "hint": "Tone from words is still reliable; voice results will appear when the model is back.",
+      "status": {
+        "ok": "No voice emotion was returned for this recording, so only the words are read.",
+        "warming": "The voice model is warming up. Tone is read from the words for now.",
+        "model_error": "The voice model returned an error for this recording. Tone is read from the words only.",
+        "unreachable": "The voice model could not be reached. Tone is read from the words only.",
+        "disabled": "Voice analysis is turned off for this workspace, so only the words are read."
+      }
+    },
+    "sides": {
+      "words": "Words",
+      "voice": "Voice",
+      "polarity": "Polarity",
+      "arousal": "Arousal",
+      "valence": "Valence",
+      "dominance": "Dominance",
+      "confidence": "Confidence {{n}}%",
+      "leads": "Leads",
+      "noWords": "No words to read.",
+      "noVoice": "No voice reading available."
+    },
+    "neverAveraged": "Words and voice are never averaged. When they disagree, the voice wins and the conflict is shown.",
+    "lines": {
+      "title": "Tone line by line",
+      "hint": "Select a line to jump to it in the timeline.",
+      "all": "All lines",
+      "flagged": "Flagged",
+      "none": "No lines match.",
+      "clash": "Voice contradicts words",
+      "seek": "Jump to {{time}}",
+      "goTo": "Go to line {{n}}"
+    },
+    "voiceStatus": {
+      "ok": "Voice model ready",
+      "warming": "Voice model warming up",
+      "model_error": "Voice model error",
+      "unreachable": "Voice model unreachable",
+      "disabled": "Voice analysis off"
+    },
+    "guidance": {
+      "title": "Tone guidance",
+      "hint": "Instructions the tone analyser follows for this workspace.",
+      "enabled": "Tone analysis on",
+      "disabled": "Tone analysis off",
+      "enableLabel": "Run tone analysis",
+      "enableHint": "When off, the tone analyser is skipped for new runs.",
+      "label": "Guidance",
+      "placeholder": "e.g. Treat a brief pause before answering as normal; flag any interruption of the customer.",
+      "count": "{{n}} / {{max}} characters",
+      "tooLong": "Keep guidance under {{max}} characters.",
+      "empty": "No custom guidance; the default reading applies.",
+      "edit": "Edit guidance",
+      "save": "Save guidance",
+      "saved": "Tone guidance saved.",
+      "failed": "Could not save the guidance.",
+      "error": "Could not load the guidance.",
+      "updatedBy": "Updated by {{name}} on {{date}}",
+      "updatedAt": "Updated {{date}}",
+      "settingsLink": "Open sentiment settings"
+    }
+  },
+  "summary": {
+    "title": "Call summary",
+    "quality": "Quality",
+    "topics": "Topics",
+    "keyPoints": "Key points",
+    "running": "Summarising the call...",
+    "language": {
+      "ka": "Georgian",
+      "en": "English",
+      "ru": "Russian"
+    },
+    "empty": {
+      "title": "No summary yet",
+      "body": "Run the summary analyser to get a short account, topics and key points for this call."
+    },
+    "digests": {
+      "title": "Digests that include this call",
+      "hint": "A digest merges several calls into one set of findings.",
+      "none": "This call is not part of any digest yet.",
+      "error": "Could not load digests.",
+      "untitled": "Untitled digest",
+      "calls_one": "{{count}} call",
+      "calls_other": "{{count}} calls",
+      "running": "Building",
+      "failed": "Failed"
+    }
+  },
+  "summarise": {
+    "button_one": "Summarise call",
+    "button_other": "Summarise {{count}} calls",
+    "title_one": "Summarising 1 call",
+    "title_other": "Summarising {{count}} calls",
+    "description": "Each call is read first, then the results are merged into one digest.",
+    "stage": {
+      "per_call_one": "Reading the call",
+      "per_call_other": "Reading {{count}} calls",
+      "merge": "Merging key points and action items"
+    },
+    "tooMany": "A digest covers up to {{max}} calls.",
+    "ready": "Digest ready.",
+    "failed": "Could not build the digest."
+  },
+  "digest": {
+    "title": "Call digest",
+    "eyebrow": "Digest",
+    "back": "Back to calls",
+    "untitled": "Untitled digest",
+    "building": "Building the digest...",
+    "buildingHint_one": "Reading 1 call, then merging.",
+    "buildingHint_other": "Reading {{count}} calls, then merging.",
+    "calls_one": "{{count}} call",
+    "calls_other": "{{count}} calls",
+    "createdBy": "by {{name}}",
+    "keyPoints": "Key points",
+    "noKeyPoints": "No key points were extracted.",
+    "actionItems": "Action items",
+    "noActions": "No follow-ups needed from these calls.",
+    "participants": "Participants",
+    "noParticipants": "No participants were identified.",
+    "appearsIn": "in",
+    "role": {
+      "agent": "Agent",
+      "customer": "Customer",
+      "other": "Other"
+    },
+    "method": {
+      "title": "How it was built",
+      "body": "Stage one reads each call on its own; stage two merges the results, removes repeated points and gathers follow-ups.",
+      "perCall": "Per call",
+      "merge": "Merge",
+      "total": "Total"
+    },
+    "perCall": {
+      "title": "Calls in this digest",
+      "emptyTitle": "No calls to show",
+      "emptyBody": "The calls in this digest are not available any more."
+    },
+    "switcher": "Choose a call",
+    "allCalls": "All calls",
+    "outcome": "Outcome",
+    "openCall": "Open timeline",
+    "notFound": {
+      "title": "Digest not found",
+      "body": "It may belong to another workspace, or this demo was reloaded and the digest no longer exists."
+    },
+    "error": {
+      "title": "Could not load the digest",
+      "body": "Something went wrong while fetching it. Try again."
+    },
+    "failed": {
+      "title": "The digest could not be built",
+      "body": "One of the calls is no longer available. Pick the calls again and start a new digest."
+    },
+    "generic": {
+      "agent": "Agent {{n}}",
+      "customer": "Customer {{n}}"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="City bike">
+  <rect width="400" height="300" fill="#DCEAEE"/>
+  <rect y="228" width="400" height="72" fill="#BFDCE6"/>
+  <circle cx="318" cy="72" r="26" fill="#FF6B3D"/>
+  <g fill="#FFFFFF" opacity=".8"><circle cx="60" cy="58" r="4"/><circle cx="130" cy="40" r="3"/><rect x="220" y="50" width="7" height="7" rx="2"/><circle cx="372" cy="150" r="3"/></g>
+  <g fill="none" stroke="#0B2A31" stroke-width="10">
+    <circle cx="122" cy="196" r="52"/>
+    <circle cx="282" cy="196" r="52"/>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".9">
+    <circle cx="122" cy="196" r="34"/><circle cx="282" cy="196" r="34"/>
+  </g>
+  <g fill="none" stroke="#0A6F94" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M122 196 L176 120 L262 120 L282 196"/>
+    <path d="M122 196 L206 196 L262 120"/>
+    <path d="M176 120 L206 196"/>
+    <path d="M168 104 L176 120"/>
+    <path d="M262 120 L252 92 L280 86"/>
+  </g>
+  <rect x="148" y="92" width="44" height="12" rx="6" fill="#0B2A31"/>
+  <rect x="210" y="116" width="40" height="8" rx="4" fill="#FF6B3D"/>
+  <circle cx="206" cy="196" r="10" fill="#0B2A31"/>
+  <circle cx="122" cy="196" r="6" fill="#FF6B3D"/><circle cx="282" cy="196" r="6" fill="#FF6B3D"/>
+</svg>

@@ -1,0 +1,22 @@
+IVR call flow (sample) - exported from the IVR designer
+=======================================================
+
+ENTRY  +995 32 200 00 01 (main hotline)
+  |
+  +-- Greeting: "Welcome. For Georgian press 1, for English press 2."
+  |     1 -> LANG=ka      2 -> LANG=en      timeout 5s -> LANG=ka
+  |
+  +-- Opening hours check (Mon-Sat 09:00-21:00)
+  |     closed -> Announcement "We are closed" -> Voicemail box 100
+  |
+  +-- Main menu
+        1  Orders and delivery      -> queue ORDERS     (skill: dispatch)
+        2  Billing questions        -> queue BILLING    (skill: billing)
+        3  Technical support        -> queue SUPPORT    (skill: tech, overflow 60s -> SUPPORT_L2)
+        0  Operator                 -> queue GENERAL
+        no input x2                 -> queue GENERAL
+
+Queue defaults: strategy longest-idle, wrap-up 15s, music on hold "calm-01",
+position announcement every 45s, callback offer after 120s.
+
+Sample data only. All numbers and names are fictional.

@@ -1,0 +1,80 @@
+{
+  "title": "Standings",
+  "eyebrow": "Live board",
+  "status": {
+    "open": "Open",
+    "upcoming": "Upcoming",
+    "closed": "Closed"
+  },
+  "updated": "Updated {{time}}",
+  "refreshNote": "Refreshes every 10 seconds",
+  "endsIn": "Ends in",
+  "finished": "This event has finished",
+  "startsIn": "Starts in",
+  "staffHint": "Select an entrant to see their detailed stats.",
+  "staffHiddenNote": "Hidden from the public right now. Staff always see the board.",
+  "hidden": {
+    "title": "The board is on the stand screen",
+    "description": "Live standings are shown on the big screen at the Ritmuli Events stand. Come by to see where you place."
+  },
+  "empty": {
+    "title": "No rounds yet",
+    "description": "Names appear here as soon as the first round is played."
+  },
+  "noEvent": {
+    "title": "No event right now",
+    "description": "The standings open together with the next event."
+  },
+  "columns": {
+    "rank": "Rank",
+    "entrant": "Entrant",
+    "company": "Company",
+    "points": "Points"
+  },
+  "you": "You",
+  "podium": "Top three",
+  "place": "Place {{rank}}",
+  "pts": "pts",
+  "rowAction": "Show details for {{name}}",
+  "boardLabel": "Standings, top {{count}}",
+  "admin": {
+    "title": "Standings",
+    "description": "Always visible to staff. Refreshes every 10 seconds; select a row for the player's catches and contact details.",
+    "publicShown": "Public board on",
+    "publicHidden": "Hidden from the public",
+    "noEvent": "Pick an event in the switcher to see its standings."
+  },
+  "detail": {
+    "title": "Entrant details",
+    "loading": "Loading…",
+    "error": "Couldn't load the details.",
+    "total": "Total",
+    "best": "Best round",
+    "bonus": "Trivia bonus",
+    "plays": "Rounds",
+    "totalHint": "Best round + trivia bonus",
+    "collected": "Caught across all rounds",
+    "noCollected": "Nothing caught yet.",
+    "item": "Item",
+    "l1": "Plain",
+    "l2": "×1.5",
+    "l3": "×2",
+    "level1": "Plain catch",
+    "level2": "Bonus coin ×1.5",
+    "level3": "Bonus coin ×2",
+    "rowTotal": "Total",
+    "contact": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "position": "Position",
+    "recent": "Recent rounds",
+    "noRecent": "No rounds in this event yet.",
+    "notProvided": "Not provided"
+  },
+  "errors": {
+    "eventNotFound": "That event could not be found.",
+    "playerNotFound": "That entrant could not be found.",
+    "load": "Couldn't load the standings."
+  }
+}

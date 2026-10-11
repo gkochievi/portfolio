@@ -1,0 +1,76 @@
+{
+  "landing": {
+    "eyebrow": "60s · live event game",
+    "howTo": "Register at the stand, then play a 60-second round. Slide the paddle to catch sponsor coins and dodge the hazards. Answer trivia for bonus points and climb the board.",
+    "legend": "What falls",
+    "legendGood": "Sponsor coin",
+    "legendMinor": "Icicle, pinecone",
+    "legendMajor": "Storm cloud",
+    "register": "Register and play",
+    "more": "More",
+    "standings": "Standings",
+    "admin": "Console",
+    "footer": "A stand game by {{organiser}}"
+  },
+  "card": {
+    "eyebrow": "My card",
+    "title": "My card",
+    "titleNamed": "Hi, {{name}}",
+    "description": "Your best round plus your trivia bonus is your standing.",
+    "total": "Total",
+    "totalHint": "Best + bonus",
+    "record": "Record",
+    "recordHint": "Best round",
+    "bonus": "Bonus",
+    "bonusHint": "From trivia",
+    "rounds": "Rounds",
+    "revealTitle": "Standings revealed at the stand when the event ends",
+    "revealHint": "Keep playing: only your best round counts.",
+    "play": "Play",
+    "playAgain": "Play again"
+  },
+  "history": {
+    "title": "My rounds",
+    "date": "Date",
+    "score": "Score",
+    "emptyTitle": "No rounds yet",
+    "emptyHint": "Play your first round and it shows up here."
+  },
+  "trivia": {
+    "title": "Trivia bonus",
+    "earned": "Earned",
+    "intro": "Quick questions, a few seconds each. Every correct answer adds to your total.",
+    "start": "Answer a question",
+    "next": "Next question",
+    "left_one": "{{count}} question left",
+    "left_other": "{{count}} questions left",
+    "worth": "+{{points}}",
+    "secondsLeft_one": "{{count}} second left",
+    "secondsLeft_other": "{{count}} seconds left",
+    "correct": "Correct +{{points}}",
+    "wrong": "Wrong",
+    "timeout": "Time's up",
+    "complete": "Trivia complete",
+    "completeSub": "Bonus earned:"
+  },
+  "prizes": {
+    "eyebrow": "Prizes",
+    "title": "Prizes",
+    "description": "Top of the board at the end of the event wins. Collect at the stand.",
+    "staffPreview": "Hidden from players: staff preview",
+    "noEventHint": "Prizes appear here when the next event starts.",
+    "hiddenTitle": "Prizes are not announced yet",
+    "hiddenHint": "Check back soon, or ask at the stand.",
+    "emptyTitle": "No prizes yet",
+    "emptyHint": "The organiser has not added prizes for this event.",
+    "play": "Play",
+    "standings": "Standings",
+    "home": "Home"
+  },
+  "errors": {
+    "alreadyAnswered": "You have already answered this question.",
+    "noActiveEvent": "No event is running right now.",
+    "questionNotFound": "That question is no longer available.",
+    "invalidAnswer": "That answer could not be read. Please try again."
+  }
+}

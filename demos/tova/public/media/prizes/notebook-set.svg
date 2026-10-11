@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Notebook and pen set">
+  <rect width="400" height="300" fill="#DCEAEE"/>
+  <g fill="#FFFFFF" opacity=".8"><circle cx="40" cy="40" r="4"/><rect x="350" y="36" width="7" height="7" rx="2"/><circle cx="360" cy="250" r="3"/><circle cx="52" cy="256" r="3"/></g>
+  <rect x="96" y="70" width="150" height="196" rx="10" fill="#06506B" transform="rotate(-6 171 168)"/>
+  <rect x="116" y="56" width="150" height="196" rx="10" fill="#0A6F94"/>
+  <rect x="116" y="56" width="22" height="196" rx="8" fill="#06506B"/>
+  <rect x="236" y="56" width="10" height="196" fill="#FF6B3D"/>
+  <rect x="158" y="96" width="70" height="40" rx="6" fill="#F3F7F6"/>
+  <g stroke="#0A6F94" stroke-width="4" stroke-linecap="round"><path d="M170 110 H216"/><path d="M170 122 H200"/></g>
+  <g transform="rotate(28 300 160)">
+    <rect x="288" y="60" width="24" height="170" rx="12" fill="#0B2A31"/>
+    <rect x="288" y="60" width="24" height="40" rx="12" fill="#FF6B3D"/>
+    <rect x="309" y="70" width="6" height="56" rx="3" fill="#FF6B3D"/>
+    <path d="M288 222 L312 222 L300 254 Z" fill="#F3F7F6"/>
+    <path d="M296 240 L304 240 L300 254 Z" fill="#0B2A31"/>
+  </g>
+</svg>
