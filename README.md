@@ -9,13 +9,27 @@ runtime, so a demo runs inside an iframe and on any static host. (The one networ
 disclosed on its card: Tonnaro fetches map tiles.) Nothing is persisted either — a reload
 restores the pristine seed, and every visitor gets the same un-vandalised data.
 
-Four demos so far, all real client products ported here so a visitor can click through them:
+Eleven demos, all real products ported here so a visitor can click through them. The portal is
+Boulder's and wears Boulder's brand (a port of boulder.ge, in English and Georgian).
+
+The first four:
 **Tonnaro**, a specialised-transport ordering platform (public site, customer app and dispatch
 console, in three languages); **Nabadi**, a barbershop booking platform whose customer site and
 staff console share one bundle and one store, so a booking made on the site turns up in the
 console; **Printomato**, a fleet console for photo-printing kiosks; and **Gisheri**, a
 natural-stone jewellery shop that is bilingual down to its content model, with a storefront and
 an admin console over the one catalogue.
+
+The next seven are shown **under fictional Georgian names and fresh visual identities**, so they
+read as products rather than as any client's design — no client name, brand or data is in them:
+**Tova**, a 60-second booth game for live events with an organiser console; **Bani**, a voice
+operations console (call records across two phone platforms, recordings, agents, campaigns,
+extensions, platform health); **Rigi**, a back office for a software vendor (partners, licences,
+invoicing, a support desk and a partner portal); **Sinji**, an AI call-quality platform
+(transcripts, fact-checking, scorecards, a knowledge base, a copilot); **Dareke**, an outbound
+call centre with a dialer, an agent workspace and a live supervisor wall; **Chiti**,
+an omnichannel support chat (website widget, operator inbox, bot-to-human handover, admin and
+platform consoles); and **Azri**, an SMS customer-feedback survey with an inbox simulator.
 
 ```
 portfolio/
@@ -24,7 +38,10 @@ portfolio/
 │   ├── tonnaro/               transport platform, Django swapped for src/demo/ → demos/tonnaro/README.md
 │   ├── nabadi/                barbershop booking: two apps, one bundle, one store → demos/nabadi/README.md
 │   ├── printomato/            the fleet console, Django swapped for src/demo/ → demos/printomato/README.md
-│   └── gisheri/               the stone shop: two surfaces, one bilingual catalogue → demos/gisheri/README.md
+│   ├── gisheri/               the stone shop: two surfaces, one bilingual catalogue → demos/gisheri/README.md
+│   ├── tova/ bani/ rigi/      the seven fictional-brand demos: each its own front end over a mock API
+│   └── sinji/ dareke/ chiti/ azri/                                            → demos/<name>/README.md
+├── packages/demo-kit/         the shared seam of the seven: mock API, in-memory store, session, "Live demo" bar
 ├── packages/brand/            tokens.css and logo assets (today only the Printomato demo imports it)
 ├── scripts/
 │   ├── build-all.mjs          builds site + every demo into dist/
@@ -44,7 +61,21 @@ npm run dev:printomato    # http://localhost:5174/demos/printomato/
 npm run dev:tonnaro       # http://localhost:5175/demos/tonnaro/
 npm run dev:nabadi        # http://localhost:5176/demos/nabadi/
 npm run dev:gisheri       # http://localhost:5177/demos/gisheri/
+npm run dev:tova          # http://localhost:5178/demos/tova/
+npm run dev:bani          # http://localhost:5179/demos/bani/
+npm run dev:rigi          # http://localhost:5180/demos/rigi/
+npm run dev:sinji         # http://localhost:5181/demos/sinji/
+npm run dev:dareke        # http://localhost:5182/demos/dareke/
+npm run dev:chiti         # http://localhost:5183/demos/chiti/
+npm run dev:azri          # http://localhost:5184/demos/azri/
 ```
+
+The seven fictional-brand demos all behave the same way. A **Live demo** bar sits bottom-left
+(built by Boulder, deliberately outside each demo's own palette): it lists one demo account per
+role and signs you in with a click, resets the data, and links back to the portfolio. The login
+page offers the same accounts as cards. `?lang=ka` on the first load opens Georgian, which is
+what the portal passes along from its Georgian pages. Each demo's README lists its accounts and
+describes the original product's architecture.
 
 The console demo opens already signed in. Signing out reveals the real login page with the
 demo account pre-filled — `demo` / `printomato-demo`.
@@ -111,10 +142,12 @@ Full instructions, including the GitHub Actions workflow in `.github/workflows/`
 | [`demos/nabadi/README.md`](./demos/nabadi/README.md) | How two separate front ends were merged into one bundle over one store: the scoped `@/` alias, the availability engine, the 93-route mock. |
 | [`demos/printomato/README.md`](./demos/printomato/README.md) | How the console was ported off Django: the seam, the mock API, the in-memory store, what is deliberately not reproduced. |
 | [`demos/gisheri/README.md`](./demos/gisheri/README.md) | How the shop was ported off Django and given a fictional brand: the seam, the 64-route mock, the two-layer Georgian catalogue, and the one place the mock is kinder than the backend. |
-| [`site/README.md`](./site/README.md) | The portal: Boulder brand tokens, the content model, and which fields it actually renders. |
+| [`demos/<name>/README.md`](./demos) for `tova`, `bani`, `rigi`, `sinji`, `dareke`, `chiti`, `azri` | Per demo: its accounts, what works and what is deliberately switched off, the original product's architecture, and `src/demo/schema.md` / `routes.md` — every entity and every mocked endpoint. |
+| [`packages/demo-kit/README.md`](./packages/demo-kit/README.md) | The shared seam: `createMockApi`, `createStore`, `createSession`, the event bus and clock helpers, the `DemoBar`. |
+| [`site/README.md`](./site/README.md) | The portal: Boulder brand tokens, the Georgian/English routes and content overlay, the content model, and which fields it actually renders. |
 | [`docs/adding-a-project.md`](./docs/adding-a-project.md) | Adding project #2: what to create, what the build finds by itself, what it does not. |
 | [`deploy/README.md`](./deploy/README.md) | One section per host. |
 
 ## Contact
 
-[gkochiev@cellfie.ge](mailto:gkochiev@cellfie.ge)
+[poke@boulder.ge](mailto:poke@boulder.ge) — Boulder, Tbilisi ([boulder.ge](https://boulder.ge))

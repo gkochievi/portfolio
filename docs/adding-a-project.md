@@ -86,8 +86,8 @@ absolute path. `demos/printomato/README.md` describes one way to build the mock 
 
 ## 4. Add the catalogue entry
 
-Append an object to the array in `site/content/projects.json`. Order in the file is order on the
-page; the first entry is the featured card and the one the hero's buttons point at.
+Append an object to the array in `site/content/projects.json`. Order in the file is order in the
+works deck on `/` and `/ka`.
 
 ```jsonc
 {
@@ -97,9 +97,10 @@ page; the first entry is the featured card and the one the hero's buttons point 
   "tagline": "One line. This is the card's body copy — make it count.",
   "period": "2025 — 2026",
   "status": "shipped",                       // shipped | live | in-progress | archived
+  "category": "fleet management",            // optional, lower-case; the [tag] on the card and page
   "stack": ["Django 5", "React 18"],         // first five show, the rest collapse to +N
   "demoUrl": "/demos/kioskmap/",             // base-relative; null → the button reads "No demo yet"
-  "cover": null,                             // card image, base-relative; null draws the generated mark
+  "cover": "/thumbnails/kioskmap.webp",      // card image, base-relative; null draws the generated mark
 
   // ── the detail page at /work/kioskmap renders all of these ────────────
   "summary": "Two or three sentences.",      // the hero
@@ -138,13 +139,46 @@ Nothing else in them is markdown — asterisks and links print literally.
 The comments above are for this page; the real file is strict JSON. Field-by-field notes are in
 [`site/README.md`](../site/README.md).
 
+**`category`** is optional. When set it is shown as a bracketed tag box — `[fleet management]` — on
+the card and the project page, and once two or more projects carry different ones, the portal
+grows a filter keyed by the **English** value (`/?category=fleet%20management`, kept across the
+language switch). Leave it out and the card simply has no tag. Write it lower-case, the way
+boulder.ge sets its tags.
+
+**The cover thumbnail** goes in `site/public/thumbnails/<slug>.webp` and is referenced as
+`"/thumbnails/<slug>.webp"` — base-relative, no `public/`, resolved through `VITE_BASE` like
+`demoUrl`. The card frame is **4:3** (the existing covers are 2000 × 1494 WebP); anything else is
+cropped by `object-fit: cover`. Until there is one, `"cover": null` draws the generated
+`ProjectMark` in its place.
+
+**The Georgian entry** goes in `site/content/projects.ka.json`, keyed by the English slug:
+
+```jsonc
+{
+  "kioskmap": {
+    "category": "ფლოტის მართვა",
+    "tagline": "ერთი წინადადება — ბარათის ტექსტი.",
+    "summary": "…",
+    "role": "…",
+    "metrics": [{ "label": "ტესტები" }]       // item by item: translate the labels, keep the values
+    // …any other text field; leave one out and /ka shows the English
+  }
+}
+```
+
+It is an overlay, not a second catalogue: each field falls back to English on its own, so a
+project with no Georgian entry at all still appears on `/ka`, in English. Only text is taken from
+it — `slug`, `status`, `demoUrl`, `sourceUrl`, `cover`, `stack` and screenshot `src`/`schematic`
+always come from `projects.json`. Arrays merge by position at the English length. A slug in the
+overlay that is not in `projects.json` makes `npm run dev` throw, the same as a missing key does.
+
 The grid renders eight of these — `slug`, `name`, `tagline`, `period`, `status`, `stack`,
 `demoUrl` and `cover`. **Everything else is now rendered too**, on the detail page, so a typo in
 `problem` or a stale number in `metrics` is public rather than free; it used to cost nothing.
 Only `stackGroups` and `creative` may be left out altogether. The `as Project[]` cast validates
 nothing on its own, so `content.ts` carries a **dev-only assertion** behind it: `npm run dev` throws
 and names the project and the missing keys. That check does not run in a production build — open
-`/`, click the new card, and read the page before you call it done.
+`/` and `/ka`, click the new card, and read the page in both languages before you call it done.
 
 ## 5. Verify
 
@@ -154,7 +188,8 @@ npm run build        # the summary table must list demos/kioskmap with the right
 npm run preview      # it prints a URL per demo
 ```
 
-Then click: the new card on `/`, which must land on `/work/kioskmap`; the demo button on that
+Then click: the new card on `/`, which must land on `/work/kioskmap`, and on `/ka`, which must land
+on `/ka/work/kioskmap`; the demo button on that
 page, which must open the bundle; a reload on `/work/kioskmap` itself (it must not 404); a reload on
 a deep link inside the demo (`/demos/kioskmap/<some-route>` must boot the demo, not the portal); and
 the demo's console for 404s on `assets/` or media.
@@ -168,7 +203,7 @@ the demo's console for 404s on `assets/` or media.
 | Assembly | Output copied to `dist/demos/<name>/`. |
 | SPA fallback | The root `404.html` redirector and the generated `dist/_redirects` both pick the new demo up from discovery; `deploy/vercel.json` and `deploy/nginx.conf` match `/demos/:demo/*` generically. |
 | Preview | `scripts/preview.mjs` enumerates `dist/demos/` and serves each with the nearest-`index.html` rule. |
-| The portal | The grid and the `/work/<slug>` detail page both render from the JSON. Nothing else has to be touched — the route is one parameterised entry, not one per project. |
+| The portal | The deck and the `/work/<slug>` detail page (and their `/ka` twins) all render from the JSON. Nothing else has to be touched — the route is one parameterised entry, not one per project. |
 
 ## What it does not
 
@@ -179,5 +214,5 @@ the demo's console for 404s on `assets/` or media.
 | The dev port | `strictPort` is on and nothing allocates for you. |
 | The catalogue entry | Nothing scans `demos/`. A demo with no entry is deployed and unreachable from the site. |
 | Cloudflare Pages | It does not expand `:demo` in a rewrite destination — add an explicit `/demos/kioskmap/* → /demos/kioskmap/index.html 200` line above the catch-all. Every other host in `deploy/` is generic. |
-| Card artwork | `ProjectMark` generates a constellation seeded from the slug, so a new project gets its own for free. A real image would be a code change. |
+| Card artwork | Nothing makes the cover for you. Without one, `ProjectMark` generates a constellation seeded from the slug; a real image is a file in `site/public/thumbnails/` and a `cover` path (step 4). |
 | Any check on the JSON | See step 4. |
