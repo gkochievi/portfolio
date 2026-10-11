@@ -1,47 +1,95 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
 
-import { NOT_FOUND_TITLE } from '@/config'
-import { projects } from '@/content'
+import '@/styles/detail.css'
+
+import { getProjects, projectPath, type Project } from '@/content'
+import { useLang } from '@/i18n/LanguageContext'
+import { ProjectCover } from '@/components/ProjectCover'
+import { Reveal } from '@/components/Reveal'
 import { useDocumentTitle } from '@/lib/useDocumentTitle'
-import { fromBase } from '@/lib/url'
 
+/** How many works the missing page offers as a way on — the "more" row's three. */
+const SUGGESTED = 3
+
+/**
+ * A URL that addresses nothing: a typo, a truncated link, a project that was
+ * renamed — boulder.ge's DetailNotFound (views/DetailShell.jsx). A rendered
+ * state with a way out, never the blank page an unmatched route gives you for
+ * free, which reads exactly like a crash.
+ *
+ * Rendered for `*`, for `/ka/*` (in Georgian — the language comes from the
+ * address like everywhere else), and from inside `ProjectPage` for a slug that
+ * matches nothing.
+ */
 export function NotFoundPage() {
-  useDocumentTitle(NOT_FOUND_TITLE)
-  const featured = projects.find((project) => project.demoUrl)
+  const { t, href, lang } = useLang()
+  useDocumentTitle(t('meta.notFound'))
+  useNoIndex()
+
+  // The live demos first: the quickest proof that the rest of the site works.
+  const suggestions = [...getProjects(lang)]
+    .sort((a, b) => Number(Boolean(b.demoUrl)) - Number(Boolean(a.demoUrl)))
+    .slice(0, SUGGESTED)
 
   return (
-    <section className="shell py-24 sm:py-32">
-      {/* The drop-shadow lives outside the notch clip — a box-shadow on the
-          clipped element itself would be clipped away with it. */}
-      <div className="max-w-2xl [filter:var(--drop-card)]">
-        <div className="notch bg-surface p-8 sm:p-12">
-          <p className="label-caps">Error 404</p>
-          <h1 className="mt-4 font-display text-h1 font-extrabold leading-tight text-ink">
-            Nothing is served at this address.
-          </h1>
-          <p className="mt-4 max-w-[46ch] text-body-lg leading-relaxed text-ink/70">
-            The page either moved or never existed. The work is one click away either way.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 bg-accent-solid px-5 py-3 font-display text-body font-bold text-white transition-transform duration-300 ease-bounce hover:-translate-y-0.5"
-            >
-              <ArrowLeft className="size-4" aria-hidden />
-              Back to the work
-            </Link>
-            {featured?.demoUrl ? (
-              <a
-                href={fromBase(featured.demoUrl)}
-                className="text-body font-semibold text-ink/60 transition-colors duration-300 ease-bounce hover:text-accent-text"
-              >
-                Or open the {featured.name} demo
-              </a>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className="detail-page">
+      <article className="detail">
+        <Reveal className="detail-missing">
+          <p className="detail-eyebrow detail-eyebrow--missing">404</p>
+          <h1 className="detail-title">{t('notFound.title')}</h1>
+          <p className="detail-missing__sub">{t('notFound.subtitle')}</p>
+          <p className="detail-missing__body">{t('notFound.body')}</p>
+          <Link className="detail-back" to={href('/')}>
+            &lt; {t('notFound.home')}
+          </Link>
+        </Reveal>
+
+        {suggestions.length > 0 && (
+          <Reveal as="div" className="detail-more">
+            <nav aria-label={t('notFound.suggest')}>
+              <h2 className="detail-more__heading">{t('notFound.suggest')}</h2>
+              <ul className="detail-more__list">
+                {suggestions.map((project) => (
+                  <li key={project.slug}>
+                    <Suggestion project={project} to={href(projectPath(project.slug))} />
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </Reveal>
+        )}
+      </article>
+    </div>
   )
+}
+
+function Suggestion({ project, to }: { project: Project; to: string }) {
+  return (
+    <Link className="detail-more__link" to={to}>
+      <span className="detail-more__art" aria-hidden="true">
+        <ProjectCover cover={project.cover} seed={project.slug} />
+      </span>
+      <span className="detail-more__caption">
+        <span className="detail-more__title">{project.name}</span>
+        <span className="detail-more__meta">{project.tagline}</span>
+      </span>
+    </Link>
+  )
+}
+
+/**
+ * `noindex` while this page is up. The host answers every unknown path with
+ * index.html and a 200, so without it a mistyped link is a soft 404 a crawler
+ * is entitled to index. It comes off again on unmount, so the next real page
+ * is indexable; index.html carries no robots tag for it to fall back to.
+ */
+function useNoIndex(): void {
+  useEffect(() => {
+    const meta = document.createElement('meta')
+    meta.name = 'robots'
+    meta.content = 'noindex'
+    document.head.appendChild(meta)
+    return () => meta.remove()
+  }, [])
 }

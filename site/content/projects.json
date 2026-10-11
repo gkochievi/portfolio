@@ -3,10 +3,11 @@
     "slug": "tonnaro",
     "name": "Tonnaro",
     "tagline": "A specialised-transport marketplace for Georgia — order a crane, tow truck or concrete pump, get a routed, elevation-aware price, and watch it through to delivery.",
-    "summary": "Tonnaro moves the things ordinary hauliers will not: cranes, lowboy trailers, concrete pumps, oversized loads. I built the platform end to end — a Django/DRF backend with a configurable pricing engine, and three React surfaces on top of it: a public marketing site, a phone-style ordering app for customers, and an operations console for dispatchers. All of it in Georgian, English and Russian.",
-    "role": "Full-stack. I designed the data model, the pricing engine and the assignment logic, and built the whole front end.",
+    "summary": "Tonnaro moves the things ordinary hauliers will not: cranes, lowboy trailers, concrete pumps, oversized loads. We built the platform end to end — a Django/DRF backend with a configurable pricing engine, and three React surfaces on top of it: a public marketing site, a phone-style ordering app for customers, and an operations console for dispatchers. All of it in Georgian, English and Russian.",
+    "role": "Full-stack. We designed the data model, the pricing engine and the assignment logic, and built the whole front end.",
     "period": "2026",
     "status": "shipped",
+    "category": "logistics",
     "stack": [
       "Django 4.2",
       "Django REST Framework",
@@ -126,7 +127,7 @@
       }
     ],
     "problem": "Ordering specialised transport in Georgia ran on phone calls. A customer with a stranded excavator or a third-floor concrete pour would ring around operators, describe the job several times, and get quotes that were guesses — because the real cost depends on the vehicle class, the distance, the load, and, in a country that is mostly mountain, how far the truck has to climb.\n\nThe operator's side was no better. Which crane is free on Thursday, which driver is licensed for it, and whether the job was already promised to someone else were facts held in a dispatcher's head. Nothing was written down until it had already gone wrong.",
-    "approach": "The platform is built around one idea: a quote should be computed, not remembered.\n\nAn order captures the job — service, cargo, pickup and destination pinned on a map — and the backend routes it as a heavy goods vehicle, reads the elevation profile off that route, and runs it through a pricing engine the admin configures rather than one I hardcoded. The dispatcher sees a proposed price, a shortlist of vehicles whose drivers actually hold the licence, and a conflict check against everything already booked.\n\nFrom there it is a state machine with an offer in the middle: the admin prices and sends, the customer accepts, and only then is the resource committed. Every move is recorded, so the question 'who changed this and when' has an answer.",
+    "approach": "The platform is built around one idea: a quote should be computed, not remembered.\n\nAn order captures the job — service, cargo, pickup and destination pinned on a map — and the backend routes it as a heavy goods vehicle, reads the elevation profile off that route, and runs it through a pricing engine the admin configures rather than one we hardcoded. The dispatcher sees a proposed price, a shortlist of vehicles whose drivers actually hold the licence, and a conflict check against everything already booked.\n\nFrom there it is a state machine with an offer in the middle: the admin prices and sends, the customer accepts, and only then is the resource committed. Every move is recorded, so the question 'who changed this and when' has an answer.",
     "architecture": [
       {
         "layer": "Customer app",
@@ -194,10 +195,11 @@
     "slug": "nabadi",
     "name": "Nabadi Barbershop",
     "tagline": "A booking platform for a Tbilisi barbershop — pick a barber, a service and a real free slot, and the shop runs its whole day from the console behind it.",
-    "summary": "A barbershop's entire operation, in Georgian and English. Customers book a specific barber for a specific service and only ever see slots that barber can actually work. Behind it, a staff console runs the shop: the day's chairs, walk-ins, the service catalogue, each barber's hours and time off, promotions, review moderation, analytics, and a permission matrix that decides which of four roles sees what. I built it end to end — Django 5 + DRF on Postgres, and two React 19 front ends on top.",
+    "summary": "A barbershop's entire operation, in Georgian and English. Customers book a specific barber for a specific service and only ever see slots that barber can actually work. Behind it, a staff console runs the shop: the day's chairs, walk-ins, the service catalogue, each barber's hours and time off, promotions, review moderation, analytics, and a permission matrix that decides which of four roles sees what. We built it end to end — Django 5 + DRF on Postgres, and two React 19 front ends on top.",
     "role": "Full-stack. The data model, the availability engine and the booking constraints, the permission system, and both front ends.",
     "period": "2026",
     "status": "shipped",
+    "category": "booking",
     "stack": [
       "Django 5",
       "Django REST Framework",
@@ -340,7 +342,7 @@
       }
     ],
     "problem": "A barbershop's diary is a paper book behind the counter, and it only works while somebody is standing next to it. A customer who wants a particular barber for a beard sculpt at six on Thursday has to call, wait while the page is found, and take the receptionist's word for it. The shop, meanwhile, has no idea what next week looks like until it arrives.\n\nThe failure modes are all the same failure: the diary is a single copy in a single place. Two people are promised the same chair. A barber's day off is remembered by one member of staff and not another. A regular's history — what they had last time, which barber, whether they showed up — exists only in somebody's memory.",
-    "approach": "The booking rules belong in the system that holds the bookings, so that is where I put them.\n\nA slot is offered only if the barber works then, is not on time off, is not already booked, and the service fits before closing. That single question is answered by one availability engine, and the customer's calendar, the reception desk's walk-in screen and the admin's day view all ask it — so no two screens can disagree about whether a chair is free. Underneath, a Postgres exclusion constraint makes the overlap physically impossible rather than merely unlikely.\n\nAround that sits the rest of a shop: a service catalogue with per-barber price and duration overrides, working hours that fall back to the shop's, time off that can be one barber's or everyone's, promo codes with use limits, reviews a customer can only leave for an appointment they actually attended, and an audit trail over all of it.",
+    "approach": "The booking rules belong in the system that holds the bookings, so that is where we put them.\n\nA slot is offered only if the barber works then, is not on time off, is not already booked, and the service fits before closing. That single question is answered by one availability engine, and the customer's calendar, the reception desk's walk-in screen and the admin's day view all ask it — so no two screens can disagree about whether a chair is free. Underneath, a Postgres exclusion constraint makes the overlap physically impossible rather than merely unlikely.\n\nAround that sits the rest of a shop: a service catalogue with per-barber price and duration overrides, working hours that fall back to the shop's, time off that can be one barber's or everyone's, promo codes with use limits, reviews a customer can only leave for an appointment they actually attended, and an audit trail over all of it.",
     "architecture": [
       {
         "layer": "Customer site",
@@ -364,7 +366,7 @@
       },
       {
         "layer": "Content and identity",
-        "detail": "Landing content and site settings are singletons with paired Georgian/English columns; booking policy — slot granularity, lead time, how far ahead you may book, the cancellation window — is configuration the admin edits, not constants I compiled in."
+        "detail": "Landing content and site settings are singletons with paired Georgian/English columns; booking policy — slot granularity, lead time, how far ahead you may book, the cancellation window — is configuration the admin edits, not constants we compiled in."
       }
     ],
     "results": [
@@ -408,10 +410,11 @@
     "slug": "printomato",
     "name": "Printomato",
     "tagline": "A fleet console for photo-printing kiosks — live device presence, paper levels, campaigns and card payments on one screen.",
-    "summary": "Printomato runs photo-printing kiosks in malls, festivals and hotel lobbies. I built the operator side of it: a session-authenticated REST API next to the existing device API, and a React console that shows the whole fleet in real time — who is online, who is out of paper, what printed today, and which payments settled.",
-    "role": "Full-stack, on a two-developer project. I owned the payment stack, the admin API, the React console and the containerised deploy.",
+    "summary": "Printomato runs photo-printing kiosks in malls, festivals and hotel lobbies. We built the operator side of it: a session-authenticated REST API next to the existing device API, and a React console that shows the whole fleet in real time — who is online, who is out of paper, what printed today, and which payments settled.",
+    "role": "Full-stack, on a two-developer project. We owned the payment stack, the admin API, the React console and the containerised deploy.",
     "period": "2024 — 2026",
     "status": "shipped",
+    "category": "fleet management",
     "stack": [
       "Django 5",
       "Django REST Framework",
@@ -623,10 +626,11 @@
     "slug": "gisheri",
     "name": "Gisheri",
     "tagline": "A natural-stone jewellery shop in Tbilisi — browse by zodiac sign, take the quiz, check out with a discount code, and run the whole catalogue and order book from the console behind it.",
-    "summary": "Gisheri sells handmade stone bracelets and pendants, and the whole product is bilingual down to the content model: every product, collection and zodiac sign stores its Georgian text beside its English, and Georgian is the default. I built it end to end — a Django 5 + Ninja API with JWT auth, an audit trail and a role-gated admin surface, and a React 19 storefront and console on top of it.",
-    "role": "Full-stack. I designed the data model, the discount and order pipeline and the two-layer catalogue i18n, and built the whole front end.",
+    "summary": "Gisheri sells handmade stone bracelets and pendants, and the whole product is bilingual down to the content model: every product, collection and zodiac sign stores its Georgian text beside its English, and Georgian is the default. We built it end to end — a Django 5 + Ninja API with JWT auth, an audit trail and a role-gated admin surface, and a React 19 storefront and console on top of it.",
+    "role": "Full-stack. We designed the data model, the discount and order pipeline and the two-layer catalogue i18n, and built the whole front end.",
     "period": "2026",
     "status": "shipped",
+    "category": "e-commerce",
     "stack": [
       "Django 5",
       "Django Ninja",
@@ -820,6 +824,1726 @@
         "title": "Shop by stone",
         "caption": "The catalogue behind six purpose facets, twelve zodiac facets, three genders and a price slider — every count computed against the live set, so a filter that would return nothing says so before it is clicked.",
         "schematic": "gallery",
+        "src": null
+      }
+    ]
+  },
+  {
+    "slug": "tova",
+    "name": "Tova",
+    "tagline": "A lead-capture arcade game for trade fairs — visitors catch falling sponsor coins for sixty seconds, answer trivia and climb a live board, while organisers run the event and export every lead from a console.",
+    "summary": "A stand at a trade fair has one problem: nobody wants to hand over their details for nothing. Tova gives them a reason. A visitor registers, plays a sixty-second canvas round catching sponsor coins and dodging hazards, answers timed trivia for bonus points and watches a live standings board. Behind it, an organiser console runs the whole event: the schedule, the fairness caps, the falling items, the trivia, the prizes, the people, and the lead list as an Excel file ready for a CRM. Four roles see four different slices of it, in Georgian and English. We built it end to end — a Next.js app, a hand-written canvas engine and the route handlers behind both.",
+    "role": "Full-stack. The game engine and its fairness plan, the scoring and standings rules, the organiser console, the data model, sign-in, and the bilingual interface.",
+    "period": "2026",
+    "status": "shipped",
+    "category": "event technology",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "HTML5 Canvas",
+      "zod",
+      "JWT sessions",
+      "ExcelJS",
+      "Transactional email",
+      "Object storage"
+    ],
+    "stackGroups": [
+      {
+        "group": "Application",
+        "items": [
+          "Next.js 16 (App Router, server components)",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "Noto Sans and Noto Serif Georgian",
+          "Monospace face for scores"
+        ]
+      },
+      {
+        "group": "Game",
+        "items": [
+          "HTML5 Canvas 2D",
+          "Custom engine, no game library",
+          "Pre-planned spawn schedule",
+          "Capped fixed-step loop",
+          "Adaptive effects"
+        ]
+      },
+      {
+        "group": "Data and auth",
+        "items": [
+          "Relational database through an ORM",
+          "Unique constraint on (user, question)",
+          "zod validation on every route handler",
+          "Signed JWT sessions in an httpOnly cookie",
+          "One-time-code sign-in",
+          "Route gate for /play, /me and /admin"
+        ]
+      },
+      {
+        "group": "Services",
+        "items": [
+          "Transactional email (sign-in codes, prize winners)",
+          "Object storage for sponsor art",
+          "ExcelJS (participant workbook)",
+          "Serverless hosting"
+        ]
+      },
+      {
+        "group": "Demo build",
+        "items": [
+          "Vite 6",
+          "React 18",
+          "React Router 6",
+          "TanStack Query 5",
+          "i18next 24 (KA/EN)",
+          "Recharts 2",
+          "Radix UI",
+          "Tailwind CSS 4",
+          "framer-motion",
+          "@portfolio/demo-kit mock API and store",
+          "Hand-written OOXML and ZIP writers"
+        ]
+      }
+    ],
+    "creative": [
+      {
+        "title": "A round that is fair before the first coin falls",
+        "constraint": "Two visitors at a stand compete for the same prize, so luck in the spawns cannot decide it — yet a game where everything is identical is not a game. Rolling a random spawn each frame hands one player a rich run and another a poor one.",
+        "detail": "`buildPlan` lays out the whole round up front. Every player gets exactly the event's catchable budget and exactly its penalty budget, on a four-stage ramp, with spawn times arranged so each item can still reach the paddle before the round ends. Only the arrangement is random. The server clamps a submitted score to `[-maxBad, maxGood]` as well, so the best possible round is the same for everyone and a tampered request cannot beat it. A naive per-frame random makes the board a lottery and the clamp a guess."
+      },
+      {
+        "title": "A standing that cannot be farmed",
+        "constraint": "The board is public and the prize is real. If score were the sum of rounds, the winner would be whoever stood at the stand longest, and a player who could see the answers to trivia could simply wait out the clock.",
+        "detail": "Score is the best single round plus correct trivia points — never a sum of rounds. A question can be answered once, enforced by a unique key on (user, question) in the original and by a 409 here, and the correct index is never sent to the player: the trivia state endpoint strips it, and a timeout is submitted as `-1`. The result is a board where ten minutes of skill beats an hour of repetition, and the answer key never reaches the browser."
+      },
+      {
+        "title": "A canvas that gives up its effects before it drops frames",
+        "constraint": "The game runs on whatever the visitor holds — a recent phone or a tablet from the stand's own shelf. A fixed visual budget that suits one device stutters on another, and a stutter during a sixty-second timed round costs real points.",
+        "detail": "The engine smooths a rolling frame time and, with hysteresis, drops its costly effects below about 38 fps and restores them only once frames are comfortably back above 50, so it does not flicker between modes. The pixel ratio is capped at 2 and each frame's time step is capped at 50 ms, so a tab that was in the background does not replay seconds of physics in one frame. Under reduced motion the timer ring becomes a plain number. A naive build either always runs flat or always runs rich and fails half the audience."
+      },
+      {
+        "title": "A real Excel file, written without a library",
+        "constraint": "The lead list has to open in Excel, Numbers and LibreOffice, and in the demo it has to be built inside the tab with no server and no dependency to ship. An `.xlsx` is a ZIP of XML parts, and a participant list is exactly the kind of data that starts with `=` or `+`.",
+        "detail": "`xlsx.ts` is a dependency-free OOXML writer and `zip.ts` the container under it: STORED entries, a CRC-32 table built on first use, UTF-8 names. Cell values are typed by their JavaScript type, strings are XML-escaped and stripped of control characters, and text that begins with `= + - @` gets Excel's `quotePrefix` while no formula element is ever written, so a hostile company name cannot become a formula in the organiser's spreadsheet. Dates are real date serials read in Tbilisi time. The download is a genuine workbook, not a renamed CSV."
+      },
+      {
+        "title": "Other visitors who play while you watch",
+        "constraint": "A live board with one player on it is a dead board, and a portfolio visitor has no crowd. The demo needs the standings to move without anyone clicking, and without inventing numbers that break the product's own rules.",
+        "detail": "Three seeded ghost players each play a round of the active event every 15 to 25 seconds, using demo-kit's seeded `createRandom` and `every`, which pauses while the tab is hidden and leaves no timer behind. A ghost's score never exceeds the event's budget and its catch breakdown adds up to the score exactly, so the drill-down in the console reconciles. Each round pushes a play and emits `play:created`, which invalidates the standings and Insights queries, so the board reorders with FLIP motion and the console numbers tick up. Fake activity that did not reconcile would be spotted the first time someone opened a player."
+      },
+      {
+        "title": "A seed that is never out of date",
+        "constraint": "A fixture with absolute timestamps goes stale the day after it is written: the live event is over, nobody signed up recently and the thirty-day charts end last month. A demo that opens on an empty or closed event shows nothing.",
+        "detail": "The seed is authored as of one anchor instant, and `rebaseDates` shifts every field ending in `At` by the distance from that anchor to now, on load and on every reset. The live event is always from yesterday to tomorrow, the player's account always signed up two hours ago, and the charts always end today. Fair hours are written in UTC, so the hall day is 11:00 to 20:00 in Tbilisi wherever the visitor sits. It is the difference between a demo that works on the day it was built and one that works on any day."
+      },
+      {
+        "title": "Errors that are keys, not sentences",
+        "constraint": "The interface is bilingual and the API speaks one language. A message string returned by a handler is in the wrong language for half its readers, and a form needs to know which input an error belongs to.",
+        "detail": "Handlers throw a `DemoApiError` that carries an i18n key and, for validation, a map of field to key. The UI renders `t(error.message)` and puts each field error under its own input. The same 760 keys exist in English and Georgian, and role guards (`requireUser`, `requireStaff`, `requireEditor`, `requireSuper`) refuse with keys too. A Georgian organiser never sees an English sentence leak out of a validator, and the wording lives with the translators rather than in the handlers."
+      }
+    ],
+    "highlights": [
+      "Fair by construction: the round is planned up front so every player gets exactly the event's catchable budget and exactly its penalty budget on a four-stage ramp. Only the arrangement is random, and the server clamps a submitted score to the budget as well.",
+      "The standings rule is the best single round plus correct trivia points, never a sum of rounds, so time spent at the stand cannot buy a place on the board. The organiser can hide the board, and the player's card shows a countdown to the end instead of a rank.",
+      "Trivia is answered once and the correct answer is never sent to the browser. A timer auto-submits at zero, and the seconds-left counter turns red at five.",
+      "Four roles over one console: a supervisor reads, an admin edits events, items, trivia and prizes, a superadmin also manages people, and nobody can change, suspend or delete themselves.",
+      "Everything an organiser needs to run a fair day: schedule, round length, fairness caps, difficulty, speed level, board size and three visibility toggles per event.",
+      "The lead list leaves as a real Excel workbook, built so a hostile cell value cannot become a formula.",
+      "Georgian and English from the data model up: 760 strings in each language with the same keys, and Georgian-capable type throughout."
+    ],
+    "metrics": [
+      {
+        "label": "Roles",
+        "value": "4"
+      },
+      {
+        "label": "Screens",
+        "value": "17"
+      },
+      {
+        "label": "Mocked API routes",
+        "value": "41"
+      },
+      {
+        "label": "Languages",
+        "value": "2"
+      },
+      {
+        "label": "Game engine lines",
+        "value": "870"
+      },
+      {
+        "label": "Demo source lines",
+        "value": "14.8k"
+      }
+    ],
+    "problem": "A stand at a trade fair is expensive and the conversation at it is short. Visitors drift past, glance at the banner and keep walking, and the ones who stop are asked to fill in a form with their name, company and number for no obvious reward. The organiser ends the day with a stack of cards, half of them illegible, and no way to say which sponsors actually held anyone's attention.\n\nThe organiser's side is no better: the schedule, the prizes, the questions and the list of who came live in different places, and the only fair way to pick a winner is one that nobody can argue with. A game fixes the first problem only if it is fair, because the moment a visitor suspects the score was luck or a trick, the prize and the lead are both worth less.",
+    "approach": "We made the game the reason to register and made fairness a property of the engine instead of a promise.\n\nA visitor signs up, plays one sixty-second canvas round and is on the board. The round is planned before it starts, so every player faces the same total of catchable coins and the same total of penalties, arranged differently. Trivia adds bonus points on top, once per question, and the standing is the best round plus those points, so repetition does not help. The board refreshes while people watch.\n\nEverything the organiser touches sits behind a console with four roles, so a staff member can look without being able to break anything. Events, falling items, trivia and prizes are all data the organiser edits, the people page handles accounts, and the participants page turns the lead list into an Excel file in one click. Sponsor items carry the brand names that make the game worth sponsoring.",
+    "architecture": [
+      {
+        "layer": "Application",
+        "detail": "Next.js with the App Router and React 19. Server components fetch the data for the console and the standings; client components call a small set of `/api/*` route handlers for everything that mutates. Tailwind CSS 4 with Georgian-capable type and a monospace face for scores."
+      },
+      {
+        "layer": "Game engine",
+        "detail": "A custom HTML5 Canvas 2D engine with no game library: a pre-planned spawn schedule, a capped fixed-step loop, pointer, touch and arrow-key control for the paddle, and effects that drop on slow devices."
+      },
+      {
+        "layer": "Validation and anti-cheat",
+        "detail": "zod schemas on every route handler. The server clamps every submitted score to the event's point budget, and the round plan guarantees the same budget for every player."
+      },
+      {
+        "layer": "Auth",
+        "detail": "Signed JWT sessions in an `httpOnly` cookie, passwordless sign-in with a one-time code, and a route gate that redirects signed-out visitors away from `/play`, `/me` and `/admin`. Four roles: player, supervisor, admin and superadmin."
+      },
+      {
+        "layer": "Data",
+        "detail": "A relational database through an ORM, with users, events, items, plays, trivia questions, answers and prizes. A unique constraint on (user, question) means a question can only be answered once."
+      },
+      {
+        "layer": "Email and storage",
+        "detail": "Transactional mail for sign-in codes and for notifying prize winners, and object storage for the sponsor art an organiser uploads."
+      },
+      {
+        "layer": "Export",
+        "detail": "A server-built Excel workbook of the participant list, ready to import into a CRM."
+      },
+      {
+        "layer": "Hosting",
+        "detail": "Serverless, with the route handlers and pages deployed together. AI image generation for item art is planned: the button exists and answers coming soon."
+      }
+    ],
+    "results": [
+      "A stand has a reason for people to stop and leave their details, and the organiser walks away with a clean lead list as an Excel file instead of a stack of cards.",
+      "Winners are decided by a rule nobody has to argue about: the same budget for every player, the best single round, and a server clamp behind it.",
+      "A whole event — its schedule, caps, items, trivia and prizes — is something an organiser edits in a console rather than something we deploy.",
+      "Staff can watch the standings, drill into a single player's plays and read the numbers on Insights without being able to change an event."
+    ],
+    "demoUrl": "/demos/tova/",
+    "demoNote": "A fictional re-skin of a real product we built, under the invented brand Tova, with every name, sponsor and person replaced. The Next.js server is gone: an in-browser mock answers all 41 API routes from seed data compiled into the bundle, so no network request is made. Data lives in memory and resets on reload, there is no real authentication, no email, no storage, and the Excel export is built in the tab. The demo opens signed out on the public landing page, and the demo bar signs you in as any of four roles.",
+    "sourceUrl": null,
+    "cover": "/thumbnails/tova.webp",
+    "screenshots": [
+      {
+        "title": "The round",
+        "caption": "A sixty-second canvas round on the player screen: sponsor coins to catch, hazards to dodge, a timer ring that turns warm and pulses in the last ten seconds.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "Live standings",
+        "caption": "A podium and a list that reorder as the three ghost players finish rounds, scored as the best round plus trivia.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "My card and trivia",
+        "caption": "The player's total, best round, trivia bonus and history, with a timed question that auto-submits at zero.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Event settings",
+        "caption": "Schedule, round length, fairness caps, difficulty, speed level, board size and the three visibility toggles, with links on to items, trivia and prizes.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Participants and export",
+        "caption": "The searchable lead list and the button that builds a real Excel workbook in the tab.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Insights",
+        "caption": "Totals, thirty-day charts, a per-event table, top scores and players, and catches by item type.",
+        "schematic": "dashboard",
+        "src": null
+      }
+    ]
+  },
+  {
+    "slug": "bani",
+    "name": "Bani",
+    "tagline": "One console for a company's whole voice estate — find any call on either phone platform, play its recording, check the backups, staff the agents and campaigns, and watch the platform's health, under per-role permissions.",
+    "summary": "A voice operations console for a company whose telephony lives on two different phone platforms. It stitches the call records of both into single calls and rebuilds who transferred to whom, finds and plays the recording, backs recordings up and proves the backups are complete, staffs contact-centre agents and outbound campaigns, hands out phone extensions, and watches the health of the whole estate — with eight roles that each see only what they should. We built it end to end.",
+    "role": "Full-stack. The call-record merge and transfer logic, the archive and verify jobs, the permission system, the contact-centre editors and the front end.",
+    "period": "2026",
+    "status": "shipped",
+    "category": "voice operations",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Tailwind CSS 4",
+      "Auth.js",
+      "MySQL",
+      "LDAP",
+      "SNMP",
+      "SFTP / SMB",
+      "XML admin API"
+    ],
+    "stackGroups": [
+      {
+        "group": "Application",
+        "items": [
+          "Next.js 16 (App Router)",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "Auth.js (credentials + JWT)"
+        ]
+      },
+      {
+        "group": "Data",
+        "items": [
+          "PostgreSQL (call-record import, self-test runs, locks, activity logs, settings)",
+          "Prisma",
+          "MySQL (read access to the PBX database, mirrored)"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "items": [
+          "LDAP directory bind and group mappings",
+          "SNMP (contact-centre node metrics)",
+          "SFTP (call-detail file drop)",
+          "SMB file archive",
+          "Phone-platform and contact-centre admin APIs (REST, XML)",
+          "fast-xml-parser"
+        ]
+      },
+      {
+        "group": "Scheduled work",
+        "items": [
+          "cron: record import, mirror interval, daily recording backup with a 7-day trailing retry, hourly self-test",
+          "In-process host collector (5 s samples, 60 s buckets, 30-day retention)"
+        ]
+      },
+      {
+        "group": "Demo build",
+        "items": [
+          "Vite 6",
+          "React 18",
+          "React Router 6",
+          "TanStack Query 5",
+          "i18next (KA / EN)",
+          "Tailwind CSS 4",
+          "Radix UI",
+          "Recharts 2",
+          "Framer Motion",
+          "cmdk",
+          "React Hook Form + Zod",
+          "sonner",
+          "@portfolio/demo-kit"
+        ]
+      }
+    ],
+    "problem": "A company that runs its voice on two phone platforms ends up with two of everything. Two sets of call records, in different shapes, that describe the same afternoon differently. Two places recordings are kept, and a copy job nobody can prove has finished. A contact centre whose agents and campaigns are edited in a vendor tool built for one person at a time. And a list of who may touch each of those that lives in somebody's head.\n\nThe cost shows up as questions that should take a minute. Who did the customer actually speak to after the transfer? Is Tuesday morning's recording on the archive, or only on a box that has since been rebuilt? Which of the thirty agents staff the Georgian-language queue, and at what level? Each answer meant a different tool, a different login and a different person's permission.",
+    "approach": "The console puts one front on both platforms and keeps the rules in code that can be read.\n\nCall records keep their own shapes underneath — one record per leg on the enterprise platform, legs linked by a shared id on the open-source PBX — and are brought together on read: legs are stitched into logical calls, and the party chain of every transfer is rebuilt from them. A search for a number is one search with one answer, and a call that bounced between three desks is one row you can open.\n\nRecordings and their backups are treated as something to prove, not to hope for. A daily job copies recordings to a file archive with a trailing retry window, and a verify pass compares source and archive day by day, names what is missing on either side, and backfills the gap as a backup run of its own. Around that sit the contact-centre editors, the extension desk, the platform status page and the settings for every integration — and one permission table, with overrides an administrator can edit, that decides which of eight roles sees which of them.",
+    "architecture": [
+      {
+        "layer": "Console",
+        "detail": "Next.js App Router. Server components check the feature before a page renders and redirect away from what a role may not open; client pages check again through a permissions endpoint, so a deep link cannot get around the navigation. Call access is also clamped per platform: a contact-centre role never sees the other platform's records."
+      },
+      {
+        "layer": "Call records",
+        "detail": "Two sources read as one. The enterprise platform's call-detail files arrive over SFTP and are imported into PostgreSQL by a cron job (with reconcile and full-history modes); the open-source PBX's own database is mirrored on an interval and checked range by range. Merging legs into calls and rebuilding transfers is plain TypeScript."
+      },
+      {
+        "layer": "Recordings and archive",
+        "detail": "Lookup, streaming and ZIP download from the voice-archive server. A daily cron with a seven-day trailing retry copies recordings to an SMB file archive; a verify pass compares both sides per day and backfills what is missing; an event log records every copy, skip and timeout."
+      },
+      {
+        "layer": "Contact centre",
+        "detail": "The contact-centre platform's XML admin API, proxied by Next API routes and parsed in the client. The API changes one agent at a time, so writes are read-modify-write per agent and a bulk change reports failures per agent. A node monitor reads CPU, memory and uptime over SNMP."
+      },
+      {
+        "layer": "Extensions",
+        "detail": "A lock table with a 10-minute TTL, swept on read, merged with the PBX's own extension list. Reserve-then-create with a countdown on the page, and an audit trail with a purge."
+      },
+      {
+        "layer": "Platform health",
+        "detail": "An in-process collector samples the host every five seconds, writes 60-second buckets (average, minimum, maximum) kept for 30 days, and pings each configured backend. An hourly cron runs the self-test suite and stores every run in PostgreSQL."
+      },
+      {
+        "layer": "Identity and permissions",
+        "detail": "Auth.js with a credentials provider and a JWT session carrying role and username. Directory users come from an LDAP bind with group-to-role mappings; local and API accounts sit beside them. One feature table with administrator overrides is enforced in the layout, the pages and the API."
+      },
+      {
+        "layer": "This demo",
+        "detail": "The server, the databases, the directory, the file shares and SNMP are replaced by an in-browser mock API over seeded data, in a Vite SPA. The merge and transfer code is the same; the jobs are timers."
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Roles",
+        "value": "8"
+      },
+      {
+        "label": "Screens",
+        "value": "12"
+      },
+      {
+        "label": "Mocked routes",
+        "value": "67"
+      },
+      {
+        "label": "Seeded call legs",
+        "value": "425"
+      },
+      {
+        "label": "Front-end lines",
+        "value": "22k"
+      },
+      {
+        "label": "Languages",
+        "value": "2"
+      }
+    ],
+    "results": [
+      "A search for a number answers across both platforms at once, and a transferred call is one row with its chain of parties instead of a pile of fragments.",
+      "A recording is a lookup, a player and a download — and \"is it safely archived?\" has an answer that is checked day by day instead of assumed.",
+      "Staffing a queue, changing a campaign and issuing an extension sit in one console with an audit trail, instead of in separate single-user vendor tools.",
+      "What each person can reach is a table an administrator edits and one function enforces, not an arrangement kept in someone's head.",
+      "The state of the whole voice estate — hosts, links, the self-test — is one page with history, so \"was it like this yesterday?\" has an answer."
+    ],
+    "demoUrl": "/demos/bani/",
+    "cover": "/thumbnails/bani.webp",
+    "demoNote": "A fictional re-skin of a real product Boulder built: the company, the people, the numbers and the recordings are invented, and the product wears a new Georgian brand. There is no backend — an in-browser mock API answers every call, syncs, backups and self-tests are simulations on timers, and the three recordings are synthetic clips. Data lives in memory and resets on reload. Switch persona in the corner to see what each of the eight roles can reach.",
+    "sourceUrl": null,
+    "screenshots": [
+      {
+        "title": "Call Explorer",
+        "caption": "One search across both phone platforms. Legs are stitched into calls that expand, transfers show their chain of parties, and the table exports to a real spreadsheet.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Call detail and recording",
+        "caption": "Every field of the call, the raw source record and the recording with a waveform player, plus the transfer chain hop by hop.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Archive jobs",
+        "caption": "Imports, the mirror check, the hangup backfill and recording backups running as live jobs — and Verify a date, which compares source and archive day by day and backfills what is missing.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Agents by skill",
+        "caption": "Bulk staffing for one queue: a competency level per agent, a confirm step with counts, and a result that lists exactly which agents failed and why.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Extension provisioning",
+        "caption": "Reserve the next free number, watch the 10-minute countdown, create the extension — and see every step land in the audit trail.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "Platform status",
+        "caption": "Voice lanes per backend, live host metrics and the hourly self-test with its history; Run tests now does it on demand.",
+        "schematic": "dashboard",
+        "src": null
+      }
+    ],
+    "highlights": [
+      "Two phone platforms, one search: legs are stitched into logical calls and every transfer's party chain is rebuilt, in plain TypeScript the demo runs unchanged.",
+      "Backups that prove themselves: a verify pass compares source and archive day by day and backfills only what is missing, as a run linked to the verify that found it.",
+      "Eight roles over eleven features, edited at runtime on a permission matrix; the navigation, the route guards and the API all read the same function.",
+      "Reserve-then-create extensions: a 10-minute lock with a live countdown, released on expiry, every step in an audit trail.",
+      "Bulk staffing across dozens of agents with a confirm step and a per-agent failure report, because the underlying API writes one agent at a time.",
+      "Real downloads without a library: a hand-written ZIP writer builds both the recordings archive and the `.xlsx` export.",
+      "Bilingual throughout: about 1,360 English and 1,390 Georgian strings, with Georgian type designed in rather than fallen back to."
+    ],
+    "creative": [
+      {
+        "title": "Two platforms' records, one call, one transfer chain",
+        "constraint": "The two platforms describe a call differently. The enterprise one writes a record per leg, keyed by cluster node and call id, with leg ids that link a transfer to its parent; the open-source PBX shares a linked id and a sequence number, and signals transfers through application names and redirect codes. Searched as they are, one call that bounced between three desks shows up as a pile of short, unrelated fragments.",
+        "detail": "`mergeCalls` stitches Core Cluster legs with a union-find over (node, call id) plus shared origin and destination leg ids within one hour, and groups Edge PBX legs by linked id ordered by sequence. A merged row reports wall-clock duration and agent talk time and carries its legs for the expandable table. `transfers` normalises both vocabularies into one `TransferInfo` — a flag, the first and last targets, an ordered chain and hops with a reason — and treats plain hunt distribution as not a transfer. The same functions run unchanged in the demo, over 425 seeded legs."
+      },
+      {
+        "title": "A backup that can prove it is complete",
+        "constraint": "A copy job reports what it copied. It cannot tell you about the file that was never listed, or the one that exists in the archive and not at the source, so \"the backup ran\" and \"nothing is missing\" are different claims.",
+        "detail": "Verify a date compares source and archive for each day in a range, one run per source, and records what is missing on each side per day. Backfill then starts an ordinary backup run for exactly those files, triggered as `verify:<id>` and linked back through `backfillRunId`, so the trail reads verify, backfill, events. In the demo every one of these is a state machine advanced by a one-second tick over a seeded per-day inventory, with a live event tail that fills as it goes."
+      },
+      {
+        "title": "One function decides who may do what",
+        "constraint": "The navigation rail, the route guard, the API and the permission matrix each want to answer \"may this role open this?\" — and the answer is editable at runtime, so four copies would drift the first time an administrator flipped a cell.",
+        "detail": "`roleCan` layers role defaults, then administrator overrides, then the superadmin, and every one of those four consumers calls it. `sanitizeOverrides` refuses to make the `users` and `rbac` features overridable — granting them would be an escalation path — and drops a non-superadmin's edits to their own role. Call access has a second, separate clamp: a contact-centre role is held to its own platform even if an override grants it the call feature."
+      },
+      {
+        "title": "A number nobody else can take while you type",
+        "constraint": "Creating an extension takes minutes — an e-mail, a secret, a decision — and two administrators opening the page at once would be offered the same number.",
+        "detail": "Starting reserves the next free number for ten minutes; the number skips reserved and already-locked ones and wraps to the lowest gap. The page counts down from the lock's own `expiresAt`, turning amber at three minutes and red at one. Expired locks are swept on every read and on a 15-second timer, each release written to the audit log. If the tab is hidden while a number is held, a beacon logs a disconnect but keeps the lock, so a stray alt-tab does not forfeit the reservation."
+      },
+      {
+        "title": "Bulk changes that are allowed to half-fail",
+        "constraint": "The contact-centre API changes one agent at a time, so staffing a queue with thirty agents is thirty independent writes, and some will be refused — an agent can be held by another administrator.",
+        "detail": "The roster keeps a draft per skill, dropping any edit equal to what the server already has, so the draft's keys are exactly the rows that changed. A confirm step shows counts to assign, unassign and re-level; the result reports assigned, unassigned, re-levelled and unchanged, and names each failed agent with its reason instead of pretending the batch was all-or-nothing. In the demo the failure is deliberate and occasional, so the path can be seen."
+      },
+      {
+        "title": "A spreadsheet and a ZIP with no library",
+        "constraint": "Exporting the table and downloading selected recordings both have to happen in the tab, with no server to build them and no budget for a spreadsheet and an archive library in the bundle.",
+        "detail": "A small store-only ZIP writer — CRC-32 per entry, UTF-8 names — builds the recordings download, with a manifest of what was included and skipped. The `.xlsx` export is hand-written Office Open XML on top of the same writer: inline strings, a bold frozen header, column widths and an auto-filter. It opens in Excel, Numbers, LibreOffice and Google Sheets. The audio bytes come from lazy imports, so nothing is fetched."
+      },
+      {
+        "title": "A seed that is never stale",
+        "constraint": "The data is authored on one day, but \"today\" is the default search, \"last sync 14 minutes ago\" must stay true, and recording file names carry dates — all on any day a visitor arrives, with nothing stored in the browser.",
+        "detail": "`rebaseDates` shifts every timestamp by now minus the seed anchor, on boot and on every reset; `refreshDerived` then re-derives the strings the shift would leave wrong, rebuilding recording names from their call dates and moving archive folders by the same whole days. About 45 legs are placed in the six hours before the anchor, so the first search is never empty at any hour."
+      }
+    ]
+  },
+  {
+    "slug": "rigi",
+    "name": "Rigi",
+    "tagline": "A back office and client portal for a contact-centre software vendor — seats billed by the day they were held, support work priced in points, and invoices that print themselves, across five roles.",
+    "period": "2026",
+    "status": "shipped",
+    "category": "business operations",
+    "stack": [
+      "NestJS",
+      "Next.js 15",
+      "PostgreSQL 16",
+      "Prisma",
+      "pg-boss",
+      "TypeScript",
+      "Tailwind CSS",
+      "Puppeteer",
+      "Docker"
+    ],
+    "stackGroups": [
+      {
+        "group": "Backend",
+        "items": [
+          "NestJS",
+          "Prisma",
+          "zod contracts shared with the web app",
+          "OpenAPI with a generated TypeScript client",
+          "argon2id password hashing",
+          "JWT with rotating refresh tokens"
+        ]
+      },
+      {
+        "group": "Data, mail and jobs",
+        "items": [
+          "PostgreSQL 16",
+          "pgcrypto and citext",
+          "pg-boss job queue",
+          "IMAP polling",
+          "SMTP delivery",
+          "Puppeteer with headless Chromium"
+        ]
+      },
+      {
+        "group": "Web",
+        "items": [
+          "Next.js 15 App Router",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "English and Georgian dictionaries"
+        ]
+      },
+      {
+        "group": "Runtime and delivery",
+        "items": [
+          "pnpm workspaces",
+          "Docker Compose",
+          "nginx with TLS",
+          "Scheduled database dumps",
+          "Ubuntu host"
+        ]
+      },
+      {
+        "group": "Demo build",
+        "items": [
+          "React 18",
+          "Vite 6",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "TanStack Query 5",
+          "React Router 6",
+          "i18next",
+          "Recharts",
+          "dnd-kit",
+          "React Hook Form + zod",
+          "Radix UI",
+          "cmdk",
+          "framer-motion",
+          "sonner",
+          "@portfolio/demo-kit (in-browser mock API)"
+        ]
+      }
+    ],
+    "summary": "The operations hub of a contact-centre software vendor, in English and Georgian. Client companies hold pools of licence seats synced from their own phone systems; their support requests arrive by email, become tasks priced in points against a free monthly allowance, and are billed on one monthly invoice together with the seats and any fixed-price projects. Five roles share the product: a superadmin, an accountant, a support desk, technicians, and a separate portal where the clients submit work, verify it, chat, dispute invoices and watch their allowance. We built it end to end — a NestJS API on Postgres with a job queue, and a Next.js front end — and this demo is that front end running against an in-browser mock, re-skinned as the fictional Rigi.",
+    "role": "Full-stack. The data model and billing rules, the job and mail pipeline, the role and tenant model, the invoice template renderer, and the web application with its five role areas.",
+    "problem": "A vendor selling contact-centre software to a dozen client companies was running its business out of spreadsheets, a shared mailbox and a folder of PDFs. Licences were counted by hand against what each client's phone system actually had. Support work was agreed over email and billed from memory. An invoice was assembled at month end from three places that did not agree.\n\nEvery one of those numbers depends on another. A seat is billed by the days a user held it; a support task costs points, the first few each month are free, and the rest are billed at the client's own rate in the client's own currency; a fixed-price project replaces the points for its tasks. If the invoice, the client's points page and the finance report each compute these separately, they drift — and the first client who disagrees with a total ends the conversation.",
+    "approach": "We made the money rules one pure module and built everything else around it. Partners, seats, users, tasks, points and projects are records; an invoice is derived from them by functions that the invoice screen, the points page, the reports and the seed all share. Around that sit a state machine for tasks, an inbox fed by IMAP that threads mail and links replies to the task they belong to, and an audit trail that records every change except the owner's.\n\nThe front end is role-first: four staff areas and a separate partner realm, each with its own shell, guarded by role, sharing one design system and one bilingual dictionary. For this demo we kept the front end and replaced the server with a mock that implements the same endpoints against an in-memory store, so every one of those rules runs in the visitor's browser.",
+    "architecture": [
+      {
+        "layer": "Repository",
+        "detail": "A pnpm workspace with three parts: the API, the web application, and a package of zod contracts that both sides import, so a request is validated against the same shape on the way out and on the way in."
+      },
+      {
+        "layer": "API",
+        "detail": "NestJS REST under a versioned prefix, documented with OpenAPI and consumed through a generated TypeScript client. A roles guard denies by default; request ids tie every log line to a call; a global audit interceptor records JSON-patch diffs, and deliberately never for the superadmin."
+      },
+      {
+        "layer": "Database",
+        "detail": "PostgreSQL 16 through Prisma, about forty models. Money is fixed-point decimal, tenancy is a partner id column on every client-owned table, and the constraints an ORM cannot express — partial unique indexes — are written in raw migration SQL."
+      },
+      {
+        "layer": "Jobs",
+        "detail": "pg-boss on the same database, scheduled in the vendor's own time zone: mail polling, month close, monthly invoice generation, a daily auto-draft for partners whose billing day is today, the daily user-count snapshot, and retention pruning."
+      },
+      {
+        "layer": "Auth",
+        "detail": "argon2id hashes; a fifteen-minute internal token plus a rotating opaque refresh token in an httpOnly cookie, bridged through the web app's route handlers. Partner admins live in a separate realm. Partner phone systems push user counts through machine credentials — a key id and secret exchanged for a short-lived, scope-limited token and throttled per minute."
+      },
+      {
+        "layer": "Web",
+        "detail": "Next.js 15 App Router with a route group per role, edge middleware that routes by role, server components for reads and route-handler proxies for mutations. shadcn/ui and Tailwind, with English and Georgian dictionaries."
+      },
+      {
+        "layer": "Mail",
+        "detail": "An IMAP poller stores each message and its attachments on a volume and threads them by RFC 5322 headers; SMTP carries password resets and invoice emails."
+      },
+      {
+        "layer": "PDF",
+        "detail": "Headless Chromium through Puppeteer renders editable HTML and CSS invoice templates, with a Georgian-capable font baked into the image."
+      },
+      {
+        "layer": "Infrastructure",
+        "detail": "Docker Compose for development and production: nginx with TLS in front of the API and web containers, a container that dumps the database for backups, health endpoints for liveness and readiness, an Ubuntu host."
+      },
+      {
+        "layer": "This demo",
+        "detail": "The web application is kept; the server is replaced by `@portfolio/demo-kit`. A mock API answers 163 endpoints in the browser, over a store built from a seed generated at load, with simulators for mail, chat replies and system health."
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Roles",
+        "value": "5"
+      },
+      {
+        "label": "Screens",
+        "value": "59"
+      },
+      {
+        "label": "Mocked endpoints",
+        "value": "163"
+      },
+      {
+        "label": "Data collections",
+        "value": "34"
+      },
+      {
+        "label": "Seeded partner users",
+        "value": "399"
+      },
+      {
+        "label": "Translation keys per language",
+        "value": "2,310"
+      },
+      {
+        "label": "Lines of TypeScript",
+        "value": "34k"
+      }
+    ],
+    "results": [
+      "One billing module feeds the invoice, the client's points page and both finance reports, so a figure reads the same wherever it appears.",
+      "Support work is priced before it starts and billed once, when the client verifies it; the client sees the allowance left, and whether this task goes over it, before approving.",
+      "A month-end invoice is a button: seats pro-rated by the days held, points beyond the allowance, fixed-price projects, VAT, and a PDF in the client's own template.",
+      "Five roles see five different products from one codebase, and a client company can only ever reach its own rows.",
+      "The whole interface — about 2,300 strings — exists in English and Georgian."
+    ],
+    "demoUrl": "/demos/rigi/",
+    "cover": "/thumbnails/rigi.webp",
+    "demoNote": "A fictional re-skin of a real product we built: Rigi, its client companies and its people are invented. There is no backend. A mock API in your browser answers all 163 endpoints from data generated when the page loads, relative to today, and everything you change lives in memory — reload and the tasks, seats and invoices are back as they were. Switch persona from the bar in the corner; mail arrives on a timer; email, PDF and partner-sync steps are simulated.",
+    "sourceUrl": null,
+    "screenshots": [
+      {
+        "title": "Superadmin dashboard",
+        "caption": "Four KPI tiles with sparklines that count up and click through to their lists, queues for expiring contracts, overdue invoices, new tasks and recent audit entries, a system card and quick actions.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Licence mapper",
+        "caption": "One seat card per licence with a used-of-seats meter. Drag a user from card to card, or swap two users; a full card refuses, and the pool's history sits one tab away.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Invoice as a ticket stub",
+        "caption": "Lines with licence and user-day detail, the tasks billed with the free allowance deducted, a VAT toggle, and issue, mark paid, void, email to the outbox and print to PDF.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Template designer",
+        "caption": "A block builder with drag reordering and token chips, a raw HTML and CSS mode, a signature pad, and a live A4 preview rendered through the preview endpoint.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "Support inbox",
+        "caption": "Mail in threads or flat view with status filters, hover previews and a Poll now button; new mail slides in, and unread rows carry the green now-serving rule.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Partner portal task",
+        "caption": "The client's view of a finished task: approve and bill the points, or send it back with a comment, with the support team's chat beside the history and the allowance left this month.",
+        "schematic": "dashboard",
+        "src": null
+      }
+    ],
+    "highlights": [
+      "One pure module owns the money: invoice lines, points, seat prices and totals are computed by the same functions for the screen, the reports and the seed.",
+      "Seats are billed by the days they were held, and the pool is a history of batches, so changing the number of seats never rewrites the past.",
+      "Points are debited when the client verifies a task, with the free monthly allowance applied inside the debit.",
+      "The task state machine decides both what the server accepts and which buttons each role sees.",
+      "Mail is threaded by reply headers, then by normalised subject, and a reply on a linked thread flags the task.",
+      "The invoice template designer pairs a block builder with raw HTML and CSS and a signature pad, rendered by an in-house template engine that prints Georgian with no network.",
+      "Clients live in a separate realm: every portal read is scoped to one company, and disabling a partner locks its admins out on their next request."
+    ],
+    "creative": [
+      {
+        "title": "Seats are billed by the days they were held",
+        "constraint": "Seats change hands all month: a user is created on the 9th, disabled on the 21st, reactivated on the 24th. A rule that pro-rates by calendar days has to say what the day of joining and the day of leaving are worth, and every answer that is merely close turns up as a disputed line on an invoice.",
+        "detail": "Each user carries membership periods (created, disabled, reactivated, deleted, cutover), and `billedUserDays` counts the days strictly between a period's start and its end, clipped to the month — the join day and the leave day are not billed. A licence line is unit price × billed user-days ÷ days in the month, for billing-enabled users only. The same function builds the six months of seeded invoices and a draft generated in the browser, so the two cannot disagree."
+      },
+      {
+        "title": "A point is billed once, and only when the client says so",
+        "constraint": "Support is priced in points with a free allowance each month. Debit when staff finish a task and the client is billed for work they have not accepted; apply the allowance per task rather than per month and a client can burn it ten times over.",
+        "detail": "`debitOnVerify` runs only when the partner verifies the task. It splits the debit against what is left of that month's allowance — part `debit_free`, the rest `debit_chargeable` at the rate in force on the first day of the period, so a rate change never reprices a month under way. Internal tasks and tasks inside a fixed-price project never debit. Chargeable rows fold into one `points_overflow` line (or a negative `discount` line when credits win) and are stamped with that line's id when the invoice is drafted; voiding or regenerating releases them, so a point is billed exactly once and never lost."
+      },
+      {
+        "title": "A seat pool that remembers",
+        "constraint": "A client asks for ten more seats from the 1st and, two months later, five fewer from the 15th. Overwriting one number loses what was billed when, and a lowered pool must never fall below the users already mapped to it.",
+        "detail": "The pool is the sum of open batches. Raising it adds a batch; lowering closes the newest open batches and, when one is only partly removed, closes it and opens a remainder tagged `split`, so history keeps its effective dates. The handler refuses a pool smaller than the users on that licence with a 409 `seats_below_mapped`. The mapper is a set of seat cards: drag a user between them with `@dnd-kit` or use the menu — a full card answers \"No free seat\", and a swap needs none, because it moves nobody into new capacity."
+      },
+      {
+        "title": "A reply finds its task",
+        "constraint": "Support arrives as email, and replies come back from phones and mail clients that rewrite subjects (Re:, Fwd:, Aw:, bracketed ticket tags) and sometimes drop the headers that link them. A thread that splits in two leaves a client's follow-up unseen.",
+        "detail": "`findThreadFor` follows `In-Reply-To` and `References` to a known message first, then falls back to a normalised subject with every reply prefix and bracketed tag stripped; with no match it opens a new thread, and a thread's status rolls up by rank (follow-up beats new beats triaged). If the thread is linked to a task the mail is linked too and the task is flagged as having new replies until someone opens it. The timer, Poll now and the `mail.imap.poll` job all run the same ingest."
+      },
+      {
+        "title": "A template engine that cannot run code",
+        "constraint": "Accountants edit invoice templates as HTML and CSS, and the result must print in Georgian from a browser with no server and no network. Anything that executes author-written markup is a hole; anything that fetches a font breaks the no-network rule.",
+        "detail": "An in-house mustache subset (`{{a.b}}`, `{{{raw}}}`, sections, inverted sections, HTML escaping) is shared by the preview endpoint and the invoice renderer, and a block compiler turns the builder's layout into the same HTML. Printing goes through a hidden iframe sandboxed without `allow-scripts`, so a template can style the page but never run, and the Georgian font is imported with `?url` so it is served from the bundle's own base path. The signature pad is a canvas exported as a PNG data URL — no upload anywhere."
+      },
+      {
+        "title": "One event, every screen",
+        "constraint": "Fifty-odd screens read overlapping data. A mutation on one — a task finished, a seat changed, a mail polled — has to refresh the others without each mutation knowing who is listening, and without refetching everything.",
+        "detail": "Every query key starts with a name from a closed `ChangedEntity` list. Handlers and simulators call `emitChanged('tasks', 'dashboards')` after writing; the shell listens once on the bus and invalidates the queries whose first key element is in that set. The same bus carries toasts and a `partner.access` event: disable a partner and its portal admins get 403 `account_disabled` on their next request, with the portal shell re-checking at once."
+      },
+      {
+        "title": "A database that is never stale",
+        "constraint": "A demo seed written once ages by the day: the overdue invoice is no longer overdue, the contract about to expire has expired, nothing happened this month. Random data would make every visit different and every bug unreproducible.",
+        "detail": "`buildSeed(now)` is deterministic — `createRandom('rigi')` — but anchored to the load time: this month is period 0, history reaches six months back, deadlines are ahead or just behind, one partner's contract ends in ten days and another's has lapsed. The store runs it again on every reset. In development `validateSeed` asserts the graph: task history chains end at the current state, seat pools hold every mapped user, invoice totals equal their lines, and the point ledger matches the verified tasks."
+      }
+    ]
+  },
+  {
+    "slug": "sinji",
+    "name": "Sinji",
+    "tagline": "AI call-quality review for Georgian support teams — every call transcribed, fact-checked against the team's own knowledge base, read for tone and scored on one timeline.",
+    "period": "2026",
+    "status": "shipped",
+    "category": "AI & analytics",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL 16 + pgvector",
+      "Docker Compose",
+      "Python 3.11",
+      "nginx",
+      "Server-sent events",
+      "pg_trgm"
+    ],
+    "stackGroups": [
+      {
+        "group": "Front end",
+        "items": [
+          "Next.js (static export)",
+          "TypeScript",
+          "XHR upload progress",
+          "Server-sent events",
+          "Web Audio API (editor)"
+        ]
+      },
+      {
+        "group": "API and worker",
+        "items": [
+          "Python 3.11",
+          "FastAPI",
+          "Background worker (same image)",
+          "Scoped bearer tokens and API keys",
+          "Fernet-sealed provider keys",
+          "psutil (health sampler)"
+        ]
+      },
+      {
+        "group": "Data and retrieval",
+        "items": [
+          "PostgreSQL 16",
+          "pgvector (HNSW, cosine)",
+          "pg_trgm (keyword fallback)",
+          "Self-hosted embedding model (1024 dimensions)",
+          "JSON columns per recording"
+        ]
+      },
+      {
+        "group": "AI layer",
+        "items": [
+          "Provider registry (language model, speech-to-text, text-to-speech)",
+          "Forced tool calls with strict JSON schemas",
+          "Self-hosted voice-emotion sidecar",
+          "Bring-your-own keys per workspace"
+        ]
+      },
+      {
+        "group": "Infrastructure",
+        "items": [
+          "Docker Compose",
+          "nginx with TLS",
+          "Webhook-driven deploy script",
+          "Idempotent SQL migrations"
+        ]
+      },
+      {
+        "group": "Demo build",
+        "items": [
+          "React 18",
+          "TypeScript (strict)",
+          "Vite 6",
+          "Tailwind CSS 4",
+          "React Router 6",
+          "TanStack Query 5",
+          "i18next (EN/KA)",
+          "Recharts 2",
+          "Radix UI",
+          "framer-motion",
+          "cmdk",
+          "@portfolio/demo-kit mock API"
+        ]
+      }
+    ],
+    "demoUrl": "/demos/sinji/",
+    "cover": "/thumbnails/sinji.webp",
+    "sourceUrl": null,
+    "summary": "A multi-tenant platform that turns a call recording, or a pasted transcript, into a diarised transcript, a fact-check against the team's knowledge base, a two-sided read of tone (what the words say and what the voice says) and a weighted rubric scorecard, all drawn on one audio timeline. Around it sit a knowledge-base manager with AI curation, a grounded support bot with an agent copilot that streams cited drafts, public voice tools, and an operator console with AI-usage and server-health reporting. It works in Georgian first, with English alongside. We built the whole product, from the Python pipeline to the Next.js front end; this demo is that front end under a fictional brand.",
+    "role": "Full-stack. The analysis pipeline and its data model, the knowledge base and retrieval, the scoring and fact-check logic, the chat engine behind the copilot, the operator console, and the front end.",
+    "problem": "A support team that records its calls rarely listens to them. Quality review is a person with a spreadsheet and a few calls a week, so what gets measured is whatever happened to be sampled, and the score depends on who sampled it. In Georgian the usual shortcuts fail twice: transcription of a phone line is imperfect, and a transcript that is wrong in one word can make an agent look wrong. Once a speech model heard \"up to 36 months\" as \"up to 36 years\", and the only reason anyone noticed was that the knowledge base said otherwise.\n\nThe second gap is what the agent is allowed to say. The answers live in policy documents, product sheets and scripts that change, and some of them (a discount ladder, an internal script) must never be quoted to a customer. A reviewer needs to see, claim by claim, what the agent said, which passage supports or contradicts it, and how the tone of the words compares with the tone of the voice.",
+    "approach": "We treated a call as a document with a timeline. The pipeline transcribes with speaker labels, retrieves from the workspace's own knowledge base, extracts the factual claims, verifies each one against its best passages, reads tone from the text and, when the sidecar is available, from the voice, and only then scores. Every analyser is handed the transcript as numbered segments and answers with segment indices, never seconds, so findings stay attached to the right line whatever the timings turn out to be.\n\nScoring is split on purpose: the model scores each rubric dimension, and code applies the weights. Two dimensions are measured, not judged (accuracy comes from the fact-check, courtesy from the tone read), and a reviewer can edit any score with a note, which creates a revision instead of overwriting the model. The same knowledge base then grounds a customer-facing bot and a copilot that drafts answers for the agent, and a nightly curation job turns what customers keep asking, and what the fact-check keeps flagging, into proposed edits a human accepts or declines.",
+    "architecture": [
+      {
+        "layer": "Web app",
+        "detail": "A Next.js static export served by nginx, which proxies `/api` to the API on the same origin. One workspace page serves both customers and the operator, who acts as any workspace through a request header. Uploads report progress over XHR; copilot turns and digests stream over server-sent events."
+      },
+      {
+        "layer": "API",
+        "detail": "A FastAPI service with one principal resolver: operator, workspace (bearer token or API key), registered user, or anonymous by IP. Tenant identity is taken from the token, and every query filters by the workspace id. Many endpoints exist twice, once tenant-scoped and once as an operator twin, over the same implementation."
+      },
+      {
+        "layer": "Data and retrieval",
+        "detail": "PostgreSQL 16 with pgvector. Knowledge-base chunks carry a cosine HNSW index, with a trigram index as keyword fallback; a self-hosted embedding model produces 1024-dimension vectors. One row per recording holds the transcript, analysis, fact-check, tone and scorecard as JSON columns. Migrations are idempotent SQL applied at start-up."
+      },
+      {
+        "layer": "AI layer",
+        "detail": "A provider registry with one default connection per capability (language model, speech-to-text, text-to-speech), per-workspace assignments and bring-your-own keys sealed at rest. Every structured output is a forced tool call against a strict JSON schema. All model calls pass through one service that applies admission control and meters tokens into a usage table, keyed by feature."
+      },
+      {
+        "layer": "Analysis pipeline",
+        "detail": "Speech-to-text with diarisation, retrieval over the knowledge base, analysis, claim extraction with per-claim retrieval and verification, a tone analyser (text, plus an optional self-hosted voice-emotion sidecar whose absence degrades the result to text-only), then rubric scoring. Inputs are rendered as a numbered timeline and outputs are segment indices."
+      },
+      {
+        "layer": "Knowledge base and curation",
+        "detail": "Upload, parse, chunk, embed, with retrieval confidence metrics, an exact and near-duplicate scan, and re-embedding as an async job. A nightly miner clusters customer questions from web, social and phone channels into one proposal per cluster; a proposal is applied only after a person accepts it."
+      },
+      {
+        "layer": "Chat engine",
+        "detail": "An async generator of transport-neutral events, serialised to server-sent events for an external chat service that authenticates with scoped, rotating credentials. A triage step and a grounding gate decide whether the bot may answer; the copilot streams several cited drafts to the agent; a global and per-workspace kill switch can stop the bot."
+      },
+      {
+        "layer": "Worker and operations",
+        "detail": "A worker process on the same image runs curation, queued re-embeds and retention purges. In the API process, a sampler records server health and a flusher records per-workspace load. Everything runs under Docker Compose on one Linux server behind nginx with TLS; a push to the main branch triggers a webhook that pulls, rebuilds and applies the schema."
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Mocked API routes",
+        "value": "134"
+      },
+      {
+        "label": "Lazy-loaded pages",
+        "value": "46"
+      },
+      {
+        "label": "Demo accounts, one per role",
+        "value": "4"
+      },
+      {
+        "label": "Seeded calls, with 83 fact-checked claims",
+        "value": "17"
+      },
+      {
+        "label": "Interface languages",
+        "value": "2"
+      },
+      {
+        "label": "Front-end lines of TypeScript",
+        "value": "40k"
+      }
+    ],
+    "highlights": [
+      "A call becomes a timeline: the player, a sentiment ribbon, one finding lane per rubric dimension, and a transcript whose claims are marked supported, contradicted or not in the knowledge base, each linked to the passage behind the verdict.",
+      "Text tone and voice tone are shown side by side and never averaged. When the words are polite and the voice is not, the banner says so and follows the voice.",
+      "The model scores, the code weighs. Two rubric dimensions are measured rather than judged, any score can be edited with a note, and every edit is a revision with the model's original kept immutable.",
+      "The knowledge base can mark a document internal, and the bot then refuses to quote it. The retrieval playground shows exactly why: ranked passages, a score, a margin and a confidence level.",
+      "The copilot shows its work: stage chips with measured milliseconds (grounding, tier-1 passages, drafts), cited drafts that stream word by word, and Insert, Edit-then-send or Ignore, each recorded as feedback.",
+      "The operator console covers everything a platform needs: workspaces and their users, server health with live charts, AI providers and per-workspace assignment, a chat-credentials diagnoser, and token usage that drills from workspace to call to single model call."
+    ],
+    "results": [
+      "Review stopped being a sample. Any call can be opened as a timeline in which each claim, each score and each tone reading points at the line it came from.",
+      "Fact-checking against the team's own documents caught what a transcript alone cannot: a number that sounds right and is wrong, and a transcription error that would have been blamed on the agent.",
+      "The same knowledge base grounds the QA scorecard, the customer bot and the agent copilot, so a correction made once, through the curation queue, improves all three.",
+      "Operators run many teams from one console, with their own AI providers and keys per workspace and a visible, token-level account of what every workspace spends."
+    ],
+    "demoNote": "A fictional re-skin of a real product Boulder built, with the backend replaced by an in-browser mock: seed data compiled into the bundle, answered from memory. Every model result is precomputed (or computed in the tab by small pure functions such as retrieval and the scoring formula), speech synthesis plays pre-recorded clips, and an uploaded file is matched to the closest canned call. Nothing leaves the page, nothing is stored, and a reload restores the pristine data. Sign in as the operator, a workspace owner or member, or a contact-centre agent from the top bar.",
+    "screenshots": [
+      {
+        "title": "Call timeline",
+        "caption": "Waveform with a sentiment ribbon, one finding lane per rubric dimension, and the transcript as speaker lanes with claims marked inline. Clicking a finding seeks the audio.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Fact-check",
+        "caption": "Each claim with its speaker, category and verdict, the passage from the knowledge base that supports or contradicts it, and an accuracy score computed from the verdict counts.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Scorecard and tone",
+        "caption": "A gauge for the weighted total, a row per dimension with its evidence quotes, a revision history for edits, and the text-versus-voice agreement banner on the tone tab.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "KB health",
+        "caption": "Proposed knowledge-base changes grouped by cluster, with a word-level diff of the current and proposed text and the customer questions behind each proposal.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Copilot",
+        "caption": "The agent's side of a web chat: measured stage timings, passages found before any model call, and cited drafts streaming into a drawer, with a handoff card when the bot should not answer.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Server health and usage",
+        "caption": "Live CPU, memory, disk, network and database-pool charts, a per-workspace load table, and AI token usage broken down by workspace, analyser, provider and model.",
+        "schematic": "fleet",
+        "src": null
+      }
+    ],
+    "creative": [
+      {
+        "title": "A stream that reports its own clock",
+        "constraint": "The copilot's selling point is how quickly it grounds an answer before it drafts one. In the demo there is no server to measure, and a stage timer painted on screen would be a lie.",
+        "detail": "The turn endpoint returns a ticket, and the page iterates `streamTurn(ticket)`, an async generator that yields `open`, `grounding`, `tier1`, word-by-word suggestions, `handoff` and `done` in the original's order, reading `performance.now()` at each stage. The chips on screen are measured from the generator, the same shape the real server-sent stream had, so the page code did not change."
+      },
+      {
+        "title": "Findings that point at segments, not seconds",
+        "constraint": "Transcription timings move whenever a call is re-transcribed, and a model asked for timestamps invents them. A finding stored as \"at 1:14\" is wrong after the next run.",
+        "detail": "Every analyser is shown the transcript as numbered segments and returns indices; `segmentsToSpans` turns them into time only when drawing. The seed builder refuses to build a claim that cites a missing segment or an unknown chunk, so a call cannot ship with evidence that points nowhere."
+      },
+      {
+        "title": "Two readings of tone, never averaged",
+        "constraint": "A polite sentence said through clenched teeth reads as friendly text and angry voice. Average the two and the customer's real state disappears.",
+        "detail": "Text tone and voice emotion are kept apart through the whole stack, with an agreement state (`agree`, `partial`, `conflict`, `text_only`, `prosody_only`). On a conflict the headline follows the voice. When the voice sidecar is down the result degrades to text-only and says so, which the demo reproduces with a \"simulate voice unavailable\" switch."
+      },
+      {
+        "title": "A scorecard whose arithmetic can be re-run",
+        "constraint": "A QA score is a number a person will dispute. If the model also does the weighting, nobody can say why 74 was not 78, and an unscored dimension silently counts as a zero.",
+        "detail": "The model scores each dimension; `computeTotals` weighs them, and a dimension with no score is excluded rather than zeroed. Measured dimensions come from the fact-check and the tone read and only their weight is editable. A manual edit demands a note and appends a revision, with revision 1 (the model) immutable, so the history always explains the number."
+      },
+      {
+        "title": "Retrieval that runs in a browser tab",
+        "constraint": "The real system embeds every chunk and searches a vector index. A static demo has no vector database and no embedding model, but the playground, the fact-check and the bot all have to answer from the knowledge base for real.",
+        "detail": "`rankByText` is TF-IDF cosine over the workspace's chunks, with a light Georgian stemmer that strips common case and plural endings. Its scores feed the same confidence rule as the product (high above 0.75 with a margin over 0.1, medium above 0.5). Typing an unrelated question produces a low-confidence refusal, and an internal document is retrieved but never quoted."
+      },
+      {
+        "title": "An upload that always has an answer",
+        "constraint": "A visitor will upload whatever file is on their desktop. The demo cannot transcribe it, and an error screen after the one thing they were invited to try is the worst possible outcome.",
+        "detail": "Upload clones the canned call closest to a hash of the file's name and size, relabelled with the visitor's filename, after a believable \"transcribing\" stage. Pasted text takes a different route and is genuinely analysed in the tab: claims ranked against the knowledge base, keyword tone, and a templated score computed with the real formula."
+      },
+      {
+        "title": "Fake time that never goes stale",
+        "constraint": "A demo seeded with absolute dates is stale the next day: no calls today, an empty usage chart, flat health graphs. Random data would also make every visit look different and every screenshot irreproducible.",
+        "detail": "`rebaseDates` shifts every timestamp by the whole-day distance to today on load and on reset. About 2,000 usage rows are generated from `createRandom('sinji-usage')` with diurnal and weekday patterns, and the health series is a pure function of time (seeded sinusoids plus hashed noise), so the same range always draws the same history and a new point just extends it. Timers started before a reset compare `demoEpoch` and drop their write."
+      }
+    ]
+  },
+  {
+    "slug": "dareke",
+    "name": "Dareke",
+    "tagline": "An outbound contact-centre suite — operators dial from a softphone in the browser, supervisors watch the floor live, and an auto-dialler paces calls to whoever is free.",
+    "summary": "An outbound contact centre in Georgian and English, for three kinds of people. Operators work a campaign from one screen: they pick a status, press Next lead or take an auto-dialled call, talk, and must record a disposition before the next call. Supervisors get a live wall of agent tiles with running timers, campaign progress, a call feed and the auto-dialler's pacing, plus reports with CSV export. Admins run campaigns and lead lists, users and roles, agent statuses, dispositions, the Do-Not-Call list and the dialler's settings, and a super admin also sees the PBX and directory integrations. We built it end to end: a Fastify API on PostgreSQL and Redis, an Asterisk/FreePBX telephony bridge, and the React front end with its SIP softphone.",
+    "role": "Full-stack. The API and its data model, the dialler and its pacing, the PBX integration, the realtime channel, the browser softphone and all three workspaces.",
+    "period": "2026",
+    "status": "shipped",
+    "category": "contact centre",
+    "stack": [
+      "Fastify",
+      "PostgreSQL 16",
+      "Redis 7",
+      "Asterisk / FreePBX",
+      "React 18",
+      "TypeScript",
+      "Prisma",
+      "SIP.js",
+      "WebSocket",
+      "Docker"
+    ],
+    "stackGroups": [
+      {
+        "group": "API",
+        "items": [
+          "Node 20",
+          "Fastify",
+          "Zod validation",
+          "@fastify/jwt",
+          "@fastify/websocket",
+          "pino logging",
+          "bcrypt passwords",
+          "LDAP / Active Directory bind"
+        ]
+      },
+      {
+        "group": "Data and realtime",
+        "items": [
+          "PostgreSQL 16",
+          "Prisma (14 models, 3 migrations)",
+          "Redis 7 pub/sub",
+          "One authenticated WebSocket"
+        ]
+      },
+      {
+        "group": "Telephony",
+        "items": [
+          "Asterisk / FreePBX",
+          "AMI (Originate, Hangup, Redirect, Queue*)",
+          "PJSIP extensions",
+          "SIP.js softphone over WSS",
+          "WebRTC"
+        ]
+      },
+      {
+        "group": "Front end",
+        "items": [
+          "React 18",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "shadcn/ui on Radix",
+          "TanStack Query",
+          "React Router",
+          "framer-motion",
+          "Recharts",
+          "react-i18next",
+          "sonner",
+          "date-fns"
+        ]
+      },
+      {
+        "group": "Delivery",
+        "items": [
+          "Docker Compose (PostgreSQL, Redis, API, front end)",
+          "Setup guides for the PBX, the WebRTC path and the dialler"
+        ]
+      },
+      {
+        "group": "Demo build",
+        "items": [
+          "@portfolio/demo-kit mock API, store and session",
+          "Seed built at boot from a seeded generator",
+          "BroadcastChannel for cross-tab sync",
+          "i18next, English and Georgian",
+          "@fontsource, bundled fonts"
+        ]
+      }
+    ],
+    "creative": [
+      {
+        "title": "The telephone network, played by a state machine",
+        "constraint": "The real product rings a PBX and answers in a WebRTC softphone. A demo has no Asterisk, no SIP and no microphone, but a dialler that does not ring, connect and hang up is not a dialler.",
+        "detail": "An operator engine in `demo/sim/operator.ts` plays the network for the signed-in operator. Next lead walks `requesting`, `dialing` and `ringing`, then resolves as answered (85 %), no answer (10 %) or busy (5 %); an answered customer sometimes hangs up on their own after 45 to 120 seconds, and the wrap-up deadline and the incoming-offer timer run on the same engine. It ticks off the kit's `every()`, which pauses while the tab is hidden, so a tab you come back to has caught up instead of replaying minutes of calls at once."
+      },
+      {
+        "title": "The auto-dialler is ported, not faked",
+        "constraint": "Pacing is the one part of an outbound product that is real logic: how many numbers to dial for how many free agents, and what to do when the line is answered and nobody is free. A looping animation would show none of it.",
+        "detail": "`demo/sim/autoDialer.ts` is the original's 1-second loop. For each active AUTO campaign `target = floor(availableAgents × dialRatio)`, capped by `maxConcurrentCalls` and by one originate per `dialIntervalMs`; answered customers go round-robin to a free agent, and with nobody free the call is abandoned and the lead goes back on the retry path. Five consecutive originate errors back the campaign off for 30 seconds, and the supervisor's panel has a button that injects exactly that failure, so the backoff can be watched instead of described."
+      },
+      {
+        "title": "Two tabs, one call centre, nothing stored",
+        "constraint": "The demo may not persist anything, yet the best way to see it is the operator in one tab and the supervisor in another — and a call placed in one has to appear on the other's wall.",
+        "detail": "`startTabSync()` mirrors the human operator's records (agent state, calls, numbers, DNC entries, feed events) over `BroadcastChannel('dareke-demo')`. Every message carries a per-tab id so a tab never echoes its own writes, and human-made ids embed the tab id so two tabs cannot mint the same one. The simulated floor is deliberately not mirrored — each tab runs its own colleagues — and the channel holds nothing: a reload still restores the pristine seed."
+      },
+      {
+        "title": "A seed that is always today's",
+        "constraint": "A wall of live tiles, calls by hour and a today's-KPIs strip are meaningless over a JSON file frozen on the day it was written, and without a database there is nothing to refresh it.",
+        "detail": "The seed is not a file but a builder, `buildSeed(now)`, driven by `createRandom('dareke')`. Thirty days of weekday traffic, about 90 calls from today and four in progress for the colleagues already on a call are all generated relative to `now`, and lead statuses are derived from that call history rather than written beside it. The generator is deterministic, so the data is stable for a given moment, and Reset demo data rebuilds it for the moment you press it."
+      },
+      {
+        "title": "One bus in place of the WebSocket, and it never lies",
+        "constraint": "The original fans PBX and agent events out over Redis and a WebSocket, and the client reacts by refetching. Replacing that with a toast or a timer would make a screen that looks live and agrees with nothing.",
+        "detail": "`demo/bus.ts` is an in-process event bus. Handlers and simulators emit `data:changed` with scopes (`agents`, `calls`, `campaigns`, `metrics`), and `lib/live.ts` maps scopes to query keys and invalidates them — the same reaction the original's socket handler has. Every event is emitted after the store was changed, so the wall refreshes because the data moved, and a call that only lit up a toast cannot exist."
+      },
+      {
+        "title": "A call that cannot be left without an outcome",
+        "constraint": "In a contact centre the disposition is the data. An operator who can skip it, or pick one that needs a callback without giving a time, quietly corrupts every report downstream.",
+        "detail": "The domain layer ports the forced disposition: no new call until the last has one, and the code's own rules apply — a callback disposition requires a date and time that is not in the past, a Do-Not-Call disposition upserts the number into the DNC list, and the lead's status and `nextAttemptAt` follow the outcome. Lead selection honours the same fields, so a due retry is dialled before a fresh lead and a number that has since been put on the DNC list is skipped. `1`–`9` pick a disposition, so a good operator never leaves the keyboard."
+      },
+      {
+        "title": "Lead lists, imported and exported in the tab",
+        "constraint": "Import and export are the product's two file-shaped features, and there is no server to hand a file to or fetch one from.",
+        "detail": "The CSV import parses the file in the tab, normalises phone numbers, de-duplicates per campaign (with an allow-duplicates switch that bumps `instanceNumber`, as the original's unique key on campaign, phone and instance does on purpose), and checks every row against the DNC list; the result dialog reports inserted, skipped, duplicate, DNC-marked and invalid rows. Reports export a real CSV from a Blob, with a byte-order mark so Excel opens the Georgian text correctly. Sample files ship in `public/samples/`."
+      }
+    ],
+    "highlights": [
+      "Four roles — operator, supervisor, admin and super admin — each with its own home screen; a wrong role is redirected rather than shown an error, admins cannot see super admins, and the Integrations page and Grant super admin are super admin only.",
+      "Every route guard is backed by a role check inside the handler, so the guard is never the only gate.",
+      "Forced disposition: no new call until the last one has an outcome, with callback and Do-Not-Call rules that move the lead's status.",
+      "Manual and auto dialling, with ratio pacing, round-robin hand-off to free agents, abandoned-call handling and error backoff.",
+      "A supervisor wall that refreshes from change events, not on a timer: agent tiles, campaign progress, a live feed, calls by hour and the auto-dialler panel.",
+      "Campaign lifecycle with validation (a draft with no agents or no pending leads will not start), real CSV lead import and a global DNC list.",
+      "Fully bilingual: 1,383 translation keys per language, English by default and `?lang=ka` for Georgian."
+    ],
+    "metrics": [
+      {
+        "label": "Roles",
+        "value": "4"
+      },
+      {
+        "label": "Routed screens",
+        "value": "14"
+      },
+      {
+        "label": "Mocked API handlers",
+        "value": "81"
+      },
+      {
+        "label": "Languages",
+        "value": "2"
+      },
+      {
+        "label": "Translation keys per language",
+        "value": "1,383"
+      },
+      {
+        "label": "Lines of source",
+        "value": "21k"
+      }
+    ],
+    "problem": "An outbound campaign is a numbers game played by people. A list of customers has to be worked in order, retried when nobody picks up, and kept away from anyone who asked not to be called. Without a dialler, an operator types digits and loses the minutes between calls; with a naive one, calls ring out to nobody or connect to a customer while every agent is busy.\n\nThe floor around the operator has the same problem. A supervisor needs to see who is on a call, who is in wrap-up and which campaign is falling behind while it is happening, and an administrator needs to change campaigns, lists and permissions without touching the phone system that carries the calls.",
+    "approach": "We treated the dialler as the product and everything else as the surface for it. Calls are originated on the PBX, the customer is placed in the campaign's queue once they answer, and the PBX rings the operator's extension, which the operator answers in the browser over SIP — so there is no desk phone and nothing to install. Queue membership follows the agent's status: working unpauses, a break pauses with a reason, offline removes.\n\nThe dialler is one in-process loop with ratio pacing per campaign, round-robin assignment, retries for no-answer and busy leads after a delay, working-hours and DNC checks, and backoff on errors. Realtime state travels over Redis and a single WebSocket, so the supervisor's wall changes when the floor does.\n\nAround it sits the rest of a contact centre: campaigns with a start, pause and stop lifecycle, lead lists that import from CSV, dispositions that decide what happens to a lead next, a global Do-Not-Call list, and an admin console whose PBX and directory settings are stored encrypted and tested from the screen.",
+    "architecture": [
+      {
+        "layer": "Front end",
+        "detail": "A React 18 and Vite SPA in TypeScript, styled with Tailwind and shadcn/ui on Radix, with TanStack Query, React Router, Recharts and react-i18next. It loads a public runtime config (API URL, WebSocket URL, WebRTC switch, SIP WSS URL and domain, ICE servers) from the back end before it renders, and uses SIP.js for the browser softphone."
+      },
+      {
+        "layer": "API",
+        "detail": "Node 20 and Fastify with Zod validation, `@fastify/jwt` and `@fastify/websocket`, and pino logging. Twelve modules — auth, users, campaigns, agents, calls, dialer, dispositions, DNC, recordings, dashboard, settings and system config — sit behind more than a hundred routes."
+      },
+      {
+        "layer": "Authentication and roles",
+        "detail": "JWT sessions with local bcrypt passwords, or an LDAP / Active Directory bind that auto-provisions the user on first sign-in. Four roles: operator, supervisor, admin and super admin."
+      },
+      {
+        "layer": "Data",
+        "detail": "PostgreSQL 16 through Prisma: 14 models covering users, agent statuses and sessions, agent state logs, campaigns and their agents and numbers, disposition codes, call records, the DNC list, system settings, encrypted system config and audit logs. Lead rows are unique on campaign, phone and instance number, which is how duplicates are kept on purpose."
+      },
+      {
+        "layer": "Realtime",
+        "detail": "Redis 7 pub/sub channels for agent state changes, PBX hangup, bridge and hold events, and campaign and call updates, fanned out to one authenticated `/ws` WebSocket. Clients receive a snapshot of agent states on connect, are subscribed by role, and ping every 30 seconds."
+      },
+      {
+        "layer": "Telephony",
+        "detail": "Asterisk / FreePBX driven over AMI with auto-reconnect: Originate, Hangup, Redirect for transfer and the Queue actions. The customer is called first and bridged to the operator's PJSIP extension once answered, and the operator answers in the browser over SIP on WSS. A built-in mock mode simulates calls when no PBX is attached."
+      },
+      {
+        "layer": "Dialler",
+        "detail": "An in-process 1-second loop with ratio pacing per campaign, round-robin agent assignment, delayed retries for no-answer and busy leads, working-hours and DNC checks, and error backoff."
+      },
+      {
+        "layer": "Integrations config",
+        "detail": "PBX and directory settings stored encrypted in the database by a super admin, overriding environment variables, each with a connection test. Deployed with Docker Compose."
+      }
+    ],
+    "results": [
+      "One workspace for the whole call: lead, history, status, dial controls and disposition, with keyboard shortcuts for the common actions.",
+      "Supervisors see the floor as it is — who is talking, for how long, and which campaign is behind — without asking anyone.",
+      "Campaigns, lead lists, users, statuses, dispositions, the DNC list and dialler pacing became admin actions rather than database edits.",
+      "PBX and directory connections are configured and tested from the console, with secrets stored encrypted and shown only as set.",
+      "One interface in Georgian and English across all three workspaces."
+    ],
+    "demoUrl": "/demos/dareke/",
+    "demoNote": "A fictional re-skin of a real product Boulder built, running with its backend cut off. The telephone network, the PBX and the softphone's audio are simulated; an in-browser mock answers the 81 API paths and a set of simulators play the network and a floor of colleagues. All data lives in memory and a reload restores the pristine seed; open it in two tabs to see the operator's calls on the supervisor's wall. The call-script pane beside the lead card is the demo's own addition. The names, companies and phone numbers are invented, and nothing leaves your browser.",
+    "sourceUrl": null,
+    "cover": "/thumbnails/dareke.webp",
+    "screenshots": [
+      {
+        "title": "Operator workspace",
+        "caption": "Lead and history on the left, the call script in the middle, dispositions on the right and the dial bar underneath. Next lead rings, connects and hangs up like the real thing.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Supervisor wall",
+        "caption": "A KPI strip, a tile per agent with a running timer, campaign progress, the live call feed, calls by hour and the auto-dialler's pacing panel.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Campaign and lead lists",
+        "caption": "The campaign lifecycle with its validation, the numbers and agents tabs, dialling-mode settings, and a CSV lead import that reports inserted, duplicate, DNC and invalid rows.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Reports and call history",
+        "caption": "Agent performance, campaign and call-detail reports with date and campaign filters, charts and a CSV export, beside a filterable call history with a detail drawer.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "Users and roles",
+        "caption": "The role matrix over four roles, with create, edit, reset password, enable and disable, and a Grant super admin action that asks for the password again.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Dialler settings and integrations",
+        "caption": "Pacing ratios, target abandon rate, wrap-up times and working hours, and for a super admin the PBX, directory and softphone cards with a Test connection button.",
+        "schematic": "ledger",
+        "src": null
+      }
+    ]
+  },
+  {
+    "slug": "chiti",
+    "name": "Chiti",
+    "tagline": "One support inbox for web chat, Messenger, Instagram, WhatsApp, Telegram and TikTok — a bot answers first, a person takes over, and four consoles run the desk behind it.",
+    "period": "2026",
+    "status": "shipped",
+    "category": "customer support",
+    "stack": [
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "Socket.IO",
+      "PostgreSQL",
+      "Prisma",
+      "React 18",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Ant Design",
+      "React Flow",
+      "i18next",
+      "TanStack Query",
+      "FastAPI (AI service)",
+      "Docker"
+    ],
+    "demoUrl": "/demos/chiti/",
+    "cover": "/thumbnails/chiti.webp",
+    "summary": "A multi-tenant customer-support platform. A chat widget embeds on a shop's own site, and Messenger, Instagram, WhatsApp, Telegram and TikTok land in the same queue beside it. A bot answers first from the shop's knowledge and hands over to a person with a briefing; the operator works the queue with an AI copilot at their elbow; admins and a read-only supervisor run the team; a platform console runs the tenants. The whole product speaks Georgian and English, and the shop's own content carries Russian too. We built it end to end — a Node API with one socket namespace per tenant, and a React front end that carries every console and the widget.",
+    "role": "Full-stack. We owned the multi-tenant data model, the channel rules and the bot-to-operator hand-over, the realtime layer, the widget, the consoles for all five roles, and the three-language content model.",
+    "problem": "A shop that sells to people in Georgia does not get questions in one place. They arrive on its website, in Messenger, on Instagram, on WhatsApp, on Telegram and on TikTok, and each of those is a separate inbox with a separate person watching it. Nobody can say how long a customer has been waiting, a conversation that moves between people loses its history on the way, and a manager has no way to see the desk without interrupting it.\n\nThe channels also disagree about what a reply is allowed to be. WhatsApp closes the free-form window after a day and then only accepts an approved template. TikTok stops accepting business messages after ten in a row. Instagram will not take a PDF and Telegram has no reactions. An agent who does not know this finds out when a message fails, and a bot that answers on a channel where it is not allowed to is worse.",
+    "approach": "One conversation model, and the rules of each channel kept in a single place that everything asks.\n\nEvery inbound message is normalised into the same shape whatever it came from, so the queue, the thread, the history and the statistics never branch on channel. The per-channel rules — reply window, message cap, which media are allowed, whether the bot may speak — live in one pure module that the operator's composer and the server's send path both read, so the screen cannot offer what the server will refuse.\n\nThe bot answers first and gives up on purpose: a customer who asks for a person, sends something it cannot read, misses twice, or arrives while the AI is down is handed over with a short briefing in the customer's own language. From there the operator has a copilot that drafts grounded replies with citations, a quick-reply library, internal notes, the customer's previous chats, and team chat. Around that sit the admin's controls — routing strategy, timers, working hours, bans, a FAQ flow editor — and a platform console that creates, disables and erases tenants.",
+    "architecture": [
+      {
+        "layer": "Widget",
+        "detail": "A separate library build of the customer chat, mounted into the host page, themed through CSS variables and scoped under an id prefix so the shop's own styles cannot reach it. A FAQ decision tree, a pre-chat form built from the tenant's custom fields, bot-first chat, typing and read receipts, an inactivity warning and a rating. On a phone the card becomes a bottom sheet."
+      },
+      {
+        "layer": "Consoles",
+        "detail": "One React single-page app carries the operator inbox, the admin and read-only supervisor console and the platform console, routed by role. Server state lives in TanStack Query, forms in React Hook Form with Zod, and the realtime events invalidate the same query keys the screens already read."
+      },
+      {
+        "layer": "API",
+        "detail": "Node and TypeScript on Express. REST mounts for auth, admin, platform, sessions, uploads, integrations, staff chat, comments, AI, push and operator, plus webhook routes that keep the raw body so every provider signature can be verified."
+      },
+      {
+        "layer": "Realtime",
+        "detail": "Socket.IO with one namespace per tenant and rooms for operators, admins, each session and each operator. Queue changes, messages, typing, read receipts, presence and settings updates all travel as typed events, so a theme saved by an admin reaches the widget on a customer's phone."
+      },
+      {
+        "layer": "Channel adapters",
+        "detail": "An adapter per channel turns a provider webhook into one normalised message and declares what the channel can do: number prefix, comments, reactions, history, templates, reply window. A conversation router ingests under a per-contact queue, finds or creates the session, stores media, starts the AI, emits to the room and auto-assigns."
+      },
+      {
+        "layer": "AI layer",
+        "detail": "A separate Python service reached through one client: an answer endpoint for the bot, a turns endpoint for copilot drafts, plus regenerate and feedback. A per-tenant circuit breaker and pause mean an outage turns into an immediate, explained hand-over to a person rather than a chat that hangs."
+      },
+      {
+        "layer": "Data",
+        "detail": "PostgreSQL through Prisma. One database for all tenants, every row carrying a tenant id and every query scoped by it. Sessions, messages, assignments, notes, feedback, custom fields, bans, templates, integrations, staff chat and a full activity log."
+      },
+      {
+        "layer": "Background work",
+        "detail": "In-process timers and sweeps: the inactivity ladder, auto-assignment, operator response timeout, logout grace, a stale-waiting sweep, presence reconciliation after a restart, system-health sampling and retention cleanup."
+      },
+      {
+        "layer": "Auth and tenancy",
+        "detail": "Tokens issued per role behind a role guard. Admins, supervisors and the platform admin share one login, and the platform console can log in as any member of a tenant. Channel feature flags decide which channels a tenant sees."
+      },
+      {
+        "layer": "Storage, push and delivery",
+        "detail": "Uploads on local disk or an S3-compatible driver, web push over VAPID with a service worker, and two ways to ship: Docker Compose (database, API, nginx-served front end) or timestamped release directories behind an atomic symlink flip with PM2 and nginx in front."
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Roles",
+        "value": "5"
+      },
+      {
+        "label": "Channels in one queue",
+        "value": "6"
+      },
+      {
+        "label": "Mocked API routes",
+        "value": "149"
+      },
+      {
+        "label": "Screens",
+        "value": "25"
+      },
+      {
+        "label": "Seeded conversations",
+        "value": "369"
+      },
+      {
+        "label": "Front-end lines",
+        "value": "34k"
+      }
+    ],
+    "results": [
+      "A customer on any of six channels lands in the same queue, in the same thread, with the same wait timer, and the operator sees the rules of that channel before they type rather than after a message fails.",
+      "A chat that leaves the bot arrives with a briefing — why it was handed over, what the customer wants — so the person who picks it up does not start by asking the question again.",
+      "An admin can watch any live chat, step into it, end it or clear the queue, and every one of those actions is in an activity log with an actor and a time.",
+      "A new shop is a row, not a deploy: the platform console creates a tenant, switches its channels on, can disable it, delete it, bring it back, or erase it for good.",
+      "The same product reads in Georgian and English, and a shop's FAQ, greetings, quick replies and field labels are stored in Georgian, English and Russian side by side."
+    ],
+    "demoNote": "A fictional re-skin of a real product we built: the original's name, identity, copy and data are gone, replaced by a made-up Georgian brand and a wine shop called Vazi as the demo tenant. The back end is replaced by an in-browser mock — seed data compiled into the bundle, 149 routes answered from memory, and scripted customers, bot, copilot and channel handshakes. The bar in the corner switches between five accounts, or open the live desk to see the widget and the operator inbox side by side. Nothing is stored: a reload restores the pristine seed, and two open tabs share one live world.",
+    "sourceUrl": null,
+    "screenshots": [
+      {
+        "title": "The widget on a shop page",
+        "caption": "A storefront with the Chiti launcher. The card walks a FAQ tree, takes a pre-chat form built from the tenant's fields, then talks to the bot until the customer asks for a person.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "The live desk",
+        "caption": "The customer's widget on one side and the operator inbox on the other: ask for a human, watch the chat appear in the queue with its briefing, claim it, reply, end it and rate it.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "The operator inbox",
+        "caption": "The queue with wait timers, a rail of six channels, the thread with its channel rules, quick replies, notes, the customer's previous chats and the AI copilot's drafts.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "Admin dashboard",
+        "caption": "Live chats, the waiting queue and who is online. An admin can spectate a chat, step in, end it, force an operator away or clear the whole queue.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "FAQ flow editor",
+        "caption": "The customer's first question as a graph: drag nodes, connect options to answers or to a person, preview in any language, and save only when every branch leads somewhere.",
+        "schematic": "fleet",
+        "src": null
+      },
+      {
+        "title": "Platform console",
+        "caption": "Tenants with their state and channels, a manage panel for members and feature flags, and a system-health page whose charts keep moving.",
+        "schematic": "fleet",
+        "src": null
+      }
+    ],
+    "highlights": [
+      "One queue for six channels. A normalised message shape means the inbox, the thread, the history and the statistics never branch on where a message came from.",
+      "The channel rulebook is code, not convention: a 24-hour WhatsApp window with a template remedy, a seven-day window on Messenger and Instagram, TikTok's ten-in-a-row cap, and where the bot may speak. One pure module answers it for the composer and for the send path.",
+      "Bot first, person second, on purpose. A request for a human, an attachment the bot cannot read, two misses or an AI outage each hand the chat over with a briefing in the customer's language.",
+      "The operator's copilot drafts grounded replies with citations, can make them shorter, warmer, formal or translate them between Georgian, English and Russian, and warns when a draft promises something worth double-checking.",
+      "Multi-tenant to the row. Every record carries a tenant id, every query is scoped by it, each tenant has its own socket namespace, and the platform console manages the lifecycle from creation to erasure.",
+      "Five roles over three consoles. The supervisor is the admin console with every write taken away, and the platform admin can log in as any member to see what they see.",
+      "Tenant content is trilingual: FAQ, greetings, quick replies, field labels and closed-hours messages are stored in Georgian, English and Russian, and the widget picks the customer's language."
+    ],
+    "stackGroups": [
+      {
+        "group": "Back end",
+        "items": [
+          "Node.js",
+          "TypeScript 5",
+          "Express 4",
+          "Socket.IO 4",
+          "Zod 3",
+          "Helmet",
+          "p-queue 9",
+          "Multer",
+          "Sharp",
+          "bcryptjs",
+          "web-push 3"
+        ]
+      },
+      {
+        "group": "Data and storage",
+        "items": [
+          "PostgreSQL",
+          "Prisma 6",
+          "AWS SDK v3 (S3-compatible uploads)",
+          "Local-disk upload driver"
+        ]
+      },
+      {
+        "group": "AI",
+        "items": [
+          "FastAPI (separate Python service)",
+          "Per-tenant circuit breaker",
+          "Retrieval-grounded answers with citations"
+        ]
+      },
+      {
+        "group": "Front end",
+        "items": [
+          "React 18",
+          "TypeScript 5",
+          "Vite 5",
+          "Tailwind CSS 3",
+          "shadcn/ui on Radix UI",
+          "Ant Design 6",
+          "TanStack Query 5",
+          "React Flow 12",
+          "React Hook Form 7 + Zod 3",
+          "React Router 6",
+          "i18next 25 (KA/EN/RU)",
+          "Recharts 2",
+          "socket.io-client 4",
+          "Vitest 2"
+        ]
+      },
+      {
+        "group": "Runtime and delivery",
+        "items": [
+          "Docker Compose",
+          "nginx",
+          "PM2",
+          "Atomic release directories",
+          "Web push (VAPID, service worker)"
+        ]
+      },
+      {
+        "group": "Demo build",
+        "items": [
+          "Vite 6",
+          "React 18",
+          "Tailwind CSS 4",
+          "@portfolio/demo-kit (mock API, store, session)",
+          "TanStack Query 5",
+          "React Router 6",
+          "i18next 24 (KA/EN)",
+          "Radix UI",
+          "Recharts 2",
+          "cmdk",
+          "Sonner",
+          "React Hook Form 7 + Zod 3",
+          "BroadcastChannel",
+          "Fontsource (Bricolage Grotesque, Instrument Sans, Noto Sans Georgian, IBM Plex Mono)"
+        ]
+      }
+    ],
+    "creative": [
+      {
+        "title": "Six channels, six rulebooks, one send path",
+        "constraint": "WhatsApp stops accepting free-form replies a day after the customer last wrote, and then accepts only an approved template. TikTok allows ten business messages in a row. Messenger and Instagram give a week. Instagram takes no PDF, Telegram has no reactions, and the bot may not speak on Telegram or TikTok at all.",
+        "detail": "`lib/channels.ts` is a pure module: `computeWindow` turns a session into an open or closed window with its closing time, its remedy (a template, on WhatsApp only), and the TikTok cap remaining. The composer reads it to disable what the channel cannot do; the engine's `sendBlocker` reads the same thing on the way out. A send into a closed window is not thrown away — it is stored as a failed message with a reason, `window_closed` or `cap_reached`, so the bubble shows what happened and offers a retry. A template is the one type allowed through a closed window, and the TikTok counter resets the moment the customer writes. The screen and the server cannot disagree because there is only one rulebook."
+      },
+      {
+        "title": "Two tabs, one world, nothing stored",
+        "constraint": "The demo may not persist anything, yet the best way to see a support desk is a customer in one tab and an operator in another, each watching the other's messages arrive.",
+        "detail": "Every event on the in-process bus carries the whole entity, and a `BroadcastChannel` mirror upserts it into the other tab's store and re-emits it locally without echoing it back. Ids minted at runtime carry a short per-tab tag, so two tabs cannot mint the same message id. The scripted customers, bot and colleagues would double if both tabs ran them, so the tabs elect the oldest as leader by heartbeat; only the leader runs the simulators, and when it closes the next tab takes over. Where `BroadcastChannel` does not exist, such as a sandboxed iframe, the demo quietly runs as one tab."
+      },
+      {
+        "title": "A clock that bends the product's timers",
+        "constraint": "The product warns an idle customer after five minutes and closes the chat after ten, returns an unanswered chat to the queue after a response timeout, and releases a logged-out operator's chats after a grace period. Nobody watches a demo for ten minutes.",
+        "detail": "One constant, `DEMO_MINUTE_MS`, makes a product minute nine seconds. The response timeout and the logout grace always run on it, and a switch on the storefront panel puts the inactivity ladder on it too, so the warning arrives after 45 s and the close after 90 s instead of five and ten minutes. The simulators tick through the kit's `every`, which pauses while the tab is hidden, so a backgrounded tab does not wake up to a pile of timeouts. A debug action in the inbox lets the visitor fire a response timeout on the spot and watch the chat fall back into the queue and exclude the operator who sat on it."
+      },
+      {
+        "title": "369 conversations, 71 of them written out",
+        "constraint": "The history, statistics and profile pages need hundreds of conversations with real transcripts, but shipping every message of every chat would swell the bundle with text nobody opens.",
+        "detail": "Seventy-one sessions carry a hand-written transcript; the other 298 are marked as summaries. On first read, `ensureTranscript` builds the thread from a pre-written script for the session's topic and language, seeded by a hash of the session id, so two tabs generate the same messages with the same ids and nothing needs to cross the mirror. The order number in the script, the greeting and the operator's nickname are filled from the session, which is why every generated chat looks like its own."
+      },
+      {
+        "title": "A flow editor without a flow library",
+        "constraint": "The original draws its FAQ tree with a graph library. The demo wanted the same feel — drag, connect, pan, zoom — without pulling a second large dependency into a bundle that already carries two chart and form stacks.",
+        "detail": "The canvas is absolutely positioned cards over an SVG layer of edges, with pointer-captured dragging for nodes and for the background, zoom buttons and a minimap. Options connect to a target by dragging a handle onto a node or by choosing from a select, so the same edit works from a keyboard. `validateFaqTree` is shared by the editor and the mock's `PUT` handler: exactly one root, every node reachable, questions have options, options have a target or a transfer flag, no empty Georgian or English text. Offending nodes get a danger outline and focus moves to the first, and a saved tree is what the widget walks on its next load."
+      },
+      {
+        "title": "The hand-over arrives with a briefing",
+        "constraint": "When the bot gives up, the person who picks the chat up should not start cold — and when an unanswered chat falls back into the queue, it must not land on the operator who just ignored it.",
+        "detail": "`handoff` records a reason out of eight (a customer request, a claim, an unsupported attachment, no answer, an open circuit, a paused bot and so on), a summary, and the customer's goal, written in the customer's own language and shown on the operator's context panel. Every claim and every return writes an assignment row with how it was assigned and why it was released, and the history page draws the chain of hands from those rows. A chat returned on timeout adds the operator to `excludedOperatorIds`, so auto-assignment and a manual claim both skip them."
+      },
+      {
+        "title": "A seed that is never stale and never closed",
+        "constraint": "The data is authored as of one Monday afternoon. Opened on another day, every timestamp would be stale, and a visitor arriving outside working hours would find the widget politely closed.",
+        "detail": "The store rebases every timestamp by the distance between a fixed anchor and now, on boot and on every reset, so the queue's wait timers and the history's 'today' are always about right. Working hours are evaluated in the tenant's own zone, Asia/Tbilisi, with `Intl` rather than the visitor's, and the demo tenant defaults to an 'open' override. The storefront panel puts the other states one click away — follow the schedule, force closed, close temporarily — and the widget flips between them live, because the panel writes the same settings the admin console does."
+      }
+    ]
+  },
+  {
+    "slug": "azri",
+    "name": "Azri",
+    "tagline": "Customer feedback by text message — a personal one-time link, three to five star-rated questions, and a result that lands in the business's console the moment it is sent.",
+    "summary": "A white-label feedback service that people reach by SMS. After a branch visit, a call or a car service, the business texts the customer a personal link; it opens a mobile-first page that checks the token, shows the campaign and its questions rated one to five on star controls, takes an optional comment, submits once and says thank you. Every business has its own monogram, colours, sender ID and copyright line, and a link that is unknown, used or expired gets its own end screen. We built the survey front end and the thin proxy, theming and delivery around it for a CRM that owned the campaigns, the tokens and the texts.",
+    "role": "Front end and delivery. The respondent microsite and its state machine, the proxy layer to the CRM's API, per-client white-labelling, and the container build that shipped it.",
+    "period": "2026",
+    "status": "shipped",
+    "category": "customer feedback",
+    "stack": [
+      "Next.js 15",
+      "React 19",
+      "Tailwind CSS 3.4",
+      "DaisyUI 4",
+      "Docker",
+      "nginx",
+      "Node.js 20"
+    ],
+    "stackGroups": [
+      {
+        "group": "Microsite",
+        "items": [
+          "Next.js 15 (App Router)",
+          "React 19",
+          "Tailwind CSS 3.4",
+          "DaisyUI 4 (one custom theme)",
+          "Noto Sans Georgian via next/font",
+          "Plain component state, no state or i18n library"
+        ]
+      },
+      {
+        "group": "Server side",
+        "items": [
+          "Next.js route handlers as a thin proxy",
+          "JSON over the CRM's REST API",
+          "One subdomain of the CRM per client"
+        ]
+      },
+      {
+        "group": "Runtime and delivery",
+        "items": [
+          "Docker multi-stage build (Node 20, then nginx)",
+          "nginx with an SPA fallback, gzip and security headers",
+          "docker-compose with a reverse proxy",
+          "Mounted TLS certificates"
+        ]
+      },
+      {
+        "group": "Demo build",
+        "items": [
+          "Vite 6",
+          "React 18",
+          "TypeScript (strict)",
+          "React Router 6",
+          "TanStack Query 5",
+          "Tailwind CSS 4",
+          "Radix UI",
+          "Framer Motion",
+          "Recharts 2",
+          "react-hook-form + zod",
+          "Fuse.js",
+          "i18next (EN / KA)",
+          "date-fns",
+          "@portfolio/demo-kit (in-browser mock API)"
+        ]
+      }
+    ],
+    "creative": [
+      {
+        "title": "A product whose front door is a text message",
+        "constraint": "The real product has no login and no landing page: the customer's identity is the token in a link, and the link arrives by SMS from a system we do not own. A demo that opens on a bare survey form would show a form; one that opens on a login screen would show something the product never had.",
+        "detail": "The demo opens on an SMS inbox. Six recipient personas each hold messages from the invented tenants, every link carries a live status, and a strip of samples reaches each end state (valid, already answered, expired, unknown, no id at all). Tapping a message follows the same `/?id=` redirect an SMS link would, with every query parameter carried across. The staff and admin accounts exist, but they sit behind a one-click switcher rather than a form whose password lives in a seed file."
+      },
+      {
+        "title": "A failure that is a 200, on purpose",
+        "constraint": "The CRM answers an unknown, spent or expired link with HTTP 200 and `{success: false, message}`, and the page decides where to go by reading the message. Rewriting that into tidy status codes would make the demo cleaner and the port dishonest.",
+        "detail": "The mock keeps the envelope exactly: a message containing \"expired\" goes to `/expired`, \"already completed\" to the answered screen, anything else to `/invalid`. Only a request that cannot even be parsed, with no `survey_id`, is a 400. The failure also carries `meta { tenantId, status }`, which is how an end screen for a link you can no longer use still wears the right business's colours."
+      },
+      {
+        "title": "Time you can move without lying",
+        "constraint": "Expiry is the whole point of a one-time link, and it only becomes visible after days. Waiting is not an option for a visitor, and patching `Date` would also move the seed data, the charts and the toasts.",
+        "detail": "Every handler that decides expiry or \"today\" reads `clock.now()`, an injected clock with an offset, never `new Date()`. The playground's +1 day and +7 days buttons move that offset and every pending token expires, in the inbox, the console and the dispatch log at once. A sweeper flips stored links every 30 seconds and on every clock change, remembers which ones it flipped, and revives only those when the clock is wound back. Links the seed already had as expired are never touched."
+      },
+      {
+        "title": "A rating you can raise but not clear",
+        "constraint": "The original star control lets you change an answer but never take it back to nothing, and the form is permissive: unrated questions go as `null` and an empty submit is accepted. A rebuilt control that is more polite than the product would be a different product.",
+        "detail": "`StarRating` is a proper radio group with a roving tab index, arrow keys, Home and End, a hover and focus preview and a pulse on the chosen star that falls back to opacity under reduced motion. Choosing the same star again does nothing, and unrated answers are sent as `null`. The only addition is a soft \"you skipped 2 questions\" hint, and a second tap on Send is ignored while the first is still in flight."
+      },
+      {
+        "title": "Five brands from one component tree",
+        "constraint": "The original is deployed once per client, with a config module, a swapped logo and a recoloured theme. In a single static bundle all of those clients have to coexist, and each has to look like its own product with no rebuild.",
+        "detail": "The validation response carries the tenant's branding (monogram, primary, text-on-primary, tint, a dark-surface variant, sender ID and copyright line) and the page re-skins itself from that payload. The same components render a bank, a telecom, a car service, a clinic and a café chain. Each primary is held to a 4.5:1 contrast against its text colour, so a tenant's brand can never make the star buttons unreadable."
+      },
+      {
+        "title": "Two tabs, one demo, nothing stored",
+        "constraint": "A reload must restore the pristine seed, so nothing may touch `localStorage` or IndexedDB. But the best way to see the product work is to answer a survey in one tab and watch the console move in another.",
+        "detail": "A `BroadcastChannel` relays live changes: an answered survey, a sent link, a delivered text, a clock change, a reset. Each receiver replays the change on its own in-memory store and re-emits it on its own event bus, so every query refetches as it would locally. Replays are idempotent (keyed by token), receivers assign their own ids because both tabs count from the same seed, a flag stops a replay from being echoed back, and a tab that opens late asks its peers for what they already hold."
+      },
+      {
+        "title": "Other customers answer, but never under your hands",
+        "constraint": "A console that never changes looks dead, and one that changes under a respondent mid-form is broken. The same live-update machinery that keeps the console fresh would, naively, bounce someone to \"already answered\" the moment their own submit invalidated the survey query.",
+        "detail": "Every 40 to 70 seconds, from a seeded random stream, a background respondent completes a pending link with a generated response: a positive skew, the odd skipped question and, three times in ten, a comment drawn from a pool for that kind of business. Persona links are never candidates, so the inbox never moves under you. The event bus turns every event into a query invalidation for every scope except `survey`, and seed timestamps are rebased to the moment the tab boots, so pending links are always a few days from expiry."
+      }
+    ],
+    "highlights": [
+      "The respondent's identity is the link: a six-character token from an alphabet with no look-alike characters, checked on every call, spent on the first submit and answered with a distinct end screen when it is unknown, used or expired.",
+      "White-label to the pixel: the tenant's monogram, colours, sender ID and copyright line arrive with the validation response, so one component tree wears five different brands.",
+      "The survey keeps the original's quirks on purpose: failures as HTTP 200 envelopes, ratings you can raise but never clear, unrated questions sent as `null`, one submit per link.",
+      "Around the survey sits a simulated CRM view: an inbox of six personas, a console with KPIs, trend, distribution and per-question averages, a fuzzy-searchable responses feed, campaign pages and the SMS dispatch log, labelled as simulated in its top bar.",
+      "An API playground built from the original's small developer test page: the three survey calls with editable JSON, the response, status and latency, and a demo clock that fast-forwards expiry.",
+      "Agent accounts are scoped by the server, not the UI: whatever branch or name a branch member's request carries, the send-SMS call is forced to their own branch and name.",
+      "Bilingual to the last string: English and Georgian are both complete, in 725 interface strings, and the seed copy, the survey questions and the SMS bodies exist in both languages."
+    ],
+    "metrics": [
+      {
+        "label": "Roles",
+        "value": "3"
+      },
+      {
+        "label": "Screens",
+        "value": "15"
+      },
+      {
+        "label": "Mocked API routes",
+        "value": "24"
+      },
+      {
+        "label": "Languages",
+        "value": "2"
+      },
+      {
+        "label": "Interface strings per language",
+        "value": "725"
+      },
+      {
+        "label": "Seeded survey links",
+        "value": "286"
+      },
+      {
+        "label": "TypeScript lines",
+        "value": "12k"
+      }
+    ],
+    "problem": "Businesses that serve people face to face, such as banks, telecoms, clinics and car services, want to know how a visit went. A form on a website is never opened, a callback survey costs a person's time, and a long questionnaire is abandoned at the first screen. What does get opened is a text message, and what gets answered is a handful of star ratings on a phone.\n\nThe constraints follow from that. The link has to be personal and single-use, or the same answer can be sent twice and a forwarded link answers for a stranger. It has to carry enough context for the page to say whose visit this is. And it has to work for several businesses at once, each of which expects the page to look like its own.",
+    "approach": "We kept the survey front end deliberately small and let the CRM own everything that was not the page. Campaigns, questions, token issuance, expiry rules, SMS dispatch and result storage all live upstream; the microsite only validates a token, fetches the questions, posts the answers and renders one of four outcomes. State is plain component state, because there is no state worth a library.\n\nThree route handlers forward JSON to the CRM and relay the status and body unchanged, which removed the browser's cross-origin problem without inventing a second API. Each client is a configuration (name, endpoints, logo, primary colour) rather than a fork. The demo takes the same idea one step further: the tenant's look travels in the validation response, so one bundle can show five businesses.",
+    "architecture": [
+      {
+        "layer": "SMS",
+        "detail": "The business's CRM sends a text containing a personal one-time link of the form `https://<host>/?id=<token>`. Dispatch, token issuance, expiry rules and result storage all live there."
+      },
+      {
+        "layer": "Microsite",
+        "detail": "Next.js 15 (App Router) on React 19, Tailwind CSS 3.4 and DaisyUI 4 with one custom theme, and Noto Sans Georgian through `next/font`. Every page is a client component and state is plain `useState`: no state library and no i18n library. About 700 lines across 24 files."
+      },
+      {
+        "layer": "Proxy layer",
+        "detail": "Three route handlers forward JSON to the CRM's REST API (validate, submit, get questions), relay the status and body unchanged, disable caching and log both sides. They were added to get around browser CORS, since the first build called the CRM directly from the browser."
+      },
+      {
+        "layer": "Upstream",
+        "detail": "The CRM's REST API, one subdomain per client. It owns campaigns, questions and survey state, and it sends the texts."
+      },
+      {
+        "layer": "Deployment",
+        "detail": "First a static export in a multi-stage Docker build (Node 20, then nginx) with mounted TLS certificates, an SPA fallback, gzip, security headers and one-year immutable caching on static assets. Route handlers cannot run in a static export, so the second version runs Next in server mode behind an nginx reverse proxy under docker-compose."
+      },
+      {
+        "layer": "Multi-tenancy",
+        "detail": "One deployment per client: a config module with the company name, API base URL and endpoint paths, a swapped logo and icon, and the theme's primary colour."
+      },
+      {
+        "layer": "The demo",
+        "detail": "The same flow as a Vite + React single-page app over an in-browser mock of the survey API: seed JSON compiled into the bundle, an in-memory store, a router that answers with the same envelopes, and a theme read from the token's tenant instead of a per-client deployment."
+      }
+    ],
+    "results": [
+      "A customer goes from a text message to a submitted answer in one tap and a handful of stars, on a phone, with no account and nothing to install.",
+      "A link answers once. A forwarded, reused or old link ends on a screen that says why, in the business's own colours.",
+      "Adding a business is configuration, not a rebuild: its name, endpoints, logo and colour.",
+      "The front end stays about 700 lines because everything stateful lives upstream where the business already manages it."
+    ],
+    "demoUrl": "/demos/azri/",
+    "demoNote": "A fictional re-skin of a real product Boulder built, running with its backend cut off. Azri, its five businesses and every address and phone number are invented. The survey is the real product's flow; the inbox, the console and the playground are our simulated CRM view around it, labelled as such, because the real campaigns, tokens and results lived in a system that is not ours to show. Everything is answered by an in-browser mock with seed data compiled into the bundle, so data lives in memory and a reload restores the pristine seed. Nothing is sent over a network, and no text message is ever delivered.",
+    "sourceUrl": null,
+    "cover": "/thumbnails/azri.webp",
+    "screenshots": [
+      {
+        "title": "The SMS inbox",
+        "caption": "The demo opens where the product does: a text message. Six personas, each with messages from the five businesses, a live status on every link and a strip that jumps to each end state.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "The survey",
+        "caption": "Opened from a link: the token is checked, the business's monogram and colours load, and three to five questions are answered on star controls. A comment is optional and submit works once.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "End screens",
+        "caption": "Already answered, expired, an unknown id and a link with no id each get their own screen, still branded for the business where the token says which one it was.",
+        "schematic": "gallery",
+        "src": null
+      },
+      {
+        "title": "Console overview",
+        "caption": "Satisfaction, average rating, response rate and responses today with deltas against the previous window, a daily trend, a one-to-five distribution and a breakdown by business or branch.",
+        "schematic": "dashboard",
+        "src": null
+      },
+      {
+        "title": "Send survey SMS",
+        "caption": "A form with a live message preview in the chosen language. A branch member is locked to their own branch and name, and about a second after sending the text lands in the persona's inbox.",
+        "schematic": "ledger",
+        "src": null
+      },
+      {
+        "title": "API playground",
+        "caption": "The three survey calls with editable request JSON, the pretty-printed response, status and latency, a list of the mocked endpoints, and a demo clock that fast-forwards seven days.",
+        "schematic": "fleet",
         "src": null
       }
     ]

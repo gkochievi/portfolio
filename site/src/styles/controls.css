@@ -1,0 +1,477 @@
+/* The two header controls — the light/dark toggle and the language switch.
+   =========================================================================
+   Cut out of header.css so BOTH the site and the Payload admin can wear
+   them. The admin imports this file directly (src/app/(payload)/layout.tsx)
+   after its own theme, and bridges the site tokens these rules read —
+   --ink, --color-accent, --color-accent-2, --color-bright, --hover-* — onto
+   its own --bd-* set. Nothing here may assume the header's layout, the page
+   surface or any section chrome; that is exactly why it is a separate file.
+
+   The art lives in ThemeToggleArt.jsx / LanguageSwitchArt.jsx, which are
+   presentational and prop-driven; the site and the admin each own their own
+   state and hand it in. One drawing, one stylesheet, two owners.
+   ========================================================================= */
+
+
+/* The toggle/language icons are still temp raster images (no real per-theme
+   SVGs found for these two in the resource folder yet), so there's still no
+   dark-mode artwork to swap to. A blunt `invert` is the honest stopgap for
+   "readable in dark mode" until real files replace these two ASSETS.* URLs. */
+/* Language switch — the original two-flag icons (coral GEO five-cross +
+   dark UK chip), redrawn as theme-aware vectors in LanguageSwitch.jsx.
+   Selection is animated instead of static: the active flag is
+   full-strength, the inactive one dims and shrinks, and the nav pills'
+   hand-drawn indigo underline slides beneath the current flag — the
+   component hands over which slot and how low that flag's ink reaches as
+   custom properties, and .language-switch__underline turns them into one
+   transform, transitioned here on the shared bouncy token.
+   Opacity + transform only, per the animation rule. */
+.language-switch {
+  /* Pulled back by its own side padding, so the gap to the sun is the same
+     INK to ink as connect's is to the sun (index.css --header-pill-inset
+     explains the whole scheme). It lives here, not on .header-right's `gap`,
+     because --lang-flag-pad is declared in THIS rule: read from the parent
+     it is undefined, the calc is invalid, and the gap silently collapses to
+     zero — which is exactly what happened on the first attempt. */
+  margin-left: calc(-1 * var(--lang-flag-pad));
+  display: block;
+  /* The track's width, each flag's side padding, and one unit of a flag's
+     own 34-wide viewBox in px. The underline is placed in those units, so it
+     lands the same distance under the same ink at every size, floors
+     included. The 1fr 1fr grid has no gap, so a flag's drawing is exactly
+     half the track minus its two paddings. */
+  --lang-track: max(64px, calc(100 * var(--u)));
+  --lang-flag-pad: max(2px, calc(3 * var(--u)));
+  --lang-unit: calc((var(--lang-track) / 2 - 2 * var(--lang-flag-pad)) / 34);
+}
+.language-switch__flags {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  /* 100 design px, scaled up from 72 on request: at 72 the jack's chip was
+     ~24px wide at 1440, smaller than the sun beside it. Floored at 64px, the
+     same 1.33x on the old 48px floor (the size below which the GEO wordmark
+     and the jack's cross stop reading as flags). */
+  width: var(--lang-track);
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.language-switch:hover .language-switch__flags {
+  transform: scale(1.08);
+}
+.language-switch:active .language-switch__flags {
+  transform: scale(0.9);
+}
+/* Both flags are the same 34x30 box and scale about its centre, which is
+   also the line both cross bars are drawn on (LanguageSwitch.jsx), so the
+   dimmed, shrunk flag stays level with the active one. */
+.language-switch__flag {
+  display: block;
+  padding: 0 var(--lang-flag-pad);
+  opacity: 0.38;
+  transform: scale(0.85);
+  transition:
+    opacity var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+    transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.language-switch__flag--on {
+  opacity: 1;
+  transform: scale(1);
+}
+.language-switch__flag svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* The GEO flag's long vertical and wordmark hang 3.6 units below the box
+     (its viewBox is shifted to level the cross bars); an inline svg clips to
+     its box by default. */
+  overflow: visible;
+}
+/* The Union Jack's line color is the opposite pole of the chip's --ink
+   fill, so light theme keeps the original navy-chip/bright-lines look and
+   dark theme inverts cleanly — no filter: invert(1), which used to turn
+   the coral Georgian flag teal. */
+.language-switch {
+  --lang-jack: var(--color-bright);
+}
+:root[data-theme='dark'] .language-switch {
+  --lang-jack: var(--color-dark);
+}
+.language-switch__underline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Across: one half-track per slot. Down: to the active flag's lowest ink
+     plus a 2.5-unit gap (~3px at 1440, 2px at the floor), so it sits as
+     close under the jack's chip as under the GEO wordmark, which hangs ~9
+     units lower. Both come from the component as custom properties and meet
+     in ONE transform, so the move is one transition, not a jump in `top`.
+     The squiggle's width is a fraction of the track, not --u, so it rides
+     the track's floor with the flags. */
+  transform: translate(
+    calc(var(--lang-slot, 0) * 100%),
+    calc((var(--lang-ink-bottom, 24.3) + 2.5) * var(--lang-unit))
+  );
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.language-switch__underline svg {
+  width: 72%;
+  height: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .language-switch__flags,
+  .language-switch__flag,
+  .language-switch__underline {
+    transition: none;
+  }
+}
+
+/* Invisible hit-area growth for the two small header controls — on phones
+   AND on any coarse-pointer device (a 768-1023px touch tablet keeps the
+   desktop header, but fingers still need the 44px floor). A tap on a
+   pseudo-element hits its originating button, so the icons render exactly
+   as designed while the padded region becomes tappable.
+   The insets are computed, not fixed, because the logo and icons now follow
+   --u down to their floors (logo 28px tall, theme 24px, flags 64px wide).
+   Each box grows by half its shortfall per axis, (100% - 44px) / 2, which
+   resolves against height for top/bottom and width for left/right, and
+   never shrinks (min with 0). Only the theme icon grows sideways (10px at
+   its floor; the flags are already wider than 44px), so the header-right
+   gap is floored at 12px to keep the two hit areas apart. */
+@media (max-width: 767px), (pointer: coarse) {
+  .language-switch,
+  .theme-toggle {
+    position: relative;
+  }
+  .logo::after,
+  .language-switch::after,
+  .theme-toggle::after {
+    content: '';
+    position: absolute;
+    inset: min(0px, calc((100% - var(--tap-target)) / 2));
+  }
+}
+
+/* Theme toggle — real vector art (components/ThemeToggle.jsx), sourced from
+   Figma via get_design_context + cross-checked against the Boulder resource
+   folder's rays.svg / sun disk.svg / sundown rays.svg. It's a literal
+   day/night icon: the disk stays put, and the rays swap from a full
+   8-ray burst (bright) to a 3-ray "sundown" crop (dark) — real brand
+   assets, not a re-drawn guess.
+
+   Since 2026-09-29 (on request: the ring sat off, and the hover was a
+   generic swell) every place, size and movement below is the Figma
+   component's own: component set "Bright/Dark/mode" (Figma
+   sNQnAJFZTsb1B0cV2zDcpP, page "Animations", node 31:702), six 165x165
+   variants, read out of the file's document data rather than eyeballed.
+   The icon box IS that 165 box (the rays' 13.2% / 12.73% inset is Figma's
+   21.786 / 21.0 of 165), so a Figma coordinate / 165 is a % of the icon. */
+
+/* THE SPRINGS. Figma stores each Smart Animate spring as mass, stiffness,
+   damping; these are the exact solutions of the two this component uses,
+   sampled every 1/48 of their stored durations into linear() curves.
+   - Quick (1, 300, 20), 744.26ms — every hover step. x(t) = 1 -
+     e^(-10t)(cos 14.14t + 0.7071 sin 14.14t): crosses 1 at 155ms, peaks
+     at 1.108 at ~217-222ms (so a 90deg leg swings to ~99.7deg), within
+     0.1% at 744ms. Worst sampling error 0.0077 (0.7deg on the swing).
+   - Bouncy retimed (1, 4267, 40), 359.33ms — the day <-> night click.
+     x(t) = 1 - e^(-20t)(cos 62.18t + 0.3216 sin 62.18t): peaks at 1.361
+     at ~50ms, settled by 359ms.
+   - The 1ms hold: every hover step is an "After delay: 1ms" that starts
+     only once the step before has finished, so a leg is 744.26 + 1ms.
+   Declared on the button, not in index.css's :root, because the admin
+   reads this block (controls.css) without the site's tokens; ThemeToggle.jsx
+   reads them back from here, so CSS and JS cannot disagree. A browser
+   without linear() keeps the cubic-bezier defaults (an overshooting ease;
+   a var() holding an unknown function would instead void the whole
+   transition shorthand and make the switch instant). */
+.theme-toggle {
+  --theme-toggle-leg: 744.26ms;
+  --theme-toggle-hold: 1ms;
+  --theme-toggle-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --theme-toggle-morph: 359.33ms;
+  --theme-toggle-morph-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@supports (transition-timing-function: linear(0, 1)) {
+  .theme-toggle {
+    --theme-toggle-spring: linear(0, 0.0324, 0.1158, 0.2315, 0.3637, 0.4999, 0.6306, 0.7492, 0.8517, 0.9359, 1.0017, 1.0498, 1.082, 1.1006, 1.108, 1.1068, 1.0993, 1.0877, 1.0738, 1.059, 1.0446, 1.0312, 1.0195, 1.0097, 1.0019, 0.9961, 0.9921, 0.9896, 0.9884, 0.9883, 0.9889, 0.99, 0.9915, 0.9931, 0.9947, 0.9962, 0.9975, 0.9986, 0.9995, 1.0002, 1.0007, 1.0011, 1.0012, 1.0013, 1.0012, 1.0011, 1.001, 1.0008, 1);
+    --theme-toggle-morph-spring: linear(0, 0.1064, 0.3662, 0.6872, 0.9885, 1.2142, 1.3381, 1.3614, 1.3055, 1.2022, 1.0846, 0.9804, 0.9071, 0.8715, 0.8712, 0.8971, 0.9371, 0.9795, 1.0151, 1.0384, 1.0479, 1.0452, 1.0341, 1.0189, 1.0039, 0.9919, 0.9847, 0.9824, 0.9843, 0.9889, 0.9945, 0.9998, 1.0038, 1.0059, 1.0063, 1.0054, 1.0035, 1.0015, 0.9996, 0.9984, 0.9977, 0.9977, 0.9982, 0.9989, 0.9996, 1.0003, 1.0007, 1.0008, 1);
+  }
+}
+
+.theme-toggle__icon {
+  position: relative;
+  /* Block, not inline-block: as an inline box it sat on the button's text
+     baseline, and the line's descender strut made the button ~7px taller
+     than the icon with the sun pinned to its top — 3.5px above the row's
+     centre that the logo, the nav words and the flags all share (measured
+     at 1440x1024: icon 30-66.8 inside a 30-73.8 button). */
+  display: block;
+  /* 40 design px on a floor that keeps the rays drawable — index.css. */
+  width: var(--theme-icon-size);
+  height: var(--theme-icon-size);
+  transition: transform var(--hover-duration-quick) var(--hover-easing-quick);
+}
+/* The press still reads: the whole icon dips while the button is held.
+   (Hover used to swell it to 1.12 here too; that was a generic stand-in,
+   and Figma's hover has no scale at all — see HOVER below.) The dip is on
+   the icon box, the hover and the morph on the layers inside it, so the
+   three never write the same property of the same element. */
+.theme-toggle:active .theme-toggle__icon {
+  transform: scale(0.9);
+}
+.theme-toggle__rays,
+.theme-toggle__night,
+.theme-toggle__disk {
+  position: absolute;
+}
+/* THE SUN'S TWO LAYERS ARE HTML BOXES (2026-10-02, from an iPhone: "sun
+   icon almost fixed, make it place center"). The rays and the disk are each
+   an <svg> inside a <span> that carries their box, their transform and its
+   origin. The transforms used to sit on the <svg> elements themselves: every
+   desktop engine and Playwright's WebKit centred the disk to 0.2px, but on a
+   real iPhone the scaled disk landed up and to the left of the rays — a
+   transform-origin on an outer <svg> is resolved by the SVG engine there, not
+   as the CSS box's centre. A span's transform-origin means one thing in every
+   engine, so the geometry below is unchanged and simply moved onto it. */
+.theme-toggle__art {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* THE PLACES. Rays: Figma's "Swatch Info Layer" 31:688, x 21.786 y 21.784,
+   122.214 x 122.207 of 165 — the inset below, unchanged since v2.
+
+   THE DISK (on request: "the ring sits low-left and is too big for the
+   rays"). The Figma component has the disk's box centred on the rays' (to
+   0.2 of 165) at 42.12% x 43.27% of the rays box, and that is what its
+   inset always was (34.39% 34.03% 33.56% 34.77%). Two things made it read
+   wrong on screen, both measured:
+   1. PIXEL SNAPPING. The ring and the rays are two <svg>s, and Chrome snaps
+      each <svg>'s box to whole pixels on its own. In a box of its own the
+      ring's 10.09 x 10.37px (1440x900) was drawn 10 x 11 — 6% taller than
+      designed — and 0.16px lower than the rays, by an amount and in a
+      direction that change with the header's sub-pixel position, i.e. with
+      the window width. So the ring's <svg> has the RAYS' box exactly (same
+      inset, so the same snapped rect) and is put in place inside it by a
+      static transform, which is not snapped: the two can no longer drift
+      apart. It also settles the ring's non-square viewBox (82.47 x 84.72):
+      in the square box `meet` centres the path, whose ink fills its viewBox
+      (getBBox 0.002, 0.001, 82.473 x 84.720), so before the transform the
+      ring's ink is centred on the rays' box to 0.001%.
+   2. THE DRAWING. Box-centred, the ring still sat low-left: it is a
+      hand-drawn oval leaning NE-SW with its heavy stroke at the lower left,
+      so its ink's centre of mass was 1.1% of the icon left of and below the
+      rays' centre, and its lower-left bulge came within 2.9% of the icon
+      (0.94px at the 32px floor) of the SW ray while the SE ray stood 6.0%
+      away. So the ring is placed by its INK against the rays' INK: at
+      Figma's own size (scale 0.4327 = 43.27% of the rays box), the
+      position that makes the NEAREST ray as far away as it can be (a
+      max-min search over all eight rays' outlines rendered at 2400px a
+      side): 0.67% of the icon right and 0.29% up of Figma's box, i.e.
+      translate(1.087%, -0.149%) of this box (74.07% of the icon). The
+      tightest gaps are then NE and SW, level at 3.63% of the icon (1.2px at
+      32px, was 0.94), and the rest N 4.8 / S 5.0 / E 4.5 / W 6.2 / SE 5.7 /
+      NW 4.9 — they cannot all be equal, the ring is not round. (Shrinking
+      it 8% would open the tightest to 5.0%; the design's size was kept.)
+   All in %, so it holds at every header size (40 design px, 32px floor)
+   and in both languages (Georgian swaps the nav words, not this).
+
+   NIGHT: Figma draws the night art at x 22-144, y 41-106.145 of 165. The
+   exported path's ink sits at x 42-164, y 616-681.145 of its viewBox
+   (38 612 130 73.15) — the same 122 x 65.145, one unit per Figma unit — so
+   the viewBox maps onto x 18-148, y 37-110.15 of the icon: the inset
+   below, exact. (It was 30% 8% 26% 8%, "not critical" by its comment:
+   that drew the art 6% too big and 8% of the icon, ~3px, too low.) */
+.theme-toggle__rays--sun {
+  inset: 13.2% 12.73% 12.73% 13.2%;
+  transform-origin: center;
+}
+/* The disk's box is given as top/left + width/height, NOT the rays' four
+   insets: an absolutely positioned <svg> with all four insets takes its
+   width from them and its HEIGHT from its viewBox's ratio, ignoring the
+   bottom inset — so with the ring's 82.47:84.72 viewBox the "same" box came
+   out 23.97 x 24.62px against the rays' 23.97 square (measured), the ring
+   2.7% too big and 0.3px low. The rays' box is square, so their insets are
+   safe; these are the same edges (13.2% + 74.07% = 87.27%, the rays'
+   12.73% from the far side). */
+.theme-toggle__disk {
+  top: 13.2%;
+  left: 13.2%;
+  width: 74.07%;
+  height: 74.07%;
+  transform-origin: center;
+  transform: translate(1.087%, -0.149%) scale(0.4327);
+}
+.theme-toggle__night {
+  inset: 22.424% 10.303% 33.242% 10.909%;
+  opacity: 0;
+}
+
+/* THE CLICK: day <-> night, Figma's Smart Animate on the Bouncy spring,
+   359.33ms. Smart Animate pairs same-named layers in order: the sun's rays
+   frame with the night's horizon frame (the bump and the ground line), and
+   the sun's disk with the night's three short rays. A path cannot morph
+   into another path with transform and opacity alone, so each layer
+   travels, squashed or stretched, onto its partner's box while the two
+   cross-fade, on the same spring — which is what the prototype shows: the
+   ring of rays flattens into the horizon, the disk into the rays, and the
+   ink turns coral as they cross. The hidden face waits on its partner's
+   box; nothing but transform and opacity moves. The spring overshoots
+   36% at ~50ms, so a squash briefly passes through flat and the fading
+   face ghosts back a little (13% at ~100ms) — both are in Figma's own
+   frames of the click.
+   Sun rays -> horizon box: centre moves (0.107, 8.004) of 165 = (0.0876%,
+   6.5496%) of the rays box; size 122 x 30.506 of 122.214 x 122.207.
+   Disk -> night rays box (x 38, y 41, 90.241 x 38.875): its centre moves
+   from the placed ring's (84.22, 82.71) to (83.12, 60.44), i.e. to
+   (0.1862%, -18.371%) of the rays box from the box's centre; the ring's
+   ink (118.96 x 122.207 in the box, before scaling) scales to 90.241 x
+   38.875. The night paths are transformed in their own viewBox's units
+   (transform-box: view-box; one unit = one Figma unit, and the viewBox
+   origin is the user-space origin, so the origins are user coordinates):
+   the rays (paths 1-3, frame centre (103.12, 635.44) in the viewBox)
+   wait on the disk, the horizon (paths 4-5, centre (103, 665.89)) waits
+   on the rays ring. The night paths are picked by position because the
+   admin draws the same art from ThemeToggleArt.jsx; a class in one copy
+   only would leave the two sheets styling different trees. */
+.theme-toggle__rays--sun,
+.theme-toggle__disk,
+.theme-toggle__night {
+  transition:
+    transform var(--theme-toggle-morph) var(--theme-toggle-morph-spring),
+    opacity var(--theme-toggle-morph) var(--theme-toggle-morph-spring);
+}
+.theme-toggle__night > path {
+  transform-box: view-box;
+  transition: transform var(--theme-toggle-morph) var(--theme-toggle-morph-spring);
+}
+.theme-toggle__night > path:nth-child(-n + 3) {
+  transform-origin: 103.1205px 635.4375px;
+  transform: translate(1.0995px, 22.2685px) scale(0.57048, 1.36036);
+}
+.theme-toggle__night > path:nth-child(n + 4) {
+  transform-origin: 103px 665.892px;
+  transform: translate(-0.107px, -8.004px) scale(1.00175, 4.00601);
+}
+:root[data-theme='dark'] .theme-toggle__rays--sun {
+  opacity: 0;
+  transform: translate(0.0876%, 6.5496%) scale(0.99825, 0.24963);
+}
+/* The night asset already includes its own disk/bump shape, so the
+   always-ink day disk hides rather than doubling up behind it — on its way
+   into the night rays' box. */
+:root[data-theme='dark'] .theme-toggle__disk {
+  opacity: 0;
+  transform: translate(0.1862%, -18.371%) scale(0.75858, 0.31811);
+}
+:root[data-theme='dark'] .theme-toggle__night {
+  opacity: 1;
+}
+:root[data-theme='dark'] .theme-toggle__night > path {
+  transform: none;
+}
+
+/* HOVER — Figma's state machine, every step on the Quick spring:
+   - DAY: Default --mouse enter--> "rotate" (the rays frame turned 90deg
+     counter-clockwise about its own centre; the disk never moves) --1ms-->
+     "Final" (rays back at 0deg) --1ms--> "rotate" ... for as long as the
+     pointer stays: a springy rock, not a spin (the rays are 45deg apart,
+     so each swing lands on an identical sun). Figma's +90deg is
+     counter-clockwise; CSS turns clockwise, hence -90deg.
+   - NIGHT: "Night mode default" --mouse enter--> "Night mode rotate" (the
+     three short rays are absent: the sun has gone down; the horizon and the
+     ground line stay) --1ms--> "Night mode hovering default" (rays back)
+     --1ms--> ... The rays fade in place, nothing moves.
+   - Mouse leave: back to the default on the same spring, from wherever the
+     leg had got to. A removed CSS animation does not transition — it snaps
+     (measured: -51deg one frame, 0 the next) — so ThemeToggle.jsx hands the
+     value to a Web Animation on the same property (the admin's copy,
+     ThemeToggleArt, has no script and snaps).
+   One leg per keyframe interval, so every leg gets the spring on its own
+   (the timing function applies to each interval): `alternate` would play
+   the return leg's spring backwards, the settling tail first and the
+   overshoot last, where Figma's return is a fresh spring that overshoots
+   past 0deg (~+9.7deg ~220ms in; -9.5deg on the prototype, its sign
+   convention). The 1ms holds are the two short constant intervals:
+   744.26 / 1490.52 = 49.9329%.
+   The turn is the individual `rotate` property, not `transform`, because
+   `transform` on these same layers is the click morph's: the two compose
+   instead of the loop replacing the morph (and a click mid-swing can bring
+   the rays home on the click's spring while they squash). The night rays
+   blink on the paths themselves, whose `opacity` nothing else touches (the
+   morph fades their <svg>). */
+.theme-toggle__rays--sun,
+.theme-toggle__night > path:nth-child(-n + 3) {
+  animation-duration: calc(2 * (var(--theme-toggle-leg) + var(--theme-toggle-hold)));
+  animation-timing-function: var(--theme-toggle-spring);
+  animation-iteration-count: infinite;
+}
+@keyframes theme-toggle-rays-rock {
+  0% {
+    rotate: 0deg;
+  }
+  49.9329%,
+  50% {
+    rotate: -90deg;
+  }
+  99.9329%,
+  100% {
+    rotate: 0deg;
+  }
+}
+@keyframes theme-toggle-rays-blink {
+  0% {
+    opacity: 1;
+  }
+  49.9329%,
+  50% {
+    opacity: 0;
+  }
+  99.9329%,
+  100% {
+    opacity: 1;
+  }
+}
+/* A real pointer only: on a touch screen :hover sticks after a tap, and a
+   sun left rocking under a lifted finger is not a hover. Reduced motion
+   gets no loop at all (gated here rather than killed later, so no later
+   rule has to outrank these selectors). `[data-morph]` is set by
+   ThemeToggle.jsx for the 359ms of a click: the new face's loop starts
+   once the morph has landed, as in the prototype, not on top of it. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :root:not([data-theme='dark']) .theme-toggle:not([data-morph]):hover .theme-toggle__rays--sun {
+    animation-name: theme-toggle-rays-rock;
+  }
+  :root[data-theme='dark'] .theme-toggle:not([data-morph]):hover .theme-toggle__night > path:nth-child(-n + 3) {
+    animation-name: theme-toggle-rays-blink;
+  }
+}
+/* The keyboard gets the same motion on the same terms. */
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-theme='dark']) .theme-toggle:not([data-morph]):focus-visible .theme-toggle__rays--sun {
+    animation-name: theme-toggle-rays-rock;
+  }
+  :root[data-theme='dark'] .theme-toggle:not([data-morph]):focus-visible .theme-toggle__night > path:nth-child(-n + 3) {
+    animation-name: theme-toggle-rays-blink;
+  }
+}
+
+/* Reduced motion, for the admin (it does not load motion.css, where the
+   site's copy of these rules lives). After the base rules above, which is
+   all a same-specificity override needs: no loop (gated at the source
+   above), the day <-> night swap is instant, and so is the press dip. */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle__icon,
+  .theme-toggle__rays--sun,
+  .theme-toggle__disk,
+  .theme-toggle__night,
+  .theme-toggle__night > path {
+    transition: none;
+  }
+}

@@ -1,0 +1,737 @@
+/* ==========================================================================
+   Footer — boulder.ge styles/footer.css, ported as is (Footer.tsx). The
+   navy slab, the bracket voice, the coral swatch behind every link and
+   the BOULDER stamp cut off by the slab's bottom edge.
+   ========================================================================== */
+.site-footer {
+  --footer-slab: var(--color-dark);
+  --footer-text: var(--color-bright);
+  --footer-email: var(--color-accent);
+  --footer-bracket: color-mix(in srgb, var(--color-accent-2) 65%, var(--color-bright));
+  --footer-squiggle: var(--footer-bracket);
+  --footer-on-marker: var(--color-dark);
+  /* Container for the stamp's width (cqi), measured on the content box, so
+     the stamp spans exactly the columns' width. */
+  container-type: inline-size;
+  position: relative;
+  /* Taller than Chrome's snap proximity range (a third of the scrollport)
+     at any window shape, so the page's bottom is never within snapping
+     distance of Connect's top (see "Not a snap target" above). lvh, not
+     the site's usual svh: a phone's scrollport grows to the large viewport
+     when its toolbar slides away, and a third of THAT must still fit.
+     Any extra room opens above the stamp (the base row's auto margin), so
+     the stamp still sinks into the slab's bottom edge. */
+  min-height: 35lvh;
+  display: flex;
+  flex-direction: column;
+  /* The stamp is cut by the slab's bottom edge; clip, not hidden, so the
+     footer never becomes a scroll container a focus() could shift. */
+  overflow: clip;
+  padding-top: max(var(--space-xl), calc(80 * var(--u)));
+  padding-left: max(var(--content-inset), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--content-inset), env(safe-area-inset-right, 0px));
+  background: var(--footer-slab);
+  color: var(--footer-text);
+  font-family: var(--font-body);
+}
+/* DARK IN BOTH THEMES (on request, 2026-09-26: "on dark mode footer's color
+   is light, lets keep it dark on dark mode too"). The dark theme used to
+   invert the slab — lavender, with navy text and a navy email — which put
+   a light block under the dark page. Now there is no dark-theme palette:
+   the footer is the navy slab with lavender text and the coral email in
+   both, the pair it has always had on the light page. */
+
+/* ---- top row: the sign-off and the contact ------------------------------ */
+.site-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md) var(--space-lg);
+}
+.site-footer__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  /* 2026-10-05: the type system — the sign-off is a heading (--fs-heading),
+     no longer the section-title size, at every width. */
+  font-size: var(--fs-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: -0.02em;
+}
+/* Bracketed, indigo and in the display face, like SectionTitle's line.
+   Set a clear 0.3em below rather than tucked into the title's descenders
+   (page.css does that per language); Georgian letters hang lower, and one
+   gap that clears both is simpler than two. */
+.site-footer__sub {
+  margin: 0.3em 0 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  color: var(--footer-bracket);
+}
+.site-footer__contact {
+  /* Georgian's sign-off runs ~612px at 1440 against English's ~450, and a
+     long email can do the same: when the pair doesn't fit one line the
+     contact wraps under the sign-off, and the auto margin keeps it on the
+     right edge its right-aligned lines were set for, instead of stranding a
+     right-aligned email and phone at the left. */
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: max(4px, calc(10 * var(--u)));
+}
+
+/* ---- links ---------------------------------------------------------------
+   Every footer link is the nav pill's gesture: the coral HoverMarker swatch
+   grows in from the left behind the label (hero-cta's scaleX, not the
+   pill's plain fade, because these labels are left-aligned text in a list
+   and a swatch growing along the word reads as a highlighter pass). The
+   label goes navy over it. Keyboard focus shows the same swatch plus a
+   ring, since the swatch alone doesn't say "focus" to someone who never
+   hovers. */
+/* TOUCH HIT AREA (2026-09-20, the responsive pass). A finger needs 44px and
+   this control is drawn smaller; the box stays exactly as designed and an
+   absolutely positioned pseudo grows only what the finger has to find. The
+   header does the same for the logo, the flags and the sun (header.css), and
+   `min(0px, ...)` means a control already 44px or taller gets nothing. */
+@media (pointer: coarse) {
+  .site-footer__link::after {
+    content: '';
+    position: absolute;
+    inset: min(0px, calc((100% - var(--tap-target)) / 2)) 0;
+  }
+}
+.site-footer__link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  /* 2026-10-05: the type system. The email and the phone numbers are
+     --fs-title (this base); the link lists and "back to top" step down to
+     --fs-small below. */
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  text-align: left;
+  color: inherit;
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.site-footer__link:active {
+  transform: translateY(2px);
+}
+.site-footer__link:focus-visible {
+  outline: 2px solid var(--footer-text);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+/* The swatch's padding is pulled back by the same amount, so the word sits
+   where it would without it and list items stay aligned to the column. */
+.site-footer__label-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 0.12em 0.3em;
+  margin: -0.12em -0.3em;
+}
+.site-footer__marker {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scaleX(0.6);
+  transform-origin: left center;
+  pointer-events: none;
+  transition:
+    opacity var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+    transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.site-footer__marker svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.site-footer__label {
+  position: relative;
+  transition: color var(--hover-duration-quick) var(--hover-easing-quick);
+}
+.site-footer__link:hover .site-footer__marker,
+.site-footer__link:focus-visible .site-footer__marker {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.site-footer__link:hover .site-footer__label,
+.site-footer__link:focus-visible .site-footer__label {
+  color: var(--footer-on-marker);
+}
+
+/* The email is the footer's call to action: coral on the navy slab, with
+   the nav's squiggle drawn under it at rest. 2026-10-05: the type system
+   sets it at the base link's --fs-title, like the phone numbers; its colour
+   and squiggle are what make it the call to action now, not its size. */
+.site-footer__email {
+  align-items: flex-end;
+  color: var(--footer-email);
+  /* A long address must break rather than push the slab wider than the
+     phone. */
+  overflow-wrap: anywhere;
+}
+.site-footer__squiggle {
+  width: 62%;
+  height: auto;
+  margin-top: 0.08em;
+}
+/* NavUnderline paints its path with a fill ATTRIBUTE; a CSS fill outranks a
+   presentation attribute, so the footer can recolour it per theme without a
+   prop. */
+.site-footer__squiggle path {
+  fill: var(--footer-squiggle);
+}
+
+/* ---- phone numbers -------------------------------------------------------
+   Every number in the contact details, one per line (on request,
+   2026-09-28: "we should be able to add in footer several mobile numbers
+   as contact info"), each a tel: link in the phone line's old dress — the
+   link size, the swatch behind the number — with an optional label in
+   front of it in the footer's bracket voice: the headings' lifted indigo,
+   lowercase like the lists, so "[office] +995 …".
+
+   ONE GRID OF TWO COLUMNS, labels and numbers, that every row shares
+   (subgrid through the <li> and the link), so the numbers start on one
+   vertical whatever the labels say, and each label ends against its
+   number. The space between the two is the LABEL's margin, not a column
+   gap: with no label anywhere the first column is empty and takes no width
+   at all, so a lone unlabelled number sits exactly where the single phone
+   line always sat, flush under the email, and a labelled list only indents
+   the rows that need it. The label column is `auto`, so a long label wraps
+   at its words before anything overflows a 360px phone; a number never
+   wraps. The rows keep the touch rule's 44px height below (a finger needs
+   it per number, and the ::after pads must not overlap between rows);
+   `align-content` centres each row's one line in it. */
+.site-footer__phones {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: max(2px, calc(4 * var(--u)));
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-footer__phones > li {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+/* Two classes, to outrank the one-class .site-footer__link alignments
+   below (the column-flex link's, written for the email's squiggle). */
+.site-footer__phones .site-footer__phone {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-content: center;
+  align-items: baseline;
+}
+.site-footer__phone-tag {
+  grid-column: 1;
+  justify-self: end;
+  margin-right: 0.45em;
+  /* 2026-10-05: the type system — a label is --fs-small beside the
+     --fs-title number (the row aligns them on the baseline). */
+  font-size: var(--fs-small);
+  text-align: right;
+  text-transform: lowercase;
+  color: var(--footer-bracket);
+}
+/* `start`, not the grid's default stretch: stretched, a shorter number's
+   box took the column's full width, so its swatch ran past its last digit
+   and, on the centred phone footer, the digits were centred in it and
+   stopped sharing the column's left edge. */
+.site-footer__phones .site-footer__label-wrap {
+  grid-column: 2;
+  justify-self: start;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* ---- the three columns -------------------------------------------------- */
+.site-footer__grid {
+  display: grid;
+  /* Two, not three: the "[drop by]" address column was removed on request
+     (2026-09-21) and the footer's own note about it went with it. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg) var(--space-md);
+  margin-top: max(var(--space-lg), calc(64 * var(--u)));
+}
+.site-footer__heading {
+  margin: 0 0 max(8px, calc(18 * var(--u)));
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  /* 2026-10-05: the type system — a list heading is a label, --fs-small. */
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--footer-bracket);
+}
+.site-footer__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: max(6px, calc(12 * var(--u)));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Lowercase like every display word on the site (the nav's are lowercase in
+   header.css the same way). The networks' own capitals stay in the data.
+   2026-10-05: the type system — the lists, like "back to top" below, are
+   --fs-small bold. */
+.site-footer__list .site-footer__link {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  text-transform: lowercase;
+}
+
+/* ---- base row ----------------------------------------------------------- */
+.site-footer__base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-md);
+  margin-top: max(var(--space-lg), calc(56 * var(--u)));
+  margin-bottom: auto;
+}
+.site-footer__legal {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-regular);
+  /* 2026-10-05: the type system — the legal line is --fs-micro, at every
+     width (it was a per-width 12u / 12px floor). */
+  font-size: var(--fs-micro);
+  line-height: var(--lh-small);
+}
+.site-footer__back {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  flex-direction: row;
+  align-items: center;
+  gap: 0.35em;
+  text-transform: lowercase;
+}
+.site-footer__arrow {
+  flex: none;
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.site-footer__back:hover .site-footer__arrow,
+.site-footer__back:focus-visible .site-footer__arrow {
+  transform: translateY(-0.18em);
+}
+
+/* ---- the stamp -----------------------------------------------------------
+   The hero's BOULDER (hero.css .hero-headline__boulder): the display face's
+   heaviest cut in indigo with a coral copy printed over it, 0.0156em right
+   and 0.0622em up. Here it is as wide as the columns: Montserrat Alternates
+   900 "BOULDER" measures 5.16em with this tracking, so 100cqi / 5.16 fills
+   the content box (cqi is the footer's content width, not the window's, so
+   a classic scrollbar can't push it past the inset). The line box is
+   shorter than the letters and the negative bottom margin sinks their feet
+   below the slab's clipped edge: the rock above rests on the ground, the
+   name sinks into it. Decorative, so both colours are the pure brand ones
+   whatever the contrast. */
+.site-footer__sign {
+  position: relative;
+  margin: max(var(--space-md), calc(36 * var(--u))) 0 -0.2em;
+  font-family: var(--font-brand);
+  font-weight: var(--fw-black);
+  /* GEOMETRY, not a type step (kept 2026-10-05): on phones the sign is
+     exactly as wide as the content, so its size is a width. From 768 up the
+     compact footer sets it in --fs-display-xl (below). */
+  font-size: calc(100cqi / 5.16);
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--color-accent-2);
+  pointer-events: none;
+  user-select: none;
+}
+.site-footer__sign::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  transform: translate(0.0156em, -0.0622em);
+  color: var(--color-accent);
+}
+
+/* ---- tablet and phones: the contact stacks under the sign-off ------------
+   Below 1024 the pair only fits side by side in English, and only on the
+   wider half of the range, so it stacks at every width rather than jumping
+   between one row and two as the window or the language changes. */
+@media (max-width: 1023px) {
+  .site-footer__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-footer__contact {
+    margin-left: 0;
+    align-items: flex-start;
+  }
+  .site-footer__email {
+    align-items: flex-start;
+  }
+}
+
+/* ---- phones ----------------------------------------------------------------
+   The lead and the contact already stack (above); then explore and follow side by
+   side (both short lists) with the address across the full width under
+   them, then the legal line over "back to top". */
+/* SMALLER ON A PHONE (on request, 2026-09-21: "make footer smaller, it
+   should not fill one page"). It was 664px of an 844px screen — 79% — and
+   almost all of that was the two link lists: eight links, each a 44px tap
+   row, stacked in two columns.
+   The lists lie down instead. Four words wrap across the screen's width in
+   one or two rows rather than four, which is what a phone footer usually
+   does anyway, and it costs nothing in reach: the 44px hit area is drawn by
+   the ::after above, not by the box. The grid drops to one column because a
+   lying-down list wants the full width. */
+@media (max-width: 767px) {
+  .site-footer {
+    padding-top: var(--space-md);
+  }
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'explore'
+      'follow';
+    row-gap: var(--space-sm);
+    margin-top: var(--space-sm);
+  }
+  .site-footer__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: var(--space-md);
+    row-gap: 0;
+  }
+  /* The sign-off and the contact lines sit closer together too: the same
+     band is carrying less now, and --space-md between four short lines was
+     most of what was left above the links. */
+  .site-footer__top {
+    gap: var(--space-sm) var(--space-md);
+  }
+  .site-footer__base {
+    margin-top: var(--space-sm);
+  }
+  .site-footer__col--explore {
+    grid-area: explore;
+  }
+  .site-footer__col--follow {
+    grid-area: follow;
+  }
+  .site-footer__base {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  /* TYPE used to be stepped down here too (on request, 2026-09-21: "make
+     footer smaller in phone version it must not fill a page"). Since
+     2026-10-05 the base rules carry the type system's tokens, which are
+     already their phone sizes at this width, so only the spacing is left. */
+  .site-footer__contact {
+    gap: max(2px, calc(6 * var(--u)));
+  }
+  .site-footer__heading {
+    margin-bottom: max(6px, calc(10 * var(--u)));
+  }
+}
+
+/* Touch: every link gets the 44px tap box (--tap-target) without changing
+   how it looks; the label stays centred in it. */
+@media (max-width: 767px), (pointer: coarse) {
+  .site-footer__list .site-footer__link,
+  .site-footer__phone,
+  .site-footer__back {
+    min-height: var(--tap-target);
+    justify-content: center;
+  }
+  /* row-gap, not the `gap` shorthand: the 44px tap rows need no space
+     between them, but on a phone this list lies down (above) and a
+     shorthand here reset its column-gap too — the four words ran together
+     as "teamworksstoriesconnect". */
+  .site-footer__list {
+    row-gap: 0;
+  }
+}
+
+/* Reduced motion: the swatch, the label colour and the arrow simply arrive;
+   presses don't move. These rules only compete with the base rules above,
+   in this same sheet, so they need not live in motion.css. */
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__link,
+  .site-footer__marker,
+  .site-footer__label,
+  .site-footer__arrow {
+    transition: none;
+  }
+  .site-footer__link:active,
+  .site-footer__back:hover .site-footer__arrow,
+  .site-footer__back:focus-visible .site-footer__arrow {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Compact footer (on request: "scale down footer in size nicely", and
+   "combine connect section and footer so they are visible together").
+   The footer is one band at the foot of Connect's screen now: Connect is
+   sized to the room left above it (connect.css, from --footer-h, which
+   Footer.jsx publishes), so the two fill the window together.
+
+   That also retires the snap-trap guard above (min-height: 35lvh) on these
+   widths: the page's bottom is no longer a separate place near Connect's
+   snap position — it IS that position, because Connect + footer = one
+   window. Phones keep the guard and the stacked footer (the form there is a
+   tall card, so the two cannot share a screen anyway).
+   ========================================================================== */
+@media (min-width: 768px) {
+  .site-footer {
+    min-height: 0;
+    padding-top: max(20px, calc(36 * var(--u)));
+  }
+  /* The type sizes this block used to step down (34u sign-off, 16u line,
+     15u links, 22u email, 12u legal) are the base rules' tokens since
+     2026-10-05. */
+  .site-footer__contact {
+    gap: max(2px, calc(6 * var(--u)));
+  }
+  .site-footer__grid {
+    gap: var(--space-sm) var(--space-md);
+    margin-top: max(16px, calc(28 * var(--u)));
+  }
+  .site-footer__heading {
+    margin-bottom: max(6px, calc(10 * var(--u)));
+  }
+  .site-footer__list {
+    gap: max(3px, calc(7 * var(--u)));
+  }
+  .site-footer__base {
+    margin-top: max(14px, calc(24 * var(--u)));
+  }
+  /* The stamp: a signature under the band, not a wall. 2026-10-05: the
+     type system's --fs-display-xl, the size made for it — it follows the
+     width and is capped by --u, which follows the height, so a short, wide
+     window (1280 x 720) still doesn't give it the room Connect's form needs
+     (~70px there, ~101 at 1440 x 1024; it was min(100cqi / 11, 10svh)). */
+  .site-footer__sign {
+    margin-top: max(10px, calc(18 * var(--u)));
+    font-size: var(--fs-display-xl);
+  }
+}
+
+/* Wide windows: one band — the sign-off and the contact on the left, the
+   three columns on the right — then the legal line and the stamp across. */
+@media (min-width: 1024px) {
+  .site-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    column-gap: max(24px, calc(64 * var(--u)));
+    align-content: start;
+  }
+  .site-footer__top {
+    grid-column: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: max(10px, calc(18 * var(--u)));
+  }
+  .site-footer__contact {
+    margin-left: 0;
+    align-items: flex-start;
+  }
+  .site-footer__email {
+    align-items: flex-start;
+  }
+  .site-footer__grid {
+    grid-column: 2;
+    margin-top: 0;
+  }
+  .site-footer__base,
+  .site-footer__sign {
+    grid-column: 1 / -1;
+  }
+  /* Both link lists lie down, one row each, stacked in the band's right-hand
+     column: explore (team, works, services, stories, connect — the header's
+     order) over follow us. On request, 2026-09-23 ("order links in one
+     row"), replacing the explore list's two short columns.
+     Why follow lies down too, which was not asked for: a row of five beside
+     follow's column does not fit in Georgian below ~1160px. At 1024x768 the
+     row is 430px (the labels 346 and four --space-md gaps) and follow's
+     column 88, 539px with the gap between them, and the column they share
+     is 481. Stacked, each row has the column's whole width. And stacked,
+     the band keeps its height — it is the lead's (sign-off, line, email,
+     phone), which was already as tall as follow's four rows — so Connect,
+     which is sized to the room the footer leaves (connect.css), still fits
+     one window with it: a row above a column of four would have added
+     both a heading and a row to the band. This is also the shape the
+     768-1023 footer already has (the block below), so the lists lie down
+     at every width that shows them. `wrap` only as a floor for a reader's
+     larger default font; at the sizes checked every row is one line. */
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .site-footer__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: var(--space-md);
+    row-gap: 0;
+  }
+}
+
+/* ==========================================================================
+   Phones and tablets: one column, re-ordered (on request, 2026-09-21: "from
+   footer remove explore, follow us — move in one row with 'got a bolder
+   idea?', split it in 2 rows. below show [drop by] but in one row, back to
+   top move to footers top").
+
+   The footer is written as three bands — __top (the sign-off and the
+   contact), __grid (explore / drop by / follow us) and __base (the small
+   print and back-to-top) — and the request cuts across all three: the
+   back-to-top belongs above the sign-off, the two link lists belong with it,
+   and the address belongs below them. Re-ordering within the bands cannot do
+   that, and moving the markup would change the desktop.
+
+   So the three bands are DISSOLVED here — `display: contents` drops their
+   boxes and hands every part straight to the footer's own column — and each
+   part is then placed with `order`. Safe to do: all three are plain divs
+   with no role and no styling of their own that survives them, and the two
+   that matter for semantics (the explore <nav> and the address) are the
+   parts, not the wrappers.
+
+   Two consequences that had to be paid for rather than inherited: the bands
+   carried the vertical rhythm in their own margins, which `display: contents`
+   throws away — so the column takes a gap; and __base carried the auto
+   bottom margin that sinks the stamp into the slab's bottom edge, which moves
+   to the small print, the last thing above it.
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .site-footer {
+    gap: var(--space-sm);
+  }
+  .site-footer__top,
+  .site-footer__grid,
+  .site-footer__base {
+    display: contents;
+  }
+  .site-footer__back {
+    order: 1;
+    align-self: flex-end;
+  }
+  .site-footer__lead {
+    order: 2;
+  }
+  .site-footer__col--explore {
+    order: 3;
+  }
+  .site-footer__col--follow {
+    order: 4;
+  }
+  .site-footer__contact {
+    order: 5;
+    /* It is set against the right edge on the desktop, where it shares a row
+       with the sign-off. In a column it is a line of its own and reads from
+       the same left edge as everything above it. */
+    align-items: flex-start;
+    margin-left: 0;
+  }
+  /* The two link lists lie down here as well as on a phone — that is what
+     "split it in 2 rows" asks for, one row of sections and one of socials.
+     The tablet was still stacking them four deep, 106px a list, because this
+     was written in the phone block. row-gap, never the `gap` shorthand: a
+     shorthand resets the column gap too and the four words run together as
+     "teamworksstoriesconnect". */
+  .site-footer__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: var(--space-md);
+    row-gap: 0;
+  }
+  .site-footer__legal {
+    order: 7;
+    /* __base's auto margin, re-homed: this is what keeps the stamp below
+       pressed into the bottom of the slab when the window leaves room. */
+    margin-bottom: auto;
+  }
+  .site-footer__sign {
+    order: 8;
+  }
+
+  /* "[explore]" and "[follow us]" go. Hidden rather than removed: the first
+     is the <nav>'s own heading and the second is the social list's
+     `aria-labelledby` target, so deleting them from the layout must not
+     delete them from the page — a screen reader still hears which list is
+     which. "[drop by]" stays, because its lines are an address and a set of
+     opening hours and nothing else on the page says so. */
+  .site-footer__col--explore .site-footer__heading,
+  .site-footer__col--follow .site-footer__heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+}
+
+/* ==========================================================================
+   Phones only: centred, and two parts dropped (on request, 2026-09-21:
+   "from footer remove back to top (phone version)", "remove explore section
+   from footer (phone version)", "on phone verssion center footer").
+
+   Tablets keep both and keep the left edge — this is a phone-width block on
+   purpose, below the 1023 one above so it wins.
+
+   Dropping the explore list takes the last in-footer navigation off a phone.
+   That is the request, and it is survivable here because the phone header
+   carries the same items behind the hamburger (Header.jsx) — the four
+   sections and, since 2026-09-23, the services page, as this list does; the
+   <nav> goes out of the layout with `display: none`, which also takes it and
+   its aria-label out of the accessibility tree, so nothing is left announcing
+   an empty navigation.
+   ========================================================================== */
+@media (max-width: 767px) {
+  .site-footer__back,
+  .site-footer__col--explore {
+    display: none;
+  }
+
+  /* Centred. `align-items` does the boxes, `text-align` does the lines
+     inside them; both are needed because most of these parts are shrink-to-
+     fit flex boxes whose own children are laid out by their own rules. The
+     wrappers are `display: contents` above, so every part is a direct child
+     of this column and one `align-items` reaches all of them. */
+  .site-footer {
+    align-items: center;
+    text-align: center;
+  }
+  .site-footer__contact,
+  .site-footer__col--follow {
+    align-items: center;
+  }
+  .site-footer__list {
+    justify-content: center;
+  }
+  /* The link's own box is an inline-flex column set to flex-start, so the
+     label and its drawn marker would sit left inside a centred box. */
+  .site-footer__link {
+    align-items: center;
+    text-align: center;
+  }
+}

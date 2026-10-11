@@ -1,41 +1,53 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { Children, Fragment, isValidElement, type ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+import '@/styles/detail.css'
+
 import type { CreativeSolution, Project, StackGroup } from '@/content'
-import { projectBySlug, projectPath, projects, STATUS_LABEL } from '@/content'
-import { projectTitle } from '@/config'
-import { ProjectMark } from '@/components/ProjectMark'
+import { getProject, getProjects, projectPath } from '@/content'
+import { fill, useLang } from '@/i18n/LanguageContext'
+import { HoverMarker } from '@/components/NavPill'
+import { ProjectCover } from '@/components/ProjectCover'
+import { Reveal } from '@/components/Reveal'
 import { RichText } from '@/components/RichText'
 import { NotFoundPage } from './NotFoundPage'
-import { cn } from '@/lib/cn'
-import { fromBase } from '@/lib/url'
 import { paragraphs } from '@/lib/prose'
+import { demoHref, fromBase } from '@/lib/url'
 import { useDocumentTitle } from '@/lib/useDocumentTitle'
-import { useInView } from '@/lib/useInView'
 
 /**
- * One project, in full.
+ * One project, in full — boulder.ge's project page (views/ProjectPage.jsx,
+ * DetailShell.jsx) carrying a whole case study.
  *
  * The grid sells by being openable; this page exists because opening the demo
  * first answered the wrong question. A visitor landing straight in someone
  * else's admin console has no idea what the product is for, which parts were
- * hard, or what they are looking at — so the demo is now the payoff at the end
- * of a page that says those things, not the thing that happens on a click.
+ * hard, or what they are looking at — so the demo is the payoff of a page that
+ * says those things, not the thing that happens on a click.
  *
- * Every section is content that already existed in `content/projects.json` and
- * had nothing rendering it. Two fields are new and optional (`stackGroups`,
- * `creative`); both fall back to the flat field they refine, so a project that
- * has not been through a verification pass still gets a complete page.
+ * The template's frame is kept as drawn: "< back", the wide hero, the title
+ * column beside a column of squares. What boulder.ge fills with one paragraph
+ * and a gallery, the portal fills with the case study's sections and the
+ * project's numbers. Every field the earlier page rendered is still here;
+ * `stackGroups` and `creative` fall back to the flat field they refine, so a
+ * project that has not been through a verification pass still gets a complete
+ * page. Styles: src/styles/detail.css.
+ *
+ * Bilingual through `useLang()` and the content overlay: `getProject(slug,
+ * lang)` is already English wherever Georgian is missing.
  */
 export function ProjectPage() {
   const { slug } = useParams()
-  const project = projectBySlug(slug)
+  const { lang } = useLang()
+  const project = getProject(slug, lang)
 
   // An unknown slug is a 404, not a redirect: bouncing to the grid would tell a
   // visitor with a stale link that the address was fine and the project gone.
   if (!project) return <NotFoundPage />
 
-  return <ProjectDetail project={project} />
+  // Keyed by slug so a prev/next hop remounts the page: the reveals replay and
+  // nothing scrolled-in on the last project carries over as already seen.
+  return <ProjectDetail key={project.slug} project={project} />
 }
 
 /**
@@ -44,384 +56,369 @@ export function ProjectPage() {
  * the one thing React's rules of hooks actually forbid.
  */
 function ProjectDetail({ project }: { project: Project }) {
-  useDocumentTitle(projectTitle(project.name))
+  const { lang, t, href } = useLang()
+  useDocumentTitle(fill(t('meta.project'), { name: project.name }))
 
-  const demoHref = project.demoUrl ? fromBase(project.demoUrl) : null
-  const groups = stackGroupsOf(project)
+  // A plain URL, not a router path: the demo is its own bundle under the
+  // deploy base and needs a real document load in the same tab. In Georgian
+  // it carries `?lang=ka`, so the demo opens in the reader's language.
+  const demo = project.demoUrl ? demoHref(project.demoUrl, lang) : null
+  const groups = stackGroupsOf(project, t('detail.stack'))
   const solutions = project.creative ?? []
-  const others = projects.filter((candidate) => candidate.slug !== project.slug)
+  const { prev, next } = neighbours(getProjects(lang), project.slug)
 
   return (
-    <>
-      <Hero project={project} demoHref={demoHref} />
+    <div className="detail-page">
+      <article className="detail">
+        <Link className="detail-back" to={href('/')} aria-label={t('detail.back')}>
+          <span aria-hidden="true">&lt; {t('detail.back')}</span>
+        </Link>
 
-      <Band label="What is used" title="Built with">
-        <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {groups.map((group) => (
-            <div key={group.group}>
-              <p className="label-caps">{group.group}</p>
-              <ul className="mt-3 flex flex-wrap gap-1.5" aria-label={group.group}>
-                {group.items.map((item) => (
-                  <li key={item} className="border border-hairline px-2 py-1 text-small text-ink/60">
-                    {item}
+        <Reveal className="detail-hero card-shape">
+          <Cover project={project} eager />
+        </Reveal>
+
+        <div className="detail-grid">
+          <div className="detail-main">
+            <Reveal className="detail-head">
+              <p className="detail-eyebrow">{t('detail.eyebrow')}</p>
+              <h1 className="detail-title">{project.name}</h1>
+              <p className="detail-tagline">{project.tagline}</p>
+              <ul className="detail-meta">
+                {project.category && (
+                  <li>
+                    <span className="visually-hidden">{t('detail.category')}: </span>
+                    <span className="detail-tag">[{project.category}]</span>
                   </li>
-                ))}
+                )}
+                <li>
+                  [ {t('detail.period')}: {project.period} ]
+                </li>
+                <li>
+                  [ {t('detail.status')}: {t(`status.${project.status}` as const)} ]
+                </li>
               </ul>
-            </div>
-          ))}
-        </div>
-      </Band>
+            </Reveal>
 
-      <Band label="The problem" title="What it had to fix">
-        <Prose text={project.problem} />
-      </Band>
+            <Reveal className="detail-body">
+              <h2 className="visually-hidden">{t('detail.summary')}</h2>
+              <Prose text={project.summary} className="detail-lead" />
+              <span className="detail-label">[{t('detail.role')}]</span>
+              <Prose text={project.role} />
+            </Reveal>
 
-      <Band label="The approach" title="How it was built">
-        <Prose text={project.approach} />
-      </Band>
+            <Reveal>
+              <DemoLinks project={project} demoHref={demo} />
+              {project.demoNote && (
+                <aside className="detail-note">
+                  <span className="detail-label">{t('detail.demoNote')}</span>
+                  <p>
+                    <RichText text={project.demoNote} />
+                  </p>
+                </aside>
+              )}
+            </Reveal>
 
-      <Band
-        label="Solved creatively"
-        title="The parts worth naming"
-        lead="The decisions that a competent version of this product would not have arrived at by default."
-      >
-        {solutions.length > 0 ? (
-          <Solutions items={solutions} />
-        ) : (
-          // No verified `creative` block yet, so `highlights` carries the same
-          // claims without the reasoning. Rendering it is strictly better than
-          // rendering nothing, and the shape is deliberately not faked into
-          // three beats it does not have.
-          <ul className="mt-8 max-w-[72ch] space-y-5">
-            {(project.highlights ?? []).map((highlight, index) => (
-              <li key={index} className="border-t border-hairline pt-5 text-body leading-relaxed text-ink/70">
-                <RichText text={highlight} />
-              </li>
-            ))}
-          </ul>
-        )}
-      </Band>
+            <Section title={t('detail.problem')} sub={t('detail.problemSub')}>
+              {project.problem.trim() && <Prose text={project.problem} block />}
+            </Section>
 
-      <Band label="How it fits together" title="The layers">
-        {project.architecture.length > 0 && (
-          <dl className="mt-12 max-w-[80ch] border-t border-hairline">
-            {project.architecture.map((layer, index) => (
-              <div key={index} className="border-b border-hairline py-5 sm:grid sm:grid-cols-[minmax(9rem,22%)_1fr] sm:gap-6">
-                <dt className="font-display text-body font-bold text-ink">{layer.layer}</dt>
-                <dd className="mt-1.5 text-body leading-relaxed text-ink/70 sm:mt-0">
-                  <RichText text={layer.detail} />
-                </dd>
-              </div>
-            ))}
-          </dl>
-        )}
-      </Band>
+            <Section title={t('detail.approach')} sub={t('detail.approachSub')}>
+              {project.approach.trim() && <Prose text={project.approach} block />}
+            </Section>
 
-      <Band label="What came of it" title="Results">
-        {project.results.length > 0 && (
-          <ul className="mt-8 max-w-[74ch] space-y-4">
-            {project.results.map((result, index) => (
-              <li key={index} className="flex gap-3 text-body leading-relaxed text-ink/70">
-                <ArrowRight className="mt-1.5 size-4 shrink-0 text-accent-text" aria-hidden />
-                <span>
-                  <RichText text={result} />
-                </span>
-              </li>
-            ))}
-          </ul>
-        )}
-        {project.metrics.length > 0 && (
-          <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {project.metrics.map((metric, index) => (
-              <li key={metric.label} className="[filter:var(--drop-card)]">
-                <div className={cn('notch h-full bg-surface p-5', index % 2 === 1 && 'notch--alt')}>
-                  <p className="font-display text-h2 font-bold leading-none text-ink">{metric.value}</p>
-                  <p className="label-caps mt-2 block">{metric.label}</p>
+            <Section
+              title={solutions.length > 0 ? t('detail.creative') : t('detail.highlights')}
+              sub={solutions.length > 0 ? t('detail.creativeSub') : undefined}
+            >
+              {solutions.length > 0 ? (
+                <Solutions items={solutions} />
+              ) : (
+                // No verified `creative` block yet, so `highlights` carries the
+                // same claims without the reasoning. The shape is deliberately
+                // not faked into three beats it does not have.
+                project.highlights.length > 0 && (
+                  <ul className="detail-list detail-body">
+                    {project.highlights.map((highlight, index) => (
+                      <li key={index}>
+                        <RichText text={highlight} />
+                      </li>
+                    ))}
+                  </ul>
+                )
+              )}
+            </Section>
+
+            <Section title={t('detail.stack')} sub={t('detail.stackSub')}>
+              {groups.length > 0 && (
+                <div className="detail-stack">
+                  {groups.map((group) => (
+                    <div key={group.group}>
+                      <span className="detail-label">[{group.group}]</span>
+                      <ul className="detail-chips" aria-label={group.group}>
+                        {group.items.map((item) => (
+                          <li key={item} className="detail-chip">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </Band>
+              )}
+            </Section>
 
-      <Closing project={project} demoHref={demoHref} others={others} />
-    </>
+            <Section title={t('detail.architecture')} sub={t('detail.architectureSub')}>
+              {project.architecture.length > 0 && (
+                <dl className="detail-layers detail-body">
+                  {project.architecture.map((layer, index) => (
+                    <div key={index} className="detail-layer">
+                      <dt>{layer.layer}</dt>
+                      <dd>
+                        <RichText text={layer.detail} />
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+            </Section>
+
+            <Section title={t('detail.results')}>
+              {project.results.length > 0 && (
+                <ul className="detail-list detail-body">
+                  {project.results.map((result, index) => (
+                    <li key={index}>
+                      <RichText text={result} />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </Section>
+
+            <Section title={t('detail.demo')} sub={t('detail.demoSub')}>
+              {project.screenshots.length > 0 && (
+                <>
+                  <h3 className="visually-hidden">{t('detail.screens')}</h3>
+                  <ul className="detail-screens">
+                    {project.screenshots.map((shot, index) => (
+                      <li key={index} className="detail-screen">
+                        {/* Titles and captions first; a capture only where
+                            one exists. A stale PNG of a screen you can open
+                            yourself is worth less than a sentence saying
+                            what the screen is for. */}
+                        {shot.src && (
+                          <img
+                            className="detail-screen__shot"
+                            src={fromBase(shot.src)}
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        )}
+                        <h4 className="detail-screen__title">{shot.title}</h4>
+                        <p className="detail-body">
+                          <RichText text={shot.caption} />
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              {/* The page is long enough that a reader who has finished it
+                  should not have to scroll back for the button. The note does
+                  not repeat: printed twice it reads as a template. */}
+              <DemoLinks project={project} demoHref={demo} />
+            </Section>
+          </div>
+
+          <Numbers project={project} label={t('detail.numbers')} />
+        </div>
+
+        <Pager prev={prev} next={next} />
+      </article>
+    </div>
   )
 }
 
 /* -------------------------------------------------------------------------- */
 
-function Hero({ project, demoHref }: { project: Project; demoHref: string | null }) {
-  return (
-    <section className="shell pt-8 pb-10 sm:pt-12 sm:pb-14">
-      <Link
-        to="/"
-        className="label-caps inline-flex items-center gap-2 transition-colors duration-300 ease-bounce hover:text-accent-text"
-      >
-        <ArrowLeft className="size-4" aria-hidden />
-        Selected work
-      </Link>
-
-      <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start lg:gap-12">
-        {/* Text first in the DOM so the heading is the first thing announced and
-            the first thing read on a phone; the cover moves alongside it only
-            once there is room for two columns. */}
-        <div>
-          <p className="label-caps">
-            {STATUS_LABEL[project.status]} · {project.period}
-          </p>
-          <h1 className="mt-3 max-w-[16ch] font-display text-h1 font-extrabold leading-[1.06] text-ink">
-            {project.name}
-          </h1>
-          <p className="mt-5 max-w-[54ch] text-body-lg leading-relaxed text-ink/70">
-            <RichText text={project.summary} />
-          </p>
-          <p className="mt-4 max-w-[54ch] text-body leading-relaxed text-ink/65">
-            <RichText text={project.role} />
-          </p>
-
-          <DemoCta project={project} demoHref={demoHref} note />
-        </div>
-
-        {/* The same plane and the same crop as the card, so the page reads as
-            the card opened rather than as a different screen. The notch sits on
-            the inner frame and the shadow on the unclipped parent — a clip-path
-            would clip a box-shadow away with it. */}
-        <div className="[filter:var(--drop-card)]">
-          <div className="notch project-card__art">
-            {project.cover ? (
-              <img
-                src={fromBase(project.cover)}
-                alt={`${project.name} — a screen from the live demo`}
-                className="project-card__shot"
-                loading="eager"
-                decoding="async"
-                width={1600}
-                height={1000}
-              />
-            ) : (
-              <ProjectMark seed={project.slug} />
-            )}
-          </div>
-        </div>
-      </div>
-
-    </section>
-  )
+/**
+ * The cover as card art: the real capture laid over the frame fill, or the
+ * generated mark on the coral-to-indigo tile when there is none or it fails
+ * to load (ProjectCover). Decorative either way — the project's name is right
+ * beside it.
+ */
+function Cover({ project, eager = false }: { project: Project; eager?: boolean }) {
+  return <ProjectCover cover={project.cover} seed={project.slug} eager={eager} width={1600} height={1000} />
 }
 
 /**
- * The one filled control on the page.
- *
- * It appears twice — once under the hero and once at the end, because the page
- * is long enough that a reader who has finished it should not have to scroll
- * back for the button. `note` is what does not repeat: `demoNote` is the honest
- * disclosure of what the demo is and is not, it belongs beside the first
- * button, and printing the same paragraph again at the bottom reads as a
- * template rather than as a page someone wrote.
+ * The page's one filled control and its bracketed companion. "open live demo"
+ * is boulder.ge's "poke us" button — the coral swatch at rest — because it is
+ * the same promise: the thing to do next. A plain anchor, not a router Link,
+ * in the same tab: the demo is its own bundle with its own base path.
  */
-function DemoCta({
-  project,
-  demoHref,
-  note = false,
-}: {
-  project: Project
-  demoHref: string | null
-  note?: boolean
-}) {
+function DemoLinks({ project, demoHref }: { project: Project; demoHref: string | null }) {
+  const { t } = useLang()
   return (
-    <div className="mt-10 border-t border-hairline pt-8">
-      <div className="flex flex-wrap items-center gap-4">
-        {demoHref ? (
-          // A plain anchor, not a router Link: the demo is its own bundle with
-          // its own base path and needs a real document load.
-          <a
-            href={demoHref}
-            className="inline-flex min-h-11 items-center gap-2 bg-accent-solid px-5 py-3 font-display text-body font-bold text-white transition-transform duration-300 ease-bounce hover:-translate-y-0.5"
-          >
-            Open the live demo
-            <ArrowUpRight className="size-4" aria-hidden />
-          </a>
-        ) : (
-          <p className="inline-flex min-h-11 items-center border border-hairline px-5 py-3 font-display text-body font-bold text-ink/60">
-            No demo yet
-          </p>
-        )}
-
-        {project.sourceUrl && (
-          <a
-            href={project.sourceUrl}
-            className="text-body font-semibold text-ink/60 transition-colors duration-300 ease-bounce hover:text-accent-text"
-          >
-            Read the source
-          </a>
-        )}
-      </div>
-
-      {note && project.demoNote && (
-        <p className="mt-5 max-w-[74ch] text-small leading-relaxed text-ink/60">
-          <RichText text={project.demoNote} />
-        </p>
+    <div className="detail-links">
+      {demoHref ? (
+        <a className="detail-cta" href={demoHref}>
+          <span className="detail-cta__wrap">
+            <span className="detail-cta__marker detail-cta__marker--bar" aria-hidden="true">
+              <HoverMarker />
+            </span>
+            <span className="detail-cta__marker" aria-hidden="true">
+              <HoverMarker />
+            </span>
+            <span className="detail-cta__label">{t('detail.openDemo')} ↗</span>
+          </span>
+        </a>
+      ) : (
+        <p className="detail-cta detail-cta--off">{t('detail.noDemo')}</p>
+      )}
+      {project.sourceUrl && (
+        <a className="detail-textlink" href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+          [ {t('detail.source')} ↗ ]<span className="visually-hidden"> {t('a11y.newTab')}</span>
+        </a>
       )}
     </div>
   )
 }
 
 /**
- * A section. Every band is a sibling `.shell` rather than one wrapper with
- * inner max-widths, so each lines up with the header's logo and the footer.
+ * One case-study section: the heading in the title's voice, the bracketed
+ * indigo line under it, then its content. The emptiness check lives here, not
+ * in each caller: a project whose `architecture` is still an empty array would
+ * otherwise ship a titled section with nothing under it, which reads as a
+ * broken page rather than an unwritten one.
  */
-function Band({
-  label,
-  title,
-  lead,
-  children,
-}: {
-  label: string
-  title: string
-  lead?: string
-  children: React.ReactNode
-}) {
-  // The emptiness check belongs here, not inside the children: a project whose
-  // `architecture` or `results` is still an empty array would otherwise ship a
-  // titled, hairline-ruled section with nothing under it, which reads as a
-  // broken page rather than as an unwritten one.
+function Section({ title, sub, children }: { title: string; sub?: string; children: ReactNode }) {
   if (!hasContent(children)) return null
-
   return (
-    <section className="shell border-t border-hairline py-12 sm:py-16">
-      <p className="label-caps">{label}</p>
-      <h2 className="mt-3 max-w-[24ch] font-display text-h2 font-bold leading-tight text-ink">{title}</h2>
-      {lead && <p className="mt-4 max-w-[64ch] text-body leading-relaxed text-ink/65">{lead}</p>}
+    <Reveal as="section" className="detail-section">
+      <h2 className="detail-section__title">{title}</h2>
+      {sub && <p className="detail-section__sub ka-caps">{sub}</p>}
       {children}
-    </section>
+    </Reveal>
   )
 }
 
-function Prose({ text }: { text: string }) {
-  return (
-    <div className="mt-6 max-w-[68ch] space-y-4">
-      {paragraphs(text).map((paragraph, index) => (
-        <p key={index} className="text-body-lg leading-relaxed text-ink/70">
-          <RichText text={paragraph} />
-        </p>
-      ))}
-    </div>
-  )
+/** Prose with blank lines between paragraphs, as the content file writes it. */
+function Prose({ text, className, block = false }: { text: string; className?: string; block?: boolean }) {
+  const body = paragraphs(text).map((paragraph, index) => (
+    <p key={index} className={className}>
+      <RichText text={paragraph} />
+    </p>
+  ))
+  return block ? <div className="detail-body">{body}</div> : <>{body}</>
 }
 
 /**
- * The three-beat items.
- *
- * Separated by hairlines rather than each being its own notched card: the hero
- * already spends the corner cut, and six of them stacked reads as a repeated
- * stamp instead of a motif. The index is the only coral at this size.
+ * The three-beat items: the claim, the constraint that forced it, what was
+ * built. Numbered in the brand's black-weight coral and parted by hairlines —
+ * the hero already spends the corner cut, and six notched cards stacked would
+ * read as a repeated stamp instead of a motif.
  */
 function Solutions({ items }: { items: CreativeSolution[] }) {
+  const { t } = useLang()
   return (
-    <ol className="mt-8" role="list">
+    <ol className="detail-solutions">
       {items.map((item, index) => (
-        <Solution key={index} item={item} index={index} />
+        <li key={index} className="detail-solution">
+          <span className="detail-solution__index" aria-hidden="true">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <div>
+            <h3 className="detail-solution__title">{item.title}</h3>
+            <div className="detail-body">
+              <span className="detail-label">[{t('detail.constraint')}]</span>
+              <p>
+                <RichText text={item.constraint} />
+              </p>
+              <p>
+                <RichText text={item.detail} />
+              </p>
+            </div>
+          </div>
+        </li>
       ))}
     </ol>
   )
 }
 
-function Solution({ item, index }: { item: CreativeSolution; index: number }) {
-  const [ref, seen] = useInView<HTMLLIElement>()
-
-  return (
-    <li
-      ref={ref}
-      className={cn('reveal border-t border-hairline py-7 sm:py-8', seen && 'reveal--in')}
-      style={{ transitionDelay: `${Math.min(index, 5) * 70}ms` }}
-    >
-      <div className="sm:grid sm:grid-cols-[3rem_1fr] sm:gap-6">
-        <p className="font-display text-h2 font-bold leading-none text-accent-text" aria-hidden>
-          {String(index + 1).padStart(2, '0')}
-        </p>
-        <div className="mt-3 sm:mt-0">
-          <h3 className="font-display text-body-lg font-bold leading-snug text-ink">{item.title}</h3>
-          <p className="mt-3 max-w-[68ch] text-body leading-relaxed text-ink/60">
-            <RichText text={item.constraint} />
-          </p>
-          <p className="mt-3 max-w-[68ch] text-body-lg leading-relaxed text-ink/70">
-            <RichText text={item.detail} />
-          </p>
-        </div>
+/**
+ * The template's column of squares, holding the project's metrics. Without
+ * any, the two grey squares stay, drawn as the decoration they are.
+ */
+function Numbers({ project, label }: { project: Project; label: string }) {
+  if (project.metrics.length === 0) {
+    return (
+      <div className="detail-side" aria-hidden="true">
+        <span className="detail-side__item card-shape" />
+        <span className="detail-side__item card-shape--alt" />
       </div>
-    </li>
+    )
+  }
+  // One reveal for the column rather than one per square: a per-square stagger
+  // is an inline transition delay, and it would lag the hover swell too.
+  return (
+    <Reveal as="section" className="detail-side" aria-label={label}>
+      <h2 className="visually-hidden">{label}</h2>
+      {project.metrics.map((metric, index) => (
+        <div
+          key={`${metric.label}-${index}`}
+          className={`detail-side__item detail-stat ${index % 2 === 0 ? 'card-shape' : 'card-shape--alt'}`}
+        >
+          <span className="detail-stat__value">{metric.value}</span>
+          <span className="detail-stat__label">[{metric.label}]</span>
+        </div>
+      ))}
+    </Reveal>
   )
 }
 
-function Closing({
-  project,
-  demoHref,
-  others,
-}: {
-  project: Project
-  demoHref: string | null
-  others: Project[]
-}) {
+/**
+ * The neighbours at the foot: boulder.ge's "more" row reduced to the two that
+ * matter when reading straight through. It wraps, so the last project leads
+ * back to the first and the row is never one-sided.
+ */
+function Pager({ prev, next }: { prev: Project | null; next: Project | null }) {
+  const { t, href } = useLang()
+  if (!prev && !next) return null
   return (
-    <section className="shell border-t border-hairline py-12 sm:py-16">
-      <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
-        <div>
-          <p className="label-caps">The demo</p>
-          <h2 className="mt-3 max-w-[22ch] font-display text-h2 font-bold leading-tight text-ink">
-            {demoHref ? 'Open it and click through' : 'Nothing to open yet'}
-          </h2>
-
-          {project.screenshots.length > 0 && (
-            <>
-              {/* Titles and captions, deliberately without images. `screenshots`
-                  carries a `src` that is null for every project and a
-                  `schematic` key nothing draws — and a stale PNG of a screen
-                  you can open yourself is worth less than a sentence saying
-                  what the screen is for. Labelled as a tour so the absence
-                  reads as a choice rather than as four missing pictures. */}
-              <p className="label-caps mt-8 block">What you will find inside</p>
-              <ul className="mt-4 max-w-[62ch] border-t border-hairline">
-                {project.screenshots.map((shot, index) => (
-                  <li key={index} className="border-b border-hairline py-4">
-                    <p className="font-display text-body font-bold text-ink">{shot.title}</p>
-                    <p className="mt-1 text-body leading-relaxed text-ink/65">
-                      <RichText text={shot.caption} />
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </>
+    <Reveal as="div" className="detail-more">
+      <nav aria-label={t('detail.more')}>
+        <h2 className="detail-more__heading">{t('detail.more')}</h2>
+        <ul className="detail-more__list detail-more__list--pager">
+          {prev && (
+            <li className="detail-more__prev">
+              <PagerLink project={prev} to={href(projectPath(prev.slug))} dir={`< ${t('detail.prev')}`} rel="prev" />
+            </li>
           )}
+          {next && (
+            <li className="detail-more__next">
+              <PagerLink project={next} to={href(projectPath(next.slug))} dir={`${t('detail.next')} >`} rel="next" />
+            </li>
+          )}
+        </ul>
+      </nav>
+    </Reveal>
+  )
+}
 
-          <DemoCta project={project} demoHref={demoHref} />
-        </div>
-
-        {others.length > 0 && (
-          <div>
-            <p className="label-caps">Elsewhere</p>
-            <ul className="mt-6 border-t border-hairline">
-              {others.map((other) => (
-                <li key={other.slug}>
-                  <Link
-                    to={projectPath(other.slug)}
-                    className="group flex items-baseline justify-between gap-4 border-b border-hairline py-4 transition-colors duration-300 ease-bounce hover:text-accent-text"
-                  >
-                    <span>
-                      <span className="font-display text-body font-bold">{other.name}</span>
-                      <span className="mt-1 block max-w-[40ch] text-small leading-relaxed text-ink/60">
-                        {other.tagline}
-                      </span>
-                    </span>
-                    <ArrowRight className="size-4 shrink-0 transition-transform duration-300 ease-bounce group-hover:translate-x-1" aria-hidden />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </section>
+function PagerLink({ project, to, dir, rel }: { project: Project; to: string; dir: string; rel: string }) {
+  return (
+    <Link className="detail-more__link" to={to} rel={rel}>
+      <span className="detail-more__dir">{dir}</span>
+      <span className="detail-more__art" aria-hidden="true">
+        <Cover project={project} />
+      </span>
+      <span className="detail-more__caption">
+        <span className="detail-more__title">{project.name}</span>
+        <span className="detail-more__meta">{project.tagline}</span>
+      </span>
+    </Link>
   )
 }
 
@@ -429,20 +426,34 @@ function Closing({
 
 /**
  * `stackGroups` when it has been written, otherwise the flat `stack` as one
- * group. "Built with" as the group name is honest for the fallback: it says
- * nothing the list does not already say, which is the point of the fallback.
+ * group named after the section — it says nothing the list does not already
+ * say, which is the point of the fallback.
  */
-function stackGroupsOf(project: Project): StackGroup[] {
+function stackGroupsOf(project: Project, fallbackName: string): StackGroup[] {
   if (project.stackGroups && project.stackGroups.length > 0) return project.stackGroups
-  return [{ group: 'Built with', items: project.stack }]
+  return project.stack.length > 0 ? [{ group: fallbackName, items: project.stack }] : []
 }
 
 /**
- * Whether a band has anything to show. `children` is always a truthy element
- * tree here — the interesting cases are the ones that render to nothing: a
- * `false` from an `&&` guard, or an array of them.
+ * The projects either side of `slug`, wrapping at the ends. With two projects
+ * both sides are the same one, so it is offered once, as "next".
  */
-function hasContent(children: React.ReactNode): boolean {
-  const nodes = Array.isArray(children) ? children : [children]
-  return nodes.some((node) => node !== null && node !== undefined && node !== false && node !== '')
+function neighbours(list: Project[], slug: string): { prev: Project | null; next: Project | null } {
+  const index = list.findIndex((candidate) => candidate.slug === slug)
+  if (index === -1 || list.length < 2) return { prev: null, next: null }
+  const next = list[(index + 1) % list.length]
+  const prev = list[(index - 1 + list.length) % list.length]
+  return { prev: prev.slug === next.slug ? null : prev, next }
+}
+
+/**
+ * Whether a section has anything to show. The interesting cases render to
+ * nothing: a `false` from an `&&` guard, or a fragment of them.
+ */
+function hasContent(children: ReactNode): boolean {
+  return Children.toArray(children).some((node) =>
+    isValidElement<{ children?: ReactNode }>(node) && node.type === Fragment
+      ? hasContent(node.props.children)
+      : true,
+  )
 }

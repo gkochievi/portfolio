@@ -1,5 +1,7 @@
 import raw from '../content/projects.json'
 
+import type { Lang } from '@/i18n/lang'
+
 /**
  * The catalogue is data, not code. Adding a project is an edit to
  * `content/projects.json` plus a folder under `demos/` — no component, route
@@ -106,8 +108,15 @@ export interface Project {
   /** Base-relative image. Null falls back to the generated `ProjectMark`. */
   cover: string | null
   screenshots: Screenshot[]
+  /**
+   * What kind of work this is, in a few lower-case words ("contact centre"),
+   * drawn as the bracketed tag box boulder.ge puts on its cards. Optional: no
+   * category, no tag.
+   */
+  category?: string
 }
 
+/** English is the source of truth: `content/projects.json`, in file order. */
 export const projects = raw as Project[]
 
 /**
@@ -154,16 +163,104 @@ if (import.meta.env.DEV) {
   }
 }
 
-/** Undefined for an unknown slug, which the route renders as the 404 page. */
-export function projectBySlug(slug: string | undefined): Project | undefined {
-  return slug ? projects.find((project) => project.slug === slug) : undefined
+/* --------------------------------------------------------------------------
+   Georgian
+
+   `content/projects.ka.json` is an overlay, not a second catalogue:
+   `{ "<slug>": { ...the same text fields } }`, partial allowed, merged over the
+   English entry per field. Anything it leaves out — a whole project, one
+   field, one metric's label — falls back to English, so a project is never
+   missing from /ka just because it has not been translated yet.
+
+   Loaded through `import.meta.glob` rather than a plain import so the portal
+   still builds before the file exists: a glob that matches nothing is `{}`.
+
+   The merge follows the English shape. Strings are replaced by a non-empty
+   Georgian string; arrays are merged item by item at the English length (so a
+   Georgian `metrics` may translate only the labels); objects key by key, over
+   the English keys only. The fields below are never taken from the overlay:
+   they are identity, addresses and product names, not language.
+   -------------------------------------------------------------------------- */
+
+const UNTRANSLATED = new Set(['slug', 'status', 'demoUrl', 'sourceUrl', 'cover', 'stack', 'src', 'schematic'])
+
+type Overlay = Record<string, Record<string, unknown>>
+
+const overlayFiles = import.meta.glob<Overlay>('../content/projects.ka.json', {
+  eager: true,
+  import: 'default',
+})
+const kaOverlay: Overlay = Object.values(overlayFiles)[0] ?? {}
+
+function mergeText(base: unknown, over: unknown): unknown {
+  if (over === undefined || over === null) return base
+  if (typeof base === 'string') return typeof over === 'string' && over.trim() !== '' ? over : base
+  if (Array.isArray(base)) {
+    return Array.isArray(over) ? base.map((item, index) => mergeText(item, over[index])) : base
+  }
+  if (base !== null && typeof base === 'object') {
+    if (typeof over !== 'object' || Array.isArray(over)) return base
+    const source = over as Record<string, unknown>
+    const merged: Record<string, unknown> = {}
+    for (const [key, value] of Object.entries(base)) {
+      merged[key] = UNTRANSLATED.has(key) ? value : mergeText(value, source[key])
+    }
+    return merged
+  }
+  // Numbers, booleans, and English nulls: English decides.
+  return base
 }
 
-/** The path a card points at. One definition, so the card and the route agree. */
+/** Both catalogues, merged once at load — the content is static. */
+const CATALOGUE: Record<Lang, Project[]> = {
+  en: projects,
+  ka: projects.map((project) => mergeText(project, kaOverlay[project.slug]) as Project),
+}
+
+/**
+ * A typo'd slug in the overlay would otherwise translate nothing, silently —
+ * the same failure the English assertion above exists to catch, so it gets the
+ * same dev-only throw.
+ */
+if (import.meta.env.DEV) {
+  const known = new Set(projects.map((project) => project.slug))
+  for (const [slug, entry] of Object.entries(kaOverlay)) {
+    if (!known.has(slug)) {
+      throw new Error(
+        `content/projects.ka.json: "${slug}" is not a slug in content/projects.json. ` +
+          'The overlay is keyed by the English slugs — see site/README.md.',
+      )
+    }
+    if (entry === null || typeof entry !== 'object' || Array.isArray(entry)) {
+      throw new Error(`content/projects.ka.json: "${slug}" must be an object of text fields.`)
+    }
+  }
+}
+
+/** Every project, in file order, in `lang` — English wherever Georgian is missing. */
+export function getProjects(lang: Lang): Project[] {
+  return CATALOGUE[lang]
+}
+
+/** Undefined for an unknown slug, which the route renders as the 404 page. */
+export function getProject(slug: string | undefined, lang: Lang): Project | undefined {
+  return slug ? CATALOGUE[lang].find((project) => project.slug === slug) : undefined
+}
+
+/** English-only lookup, kept for the pages that predate the Georgian site. Prefer `getProject`. */
+export function projectBySlug(slug: string | undefined): Project | undefined {
+  return getProject(slug, 'en')
+}
+
+/**
+ * The path a card points at. One definition, so the card and the route agree.
+ * Language-free: wrap it in `useLang().href` to stay in the reader's language.
+ */
 export function projectPath(slug: string): string {
   return `/work/${slug}`
 }
 
+/** English labels, kept for the older pages. New code uses the `status.*` dictionary keys. */
 export const STATUS_LABEL: Record<ProjectStatus, string> = {
   shipped: 'Shipped',
   live: 'Live',

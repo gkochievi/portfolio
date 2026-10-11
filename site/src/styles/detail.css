@@ -1,0 +1,762 @@
+/* ==========================================================================
+   Detail pages — one project (/work/<slug>, /ka/work/<slug>) and the 404.
+   Components: src/pages/ProjectPage.tsx, src/pages/NotFoundPage.tsx.
+
+   ── Source ───────────────────────────────────────────────────────────────
+   A port of boulder-website's src/styles/detail.css, which draws Figma
+   "Boulder website new" → "Boulder web" → frame "works page" (546:3115,
+   1479 x 1489): "< back", a wide hero, a column of 322px squares beside a
+   title, an indigo meta row and the body. Every frame number is px times
+   --dp, which maps the 1479 frame onto the window (capped at 1920 so a wide
+   monitor does not blow the page up). Type does not follow --dp: every size
+   is one of boulder.css's eight type tokens, picked by role.
+
+   ── What the portal adds ─────────────────────────────────────────────────
+   boulder.ge's project page carries a paragraph of description. A case study
+   here carries a dozen fields, so the template's body column becomes a run
+   of sections (.detail-section), each a heading in the title's voice with a
+   bracketed indigo subtitle — the landing's SectionTitle, at page size. The
+   side squares hold the project's numbers instead of a gallery, the
+   template's grey squares stay as the fallback, and the primary action is
+   boulder.ge's "poke us" swatch (hero.css .poke-cta) saying "open live demo".
+   ========================================================================== */
+
+.detail-page {
+  --dp: calc(min(100vw, 1920px) / 1479);
+  /* The frame of the "more" squares and the category tag: every work in the
+     portal is development, which is coral on boulder.ge. */
+  --detail-accent: var(--color-accent);
+}
+
+/* The template has the dot grid and no rock. The rock is painted once in
+   App, outside the routes, so it is reached from `.page` rather than from an
+   ancestor the detail page owns. */
+.page:has(.detail-page) .page-bg__boulder {
+  display: none;
+}
+
+/* The frame's 85px margins; the top is the "< back" line at y 123, floored
+   at the fixed header bar so the link never hides under it. */
+.detail {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding: max(calc(var(--header-bar-height) + 12px), calc(123 * var(--dp))) max(16px, calc(85 * var(--dp)))
+    var(--space-xl);
+}
+
+/* ---- < back ------------------------------------------------------------- */
+/* The type system's small label in indigo. The padding/negative-margin pair
+   gives a thumb-sized target without moving the word off its measured line. */
+.detail-back {
+  display: inline-block;
+  padding: 12px 8px;
+  margin: -12px -8px;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: 1;
+  color: var(--color-accent-2);
+}
+.detail-back:hover,
+.detail-back:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ---- hero: 1310 x 556, 33 under the back line ---------------------------- */
+/* The grey --frame-fill block is the design state and the art is laid over
+   it (.card-media), so the block shows while a cover loads. The
+   boulder-cut corner is the cards' own, so the page reads as the card
+   opened. A project with no cover, or one whose file fails to load, gets its
+   generated mark on the brand's coral-to-indigo tile instead (ProjectCover,
+   boulder.css .card-mark). */
+.detail-hero {
+  position: relative;
+  margin-top: calc(33 * var(--dp));
+  aspect-ratio: 1310 / 556;
+  background: var(--frame-fill);
+  overflow: hidden;
+}
+.detail-hero .card-media,
+.detail-more__art .card-media {
+  object-position: top center;
+}
+
+/* ---- the two columns ---------------------------------------------------- */
+/* Side squares 322 wide; text 75 to the right of them. The text comes first
+   in the DOM (the <h1> should be read before the numbers) and is placed into
+   the second column. */
+.detail-grid {
+  display: grid;
+  grid-template-columns: calc(322 * var(--dp)) minmax(0, 1fr);
+  column-gap: calc(75 * var(--dp));
+  align-items: start;
+  margin-top: calc(49 * var(--dp));
+}
+.detail-main {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  max-width: calc(861 * var(--dp));
+}
+.detail-side {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  gap: calc(75 * var(--dp));
+}
+
+/* Title: the type system's page H1. Its box sits 4px left of the meta and
+   body (x 478 vs 482) — the first letter's side bearing. */
+.detail-title {
+  margin: 0 0 0 calc(-4 * var(--dp));
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-display-m);
+  line-height: var(--lh-display);
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+/* The bracketed eyebrow over the title — "[case study]" here, "404" on the
+   missing page, where it is coral. */
+.detail-eyebrow {
+  margin: 0 0 12px;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  letter-spacing: 0.08em;
+  color: var(--color-accent-2);
+}
+.detail-eyebrow--missing {
+  margin-top: calc(28 * var(--dp));
+  color: var(--color-accent);
+}
+
+/* The tagline under the title, in the section subtitles' voice. */
+.detail-tagline {
+  max-width: 40em;
+  margin: 0.6em 0 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  color: var(--color-accent-2);
+}
+
+/* Meta row, 20 under the title: bracketed indigo labels, items 21 apart.
+   The category tag box sits first in it. */
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75em 1.3125em;
+  margin: calc(20 * var(--dp)) 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: 1;
+  color: var(--color-accent-2);
+}
+
+/* boulder.ge's category tag: the bracketed word on a filled box, coral for
+   development, indigo for marketing, ink for branding. */
+.detail-tag {
+  display: inline-block;
+  padding: 0.45em 0.7em 0.5em;
+  background: var(--detail-accent);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+.detail-tag--marketing {
+  background: var(--color-accent-2);
+}
+.detail-tag--branding {
+  background: var(--ink);
+  color: var(--page-bg);
+}
+
+/* ---- running text ------------------------------------------------------- */
+/* Body 33 under the meta row: --fs-body at --fw-regular on --lh-body, held to
+   68ch so a line stays readable in the wide column. */
+.detail-body {
+  max-width: 68ch;
+  margin-top: calc(33 * var(--dp));
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+}
+.detail-body p {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+.detail-body p + p {
+  margin-top: 0.75em;
+}
+.detail-body code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+.detail-body strong {
+  font-weight: var(--fw-bold);
+}
+
+/* The summary leads at the title step, the role sits under it as body. */
+.detail-lead {
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+}
+.detail-label {
+  display: block;
+  margin: 1.4em 0 0.4em;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--color-accent-2);
+}
+
+/* ---- the call to action ------------------------------------------------- */
+/* "poke us", in the page's link row: the coral highlighter swatch drawn at
+   rest behind the word, swelling on hover with the indigo swatch showing
+   through its torn bottom edge — hero.css `.poke-cta`, every state. Navy on
+   coral, in both themes: the lavender ink of the dark theme measures under
+   3:1 on the coral, the navy over 5. */
+.detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) 1.5em;
+  margin-top: calc(40 * var(--dp));
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: 1;
+  color: var(--color-accent-2);
+}
+.detail-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  line-height: var(--lh-display);
+  color: var(--color-dark);
+  text-decoration: none;
+}
+.detail-cta__wrap {
+  position: relative;
+  display: inline-block;
+  padding: 0.45em 1.02em 0.55em 0.98em;
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.detail-cta__marker {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 100%;
+  transition:
+    opacity var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+    transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.detail-cta__marker svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* The indigo swatch: the whole drawing again, 5% lower, so what shows is an
+   even sliver that follows every tear of the coral's edge. */
+.detail-cta__marker--bar {
+  inset: 5% 0 -5%;
+  opacity: 0;
+}
+.detail-cta__marker--bar svg {
+  fill: var(--color-accent-2);
+}
+.detail-cta__label {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.detail-cta:hover .detail-cta__marker,
+.detail-cta:focus-visible .detail-cta__marker {
+  transform: scale(1.2);
+}
+.detail-cta:hover .detail-cta__marker--bar,
+.detail-cta:focus-visible .detail-cta__marker--bar,
+.detail-cta:active .detail-cta__marker--bar {
+  opacity: 1;
+}
+.detail-cta:hover .detail-cta__label,
+.detail-cta:focus-visible .detail-cta__label {
+  transform: translateY(-0.1em);
+}
+.detail-cta:active .detail-cta__label {
+  transform: translateY(0.08em);
+}
+.detail-cta:focus-visible {
+  outline: 2px solid var(--color-accent-2);
+  outline-offset: 4px;
+}
+/* No demo: the same box, outlined and inert, so the row keeps its shape. */
+.detail-cta--off {
+  padding: 0.45em 1em 0.55em;
+  border: 2px dashed var(--hairline-strong);
+  color: var(--ink);
+  opacity: 0.7;
+}
+
+.detail-textlink {
+  padding: 12px 0;
+  margin: -12px 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.detail-textlink:hover,
+.detail-textlink:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* "[about this demo]": the honest disclosure, beside the first button and
+   never buried — an indigo rule down its side, the blockquote's. */
+.detail-note {
+  max-width: 68ch;
+  margin-top: var(--space-md);
+  padding-left: 1em;
+  border-left: 3px solid var(--color-accent-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  color: var(--ink);
+}
+.detail-note .detail-label {
+  margin-top: 0;
+}
+
+/* ---- sections ----------------------------------------------------------- */
+/* The landing's section header at page size: the title's face a step down,
+   with the bracketed indigo line tucked under it. */
+.detail-section {
+  margin-top: max(48px, calc(88 * var(--dp)));
+}
+.detail-section__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-heading);
+  line-height: var(--lh-heading);
+  color: var(--ink);
+}
+.detail-section__sub {
+  margin: 0.3em 0 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--color-accent-2);
+}
+.detail-section .detail-body {
+  margin-top: var(--space-sm);
+}
+
+/* Solved creatively: numbered in coral, the claim in the title's voice, the
+   constraint under an indigo label, then what was built. */
+.detail-solutions {
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.detail-solution {
+  display: grid;
+  grid-template-columns: 3.2em minmax(0, 1fr);
+  gap: 0 1em;
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--hairline);
+}
+.detail-solution__index {
+  font-family: var(--font-brand);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-heading);
+  line-height: 1;
+  color: var(--color-accent);
+}
+.detail-solution__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  color: var(--ink);
+}
+.detail-solution .detail-body {
+  margin-top: 0;
+}
+
+/* Highlights, results: square coral bullets, the body list's. */
+.detail-list {
+  margin: var(--space-sm) 0 0;
+  padding-left: 1.2em;
+  list-style: square;
+}
+.detail-list li + li {
+  margin-top: 0.6em;
+}
+.detail-list li::marker {
+  color: var(--color-accent);
+}
+
+/* The stack: a group label in indigo brackets, then the parts as outlined
+   chips. Outline only — the filled box is the category tag's. */
+.detail-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: var(--space-md) var(--space-lg);
+  margin-top: var(--space-sm);
+}
+.detail-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.detail-chip {
+  padding: 0.4em 0.6em;
+  border: 1.5px solid var(--hairline-strong);
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: 1.1;
+  color: var(--ink);
+  transition:
+    border-color var(--hover-duration-bouncy) ease,
+    transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+@media (hover: hover) and (pointer: fine) {
+  .detail-chip:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+  }
+}
+
+/* Architecture: layer name in indigo, what it does beside it. */
+.detail-layers {
+  margin: var(--space-sm) 0 0;
+  border-top: 1px solid var(--hairline);
+}
+.detail-layer {
+  display: grid;
+  grid-template-columns: minmax(8rem, 26%) minmax(0, 1fr);
+  gap: 0.4em 1.5em;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.detail-layer dt {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  line-height: var(--lh-title);
+  color: var(--color-accent-2);
+}
+.detail-layer dd {
+  margin: 0;
+}
+
+/* The demo's screens: titles and captions, and a capture when one exists. */
+.detail-screens {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.detail-screen {
+  padding-top: var(--space-xs);
+  border-top: max(3px, calc(6 * var(--u))) solid var(--color-accent-2);
+}
+.detail-screen:nth-child(3n + 1) {
+  border-top-color: var(--color-accent);
+}
+.detail-screen:nth-child(3n) {
+  border-top-color: var(--ink);
+}
+.detail-screen__shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-xs);
+  background: var(--frame-fill);
+}
+.detail-screen__title {
+  margin: 0 0 0.35em;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  color: var(--ink);
+}
+.detail-screen .detail-body {
+  margin-top: 0;
+  font-size: var(--fs-small);
+}
+
+/* ---- side squares: the numbers ------------------------------------------ */
+/* The template's 322 x 322 squares, 75 apart. Each holds one metric, framed
+   in the category colours in turn and cut at the corner like the cards. With
+   no metrics they are the template's two grey squares, drawn as the
+   decoration they are — without them the text would lose its place. */
+.detail-side__item {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  background: var(--frame-fill);
+  overflow: hidden;
+}
+.detail-stat {
+  --stat-accent: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5em;
+  padding: max(16px, calc(28 * var(--dp)));
+  border: max(3px, calc(8 * var(--u))) solid var(--stat-accent);
+  background: var(--page-bg);
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.detail-stat:nth-child(3n + 2) {
+  --stat-accent: var(--color-accent-2);
+}
+.detail-stat:nth-child(3n) {
+  --stat-accent: var(--ink);
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .detail-stat:hover {
+    transform: scale(1.04) rotate(-1deg);
+  }
+}
+.detail-stat__value {
+  font-family: var(--font-brand);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-display-m);
+  line-height: var(--lh-display);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.detail-stat__label {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--color-accent-2);
+}
+
+/* ---- more of the same: previous / next ---------------------------------- */
+.detail-more {
+  margin-top: calc(96 * var(--u));
+}
+.detail-more__heading {
+  margin: 0 0 max(8px, calc(18 * var(--u)));
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-heading);
+  line-height: var(--lh-heading);
+  color: var(--color-accent-2);
+}
+.detail-more__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(32 * var(--u));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Two neighbours, not three suggestions: one either side of the page. */
+.detail-more__list--pager {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.detail-more__list--pager > .detail-more__next {
+  grid-column: 2;
+  text-align: right;
+}
+.detail-more__link {
+  display: block;
+}
+.detail-more__dir {
+  display: block;
+  margin-bottom: max(6px, calc(12 * var(--u)));
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: 1;
+  color: var(--color-accent-2);
+}
+/* The square, framed in the page's accent, the Works cards' one shape at a
+   size that suits the foot of a page. Previous is indigo, next coral. */
+.detail-more__art {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  border: max(3px, calc(8 * var(--u))) solid var(--detail-accent);
+  background: var(--frame-fill);
+  overflow: hidden;
+  transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.detail-more__prev .detail-more__art {
+  border-color: var(--color-accent-2);
+}
+.detail-more__list:not(.detail-more__list--pager) .detail-more__art {
+  aspect-ratio: 1 / 1;
+}
+/* The swell is the desktop's hover only: a tap leaves :hover on the square
+   it touched (boulder.ge works.css, NO HOVER ON A TOUCH SCREEN); keyboard
+   focus swells it everywhere. */
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .detail-more__link:hover .detail-more__art {
+    transform: scale(1.04);
+  }
+}
+.detail-more__link:focus-visible {
+  outline: none;
+}
+.detail-more__link:focus-visible .detail-more__art {
+  transform: scale(1.04);
+  outline: 2px solid var(--color-accent-2);
+  outline-offset: 4px;
+}
+.detail-more__caption {
+  display: block;
+  margin-top: max(6px, calc(12 * var(--u)));
+}
+.detail-more__title {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  color: var(--ink);
+}
+.detail-more__meta {
+  display: block;
+  margin-top: 0.2em;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--ink);
+  opacity: 0.7;
+}
+
+/* ---- the URL that addresses nothing ------------------------------------- */
+/* A rendered state with a way out, never a blank page — a blank page is what
+   an unmatched route gives you for free and it reads exactly like a crash. */
+.detail-missing {
+  min-height: 52vh;
+}
+.detail-missing__sub {
+  margin: 0.5em 0 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  color: var(--color-accent-2);
+}
+.detail-missing__body {
+  white-space: pre-wrap;
+  max-width: 32em;
+  margin: var(--space-md) 0 var(--space-lg);
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  opacity: 0.85;
+}
+
+/* ---- tablet and below --------------------------------------------------- */
+/* Not designed on boulder.ge. One column: hero, title, meta, body, then the
+   squares two to a row. */
+@media (max-width: 1023px) {
+  .detail-hero {
+    aspect-ratio: 16 / 9;
+  }
+  .detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+    margin-top: 28px;
+  }
+  .detail-main,
+  .detail-side {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .detail-main {
+    max-width: none;
+  }
+  .detail-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .detail-body {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .detail-title {
+    margin-left: 0;
+  }
+  .detail-hero {
+    aspect-ratio: 4 / 3;
+  }
+  .detail-side__item {
+    aspect-ratio: auto;
+    min-height: 9.5rem;
+  }
+  .detail-stat__value {
+    font-size: var(--fs-heading);
+  }
+  .detail-layer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .detail-solution {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.5em;
+  }
+  .detail-more__list,
+  .detail-more__list--pager {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-md);
+  }
+  .detail-more__list--pager > .detail-more__next {
+    grid-column: 1;
+  }
+  .detail-more__list:not(.detail-more__list--pager) .detail-more__art {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-cta__wrap,
+  .detail-cta__marker,
+  .detail-cta__label,
+  .detail-chip,
+  .detail-stat,
+  .detail-more__art {
+    transition: none;
+  }
+}

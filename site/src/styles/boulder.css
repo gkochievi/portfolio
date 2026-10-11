@@ -1,0 +1,667 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   Boulder — the portal's foundation
+
+   The portal is Boulder's "works" showcase, so it wears boulder.ge itself:
+   every token below is copied from boulder-website's `src/index.css` and
+   `src/styles/page.css`, under the same names, so a rule ported from there
+   reads the same custom properties here. Nothing is re-derived; if the brand
+   moves, it moves there first and is copied across.
+
+   The demos under `demos/` deliberately do NOT inherit any of this. Each is a
+   different client's product with its own identity.
+
+   Contents
+     1. Tailwind bridge
+     2. Tokens (boulder.ge :root, verbatim values) + portal additions
+     3. Dark theme
+     4. Base — element resets and typography (in @layer base)
+     5. Page shell — dots and side boulder (PageBackground.tsx)
+     6. Shared composites — sections, titles, card cut, reveal
+     7. Georgian titles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tailwind v4 bridge — boulder.ge's, plus the portal's own surfaces. Every
+   entry points into :root below rather than repeating a literal, so
+   `text-ink`, `font-display`, `text-h1` and `p-md` resolve to the same custom
+   properties the hand-written rules use.
+   -------------------------------------------------------------------------- */
+@theme {
+  --color-boulder-dark: var(--color-dark);
+  --color-boulder-accent: var(--color-accent);
+  --color-boulder-accent-2: var(--color-accent-2);
+  --color-boulder-bright: var(--color-bright);
+  --color-boulder-white: var(--color-white);
+  --color-ink: var(--ink);
+  --color-page: var(--page-bg);
+  --color-surface: var(--surface);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-accent-text: var(--accent-text);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-ui: var(--font-ui);
+  --font-brand: var(--font-brand);
+  --font-mono: var(--font-mono);
+
+  --text-display: var(--fs-display);
+  --text-h1: var(--fs-h1);
+  --text-h2: var(--fs-h2);
+  --text-body-lg: var(--fs-body-lg);
+  --text-body: var(--fs-body);
+  --text-small: var(--fs-small);
+  --text-micro: var(--fs-micro);
+  --text-title: var(--fs-title);
+  --text-heading: var(--fs-heading);
+
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+
+  --ease-flow: var(--flow-easing);
+  --ease-bounce: var(--hover-easing-bouncy);
+}
+
+/* --------------------------------------------------------------------------
+   2. Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --color-dark: #111224; /* Main dark */
+  --color-accent: #ff3366; /* Accent — coral/pink */
+  --color-accent-2: #5c4de8; /* Accent 2 — indigo */
+  --color-bright: #e0dff7; /* Main Bright — pale lavender */
+  --color-white: #ffffff;
+
+  /* Theme-aware ink: text and icons sitting directly on the page. Navy in
+     light, lavender in dark, so it never goes dark-on-dark. */
+  --ink: var(--color-dark);
+
+  /* Two faces, one per language (boulder.ge, 2026-10-05): Montserrat
+     Alternates for English, Google Sans for Georgian — :root:lang(ka) below
+     repoints the role tokens. Google Sans stays in the English stack to draw
+     any Georgian glyph on an English page. The tokens name ROLES (display =
+     titles, body = running text, ui = labels and controls). */
+  --font-display: 'Montserrat Alternates', 'Google Sans', -apple-system, Roboto, Helvetica, sans-serif;
+  --font-body: var(--font-display);
+  --font-ui: var(--font-display);
+  /* The word BOULDER where it is a stamp: Alternates in both languages. */
+  --font-brand: 'Montserrat Alternates', 'Google Sans', -apple-system, Roboto, Helvetica, sans-serif;
+
+  /* Three weights, exactly the ones the font request loads. */
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  /* Eight sizes. Text sizes follow the width only; the two display sizes take
+     the smaller of their width-based size and their drawn size in --u. */
+  --fs-micro: 12px; /* legal line, © */
+  --fs-small: 14px; /* labels, meta, bracketed microcopy, descriptions */
+  --fs-body: clamp(16px, 0.35vw + 14.5px, 18px); /* running text */
+  --fs-title: clamp(16px, 0.6vw + 12px, 20px); /* nav, card titles, subtitles, links */
+  --fs-heading: clamp(22px, 1.2vw + 15px, 32px); /* buttons/tags, deck labels */
+  --fs-display-m: clamp(30px, 2vw + 20px, 46px); /* page H1s */
+  --fs-display-l: max(36px, min(clamp(36px, 3vw + 18px, 60px), calc(64.27 * var(--u)))); /* hero, section words */
+  --fs-display-xl: max(60px, min(clamp(60px, 6vw + 20px, 104px), calc(110 * var(--u)))); /* footer BOULDER sign */
+
+  --lh-display: 1;
+  --lh-heading: 1.15;
+  --lh-title: 1.25;
+  --lh-body: 1.55;
+  --lh-small: 1.4;
+
+  --canvas-max-width: 1440px;
+
+  /* THE SIZE UNIT: one pixel of the 1440 x 1024 Figma frame on this screen —
+     the smaller of the width and height ratios, so the whole frame always
+     fits — times the 0.92 ui-scale boulder.ge settled on. svh, not dvh: dvh
+     resizes the page as mobile chrome slides. */
+  --frame-px: min(calc(100vw / 1440), calc(100svh / 1024));
+  --ui-scale: 0.92;
+  --u: calc(var(--frame-px) * var(--ui-scale));
+  /* Design v2 content inset: the titles hang off a right edge and the cards
+     start 138px in at 1440. One token for both sides. */
+  --content-inset: max(16px, calc(138 * var(--u)));
+
+  /* Page surface (design v2): flat colour, dot grid, side boulder. Measured
+     off the Figma tile: 3.5px dots every 40.6px. Kept literal — the
+     background script parses --dots-gap. */
+  --page-bg: var(--color-white);
+  --dots-color: rgb(169 169 181 / 0.29);
+  --dots-size: 3.5px;
+  --dots-gap: 40.6px;
+  --header-bg: rgb(255 255 255 / 0.7);
+
+  /* Card frames: colour by category. Branding uses --ink so it stays readable
+     on the dark page. --frame-fill shows inside a frame with no art. */
+  --frame-tech: var(--color-accent);
+  --frame-marketing: var(--color-accent-2);
+  --frame-branding: var(--ink);
+  --frame-fill: #d9d9d9;
+  /* The boulder-cut corner (.card-shape). */
+  --card-notch: max(8px, calc(22 * var(--u)));
+
+  /* Header geometry — boulder.ge's, so a ported header.css lines up. */
+  --header-height: max(52px, calc(90 * var(--u)));
+  --header-pad-x: max(16px, calc(58 * var(--u)));
+  --theme-icon-size: max(32px, calc(40 * var(--u)));
+  --header-pill-inset: calc(12 * var(--fs-nav) / 26);
+  --logo-height: max(28px, calc(60 * var(--u)));
+  --logo-anim-rise: calc(var(--logo-height) * 96 / 290);
+  --header-row-drop: max(
+    0px,
+    calc(var(--logo-anim-rise) + 6px - (var(--header-height) - var(--logo-height)) / 2)
+  );
+  --header-bar-height: calc(var(--header-height) + var(--header-row-drop));
+  --header-slide-duration: 320ms;
+  --header-slide-easing: var(--flow-easing);
+  --section-top-clearance: calc(var(--header-height) + var(--space-xs));
+  /* Minimum touch-target box (Apple HIG 44pt / WCAG). */
+  --tap-target: 44px;
+  /* iOS Safari zooms a focused field under 16px. */
+  --fs-input-touch: 1rem;
+
+  /* Older role names, aliased onto the eight sizes. */
+  --fs-display: var(--fs-display-l);
+  --fs-h1: var(--fs-display-m);
+  --fs-h2: var(--fs-heading);
+  --fs-body-lg: var(--fs-title);
+  --fs-section-title: var(--fs-display-l);
+  --fs-section-sub: var(--fs-title);
+  --fs-nav: var(--fs-title);
+  --fs-cta: var(--fs-heading);
+
+  /* Fluid spacing. */
+  --space-xs: max(0.375rem, calc(12 * var(--u)));
+  --space-sm: max(0.625rem, calc(20 * var(--u)));
+  --space-md: max(1rem, calc(32 * var(--u)));
+  --space-lg: max(1.5rem, calc(56 * var(--u)));
+  --space-xl: max(2rem, calc(96 * var(--u)));
+
+  /* Breakpoints (documented; media queries cannot read variables):
+     mobile < 640 · tablet 640–1023 · desktop 1024–1439 · wide >= 1440 */
+
+  /* Motion. Section-to-section flow, and the Figma prototype's hover:
+     300ms, "Bounce". */
+  --flow-duration: 550ms;
+  --flow-easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --hover-duration-bouncy: 300ms;
+  --hover-easing-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --hover-duration-quick: 300ms;
+  --hover-easing-quick: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Portal additions ─────────────────────────────────────────────────────
+     boulder.ge has no long-form reading surface; the case-study page does.
+     These are the few values it needs that boulder.ge does not define. */
+
+  /* A plane laid over the dots where prose has to read cleanly. */
+  --surface: var(--color-white);
+  --hairline: rgb(17 18 36 / 0.12);
+  --hairline-strong: rgb(17 18 36 / 0.24);
+  /* The coral measures 3.5:1 on white — fine at display sizes, short of AA
+     for small text. Small coral text uses this deeper cut; display accents
+     keep the true --color-accent. */
+  --accent-text: #d61e50;
+  /* The write-ups name real identifiers (`select_for_update()`); the brand kit
+     has no monospace, so this ships no webfont, only faces the OS has. */
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------------------------
+   3. Dark theme — set on <html> by the pre-paint script in index.html and by
+   lib/theme.ts afterwards.
+   -------------------------------------------------------------------------- */
+:root[data-theme='dark'] {
+  --ink: var(--color-bright);
+  --page-bg: var(--color-dark);
+  --dots-color: rgb(169 169 181 / 0.2);
+  --header-bg: rgb(17 18 36 / 0.7);
+  --frame-fill: #2a2b45;
+
+  --surface: #1a1b31;
+  --hairline: rgb(224 223 247 / 0.14);
+  --hairline-strong: rgb(224 223 247 / 0.28);
+  /* On the dark planes the true coral clears 4.5:1 as text. */
+  --accent-text: var(--color-accent);
+
+  color-scheme: dark;
+}
+
+/* The Georgian site: Google Sans for every role. --font-brand is left alone. */
+:root:lang(ka) {
+  --font-display: 'Google Sans', -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   4. Base. In @layer base so a Tailwind utility on an element (`text-accent`
+   on an <a>) still wins over these resets; unlayered rules would beat every
+   utility regardless of specificity.
+   -------------------------------------------------------------------------- */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    /* No rubber-band past the footer, and a nested scroller never chains
+       into the page. On body too: WebKit reads it there for the root. */
+    overscroll-behavior: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* An authored line break in content shows, as on boulder.ge; runs of
+     spaces still fold and lines still wrap. On #root, not on body as
+     boulder.ge has it: index.html's own indentation is text inside <body>,
+     and under pre-line each of its newlines would draw an empty line — a
+     band of blank page above the header's clearance and another under the
+     footer. Everything the app renders is inside #root. */
+  #root {
+    min-height: 100%;
+    white-space: pre-line;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    background: var(--page-bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Press feedback is the site's own; the UA's grey tap box is not. */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: var(--fw-bold);
+    color: inherit;
+  }
+
+  h1 {
+    font-size: var(--fs-display-m);
+    line-height: var(--lh-display);
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: var(--fs-heading);
+    line-height: var(--lh-heading);
+  }
+
+  h3,
+  h4 {
+    font-size: var(--fs-title);
+    line-height: var(--lh-title);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  code,
+  kbd,
+  pre {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-2);
+    outline-offset: 3px;
+  }
+}
+
+/* Reduced motion: nav jumps land at once, and no transition or animation
+   holds anything back. Content end-states still apply — they just arrive. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   5. Page shell (boulder.ge page.css). Stacking, bottom to top:
+     body               --page-bg, the flat theme colour
+     .page-bg__dots     the dot grid                 --page-z-dots
+     .page-bg__boulder  the pre-rendered side rock   --page-z-rock
+     content            everything else              z auto
+   `.page` isolates its own stacking context, so the negative levels sit behind
+   the content and still above the body. `.page-bg` has no z-index on purpose:
+   a z-indexed wrapper would make the two layers one.
+   ========================================================================== */
+.app {
+  position: relative;
+}
+
+.page {
+  --page-z-dots: -3;
+  --page-z-under-rock: -2;
+  --page-z-rock: -1;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  /* Nothing may hand the document a horizontal scrollbar. `clip`, not
+     `hidden`, so the viewport never becomes a scroll container and a sticky
+     header keeps sticking. */
+  overflow-x: clip;
+}
+
+.page-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Fixed and viewport-sized, inset one tile top and bottom so the modulo wrap
+   (PageBackground.tsx) never exposes an edge. The half-pixel fade keeps a
+   3.5px dot from shimmering between 3 and 4 device pixels. */
+.page-bg__dots {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(-1 * var(--dots-gap));
+  bottom: calc(-1 * var(--dots-gap));
+  background-image: radial-gradient(
+    circle,
+    var(--dots-color) calc(var(--dots-size) / 2),
+    transparent calc(var(--dots-size) / 2 + 0.5px)
+  );
+  background-size: var(--dots-gap) var(--dots-gap);
+  background-position: 35px 23px;
+  transform: translate3d(0, var(--dots-shift, 0px), 0);
+  will-change: transform;
+  z-index: var(--page-z-dots);
+}
+
+/* The rock. boulder.ge pins its render (1440 x 5120 at the design size,
+   cropped to the 691px the rock occupies) to a page exactly five frames tall,
+   so it is 691 design px wide — 48% of the frame. The portal's pages are not
+   five frames tall, so the rock is sized to that same 691 design px directly
+   and keeps the render's ratio; `.page-bg` crops whatever runs past the end
+   of a shorter page. The URLs come from PageBackground.tsx (deploy base). */
+.page-bg__boulder {
+  position: absolute;
+  z-index: var(--page-z-rock);
+  top: 0;
+  left: 0;
+  width: calc(691 * var(--frame-px));
+  aspect-ratio: 691 / 5120;
+  background: image-set(var(--rock-bright-1x) 1x, var(--rock-bright-2x) 2x) no-repeat left top /
+    100% 100%;
+}
+
+:root[data-theme='dark'] .page-bg__boulder {
+  background-image: image-set(var(--rock-dark-1x) 1x, var(--rock-dark-2x) 2x);
+}
+
+/* Phones and tablets: a rock face down the left of the first screens, softened
+   to a texture so text laid over it reads (boulder.ge responsive.css). */
+@media (max-width: 1023px) {
+  .page-bg__boulder {
+    width: 60vw;
+    opacity: 0.42;
+  }
+}
+
+/* ==========================================================================
+   6. Shared composites
+   ========================================================================== */
+
+/* The content canvas: capped at the design's width, inset by the design's
+   own content inset. */
+.shell {
+  width: 100%;
+  max-width: var(--canvas-max-width);
+  margin-inline: auto;
+  padding-inline: var(--content-inset);
+}
+
+/* A block that starts under the fixed header. */
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--section-top-clearance) var(--content-inset) var(--space-lg);
+}
+
+/* The section header: one big word flush right, the bracketed line tucked
+   under its baseline (boulder.ge SectionTitle). */
+.section-title {
+  margin-left: auto;
+  text-align: right;
+  max-width: 100%;
+}
+
+.section-title__word {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-section-title);
+  line-height: var(--lh-display);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.section-title__sub {
+  margin: -0.12em 0 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-section-sub);
+  line-height: var(--lh-title);
+  color: var(--color-accent-2);
+  white-space: pre-wrap;
+}
+
+/* A way on under a subtitle: the subtitle's voice in ink, with the nav's
+   coral underline on hover and focus. */
+.section-title__more {
+  margin: 0.35em 0 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+}
+
+.section-title__more a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color var(--hover-duration-bouncy) ease;
+}
+
+.section-title__more a:hover,
+.section-title__more a:focus-visible {
+  text-decoration-color: var(--color-accent);
+}
+
+/* Bracketed lower-case microcopy — "[browse some of the cases we worked on]".
+   Indigo by default; `--ink` and `--accent` re-voice it. */
+.bracket {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--color-accent-2);
+}
+
+.bracket--ink {
+  color: var(--ink);
+}
+
+.bracket--accent {
+  color: var(--accent-text);
+}
+
+/* The boulder-cut corner. Alternate the two so a row is not one stamp.
+   `.notch` / `.notch--alt` are the portal's older names for the same cut. */
+.card-shape,
+.notch {
+  clip-path: polygon(
+    var(--card-notch) 0%,
+    100% 0%,
+    100% calc(100% - var(--card-notch)),
+    calc(100% - var(--card-notch)) 100%,
+    0% 100%,
+    0% var(--card-notch)
+  );
+  transition: clip-path var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+.card-shape--alt,
+.notch--alt {
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--card-notch)) 0%,
+    100% var(--card-notch),
+    100% 100%,
+    var(--card-notch) 100%,
+    0% calc(100% - var(--card-notch))
+  );
+}
+
+/* Art inside a card: laid over the host box, never in place of it, so the
+   frame colour shows while it loads or if it 404s. */
+.card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* The generated ProjectMark standing in for a cover — none named, or one
+   that failed to load (ProjectCover.tsx) — on the brand's coral-to-indigo
+   tile, which is what the mark's white lines are drawn to sit on. */
+.card-mark {
+  display: block;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+}
+
+/* Read by screen readers, not drawn. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Scroll-in reveal, on the section-flow curve so arriving content feels like
+   part of the same motion. `--in` is the portal's older name for `--visible`. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--flow-duration) var(--flow-easing),
+    transform var(--flow-duration) var(--flow-easing);
+}
+
+.reveal--visible,
+.reveal--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   7. Georgian titles are set in capitals. The Georgian letters are converted
+   in the DOM by i18n/georgianCaps.ts (browsers leave Georgian out of
+   `text-transform`); this rule does any Latin in the same titles. Keep the
+   list identical to GEORGIAN_TITLE_SELECTOR there.
+   ========================================================================== */
+:root:lang(ka)
+  :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    .ka-caps,
+    .hero-headline,
+    .section-title__word,
+    .section-title__sub,
+    .works-deck__label,
+    .works-card__name,
+    .detail-eyebrow,
+    .detail-title,
+    .detail-more__heading,
+    .detail-more__title,
+    .site-footer__title,
+    .site-footer__sub,
+    .site-footer__heading
+  ) {
+  text-transform: uppercase;
+}
+
+/* Capitals of the word and its subtitle meet with the English tuck, so the
+   subtitle line's ink moves down by half its size — without making the block
+   taller, so nothing under the title moves (boulder.ge "one anchor"). */
+:root:lang(ka) .section-title > :not(.section-title__word) {
+  translate: 0 calc(0.5 * var(--fs-title));
+}

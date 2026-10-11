@@ -1,0 +1,525 @@
+/* ==========================================================================
+   Header — persistent, NOT part of the sliding track
+   ========================================================================== */
+/* The header's own box. boulder.ge puts these on the <header> as Tailwind
+   utilities; the portal keeps them here so the bar never depends on which
+   utilities a build happens to emit. Height and side padding stay inline in
+   Header.tsx, read from the :root tokens (boulder.css). The language switch
+   and the theme toggle live in controls.css. */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* boulder.ge's items are buttons; here they are links (Header.tsx), so the
+   browser's link decoration is taken off once for all of them. */
+.site-header a,
+.site-footer a {
+  text-decoration: none;
+}
+.site-header > * {
+  pointer-events: auto;
+}
+
+/* Logo. `.logo` is now the WRAPPER (a span) rather than the svg itself, so the
+   hover-animation layer can be positioned against it. Header.jsx passes
+   className="logo" exactly as before. */
+.logo {
+  position: relative;
+  display: inline-block;
+  /* 60 design px, floored at 28px so the lockup stays legible on a phone,
+     where --u is ~0.2px. The coarse-pointer block below grows its hit area
+     back to --tap-target. A :root token (index.css) because the header's
+     --header-row-drop is computed from it: change the size there and the
+     room left for the animation's rising thumb follows. */
+  height: var(--logo-height);
+  width: auto;
+}
+.logo__mark {
+  display: block;
+  height: 100%;
+  width: auto;
+  /* Real vector art (components/Logo.jsx) using fill="var(--ink)" — it flips
+     dark-navy/bright-lavender with the theme automatically. */
+  transition: opacity 80ms linear;
+}
+/* Hidden the moment the animation takes over. Its frame 0 is this same
+   lockup, so the handover is invisible. Keyed off the PLAYING state, not
+   :hover — a run always finishes, so the mark must stay hidden after the
+   pointer leaves rather than snapping back mid-sequence. No hover
+   scale/rotate any more either: the reference animation doesn't move or
+   resize the lockup, and a scaling wrapper would drag the layer with it. */
+.logo--playing .logo__mark {
+  opacity: 0;
+}
+
+/* The animation layer: a block of colour shaped by the GIF used as a mask.
+   Because the paint is `background`, it takes --ink and flips with the theme —
+   a plain <img> of the GIF could not. Swap --logo-anim-color to
+   var(--color-accent) if the lockup should animate coral instead of ink; the
+   reference GIF itself is monochrome, so ink is the faithful reading.
+
+   Geometry is derived, not eyeballed. Measured in the GIF's own 1024x576
+   pixel space: the whole animation spans a union box of 1010x386 at (6,47),
+   while frame 0 — the resting lockup — is 959x290 at (31,143). Sizing this
+   layer to the full canvas scaled so frame 0 matches the logo box gives
+   1024/959 = 106.78% wide and 576/290 = 198.62% tall, offset by
+   -31/959 = -3.233% and -143/290 = -49.31%. The layer is therefore much
+   taller than the logo, which is correct: mid-animation shapes genuinely
+   extend above and below the lockup. */
+.logo__anim {
+  position: absolute;
+  left: -3.233%;
+  top: -49.31%;
+  width: 106.78%;
+  height: 198.62%;
+  background: var(--logo-anim-color, var(--ink));
+  pointer-events: none;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+}
+
+/* Reduced motion: never play the 5s sequence — just keep the static lockup. */
+@media (prefers-reduced-motion: reduce) {
+  .logo--playing .logo__mark {
+    opacity: 1;
+  }
+  .logo__anim {
+    display: none;
+  }
+}
+
+.nav--desktop {
+  display: flex;
+  gap: max(2px, calc(8 * var(--u)));
+  align-items: center;
+}
+
+/* Hamburger toggle — hidden on desktop/tablet where the pill row fits on
+   one line; shown below the tablet breakpoint instead of letting the
+   header wrap to two lines or the pills shrink into illegibility. Three
+   plain bars, not an icon-library glyph — this is about as universal an
+   affordance as UI has, doesn't need a dependency for it. */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  /* Stays in px: the toggle only ever shows at <=767px, where --u is ~0.2px
+     and the box is --tap-target. The 7px open-state translate is this 5px
+     gap plus the 2px bar, so the two change together or not at all. */
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ink);
+  transition: transform var(--hover-duration-quick) var(--hover-easing-quick),
+    opacity var(--hover-duration-quick) var(--hover-easing-quick);
+}
+.nav-toggle--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav--mobile {
+  display: none;
+}
+
+/* 767px, not the old one-off 759px — the header now collapses on the same
+   boundary every other responsive rule in the file uses. (Viewports 760-767
+   gain the hamburger; the pill row was already cramped there.) */
+@media (max-width: 767px) {
+  .nav--desktop {
+    display: none;
+  }
+  /* 44px tap target without a visual change: the bars span the content box
+     (44 - 2x6 = 32px), exactly the width they had before. The open-state
+     cross math (translateY from bar height + gap) is untouched. */
+  .nav-toggle {
+    display: flex;
+    width: var(--tap-target);
+    height: var(--tap-target);
+    padding: 6px;
+  }
+
+  .nav--mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: var(--space-sm) var(--header-pad-x) var(--space-md);
+    background: var(--color-white);
+    border-bottom: 2px solid var(--ink);
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+      opacity var(--hover-duration-quick) var(--hover-easing-quick);
+  }
+  :root[data-theme='dark'] .nav--mobile {
+    background: var(--color-dark);
+  }
+  .nav--mobile-open {
+    display: flex;
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav--mobile .nav-pill {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-sm) var(--space-xs);
+  }
+  .nav--mobile .nav-pill > svg {
+    display: none;
+  }
+}
+
+/* TOUCH HIT AREA (2026-09-20, the responsive pass). A finger needs 44px and
+   this control is drawn smaller; the box stays exactly as designed and an
+   absolutely positioned pseudo grows only what the finger has to find. The
+   header does the same for the logo, the flags and the sun (header.css), and
+   `min(0px, ...)` means a control already 44px or taller gets nothing. */
+@media (pointer: coarse) {
+  .nav-pill::after {
+    content: '';
+    position: absolute;
+    inset: min(0px, calc((100% - var(--tap-target)) / 2)) 0;
+  }
+}
+.nav-pill {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* A pill's own furniture (padding, the gap to the squiggle, the squiggle
+     and the hover marker) is in em of the label, i.e. of --fs-title (it was
+     --fs-nav; 2026-10-05: the type system), written as design px / 26, the
+     size the frame draws the nav at. That token is
+     under 26 and has a 16px floor, so em keeps the furniture in the
+     frame's proportion to the word at every size; --u would leave it ~18%
+     too big for the smaller word. Spacing BETWEEN pills is layout and
+     follows --u. Font size itself is set once, in the v2 block below. */
+  gap: calc(6em / 26);
+  padding: calc(8em / 26) calc(12em / 26);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  color: var(--ink);
+  transition:
+    transform var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+    color var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.nav-pill:hover {
+  transform: translateY(-2px);
+}
+/* Real click state, pulled from the Figma "Animations" page: the label
+   drops down slightly and flips to Main Bright — not just a color-neutral
+   press, an actual color inversion (confirmed via the component's own
+   #e0dff7 text color on its "menu button click" variant). */
+.nav-pill:active {
+  transform: translateY(2px);
+}
+.nav-pill:active .nav-pill__label {
+  color: var(--color-bright);
+}
+/* Selected page gets the same accent color as its underline, not just the
+   underline appearing — a clearer "you are here" than color-only-on-hover. */
+.nav-pill[aria-current='page'] {
+  color: var(--color-accent-2);
+}
+.nav-pill > svg {
+  /* 95 design px under a 26px word. NavUnderline's width attribute is only
+     the no-CSS fallback. */
+  width: calc(95em / 26);
+  height: auto;
+  opacity: 0;
+  transition: opacity var(--hover-duration-quick) var(--hover-easing-quick);
+}
+.nav-pill:hover > svg,
+.nav-pill[aria-current='page'] > svg {
+  opacity: 1;
+}
+
+/* Real hover/click accent, traced from Figma's "Animations" page: a coral
+   highlighter-marker swatch behind the label (not a squiggle duplicate —
+   that was our pre-verification guess, corrected here). The marker's own
+   SVG has `preserveAspectRatio="none"` so it stretches to whatever width
+   this wrapper (sized to the label's own text) ends up being. */
+.nav-pill__label-wrap {
+  position: relative;
+  display: inline-block;
+}
+.nav-pill__marker {
+  position: absolute;
+  inset: calc(-8em / 26) calc(-12em / 26);
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+.nav-pill__marker svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.nav-pill:hover .nav-pill__marker,
+.nav-pill:active .nav-pill__marker {
+  opacity: 1;
+}
+.nav-pill__label {
+  position: relative;
+  z-index: 1;
+  transition: color var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--header-control-gap);
+  /* Anchored to the right edge: never shrunk or pushed by the nav. */
+  flex: none;
+}
+
+
+
+/* ==========================================================================
+   Design v2 header. The bar is a translucent strip of the page colour, the
+   logo hangs at the left inset, and the nav sits flush against the theme
+   and language controls on the right — three plain lowercase words in the
+   display face, then a gap, then "connect" in coral as the one call to
+   action. The rules above still provide the hover marker, the underline
+   and the mobile menu; these only re-dress them.
+   ========================================================================== */
+.site-header {
+  /* One gap for the right-hand controls, and the same gap between "connect"
+     and the theme toggle, so the call to action reads as the first of those
+     controls. 20 design px; the 12px floor keeps the theme and flag hit
+     areas apart on touch screens (see the coarse-pointer block above). */
+  --header-control-gap: max(12px, calc(20 * var(--u)));
+  background: var(--header-bg);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  /* Auto-hide (hooks/useAutoHideHeader.js sets data-hidden while the reader
+     scrolls down). A transform, so the slide never touches layout, and the
+     whole bar moves as one: its own height up is exactly out of view, the
+     phone dropdown (top: 100%) and the logo's animation layer ride along.
+     That layer's mask box does reach below the logo, but the GIF's ink never
+     goes lower than the resting lockup (union box bottom y 433 = frame 0's
+     bottom, in the GIF's pixels), so nothing peeks in under a hidden bar;
+     shown, the transform is none and the rising thumb keeps its 6px. */
+  transition: transform var(--header-slide-duration) var(--header-slide-easing);
+}
+.site-header[data-hidden] {
+  transform: translateY(-100%);
+}
+/* Reduced motion: it still hides and shows, just without the slide. After
+   the base rule above, which is all a same-specificity override needs. */
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
+}
+/* The nav fills the room between the logo and the controls. "connect" is
+   pushed to its right end, one --header-control-gap from the theme toggle
+   (it used to sit ~250px away at 1440, with the three words, because the
+   header's space-between parked the whole nav mid-way). The three words keep
+   the place they had: an auto margin before "team" and one before "connect"
+   split the free room evenly, and with the old 72-design-px separation moved
+   onto the word before "connect" and the nav's right margin equal to the old
+   one (both 20u above the 12px floor), each auto margin is exactly the
+   space-between gap the words used to get. They move only by half of what
+   the controls themselves grew (the bigger flags: 14u, ~13px at 1440). */
+.nav--desktop {
+  flex: 1;
+  min-width: 0;
+  gap: max(8px, calc(44 * var(--u)));
+  /* Less connect's own padding, for the same reason the header-right gap is
+     less the flags': equal ink, not equal boxes. */
+  margin-right: calc(var(--header-control-gap) - var(--header-pill-inset));
+}
+/* The three section words, centred on the WINDOW (on request, 2026-09-20).
+   They used to be laid out by `margin-left: auto` inside a space-between
+   row, which centres them on whatever the logo and the right-hand controls
+   leave over — and those two ends are different widths, so the words sat off
+   centre by half that difference. The header is `position: fixed`, so it is
+   the containing block here and `left: 50%` resolves against the whole
+   window.
+   `top: var(--header-row-drop)`: the header pads its top by the drop so the
+   flex row centres in the LOWER --header-height, but an absolute child is
+   laid against the PADDING box, which starts at the bar's top — without the
+   same offset the words would sit half the drop (5.2px at 1440x1024) high. */
+.nav__sections {
+  position: absolute;
+  left: 50%;
+  top: var(--header-row-drop);
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: max(8px, calc(44 * var(--u)));
+}
+.nav--desktop .nav-pill--accent {
+  margin-left: auto;
+}
+/* The tablet band (768-1023, where the desktop header still shows): back in
+   the row, centred between the logo and "connect" instead of on the window.
+   With "services" the group is four words (2026-09-23), and centred on the
+   window it ran into "connect": measured in Georgian, where the words are
+   longest, 54px of overlap at 768 and 3px of room at 900 (English: 7px at
+   768). In the row it can only use the room the logo and the controls leave
+   — two auto margins centre it in that — so it cannot slide under either
+   end the way a window-centred group does. The room is still tight in
+   Georgian at 768, so the gaps (between the words, and from the group to
+   "connect") come down from 44 to 20 design px, which at 768 is their 8px
+   floor, rather than the 44 they keep from 1024 up. Measured after, at 768
+   (the tightest): the Georgian words' ink clears the logo by 19px and
+   "connect" by 33px, English by 76 / 87; both only grow up to 1023. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav--desktop {
+    gap: max(8px, calc(20 * var(--u)));
+  }
+  .nav__sections {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    gap: max(8px, calc(20 * var(--u)));
+    /* May be narrower than its words (2026-10-08): it takes the room the
+       anchors leave and the words are scaled into it (--nav-fit), instead of
+       pushing "connect" and the controls off the right edge. */
+    min-width: 0;
+  }
+  .nav--desktop .nav-pill--accent {
+    margin-left: 0;
+  }
+}
+.nav-pill,
+.nav-pill__label {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  /* --nav-fit: 1 unless the section words would not fit between the logo
+     and "connect" (Header.jsx, THE FOUR WORDS FIT BETWEEN THEIR ANCHORS); set
+     on .nav__sections, so "connect" and the phone menu never read it. */
+  font-size: calc(var(--fs-title) * var(--nav-fit, 1));
+  text-transform: lowercase;
+  letter-spacing: 0;
+}
+.nav-pill--accent .nav-pill__label {
+  color: var(--color-accent);
+}
+/* Its hover and press. The marker behind every label on hover is coral in
+   both themes (HoverMarker's own fill), so the coral "connect" disappeared
+   into its own swatch. It turns our black, #111224, instead: --color-dark
+   rather than --ink, because in dark theme --ink is the bright lavender and
+   lavender on coral is ~2.7:1, while our black on coral is ~5.2:1 in either
+   theme. The press keeps it: the other items' press flip to --color-bright
+   would be that same weak pairing. Desktop row and phone menu alike. */
+.nav-pill--accent:hover .nav-pill__label,
+.nav-pill--accent:active .nav-pill__label {
+  color: var(--color-dark);
+}
+
+/* ==========================================================================
+   The phone menu (boulder.ge responsive.css): a small card dropped under the
+   hamburger, anchored to the header's right padding — navy with lavender
+   words on the light page, lavender with navy words on the dark one. It
+   wipes down (clip-path) rather than scaling. `display: flex` is kept on the
+   closed card so the wipe also runs on the way out; `visibility` is what
+   takes the closed card's links out of reach (and out of the tab order).
+   ========================================================================== */
+@media (max-width: 767px) {
+  .nav--mobile {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: max(var(--header-pad-x), env(safe-area-inset-right, 0px));
+    width: max-content;
+    min-width: 10rem;
+    max-width: calc(100vw - 2 * max(var(--header-pad-x), env(safe-area-inset-left, 0px)));
+    height: auto;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-dark);
+    border-bottom: 0;
+    transform: none;
+    opacity: 1;
+    visibility: hidden;
+    clip-path: inset(0 0 100% 0);
+    transition:
+      clip-path 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s linear 360ms;
+  }
+  .nav--mobile-open {
+    transform: none;
+    visibility: visible;
+    clip-path: inset(0);
+    transition:
+      clip-path 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s;
+  }
+  :root[data-theme='dark'] .nav--mobile {
+    background: var(--color-bright);
+  }
+  .nav--mobile .nav-pill {
+    width: 100%;
+    min-height: var(--tap-target);
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 var(--space-xs);
+  }
+  .nav--mobile .nav-pill,
+  .nav--mobile .nav-pill__label {
+    font-size: var(--fs-title);
+    line-height: var(--lh-title);
+  }
+  .nav--mobile .nav-pill__label {
+    color: var(--color-bright);
+  }
+  .nav--mobile .nav-pill[aria-current='page'] .nav-pill__label {
+    color: color-mix(in srgb, var(--color-accent-2) 65%, var(--color-bright));
+  }
+  .nav--mobile .nav-pill--accent .nav-pill__label {
+    color: var(--color-accent);
+  }
+  :root[data-theme='dark'] .nav--mobile .nav-pill__label,
+  :root[data-theme='dark'] .nav--mobile .nav-pill--accent .nav-pill__label {
+    color: var(--color-dark);
+  }
+  :root[data-theme='dark'] .nav--mobile .nav-pill[aria-current='page'] .nav-pill__label {
+    color: color-mix(in srgb, var(--color-accent-2) 75%, var(--color-dark));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav--mobile,
+  .nav--mobile-open {
+    transition: none;
+  }
+}

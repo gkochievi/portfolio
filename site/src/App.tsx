@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 
+import { LanguageProvider } from '@/i18n/LanguageContext'
 import { SiteLayout } from '@/components/Layout'
 import { PortalPage } from '@/pages/PortalPage'
 import { ProjectPage } from '@/pages/ProjectPage'
@@ -20,29 +21,37 @@ function SiteRouter({ children }: { children: ReactNode }) {
 }
 
 /**
- * Two routes: the grid, and one project.
+ * The same three routes twice: English at the root, Georgian under `/ka` —
+ * boulder.ge's scheme, so each language is an address of its own. The pages
+ * never read the prefix; `LanguageProvider` takes the language from the
+ * location and every page asks `useLang()`.
  *
- * The grid used to link straight into a demo bundle. It no longer does — a
- * visitor dropped into someone else's dispatch console cannot tell what the
- * product is for or which parts were hard, so `/work/<slug>` says that first
- * and the demo is a button on it. The copy those pages need was already in
- * `content/projects.json`, written for the case studies an earlier version of
- * this portal removed.
- *
- * `work/:slug` is declared before the catch-all, and an unknown slug renders
- * the 404 page from inside the route rather than redirecting — see
+ * `/ka/<anything unknown>` is the Georgian 404 rather than the English one,
+ * which is why `ka` carries its own catch-all. An unknown slug renders the
+ * 404 page from inside the project route rather than redirecting — see
  * `ProjectPage`.
+ *
+ * The shell — `.app`, the header, `main.page` with the dot grid and the side
+ * boulder, the footer — is boulder.ge's, and lives in the layout route
+ * (`SiteLayout`), so it is drawn once around every page, the 404 included.
  */
 export function App() {
   return (
     <SiteRouter>
-      <Routes>
-        <Route element={<SiteLayout />}>
-          <Route index element={<PortalPage />} />
-          <Route path="work/:slug" element={<ProjectPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+      <LanguageProvider>
+        <Routes>
+          <Route element={<SiteLayout />}>
+            <Route index element={<PortalPage />} />
+            <Route path="work/:slug" element={<ProjectPage />} />
+            <Route path="ka">
+              <Route index element={<PortalPage />} />
+              <Route path="work/:slug" element={<ProjectPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </LanguageProvider>
     </SiteRouter>
   )
 }

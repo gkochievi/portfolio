@@ -4,14 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f4f3fb" />
-    <title>Boulder — work you can click through</title>
+    <!-- --page-bg in styles/boulder.css; lib/theme.ts keeps it in step. -->
+    <meta name="theme-color" content="#ffffff" />
+    <title>Boulder — works you can click through</title>
     <meta
       name="description"
       content="Boulder builds the software a business actually runs on. Every project here opens as a live demo in your browser — real data, real workflows, no sign-up."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Boulder — work you can click through" />
+    <meta property="og:site_name" content="Boulder" />
+    <meta property="og:title" content="Boulder — works you can click through" />
     <meta
       property="og:description"
       content="Operational software for businesses that run on hardware. Every project opens as a live, clickable demo."
@@ -19,23 +21,24 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!--
-      Montserrat + Montserrat Alternates are the brand's own faces. 'Aktiv
-      Grotesk Georgian' from the brand kit is licensed and not on Google Fonts;
-      Montserrat Alternates is what it falls back to, exactly as on the main
-      Boulder site.
+      boulder.ge's own font request, byte for byte (boulder-website
+      src/app/(frontend)/fonts.ts): Montserrat Alternates in the three weights
+      the type system uses (400 / 700 / 900) for the English site, and Google
+      Sans, one variable file, for the Georgian one — and for any Georgian
+      glyph on an English page.
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&family=Google+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
 
     <script>
       /*
-        Applied before first paint so the page never flashes light then snaps to
-        dark. Mirrors ThemeToggle's rule exactly: an explicit choice wins,
-        otherwise follow the operating system.
+        Applied before first paint so the page never flashes light then snaps
+        to dark. Mirrors lib/theme.ts exactly: an explicit choice (stored under
+        boulder.theme) wins, otherwise follow the operating system.
       */
       (function () {
         try {
@@ -48,7 +51,7 @@
                 : 'light'
           document.documentElement.setAttribute('data-theme', mode)
           if (mode === 'dark') {
-            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0b0c17')
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#111224')
           }
         } catch (e) {
           document.documentElement.setAttribute('data-theme', 'light')
@@ -61,7 +64,7 @@
   <body>
     <div id="root"></div>
     <noscript>
-      This site is a JavaScript application. Please enable JavaScript, or email tech@boulde.ge.
+      This site is a JavaScript application. Please enable JavaScript, or email poke@boulder.ge.
     </noscript>
   </body>
 </html>

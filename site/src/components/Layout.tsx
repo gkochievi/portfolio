@@ -1,10 +1,16 @@
 import { useEffect, useRef } from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
-import { Mail } from 'lucide-react'
+import { Outlet, useLocation } from 'react-router-dom'
 
-import { COMPANY, EMAIL, LOCATION, MAILTO } from '@/config'
-import { Logo } from './Logo'
-import { ThemeToggle } from './ThemeToggle'
+import { useLang } from '@/i18n/LanguageContext'
+// The chrome's stylesheets, in boulder.ge's cascade order (styles/index.css).
+// motion.css is not here: main.tsx loads it after everything else.
+import '@/styles/header.css'
+import '@/styles/controls.css'
+import '@/styles/footer.css'
+import Footer from './Footer'
+import Header from './Header'
+import { PageBackground } from './PageBackground'
+import SparkCanvas from './SparkCanvas'
 
 /**
  * A route change lands at the top — instantly: the html `scroll-behavior:
@@ -40,49 +46,26 @@ function ScrollToTop() {
   return null
 }
 
-function SiteHeader() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-hairline bg-[var(--page)]/85 backdrop-blur-xl">
-      <div className="shell flex h-16 items-center justify-between gap-4 sm:h-20">
-        <Link to="/" aria-label={`${COMPANY} — home`} className="flex items-center">
-          <Logo className="h-6 w-auto sm:h-7" />
-        </Link>
-        <div className="flex items-center gap-3">
-          <a
-            href={MAILTO}
-            className="hidden items-center gap-2 text-body font-semibold text-ink/70 transition-colors duration-300 ease-bounce hover:text-accent-text sm:inline-flex"
-          >
-            <Mail className="size-4" aria-hidden />
-            Get in touch
-          </a>
-          <ThemeToggle />
-        </div>
-      </div>
-    </header>
-  )
-}
-
-function SiteFooter() {
-  return (
-    <footer className="mt-auto border-t border-hairline">
-      <div className="shell flex flex-col gap-3 py-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-small text-ink/60">
-          © {new Date().getFullYear()} {COMPANY} · {LOCATION}
-        </p>
-        <a
-          href={MAILTO}
-          className="text-small font-semibold text-accent-text transition-opacity duration-300 ease-bounce hover:opacity-70"
-        >
-          {EMAIL}
-        </a>
-      </div>
-    </footer>
-  )
-}
-
+/**
+ * boulder.ge's app shell (App.jsx), as one layout route around every page:
+ *
+ *   .app
+ *     SparkCanvas      the click burst, one canvas for the whole document
+ *     Header           fixed, laid over the page
+ *     main.page        the dot grid and the side boulder, then the route
+ *     Footer           AFTER `.page`, not inside it — the rock is sized from
+ *                      `.page`'s height, and a footer inside would stretch it
+ *                      past where the design puts it
+ *
+ * The pages render no `<main>` of their own; they start with a `.section`,
+ * which clears the fixed header itself (boulder.css).
+ */
 export function SiteLayout() {
+  const { t } = useLang()
+
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="app">
+      <SparkCanvas />
       <ScrollToTop />
       {/* JS-driven rather than a fragment link: under VITE_ROUTER=hash the
           fragment would be read as a route ("#work" → /work) and land on the
@@ -93,15 +76,16 @@ export function SiteLayout() {
           event.preventDefault()
           document.getElementById('work')?.focus()
         }}
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-surface focus:px-4 focus:py-2"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-surface focus:px-4 focus:py-2 focus:font-bold focus:text-ink"
       >
-        Skip to the work
+        {t('a11y.skip')}
       </a>
-      <SiteHeader />
-      <main id="work" tabIndex={-1} className="flex-1 outline-none">
+      <Header />
+      <main id="work" tabIndex={-1} className="page outline-none">
+        <PageBackground />
         <Outlet />
       </main>
-      <SiteFooter />
+      <Footer />
     </div>
   )
 }

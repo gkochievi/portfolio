@@ -1,106 +1,125 @@
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-import type { Project } from '@/content'
-import { projectPath, STATUS_LABEL } from '@/content'
-import { ProjectMark } from './ProjectMark'
-import { fromBase } from '@/lib/url'
-import { useInView } from '@/lib/useInView'
+import { projectPath, type Project } from '@/content'
+import { fill, useLang } from '@/i18n/LanguageContext'
+import { demoHref } from '@/lib/url'
 import { cn } from '@/lib/cn'
+import { CardFrame, TagBox, type FrameTone } from './CardFrame'
+import { ProjectCover } from './ProjectCover'
+import { Reveal } from './Reveal'
+
+/** Stack chips on a card; the rest is one "+n" and the detail page. */
+const STACK_SHOWN = 4
 
 /**
- * One project in the grid.
+ * One project in the works grid, in boulder.ge's card language: the notched
+ * frame in the department's colour, the cover laid inside it, the name, the
+ * bracketed microcopy, and the category as a tag box.
  *
- * The whole card is a single link, not a div with a button inside it. That is
- * deliberate: nesting an interactive element inside a clickable container gives
- * you two tab stops for one destination and an invalid DOM, and wiring an
- * onClick on the wrapper instead loses middle-click, cmd-click and "copy link
- * address" — all of which a visitor evaluating a portfolio actually uses. A
- * router `<Link>` renders a real anchor with a real href, so all of that still
- * works.
+ * The card opens the case study at `/work/<slug>` in the reader's language.
+ * That is a real router link on the name, stretched over the whole card by
+ * its `::after` (works.css), not an onClick on a div: middle-click, cmd-click
+ * and "copy link address" all still work, and there is one tab stop for the
+ * one destination.
  *
- * It points at `/work/<slug>`, not at the demo. Opening the product on the
- * first click skipped the part that says what the product is, so the demo is a
- * button on the detail page and the card advertises that a demo exists. The
- * side effect is that a project with `demoUrl: null` is now a working card
- * rather than a dead one — the detail page is the destination either way.
+ * The demo is the second destination, and it gets its own link rather than a
+ * button nested inside the first (an anchor inside an anchor is invalid DOM).
+ * It sits above the stretched link, so it takes its own clicks; everywhere
+ * else on the card goes to the case study. It is a plain `<a>`: a demo is a
+ * separate bundle under the deploy base, not a route of this app, and it is
+ * addressed through `demoHref`, which hands a Georgian reader's language over
+ * as `?lang=ka`.
  */
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const [ref, seen] = useInView<HTMLLIElement>()
+export function ProjectCard({
+  project,
+  index,
+  tone = 'tech',
+}: {
+  project: Project
+  index: number
+  tone?: FrameTone
+}) {
+  const { lang, t, href } = useLang()
+  const demo = project.demoUrl ? demoHref(project.demoUrl, lang) : null
+  const stack = project.stack.slice(0, STACK_SHOWN)
+  const hidden = project.stack.length - stack.length
+  const category = project.category?.trim()
 
   return (
-    <li
-      ref={ref}
-      className={cn('reveal', seen && 'reveal--in')}
-      style={{ transitionDelay: `${Math.min(index, 5) * 70}ms` }}
-    >
-      <Link
-        to={projectPath(project.slug)}
-        className="project-card"
-        aria-label={`${project.name} — read the project${project.demoUrl ? ', live demo available' : ''}`}
-      >
-        <div className={cn('project-card__frame notch', index % 2 === 1 && 'notch--alt')}>
-          <div className="project-card__art">
-            {/* A real capture of the running product when there is one. The
-                generated constellation is the fallback, not the default — a
-                screenshot of the actual screen says more in a thumbnail than any
-                amount of abstract artwork. Lazy below the fold; the first row is
-                the page's LCP candidate, so it loads eagerly. */}
-            {project.cover ? (
-              <img
-                src={fromBase(project.cover)}
-                alt={`${project.name} — a screen from the live demo`}
-                className="project-card__shot"
-                loading={index < 3 ? 'eager' : 'lazy'}
-                decoding="async"
-                width={1600}
-                height={1000}
-              />
-            ) : (
-              <ProjectMark seed={project.slug} />
-            )}
+    <Reveal as="li" index={index % 3} className={cn('works-tile', index % 2 === 1 && 'works-tile--alt')}>
+      <CardFrame tone={tone} alt={index % 2 === 1}>
+        <div className="works-tile__art">
+          {/* A real capture of the running product when there is one and it
+              loads; the generated constellation on the brand gradient
+              otherwise. The first row is the page's LCP candidate, so it
+              loads eagerly. */}
+          <ProjectCover
+            cover={project.cover}
+            seed={project.slug}
+            className="works-tile__shot"
+            eager={index < 3}
+            width={2000}
+            height={1494}
+          />
 
-            {/* Both badges sit on the cover art, which is the one plane in this
-                design with a fixed colour underneath — so black-and-white here
-                is theme-safe where it would not be anywhere else on the page. */}
-            <span className="absolute left-3 top-3 bg-black/60 px-2 py-1 text-small font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
-              {STATUS_LABEL[project.status]}
+          {/* Both badges sit on the cover, the one plane with a fixed colour
+              under it, so their own plates are theme-safe. */}
+          <span className="works-tile__badge works-tile__badge--status">[{t(`status.${project.status}`)}]</span>
+          {demo && (
+            <span className="works-tile__badge works-tile__badge--live">
+              <span className="works-tile__pulse" aria-hidden />
+              {t('card.demo')}
             </span>
-            {project.demoUrl && (
-              <span className="absolute right-3 top-3 bg-black/60 px-2 py-1 text-small font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
-                Live demo
-              </span>
-            )}
+          )}
+        </div>
+
+        <div className="works-tile__body">
+          <div className="works-tile__meta">
+            {category && <TagBox tone={tone}>[{category}]</TagBox>}
+            <span className="bracket bracket--ink works-tile__period">[{project.period}]</span>
           </div>
 
-          <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
-            <div>
-              <h2 className="font-display text-h2 font-bold leading-tight text-ink">{project.name}</h2>
-              <p className="mt-1 text-small font-semibold uppercase tracking-[0.12em] text-ink/60">
-                {project.period}
-              </p>
-            </div>
+          <h3 className="works-card__name">
+            <Link
+              to={href(projectPath(project.slug))}
+              className="works-tile__link"
+              aria-label={fill(t('card.openLabel'), { name: project.name })}
+            >
+              {project.name}
+            </Link>
+          </h3>
 
-            <p className="text-body leading-relaxed text-ink/70">{project.tagline}</p>
+          <p className="works-tile__tagline">{project.tagline}</p>
 
-            <ul className="mt-auto flex flex-wrap gap-1.5 pt-2" aria-label="Built with">
-              {project.stack.slice(0, 5).map((item) => (
-                <li key={item} className="border border-hairline px-2 py-1 text-small text-ink/60">
-                  {item}
-                </li>
-              ))}
-              {project.stack.length > 5 && (
-                <li className="px-2 py-1 text-small text-ink/60">+{project.stack.length - 5}</li>
-              )}
-            </ul>
+          <ul className="works-tile__stack" aria-label={t('detail.stack')}>
+            {stack.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+            {hidden > 0 && <li className="works-tile__stack-more">{fill(t('card.more'), { n: hidden })}</li>}
+          </ul>
 
-            <span className="project-card__go pt-2">
-              Read the project
-              <ArrowRight className="size-4" aria-hidden />
+          <div className="works-tile__foot">
+            {/* The stretched link already says this; the line is what a sighted
+                reader is told the card does. */}
+            <span className="works-tile__go" aria-hidden>
+              [{t('card.open')}]
+              <ArrowRight className="works-tile__arrow" aria-hidden />
             </span>
+            {demo ? (
+              <a
+                className="works-tile__demo"
+                href={demo}
+                aria-label={`${t('detail.openDemo')} — ${project.name}`}
+              >
+                [{t('detail.openDemo')}]
+              </a>
+            ) : (
+              <span className="works-tile__nodemo">[{t('card.noDemo')}]</span>
+            )}
           </div>
         </div>
-      </Link>
-    </li>
+      </CardFrame>
+    </Reveal>
   )
 }

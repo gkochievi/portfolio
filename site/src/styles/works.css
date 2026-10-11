@@ -1,0 +1,765 @@
+/* ==========================================================================
+   Works — the portal home (PortalPage.tsx, WorksDeck.tsx, ProjectCard.tsx,
+   CardFrame.tsx).
+
+   Ported from boulder-website's `src/styles/works.css` and `hero.css`: the
+   category filter on the subtitle's line, the tilted deck label in its
+   department's colour, the notched v2 card frame, and the hero's BOULDER
+   stamp. boulder.ge's Works is a magnifying field of icons that opens into
+   decks; the portal deals the same cards out flat, because every card here
+   is meant to be read, so the field and the lens are not ported.
+
+   Every value reads boulder.css's tokens (--u, --space-*, --fs-*, --frame-*,
+   --card-notch, the hover curve) under boulder.ge's own names.
+
+   Contents
+     1. Hero line
+     2. Section header + category filter
+     3. Deck label + grid
+     4. Card frame + tag box
+     5. Card contents
+     6. Hover and focus
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero line — boulder.ge's headline, set as the page's h1.
+   -------------------------------------------------------------------------- */
+/* The page's first block, so it starts under the fixed header itself, like
+   boulder.css .section — but from the whole bar (--header-bar-height, which
+   adds the room the logo's rising animation takes) rather than
+   --section-top-clearance: the bracketed count is the hero's first line and
+   sits at the bar's left, under the logo. Then the hero's own air. */
+.works-hero {
+  position: relative;
+  padding-top: calc(var(--header-bar-height) + var(--space-md));
+  padding-bottom: var(--space-md);
+}
+
+/* On a wide window the copy starts where boulder.ge's BOULDER stands (frame
+   x ~600), right of the side boulder's thickest part. Below 1024 the rock is
+   a faded texture (boulder.css) and the copy takes the column. */
+.works-hero__copy {
+  position: relative;
+  max-width: 44rem;
+}
+
+@media (min-width: 1024px) {
+  .works-hero__copy {
+    margin-left: max(0px, calc(462 * var(--u)));
+    max-width: max(36rem, calc(720 * var(--u)));
+  }
+}
+
+/* The page's own colour behind the copy, faded out on every side — the mist
+   boulder.ge lays under its filter row so words never read against
+   photographed gravel. `z-index: -1` stays inside the Reveal's own stacking
+   context (it transforms), behind the words and over the page. */
+.works-hero__copy::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -1.25em -2em;
+  background: linear-gradient(
+    to right,
+    transparent 0,
+    color-mix(in srgb, var(--page-bg) 88%, transparent) 10%,
+    color-mix(in srgb, var(--page-bg) 88%, transparent) 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%);
+  pointer-events: none;
+}
+
+.works-hero__count {
+  margin: 0;
+}
+
+.works-hero__headline {
+  margin: 0.15em 0 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-display-l);
+  line-height: 1.1667; /* the frame's 74.98 px text box */
+  letter-spacing: -0.05em;
+  color: var(--color-accent);
+  text-wrap: balance;
+}
+
+.works-hero .hero-headline__strong {
+  font-weight: var(--fw-black);
+}
+
+.works-hero .hero-headline__light {
+  font-weight: var(--fw-regular);
+}
+
+/* BOULDER: the heaviest cut in indigo, ON TOP, with the coral copy printed
+   behind it 1px right and 4px up, so the coral shows as its shadow along the
+   top and right (boulder.ge hero.css). `isolation` keeps the copy's z-index
+   -1 behind the word's glyphs but never behind the page. Its own tracking,
+   in its own em, so the stamp is set the same in both languages. */
+.works-hero .hero-headline__boulder {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  letter-spacing: -0.05em;
+  font-family: var(--font-brand);
+  font-weight: var(--fw-black);
+  color: var(--color-accent-2);
+}
+
+.works-hero .hero-headline__boulder::after {
+  content: attr(data-text);
+  position: absolute;
+  z-index: -1;
+  left: 0.0156em;
+  top: -0.0622em;
+  color: var(--color-accent);
+  pointer-events: none;
+}
+
+/* Georgian's words are longer and set in capitals: boulder.ge draws its
+   headline at 45 frame px against English's 64.27. */
+:root:lang(ka) .works-hero__headline {
+  font-size: max(28px, min(var(--fs-display-l), calc(45 * var(--u))));
+  letter-spacing: -0.02em;
+}
+
+.works-hero__lead {
+  margin-top: var(--space-sm);
+  max-width: 54ch;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: color-mix(in srgb, var(--ink) 82%, transparent);
+}
+
+.works-hero__more {
+  margin-top: var(--space-xs);
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+/* The nav's coral underline on hover and focus (boulder.css section-title__more). */
+.works-hero__more a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  color: var(--color-accent-2);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color var(--hover-duration-bouncy) ease;
+}
+
+.works-hero__more a:hover,
+.works-hero__more a:focus-visible {
+  text-decoration-color: var(--color-accent);
+}
+
+:root[data-theme='dark'] .works-hero__more a {
+  /* Indigo on navy is 3.27:1; the pale lavender ink reads. */
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   2. Section header + category filter (boulder.ge works.css, verbatim in
+   substance). The word keeps a line of its own; the chips and the subtitle
+   share the next one, right-aligned, the subtitle against the right edge and
+   the chips growing leftward from it.
+
+   Laid out right to left (row-reverse) so the subtitle is placed first: when
+   the chips do not fit beside it — a phone, or the eight-odd categories of a
+   full deck — they wrap onto a line of their own UNDER the subtitle, never
+   between the word and the subtitle that belongs to it. The row gap spaces
+   that wrapped line; the word's negative bottom margin takes the same gap
+   back above the subtitle, so the subtitle stays tucked under the word's
+   baseline either way.
+   -------------------------------------------------------------------------- */
+.works-section {
+  position: relative;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+.works-section .section-title {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: baseline;
+  /* Row-reverse: the start is the right edge. */
+  justify-content: flex-start;
+  column-gap: max(8px, calc(18 * var(--u)));
+  row-gap: var(--space-xs);
+}
+
+.works-section .section-title__word {
+  order: -1;
+  flex: 0 0 100%;
+  margin-bottom: calc(-1 * var(--space-xs));
+}
+
+.works-section .section-title__sub {
+  order: 0;
+}
+
+.works-filter {
+  order: 1;
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  column-gap: max(2px, calc(4 * var(--u)));
+  /* Keeps two wrapped lines of chips' tap pads (below) from overlapping. */
+  row-gap: calc(var(--tap-target) - 16px);
+}
+
+.works-filter::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -0.5em -0.7em;
+  background: linear-gradient(
+    to right,
+    transparent 0,
+    color-mix(in srgb, var(--page-bg) 92%, transparent) 12%,
+    color-mix(in srgb, var(--page-bg) 92%, transparent) 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 78%, transparent 100%);
+  pointer-events: none;
+}
+
+/* A chip is bracketed lowercase in its category's colour, carried to 4.5:1
+   against the page in either theme by 26% of the ink (--chip-ink). [all]
+   takes the ink. Pressed is a filled block with the page's colour cut out of
+   it; aria-pressed, not colour, carries the state. */
+.works-filter__chip {
+  --chip: var(--ink);
+  --chip-ink: color-mix(in srgb, var(--chip) 74%, var(--ink));
+  position: relative;
+  margin: 0;
+  padding: max(1px, calc(2 * var(--u))) max(4px, calc(7 * var(--u)));
+  border: 0;
+  background: none;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  text-transform: lowercase;
+  color: var(--chip-ink);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+/* A transparent pad, --tap-target tall, centred on the word: the chip keeps
+   its drawn size and still clears the touch minimum. */
+.works-filter__chip::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: var(--tap-target);
+  transform: translateY(-50%);
+}
+
+.works-filter__chip--tech {
+  --chip: var(--frame-tech);
+}
+
+.works-filter__chip--marketing {
+  --chip: var(--frame-marketing);
+}
+
+.works-filter__chip--branding {
+  --chip: var(--frame-branding);
+}
+
+.works-filter__chip:not([aria-pressed='true']):hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.works-filter__chip[aria-pressed='true'] {
+  background: var(--chip-ink);
+  color: var(--page-bg);
+}
+
+.works-filter__chip:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Phones: the chips always take a line of their own under the subtitle, set
+   off by the title's row gap. */
+@media (max-width: 767px) {
+  .works-filter {
+    flex: 0 0 100%;
+    column-gap: 8px;
+  }
+}
+
+.works-empty {
+  margin-top: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   3. Deck label + grid (boulder.ge .works-deck__label, laid flat)
+   -------------------------------------------------------------------------- */
+/* Room above the deck for its label's tilt — the right end of a -3deg block
+   stands ~5% of its width higher — and for the lift it takes on hover and
+   focus (below), so neither reaches the last line of filter chips. */
+.works-deck-grid {
+  margin-top: var(--space-lg);
+}
+
+.works-deck-grid__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+/* The deck's name, tilted with its deck, lifting by 10 design px and growing
+   an eighth on the bouncy curve while any card in it is hovered or focused —
+   boulder.ge's deck hover, kept for the flat grid. */
+.works-deck__label {
+  rotate: -3deg;
+  transform-origin: 0% 100%;
+  transition:
+    translate var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+    scale var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+.works-deck-grid:has(.works-tile__link:focus-visible) .works-deck__label {
+  translate: 0 max(-10px, calc(-10 * var(--u)));
+  scale: 1.06;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .works-deck-grid:has(.works-tile:hover) .works-deck__label {
+    translate: 0 max(-10px, calc(-10 * var(--u)));
+    scale: 1.06;
+  }
+}
+
+.works-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Rows of three on a wide window — except two or four cards, which deal into
+   pairs rather than leave one card alone on the last row (WorksDeck.tsx). */
+@media (min-width: 1100px) {
+  .works-grid:not(.works-grid--pairs) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Card frame + tag box
+   -------------------------------------------------------------------------- */
+
+/* The ring is the outer box's colour showing round the inner box. The inner
+   cut sits a ring's width in along the 45-degree diagonal, which for the same
+   corner is the outer notch less (2 - sqrt 2) x the ring, so the ring is one
+   thickness all the way round. */
+.card-frame {
+  --frame: var(--frame-tech);
+  --n: var(--card-notch);
+  --ring: max(3px, calc(5 * var(--u)));
+  position: relative;
+  display: flex;
+  flex: 1;
+  padding: var(--ring);
+  background: var(--frame);
+  clip-path: polygon(
+    var(--n) 0%,
+    100% 0%,
+    100% calc(100% - var(--n)),
+    calc(100% - var(--n)) 100%,
+    0% 100%,
+    0% var(--n)
+  );
+  transition:
+    clip-path var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+    translate var(--hover-duration-bouncy) var(--hover-easing-bouncy),
+    rotate var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+.card-frame__inner {
+  --n-in: max(0px, calc(var(--n) - var(--ring) * 0.586));
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  background: var(--surface);
+  clip-path: polygon(
+    var(--n-in) 0%,
+    100% 0%,
+    100% calc(100% - var(--n-in)),
+    calc(100% - var(--n-in)) 100%,
+    0% 100%,
+    0% var(--n-in)
+  );
+  transition: clip-path var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+.card-frame--alt {
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--n)) 0%,
+    100% var(--n),
+    100% 100%,
+    var(--n) 100%,
+    0% calc(100% - var(--n))
+  );
+}
+
+.card-frame--alt .card-frame__inner {
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - var(--n-in)) 0%,
+    100% var(--n-in),
+    100% 100%,
+    var(--n-in) 100%,
+    0% calc(100% - var(--n-in))
+  );
+}
+
+.card-frame--marketing {
+  --frame: var(--frame-marketing);
+}
+
+.card-frame--branding {
+  --frame: var(--frame-branding);
+}
+
+/* "[development]": the bracketed word on a block of its department's colour.
+   Small tags are 14px bold, which is not large text, so tech's block is the
+   deeper coral (white on it clears 4.5:1 in both themes); the deck label is
+   display-sized and wears the true coral, as on boulder.ge. Branding is the
+   ink with the page cut out of it, so it flips with the theme. */
+.tag-box {
+  --tag-bg: #d61e50;
+  --tag-ink: var(--color-white);
+  display: inline-block;
+  padding: max(2px, calc(3 * var(--u))) max(6px, calc(9 * var(--u)));
+  background: var(--tag-bg);
+  color: var(--tag-ink);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.tag-box--marketing {
+  --tag-bg: var(--color-accent-2);
+}
+
+.tag-box--branding {
+  --tag-bg: var(--ink);
+  --tag-ink: var(--page-bg);
+}
+
+.tag-box--large {
+  padding: max(4px, calc(8 * var(--u))) max(10px, calc(18 * var(--u)));
+  font-size: var(--fs-heading);
+  line-height: var(--lh-heading);
+}
+
+.tag-box--large.tag-box--tech {
+  --tag-bg: var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   5. Card contents
+   -------------------------------------------------------------------------- */
+.works-tile {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* 4:3, the thumbnails' own shape. The fill shows while the image loads
+   (boulder.css .card-media lays the art over the box, never in its place);
+   no cover, or one that fails to load, is the generated mark on the brand
+   gradient instead (ProjectCover, boulder.css .card-mark). */
+.works-tile__art {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--frame-fill);
+}
+
+.works-tile__shot {
+  object-position: top center;
+  transition: scale 600ms var(--flow-easing);
+}
+
+.works-tile__badge {
+  position: absolute;
+  top: max(8px, calc(12 * var(--u)));
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-micro);
+  line-height: var(--lh-small);
+  text-transform: lowercase;
+  color: var(--color-white);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.works-tile__badge--status {
+  left: max(8px, calc(12 * var(--u)));
+  background: rgb(17 18 36 / 0.72);
+}
+
+.works-tile__badge--live {
+  right: max(8px, calc(12 * var(--u)));
+  background: #d61e50;
+}
+
+.works-tile__pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-white);
+  animation: works-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes works-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+  50% {
+    opacity: 0.35;
+    scale: 0.7;
+  }
+}
+
+.works-tile__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-sm) max(12px, calc(16 * var(--u)));
+}
+
+.works-tile__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.works-tile__period {
+  white-space: nowrap;
+}
+
+.works-card__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+
+/* The whole card is this link: its ::after covers the frame (the frame is the
+   positioned box, and its clip-path keeps the corner cut unclickable). */
+.works-tile__link {
+  color: var(--ink);
+  transition: color var(--hover-duration-bouncy) ease;
+}
+
+.works-tile__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* The focus ring is drawn inside the frame — an outline would be cut off by
+   the clip-path — in the ink, which reads on all three frame colours. */
+.works-tile__link:focus-visible {
+  outline: none;
+}
+
+.works-tile__link:focus-visible::after {
+  box-shadow: inset 0 0 0 calc(var(--ring) + 2px) var(--ink);
+}
+
+.works-tile__tagline {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: color-mix(in srgb, var(--ink) 78%, transparent);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.works-tile__stack {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.works-tile__stack li {
+  padding: 2px 8px;
+  border: 1px solid var(--hairline-strong);
+  font-family: var(--font-ui);
+  font-size: var(--fs-micro);
+  line-height: var(--lh-small);
+  color: color-mix(in srgb, var(--ink) 80%, transparent);
+  white-space: nowrap;
+}
+
+.works-tile__stack .works-tile__stack-more {
+  border-color: transparent;
+  font-weight: var(--fw-bold);
+}
+
+.works-tile__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-top: auto;
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--hairline);
+}
+
+.works-tile__go,
+.works-tile__demo,
+.works-tile__nodemo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tap-target);
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  text-transform: lowercase;
+}
+
+.works-tile__go {
+  color: var(--ink);
+}
+
+.works-tile__arrow {
+  width: 1.1em;
+  height: 1.1em;
+  transition: translate var(--hover-duration-bouncy) var(--hover-easing-bouncy);
+}
+
+/* Above the stretched link, so it takes its own clicks. */
+.works-tile__demo {
+  position: relative;
+  z-index: 2;
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color var(--hover-duration-bouncy) ease;
+}
+
+.works-tile__demo:hover,
+.works-tile__demo:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.works-tile__nodemo {
+  color: color-mix(in srgb, var(--ink) 60%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   6. Hover and focus — the card lifts and tips on the bouncy curve, its
+   corner cut grows, the cover leans in. Only where there is a real hover
+   (a phone's sticky :hover would leave the last-tapped card lifted);
+   keyboard focus gets the same, everywhere.
+   -------------------------------------------------------------------------- */
+.works-tile:has(.works-tile__link:focus-visible) .card-frame {
+  --n: calc(var(--card-notch) * 1.8);
+  translate: 0 -6px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .works-tile:hover .card-frame {
+    --n: calc(var(--card-notch) * 1.8);
+    translate: 0 -8px;
+    rotate: -0.6deg;
+  }
+
+  .works-tile--alt:hover .card-frame {
+    rotate: 0.6deg;
+  }
+
+  .works-tile:hover .works-tile__shot {
+    scale: 1.04;
+  }
+
+  .works-tile:hover .works-tile__link {
+    color: var(--accent-text);
+  }
+
+  .works-tile:hover .works-tile__arrow {
+    translate: 4px 0;
+  }
+}
+
+/* Phones: a little less air inside the card. */
+@media (max-width: 639px) {
+  .works-tile__body {
+    padding-inline: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .works-tile__pulse {
+    animation: none;
+  }
+
+  .works-filter__chip {
+    transition: none;
+  }
+}

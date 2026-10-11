@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Motion — boulder.ge styles/motion.css, cut down to what the portal draws.
+   Loaded LAST (main.tsx imports it after App, so after every component
+   stylesheet): a media query adds no specificity, so a reduced-motion rule
+   only beats the base rule it cancels by coming after it in the cascade.
+   The scroll reveal and the section title keep their reduced-motion rules
+   beside their base rules in boulder.css; boulder.ge's case-card and
+   expand-panel rules are gone with those components.
+   ========================================================================== */
+
+/* The spark burst's canvas (SparkCanvas.tsx): full-bleed and click-through,
+   above everything. */
+.spark-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The header's theme toggle (controls.css). Its hover loop is gated off at
+     the source (prefers-reduced-motion: no-preference) and ThemeToggle.tsx
+     starts no hand-over under reduced motion; these kill the transitions
+     its base rules declare, so the day <-> night swap (the bouncy squash
+     and cross-fade) lands at once and the press dip is instant — the press
+     still reads, it just does not move. */
+  .theme-toggle__icon,
+  .theme-toggle__rays--sun,
+  .theme-toggle__disk,
+  .theme-toggle__night,
+  .theme-toggle__night > path {
+    transition: none;
+  }
+
+  /* Belt and braces: the burst never spawns under reduced motion. */
+  .spark-canvas {
+    display: none;
+  }
+}
